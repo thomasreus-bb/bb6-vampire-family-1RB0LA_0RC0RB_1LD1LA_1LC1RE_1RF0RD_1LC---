@@ -98,21 +98,20 @@ This is a heuristic, not a proof. It is taken over from the TM1 and TM2 notes, w
 The visit frequencies of the chain agree with the real orbits (TM1: total variation distance 0.003 over 300,000 Bells; TM2: 0.0013 over 10⁶ Bells).
 
 - **Halt rate:** 8.87·10⁻¹³ per Bell, almost all of it (61 % and 39 %) through the HALT words `1111` and `111101` (TM2 coordinates).
-- **One orbit:** expected 1.13·10¹² Bells until the halt, median 7.8·10¹¹.
-- **The four orbits together:** if they behave like independent coin sequences, the chance that *at least one* of them halts within N Bells is 1 − exp(−4 · 8.87·10⁻¹³ · N); expected 2.8·10¹¹ Bells, median 2.0·10¹¹. Each orbit has to be simulated on its own, so this costs four simulations.
+- **Expected** (per orbit): 1.13·10¹² Bells until the halt, median 7.8·10¹¹.
 
-| Bells N | P(halt up to N), one orbit | P(at least one of O1–O4 halts up to N) |
-|---|---|---|
-| 10⁹ | 0.089 % | 0.35 % |
-| 10¹⁰ | 0.88 % | 3.5 % |
-| 10¹¹ | 8.5 % | 30 % |
-| 10¹² | 58.8 % | 97.1 % |
-| 2·10¹² | 83 % | 99.9 % |
-| 5·10¹² | 98.8 % | > 99.99 % |
+| Bells N | P(halt up to N) per orbit |
+|---|---|
+| 10⁹ | 0.089 % |
+| 10¹⁰ | 0.88 % |
+| 10¹¹ | 8.5 % |
+| 10¹² | 58.8 % |
+| 2·10¹² | 83 % |
+| 5·10¹² | 98.8 % |
 
 The model has no memory: if there is still no halt after N Bells, the chances for the next N Bells are the same again.
 
-**Limits.** The fair-coin assumption is not proven: the parities come from the 3/2 dynamics, so correlations are possible, and they could change all the numbers above (even whether a halt ever happens). Whether the four orbits are really independent of each other is not known either.
+**Limits.** The fair-coin assumption is not proven: the parities come from the 3/2 dynamics, so correlations are possible, and they could change all the numbers above (even whether a halt ever happens).
 So far only O1 (TM1, 10⁹ Bells) and O2 (TM2, 10⁶ Bells) have been simulated far enough to say anything; at the probabilities above, these runs could not have shown a halt anyway.
 
 ## Fast simulation
