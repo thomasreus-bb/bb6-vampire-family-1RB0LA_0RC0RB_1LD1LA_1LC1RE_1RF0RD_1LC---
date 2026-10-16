@@ -3,7 +3,7 @@
 Author: Thomas Reus, with the AI model Claude Opus 5.5  
 Status: 16 Oct 2026 (draft; labels such as TM2a or TM2' are provisional)
 
-This repository is about a **family of seven "energy vampire"-like Turing machines** from the list of BB(6) holdouts.
+This repository is about a **family of seven "energy vampire"-like Turing machines** from the recent holdout list (BB6_holdouts_663).
 "Energy vampire" is the name used in the bbchallenge Discord for TM2: a large number on one side of the tape that grows by a factor of about 3/2 per pass, and a short word on the other side that only halts after a long run of lucky parities.
 All seven machines turn out to be **one machine core with three variants of a single transition, started in different states**. They iterate the same map, but on four different orbits.
 
