@@ -61,9 +61,9 @@ and the next Bell ends with n' = (3n + d)/2 and the word P', where (P', d) depen
 (TM1 is described in its own repository by the *start* of a Bell, `0^∞ 1^k F> S 0^∞`; that is a different point of the same Bell.)
 
 - **Table.** For TM2 the table built by breadth-first search holds 49,993 words, 810 of them HALT entries ([TM2.md](TM2.md)). The two HALT words that carry almost all of the halt rate are `1111` and `111101`, each for n odd.
-- **Markov estimate** (fair-coin assumption, not proved): halt rate 8.87·10⁻¹³ per Bell, expected 1.13·10¹² Bells, P(halt by 10¹²) ≈ 59 %. Computed independently for TM1 and for TM2 with the same result. For the other machines it was not recomputed; since their tables are the same graph (below), the same value is expected.
+- **Markov estimate** (fair-coin assumption, not proved): halt rate 8.87·10⁻¹³ per Bell; see "HALT expected!" below.
 - **Shortest halting path** (computed for TM1, so it holds for the common graph): 41 transitions from the word ε with n even.
-- **Memory demand and step count:** n grows by about 3/2 per Bell, i.e. 0.585 bits per Bell; one Bell takes about (3/2)·n² TM steps (TM2 coordinates).
+- **Memory demand and step count:** n grows by about 3/2 per Bell, i.e. 0.585 bits per Bell; one Bell takes about (3/2)·n² TM steps (TM2 coordinates); see "Fast simulation" below.
 
 **How the tables were compared.** For TM2, TM2a and TM2b we built tables of about 3,000 words each with the same program (`src/cyc.c`, `src/table.py`; three values of n per entry, no inconsistencies). The TM2 table reproduces the excerpt in [TM2.md](TM2.md).
 For TM1 the comparison with TM2 was made earlier ([TM2.md](TM2.md), "Relation to TM1"). For TM1-F, TM2' and TM2b' no own table was built; they are identified through the machine core and their orbits.
@@ -90,6 +90,50 @@ All in TM2 coordinates (n, P), ε = empty word. Each orbit was iterated for 3,00
 | 7 | 112, `1000` | 127, `1` | 100, `1` | 133, `1` |
 | 8 | 172, `101` | 193, `1000` | 154, ε | 202, `1000` |
 | 9 | 262, `1` | 295, `1` | 235, `1` | 307, `101` |
+
+## HALT expected! (Markov estimate)
+This is a heuristic, not a proof. It is taken over from the TM1 and TM2 notes, where it was computed independently with the same result.
+
+**Reasoning.** The next word P' and the question whether the machine halts depend only on P and on the parity of n (bit 1 of k in TM1). If this parity behaves like a fair coin in every Bell, the sequence of words is a Markov chain on the table, and every HALT entry ends the chain.
+The visit frequencies of the chain agree with the real orbits (TM1: total variation distance 0.003 over 300,000 Bells; TM2: 0.0013 over 10⁶ Bells).
+
+- **Halt rate:** 8.87·10⁻¹³ per Bell, almost all of it (61 % and 39 %) through the HALT words `1111` and `111101` (TM2 coordinates).
+- **One orbit:** expected 1.13·10¹² Bells until the halt, median 7.8·10¹¹.
+- **The four orbits together:** if they behave like independent coin sequences, the chance that *at least one* of them halts within N Bells is 1 − exp(−4 · 8.87·10⁻¹³ · N); expected 2.8·10¹¹ Bells, median 2.0·10¹¹. Each orbit has to be simulated on its own, so this costs four simulations.
+
+| Bells N | P(halt up to N), one orbit | P(at least one of O1–O4 halts up to N) |
+|---|---|---|
+| 10⁹ | 0.089 % | 0.35 % |
+| 10¹⁰ | 0.88 % | 3.5 % |
+| 10¹¹ | 8.5 % | 30 % |
+| 10¹² | 58.8 % | 97.1 % |
+| 2·10¹² | 83 % | 99.9 % |
+| 5·10¹² | 98.8 % | > 99.99 % |
+
+The model has no memory: if there is still no halt after N Bells, the chances for the next N Bells are the same again.
+
+**Limits.** The fair-coin assumption is not proven: the parities come from the 3/2 dynamics, so correlations are possible, and they could change all the numbers above (even whether a halt ever happens). Whether the four orbits are really independent of each other is not known either.
+So far only O1 (TM1, 10⁹ Bells) and O2 (TM2, 10⁶ Bells) have been simulated far enough to say anything; at the probabilities above, these runs could not have shown a halt anyway.
+
+## Fast simulation
+For TM1 there is a fast simulation, `bellntt` in the TM1 repository. It does not simulate the tape but the map on (k, S) with the table, and it is written so that very long numbers stay cheap:
+
+- **Block simulation.** Each Bell uses up one bit from the bottom of k, so a block of B Bells depends only on the lowest B + 2 bits of k. Write k = q·2<sup>B+2</sup> + r; after B Bells the new k is 3<sup>B</sup>·q·4 + L, where L is computed from the short number r alone with the table.
+- **Fast multiplication.** The long part q is multiplied once per block by 3<sup>B</sup>, with an own number theoretic transform (NTT: two 63-bit primes, Chinese remainder theorem, Montgomery arithmetic, OpenMP, no GMP).
+- **Check.** At the end the program prints a fingerprint `KCHECK <k mod 2⁶⁴> <bit length> <S>`; two programs with the same fingerprint have computed the same orbit.
+
+Run times and memory (TM1, 2 cores; times beyond 10⁹ Bells extrapolated with N^1.5, accurate to about a factor 3). The memory is that of the number k (about 0.585 bits per Bell) without the working buffers of the multiplication (observed at 8·10⁸ Bells: about 220 MB in total). The TM steps are a lower bound, from one Bell taking at least 3/8·k² steps:
+
+| Bells N | run time `bellntt` | bits of k | memory for k | TM steps, lower bound |
+|---|---|---|---|---|
+| 10⁹ | 23 min (measured, no halt) | 585 million | 73 MB | 10<sup>3.52·10⁸</sup> |
+| 10¹⁰ | ≈ 12 h | 5.85 billion | 0.73 GB | 10<sup>3.52·10⁹</sup> |
+| 10¹¹ | ≈ 16 days | 58.5 billion | 7.3 GB | 10<sup>3.52·10¹⁰</sup> |
+| 10¹² | ≈ 1.4 years | 585 billion | 73 GB | 10<sup>3.52·10¹¹</sup> |
+
+For comparison, the simple reference program `bellrun` (40 Bells per pass over k, time ∝ N²) needs 12 s for 10⁷ Bells, 27 min for 10⁸ and about 2 days for 10⁹.
+
+**For the family.** The same method works for every machine of the family, since they all have the same map (n ≈ k/2, one bit less memory). `bellntt` itself reads the TM1 table and starts from TM1's first Bell; for the orbits O2 to O4 it would need either their start values converted to TM1 coordinates or a TM2-type table. This has not been done yet. All four orbits to 10¹² Bells would take about 4 × 1.4 years on 2 cores, or correspondingly less on more cores.
 
 ---
 
