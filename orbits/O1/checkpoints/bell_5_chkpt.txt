@@ -1,0 +1,10 @@
+# bellntt checkpoint
+date 2026-10-18
+time 13:01:26
+program bellntt-ckpt-1 (bb6 vampire family)
+orbit O1
+bell 5
+S 11
+k_bits 7
+k_hex 5C
+checksum 98462d4f7b9f5b1d

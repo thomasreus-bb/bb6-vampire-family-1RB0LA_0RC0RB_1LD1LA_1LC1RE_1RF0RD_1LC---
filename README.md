@@ -132,7 +132,7 @@ Run times and memory (TM1, 2 cores; times beyond 10⁹ Bells extrapolated with N
 
 For comparison, the simple reference program `bellrun` (40 Bells per pass over k, time ∝ N²) needs 12 s for 10⁷ Bells, 27 min for 10⁸ and about 2 days for 10⁹.
 
-**For the family.** The same method works for every machine of the family, since they all have the same map (n ≈ k/2, one bit less memory). `bellntt` itself reads the TM1 table and starts from TM1's first Bell; for the orbits O2 to O4 it would need either their start values converted to TM1 coordinates or a TM2-type table. This has not been done yet. All four orbits to 10¹² Bells would take about 4 × 1.4 years on 2 cores, or correspondingly less on more cores.
+**For the family.** The same method works for every orbit of the family, since they all have the same map. The directories `orbits/O1` … `orbits/O4` each contain `bellntt` for one orbit, with the TM1 table, a start checkpoint and a reference checkpoint; the program writes text checkpoints, continues from the last one and stops at a given target Bell (see `orbits/O2/README.md`). All four orbits to 10¹² Bells would take about 4 × 1.4 years on 2 cores, or correspondingly less on more cores.
 
 ---
 
@@ -332,7 +332,7 @@ Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; 
 - The identifications are observations from simulations and tables (checked for finitely many cases), not proofs.
 - Markov estimate for the orbits O3 and O4 not recomputed (expected: the same as for TM1/TM2).
 - Simulations far beyond 10⁵ Bells exist only for O1 (TM1, 10⁹ Bells) and O2 (TM2, 10⁶ Bells).
-- A fast simulation (block method with NTT, as `bellntt` for TM1) could serve all four orbits with one program and one table.
+- Long runs of the fast simulation (`orbits/`) for O2, O3 and O4 are still to be done.
 
 ## Files
 | Path | Content |
@@ -343,8 +343,16 @@ Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; 
 | `src/compare.py` | the checks behind this document: machine core, tables against TM2, orbits |
 | `tables/TM2.json`, `TM2a.json`, `TM2b.json` | tables of TM2, TM2a, TM2b (about 3,000 words each) |
 | `scan/bellscan.c`, `scan/bell_candidates.txt`, `scan/holdouts_663.txt` | Bell detector, its results, and the list of holdouts it was run on |
+| `orbits/O1` … `orbits/O4` | fast simulation (`bellntt`) of one orbit each, with table and checkpoints; each directory can be copied and used on its own |
 
 ## Usage
+**Long simulations** (fast, with checkpoints): see `orbits/O1` … `orbits/O4`, for example
+
+    cd orbits/O2
+    gcc -O3 -march=native -fopenmp -o bellntt bellntt.c
+    ./bellntt 1000000000 10000000           # continue from the last checkpoint up to Bell 10⁹
+
+**Checks and tables** (the programs in `src/` simulate the tape step by step; they are slow and meant for checks of the first Bells, not for long runs):
 
     cd src
     gcc -O2 -o cyc cyc.c
