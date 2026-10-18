@@ -4,13 +4,17 @@
 //   k' = 3*floor(k/2) + c,   (S', c) = f(S, bit 1 of k)      (table in tab.txt / tab_names.txt).
 // Bell numbers, checkpoint names and the progress log use the Bell numbering of TM2 (see README.md).
 //
-// Compile: gcc -O3 -march=native -fopenmp -o bellntt bellntt.c      (without -fopenmp: one core)
-// Usage:   ./bellntt TARGET [INTERVAL [B]]
+// Compile: gcc -O3 -march=native -fopenmp -o bellntt bellntt.c -lm      (without -fopenmp: one core)
+// Usage:   ./bellntt [-t TARGET] [-i INTERVAL] [-b B]
+//   -t TARGET    Bell number at which the run stops (a checkpoint is written there);
+//                without -t the run goes on until HALT or until it is interrupted (Ctrl-C)
+//   -i INTERVAL  write a checkpoint at every Bell number divisible by INTERVAL (default 10000000);
+//                the previous intermediate checkpoint is deleted, the start and target checkpoints are kept,
+//                so the newest checkpoint always remains
+//   -b B         fixed block size in Bells (only the speed depends on it); without -b the block size grows
+//                with the Bell number: B = 38*sqrt(Bell), at least 40000 (about 4e5 at 1e8, 1.2e6 at 1e9)
+//   The older form ./bellntt TARGET [INTERVAL [B]] is still accepted.
 //          ./bellntt init BELL K S            write a first checkpoint (K < 2^64, S = the word with its leading 1)
-//   TARGET    Bell number at which the run stops (a checkpoint is written there)
-//   INTERVAL  write a checkpoint at every Bell number divisible by INTERVAL (default 10000000);
-//             the previous intermediate checkpoint is deleted, the start and target checkpoints are kept
-//   B         block size in Bells (default 2000000; only the speed depends on it)
 // The run starts from the checkpoint with the highest Bell number in checkpoints/ that can be read.
 // Files: tab.txt, tab_names.txt, orbit.txt (label), checkpoints/bell_<N>_chkpt.txt, progress.log.
 //
@@ -23,6 +27,8 @@
 #include <time.h>
 #include <stdint.h>
 #include <dirent.h>
+#include <limits.h>
+#include <math.h>
 #ifdef _OPENMP
 #include <omp.h>
 #endif
@@ -69,7 +75,9 @@ static void ntt_inv(u64*a,size_t T,const Pr*q){
 /* ---------- long numbers (64-bit limbs, little endian) ---------- */
 static void mul_small(u64*a,size_t*len,u64 m){ u64 c=0; for(size_t i=0;i<*len;i++){ u128 t=(u128)a[i]*m+c; a[i]=(u64)t; c=(u64)(t>>64);} if(c) a[(*len)++]=c; }
 static void pow3(u64*P,size_t*plen,long long m){ P[0]=1; *plen=1; u64 p40=1; for(int i=0;i<M;i++)p40*=3;
-  for(long long i=0;i<m/M;i++) mul_small(P,plen,p40); u64 r=1; for(int i=0;i<m%M;i++) r*=3; if(r>1) mul_small(P,plen,r); }
+  for(long long i=0;i<m/M;i++) mul_small(P,plen,p40);
+  u64 r=1; for(int i=0;i<m%M;i++) r*=3;
+  if(r>1) mul_small(P,plen,r); }
 static int ceillog2(size_t x){ int l=0; while(((size_t)1<<l)<x) l++; return l; }
 
 /* ---------- product hi * P with the NTT, result as 32-bit digits in out ---------- */
@@ -219,12 +227,17 @@ static void log_progress(long long bell,const u64*k,size_t len,int s,double t,co
 }
 
 int main(int argc,char**argv){
-  if(argc<2){ fprintf(stderr,"usage: %s TARGET [INTERVAL [B]]   or   %s init BELL K S\n",argv[0],argv[0]); return 2; }
-  int init=!strcmp(argv[1],"init");
-  long long target=init?1:atoll(argv[1]);
-  long long interval=argc>2?atoll(argv[2]):10000000LL;
-  long long B=argc>3?atoll(argv[3]):2000000LL;
-  if(target<=0||interval<=0||B<=0){ fprintf(stderr,"TARGET, INTERVAL and B must be positive\n"); return 2; }
+  int init=argc>1&&!strcmp(argv[1],"init");
+  long long target=LLONG_MAX, interval=10000000LL, B=0;      // B = 0: automatic block size
+  if(!init){ int pos=0;
+    for(int i=1;i<argc;i++){
+      if(!strcmp(argv[i],"-t")&&i+1<argc) target=atoll(argv[++i]);
+      else if(!strcmp(argv[i],"-i")&&i+1<argc) interval=atoll(argv[++i]);
+      else if(!strcmp(argv[i],"-b")&&i+1<argc) B=atoll(argv[++i]);
+      else if(argv[i][0]>='0'&&argv[i][0]<='9'){ long long v=atoll(argv[i]); if(pos==0) target=v; else if(pos==1) interval=v; else if(pos==2) B=v; pos++; }
+      else { fprintf(stderr,"usage: %s [-t TARGET] [-i INTERVAL] [-b B]   or   %s init BELL K S\n",argv[0],argv[0]); return 2; } } }
+  if(target<=0||interval<=0||B<0){ fprintf(stderr,"TARGET, INTERVAL and B must be positive\n"); return 2; }
+  int autoB=(B==0); if(autoB) B=40000;
   { FILE*f=fopen("orbit.txt","r"); if(f){ if(fscanf(f,"%63s",orbit)!=1) strcpy(orbit,"?"); fclose(f);} }
   FILE*f=fopen("tab.txt","r"); if(!f||fscanf(f,"%d",&n)!=1){ fprintf(stderr,"cannot read tab.txt\n"); return 1; }
   nxt=malloc(sizeof(int)*2*n); cc=malloc(sizeof(int)*2*n);
@@ -249,7 +262,10 @@ int main(int argc,char**argv){
   struct dirent*e; while((e=readdir(dir))&&nc<100000){ long long b; char rest[16];
     if(sscanf(e->d_name,"bell_%lld_chkpt.tx%15s",&b,rest)==2&&!strcmp(rest,"t")) cand[nc++]=b; }
   closedir(dir); qsort(cand,nc,sizeof(long long),cmp_desc);
-  size_t capK=(size_t)(0.6*target/64)+4*(size_t)(B/64)+8192;
+  long long Bmax=autoB?(long long)(38.0*sqrt(target==LLONG_MAX?1e13:(double)target))+40000:B;
+  if(autoB&&Bmax>100000000LL) Bmax=100000000LL;               // keeps the NTT length below 2^24
+  char bdesc[64]; if(autoB) snprintf(bdesc,sizeof bdesc,"automatic"); else snprintf(bdesc,sizeof bdesc,"%lld",B);
+  size_t capK=4*(size_t)(B/64)+8192;                          // grows during the run (before each block)
   u64*k=NULL; size_t len=0; int s=0; long long bell=-1; char startname[256]="";
   for(int i=0;i<nc;i++){ char nm[256]; ckpt_name(nm,sizeof nm,cand[i]);
     if(read_ckpt(nm,&bell,&k,&len,capK,&s)==0&&bell==cand[i]){ strcpy(startname,nm); break; }
@@ -257,10 +273,11 @@ int main(int argc,char**argv){
   if(bell<0){ fprintf(stderr,"no readable checkpoint in checkpoints/\n"); return 1; }
   if(capK<len+8) capK=len+8;
   { u64*kk=realloc(k,(capK+8)*8); if(!kk){ fprintf(stderr,"out of memory\n"); return 1; } k=kk; memset(k+len,0,(capK+8-len)*8); }
-  printf("orbit %s: start %s (Bell %lld), target Bell %lld, checkpoint every %lld Bells, B = %lld\n",orbit,startname,bell,target,interval,B);
+  if(target==LLONG_MAX) printf("orbit %s: start %s (Bell %lld), no target (until HALT or interruption), checkpoint every %lld Bells, B = %s\n",orbit,startname,bell,interval,bdesc);
+  else printf("orbit %s: start %s (Bell %lld), target Bell %lld, checkpoint every %lld Bells, B = %s\n",orbit,startname,bell,target,interval,bdesc);
   if(bell>=target){ printf("start Bell %lld is not below the target, nothing to do\n",bell); return 0; }
   u64*hi=calloc(capK+8,8),*out=calloc(capK*2+8192,8);
-  size_t capL=(size_t)(1.7*(B+2)/64)+4096; u64*L=calloc(capL,8),*P=calloc(capL,8);
+  size_t capL=(size_t)(1.7*(Bmax+2)/64)+4096; u64*L=calloc(capL,8),*P=calloc(capL,8);
   if(!hi||!out||!L||!P){ fprintf(stderr,"out of memory\n"); return 1; }
   size_t plen=0; long long Pm=-1;
   double t0=now(),tlow=0,tmul=0;
@@ -268,7 +285,13 @@ int main(int argc,char**argv){
   long long lastck_bell=bell, prevck_bell=bell; double lastck_time=now(), prevck_time=0, used_time=0;
   log_progress(bell,k,len,s,0,"start  ");
   while(bell<target){
+    if(autoB){ B=(long long)(38.0*sqrt((double)bell)); if(B<40000) B=40000; if(B>Bmax) B=Bmax; }
     long long m=B; if(target-bell<m) m=target-bell; if(nextck-bell<m) m=nextck-bell;
+    { size_t need=len+(size_t)(0.6*m/64)+4*(size_t)(B/64)+64;    // room for k after this block
+      if(need>capK){ size_t nc=capK+capK/2; if(nc<need) nc=need;
+        u64*k2=realloc(k,(nc+8)*8),*h2=realloc(hi,(nc+8)*8),*o2=realloc(out,(nc*2+8192)*8);
+        if(!k2||!h2||!o2){ fprintf(stderr,"out of memory at Bell %lld (k has %zu limbs)\n",bell,len); return 1; }
+        memset(k2+capK+8,0,(nc-capK)*8); k=k2; hi=h2; out=o2; capK=nc; } }
     size_t W=m+2, wl=(W+63)/64;
     double ta=now();
     size_t Ll=len<wl?len:wl; memcpy(L,k,Ll*8); if(len>=wl&&(W&63)) L[wl-1]&=((u64)1<<(W&63))-1;

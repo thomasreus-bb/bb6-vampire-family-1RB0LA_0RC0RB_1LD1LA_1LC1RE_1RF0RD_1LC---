@@ -13,21 +13,24 @@ The method is that of `bellntt` in the TM1 repository (blocks of Bells, own NTT 
 
 ## Usage
 
-    gcc -O3 -march=native -fopenmp -o bellntt bellntt.c     # without -fopenmp: one core
-    ./bellntt TARGET [INTERVAL [B]]
+    gcc -O3 -march=native -fopenmp -o bellntt bellntt.c -lm     # without -fopenmp: one core
+    ./bellntt [-t TARGET] [-i INTERVAL] [-b B]
 
-- `TARGET`: Bell number at which the run stops; a checkpoint is written there.
-- `INTERVAL`: a checkpoint is written at every Bell number divisible by INTERVAL (default 10,000,000).
-- `B`: block size in Bells (default 2,000,000; only the speed depends on it, see the TM1 repository for good values).
+- `-t TARGET`: Bell number at which the run stops; a checkpoint is written there. **Without `-t` the run goes on until HALT or until it is interrupted (Ctrl-C).**
+- `-i INTERVAL`: a checkpoint is written at every Bell number divisible by INTERVAL (default 10,000,000).
+- `-b B`: fixed block size in Bells. Without `-b` the block size grows automatically with the Bell number (B = 38·√Bell, at least 40,000); only the speed depends on it.
+- The older form `./bellntt TARGET [INTERVAL [B]]` still works.
 
 The run starts from the checkpoint with the highest Bell number in `checkpoints/` that can be read (correct checksum).
-During the run each new intermediate checkpoint replaces the previous one, so the file name shows the progress; the start checkpoint and the target checkpoint are kept.
-A run can be stopped at any time (Ctrl-C) and continues from its last checkpoint when started again.
+During the run each new intermediate checkpoint replaces the previous one, so the file name shows the progress; the start checkpoint, the target checkpoint and always the newest checkpoint are kept.
+A run can be stopped at any time (Ctrl-C) and continues from its newest checkpoint when started again.
 Every checkpoint also adds a line to `progress.log` (date, Bell, run time, `KCHECK`, and the values in TM2 coordinates).
 
-Example: from the shipped checkpoint at Bell 1,000,001 to Bell 10⁹ with a checkpoint every 10⁷ Bells:
+Examples:
 
-    ./bellntt 1000000000 10000000
+    ./bellntt                          # from the newest checkpoint on, until HALT or Ctrl-C, checkpoint every 10^7 Bells
+    ./bellntt -t 1000000000            # up to Bell 10^9
+    ./bellntt -i 100000000             # endless, checkpoint every 10^8 Bells
 
 If the orbit reaches a HALT entry of the table, the program says so, writes `checkpoints/HALT_bell_<N>.txt` and stops. If it reaches a word that is not in the table, it writes `checkpoints/UNKNOWN_bell_<N>.txt`.
 
@@ -61,5 +64,5 @@ Shipped checkpoints: `bell_6_chkpt.txt` (k = 128, S = `11101`, Bell 6 of TM1 sta
 ## Size and run time
 k grows by about 0.585 bits per Bell. A checkpoint holds k in hexadecimal, i.e. about 0.146 bytes per Bell: 146 MB at 10⁹ Bells, 1.46 GB at 10¹⁰.
 The program keeps several arrays of the size of k in memory (k, the high part, and the product, together about 4 × the size of k at the target).
-Run time on 2 cores (measured for TM1 with the same program core): 10⁷ Bells in a few seconds, 10⁹ Bells in about 25 minutes; beyond that the times grow roughly like N^1.5 (10¹⁰ ≈ 12 h, 10¹¹ ≈ 16 days).
+Run time on 2 cores: 10⁸ Bells in about 1 minute (measured with this program), 10⁹ Bells in about 25 minutes (measured for TM1 with the same program core); beyond that the times grow roughly like N^1.5 (10¹⁰ ≈ 12 h, 10¹¹ ≈ 16 days).
 Choose INTERVAL so that writing a checkpoint takes little time compared with the run between two checkpoints (e.g. 10⁷ up to 10⁹ Bells, 10⁸ beyond).

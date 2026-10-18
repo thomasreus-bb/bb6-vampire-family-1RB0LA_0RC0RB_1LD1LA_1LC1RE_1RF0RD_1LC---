@@ -337,20 +337,20 @@ Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; 
 ## Files
 | Path | Content |
 |---|---|
+| `orbits/O1` … `orbits/O4` | fast simulation (`bellntt`) of one orbit each, with table and checkpoints; each directory can be copied and used on its own |
 | `TM2.md` | detailed notes on TM2 (table, Markov estimate, Discord history) |
 | `src/cyc.c` | Bell simulator for the TM2-type machines: direct simulation, and single Bells from a given (P, n) |
 | `src/table.py` | builds a table by breadth-first search with `cyc` |
 | `src/compare.py` | the checks behind this document: machine core, tables against TM2, orbits |
 | `tables/TM2.json`, `TM2a.json`, `TM2b.json` | tables of TM2, TM2a, TM2b (about 3,000 words each) |
 | `scan/bellscan.c`, `scan/bell_candidates.txt`, `scan/holdouts_663.txt` | Bell detector, its results, and the list of holdouts it was run on |
-| `orbits/O1` … `orbits/O4` | fast simulation (`bellntt`) of one orbit each, with table and checkpoints; each directory can be copied and used on its own |
 
 ## Usage
 **Long simulations** (fast, with checkpoints): see `orbits/O1` … `orbits/O4`, for example
 
     cd orbits/O2
-    gcc -O3 -march=native -fopenmp -o bellntt bellntt.c
-    ./bellntt 1000000000 10000000           # continue from the last checkpoint up to Bell 10⁹
+    gcc -O3 -march=native -fopenmp -o bellntt bellntt.c -lm
+    ./bellntt                                # continue from the newest checkpoint until HALT or Ctrl-C
 
 **Checks and tables** (the programs in `src/` simulate the tape step by step; they are slow and meant for checks of the first Bells, not for long runs):
 
