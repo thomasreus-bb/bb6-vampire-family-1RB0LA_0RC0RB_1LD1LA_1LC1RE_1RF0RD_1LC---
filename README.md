@@ -1,7 +1,7 @@
 # A family of seven vampire-like BB(6) holdouts
 
 Author: Thomas Reus, with the AI model Claude Opus 5.5  
-Status: 16 Oct 2026 (draft; labels such as TM2a or TM2' are provisional)
+Status: 18 Oct 2026 (draft; labels such as TM2a or TM2' are provisional)
 
 This repository is about a **family of seven "energy vampire"-like Turing machines** from the recent holdout list (BB6_holdouts_663).
 
@@ -12,6 +12,11 @@ All seven machines turn out to be **one machine core with three variants of a si
 The first machine of this investigation, TM1, has its own repository with the fast simulation to 10⁹ Bells:
 [bb6-1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE](https://github.com/thomasreus-bb/bb6-1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE).
 Data of TM1 are not copied here; this document refers to that repository.
+
+## Simulation status (18 Oct 2026, 16:38 CEST)
+- **Orbit O1** (TM1): simulated to **Bell 2·10⁹ without a halt** with [`orbits/O1`](orbits/O1) (KCHECK `15888523420693262708 1169925006 10001`; k has 1,169,925,006 bits).
+- **Double-check:** an independent run on a second computer reproduces the KCHECK values at Bells 6·10⁸, 7·10⁸, 8·10⁸, 9·10⁸ and 10⁹ (`8610941070033361538 584962505 1101`); continued to Bell 1,000,000,005 it gives `825729492582408624 584962508 10001`, the reference value of the TM1 repository.
+- **Planned:** O1 up to Bell 10¹¹, then O2, O3 and O4 up to Bell 10¹¹.
 
 ## In brief
 All seven machines iterate, as far as we can see, the same map on pairs (n, P):
