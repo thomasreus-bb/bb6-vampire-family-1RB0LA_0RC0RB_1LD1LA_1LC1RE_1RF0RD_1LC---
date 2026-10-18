@@ -16,7 +16,7 @@ Data of TM1 are not copied here; this document refers to that repository.
 ## Simulation status (18 Oct 2026, 16:38 CEST)
 - **Orbit O1** (TM1): simulated to **Bell 2·10⁹ without a halt** with [`orbits/O1`](orbits/O1) (KCHECK `15888523420693262708 1169925006 10001`; k has 1,169,925,006 bits).
 - **Double-check:** an independent run on a second computer reproduces the KCHECK values at Bells 6·10⁸, 7·10⁸, 8·10⁸, 9·10⁸ and 10⁹ (`8610941070033361538 584962505 1101`); continued to Bell 1,000,000,005 it gives `825729492582408624 584962508 10001`, the reference value of the TM1 repository.
-- **Planned:** O1 up to Bell 10¹¹, then O2, O3 and O4 up to Bell 10¹¹.
+- **Planned:** all four orbits up to Bell 10¹⁰ (O1 first), later 10¹¹ with external help.
 
 ## In brief
 All seven machines iterate, as far as we can see, the same map on pairs (n, P):
