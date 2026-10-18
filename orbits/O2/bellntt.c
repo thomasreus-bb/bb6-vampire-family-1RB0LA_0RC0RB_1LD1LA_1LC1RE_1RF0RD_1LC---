@@ -161,7 +161,7 @@ static double now(){ struct timespec ts; clock_gettime(CLOCK_MONOTONIC,&ts); ret
    covered by the checksum.                                                                           */
 #define PROGLABEL "bellntt-ckpt-1 (bb6 vampire family)"
 static char orbit[64]="?";
-static int bitlen(const u64*k,size_t len){ return (int)(64*(len-1)+64-__builtin_clzll(k[len-1]|1)); }
+static long long bitlen(const u64*k,size_t len){ return (long long)(64*(len-1)+64-__builtin_clzll(k[len-1]|1)); }   // long long: k exceeds 2^31 bits near Bell 3.67e9
 static void ckpt_name(char*buf,size_t sz,long long bell){ snprintf(buf,sz,"checkpoints/bell_%lld_chkpt.txt",bell); }
 static u64 fnv(u64 h,const char*p,size_t n){ for(size_t i=0;i<n;i++){ h^=(unsigned char)p[i]; h*=1099511628211ULL; } return h; }
 static const u64 FNV0=14695981039346656037ULL;
@@ -170,13 +170,13 @@ static const char HX[]="0123456789ABCDEF";
 static int write_ckpt(long long bell,const u64*k,size_t len,int s,long long from,double secs){
   char name[256],tmpn[300]; ckpt_name(name,sizeof name,bell); snprintf(tmpn,sizeof tmpn,"%s.tmp",name);
   // hex digits of k, most significant first, without leading zeros
-  int bits=bitlen(k,len); size_t nd=(bits+3)/4; if(nd==0) nd=1;
+  long long bits=bitlen(k,len); size_t nd=(size_t)(bits+3)/4; if(nd==0) nd=1;
   char*hx=malloc(nd+1); for(size_t i=0;i<nd;i++){ size_t d=nd-1-i; hx[i]=HX[(k[d/16]>>(4*(d%16)))&15]; } hx[nd]=0;
   char lb[64],ls[128]; snprintf(lb,sizeof lb,"bell %lld\n",bell); snprintf(ls,sizeof ls,"S 1%s\n",names[s]);
   u64 h=fnv(FNV0,lb,strlen(lb)); h=fnv(h,ls,strlen(ls)); h=fnv(h,"k_hex ",6); h=fnv(h,hx,nd); h=fnv(h,"\n",1);
   time_t now_t=time(NULL); char d[16],t[16]; strftime(d,sizeof d,"%Y-%m-%d",localtime(&now_t)); strftime(t,sizeof t,"%H:%M:%S",localtime(&now_t));
   FILE*f=fopen(tmpn,"w"); if(!f){ perror(tmpn); free(hx); return -1; }
-  fprintf(f,"# bellntt checkpoint\ndate %s\ntime %s\nprogram %s\norbit %s\n%s%sk_bits %d\nk_hex %s\n",
+  fprintf(f,"# bellntt checkpoint\ndate %s\ntime %s\nprogram %s\norbit %s\n%s%sk_bits %lld\nk_hex %s\n",
           d,t,PROGLABEL,orbit,lb,ls,bits,hx);
   if(from>=0&&bell>from) fprintf(f,"time_per_bell %.3e s (average over Bells %lld-%lld, run time %.3f s)\n",secs/(double)(bell-from),from,bell,secs);
   fprintf(f,"checksum %016llx\n",(unsigned long long)h);
@@ -190,11 +190,11 @@ static int write_ckpt(long long bell,const u64*k,size_t len,int s,long long from
 static int read_ckpt(const char*name,long long*bell,u64**k,size_t*len,size_t extra,int*s){
   FILE*f=fopen(name,"r"); if(!f) return -1;
   char*line=NULL; size_t cap=0; ssize_t r; long long b=-1; char S[256]=""; char*hx=NULL; size_t nd=0;
-  unsigned long long cs=0; int have_cs=0, kb=-1; char lb[64]="",ls[300]="";
+  unsigned long long cs=0; int have_cs=0; long long kb=-1; char lb[64]="",ls[300]="";
   while((r=getline(&line,&cap,f))>0){
     if(!strncmp(line,"bell ",5)){ b=atoll(line+5); snprintf(lb,sizeof lb,"%s",line); }
     else if(!strncmp(line,"S ",2)){ sscanf(line+2,"%255s",S); snprintf(ls,sizeof ls,"%s",line); }
-    else if(!strncmp(line,"k_bits ",7)) kb=atoi(line+7);
+    else if(!strncmp(line,"k_bits ",7)) kb=atoll(line+7);
     else if(!strncmp(line,"k_hex ",6)){ nd=0; hx=malloc(r); for(ssize_t i=6;i<r;i++){ char c=line[i]; if(c=='\n'||c=='\r') break; hx[nd++]=c; } }
     else if(!strncmp(line,"checksum ",9)){ cs=strtoull(line+9,NULL,16); have_cs=1; }
   }
@@ -220,7 +220,7 @@ static void log_progress(long long bell,const u64*k,size_t len,int s,double t,co
   for(int i=0;i<L;i++) P[i]=sp[L-i];
   P[L]=0;
   char line[512]; time_t now_t=time(NULL); char ts[32]; strftime(ts,sizeof ts,"%Y-%m-%d %H:%M:%S",localtime(&now_t));
-  snprintf(line,sizeof line,"%s  %s  bell %lld  time %.0fs  KCHECK %llu %d %s  TM2: n mod 2^64 = %llu, bits %d, P = %s\n",
+  snprintf(line,sizeof line,"%s  %s  bell %lld  time %.0fs  KCHECK %llu %lld %s  TM2: n mod 2^64 = %llu, bits %lld, P = %s\n",
            ts,what,bell,t,(unsigned long long)k[0],bitlen(k,len),names[s],(unsigned long long)nlow,bitlen(k,len)-1,L?P:"e");
   fputs(line,stdout); fflush(stdout);
   FILE*f=fopen("progress.log","a"); if(f){ fputs(line,f); fclose(f); }
