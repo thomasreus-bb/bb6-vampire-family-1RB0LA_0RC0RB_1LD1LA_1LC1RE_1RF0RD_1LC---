@@ -42,9 +42,11 @@ A checkpoint is a text file `checkpoints/bell_<N>_chkpt.txt` for one Bell N:
     S 11
     k_bits 584968
     k_hex 85746D0B325A9352...
+    time_per_bell 2.5e-06 s (average over Bells 30000000-40000000, run time 25.232 s)
     checksum 9c8e8bb901d620c9
 
 - `S` is the word S of TM1 coordinates, `k_hex` the number k in hexadecimal (most significant digit first; decimal would be very slow to compute for numbers with billions of digits).
+- `time_per_bell` is the mean computing time per Bell since the previous checkpoint of the run (if that span is shorter than half the interval, since the checkpoint before); it shows how the run time per Bell grows. It is missing in the start checkpoints and in the shipped checkpoint at Bell 1,000,001, which was written by an earlier version. It is not part of the checksum.
 - `checksum` is the 64-bit FNV-1a hash of the three lines `bell …`, `S …` and `k_hex …` (each with its newline). A file with a wrong checksum is skipped.
 - A first checkpoint can be written by hand with `./bellntt init BELL K S` (for K < 2⁶⁴).
 

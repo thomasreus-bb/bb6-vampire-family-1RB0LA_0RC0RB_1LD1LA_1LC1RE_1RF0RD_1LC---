@@ -143,9 +143,14 @@ static double now(){ struct timespec ts; clock_gettime(CLOCK_MONOTONIC,&ts); ret
      S 11                    the word S of TM1 coordinates (with its leading 1)
      k_bits 584968
      k_hex 1F3A...           k in hexadecimal, most significant digit first
+     time_per_bell 2.1e-06 s (average over Bells 990001-1000001, run time 0.021 s)
      checksum 0123456789abcdef
    The checksum is the 64-bit FNV-1a hash of the three lines "bell ...", "S ..." and "k_hex ..." (each with its
-   newline), written as 16 hex digits. It protects against typing errors and damaged files.          */
+   newline), written as 16 hex digits. It protects against typing errors and damaged files.
+   time_per_bell is the mean computing time per Bell since the previous checkpoint of the same run (or since
+   the start of the run); if that span is shorter than half the checkpoint interval (e.g. a target just after
+   an intermediate checkpoint), the span starts at the checkpoint before. It is information only and not
+   covered by the checksum.                                                                           */
 #define PROGLABEL "bellntt-ckpt-1 (bb6 vampire family)"
 static char orbit[64]="?";
 static int bitlen(const u64*k,size_t len){ return (int)(64*(len-1)+64-__builtin_clzll(k[len-1]|1)); }
@@ -154,7 +159,7 @@ static u64 fnv(u64 h,const char*p,size_t n){ for(size_t i=0;i<n;i++){ h^=(unsign
 static const u64 FNV0=14695981039346656037ULL;
 static const char HX[]="0123456789ABCDEF";
 
-static int write_ckpt(long long bell,const u64*k,size_t len,int s){
+static int write_ckpt(long long bell,const u64*k,size_t len,int s,long long from,double secs){
   char name[256],tmpn[300]; ckpt_name(name,sizeof name,bell); snprintf(tmpn,sizeof tmpn,"%s.tmp",name);
   // hex digits of k, most significant first, without leading zeros
   int bits=bitlen(k,len); size_t nd=(bits+3)/4; if(nd==0) nd=1;
@@ -163,8 +168,10 @@ static int write_ckpt(long long bell,const u64*k,size_t len,int s){
   u64 h=fnv(FNV0,lb,strlen(lb)); h=fnv(h,ls,strlen(ls)); h=fnv(h,"k_hex ",6); h=fnv(h,hx,nd); h=fnv(h,"\n",1);
   time_t now_t=time(NULL); char d[16],t[16]; strftime(d,sizeof d,"%Y-%m-%d",localtime(&now_t)); strftime(t,sizeof t,"%H:%M:%S",localtime(&now_t));
   FILE*f=fopen(tmpn,"w"); if(!f){ perror(tmpn); free(hx); return -1; }
-  fprintf(f,"# bellntt checkpoint\ndate %s\ntime %s\nprogram %s\norbit %s\n%s%sk_bits %d\nk_hex %s\nchecksum %016llx\n",
-          d,t,PROGLABEL,orbit,lb,ls,bits,hx,(unsigned long long)h);
+  fprintf(f,"# bellntt checkpoint\ndate %s\ntime %s\nprogram %s\norbit %s\n%s%sk_bits %d\nk_hex %s\n",
+          d,t,PROGLABEL,orbit,lb,ls,bits,hx);
+  if(from>=0&&bell>from) fprintf(f,"time_per_bell %.3e s (average over Bells %lld-%lld, run time %.3f s)\n",secs/(double)(bell-from),from,bell,secs);
+  fprintf(f,"checksum %016llx\n",(unsigned long long)h);
   free(hx);
   if(fclose(f)){ perror(tmpn); return -1; }
   if(rename(tmpn,name)){ perror(name); return -1; }
@@ -233,7 +240,7 @@ int main(int argc,char**argv){
     int si=-1; if(argv[4][0]=='1') for(int i=0;i<n;i++) if(!strcmp(names[i],argv[4]+1)) si=i;
     if(si<0){ fprintf(stderr,"word %s not in tab_names.txt\n",argv[4]); return 1; }
     u64 k0=strtoull(argv[3],NULL,10); if(!k0){ fprintf(stderr,"K must be positive\n"); return 1; }
-    if(write_ckpt(atoll(argv[2]),&k0,1,si)) return 1;
+    if(write_ckpt(atoll(argv[2]),&k0,1,si,-1,0)) return 1;
     log_progress(atoll(argv[2]),&k0,1,si,0,"init   "); return 0; }
 
   // find the start checkpoint: highest Bell number that can be read
@@ -258,6 +265,7 @@ int main(int argc,char**argv){
   size_t plen=0; long long Pm=-1;
   double t0=now(),tlow=0,tmul=0;
   long long nextck=(bell/interval+1)*interval; char prevname[256]="";
+  long long lastck_bell=bell, prevck_bell=bell; double lastck_time=now(), prevck_time=0, used_time=0;
   log_progress(bell,k,len,s,0,"start  ");
   while(bell<target){
     long long m=B; if(target-bell<m) m=target-bell; if(nextck-bell<m) m=nextck-bell;
@@ -286,7 +294,12 @@ int main(int argc,char**argv){
     }
     tmul+=now()-tb; s=st;
     if(bell==nextck||bell==target){
-      if(write_ckpt(bell,k,len,s)) return 1;
+      double span=now()-lastck_time;                            // computing time since the last checkpoint
+      long long from=lastck_bell; double secs=span;
+      if(bell-lastck_bell<interval/2&&prevck_bell<lastck_bell){ from=prevck_bell; secs=prevck_time+span; }
+      if(write_ckpt(bell,k,len,s,from,secs)) return 1;
+      prevck_bell=lastck_bell; prevck_time=span; lastck_bell=bell; lastck_time=now();   // writing is not counted
+      (void)used_time;
       if(prevname[0]) remove(prevname);                       // drop the previous intermediate checkpoint
       if(bell<target) ckpt_name(prevname,sizeof prevname,bell); else prevname[0]=0;
       log_progress(bell,k,len,s,now()-t0,bell==target?"target ":"ckpt   ");
