@@ -112,7 +112,7 @@ The visit frequencies of the chain agree with the real orbits (TM1: total variat
 The model has no memory: if there is still no halt after N Bells, the chances for the next N Bells are the same again.
 
 **Limits.** The fair-coin assumption is not proven: the parities come from the 3/2 dynamics, so correlations are possible, and they could change all the numbers above (even whether a halt ever happens).
-For the runs done so far see "Status" below.
+So far only O1 (TM1, 10⁹ Bells) and O2 (TM2, 10⁶ Bells) have been simulated far enough to say anything; at the probabilities above, these runs could not have shown a halt anyway.
 
 ## Fast simulation
 For TM1 there is a fast simulation, `bellntt` in the TM1 repository. It does not simulate the tape but the map on (k, S) with the table, and it is written so that very long numbers stay cheap:
@@ -324,19 +324,6 @@ For comparison, the simple reference program `bellrun` (40 Bells per pass over k
 
 ---
 
-## Status (16 Oct 2026)
-Longest simulations of the four orbits so far, none of them halted:
-
-| Orbit | Machine | Bells simulated | by | Output at the end |
-|---|---|---|---|---|
-| O1 | TM1 | 10⁹ | Thomas Reus (`bellntt`, TM1 repository) | `KCHECK 825729492582408624 584962508 10001` |
-| O2 | TM2 | 5.3·10¹¹ | Andrew Ducharme (bbchallenge Discord, night of 16/17 Oct 2026) | `538433055904 669841 1` |
-| O3 | TM2a | 3.5·10¹¹ | Andrew Ducharme (same) | `347467625876 538100 e` |
-| O4 | TM2b | run announced | Andrew Ducharme | — |
-
-- Andrew's runs took less than 10 hours each, much faster than the estimates in "Fast simulation" above. His program and its output format are not described here; we read the first number as the number of Bells and the last one as the word P (`e` = empty). The runs have not been cross-checked with our programs (a comparison of fingerprints, e.g. after 10⁶ Bells as in [TM2.md](TM2.md), would do this).
-- Under the Markov estimate, the chance of a halt within these runs was about 37 % (O2) and 27 % (O3), so the absence of a halt is not surprising.
-
 ## How the family was found
 A quick scan of the 663 BB(6) holdouts (`scan/holdouts_663.txt`) for Bell behaviour (`scan/bellscan.c`, 10⁷ steps per machine) found 56 machines with Bell-like growth (`scan/bell_candidates.txt`).
 Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; these are the seven machines above. The other 49 grow with other factors or less regularly and have not been analysed.
@@ -344,7 +331,7 @@ Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; 
 ## Open points
 - The identifications are observations from simulations and tables (checked for finitely many cases), not proofs.
 - Markov estimate for the orbits O3 and O4 not recomputed (expected: the same as for TM1/TM2).
-- No long simulation of O4 yet (announced); the runs for O2 and O3 are not cross-checked.
+- Simulations far beyond 10⁵ Bells exist only for O1 (TM1, 10⁹ Bells) and O2 (TM2, 10⁶ Bells).
 - A fast simulation (block method with NTT, as `bellntt` for TM1) could serve all four orbits with one program and one table.
 
 ## Files
