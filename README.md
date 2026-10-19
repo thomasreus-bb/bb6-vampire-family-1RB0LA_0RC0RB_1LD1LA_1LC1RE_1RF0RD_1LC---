@@ -13,9 +13,10 @@ The first machine of this investigation, TM1, has its own repository with the fa
 [bb6-1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE](https://github.com/thomasreus-bb/bb6-1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE).
 Data of TM1 are not copied here; this document refers to that repository.
 
-## Simulation status (19 Oct 2026, 17:56 CEST)
+## Simulation status (19 Oct 2026, 22:16 CEST)
 - **Orbit O1** (TM1): simulated to **Bell 1.08·10¹⁰ without a halt** with [`orbits/O1`](orbits/O1) (KCHECK `11135687718517257442 6317595012 11`; k has 6,317,595,012 bits; at Bell 10¹⁰: `13950685721272283034 5849625012 11`). Run time on a notebook (Intel i5-1135G7, 2 threads): about 13 minutes per 10⁸ Bells at this size.
-- **Orbit O2** (TM2, TM1-F, TM2'): running (Thomas Reus).
+- **Orbit O2** (TM2, TM1-F, TM2'): simulated to **Bell 10¹⁰ without a halt** with `orbits/O2` (KCHECK `11223645981224383260 5849625012 11`), run continuing to 2·10¹⁰ (Thomas Reus).
+  Ersen reports an independent run of O2 with his own engine (GMP, divide-and-conquer) to **Bell 10¹¹ without a halt**, full precision up to 6.3·10¹⁰ and with *horizon pruning* beyond (only the low (10¹¹ − N) + ~64 bits of k are kept; they determine the run up to 10¹¹, and KCHECK = k mod 2⁶⁴ stays comparable). His KCHECK values from 1.83·10¹⁰ to 10¹¹ are internally consistent (bit lengths = N·log₂1.5 + ~4.5, as in our runs); **a direct comparison with the bellntt run is pending** (first common checkpoints at 1.9·10¹⁰ and 2·10¹⁰: `10272958223498532662 11114287518 1`, `12174170564911698608 11699250019 1`).
 - **Orbit O3** (TM2a): simulation started by Andrew Ducharme on 19 Oct 2026.
 - **Orbit O4** (TM2b, TM2b'): not yet started.
 - **Double-checks:** O2: an independent run on a second computer reproduces all 17 KCHECK values of the main run from Bell 10⁸ to 1.7·10⁹ (at 1.7·10⁹: `14748382107835157828 994436256 10001`). O1: an independent run reproduces the KCHECK values at Bells 6·10⁸, 7·10⁸, 8·10⁸, 9·10⁸ and 10⁹ (`8610941070033361538 584962505 1101`); continued to Bell 1,000,000,005 it gives `825729492582408624 584962508 10001`, the reference value of the TM1 repository.
