@@ -13,8 +13,8 @@ The first machine of this investigation, TM1, has its own repository with the fa
 [bb6-1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE](https://github.com/thomasreus-bb/bb6-1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE).
 Data of TM1 are not copied here; this document refers to that repository.
 
-## Simulation status (19 Oct 2026, 07:49 CEST)
-- **Orbit O1** (TM1): simulated to **Bell 1.06·10¹⁰ without a halt** with [`orbits/O1`](orbits/O1) (KCHECK `11101570140051473766 6200602512 1101`; k has 6,200,602,512 bits). Run time on a notebook (Intel i5-1135G7, 2 threads): about 13 minutes per 10⁸ Bells at this size.
+## Simulation status (19 Oct 2026, 08:17 CEST)
+- **Orbit O1** (TM1): simulated to **Bell 1.08·10¹⁰ without a halt** with [`orbits/O1`](orbits/O1) (KCHECK `11135687718517257442 6317595012 11`; k has 6,317,595,012 bits; at Bell 10¹⁰: `13950685721272283034 5849625012 11`). Run time on a notebook (Intel i5-1135G7, 2 threads): about 13 minutes per 10⁸ Bells at this size.
 - **Double-check:** an independent run on a second computer reproduces the KCHECK values at Bells 6·10⁸, 7·10⁸, 8·10⁸, 9·10⁸ and 10⁹ (`8610941070033361538 584962505 1101`); continued to Bell 1,000,000,005 it gives `825729492582408624 584962508 10001`, the reference value of the TM1 repository.
 - **Planned:** on my notebook (16 GB RAM, not upgradeable): first all four orbits up to Bell 10¹⁰ (O1 done), then a second round of all four up to Bell 2·10¹⁰, which is about the limit of 16 GB. After that, external help is needed for 10¹¹ (about 64 GB RAM required).
 - **Halting probability** (Markov estimate, see [below](#halt-expected-markov-estimate)): up to Bell 10¹⁰ about 0.9 % per orbit (3.5 % for at least one of the four orbits), up to Bell 10¹¹ about 8.5 % per orbit (30 % for at least one); the value for four orbits assumes that they behave like independent random sequences.
