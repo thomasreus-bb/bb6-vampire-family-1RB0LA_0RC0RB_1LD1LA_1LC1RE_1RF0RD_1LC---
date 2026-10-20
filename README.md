@@ -144,6 +144,28 @@ For comparison, the simple reference program `bellrun` (40 Bells per pass over k
 
 **For the family.** The same method works for every orbit of the family, since they all have the same map. The directories `orbits/O1` … `orbits/O4` each contain `bellntt` for one orbit, with the TM1 table, a start checkpoint and a reference checkpoint; the program writes text checkpoints, continues from the last one and stops at a given target Bell (see `orbits/O2/README.md`). All four orbits to 10¹² Bells would take about 4 × 1.4 years on 2 cores, or correspondingly less on more cores.
 
+### Horizon pruning and `bellnttp`
+**Idea** (used by Ersen for his O2 run to 10¹¹): the next Bell depends only on S and k mod 4, and k' = 3·⌊k/2⌋ + c, so k' mod 2<sup>j</sup> depends only on k mod 2<sup>j+1</sup>. To decide whether an orbit halts before a target Bell T, it is enough to keep k mod 2<sup>(T − N) + margin</sup> at Bell N instead of the whole k. Up to N ≈ 0.63·T the whole k is shorter than that and nothing changes; after that the number shrinks towards T. KCHECK = k mod 2⁶⁴ and S stay exactly comparable with full runs; only the bit length differs.
+
+**Memory.** The largest number of a pruned run has about 0.37·T bits instead of 0.585·T:
+
+| target T | largest k, full run | largest k, pruned run | RAM, pruned run with `bellnttp` (estimate) |
+|---|---|---|---|
+| 2·10¹⁰ | 1.5 GB | 0.9 GB | ~5 GB |
+| 4·10¹⁰ | 2.9 GB | 1.8 GB | ~9 GB |
+| 10¹¹ | 7.3 GB | 4.6 GB | ~25 GB |
+| 10¹² | 73 GB | 46 GB | ~250 GB (or RAM + disk) |
+
+**Run time.** With `bellntt`'s block method the part up to 0.63·T costs as much as before, the pruned part much less; a pruned run to T takes roughly 0.6–0.8 of a full run to T (measured: 0.8 at T = 6·10⁷). The large speed-up of Ersen's engine (about 3–4 minutes per 10⁹ Bells at 2·10¹⁰ bits, roughly 30–100 times faster than `bellntt` there) comes from its divide-and-conquer multiplication with GMP, not from the pruning.
+
+**Limit.** A pruned run cannot be continued beyond its T, since the upper bits are gone. To go further, a new run has to start from a full checkpoint at Bell ≤ 0.63·T (or from Bell 5).
+
+**`bellnttp`** (in each orbit directory) is `bellntt` with two additions:
+- option `-p` (with `-t T`): horizon pruning towards T, keeping (T − N) + 128 bits. Pruned checkpoints are written as `bell_<N>_pchkpt.txt` with a line `horizon T`; `bellntt` does not read them, and `bellnttp` uses them only with `-p` and a target ≤ T. Without `-p`, `bellnttp` works exactly like `bellntt` and uses the same checkpoints.
+- **D, the distance to HALT.** For every word S of the table, d(S) is the smallest number of Bells after which a HALT entry can be reached from S if the bits of k are suitable (d = 1: the next Bell can halt; for the TM1 table d lies between 1 and 44). Each log line shows d(S) at the checkpoint and D = the smallest d reached at any Bell so far, with the Bell where it happened (stored in the checkpoints; for runs continued from older checkpoints, tracking starts there). A path of length d needs about d suitable bits of k, i.e. it has a probability of roughly 2<sup>−d</sup>, so D shows how close the orbit has come to a halt. Example: O1 from Bell 10⁶ to 10⁷ reaches D = 15 (at Bell 1,056,246), O2 in the same range D = 19.
+
+Tests: pruned and full runs give identical KCHECK and S at every checkpoint (O1 to 10⁷, including the TM1 reference value at 10,000,005; O2 to 6·10⁷, equal to the values of the main O2 run); a pruned run interrupted and continued gives the same result; a pruned checkpoint is refused for a run without `-p` or with a larger target.
+
 ---
 
 ## TM1

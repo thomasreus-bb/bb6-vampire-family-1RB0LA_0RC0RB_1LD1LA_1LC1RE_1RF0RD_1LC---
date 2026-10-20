@@ -66,3 +66,13 @@ k grows by about 0.585 bits per Bell. A checkpoint holds k in hexadecimal, i.e. 
 The program keeps several arrays of the size of k in memory (k, the high part, and the product, together about 4 × the size of k at the target).
 Run time on 2 cores: 10⁸ Bells in about 1 minute (measured with this program), 10⁹ Bells in about 25 minutes (measured for TM1 with the same program core); beyond that the times grow roughly like N^1.5 (10¹⁰ ≈ 12 h, 10¹¹ ≈ 16 days).
 Choose INTERVAL so that writing a checkpoint takes little time compared with the run between two checkpoints (e.g. 10⁷ up to 10⁹ Bells, 10⁸ beyond).
+
+## bellnttp: horizon pruning and distance to HALT
+`bellnttp.c` is `bellntt.c` with two additions (details in the main [README](../../README.md#horizon-pruning-and-bellnttp)):
+
+    gcc -O3 -march=native -fopenmp -o bellnttp bellnttp.c -lm
+    ./bellnttp -t 20000000000 -p -i 100000000      # pruned run towards Bell 2·10¹⁰
+
+- `-p` (only together with `-t T`): keeps only k mod 2^((T − Bell) + 128). From Bell ≈ 0.63·T on, the numbers shrink towards T; memory and time go down. KCHECK and S stay comparable with full runs, the bit length is the pruned one (the log line says `pruned to T`). Pruned checkpoints are named `bell_<N>_pchkpt.txt`; such a run cannot be continued beyond T. `bellntt` ignores pruned checkpoints.
+- Without `-p`, `bellnttp` works exactly like `bellntt` and continues from the same checkpoints, so switching from `bellntt` to `bellnttp` is possible at any time (stop `bellntt` with Ctrl-C, start `bellnttp`).
+- Every log line ends with `d <d(S)> D <D> (Bell <N>)`: d(S) is the smallest number of Bells from the current word S to a HALT entry of the table, D the smallest d reached so far (and where). D is also written into the checkpoints.
