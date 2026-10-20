@@ -166,6 +166,26 @@ For comparison, the simple reference program `bellrun` (40 Bells per pass over k
 
 Tests: pruned and full runs give identical KCHECK and S at every checkpoint (O1 to 10⁷, including the TM1 reference value at 10,000,005; O2 to 6·10⁷, equal to the values of the main O2 run); a pruned run interrupted and continued gives the same result; a pruned checkpoint is refused for a run without `-p` or with a larger target.
 
+### `belldc`: divide and conquer with GMP
+`belldc` (in each orbit directory) computes the same orbit much faster. It uses the same block idea as `bellntt` (k = q·2<sup>B+2</sup> + r; after B Bells k = q·3<sup>B</sup>·4 + r<sub>B</sub>), but computes the low part r<sub>B</sub> **recursively**: B Bells = B/2 Bells on the lowest B/2 + 2 bits, one product with 3<sup>B/2</sup>, then B/2 Bells on the result; only blocks of at most 32 Bells are simulated directly, on a 64-bit word. The cost grows like N·log²N instead of N<sup>1.5</sup>. All multiplications use GMP (one core). It has the same options as `bellnttp` (`-t`, `-p`, `-i`, `-b`) plus `-m` (memory saving), the same checkpoint files (the programs can continue each other's runs) and the same log lines, including D.
+
+    sudo apt install -y libgmp-dev
+    gcc -O3 -march=native -o belldc belldc.c -lgmp
+    ./belldc -t 20000000000 -i 1000000000          # add -p for horizon pruning, -m to save memory
+
+Measured on 1 core (cloud machine), orbit O2:
+
+| range | `bellntt` (2 threads) | `belldc` | `belldc -m` | peak memory `belldc` / `-m` (k at the end: 292 MB) |
+|---|---|---|---|---|
+| Bell 10⁶ → 1.7·10⁹ | 4,188 s | 391 s | – | – |
+| Bell 1.7·10⁹ → 4·10⁹ | ≈ 9,000 s (notebook) | 755 s | 1,228 s | 1.05 GB / 0.47 GB |
+
+So `belldc` is about 10–12 times faster than `bellntt` at these sizes, and the factor grows with N (about 4–5 minutes per 10⁹ Bells at k ≈ 2·10⁹ bits). Its memory is about 3.6 × the size of k, with `-m` about 1.6 × (and about 1.6 times slower).
+
+Rough estimates for a notebook with 16 GB RAM (WSL set to about 13 GB with `memory=13GB` in `.wslconfig`): full runs up to about 5·10¹⁰ (`-m`: about 10¹¹); pruned runs (`-p`) up to about 8·10¹⁰ (`-m`: about 1.5·10¹¹). Run time to 10¹⁰ about 1 hour, to 10¹¹ (pruned) about half a day to one day. Note the size of the checkpoint files (one hex digit per 4 bits of k): e.g. 9 GB at k = 3.7·10¹⁰ bits (the largest k of a pruned run to 10¹¹); for such runs choose a large interval (`-i 5000000000`) and keep enough free disk space for two checkpoints.
+
+Tests: `belldc` reproduces the KCHECK values of `bellntt` at every checkpoint (O1 to 10⁷ including the TM1 reference, O2 at all 17 checkpoints from 10⁸ to 1.7·10⁹ and at 2·10⁹, 3·10⁹, 4·10⁹); its checkpoints are identical to those of `bellntt` (same k and checksum, checked at Bell 10,000,005), pruned ones to those of `bellnttp` (checked at 6·10⁷); runs continue across the programs; a HALT inside the recursion is found at the same Bell as with `bellnttp` (test with an artificial start).
+
 ---
 
 ## TM1
@@ -370,7 +390,7 @@ Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; 
 ## Files
 | Path | Content |
 |---|---|
-| `orbits/O1` … `orbits/O4` | fast simulation (`bellntt`, and `bellnttp` with horizon pruning and distance to HALT) of one orbit each, with table and checkpoints; each directory can be copied and used on its own |
+| `orbits/O1` … `orbits/O4` | fast simulation (`bellntt`; `bellnttp` with horizon pruning and distance to HALT; `belldc`, divide and conquer with GMP, about 10 times faster) of one orbit each, with table and checkpoints; each directory can be copied and used on its own |
 | `TM2.md` | detailed notes on TM2 (table, Markov estimate, Discord history) |
 | `src/cyc.c` | Bell simulator for the TM2-type machines: direct simulation, and single Bells from a given (P, n) |
 | `src/table.py` | builds a table by breadth-first search with `cyc` |

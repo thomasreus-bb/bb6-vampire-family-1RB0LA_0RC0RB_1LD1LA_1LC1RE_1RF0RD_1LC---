@@ -75,3 +75,16 @@ Choose INTERVAL so that writing a checkpoint takes little time compared with the
 - `-p` (only together with `-t T`): keeps only k mod 2^((T − Bell) + 128). From Bell ≈ 0.63·T on, the numbers shrink towards T; memory and time go down. KCHECK and S stay comparable with full runs, the bit length is the pruned one (the log line says `pruned to T`). Pruned checkpoints are named `bell_<N>_pchkpt.txt`; such a run cannot be continued beyond T. `bellntt` ignores pruned checkpoints.
 - Without `-p`, `bellnttp` works exactly like `bellntt` and continues from the same checkpoints, so switching from `bellntt` to `bellnttp` is possible at any time (stop `bellntt` with Ctrl-C, start `bellnttp`).
 - Every log line ends with `d <d(S)> D <D> (Bell <N>)`: d(S) is the smallest number of Bells from the current word S to a HALT entry of the table, D the smallest d reached so far (and where). D is also written into the checkpoints.
+
+## belldc: divide and conquer with GMP (about 10 times faster)
+`belldc.c` computes the same orbit with a recursive (divide and conquer) block method and GMP multiplication; details and measurements in the main [README](../../README.md#belldc-divide-and-conquer-with-gmp).
+
+    sudo apt install -y libgmp-dev                 # once
+    gcc -O3 -march=native -o belldc belldc.c -lgmp
+    ./belldc -t 20000000000 -i 1000000000          # full run to Bell 2·10¹⁰, checkpoint every 10⁹ Bells
+    ./belldc -t 100000000000 -p -i 5000000000      # pruned run towards 10¹¹
+    ./belldc -t 100000000000 -p -m -i 5000000000   # the same with less memory (about 1.6 × k instead of 3.6 × k, a little slower)
+
+- Same options as `bellnttp` (`-t`, `-p`, `-i`, `-b`) plus `-m`; default checkpoint interval 10⁹ Bells.
+- Same checkpoint files and log lines (KCHECK, d and D) as `bellntt` / `bellnttp`: switching between the programs is possible at any time (Ctrl-C, start the other one).
+- One core (GMP). The largest checkpoint files can be several GB; keep space for two of them.
