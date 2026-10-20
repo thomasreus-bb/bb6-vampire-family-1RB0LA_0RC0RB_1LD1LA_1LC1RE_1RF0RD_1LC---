@@ -370,7 +370,7 @@ Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; 
 ## Files
 | Path | Content |
 |---|---|
-| `orbits/O1` … `orbits/O4` | fast simulation (`bellntt`) of one orbit each, with table and checkpoints; each directory can be copied and used on its own |
+| `orbits/O1` … `orbits/O4` | fast simulation (`bellntt`, and `bellnttp` with horizon pruning and distance to HALT) of one orbit each, with table and checkpoints; each directory can be copied and used on its own |
 | `TM2.md` | detailed notes on TM2 (table, Markov estimate, Discord history) |
 | `src/cyc.c` | Bell simulator for the TM2-type machines: direct simulation, and single Bells from a given (P, n) |
 | `src/table.py` | builds a table by breadth-first search with `cyc` |
