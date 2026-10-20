@@ -15,7 +15,7 @@ Data of TM1 are not copied here; this document refers to that repository.
 
 ## Simulation status (20 Oct 2026, 08:45 CEST)
 - **Orbit O1** (TM1): simulated to **Bell 1.08·10¹⁰ without a halt** with [`orbits/O1`](orbits/O1) (KCHECK `11135687718517257442 6317595012 11`; k has 6,317,595,012 bits; at Bell 10¹⁰: `13950685721272283034 5849625012 11`). Run time on a notebook (Intel i5-1135G7, 2 threads): about 13 minutes per 10⁸ Bells at this size.
-- **Orbit O2** (TM2, TM1-F, TM2'): simulated to **Bell 10¹⁰ without a halt** with `orbits/O2` (KCHECK `11223645981224383260 5849625012 11`), run continuing to 2·10¹⁰ (Thomas Reus).
+- **Orbit O2** (TM2, TM1-F, TM2'): simulated to **Bell 1.46·10¹⁰ without a halt** with `orbits/O2` (KCHECK `12027117318211413584 8540452515 11`; at Bell 10¹⁰: `11223645981224383260 5849625012 11`), run continuing to 2·10¹⁰ (Thomas Reus).
   Ersen reports an independent run of O2 with his own engine (GMP, divide-and-conquer) to **Bell 10¹¹ without a halt**, full precision up to 6.3·10¹⁰ and with *horizon pruning* beyond (only the low (10¹¹ − N) + ~64 bits of k are kept; they determine the run up to 10¹¹, and KCHECK = k mod 2⁶⁴ stays comparable). His KCHECK values from 1.83·10¹⁰ to 10¹¹ are internally consistent (bit lengths = N·log₂1.5 + ~4.5, as in our runs); **a direct comparison with the bellntt run is pending** (first common checkpoints at 1.9·10¹⁰ and 2·10¹⁰: `10272958223498532662 11114287518 1`, `12174170564911698608 11699250019 1`).
 - **Orbit O3** (TM2a): simulation started by Andrew Ducharme on 19 Oct 2026.
 - **Orbit O4** (TM2b, TM2b'): not yet started.
