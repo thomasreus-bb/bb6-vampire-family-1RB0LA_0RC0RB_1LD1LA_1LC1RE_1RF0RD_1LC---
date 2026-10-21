@@ -33,6 +33,8 @@ Examples:
 If the orbit reaches a HALT entry of the table, the program says so, writes `checkpoints/HALT_bell_<N>.txt` and stops. If it reaches a word that is not in the table, it writes `checkpoints/UNKNOWN_bell_<N>.txt`.
 
 ## Checkpoint files
+**Note (21 Oct 2026):** `bellntt` and `bellnttp` versions from before 21 Oct 2026 wrote **unreadable checkpoints once k had more than 8.6·10⁹ bits** (Bell above about 1.47·10¹⁰), because `fprintf` cannot write strings longer than 2³¹ − 1 characters. The runs themselves and their `progress.log` values are correct; only such checkpoints cannot be used. Fixed in the current versions (and `belldc` was never affected).
+
 A checkpoint is a text file `checkpoints/bell_<N>_chkpt.txt` for one Bell N:
 
     # bellntt checkpoint

@@ -110,6 +110,7 @@ static int write_ckpt(long long bell,const mpz_t k,int s,long long from,double s
   if(dmin<INT_MAX) fprintf(f,"dmin %d at_bell %lld since_bell %lld\n",dmin,dminbell,dsince);
   if(from>=0&&bell>from) fprintf(f,"time_per_bell %.3e s (average over Bells %lld-%lld, run time %.3f s)\n",secs/(double)(bell-from),from,bell,secs);
   fprintf(f,"checksum %016llx\n",(unsigned long long)h);
+  if(ferror(f)){ fprintf(stderr,"%s: write error (disk full?)\n",tmpn); fclose(f); remove(tmpn); return -1; }
   if(fclose(f)){ perror(tmpn); return -1; }
   if(rename(tmpn,name)){ perror(name); return -1; }
   return 0; }

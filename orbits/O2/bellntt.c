@@ -176,11 +176,16 @@ static int write_ckpt(long long bell,const u64*k,size_t len,int s,long long from
   u64 h=fnv(FNV0,lb,strlen(lb)); h=fnv(h,ls,strlen(ls)); h=fnv(h,"k_hex ",6); h=fnv(h,hx,nd); h=fnv(h,"\n",1);
   time_t now_t=time(NULL); char d[16],t[16]; strftime(d,sizeof d,"%Y-%m-%d",localtime(&now_t)); strftime(t,sizeof t,"%H:%M:%S",localtime(&now_t));
   FILE*f=fopen(tmpn,"w"); if(!f){ perror(tmpn); free(hx); return -1; }
-  fprintf(f,"# bellntt checkpoint\ndate %s\ntime %s\nprogram %s\norbit %s\n%s%sk_bits %lld\nk_hex %s\n",
-          d,t,PROGLABEL,orbit,lb,ls,bits,hx);
+  // k_hex is written with fwrite: fprintf("%s") fails for strings longer than 2^31-1 characters
+  // (k with more than 8.6e9 bits, Bell > ~1.47e10), which made such checkpoints unreadable before 21 Oct 2026
+  fprintf(f,"# bellntt checkpoint\ndate %s\ntime %s\nprogram %s\norbit %s\n%s%sk_bits %lld\nk_hex ",
+          d,t,PROGLABEL,orbit,lb,ls,bits);
+  for(size_t o=0;o<nd;o+=(size_t)1<<26){ size_t w=nd-o<((size_t)1<<26)?nd-o:((size_t)1<<26); if(fwrite(hx+o,1,w,f)!=w) break; }
+  fputc('\n',f);
   if(from>=0&&bell>from) fprintf(f,"time_per_bell %.3e s (average over Bells %lld-%lld, run time %.3f s)\n",secs/(double)(bell-from),from,bell,secs);
   fprintf(f,"checksum %016llx\n",(unsigned long long)h);
   free(hx);
+  if(ferror(f)){ fprintf(stderr,"%s: write error (disk full?)\n",tmpn); fclose(f); remove(tmpn); return -1; }
   if(fclose(f)){ perror(tmpn); return -1; }
   if(rename(tmpn,name)){ perror(name); return -1; }
   return 0;
