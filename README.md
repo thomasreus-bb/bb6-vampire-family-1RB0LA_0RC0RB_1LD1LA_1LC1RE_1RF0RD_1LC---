@@ -13,6 +13,8 @@ The first machine of this investigation, TM1, has its own repository with the fa
 [bb6-1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE](https://github.com/thomasreus-bb/bb6-1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE).
 Data of TM1 are not copied here; this document refers to that repository.
 
+> **The method works: first HALT found (21 Oct 2026).** The same approach (Bell structure → finite table for the Bell map → Markov estimate → fast exact simulation) applied to another BB(6) holdout from the scan, `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` ("vampire-like in base 3": n' = (4n + c)/3, 192 words, halting rate ≈ 1.6·10⁻⁹ per Bell), found a **HALT at Bell 298,793,335**, checked against the real Turing machine. See [Halt-found-1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC](https://github.com/thomasreus-bb/Halt-found-1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC).
+
 ## Simulation status (21 Oct 2026, 09:20 CEST)
 - **Orbit O1** (TM1): simulated to **Bell 1.08·10¹⁰ without a halt** with [`orbits/O1`](orbits/O1) (KCHECK `11135687718517257442 6317595012 11`; k has 6,317,595,012 bits; at Bell 10¹⁰: `13950685721272283034 5849625012 11`). Run time on a notebook (Intel i5-1135G7, 2 threads): about 13 minutes per 10⁸ Bells at this size.
 - **Orbit O2** (TM2, TM1-F, TM2'): simulated to **Bell 2·10¹⁰ without a halt** with `orbits/O2` (`bellntt`; KCHECK `12174170564911698608 11699250019 1`; at Bell 10¹⁰: `11223645981224383260 5849625012 11`) (Thomas Reus).
