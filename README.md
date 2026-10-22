@@ -15,14 +15,23 @@ Data of TM1 are not copied here; this document refers to that repository.
 
 > **The method works: first HALT found (21 Oct 2026).** The same approach (Bell structure → finite table for the Bell map → Markov estimate → fast exact simulation) applied to another BB(6) holdout from the scan, `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` ("vampire-like in base 3": n' = (4n + c)/3, 192 words, halting rate ≈ 1.6·10⁻⁹ per Bell), found a **HALT at Bell 298,793,335**, checked against the real Turing machine. See [Halt-found-1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC](https://github.com/thomasreus-bb/Halt-found-1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC).
 
-## Simulation status (22 Oct 2026, 06:00 CEST)
-- **Orbit O1** (TM1): simulated to **Bell 1.08·10¹⁰ without a halt** with [`orbits/O1`](orbits/O1) (KCHECK `11135687718517257442 6317595012 11`; k has 6,317,595,012 bits; at Bell 10¹⁰: `13950685721272283034 5849625012 11`). Run time on a notebook (Intel i5-1135G7, 2 threads): about 13 minutes per 10⁸ Bells at this size.
-- **Orbit O2** (TM2, TM1-F, TM2'): **simulated to Bell 10¹¹ without a halt by two independent programs**, which agree at every common checkpoint (KCHECK and S at all 17 points from 2·10¹⁰ to 10¹¹ in steps of 5·10⁹; full-precision bit lengths up to 6·10¹⁰): Ersen's engine (GMP, divide and conquer) and `belldc` (Thomas Reus, with horizon pruning towards 10¹¹). At 10¹¹: KCHECK `6379036783869152234`, S = `11`. Before, `bellntt` reached 2·10¹⁰ (at 10¹⁰: `11223645981224383260 5849625012 11`). Closest approach to a HALT so far: D = 5 at Bell 87,404,383,391. In the pruned range the bit length is only that of the kept low part (`belldc` keeps 128 extra bits, Ersen about 64), so only KCHECK and S are compared there.
-- **Orbit O3** (TM2a): simulation started by Andrew Ducharme on 19 Oct 2026.
-- **Orbit O4** (TM2b, TM2b'): not yet started.
-- **Double-checks:** O2: an independent run on a second computer reproduces all 17 KCHECK values of the main run from Bell 10⁸ to 1.7·10⁹ (at 1.7·10⁹: `14748382107835157828 994436256 10001`); Andrew Ducharme's run on a third computer matches at Bell 3.5·10⁹ (`283842985451259460 2047368757 1`). O1: an independent run reproduces the KCHECK values at Bells 6·10⁸, 7·10⁸, 8·10⁸, 9·10⁸ and 10⁹ (`8610941070033361538 584962505 1101`); continued to Bell 1,000,000,005 it gives `825729492582408624 584962508 10001`, the reference value of the TM1 repository.
-- **Planned:** Thomas Reus runs O1 and O2 up to Bell 2·10¹⁰ on a notebook (16 GB RAM, not upgradeable; 2·10¹⁰ is about the limit of 16 GB). Beyond that, external help is needed: 10¹¹ requires about 64 GB RAM.
-- **Halting probability** (Markov estimate, see [below](#halt-expected-markov-estimate)): up to Bell 10¹⁰ about 0.9 % per orbit (3.5 % for at least one of the four orbits), up to Bell 10¹¹ about 8.5 % per orbit (30 % for at least one); the value for four orbits assumes that they behave like independent random sequences.
+## Simulation status (22 Oct 2026)
+No halt has been found on any of the four orbits.
+
+| orbit | machines | reached without halt | confirmed independently | closest approach (D) |
+|---|---|---|---|---|
+| O1 | TM1 | 1.08·10¹⁰ (Thomas Reus, `bellntt`) | up to 10⁹ (second computer) | – |
+| O2 | TM2, TM1-F, TM2' | **10¹¹** (Ersen; Thomas Reus with `belldc`) | **up to 10¹¹** (two programs) | 5 (Bell 87,404,383,391) |
+| O3 | TM2a | **10¹¹** (Ersen) | up to 1.4·10¹⁰ (Andrew Ducharme; at 10¹⁰ also `belldc`) | 9 (Bell 420,738,969) |
+| O4 | TM2b, TM2b' | 10¹⁰ (Andrew Ducharme, `bellntt`) | at 10¹⁰ (`belldc`) | 6 (Bell 2,129,211,986) |
+
+- **O1** (TM1): KCHECK at 10¹⁰ `13950685721272283034 5849625012 11`, at 1.08·10¹⁰ `11135687718517257442 6317595012 11`. An independent run reproduces the KCHECK values at 6·10⁸ … 10⁹ (`8610941070033361538 584962505 1101`) and, continued to Bell 1,000,000,005, the reference value `825729492582408624 584962508 10001` of the TM1 repository. Ersen offered to take O1 to 10¹¹ (no result reported yet).
+- **O2** (TM2, TM1-F, TM2'): two independent programs, Ersen's engine (GMP, divide and conquer) and `belldc` (Thomas Reus, horizon pruning towards 10¹¹), agree in KCHECK and S at all 17 common checkpoints from 2·10¹⁰ to 10¹¹ (every 5·10⁹; also in the bit length up to 6·10¹⁰, the end of the full-precision range). At 10¹¹: KCHECK `6379036783869152234`, S = `11`. Earlier: `bellntt` to 2·10¹⁰ (equal to Ersen at 1.9·10¹⁰ and 2·10¹⁰ including bit lengths: `12174170564911698608 11699250019 1` at 2·10¹⁰), a second-computer run to 1.7·10⁹ (17 checkpoints), and Andrew Ducharme at 3.5·10⁹ (`283842985451259460 2047368757 1`). `belldc` run time from 8.5·10⁹ to 10¹¹: 16 hours on a notebook (16 GB RAM).
+- **O3** (TM2a): Ersen reached 10¹¹ (final KCHECK `9899542532481302830`, S = `11`, pruned run; full precision up to 6.3·10¹⁰). At 10¹⁰ three programs agree: Ersen, Andrew Ducharme (`bellntt`) and `belldc`, KCHECK `9939947858229016780`; Ersen and Andrew also agree at 1.3·10¹⁰ and 1.4·10¹⁰, and `belldc` reproduces Ersen's values at 10⁸ … 5·10⁸.
+- **O4** (TM2b, TM2b'): Andrew Ducharme reached 10¹⁰ with `bellntt` (KCHECK `281319679749230232 5849625012 1100001`), reproduced exactly by `belldc`; his `belldc` run towards 10¹¹ started on 21 Oct.
+- In pruned runs only the low part of k is kept, so beyond 0.63·T only KCHECK = k mod 2⁶⁴ and S are compared, not the bit length.
+- **Next:** O1 and O4 to 10¹¹; with `belldc -p -m` this is possible on a 16 GB notebook in about one day per orbit. Then all four orbits are at 10¹¹. 10¹² would need about 46 GB per number (more RAM, or RAM plus disk as in Ersen's engine).
+- **Halting probability** (Markov estimate, see [below](#halt-expected-markov-estimate)): up to Bell 10¹¹ about 8.5 % per orbit (30 % for at least one of the four orbits), up to 10¹² about 59 % per orbit (97 % for at least one); the value for four orbits assumes that they behave like independent random sequences.
 
 ## In brief
 All seven machines iterate, as far as we can see, the same map on pairs (n, P):
