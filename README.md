@@ -1,7 +1,7 @@
 # A family of seven vampire-like BB(6) holdouts
 
 Author: Thomas Reus, with the AI model Claude Opus 5.5  
-Status: 21 Oct 2026 (draft; labels such as TM2a or TM2' are provisional)
+Status: 22 Oct 2026 (draft; labels such as TM2a or TM2' are provisional)
 
 This repository is about a **family of seven "energy vampire"-like Turing machines** from the recent holdout list (BB6_holdouts_663).
 
@@ -15,10 +15,9 @@ Data of TM1 are not copied here; this document refers to that repository.
 
 > **The method works: first HALT found (21 Oct 2026).** The same approach (Bell structure → finite table for the Bell map → Markov estimate → fast exact simulation) applied to another BB(6) holdout from the scan, `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` ("vampire-like in base 3": n' = (4n + c)/3, 192 words, halting rate ≈ 1.6·10⁻⁹ per Bell), found a **HALT at Bell 298,793,335**, checked against the real Turing machine. See [Halt-found-1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC](https://github.com/thomasreus-bb/Halt-found-1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC).
 
-## Simulation status (21 Oct 2026, 09:20 CEST)
+## Simulation status (22 Oct 2026, 06:00 CEST)
 - **Orbit O1** (TM1): simulated to **Bell 1.08·10¹⁰ without a halt** with [`orbits/O1`](orbits/O1) (KCHECK `11135687718517257442 6317595012 11`; k has 6,317,595,012 bits; at Bell 10¹⁰: `13950685721272283034 5849625012 11`). Run time on a notebook (Intel i5-1135G7, 2 threads): about 13 minutes per 10⁸ Bells at this size.
-- **Orbit O2** (TM2, TM1-F, TM2'): simulated to **Bell 2·10¹⁰ without a halt** with `orbits/O2` (`bellntt`; KCHECK `12174170564911698608 11699250019 1`; at Bell 10¹⁰: `11223645981224383260 5849625012 11`) (Thomas Reus).
-  Ersen reports an independent run of O2 with his own engine (GMP, divide-and-conquer) to **Bell 10¹¹ without a halt**, full precision up to 6.3·10¹⁰ and with *horizon pruning* beyond (only the low (10¹¹ − N) + ~64 bits of k are kept; they determine the run up to 10¹¹, and KCHECK = k mod 2⁶⁴ stays comparable). His KCHECK values from 1.83·10¹⁰ to 10¹¹ are internally consistent (bit lengths = N·log₂1.5 + ~4.5, as in our runs), and **they agree exactly with the bellntt run at the common checkpoints 1.9·10¹⁰ and 2·10¹⁰** (KCHECK, bit length and S: `10272958223498532662 11114287518 1`, `12174170564911698608 11699250019 1`). So two independent programs give the same orbit up to 2·10¹⁰; the range 2·10¹⁰ – 10¹¹ so far rests on Ersen's run alone.
+- **Orbit O2** (TM2, TM1-F, TM2'): **simulated to Bell 10¹¹ without a halt by two independent programs**, which agree at every common checkpoint (KCHECK and S at all 17 points from 2·10¹⁰ to 10¹¹ in steps of 5·10⁹; full-precision bit lengths up to 6·10¹⁰): Ersen's engine (GMP, divide and conquer) and `belldc` (Thomas Reus, with horizon pruning towards 10¹¹). At 10¹¹: KCHECK `6379036783869152234`, S = `11`. Before, `bellntt` reached 2·10¹⁰ (at 10¹⁰: `11223645981224383260 5849625012 11`). Closest approach to a HALT so far: D = 5 at Bell 87,404,383,391. In the pruned range the bit length is only that of the kept low part (`belldc` keeps 128 extra bits, Ersen about 64), so only KCHECK and S are compared there.
 - **Orbit O3** (TM2a): simulation started by Andrew Ducharme on 19 Oct 2026.
 - **Orbit O4** (TM2b, TM2b'): not yet started.
 - **Double-checks:** O2: an independent run on a second computer reproduces all 17 KCHECK values of the main run from Bell 10⁸ to 1.7·10⁹ (at 1.7·10⁹: `14748382107835157828 994436256 10001`); Andrew Ducharme's run on a third computer matches at Bell 3.5·10⁹ (`283842985451259460 2047368757 1`). O1: an independent run reproduces the KCHECK values at Bells 6·10⁸, 7·10⁸, 8·10⁸, 9·10⁸ and 10⁹ (`8610941070033361538 584962505 1101`); continued to Bell 1,000,000,005 it gives `825729492582408624 584962508 10001`, the reference value of the TM1 repository.
