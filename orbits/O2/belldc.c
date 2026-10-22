@@ -10,12 +10,15 @@
 //                without -t the run goes on until HALT or until it is interrupted (Ctrl-C)
 //   -p           horizon pruning towards TARGET: k is kept mod 2^((TARGET - Bell) + 128)
 //   -i INTERVAL  write a checkpoint at every Bell number divisible by INTERVAL (default 1000000000);
-//                the previous intermediate checkpoint is deleted, the start and target checkpoints are kept
+//                the previous intermediate checkpoint is deleted, the start and target checkpoints are kept,
+//                and with -p also the last exact checkpoint before pruning starts (Bell about TARGET/1.585)
 //   -b B         fixed block size in Bells; default: B = (bits of k)/8, at least 2^20
 //   -m           memory saving: B = (bits of k)/32 and smaller pieces in the big product (a little slower)
 //          ./belldc init BELL K S             write a first checkpoint (K < 2^64, S = the word with its leading 1)
 // Checkpoints are the same files as for bellntt / bellnttp (bell_<N>_chkpt.txt, pruned: bell_<N>_pchkpt.txt
-// with a line "horizon T"), so the programs can continue each other's runs.
+// with a line "horizon T"), so the programs can continue each other's runs.  With -p, checkpoints are written
+// as normal (exact) chkpt files until pruning really cuts bits of k, i.e. up to about Bell TARGET/1.585;
+// older pchkpt files from that phase are recognised as exact when read and can be continued beyond TARGET.
 //
 // Method. Write k = q*2^(B+2) + r with r < 2^(B+2). The first B Bells depend only on r (each Bell reads
 // bit 1 and shifts by one bit), and after them k = q*3^B*4 + r_B, where r_B is r after B Bells.
@@ -46,6 +49,7 @@ static int dmin=INT_MAX; static long long dminbell=-1, dsince=-1;
 static long long gbell=0;                 // Bell number of the next Bell to be simulated
 static int halted=0, haltS=-1; static long long haltbell=-1;
 static long long horizon=0;               // > 0: pruned run towards this Bell
+static int cut=0;                         // 1 once pruning has actually cut bits of k (before that k is exact)
 static char orbit[64]="?";
 static u64 p3[LEAF+1];
 static int bdiv=8;                        // block size = (bits of k) / bdiv; -m: 32 (less memory)
@@ -92,10 +96,10 @@ static long long bitlen(const mpz_t k){ return mpz_sgn(k)?(long long)mpz_sizeinb
 static void ckpt_name_h(char*buf,size_t sz,long long bell,int pruned){ snprintf(buf,sz,pruned?"checkpoints/bell_%lld_pchkpt.txt":"checkpoints/bell_%lld_chkpt.txt",bell); }
 
 static int write_ckpt(long long bell,const mpz_t k,int s,long long from,double secs){
-  char name[256],tmpn[300]; ckpt_name_h(name,sizeof name,bell,horizon>0); snprintf(tmpn,sizeof tmpn,"%s.tmp",name);
+  char name[256],tmpn[300]; ckpt_name_h(name,sizeof name,bell,cut); snprintf(tmpn,sizeof tmpn,"%s.tmp",name);
   long long bits=bitlen(k); size_t nd=(size_t)(bits+3)/4; if(nd==0) nd=1;
   char lb[64],ls[128],lh[64]=""; snprintf(lb,sizeof lb,"bell %lld\n",bell); snprintf(ls,sizeof ls,"S 1%s\n",names[s]);
-  if(horizon>0) snprintf(lh,sizeof lh,"horizon %lld\n",horizon);
+  if(cut) snprintf(lh,sizeof lh,"horizon %lld\n",horizon);
   u64 h=fnv(FNV0,lb,strlen(lb)); h=fnv(h,ls,strlen(ls)); h=fnv(h,lh,strlen(lh)); h=fnv(h,"k_hex ",6);
   time_t now_t=time(NULL); char d[16],t[16]; strftime(d,sizeof d,"%Y-%m-%d",localtime(&now_t)); strftime(t,sizeof t,"%H:%M:%S",localtime(&now_t));
   FILE*f=fopen(tmpn,"w"); if(!f){ perror(tmpn); return -1; }
@@ -202,7 +206,7 @@ static void mul_inplace(mpz_t q,const mpz_t pw){
 static void prune_k(mpz_t k,long long bell){
   if(horizon<=0) return;
   long long keep=(horizon-bell)+PMARGIN; if(keep<PMARGIN) keep=PMARGIN;
-  if(bitlen(k)>keep) mpz_fdiv_r_2exp(k,k,(mp_bitcnt_t)keep); }
+  if(bitlen(k)>keep){ mpz_fdiv_r_2exp(k,k,(mp_bitcnt_t)keep); cut=1; } }
 
 int main(int argc,char**argv){
   int init=argc>1&&!strcmp(argv[1],"init");
@@ -250,9 +254,13 @@ int main(int argc,char**argv){
   for(int i=0;i<nc;i++){ char nm[256]; long long cb=cand[i]>>1; int cp=(int)(cand[i]&1); ckpt_name_h(nm,sizeof nm,cb,cp);
     long long hor; int dm; long long dmb,dms;
     if(read_ckpt(nm,&bell,k,&s,&hor,&dm,&dmb,&dms)==0&&bell==cb){
+      // A "pruned" checkpoint written before pruning actually started is exact: there k is far below
+      // 2^((horizon - Bell) + 128) (a cut k would have about that many bits).  Use it as a full checkpoint.
+      if(hor>0&&bitlen(k)+64<(hor-bell)+PMARGIN){
+        printf("note: %s is exact (written before pruning cut any bits), used as a full checkpoint\n",nm); hor=0; }
       if(hor>0&&!(prune&&target<=hor)){
         fprintf(stderr,"skipping %s: pruned towards Bell %lld, usable only with -p and -t <= %lld\n",nm,hor,hor); bell=-1; continue; }
-      strcpy(startname,nm);
+      strcpy(startname,nm); if(hor>0) cut=1;
       if(dm<INT_MAX){ dmin=dm; dminbell=dmb; dsince=dms; } else dsince=bell;
       break; }
     fprintf(stderr,"skipping unreadable checkpoint %s\n",nm); bell=-1; }
@@ -266,7 +274,7 @@ int main(int argc,char**argv){
   if(bell>=target){ printf("start Bell %lld is not below the target, nothing to do\n",bell); return 0; }
   prune_k(k,bell);
   double t0=now(), tlow=0, tmul=0;
-  long long nextck=(bell/interval+1)*interval; char prevname[256]="";
+  long long nextck=(bell/interval+1)*interval; char prevname[256]=""; int prevcut=0;
   long long lastck_bell=bell, prevck_bell=bell; double lastck_time=now(), prevck_time=0;
   log_progress(bell,k,s,0,"start  ");
   while(bell<target){
@@ -277,7 +285,7 @@ int main(int argc,char**argv){
     double ta=now();
     mpz_fdiv_r_2exp(r,k,w); mpz_fdiv_q_2exp(q,k,w); mpz_realloc2(k,64);
     if(horizon>0){ long long keepq=(horizon-(bell+nb))+PMARGIN-2; if(keepq<1) keepq=1;
-      if(bitlen(q)>keepq) mpz_fdiv_r_2exp(q,q,(mp_bitcnt_t)keepq); }
+      if(bitlen(q)>keepq){ mpz_fdiv_r_2exp(q,q,(mp_bitcnt_t)keepq); cut=1; } }
     gbell=bell; adv(r,&s,nb,0);
     double tb=now(); tlow+=tb-ta;
     if(halted){
@@ -296,8 +304,10 @@ int main(int argc,char**argv){
       if(bell-lastck_bell<interval/2&&prevck_bell<lastck_bell){ from=prevck_bell; secs=prevck_time+span; }
       if(write_ckpt(bell,k,s,from,secs)) return 1;
       prevck_bell=lastck_bell; prevck_time=span; lastck_bell=bell; lastck_time=now();
-      if(prevname[0]) remove(prevname);
-      if(bell<target) ckpt_name_h(prevname,sizeof prevname,bell,horizon>0); else prevname[0]=0;
+      // the previous intermediate checkpoint is deleted, except the last exact one before pruning starts
+      if(prevname[0]&&!(prevcut==0&&cut==1)) remove(prevname);
+      if(prevname[0]&&prevcut==0&&cut==1) printf("keeping %s (last exact checkpoint before pruning)\n",prevname);
+      if(bell<target){ ckpt_name_h(prevname,sizeof prevname,bell,cut); prevcut=cut; } else prevname[0]=0;
       log_progress(bell,k,s,now()-t0,bell==target?"target ":"ckpt   ");
       if(bell==nextck) nextck+=interval; }
   }
