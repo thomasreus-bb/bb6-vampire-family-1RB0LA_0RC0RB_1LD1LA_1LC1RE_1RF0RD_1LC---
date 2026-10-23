@@ -98,3 +98,9 @@ Choose INTERVAL so that writing a checkpoint takes little time compared with the
 
     gcc -O3 -march=native -o belldcf belldcf.c -lflint -lmpfr -lgmp -lpthread -lm     # needs FLINT >= 3 (sudo apt install libflint-dev)
     ./belldcf -t 140000000000 -p -m -i 10000000000 -j 8     # 8 threads; -j auto adapts to the load of the computer
+
+## belldco: k on disk (no memory limit)
+`belldco.c` keeps k on disk and only the parts for one block in RAM. Its memory is set with `-M GB` and does not grow with k. Orbit, checkpoints and log lines are the same as in `belldc` and `belldcf`. Details are in the main [README](../../README.md#belldco-k-on-disk-out-of-core).
+
+    gcc -O3 -march=native -o belldco belldco.c -lflint -lmpfr -lgmp -lpthread -lm
+    ./belldco -t 1000000000000 -p -M 8 -j 8 -i 20000000000      # towards 10^12 with 8 GB RAM, 8 threads

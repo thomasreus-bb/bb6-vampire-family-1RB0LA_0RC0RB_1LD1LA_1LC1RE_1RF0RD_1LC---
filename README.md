@@ -224,6 +224,35 @@ With `-m`, `belldcf` is about 3 times as fast as `belldc -m` on 2 cores. It need
 
 Tests: `belldcf` gives the same KCHECK, bit length and S as `belldc` at all compared checkpoints (O2: 3·10⁸, 1.3·10⁹, 4·10⁹; pruned towards 5·10⁸; with `-j 1`, `-j 2` and `-j auto`), and finds a HALT at the same Bell (artificial start).
 
+### `belldco`: k on disk (out of core)
+`belldco` (in each orbit directory) removes the memory limit. The number k stays on disk as a binary file; only the parts needed for one block of Bells are in RAM. The orbit, the checkpoints and the log lines are the same as in `belldc` / `belldcf`; a checkpoint written by `belldco` is byte for byte the same as one written by `belldc`, apart from the date, time and program lines.
+
+How one block of B Bells works, with k = q·2<sup>B+2</sup> + r:
+- **Streamed product (own thread).** q is read from the work file in pieces. Each piece is multiplied by 3<sup>B</sup> in RAM with FLINT, and the result is written in order to a second work file. The upper part of each piece's product is carried into the next one.
+- **Low part (main thread, at the same time).** The B Bells on r are computed in RAM, as in `belldcf`.
+- **Finish.** r<sub>B</sub> is added at the bottom of the new file.
+
+So each block reads k once and writes it once. With pruning, only the part of the product below 2<sup>keep</sup> is computed and written.
+
+    gcc -O3 -march=native -o belldco belldco.c -lflint -lmpfr -lgmp -lpthread -lm      # needs FLINT >= 3, see belldcf
+    ./belldco -t 1000000000000 -p -M 8 -j 8 -i 20000000000
+
+- `-M GB`: memory budget for the parts in RAM (default 4). It sets the largest block, GB·2³⁰/6 Bells; measured peak memory is about 5 bytes per Bell of a block, so the peak stays near the budget. It does **not** depend on k.
+- `-w DIR`: directory for the two work files (default: the current directory). Each work file is as large as k; for a pruned run to 10¹² the largest k, at Bell ≈ 6.3·10¹¹, is about 46 GB.
+- Disk space for a run to 10¹²: the two work files plus the checkpoints. Checkpoints are hex text, twice the size of k; the start checkpoint, the newest one and with `-p` the last exact one are kept, so allow about 400 GB.
+- `-j`, `-t`, `-p`, `-i`, `-b` work as in `belldcf`.
+
+Measurements (O2, 2 cores, same range as above, k at the end 292 MB):
+
+| range | `belldc` | `belldcf -m -j 2` | `belldco -M 0.25 -j 2` | `belldco -j 2` (default `-M 4`) |
+|---|---|---|---|---|
+| Bell 1.3·10⁹ → 4·10⁹ | 977 s | 482 s | **400 s** | 474 s |
+| peak memory | ≈ 1.05 GB | 0.63 GB | **0.42 GB** | 1.36 GB |
+
+Smaller blocks are not slower here, because the streamed product runs in parallel with the low part. For very large k the streamed product becomes the larger part, since it reads and writes all of k once per block; then larger blocks, i.e. a larger `-M`, pay off.
+
+Tests: same KCHECK, bit length and S as `belldc` / `belldcf` at 3·10⁶, 3·10⁸ and 4·10⁹, with block sizes 999, 1,234,567 and automatic, with `-M 0.25` and `-M 4`. A pruned run towards 5·10⁸ gives the same result as `belldc -p` and keeps the exact checkpoint at 3·10⁸. Checkpoints of `belldc`, both exact and pruned, are read, and the written checkpoints are identical to those of `belldc`. A HALT is found at the same Bell (artificial start).
+
 ---
 
 ## TM1
@@ -427,7 +456,7 @@ Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; 
 ## Files
 | Path | Content |
 |---|---|
-| `orbits/O1` … `orbits/O4` | fast simulation (`bellntt`; `bellnttp` with horizon pruning and distance to HALT; `belldc`, divide and conquer with GMP, about 10 times faster; `belldcf`, the same with FLINT on several cores) of one orbit each, with table and checkpoints; each directory can be copied and used on its own |
+| `orbits/O1` … `orbits/O4` | fast simulation (`bellntt`; `bellnttp` with horizon pruning and distance to HALT; `belldc`, divide and conquer with GMP, about 10 times faster; `belldcf`, the same with FLINT on several cores; `belldco`, with k on disk, memory independent of k) of one orbit each, with table and checkpoints; each directory can be copied and used on its own |
 | `TM2.md` | detailed notes on TM2 (table, Markov estimate, Discord history) |
 | `src/cyc.c` | Bell simulator for the TM2-type machines: direct simulation, and single Bells from a given (P, n) |
 | `src/table.py` | builds a table by breadth-first search with `cyc` |
