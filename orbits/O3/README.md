@@ -92,3 +92,9 @@ Choose INTERVAL so that writing a checkpoint takes little time compared with the
 - Same checkpoint files and log lines (KCHECK, d and D) as `bellntt` / `bellnttp`: switching between the programs is possible at any time (Ctrl-C, start the other one).
 - One core (GMP). The largest checkpoint files can be several GB; keep space for two of them.
 - **Pruned runs and later continuation (22 Oct 2026).** Pruning only starts cutting bits of k at about Bell TARGET/1.585 (about 6.3·10¹⁰ for TARGET = 10¹¹). Up to there, `belldc -p` now writes normal, exact `chkpt` files and **keeps the last exact one** (the others are rotated as before), e.g. `bell_60000000000_chkpt.txt` for `-t 100000000000 -p -i 5000000000`. A later run to a higher target can start from it instead of from the beginning (`./belldc -t 200000000000 -p …`). Old `pchkpt` files written by earlier versions before pruning started (k far shorter than (TARGET − Bell) + 128 bits, e.g. the multi-GB ones) are recognised as exact when read and used as full checkpoints. The small `pchkpt` files near the target (a few hundred bytes) are only k mod 2^((TARGET − Bell)+128) and cannot be continued beyond TARGET.
+
+## belldcf: belldc with FLINT on several cores
+`belldcf.c` computes the same orbit with the same checkpoints and log lines as `belldc`. It uses FLINT's multithreaded multiplication and runs the big product in parallel with the low part. On 2 cores with `-m` it is about 3 times as fast as `belldc -m` and needs about 2.2 × k of memory instead of 1.6 × k. Details and installation are in the main [README](../../README.md#belldcf-belldc-with-flint-on-several-cores).
+
+    gcc -O3 -march=native -o belldcf belldcf.c -lflint -lmpfr -lgmp -lpthread -lm     # needs FLINT >= 3 (sudo apt install libflint-dev)
+    ./belldcf -t 140000000000 -p -m -i 10000000000 -j 8     # 8 threads; -j auto adapts to the load of the computer

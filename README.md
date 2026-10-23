@@ -196,6 +196,34 @@ Rough estimates for a notebook with 16 GB RAM (WSL set to about 13 GB with `memo
 
 Tests: `belldc` reproduces the KCHECK values of `bellntt` at every checkpoint (O1 to 10⁷ including the TM1 reference, O2 at all 17 checkpoints from 10⁸ to 1.7·10⁹ and at 2·10⁹, 3·10⁹, 4·10⁹); its checkpoints are identical to those of `bellntt` (same k and checksum, checked at Bell 10,000,005), pruned ones to those of `bellnttp` (checked at 6·10⁷); runs continue across the programs; a HALT inside the recursion is found at the same Bell as with `bellnttp` (test with an artificial start).
 
+### `belldcf`: `belldc` with FLINT on several cores
+`belldcf` (in each orbit directory) is `belldc` with two changes; the orbit, the checkpoints and the log lines are the same, so the programs can continue each other's runs.
+
+- The big multiplications use FLINT's `fft_small` multiplication (`flint_mpn_mul`), which is faster than GMP already on one core and runs on up to 8 threads per product.
+- The product of the high part with 3^h does not depend on the Bells on the low part, so for large numbers it runs in a second thread while the low part is advanced. This happens both at the top level, where q·3^B runs during the B Bells on r, and inside the recursion.
+
+Option `-j N` sets the number of threads; the default is all cores. With `-j auto` the program uses the cores that other programs leave free, measured from the 1-minute load average before each block and at most once a minute; `-j auto:MAX` caps this at MAX threads.
+
+Installation and start (needs FLINT ≥ 3.0 with `fft_small`, which is built automatically on x86-64 with AVX2):
+
+    sudo apt install libflint-dev          # Ubuntu 24.04; if the build below fails, build FLINT from source (next lines)
+    # sudo apt install build-essential autoconf automake libtool libgmp-dev libmpfr-dev git
+    # git clone --depth 1 --branch v3.4.0 https://github.com/flintlib/flint && cd flint
+    # ./bootstrap.sh && ./configure && make -j8 && sudo make install && sudo ldconfig && cd ..
+    gcc -O3 -march=native -o belldcf belldcf.c -lflint -lmpfr -lgmp -lpthread -lm
+    ./belldcf -t 140000000000 -p -m -i 10000000000 -j 8
+
+Measurements: O2, 2 cores, FLINT 3.4.0. k at the end is 292 MB. All times are from the same machine; for `belldc -m` on the long range the time is estimated from its ratio to `belldc` at smaller k (1.75). The memory values for `belldc` are from the table above.
+
+| range | `belldc` | `belldc -m` | `belldcf -m -j 2` | peak memory `belldc` / `belldc -m` / `belldcf -m` |
+|---|---|---|---|---|
+| Bell 1.3·10⁹ → 4·10⁹ | 977 s | ≈ 1,700 s | **482 s** | 1.05 GB / 0.47 GB / 0.63 GB |
+| Bell 10⁶ → 5·10⁸, pruned (`-p -m`) | – | 167 s | **62 s** | – |
+
+With `-m`, `belldcf` is about 3 times as fast as `belldc -m` on 2 cores. It needs about 2.2 × the size of k in memory, against 1.6 × for `belldc -m`. That memory includes freeing FLINT's FFT buffers after every block and returning freed memory to the system at once. Without `-m`, `belldcf` is a little faster but needs about 7 × k. More cores should give more speed, but not linearly: the bottom of the recursion, at most 32 Bells on a 64-bit word, stays sequential. Measurements on 4–8 cores are still missing.
+
+Tests: `belldcf` gives the same KCHECK, bit length and S as `belldc` at all compared checkpoints (O2: 3·10⁸, 1.3·10⁹, 4·10⁹; pruned towards 5·10⁸; with `-j 1`, `-j 2` and `-j auto`), and finds a HALT at the same Bell (artificial start).
+
 ---
 
 ## TM1
@@ -399,7 +427,7 @@ Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; 
 ## Files
 | Path | Content |
 |---|---|
-| `orbits/O1` … `orbits/O4` | fast simulation (`bellntt`; `bellnttp` with horizon pruning and distance to HALT; `belldc`, divide and conquer with GMP, about 10 times faster) of one orbit each, with table and checkpoints; each directory can be copied and used on its own |
+| `orbits/O1` … `orbits/O4` | fast simulation (`bellntt`; `bellnttp` with horizon pruning and distance to HALT; `belldc`, divide and conquer with GMP, about 10 times faster; `belldcf`, the same with FLINT on several cores) of one orbit each, with table and checkpoints; each directory can be copied and used on its own |
 | `TM2.md` | detailed notes on TM2 (table, Markov estimate, Discord history) |
 | `src/cyc.c` | Bell simulator for the TM2-type machines: direct simulation, and single Bells from a given (P, n) |
 | `src/table.py` | builds a table by breadth-first search with `cyc` |
