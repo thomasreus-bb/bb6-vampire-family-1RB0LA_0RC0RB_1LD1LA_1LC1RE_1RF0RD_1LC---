@@ -387,7 +387,7 @@ Tests: `belldc` reproduces the KCHECK values of `bellntt` at every checkpoint (O
 ---
 
 ## How the family was found
-A quick scan of the 663 BB(6) holdouts (`scan/holdouts_663.txt`) for Bell behaviour (`scan/bellscan.c`, 10⁷ steps per machine) found 56 machines with Bell-like growth (`scan/bell_candidates.txt`).
+A quick scan of the 663 BB(6) holdouts (`scan/holdouts_663.txt`) for Bell behaviour (`scan/bellscan.c`, 10⁷ steps per machine) found 56 machines with Bell-like growth (`scan/bell_candidates.txt`; with level analysis and a space-time diagram for each machine: [`scan/bell_candidates.md`](scan/bell_candidates.md)).
 Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; these are the seven machines above. The other 49 grow with other factors or less regularly and have not been analysed.
 
 ## Open points
@@ -406,6 +406,7 @@ Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; 
 | `src/compare.py` | the checks behind this document: machine core, tables against TM2, orbits |
 | `tables/TM2.json`, `TM2a.json`, `TM2b.json` | tables of TM2, TM2a, TM2b (about 3,000 words each) |
 | `scan/bellscan.c`, `scan/bell_candidates.txt`, `scan/holdouts_663.txt` | Bell detector, its results, and the list of holdouts it was run on |
+| `scan/bell_candidates.md`, `scan/diagrams/`, `scan/viz.c` | the 56 candidates with classification, level analysis, verdict and a space-time diagram each |
 
 ## Usage
 **Long simulations** (fast, with checkpoints): see `orbits/O1` … `orbits/O4`, for example

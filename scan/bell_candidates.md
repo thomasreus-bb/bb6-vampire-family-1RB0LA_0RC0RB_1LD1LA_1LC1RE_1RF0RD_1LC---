@@ -1,0 +1,614 @@
+# Bell candidates among the 663 BB(6) holdouts
+
+The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marked as Bell-like (`bell_candidates.txt`), each with a space-time diagram from the blank tape.
+
+- **Class** (from the scan): **A** = regular geometric growth like TM1/TM2 (sd < 0.12, one phase per level); **B** = Bell-like with another factor or several phases per level; **C** = irregular.
+- **Level analysis**: a second detector (single-block Bell configurations, up to 3·10⁸ steps) looks at the tape at the start of each level: the long block, its growth ratio, and how many *different* short tails occur. Many different tails at a regular ratio is the signature of a vampire-like machine (a finite Bell table can then be derived); one or two tails means a "needle" (all information is in one number; halting needs an exact value).
+- **Diagram**: time runs downward, one pixel column per tape cell (scaled up for narrow tapes), symbol 1 orange, 0 white; at most 700 sampled rows. Each diagram runs up to the start of the 8th Bell found by the detector (so the first 7 Bells are complete) or until the tape is 1000 cells wide, whichever comes first.
+
+| # | class | machine | factor | verdict |
+|---|---|---|---|---|
+| [1](#1) | A | `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` | 1.55 | vampire family (orbits O1–O4 of this repository) |
+| [2](#2) | A | `1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE` | 1.56 | vampire family (orbits O1–O4 of this repository) |
+| [3](#3) | A | `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---` | 1.57 | vampire family (orbits O1–O4 of this repository) |
+| [4](#4) | A | `1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF` | 1.57 | vampire family (orbits O1–O4 of this repository) |
+| [5](#5) | A | `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---` | 1.56 | vampire family (orbits O1–O4 of this repository) |
+| [6](#6) | A | `1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD` | 1.58 | vampire family (orbits O1–O4 of this repository) |
+| [7](#7) | A | `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` | 1.58 | vampire family (orbits O1–O4 of this repository) |
+| [8](#8) | B | `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` | 1.33 | **halts** (vampire method, [halt-found repository](https://github.com/thomasreus-bb/halt-found-1rb0rb_1lc1rf_0rd0lb_0ra1le_1ld---_0rb0rc)) |
+| [9](#9) | B | `1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB` | 1.33 | needle-like: only 2 tails (all information in one number) |
+| [10](#10) | B | `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` | 1.24 | 22 different tails, but irregular growth |
+| [11](#11) | B | `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` | 1.21 | 13 different tails, but irregular growth |
+| [12](#12) | B | `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` | 1.27 | no clear single-block Bell configuration found |
+| [13](#13) | B | `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` | 1.33 | needle-like: only 2 tails (all information in one number) |
+| [14](#14) | B | `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` | 1.21 | needle-like: only 1 tail (all information in one number) |
+| [15](#15) | B | `1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC` | 1.36 | needle-like: only 2 tails (all information in one number) |
+| [16](#16) | B | `1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE` | 1.26 | 10 different tails, but irregular growth |
+| [17](#17) | B | `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` | 1.29 | 3 different tails, but irregular growth |
+| [18](#18) | B | `1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD` | 1.36 | no clear single-block Bell configuration found |
+| [19](#19) | B | `1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---` | 1.32 | vampire-like signature: regular growth, 3 different tails |
+| [20](#20) | B | `1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---` | 1.40 | needle-like: only 2 tails (all information in one number) |
+| [21](#21) | B | `1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD` | 1.40 | needle-like: only 1 tail (all information in one number) |
+| [22](#22) | B | `1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE` | 1.40 | needle-like: only 2 tails (all information in one number) |
+| [23](#23) | B | `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---` | 1.39 | no clear single-block Bell configuration found |
+| [24](#24) | B | `1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE` | 1.25 | needle-like: only 1 tail (all information in one number) |
+| [25](#25) | B | `1RB0LE_1LC0RD_0RA1LD_0LC1RA_1LF1LA_---1LA` | 1.55 | needle-like: only 2 tails (all information in one number) |
+| [26](#26) | B | `1RB1LC_1LA0RD_1LB1LF_1LE1RE_0LA0RB_0LB---` | 1.37 | needle-like: only 2 tails (all information in one number) |
+| [27](#27) | B | `1RB1LC_1LC0RD_0LE1LA_0RF1RA_1LA0LA_---0RB` | 1.64 | needle-like: only 1 tail (all information in one number) |
+| [28](#28) | B | `1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC` | 1.24 | no clear single-block Bell configuration found |
+| [29](#29) | B | `1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB` | 1.49 | needle-like: only 2 tails (all information in one number) |
+| [30](#30) | B | `1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB` | 1.54 | needle-like: only 1 tail (all information in one number) |
+| [31](#31) | B | `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` | 1.34 | 3 different tails, but irregular growth |
+| [32](#32) | B | `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` | 1.33 | 3 different tails, but irregular growth |
+| [33](#33) | B | `1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD` | 1.69 | needle-like: only 1 tail (all information in one number) |
+| [34](#34) | B | `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` | 1.34 | no clear single-block Bell configuration found |
+| [35](#35) | B | `1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA` | 1.25 | 4 different tails, but irregular growth |
+| [36](#36) | B | `1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB` | 1.56 | needle-like: only 1 tail (all information in one number) |
+| [37](#37) | B | `1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC` | 1.26 | no clear single-block Bell configuration found |
+| [38](#38) | C | `1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC` | 1.55 | 4 different tails, but irregular growth |
+| [39](#39) | C | `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number) |
+| [40](#40) | C | `1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA` | 1.48 | no clear single-block Bell configuration found |
+| [41](#41) | C | `1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD` | 1.40 | needle-like: only 1 tail (all information in one number) |
+| [42](#42) | C | `1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD` | 1.42 | needle-like: only 1 tail (all information in one number) |
+| [43](#43) | C | `1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB` | 1.41 | needle-like: only 2 tails (all information in one number) |
+| [44](#44) | C | `1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---` | 1.90 | needle-like: only 1 tail (all information in one number) |
+| [45](#45) | C | `1RB0LD_1LC0RD_1LA0LC_1RE0LB_1RB1RF_0LD---` | 1.53 | no clear single-block Bell configuration found |
+| [46](#46) | C | `1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD` | 1.74 | needle-like: only 2 tails (all information in one number) |
+| [47](#47) | C | `1RB0LF_1LC0LD_1RD1LB_---1RE_0RA1RE_1LA0LE` | 1.47 | needle-like: only 1 tail (all information in one number) |
+| [48](#48) | C | `1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---` | 1.52 | no clear single-block Bell configuration found |
+| [49](#49) | C | `1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF` | 1.44 | no clear single-block Bell configuration found |
+| [50](#50) | C | `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` | 1.50 | no clear single-block Bell configuration found |
+| [51](#51) | C | `1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---` | 1.60 | needle-like: only 1 tail (all information in one number) |
+| [52](#52) | C | `1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---` | 1.61 | no clear single-block Bell configuration found |
+| [53](#53) | C | `1RB1RE_1LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` | 1.66 | no clear single-block Bell configuration found |
+| [54](#54) | C | `1RB1RF_1LC---_1LE1RD_1RA0RC_0LF0LA_0LD0RB` | 1.53 | needle-like: only 1 tail (all information in one number) |
+| [55](#55) | C | `1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA` | 1.48 | no clear single-block Bell configuration found |
+| [56](#56) | C | `1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD` | 1.43 | needle-like: only 1 tail (all information in one number) |
+
+<a id="1"></a>
+## 1. `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A)
+
+- scan: 12 levels, 12 phases, mean factor 1.55 (sd 0.04); level starts: 18 31 51 81 126 193 294 445 672 1012 1521 2286
+- verdict: vampire family (orbits O1–O4 of this repository)
+- diagram: 46,900 steps, tape width 389 cells
+
+<img src="diagrams/1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA.png" alt="space-time diagram" height="350">
+
+<a id="2"></a>
+## 2. `1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE` (class A)
+
+- scan: 12 levels, 12 phases, mean factor 1.56 (sd 0.05); level starts: 15 27 45 72 112 171 261 396 600 906 1365 2052
+- verdict: vampire family (orbits O1–O4 of this repository)
+- diagram: 16,253 steps, tape width 227 cells
+
+<img src="diagrams/1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE.png" alt="space-time diagram" height="350">
+
+<a id="3"></a>
+## 3. `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---` (class A)
+
+- scan: 12 levels, 12 phases, mean factor 1.57 (sd 0.06); level starts: 16 29 49 79 124 191 292 443 670 1010 1519 2284
+- verdict: vampire family (orbits O1–O4 of this repository)
+- diagram: 19,400 steps, tape width 250 cells
+
+<img src="diagrams/1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---.png" alt="space-time diagram" height="350">
+
+<a id="4"></a>
+## 4. `1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF` (class A)
+
+- scan: 12 levels, 12 phases, mean factor 1.57 (sd 0.06); level starts: 16 29 49 79 124 191 292 443 670 1010 1519 2284
+- verdict: vampire family (orbits O1–O4 of this repository)
+- diagram: 45,377 steps, tape width 385 cells
+
+<img src="diagrams/1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF.png" alt="space-time diagram" height="350">
+
+<a id="5"></a>
+## 5. `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---` (class A)
+
+- scan: 13 levels, 13 phases, mean factor 1.56 (sd 0.06); level starts: 13 24 40 63 99 153 234 355 537 810 1221 1836 2758
+- verdict: vampire family (orbits O1–O4 of this repository)
+- diagram: 67,202 steps, tape width 468 cells
+
+<img src="diagrams/1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---.png" alt="space-time diagram" height="350">
+
+<a id="6"></a>
+## 6. `1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD` (class A)
+
+- scan: 12 levels, 12 phases, mean factor 1.58 (sd 0.07); level starts: 16 31 52 83 130 200 304 461 697 1052 1582 2378
+- verdict: vampire family (orbits O1–O4 of this repository)
+- diagram: 49,872 steps, tape width 403 cells
+
+<img src="diagrams/1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD.png" alt="space-time diagram" height="350">
+
+<a id="7"></a>
+## 7. `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` (class A)
+
+- scan: 12 levels, 12 phases, mean factor 1.58 (sd 0.07); level starts: 16 31 52 83 130 200 304 461 697 1052 1582 2378
+- verdict: vampire family (orbits O1–O4 of this repository)
+- diagram: 50,667 steps, tape width 405 cells
+
+<img src="diagrams/1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA.png" alt="space-time diagram" height="350">
+
+<a id="8"></a>
+## 8. `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` (class B)
+
+- scan: 20 levels, 71 phases, mean factor 1.33 (sd 0.07); level starts: 78 109 152 206 278 374 502 678 909 1218 1629 2178 2909 3882
+- level analysis: Bell type `LD` with left part `01 12 01 11 01`, 26 levels; n: 284 380 508 684 915 1224 1635 2184 2915 3888 5187 6918 9227 12304 16411 21886; ratios: 1.338 1.336 1.336 1.335 1.334 1.334 1.334 1.334 1.333 1.334 1.334; 13 different tails
+- verdict: **halts** (vampire method, [halt-found repository](https://github.com/thomasreus-bb/halt-found-1rb0rb_1lc1rf_0rd0lb_0ra1le_1ld---_0rb0rc))
+- diagram: 4,677 steps, tape width 100 cells
+
+<img src="diagrams/1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC.png" alt="space-time diagram" height="350">
+
+<a id="9"></a>
+## 9. `1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB` (class B)
+
+- scan: 15 levels, 98 phases, mean factor 1.33 (sd 0.09); level starts: 20 29 34 52 76 107 126 173 199 273 370 501 675 905
+- level analysis: Bell type `RB`, 30 levels; n: 182 207 280 378 508 682 914 1246 1666 2226 2972 3307 4414 5890 7858 10482; ratios: 1.343 1.340 1.363 1.337 1.336 1.335 1.113 1.335 1.334 1.334 1.334; 2 different tails
+- verdict: needle-like: only 2 tails (all information in one number)
+- diagram: 2,981,111 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB.png" alt="space-time diagram" height="350">
+
+<a id="10"></a>
+## 10. `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` (class B)
+
+- scan: 21 levels, 240 phases, mean factor 1.24 (sd 0.09); level starts: 42 51 70 90 113 148 188 249 271 306 412 474 555 628
+- level analysis: Bell type `RC`, 31 levels; n: 278 367 418 496 632 706 831 899 980 1076 1181 1299 1458 1758 1942 2205; ratios: 1.117 1.177 1.082 1.090 1.098 1.098 1.100 1.122 1.206 1.105 1.135; 22 different tails
+- verdict: 22 different tails, but irregular growth
+- diagram: 10,067 steps, tape width 64 cells
+
+<img src="diagrams/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE.png" alt="space-time diagram" height="350">
+
+<a id="11"></a>
+## 11. `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` (class B)
+
+- scan: 20 levels, 95 phases, mean factor 1.21 (sd 0.10); level starts: 83 107 129 157 171 196 242 274 345 420 620 684 745 799
+- level analysis: Bell type `LC` with left part `01`, 16 levels; n: 5 12 18 48 96 110 200 232 376 478 702 794 968 1512 1832 3912; ratios: 1.146 1.818 1.160 1.621 1.271 1.469 1.131 1.219 1.562 1.212 2.135; 13 different tails
+- verdict: 13 different tails, but irregular growth
+- diagram: 202,912 steps, tape width 407 cells
+
+<img src="diagrams/1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE.png" alt="space-time diagram" height="350">
+
+<a id="12"></a>
+## 12. `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` (class B)
+
+- scan: 19 levels, 42 phases, mean factor 1.27 (sd 0.10); level starts: 47 63 80 87 96 122 144 181 252 288 391 576 684 834
+- level analysis: Bell type `LC` with left part `01`, 2 levels; n: 4 27; ratios: 6.750; 1 different tails
+- verdict: no clear single-block Bell configuration found
+- diagram: 38,184 steps, tape width 143 cells
+
+<img src="diagrams/1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA.png" alt="space-time diagram" height="350">
+
+<a id="13"></a>
+## 13. `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` (class B)
+
+- scan: 20 levels, 41 phases, mean factor 1.33 (sd 0.10); level starts: 34 43 64 77 91 119 175 231 350 441 665 1001 1505 2261
+- level analysis: Bell type `RC`, 25 levels; n: 66 75 117 180 229 348 439 663 999 1503 2259 3393 5094 5735 8607 12915; ratios: 1.520 1.261 1.510 1.507 1.505 1.503 1.502 1.501 1.126 1.501 1.501; 2 different tails
+- verdict: needle-like: only 2 tails (all information in one number)
+- diagram: 1,313,195 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB.png" alt="space-time diagram" height="350">
+
+<a id="14"></a>
+## 14. `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` (class B)
+
+- scan: 30 levels, 87 phases, mean factor 1.21 (sd 0.10); level starts: 428 466 541 604 783 850 984 1046 1180 1372 1615 1882 2136 2262
+- level analysis: Bell type `LC` with left part `01`, 13 levels; n: 8 14 26 74 106 122 440 1088 2366 4862 6538 7376 17540; ratios: 1.857 2.846 1.432 1.151 3.607 2.473 2.175 2.055 1.345 1.128 2.378; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 619,684 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA.png" alt="space-time diagram" height="350">
+
+<a id="15"></a>
+## 15. `1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC` (class B)
+
+- scan: 19 levels, 45 phases, mean factor 1.36 (sd 0.11); level starts: 36 55 65 87 101 125 165 249 315 475 715 1075 1615 2425
+- level analysis: Bell type `RC`, 23 levels; n: 86 100 128 163 248 313 473 713 1073 1613 2423 3638 4096 5123 7688 9613; ratios: 1.262 1.511 1.507 1.505 1.503 1.502 1.501 1.126 1.251 1.501 1.250; 2 different tails
+- verdict: needle-like: only 2 tails (all information in one number)
+- diagram: 1,423,912 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC.png" alt="space-time diagram" height="350">
+
+<a id="16"></a>
+## 16. `1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE` (class B)
+
+- scan: 15 levels, 109 phases, mean factor 1.26 (sd 0.11); level starts: 16 18 20 26 34 38 54 60 92 138 178 200 271 370
+- level analysis: Bell type `RB` with left part `01`, 26 levels; n: 380 436 488 528 592 648 706 778 848 989 1092 1208 1308 1500 1630 1853; ratios: 1.095 1.090 1.102 1.090 1.166 1.104 1.106 1.083 1.147 1.087 1.137; 10 different tails
+- verdict: 10 different tails, but irregular growth
+- diagram: 10,525 steps, tape width 77 cells
+
+<img src="diagrams/1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE.png" alt="space-time diagram" height="350">
+
+<a id="17"></a>
+## 17. `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` (class B)
+
+- scan: 17 levels, 149 phases, mean factor 1.29 (sd 0.12); level starts: 23 33 39 55 59 75 111 137 163 183 215 279 359 459
+- level analysis: Bell type `LE` with left part `01`, 17 levels; n: 7 11 21 41 57 77 165 233 297 377 477 1137 1427 2141 4243 6365; ratios: 1.351 2.143 1.412 1.275 1.269 1.265 2.384 1.255 1.500 1.982 1.500; 3 different tails
+- verdict: 3 different tails, but irregular growth
+- diagram: 15,198 steps, tape width 79 cells
+
+<img src="diagrams/1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB.png" alt="space-time diagram" height="350">
+
+<a id="18"></a>
+## 18. `1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD` (class B)
+
+- scan: 13 levels, 114 phases, mean factor 1.36 (sd 0.12); level starts: 8 10 14 19 25 32 52 61 70 83 131 203 311
+- verdict: no clear single-block Bell configuration found
+- diagram: 2,207,708 steps, tape width 1001 cells
+
+<img src="diagrams/1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD.png" alt="space-time diagram" height="350">
+
+<a id="19"></a>
+## 19. `1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---` (class B)
+
+- scan: 23 levels, 61 phases, mean factor 1.32 (sd 0.12); level starts: 166 212 253 329 382 498 577 759 868 1148 1306 1733 2604 3920
+- level analysis: Bell type `RB`, 13 levels; n: 20 22 35 92 143 335 767 1739 3926 5894 8846 13274 19916; ratios: 1.591 2.629 1.554 2.343 2.290 2.267 2.258 1.501 1.501 1.501 1.500; 3 different tails
+- verdict: vampire-like signature: regular growth, 3 different tails
+- diagram: 65,719 steps, tape width 338 cells
+
+<img src="diagrams/1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---.png" alt="space-time diagram" height="350">
+
+<a id="20"></a>
+## 20. `1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---` (class B)
+
+- scan: 16 levels, 43 phases, mean factor 1.40 (sd 0.12); level starts: 55 65 85 102 165 255 305 460 694 917 1044 1380 2084 3134
+- level analysis: Bell type `LB` with left part `02 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01`, 8 levels; n: 10 76 139 229 1354 4681 10588 15904; ratios: 7.600 1.829 1.647 5.913 3.457 2.262 1.502; 2 different tails
+- verdict: needle-like: only 2 tails (all information in one number)
+- diagram: 18,300 steps, tape width 175 cells
+
+<img src="diagrams/1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---.png" alt="space-time diagram" height="350">
+
+<a id="21"></a>
+## 21. `1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD` (class B)
+
+- scan: 15 levels, 66 phases, mean factor 1.40 (sd 0.13); level starts: 14 17 28 31 43 50 76 135 213 281 396 537 729 985
+- level analysis: Bell type `RE`, 24 levels; n: 217 297 409 553 745 1001 1343 1554 2089 2793 3737 4991 6673 8905 11881 15849; ratios: 1.344 1.342 1.157 1.344 1.337 1.338 1.336 1.337 1.334 1.334 1.334; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 696,601 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD.png" alt="space-time diagram" height="350">
+
+<a id="22"></a>
+## 22. `1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE` (class B)
+
+- scan: 12 levels, 30 phases, mean factor 1.40 (sd 0.13); level starts: 11 13 19 35 52 64 91 141 190 269 393 448
+- level analysis: Bell type `RA`, 7 levels; n: 6 15 40 146 398 1192 3390; ratios: 2.500 2.667 3.650 2.726 2.995 2.844; 2 different tails
+- verdict: needle-like: only 2 tails (all information in one number)
+- diagram: 110,428 steps, tape width 397 cells
+
+<img src="diagrams/1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE.png" alt="space-time diagram" height="350">
+
+<a id="23"></a>
+## 23. `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---` (class B)
+
+- scan: 16 levels, 27 phases, mean factor 1.39 (sd 0.13); level starts: 26 37 40 55 79 111 150 203 276 506 681 910 1633 2187
+- level analysis: Bell type `RD` with left part `11 01 11 01`, 1 levels; n: 4; ratios: –; 1 different tails
+- verdict: no clear single-block Bell configuration found
+- diagram: 455,501 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---.png" alt="space-time diagram" height="350">
+
+<a id="24"></a>
+## 24. `1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE` (class B)
+
+- scan: 23 levels, 76 phases, mean factor 1.25 (sd 0.14); level starts: 182 264 310 342 380 474 552 590 946 1104 1182 1884 2202 2360
+- level analysis: Bell type `LB` with left part `01`, 13 levels; n: 10 20 50 106 200 328 398 608 1238 2494 4988 9916 19586; ratios: 2.500 2.120 1.887 1.640 1.213 1.528 2.036 2.015 2.000 1.988 1.975; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 54,368 steps, tape width 329 cells
+
+<img src="diagrams/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE.png" alt="space-time diagram" height="350">
+
+<a id="25"></a>
+## 25. `1RB0LE_1LC0RD_0RA1LD_0LC1RA_1LF1LA_---1LA` (class B)
+
+- scan: 8 levels, 32 phases, mean factor 1.55 (sd 0.14); level starts: 33 52 73 107 209 385 523 707
+- level analysis: Bell type `LD` with left part `01 11 01`, 16 levels; n: 8 13 23 45 64 85 119 221 397 535 719 5398 7197 9600 12802 17069; ratios: 1.328 1.400 1.857 1.796 1.348 1.344 7.508 1.333 1.334 1.334 1.333; 2 different tails
+- verdict: needle-like: only 2 tails (all information in one number)
+- diagram: 464,164 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LE_1LC0RD_0RA1LD_0LC1RA_1LF1LA_---1LA.png" alt="space-time diagram" height="350">
+
+<a id="26"></a>
+## 26. `1RB1LC_1LA0RD_1LB1LF_1LE1RE_0LA0RB_0LB---` (class B)
+
+- scan: 20 levels, 32 phases, mean factor 1.37 (sd 0.15); level starts: 63 88 138 186 261 343 411 461 615 1026 1085 1383 1842 3255
+- level analysis: Bell type `LA` with left part `01`, 11 levels; n: 4 9 15 30 62 146 270 1387 2475 10358 24548; ratios: 2.250 1.667 2.000 2.067 2.355 1.849 5.137 1.784 4.185 2.370; 2 different tails
+- verdict: needle-like: only 2 tails (all information in one number)
+- diagram: 14,056 steps, tape width 141 cells
+
+<img src="diagrams/1RB1LC_1LA0RD_1LB1LF_1LE1RE_0LA0RB_0LB---.png" alt="space-time diagram" height="350">
+
+<a id="27"></a>
+## 27. `1RB1LC_1LC0RD_0LE1LA_0RF1RA_1LA0LA_---0RB` (class B)
+
+- scan: 8 levels, 12 phases, mean factor 1.64 (sd 0.15); level starts: 17 32 61 98 121 188 359 545
+- level analysis: Bell type `LA` with left part `01 12 02`, 6 levels; n: 33 99 189 546 1110 5589; ratios: 3.000 1.909 2.889 2.033 5.035; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 3,959,736 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LC_1LC0RD_0LE1LA_0RF1RA_1LA0LA_---0RB.png" alt="space-time diagram" height="350">
+
+<a id="28"></a>
+## 28. `1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC` (class B)
+
+- scan: 20 levels, 176 phases, mean factor 1.24 (sd 0.15); level starts: 45 53 59 74 91 157 184 229 253 324 355 401 464 495
+- verdict: no clear single-block Bell configuration found
+- diagram: 1,865,705 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC.png" alt="space-time diagram" height="350">
+
+<a id="29"></a>
+## 29. `1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB` (class B)
+
+- scan: 12 levels, 25 phases, mean factor 1.49 (sd 0.16); level starts: 8 10 15 29 43 77 91 146 229 362 413 633
+- level analysis: Bell type `LA` with left part `01 12 02`, 10 levels; n: 8 30 78 147 363 636 960 2226 3354 5694; ratios: 3.750 2.600 1.885 2.469 1.752 1.509 2.319 1.507 1.698; 2 different tails
+- verdict: needle-like: only 2 tails (all information in one number)
+- diagram: 6,792,964 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB.png" alt="space-time diagram" height="350">
+
+<a id="30"></a>
+## 30. `1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB` (class B)
+
+- scan: 10 levels, 34 phases, mean factor 1.54 (sd 0.16); level starts: 13 16 35 58 97 140 211 270 412 625
+- level analysis: Bell type `RD`, 11 levels; n: 5 11 20 67 104 277 419 632 2070 5378 11434; ratios: 2.200 1.818 3.350 1.552 2.663 1.513 1.508 3.275 2.598 2.126; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 280,089 steps, tape width 421 cells
+
+<img src="diagrams/1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB.png" alt="space-time diagram" height="350">
+
+<a id="31"></a>
+## 31. `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` (class B)
+
+- scan: 22 levels, 40 phases, mean factor 1.34 (sd 0.17); level starts: 114 128 173 235 279 313 381 421 516 705 936 1260 2910 3969
+- level analysis: Bell type `RB`, 13 levels; n: 12 16 37 45 56 64 121 389 524 700 944 1260 3965; ratios: 2.312 1.216 1.244 1.143 1.891 3.215 1.347 1.336 1.349 1.335 3.147; 3 different tails
+- verdict: 3 different tails, but irregular growth
+- diagram: 466,802 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---.png" alt="space-time diagram" height="350">
+
+<a id="32"></a>
+## 32. `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` (class B)
+
+- scan: 23 levels, 40 phases, mean factor 1.33 (sd 0.17); level starts: 130 174 233 288 315 390 420 525 696 945 1257 1323 2919 3966
+- level analysis: Bell type `RD` with left part `11 01`, 10 levels; n: 10 18 34 42 78 86 166 283 1690 5294; ratios: 1.800 1.889 1.235 1.857 1.103 1.930 1.705 5.972 3.133; 3 different tails
+- verdict: 3 different tails, but irregular growth
+- diagram: 14,294 steps, tape width 141 cells
+
+<img src="diagrams/1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---.png" alt="space-time diagram" height="350">
+
+<a id="33"></a>
+## 33. `1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD` (class B)
+
+- scan: 9 levels, 407 phases, mean factor 1.69 (sd 0.17); level starts: 12 20 36 56 96 146 311 371 778
+- level analysis: Bell type `LD` with left part `01`, 8 levels; n: 5 9 16 40 100 250 625 1094; ratios: 1.800 1.778 2.500 2.500 2.500 2.500 1.750; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 18,026,802 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD.png" alt="space-time diagram" height="350">
+
+<a id="34"></a>
+## 34. `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` (class B)
+
+- scan: 13 levels, 29 phases, mean factor 1.34 (sd 0.18); level starts: 13 16 18 28 46 60 72 150 182 234 258 316 452
+- level analysis: Bell type `RD`, 5 levels; n: 5 6 9 15 54; ratios: 1.200 1.500 1.667 3.600; 3 different tails
+- verdict: no clear single-block Bell configuration found
+- diagram: 948,717 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD.png" alt="space-time diagram" height="350">
+
+<a id="35"></a>
+## 35. `1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA` (class B)
+
+- scan: 16 levels, 128 phases, mean factor 1.25 (sd 0.18); level starts: 43 47 53 61 91 114 125 137 159 187 217 229 277 592
+- level analysis: Bell type `RC`, 8 levels; n: 7 9 14 19 24 100 374 644; ratios: 1.286 1.556 1.357 1.263 4.167 3.740 1.722; 4 different tails
+- verdict: 4 different tails, but irregular growth
+- diagram: 6,352 steps, tape width 55 cells
+
+<img src="diagrams/1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA.png" alt="space-time diagram" height="350">
+
+<a id="36"></a>
+## 36. `1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB` (class B)
+
+- scan: 7 levels, 12 phases, mean factor 1.56 (sd 0.19); level starts: 51 83 134 149 230 485 734
+- level analysis: Bell type `RA` with left part `11 01`, 10 levels; n: 87 138 234 738 1122 1698 2568 4626 6951 10434; ratios: 1.586 1.696 3.154 1.520 1.513 1.512 1.801 1.503 1.501; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 3,193,486 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB.png" alt="space-time diagram" height="350">
+
+<a id="37"></a>
+## 37. `1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC` (class B)
+
+- scan: 20 levels, 66 phases, mean factor 1.26 (sd 0.19); level starts: 98 127 160 216 251 276 323 344 375 565 620 675 799 853
+- level analysis: Bell type `RF` with left part `11 01 11 03`, 3 levels; n: 21 51 403; ratios: 2.429 7.902; 1 different tails
+- verdict: no clear single-block Bell configuration found
+- diagram: 175,420 steps, tape width 403 cells
+
+<img src="diagrams/1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC.png" alt="space-time diagram" height="350">
+
+<a id="38"></a>
+## 38. `1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC` (class C)
+
+- scan: 10 levels, 18 phases, mean factor 1.55 (sd 0.20); level starts: 8 14 20 28 54 60 78 154 203 404
+- level analysis: Bell type `RA`, 7 levels; n: 4 14 20 54 60 154 404; ratios: 3.500 1.429 2.700 1.111 2.567 2.623; 4 different tails
+- verdict: 4 different tails, but irregular growth
+- diagram: 279,320 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC.png" alt="space-time diagram" height="350">
+
+<a id="39"></a>
+## 39. `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` (class C)
+
+- scan: 21 levels, 54 phases, mean factor 1.36 (sd 0.21); level starts: 156 198 237 306 358 468 541 713 814 1074 1225 1623 2444 3677
+- level analysis: Bell type `LC` with left part `01`, 11 levels; n: 4 10 88 136 208 316 478 1084 1633 5530 12457; ratios: 2.500 8.800 1.545 1.529 1.519 1.513 2.268 1.506 3.386 2.253; 2 different tails
+- verdict: needle-like: only 2 tails (all information in one number)
+- diagram: 10,129 steps, tape width 136 cells
+
+<img src="diagrams/1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA.png" alt="space-time diagram" height="350">
+
+<a id="40"></a>
+## 40. `1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA` (class C)
+
+- scan: 13 levels, 26 phases, mean factor 1.48 (sd 0.22); level starts: 8 10 17 22 34 46 50 57 114 155 324 435 884
+- level analysis: Bell type `RC`, 2 levels; n: 9 22; ratios: 2.444; 1 different tails
+- verdict: no clear single-block Bell configuration found
+- diagram: 180,752 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA.png" alt="space-time diagram" height="350">
+
+<a id="41"></a>
+## 41. `1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD` (class C)
+
+- scan: 17 levels, 63 phases, mean factor 1.40 (sd 0.23); level starts: 39 90 118 131 156 298 456 534 1006 1130 1209 1644 1962 2120
+- level analysis: Bell type `LD` with left part `01 11 01 11 01 11 01 11 01 11 01 11 01`, 7 levels; n: 9 49 177 593 2257 5905 16113; ratios: 5.444 3.612 3.350 3.806 2.616 2.729; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 157,672 steps, tape width 605 cells
+
+<img src="diagrams/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD.png" alt="space-time diagram" height="350">
+
+<a id="42"></a>
+## 42. `1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD` (class C)
+
+- scan: 14 levels, 45 phases, mean factor 1.42 (sd 0.23); level starts: 13 15 37 44 53 72 155 198 257 407 458 593 975 1200
+- level analysis: Bell type `LD` with left part `01`, 6 levels; n: 4 44 162 414 1204 3402; ratios: 11.000 3.682 2.556 2.908 2.826; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 1,076,279 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD.png" alt="space-time diagram" height="350">
+
+<a id="43"></a>
+## 43. `1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB` (class C)
+
+- scan: 15 levels, 32 phases, mean factor 1.41 (sd 0.25); level starts: 14 32 37 50 61 73 86 156 264 325 397 451 593 1412
+- level analysis: Bell type `RC`, 7 levels; n: 8 13 42 157 330 1416 3614; ratios: 1.625 3.231 3.738 2.102 4.291 2.552; 2 different tails
+- verdict: needle-like: only 2 tails (all information in one number)
+- diagram: 1,270,033 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB.png" alt="space-time diagram" height="350">
+
+<a id="44"></a>
+## 44. `1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---` (class C)
+
+- scan: 7 levels, 13 phases, mean factor 1.90 (sd 0.25); level starts: 13 17 48 79 180 299 620
+- level analysis: Bell type `LB` with left part `01`, 7 levels; n: 14 54 186 626 2094 6986 23294; ratios: 3.857 3.444 3.366 3.345 3.336 3.334; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 108,486 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---.png" alt="space-time diagram" height="350">
+
+<a id="45"></a>
+## 45. `1RB0LD_1LC0RD_1LA0LC_1RE0LB_1RB1RF_0LD---` (class C)
+
+- scan: 10 levels, 21 phases, mean factor 1.53 (sd 0.25); level starts: 11 15 19 25 44 62 152 170 233 515
+- verdict: no clear single-block Bell configuration found
+- diagram: 444,830 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LD_1LC0RD_1LA0LC_1RE0LB_1RB1RF_0LD---.png" alt="space-time diagram" height="350">
+
+<a id="46"></a>
+## 46. `1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD` (class C)
+
+- scan: 7 levels, 14 phases, mean factor 1.74 (sd 0.26); level starts: 16 24 56 108 220 416 440
+- level analysis: Bell type `RD`, 11 levels; n: 4 12 39 119 839 1079 1847 2567 3271 4639 8423; ratios: 3.000 3.250 3.051 7.050 1.286 1.712 1.390 1.274 1.418 1.816; 2 different tails
+- verdict: needle-like: only 2 tails (all information in one number)
+- diagram: 1,701,691 steps, tape width 1001 cells
+
+<img src="diagrams/1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD.png" alt="space-time diagram" height="350">
+
+<a id="47"></a>
+## 47. `1RB0LF_1LC0LD_1RD1LB_---1RE_0RA1RE_1LA0LE` (class C)
+
+- scan: 10 levels, 38 phases, mean factor 1.47 (sd 0.26); level starts: 16 18 21 51 108 119 176 249 330 499
+- level analysis: Bell type `RE`, 10 levels; n: 4 12 29 62 120 256 516 1016 2108 17222; ratios: 3.000 2.417 2.138 1.935 2.133 2.016 1.969 2.075 8.170; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 180,642 steps, tape width 515 cells
+
+<img src="diagrams/1RB0LF_1LC0LD_1RD1LB_---1RE_0RA1RE_1LA0LE.png" alt="space-time diagram" height="350">
+
+<a id="48"></a>
+## 48. `1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---` (class C)
+
+- scan: 7 levels, 1751 phases, mean factor 1.52 (sd 0.27); level starts: 12 15 20 54 85 116 146
+- verdict: no clear single-block Bell configuration found
+- diagram: 886,334 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---.png" alt="space-time diagram" height="350">
+
+<a id="49"></a>
+## 49. `1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF` (class C)
+
+- scan: 11 levels, 31 phases, mean factor 1.44 (sd 0.27); level starts: 18 25 73 86 138 238 281 312 456 593 711
+- level analysis: Bell type `LA` with left part `01`, 4 levels; n: 6 12 27 746; ratios: 2.000 2.250 27.630; 3 different tails
+- verdict: no clear single-block Bell configuration found
+- diagram: 42,959 steps, tape width 139 cells
+
+<img src="diagrams/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF.png" alt="space-time diagram" height="350">
+
+<a id="50"></a>
+## 50. `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` (class C)
+
+- scan: 10 levels, 28 phases, mean factor 1.50 (sd 0.28); level starts: 12 14 38 58 122 148 190 224 376 456
+- level analysis: Bell type `RB`, 3 levels; n: 4 6 52; ratios: 1.500 8.667; 2 different tails
+- verdict: no clear single-block Bell configuration found
+- diagram: 932,951 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE.png" alt="space-time diagram" height="350">
+
+<a id="51"></a>
+## 51. `1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---` (class C)
+
+- scan: 10 levels, 19 phases, mean factor 1.60 (sd 0.29); level starts: 21 25 28 69 89 197 260 539 716 1451
+- level analysis: Bell type `LA` with left part `01 11 01`, 8 levels; n: 10 28 76 204 546 1458 3890 27660; ratios: 2.800 2.714 2.684 2.676 2.670 2.668 7.111; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 166,941 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---.png" alt="space-time diagram" height="350">
+
+<a id="52"></a>
+## 52. `1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---` (class C)
+
+- scan: 11 levels, 28 phases, mean factor 1.61 (sd 0.30); level starts: 8 26 32 42 83 160 244 322 539 860 941
+- verdict: no clear single-block Bell configuration found
+- diagram: 495,177 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---.png" alt="space-time diagram" height="350">
+
+<a id="53"></a>
+## 53. `1RB1RE_1LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` (class C)
+
+- scan: 9 levels, 146 phases, mean factor 1.66 (sd 0.30); level starts: 8 12 15 17 46 57 136 247 471
+- verdict: no clear single-block Bell configuration found
+- diagram: 488,651 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RE_1LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA.png" alt="space-time diagram" height="350">
+
+<a id="54"></a>
+## 54. `1RB1RF_1LC---_1LE1RD_1RA0RC_0LF0LA_0LD0RB` (class C)
+
+- scan: 10 levels, 49 phases, mean factor 1.53 (sd 0.30); level starts: 12 20 46 52 58 124 135 262 288 564
+- level analysis: Bell type `LA` with left part `02`, 9 levels; n: 31 47 111 127 255 1135 3551 6111 12303; ratios: 1.516 2.362 1.144 2.008 4.451 3.129 1.721 2.013; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 754,212 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RF_1LC---_1LE1RD_1RA0RC_0LF0LA_0LD0RB.png" alt="space-time diagram" height="350">
+
+<a id="55"></a>
+## 55. `1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA` (class C)
+
+- scan: 10 levels, 26 phases, mean factor 1.48 (sd 0.32); level starts: 12 14 16 52 70 134 176 226 366 420
+- level analysis: Bell type `LA` with left part `01 12 01`, 2 levels; n: 4 9; ratios: 2.250; 1 different tails
+- verdict: no clear single-block Bell configuration found
+- diagram: 905,251 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA.png" alt="space-time diagram" height="350">
+
+<a id="56"></a>
+## 56. `1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD` (class C)
+
+- scan: 14 levels, 28 phases, mean factor 1.43 (sd 0.32); level starts: 10 24 27 31 35 51 57 61 73 102 204 224 349 1056
+- level analysis: Bell type `RB`, 11 levels; n: 5 8 14 39 110 232 357 1064 1614 4539 13610; ratios: 1.600 1.750 2.786 2.821 2.109 1.539 2.980 1.517 2.812 2.998; 1 different tails
+- verdict: needle-like: only 1 tail (all information in one number)
+- diagram: 391,938 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD.png" alt="space-time diagram" height="350">
+
