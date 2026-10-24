@@ -73,7 +73,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | 38 | growing list of blocks | 4·10³³ steps | – |
 
 **New findings for the method:**
-1. Besides the vampires, which have a closed table and a tiny halting rate, there are **two-number machines with a high halting rate**. No. 10 halts in about 2 % of Bells, so it is very probably a halter, but with about 10⁴⁰ steps, which no direct simulation reaches. To decide it, its Bell map on two numbers has to be understood and iterated exactly. The obstacle is that the number of phases per Bell grows with n.
+1. Besides the vampires, which have a closed table and a tiny halting rate, there are **two-number machines with a high halting rate**. No. 10 halts in about 2 % of Bells, so it is probably a halter (if the varied starts are representative), but with about 10⁴⁰ steps, which no direct simulation reaches. To decide it, its Bell map on two numbers has to be understood and iterated exactly. The obstacle is that the number of phases per Bell grows with n.
 2. Nos. 31/32 are vampires in base 3 whose table only closes with several blocks. This is the natural next step for the table method.
 3. Perturbed real Bell starts together with an accelerated simulator give a quick estimate of the halting rate, even without a table.
 
