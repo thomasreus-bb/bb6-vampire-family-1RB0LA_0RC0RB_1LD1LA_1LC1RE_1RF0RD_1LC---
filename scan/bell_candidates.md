@@ -53,6 +53,30 @@ Exits do exist for another type of machine, where the short word keeps growing a
 5. **Exact iteration** with divide and conquer (`belldc3` in base 3, `belldc` / `belldcf` / `belldco` in base 2) until HALT, then check the last Bells on the real machine.
 6. **Not closed?** Then the method needs an extension: a Bell state (n, b) with a second number b for the growing tail. That is the natural next step, and it would cover BB(7) class G and the Hydra-like machines.
 
+### 5. Two-number candidates in BB(6): results of 24 Oct 2026
+The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 17, 31, 32, 35, 38) were examined with a new tool:
+
+- **`scan/m19/accsim.c`, an accelerated simulator.** It uses blocks of K cells and a run-length encoded tape.
+  - *Chain steps.* A sweep across a uniform block costs one operation.
+  - *Jumps over repetitions.* If the run structure repeats with constant changes of the counts, many repetitions are applied at once. The step count is exact, because the steps per repetition grow linearly.
+  - *Checks.* It gives the exact step counts of known halters: the BB(5) champion with 47,176,870 steps, and several BB(2,6) halters. With and without jumps it reaches the same state.
+  - *Start options.* It can start from any Bell configuration and stop at a given tape length. This allows **halting-rate tests**: many real or slightly varied Bell starts, each run over many Bells, counting the halts.
+
+| no. | type | depth reached without HALT | halting rate per Bell |
+|---|---|---|---|
+| 10 | two-register ping-pong, `1^n (01)^m` | 4.4·10²³ steps | **about 2 %**: probably halting, after about 10⁴⁰ steps |
+| 11 | multi-register | 10²² steps | at most about 0.1 % |
+| 16 | two-register (like 10) | 4.5·10¹³ steps | not measurable yet |
+| 17 | two-register | 10¹⁴ steps | – |
+| 31, 32 | vampire-like, base 3 (4/3), nested sub-process | 10³⁵ steps (about 140 Bells) | below 2·10⁻⁶ |
+| 35 | register system | 5·10¹⁶ steps | – |
+| 38 | growing list of blocks | 4·10³³ steps | – |
+
+**New findings for the method:**
+1. Besides the vampires, which have a closed table and a tiny halting rate, there are **two-number machines with a high halting rate**. No. 10 halts in about 2 % of Bells, so it is very probably a halter, but with about 10⁴⁰ steps, which no direct simulation reaches. To decide it, its Bell map on two numbers has to be understood and iterated exactly. The obstacle is that the number of phases per Bell grows with n.
+2. Nos. 31/32 are vampires in base 3 whose table only closes with several blocks. This is the natural next step for the table method.
+3. Perturbed real Bell starts together with an accelerated simulator give a quick estimate of the halting rate, even without a table.
+
 ## The 56 candidates
 
 | # | class | machine | factor | verdict |
@@ -66,14 +90,14 @@ Exits do exist for another type of machine, where the short word keeps growing a
 | [7](#7) | A | `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` | 1.58 | vampire family (orbits O1–O4 of this repository) |
 | [8](#8) | B | `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` | 1.33 | **halts** (vampire method, [halt-found repository](https://github.com/thomasreus-bb/halt-found-1rb0rb_1lc1rf_0rd0lb_0ra1le_1ld---_0rb0rc)) |
 | [9](#9) | B | `1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB` | 1.33 | needle-like: only 2 tails (all information in one number) |
-| [10](#10) | B | `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` | 1.24 | 22 different tails, but the growth ratio varies |
-| [11](#11) | B | `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` | 1.21 | 13 different tails, but the growth ratio varies |
+| [10](#10) | B | `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` | 1.24 | **probably halting** (two-register system, about 2 % HALT per Bell; see [10](#10)) |
+| [11](#11) | B | `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` | 1.21 | multi-register system; no HALT up to 10²² steps; low halting rate |
 | [12](#12) | B | `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` | 1.27 | no clear single-block Bell configuration found |
 | [13](#13) | B | `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` | 1.33 | needle-like: only 2 tails (all information in one number) |
 | [14](#14) | B | `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` | 1.21 | needle-like: only 1 tail (all information in one number) |
 | [15](#15) | B | `1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC` | 1.36 | needle-like: only 2 tails (all information in one number) |
-| [16](#16) | B | `1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE` | 1.26 | 10 different tails, but the growth ratio varies |
-| [17](#17) | B | `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` | 1.29 | 3 different tails, but the growth ratio varies |
+| [16](#16) | B | `1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE` | 1.26 | two-register system like 10; no HALT up to 4.5·10¹³ steps |
+| [17](#17) | B | `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` | 1.29 | two-register system; no HALT up to 10¹⁴ steps |
 | [18](#18) | B | `1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD` | 1.36 | no clear single-block Bell configuration found |
 | [19](#19) | B | `1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---` | 1.32 | **two-number system** (examined in detail, see [19](#19)): no HALT found |
 | [20](#20) | B | `1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---` | 1.40 | needle-like: only 2 tails (all information in one number) |
@@ -87,14 +111,14 @@ Exits do exist for another type of machine, where the short word keeps growing a
 | [28](#28) | B | `1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC` | 1.24 | no clear single-block Bell configuration found |
 | [29](#29) | B | `1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB` | 1.49 | needle-like: only 2 tails (all information in one number) |
 | [30](#30) | B | `1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB` | 1.54 | needle-like: only 1 tail (all information in one number) |
-| [31](#31) | B | `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` | 1.34 | 3 different tails, but the growth ratio varies |
-| [32](#32) | B | `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` | 1.33 | 3 different tails, but the growth ratio varies |
+| [31](#31) | B | `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` | 1.34 | **vampire-like, base 3 (factor 4/3)** with a nested sub-process; no HALT in 1.9·10⁶ test Bells |
+| [32](#32) | B | `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` | 1.33 | same dynamics as 31 |
 | [33](#33) | B | `1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD` | 1.69 | needle-like: only 1 tail (all information in one number) |
 | [34](#34) | B | `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` | 1.34 | no clear single-block Bell configuration found |
-| [35](#35) | B | `1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA` | 1.25 | 4 different tails, but the growth ratio varies |
+| [35](#35) | B | `1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA` | 1.25 | register system; no HALT up to 5·10¹⁶ steps |
 | [36](#36) | B | `1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB` | 1.56 | needle-like: only 1 tail (all information in one number) |
 | [37](#37) | B | `1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC` | 1.26 | no clear single-block Bell configuration found |
-| [38](#38) | C | `1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC` | 1.55 | 4 different tails, but the growth ratio varies |
+| [38](#38) | C | `1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC` | 1.55 | growing list of blocks (nested); no HALT up to 4·10³³ steps |
 | [39](#39) | C | `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number) |
 | [40](#40) | C | `1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA` | 1.48 | no clear single-block Bell configuration found |
 | [41](#41) | C | `1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD` | 1.40 | needle-like: only 1 tail (all information in one number) |
@@ -205,6 +229,18 @@ Exits do exist for another type of machine, where the short word keeps growing a
 - verdict: 22 different tails, but the growth ratio varies
 - diagram: 10,067 steps, tape width 64 cells
 
+- **examined in detail (24 Oct 2026): probably halting.** Tools: `scan/m19/`.
+  - *Bell structure.* At the start of each Bell the tape is `1^n (01)^m 00`, head at the right end, state C. n grows by about 1.3 per Bell; m jumps around irregularly (6, 8, 9, … 87, 32).
+  - *Inside a Bell.* The machine is a **register machine with two large registers**, a block `11…` and a block `10…`/`01…` (in 2-cell units), whose sum stays almost constant during a Bell. A Bell consists of many phases. Each phase moves almost a whole register into the other, with ratios like 1:1, 4:3 and 3:1, i.e. division with remainders.
+  - *Growth of the work.* The number of phases grows linearly with the tape length: about 0.49 phases per cell, measured for growth factors 2 … 64. The number of steps grows like n³.
+  - *Simulation.* With `accsim` (blocks of 2 cells, chain steps, jumps over repetitions), 2·10¹⁰ real operations reach **4.4·10²³ steps**, with registers of about 7·10⁷ blocks: no HALT. That is about 55 Bells.
+  - *HALT is reachable, and frequent.*
+    - From 600 random Bell configurations (n = 300 … 1500, m = 1 … 60), 3 halt within the next Bell.
+    - From real Bell starts of the orbit with n varied by up to ±60, run until the tape is 30 times as long (about 13 Bells), **67 of 300** and **74 of 300** runs halted (two seeds). The halts are spread evenly over the whole growth range (factor 1.5 … 30), so they are not an artefact of the variation.
+    - This gives a halting rate of about **2 % per Bell**.
+  - *Estimate.* After about 55 Bells without HALT, about 50 more Bells are expected. That means n of about 10¹³–10¹⁴ cells and, with steps ~ n³, roughly **10⁴⁰ steps**. That is far beyond direct or `accsim` simulation (about 10¹³ phases). An exact simulation would need a further idea, e.g. a closed formula for the phase sequence within a Bell, or a regularity in it (the remainders look chaotic).
+  - *Assessment.* A "probably halting" machine with a constant halting rate per Bell. It is the first candidate of this kind found here, and a good target for an extended method (Bell map on two numbers).
+
 <img src="diagrams/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE.png" alt="space-time diagram" height="350">
 
 <a id="11"></a>
@@ -214,6 +250,8 @@ Exits do exist for another type of machine, where the short word keeps growing a
 - level analysis: Bell type `LC` with left part `01`, 16 levels; n: 5 12 18 48 96 110 200 232 376 478 702 794 968 1512 1832 3912; ratios: 1.146 1.818 1.160 1.621 1.271 1.469 1.131 1.219 1.562 1.212 2.135; 13 different tails
 - verdict: 13 different tails, but the growth ratio varies
 - diagram: 202,912 steps, tape width 407 cells
+
+- **examined (24 Oct 2026):** multi-register system. At Bell starts the tape is `(10)^m (01)^n 0`, head right, state F. In between there are 3–4 large blocks, e.g. `11^a 01^b 00 10^c`. `accsim` (2·10¹⁰ real operations) reaches **10²² steps** with blocks of about 3·10⁸: no HALT. Perturbed real starts gave 1 HALT in 120 runs over growth factor 10, right at the start, so the halting rate is at most about 0.1 % per Bell.
 
 <img src="diagrams/1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE.png" alt="space-time diagram" height="350">
 
@@ -265,6 +303,8 @@ Exits do exist for another type of machine, where the short word keeps growing a
 - verdict: 10 different tails, but the growth ratio varies
 - diagram: 10,525 steps, tape width 77 cells
 
+- **examined (24 Oct 2026):** the same form as no. 10. At Bell starts the tape is `0 1^n (01)^m 0`, head right, state C, with a two-register ping-pong inside. `accsim` is much less effective here: 2·10¹⁰ real operations reach only **4.5·10¹³ steps** (blocks about 3·10⁴): no HALT. Perturbed real starts gave 0 HALT in 60 runs over growth factor 4 (a weak test).
+
 <img src="diagrams/1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE.png" alt="space-time diagram" height="350">
 
 <a id="17"></a>
@@ -274,6 +314,8 @@ Exits do exist for another type of machine, where the short word keeps growing a
 - level analysis: Bell type `LE` with left part `01`, 17 levels; n: 7 11 21 41 57 77 165 233 297 377 477 1137 1427 2141 4243 6365; ratios: 1.351 2.143 1.412 1.275 1.269 1.265 2.384 1.255 1.500 1.982 1.500; 3 different tails
 - verdict: 3 different tails, but the growth ratio varies
 - diagram: 15,198 steps, tape width 79 cells
+
+- **examined briefly (24 Oct 2026):** two-register system. `accsim` with 10⁹ real operations reaches **10¹⁴ steps** (blocks `11^2·10⁵`, `10^2.2·10⁶`): no HALT.
 
 <img src="diagrams/1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB.png" alt="space-time diagram" height="350">
 
@@ -426,6 +468,13 @@ Exits do exist for another type of machine, where the short word keeps growing a
 - verdict: 3 different tails, but the growth ratio varies
 - diagram: 466,802 steps, tape width 1001 cells
 
+- **examined in detail (24 Oct 2026): vampire-like in base 3, with a nested sub-process.**
+  - *Bell structure.* At Bell starts the tape is `L 1^n T`, head at the right end, state A, with L ∈ {empty, `10`} and T ∈ {`0`, `010`}. The factor is exactly **4/3** in the limit: …, 108116, 144159, 192217.
+  - *Table.* With L empty the table is clean and affine: n' = 4n/3 + c, with c depending on n mod 6 and T (`deriveLT.py`). From L = `10` the long block splits into several pieces, e.g. `1^39 0 1^54 0 1^30`, which only join up again after a variable number of Bells. So there is no finite table in this representation; a table with several blocks would be needed.
+  - *Simulation.* With `accsim` (blocks of 3 cells), each Bell is essentially one jump: about 140 Bells and **10³⁵ steps** in about 77,000 real operations, no HALT. The limit is the 64-bit counts, not the time.
+  - *Halting rate.* 20,000 random starts (n = 2,000 … 20,000, all four combinations of L and T), each run over a growth factor of 10¹², i.e. about 96 Bells, gave **no HALT** in about 1.9·10⁶ Bells in total. So the rate is below about 2·10⁻⁶ per Bell (`hz31.py`).
+  - *Assessment.* A vampire-type machine with a very low halting rate, like the vampire family. Deciding it needs the vampire method extended to tables with several blocks.
+
 <img src="diagrams/1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---.png" alt="space-time diagram" height="350">
 
 <a id="32"></a>
@@ -435,6 +484,8 @@ Exits do exist for another type of machine, where the short word keeps growing a
 - level analysis: Bell type `RD` with left part `11 01`, 10 levels; n: 10 18 34 42 78 86 166 283 1690 5294; ratios: 1.800 1.889 1.235 1.857 1.103 1.930 1.705 5.972 3.133; 3 different tails
 - verdict: 3 different tails, but the growth ratio varies
 - diagram: 14,294 steps, tape width 141 cells
+
+- **examined (24 Oct 2026):** the same dynamics as no. 31. The Bell values agree to within a few units (108114 / 108109, 144157 / 144152, …), so these are very probably equivalent machines. `accsim` with K = 3 gives the same picture: 10³⁵ steps in about 77,000 real operations, no HALT.
 
 <img src="diagrams/1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---.png" alt="space-time diagram" height="350">
 
@@ -466,6 +517,8 @@ Exits do exist for another type of machine, where the short word keeps growing a
 - verdict: 4 different tails, but the growth ratio varies
 - diagram: 6,352 steps, tape width 55 cells
 
+- **examined briefly (24 Oct 2026):** register system with blocks like `11^4·10⁵ 01 11^2.8·10⁵`. `accsim` with 10⁹ real operations reaches **5·10¹⁶ steps**: no HALT.
+
 <img src="diagrams/1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA.png" alt="space-time diagram" height="350">
 
 <a id="36"></a>
@@ -495,6 +548,8 @@ Exits do exist for another type of machine, where the short word keeps growing a
 - level analysis: Bell type `RA`, 7 levels; n: 4 14 20 54 60 154 404; ratios: 3.500 1.429 2.700 1.111 2.567 2.623; 4 different tails
 - verdict: 4 different tails, but the growth ratio varies
 - diagram: 279,320 steps, tape width 1001 cells
+
+- **examined briefly (24 Oct 2026):** the tape becomes a growing **list of blocks**, `11^192 10^15 01 11^2 01^3 00 11^233 10^17 …`, i.e. a nested counter structure of type G (not closed). `accsim` reaches **4·10³³ steps** with only 892 jumps: no HALT.
 
 <img src="diagrams/1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC.png" alt="space-time diagram" height="350">
 
