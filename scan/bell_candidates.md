@@ -75,7 +75,7 @@ Exits do exist for another type of machine, where the short word keeps growing a
 | [16](#16) | B | `1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE` | 1.26 | 10 different tails, but the growth ratio varies |
 | [17](#17) | B | `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` | 1.29 | 3 different tails, but the growth ratio varies |
 | [18](#18) | B | `1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD` | 1.36 | no clear single-block Bell configuration found |
-| [19](#19) | B | `1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---` | 1.32 | vampire-like signature: regular growth, 3 different tails |
+| [19](#19) | B | `1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---` | 1.32 | **two-number system** (examined in detail, see [19](#19)): no HALT found |
 | [20](#20) | B | `1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---` | 1.40 | needle-like: only 2 tails (all information in one number) |
 | [21](#21) | B | `1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD` | 1.40 | needle-like: only 1 tail (all information in one number) |
 | [22](#22) | B | `1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE` | 1.40 | needle-like: only 2 tails (all information in one number) |
@@ -291,7 +291,20 @@ Exits do exist for another type of machine, where the short word keeps growing a
 
 - scan: 23 levels, 61 phases, mean factor 1.32 (sd 0.12); level starts: 166 212 253 329 382 498 577 759 868 1148 1306 1733 2604 3920
 - level analysis: Bell type `RB`, 13 levels; n: 20 22 35 92 143 335 767 1739 3926 5894 8846 13274 19916; ratios: 1.591 2.629 1.554 2.343 2.290 2.267 2.258 1.501 1.501 1.501 1.500; 3 different tails
-- verdict: vampire-like signature: regular growth, 3 different tails
+- verdict (scan): vampire-like signature: regular growth, 3 different tails
+- **verdict after a detailed examination (24 Oct 2026): not a simple vampire but a two-number system; no HALT found.** Tools: `scan/m19/`.
+  - *Bell structure.* At the start of each Bell the tape is `L 1^n T`, head at the right end, state E. n grows by 3/2: in the real orbit 8846 → 13274 → 19916 → 29881 → 44822 → …, with n' = 3n/2 + c, where c depends on n mod 4, on T and on L.
+  - *Right part.* T is only `0` or `010`.
+  - *Left part.* L carries the information. After an even n it is empty again. After k odd n in a row it is `110 1^j 0`, with j = 8, 26, 359, 1232, 2780, 6263, 21158 for k = 2 … 8 (`chain.py`).
+  - *Why the table does not close.* The sequence of j is itself Collatz-like, and it takes material from n: n' ≈ 1.5n − c(j), with c up to several thousand at j ≈ 2·10⁴. For other values of j the left part even becomes a list of several blocks, e.g. j = 13 gives `11 0 1^26 0 1^17 0`. The "3 tails" of the scan only looked at the right side.
+  - *Search for HALT, all without a halt:*
+    - all left parts `110 1^j 0` with j < 160, every residue n mod 4, both T (1,280 runs of the real TM from Bell configurations, `hscan.py`);
+    - the chain of left parts of the real orbit up to k = 8;
+    - the range where j is comparable to n (j = 26 and 359, n = 5 … 1025).
+  - *Assessment.* Unusual left parts need long runs of odd n, whose probability halves with every further odd Bell. For j to catch up with n, about 0.4·b odd Bells in a row would be needed, which becomes exponentially unlikely as the Bell number b grows. So this machine is probably non-halting in the same sense as Antihydra, but not provably so with these means.
+  - *Lessons for the method:*
+    1. Count the different words on **both** sides of the long block.
+    2. In a two-number system the second number can itself follow a Collatz-like process, not only take steps of ±1.
 - diagram: 65,719 steps, tape width 338 cells
 
 <img src="diagrams/1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---.png" alt="space-time diagram" height="350">
