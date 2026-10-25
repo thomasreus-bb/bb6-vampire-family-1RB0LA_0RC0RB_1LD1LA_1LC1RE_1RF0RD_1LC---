@@ -65,7 +65,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 | no. | type | depth reached without HALT | halting rate per Bell |
 |---|---|---|---|
-| 10 | two-register ping-pong, `1^n (01)^m` | 4.4·10²³ steps | **about 2 %**: probably halting, after about 10⁴⁰ steps |
+| 10 | two-register ping-pong, exact Bell map (25 Oct) | 10¹⁰ Bells, about 2·10³⁰ steps | HALT only on an exact hit (chance about 1/k at Bell k); the 2 % estimate of 24 Oct is withdrawn |
 | 11 | multi-register | 10²² steps | at most about 0.1 % |
 | 16 | two-register (like 10) | 4.5·10¹³ steps | not measurable yet |
 | 17 | two-register | 10¹⁴ steps | – |
@@ -74,7 +74,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | 38 | growing list of blocks | 4·10³³ steps | – |
 
 **New findings for the method:**
-1. Besides the vampires, which have a closed table and a tiny halting rate, there are **two-number machines with a high halting rate**. No. 10 halts in about 2 % of Bells, so it is probably a halter (if the varied starts are representative), but with about 10⁴⁰ steps, which no direct simulation reaches. To decide it, its Bell map on two numbers has to be understood and iterated exactly. The obstacle is that the number of phases per Bell grows with n.
+1. Besides the vampires there are **two-number machines**. For no. 10 the Bell map on two numbers has been found exactly (25 Oct, see [10](#10)): three Bell types A, B, C, and HALT only when a C Bell leaves exactly 0 or −1 cells. Iterated over 10¹⁰ Bells there is no HALT. (The halting rate of about 2 % estimated on 24 Oct from varied starts was wrong for the real orbit.)
 2. Nos. 31/32 are vampires in base 3 whose table only closes with several blocks. This is the natural next step for the table method.
 3. Perturbed real Bell starts together with an accelerated simulator give a quick estimate of the halting rate, even without a table.
 
@@ -91,7 +91,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | [7](#7) | A | `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` | 1.58 | vampire family (orbits O1–O4 of this repository) |
 | [8](#8) | B | `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` | 1.33 | **halts** (vampire method, [halt-found repository](https://github.com/thomasreus-bb/halt-found-1rb0rb_1lc1rf_0rd0lb_0ra1le_1ld---_0rb0rc)) |
 | [9](#9) | B | `1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB` | 1.33 | needle-like: only 2 tails (all information in one number) |
-| [10](#10) | B | `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` | 1.24 | **probably halting** (two-register system, about 2 % HALT per Bell; see [10](#10)) |
+| [10](#10) | B | `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` | 1.24 | two-register system, exact Bell map with types A/B/C; no HALT in 10¹⁰ Bells (about 2·10³⁰ steps); HALT needs an exact hit (see [10](#10)) |
 | [11](#11) | B | `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` | 1.21 | multi-register system; no HALT up to 10²² steps; low halting rate |
 | [12](#12) | B | `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` | 1.27 | no clear single-block Bell configuration found |
 | [13](#13) | B | `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` | 1.33 | needle-like: only 2 tails (all information in one number) |
@@ -230,17 +230,57 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 - verdict: 22 different tails, but the growth ratio varies
 - diagram: 10,067 steps, tape width 64 cells
 
-- **examined in detail (24 Oct 2026): probably halting.** Tools: `scan/m19/`.
-  - *Bell structure.* At the start of each Bell the tape is `1^n (01)^m 00`, head at the right end, state C. n grows by about 1.3 per Bell; m jumps around irregularly (6, 8, 9, … 87, 32).
-  - *Inside a Bell.* The machine is a **register machine with two large registers**, a block `11…` and a block `10…`/`01…` (in 2-cell units), whose sum stays almost constant during a Bell. A Bell consists of many phases. Each phase moves almost a whole register into the other, with ratios like 1:1, 4:3 and 3:1, i.e. division with remainders.
-  - *Growth of the work.* The number of phases grows linearly with the tape length: about 0.49 phases per cell, measured for growth factors 2 … 64. The number of steps grows like n³.
-  - *Simulation.* With `accsim` (blocks of 2 cells, chain steps, jumps over repetitions), 2·10¹⁰ real operations reach **4.4·10²³ steps**, with registers of about 7·10⁷ blocks: no HALT. That is about 55 Bells.
-  - *HALT is reachable, and frequent.*
-    - From 600 random Bell configurations (n = 300 … 1500, m = 1 … 60), 3 halt within the next Bell.
-    - From real Bell starts of the orbit with n varied by up to ±60, run until the tape is 30 times as long (about 13 Bells), **67 of 300** and **74 of 300** runs halted (two seeds). The halts are spread evenly over the whole growth range (factor 1.5 … 30), so they are not an artefact of the variation.
-    - This gives a halting rate of about **2 % per Bell**.
-  - *Estimate.* After about 55 Bells without HALT, about 50 more Bells are expected. That means n of about 10¹³–10¹⁴ cells and, with steps ~ n³, roughly **10⁴⁰ steps**. That is far beyond direct or `accsim` simulation (about 10¹³ phases). An exact simulation would need a further idea, e.g. a closed formula for the phase sequence within a Bell, or a regularity in it (the remainders look chaotic).
-  - *Assessment.* A "probably halting" machine with a constant halting rate per Bell. It is the first candidate of this kind found here, and a good target for an extended method (Bell map on two numbers).
+- **Exact Bell map (25 Oct 2026): no HALT in the first 10¹⁰ Bells (about 10³⁰ steps); HALT needs an exact hit.** Tools: `scan/m10/`.
+  - *What a Bell is here.* A Bell is the stretch between two steps at which the head reaches a new cell at the left end of the tape in state C. These are the horizontal bands of the space-time diagram. Bell 1 starts at step 48; before that there is only a short start-up. The tape grows by about 4.5 cells per Bell, i.e. **linearly**, not geometrically. The step count grows like about 2.3·k³ after k Bells.
+  - *Tape at the start of a Bell.* Always
+    `0 (01)^a [0 01] (11)^b [1]`, head on the new left cell, state C.
+    Two registers a and b, a separator `0 01` (present or not) and an optional extra `1` at the right end.
+  - *Three phases inside a Bell* (coloured bar in the figure below):
+    1. The block `(01)^a` is turned into `11…` in a few steps. This is the left register L, about 2a cells.
+    2. **Dome.** In each round L loses one cell, the right block `(11)^b` loses three cells and a chequered block `(01)…` in the middle grows by two cells. This phase draws the curved chequered area.
+    3. **Parallelogram.** Starts when the right block is used up. The chequered block keeps its width and moves to the right. L loses one cell per round and a new `11…` block grows at the right end. This phase draws the slanted chequered stripe.
+  - *Three types of Bell.* Which register runs out first decides the type:
+
+    | type | condition (approx.) | what happens | next Bell (approx.) |
+    |---|---|---|---|
+    | **A** | b/3 < a ≤ b | the right block runs out first; a large right block, so a long dome | a' ≈ 4b/3, b' ≈ a − b/3 |
+    | **B** | a > b | the right block runs out first; a small right block, so a short dome and a long parallelogram | as A |
+    | **C** | a < b/3 | L runs out during the dome: no phase 3. The Bell is short and the next one starts without the separator `0 01` | a' ≈ 4a, b' ≈ b − 3a |
+
+    Two rare details:
+    - **b = 0.** A Bell may start with an empty right register; then it has only phase 3. In the first 10¹⁰ Bells this happens twice (Bells 93 and 39,365).
+    - **Parity variant.** Depending on b mod 3 and the parity bits, A and B Bells may have one extra switching round between phases 2 and 3. It is not visible in the diagram.
+  - *Order of the types.* A is always followed by B: after A, a' ≈ 4b/3 > b' ≈ a − b/3. B and C can be followed by A, B or C. Over 10¹⁰ Bells the shares are B 50 %, A 25 %, C 25 %. The first 16 Bells alternate strictly (ABAB…); the first C is Bell 17 (steps 20,438–20,907). First 100 Bells (Z = b = 0):
+
+        1–10   ABABABABAB      51–60   BABCBCABCB
+       11–20   ABABABCABA      61–70   ABCBCBCABC
+       21–30   BABCBBABAB      71–80   BABCBBBBBA
+       31–40   ABCBCBABCB      81–90   BABCBCCBCA
+       41–50   ABCABCABCA      91–100  BAZCCABCCB
+
+  - *Exact map.* `scan/m10/bandmap.py` gives the next Bell (a', separator, b', extra 1) from the current one exactly, with a table over (b mod 3, extra 1, separator). It is checked in two ways:
+    - against the real TM for the first 2000 Bells of the orbit (`bands.c`);
+    - against the real TM for all 19,844 start tapes with a ≤ 40 and b ≤ 120 (`edge.c`). It agrees on all of them except the cases b = 0 and the halting families below, which the iteration treats separately.
+
+    In short, with L = 2a + 1 + 2·sep (cells of the left register) and m = ⌊2b/3⌋ + δ (rounds of the dome, δ ∈ {0, −1} from the table):
+    - **A/B** (L > m): a' = 2m + (1…4), b' from 2b' + e' = 2a + 3·sep − m + (0 or −1); separator present.
+    - **C** (L ≤ m): a' = 2L + 2 + sep, 2b' + e' = 2b + e − 3L − 2 − sep; no separator.
+  - *HALT condition.*
+    - **When it halts.** The machine halts exactly when a C Bell uses up the right register completely, leaving 0 or −1 cells. The four families of Bell starts are (a, sep, b, e) = (a, 0, 3a+2, 0), (a, 0, 3a+2, 1), (a, 1, 3a+5, 1) and (a, 1, 3a+6, 0). After such a C Bell the tape is `0 (01)^x` or `0 (01)^x 0`, and the machine halts in the next Bell. This is checked with the real TM for all a ≤ 40.
+    - **No other halt.** No other start tape with a ≤ 40, b ≤ 120 halts within one Bell.
+  - *Iteration.* `bmap.c` iterates the map, about 10⁸ Bells per second. In **10¹⁰ Bells there is no HALT**. The registers are then about 10¹⁰, the tape is about 4.5·10¹⁰ cells and the step count is roughly 2·10³⁰. The nearest misses: after Bells 31,031 and 14,043,703 a C Bell left 2 cells, after Bell 431,602 it left 4.
+  - *Assessment.*
+    - **What is open.** A HALT needs a C Bell whose right remainder lands exactly on 0 or −1. Over the C Bells this remainder is spread fairly evenly over [0, 2b] and shows no residue class mod 12 that would forbid it.
+    - **Heuristic.** The chance of a hit per Bell falls like 1/k. The expected number of hits up to Bell K therefore grows only like log K, so HALT may come very late or never. This is a heuristic, not a proof in either direction.
+    - **What would decide it.** The exact map reduces the machine to a two-number system that can be iterated cheaply. A decision needs either a hit, which can be searched for much further with `bmap.c`, or an argument why the remainder never reaches 0 or −1.
+  - *Correction of 24 Oct.* The earlier estimate (about 2 % HALT per "Bell", HALT after about 10⁴⁰ steps) is **withdrawn**.
+    - **Where it came from.** It used a different "Bell", namely records of the block `1^n` in configurations `1^n (01)^m 00` that are far apart, with many of the Bells above in between.
+    - **Why it fails.** It counted halts of *varied* starts, which leave the orbit's set of reachable configurations. The real orbit does not halt in 10¹⁰ Bells.
+    - **What stays valid.** The `accsim` run without HALT up to 4.4·10²³ steps agrees with the map: that is about Bell 6·10⁷.
+
+<img src="diagrams/m10_bell_types.png" alt="Bell types A, B, C" width="600">
+
+*Steps 0–26,400, time downward, 20 steps per row. Labels: Bell number and type. The bar on the right shows the phase: grey = 1 (`(01)^a` to `11`), blue = 2 (dome), green = 3 (parallelogram). Bell 17 is the first C Bell: no green phase.*
 
 <img src="diagrams/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE.png" alt="space-time diagram" height="350">
 
