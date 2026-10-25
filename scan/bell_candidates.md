@@ -65,7 +65,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 | no. | type | depth reached without HALT | halting rate per Bell |
 |---|---|---|---|
-| 10 | two-register ping-pong, exact Bell map (25 Oct) | 10¹⁰ Bells, about 2·10³⁰ steps | HALT only on an exact hit (chance about 1/(9k) at Bell k); known on the BusyBeaverWiki as \"probviously halting\" (Shawn Ligocki, 2·10¹² steps); the 2 % estimate of 24 Oct is withdrawn |
+| 10 | two-register ping-pong, exact Bell map (25 Oct) | 10¹⁰ Bells, about 2·10³⁰ steps | HALT only on an exact hit (chance about 1/(9k) at Bell k); known on the BusyBeaverWiki as "probviously halting" (Shawn Ligocki, 2·10¹² steps); the 2 % estimate of 24 Oct is withdrawn |
 | 11 | multi-register | 10²² steps | at most about 0.1 % |
 | 16 | two-register (like 10) | 4.5·10¹³ steps | not measurable yet |
 | 17 | two-register | 10¹⁴ steps | – |
