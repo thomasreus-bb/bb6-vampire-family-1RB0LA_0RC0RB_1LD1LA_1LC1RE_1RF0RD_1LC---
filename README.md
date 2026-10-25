@@ -242,6 +242,12 @@ So each block reads k once and writes it once. With pruning, only the part of th
 - Disk space for a run to 10¹²: the two work files plus the checkpoints. Checkpoints are hex text, twice the size of k; the start checkpoint, the newest one and with `-p` the last exact one are kept, so allow about 400 GB.
 - `-j`, `-t`, `-p`, `-i`, `-b` work as in `belldcf`.
 
+**Checkpoint size and a full disk** (all three programs, since 25 Oct).
+- **Size.** A full-precision checkpoint at Bell N holds about 0.585·N bits of k as hex text, i.e. about 0.15·N bytes: 15 GB at 10¹¹, 33 GB at 2.25·10¹¹. While the new one is written, the previous one still exists, so about twice that is needed. With `-p` the size is at most 0.37·T bits (at Bell ≈ T/1.585) and then shrinks.
+- **Log line first.** The log line with KCHECK is now written to `progress.log` *before* the checkpoint.
+- **Failed write.** If the checkpoint cannot be written (disk full), the program reports it in the log, removes the partial file, keeps the previous checkpoint and **continues**. Only at the target Bell does it stop with an error.
+- **Test.** Checked with a checkpoint redirected to `/dev/full` (O4, Bells 10⁶ … 3·10⁷, `belldc`, `belldcf` and `belldco`): the KCHECK values are logged and the run continues to the target.
+
 Measurements (O2, 2 cores, same range as above, k at the end 292 MB):
 
 | range | `belldc` | `belldcf -m -j 2` | `belldco -M 0.25 -j 2` | `belldco -j 2` (default `-M 4`) |

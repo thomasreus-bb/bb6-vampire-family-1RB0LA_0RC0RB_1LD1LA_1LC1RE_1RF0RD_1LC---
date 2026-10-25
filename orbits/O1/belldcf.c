@@ -169,7 +169,7 @@ static int write_ckpt(long long bell,const mpz_t k,int s,long long from,double s
   if(from>=0&&bell>from) fprintf(f,"time_per_bell %.3e s (average over Bells %lld-%lld, run time %.3f s)\n",secs/(double)(bell-from),from,bell,secs);
   fprintf(f,"checksum %016llx\n",(unsigned long long)h);
   if(ferror(f)){ fprintf(stderr,"%s: write error (disk full?)\n",tmpn); fclose(f); remove(tmpn); return -1; }
-  if(fclose(f)){ perror(tmpn); return -1; }
+  if(fclose(f)){ perror(tmpn); remove(tmpn); return -1; }
   if(rename(tmpn,name)){ perror(name); return -1; }
   return 0; }
 
@@ -374,13 +374,19 @@ int main(int argc,char**argv){
     if(bell==nextck||bell==target){
       double span=now()-lastck_time; long long from=lastck_bell; double secs=span;
       if(bell-lastck_bell<interval/2&&prevck_bell<lastck_bell){ from=prevck_bell; secs=prevck_time+span; }
-      if(write_ckpt(bell,k,s,from,secs)) return 1;
-      prevck_bell=lastck_bell; prevck_time=span; lastck_bell=bell; lastck_time=now();
-      // the previous intermediate checkpoint is deleted, except the last exact one before pruning starts
-      if(prevname[0]&&!(prevcut==0&&cut==1)) remove(prevname);
-      if(prevname[0]&&prevcut==0&&cut==1) printf("keeping %s (last exact checkpoint before pruning)\n",prevname);
-      if(bell<target){ ckpt_name_h(prevname,sizeof prevname,bell,cut); prevcut=cut; } else prevname[0]=0;
       log_progress(bell,k,s,now()-t0,bell==target?"target ":"ckpt   ");
+      // the KCHECK line is logged first, so it is not lost if the checkpoint cannot be written (e.g. disk full)
+      if(write_ckpt(bell,k,s,from,secs)){
+        char msg[300]; snprintf(msg,sizeof msg,"checkpoint at Bell %lld could NOT be written (disk full?); the previous checkpoint is kept; continuing\n",bell);
+        fputs(msg,stderr); FILE*g=fopen("progress.log","a"); if(g){ fputs(msg,g); fclose(g); }
+        if(bell==target) return 1; }
+      else {
+        prevck_bell=lastck_bell; prevck_time=span; lastck_bell=bell; lastck_time=now();
+        // the previous intermediate checkpoint is deleted, except the last exact one before pruning starts
+        if(prevname[0]&&!(prevcut==0&&cut==1)) remove(prevname);
+        if(prevname[0]&&prevcut==0&&cut==1) printf("keeping %s (last exact checkpoint before pruning)\n",prevname);
+        if(bell<target){ ckpt_name_h(prevname,sizeof prevname,bell,cut); prevcut=cut; } else prevname[0]=0;
+      }
       if(bell==nextck) nextck+=interval; }
   }
   printf("no halt up to Bell %lld; time %.1fs (low part %.1fs, products %.1fs)\n",bell,now()-t0,tlow,tmul);
