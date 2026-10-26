@@ -70,7 +70,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | 11 | multi-register | 10²² steps | at most about 0.1 % |
 | 16 | two-register (like 10) | 4.5·10¹³ steps | not measurable yet |
 | 17 | two-register | 10¹⁴ steps | – |
-| 31, 32 | vampire-like, base 3 (4/3), nested sub-process | 10³⁵ steps (about 140 Bells) | below 2·10⁻⁶ |
+| 31, 32 | vampire-like, base 3 (4/3), nested sub-process; Bell types A/B/C, prefix table mod 6, HALT entries blocked mod 3 (26 Oct) | 10³⁵·⁵ steps (202 Bells) | below 2·10⁻⁶ |
 | 35 | register system | 5·10¹⁶ steps | – |
 | 38 | growing list of blocks | 4·10³³ steps | – |
 
@@ -113,7 +113,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | [28](#28) | B | `1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC) | 1.24 | no clear single-block Bell configuration found |
 | [29](#29) | B | `1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB` | 1.49 | needle-like: only 2 tails (all information in one number) |
 | [30](#30) | B | `1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB` | 1.54 | needle-like: only 1 tail (all information in one number) |
-| [31](#31) | B | `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` | 1.34 | **vampire-like, base 3 (factor 4/3)** with a nested sub-process; no HALT in 1.9·10⁶ test Bells |
+| [31](#31) | B | `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` | 1.34 | **vampire-like, base 3 (factor 4/3)** with a nested sub-process; Bell types A/B/C; prefix table mod 6 without reachable HALT, not closed (nested levels); no HALT in 202 Bells (10³⁵·⁵ steps) |
 | [32](#32) | B | `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` | 1.33 | same dynamics as 31 |
 | [33](#33) | B | `1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD` [**wiki**](https://wiki.bbchallenge.org/wiki/Space_Needle) | 1.69 | needle-like: only 1 tail (all information in one number) |
 | [34](#34) | B | `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD) | 1.34 | no clear single-block Bell configuration found |
@@ -565,6 +565,60 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
   - *Simulation.* With `accsim` (blocks of 3 cells), each Bell is essentially one jump: about 140 Bells and **10³⁵ steps** in about 77,000 real operations, no HALT. The limit is the 64-bit counts, not the time.
   - *Halting rate.* 20,000 random starts (n = 2,000 … 20,000, all four combinations of L and T), each run over a growth factor of 10¹², i.e. about 96 Bells, gave **no HALT** in about 1.9·10⁶ Bells in total. So the rate is below about 2·10⁻⁶ per Bell (`hz31.py`).
   - *Assessment.* A vampire-type machine with a very low halting rate, like the vampire family. Deciding it needs the vampire method extended to tables with several blocks.
+
+- **Bell types, prefix table and HALT (26 Oct 2026).** Tools and data: `scan/m31/`.
+  - *Bell.* A Bell starts when the head enters a new cell at the right end in state A. The tape is then only 1-blocks separated by single 0s:
+
+        P  1^n 0  [1 0]
+
+    It consists of a main block 1^n, a **prefix** P of a few small blocks on the left (e.g. `1 0 1^39 0`) and sometimes a **tail** `1 0` on the right. Below, a tape is written as the list of its block lengths, e.g. `1 39 | n` for P = (1, 39).
+  - *Three types.*
+
+    | type | start | what happens | growth of the tape |
+    |---|---|---|---|
+    | **A** | `1^n 0`, no prefix | one zigzag phase with period 8 turns; it rebuilds 1^n into 1^(4n/3 + c) | ×4/3 |
+    | **B** | `P 1^n 0` | first the prefix is processed (its own zigzag phase with period 12, or for `1 39` always the same fixed sequence of turns), then the main phase as in A | ×4/3 |
+    | **C** | `P 1^n 0 1 0` | a short Bell: the main block is **not** rebuilt; the tail and a few cells of the main block go into the prefix | about +3 cells |
+
+    C is followed by B in 68 of 69 cases: the C Bells feed the prefix and the B Bells process it. This is the "nested sub-process" of 24 Oct.
+  - *First 100 Bells* (from 202 Bells computed):
+
+        1–10   CACBCBAABC      51–60   CBBCBABCBB
+       11–20   BBBCBCBCBA      61–70   BCBCBBCBCB
+       21–30   CBABBCBACB      71–80   CBCBBCBCBC
+       31–40   CBBCBBCBCB      81–90   BCBBAABBCB
+       41–50   BBCBCBAABB      91–100  ACBCBBCBCB
+
+    In 202 Bells: B 117, C 69, A 16. Bell 100 is at about 10¹⁸·⁵ steps, Bell 202 at about 10³⁵·⁵, with no HALT.
+  - *Simulation.*
+    - `bells.c` (direct, 52 Bells, 5·10¹⁰ steps).
+    - `accb.c`: `accsim` with blocks of 3 cells, jumps over repetitions and an exact Bell detection at cell level. It reproduces the 52 directly simulated Bell tapes exactly and reaches Bell 202 in 0.01 s; the 64-bit counts stop it there. Its output is in `bells_202.txt`.
+    - `tok.c` and `phases.py` extract the zigzag phases.
+  - *Prefixes.* The prefixes come from a small set that recurs over and over: –, `1`, `1 39`, `73`, `1 39 6`, `12`, `73 2`, `1 6`, `138`, `578`, `138 10`, `85`, … Rarely a deeper level appears with a larger number: `1 1379`, `1 39 1795`, `73 2355`, `1 39 5683`.
+  - *Prefix table.* For a prefix state (P, tail), one Bell of the real TM was run from `P 1^n 0 [1 0]` with large n (`one.c`, `probe.py`). The result depends **only on n mod 6**:
+    - the next prefix state;
+    - n' = 4n/3 + β for A/B Bells and n' = n + β for C Bells, with β fixed.
+
+    Checked by 160 random tests at n = 4,000 … 9,000 (`verify.py`); the table is in `table6.json`.
+  - *Closure.* Following the table from (no prefix, no tail) over all n mod 6 gives the residue-consistent reachable part (`close6.py`). For each A/B Bell all three possible values of the next residue are allowed, so it is an over-approximation. It contains 55 prefix states and **no HALT entry**.
+
+    It does not close, however. In the over-approximation the large number of a deep level keeps growing, by about (4/3)⁴ per step:
+    - 1795 → 5683 → 17,971 in the family `1 39 x`;
+    - 2355 → 7539 in the family `73 x`.
+
+    So there is a whole hierarchy of nested counters. The real orbit reaches these deeper levels only rarely (5683 once in 202 Bells).
+  - *HALT.*
+    - **Where it halts.** HALT entries exist. A Bell started from `1 2 | n`, `48 64 | n` or `48 109 | n` (no tail) halts if n mod 3 ∈ {0, 1}. These were found by a scan of the prefixes `1 x`, `48 x` and `x` for x < 130 (`hscan.py`).
+    - **How they are entered.** In the table they are entered only from the C Bells `1 19 | n 1` and `138 11 | n 1`, with n ≡ 1 (mod 3). These turn n into n + 28 and n − 2 respectively, i.e. **n' ≡ 2 (mod 3), exactly the residue for which the halting entry does not halt**. The way into HALT is therefore blocked by a residue condition mod 3.
+    - **Not reached at all.** The two entry states are not even in the residue-consistent closure of the orbit.
+  - *Assessment.*
+    - **No path to HALT found.** All explored prefix states, including the halting entries, show HALT excluded by residues mod 3.
+    - **What a proof would need.** The vampire method extended by one level: a parametric table for the families with a large prefix number (e.g. `1 39 x`, `73 x`, `1 39 x 6`, `73 x 10`) as linear maps in (n, x) with residues of both, and a closure over these families that contains no HALT entry.
+    - **What is still open.** Whether the hierarchy has a finite number of family types (self-similar), and whether HALT entries also exist at deeper levels.
+
+<img src="diagrams/m31_bell_types.png" alt="Bell types of no. 31" width="700">
+
+*Steps 0–214,000, time downward, 160 steps per row; Bell number, type and prefix P at the left (green C, blue B, red A).*
 
 <img src="diagrams/1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---.png" alt="space-time diagram" height="350">
 
