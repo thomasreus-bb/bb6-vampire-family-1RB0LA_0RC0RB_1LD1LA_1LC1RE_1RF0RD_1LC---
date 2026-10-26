@@ -628,6 +628,22 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
     - **Halting.** The HALT entries of the top level (`1 2`, `48 64`, `48 109`) are blocked by the residue condition mod 3. If the inner level were an exact copy, the same obstruction would hold there, and by induction over the levels HALT would never occur.
     - **What a proof would need.** A recursive description of the machine whose inner levels are copies of the top level, plus an exact account of the deviations in the remaining cases. With that, the mod-3 argument could be carried through all levels.
 
+- **The deviations: the inner run is coupled to the main block (26 Oct 2026).** Tool: `trace.py`, which prints every clean tape (only single 0s between blocks) at which the head is in state A.
+  - *Examples.*
+
+    | start | intermediate tapes during one outer Bell | result |
+    |---|---|---|
+    | `1 39 301 \| 1806` (matches) | `1 39 301 \| 1807 1`, then `73 363 2 \| 1712`, `73 363 6 \| 1709 1`, … | `73 363 \| …` |
+    | `1 39 300 \| 1800` (deviates) | `1 39 300 \| 1801 1`, `1 440 \| 1702`, `1 768 \| 1381 1`, `1026 \| 1126`, `1369 2 \| 782 1`, `1369 6 \| 779`, … | `1369 \| 1047 1` |
+    | `1 39 302 \| 1812` (deviates) | `1 39 302 \| 1813 1`, `562 \| 1597`, `1 751 2 \| 1406 1`, `1 751 6 \| 1403`, … | `1 751 \| 1879 1` |
+
+    The last phase of each run is a small counter that grows by 4 per step while the main block loses 3 cells (`2, 6, 10, …`).
+  - *What the examples show.*
+    - **Inner Bells.** The inner block runs through several inner Bells: 300 → 440 → 768 → 1026 → 1369, each about ×4/3 with residue-dependent constants. It takes the cells for this from the main block (1800 → 1702 → 1381 → 1126 → 782).
+    - **End of the run.** When the inner run stops (at a state with a tail), the counter phase rebuilds the rest of the main block.
+  - *Why the free orbit does not fit.* The inner Bells are **not** those of the free orbit from `1 39 | x`. From 302 the free orbit gives `1 446`, `600`, `1 803`; the coupled run gives `562`, `1 751`. The shapes are similar, but the numbers are smaller, because the inner block grows into the main block instead of into blank tape. In the 43 matching cases the run stops after one inner Bell, before the coupling matters.
+  - *Next step.* A table of the **coupled** inner Bells: from a clean tape `Q x | n [1]` to the next one, as a function of the prefix Q, x mod 6 and n mod 6, presumably again with linear maps. The nesting would then be "the same kind of table one level down". The mod-3 obstruction would have to be checked for this table; if it holds there too, that is the induction step for a proof.
+
 <img src="diagrams/m31_bell_types.png" alt="Bell types of no. 31" width="700">
 
 *Steps 0–214,000, time downward, 160 steps per row; Bell number, type and prefix P at the left (green C, blue B, red A).*
