@@ -644,6 +644,31 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
   - *Why the free orbit does not fit.* The inner Bells are **not** those of the free orbit from `1 39 | x`. From 302 the free orbit gives `1 446`, `600`, `1 803`; the coupled run gives `562`, `1 751`. The shapes are similar, but the numbers are smaller, because the inner block grows into the main block instead of into blank tape. In the 43 matching cases the run stops after one inner Bell, before the coupling matters.
   - *Next step.* A table of the **coupled** inner Bells: from a clean tape `Q x | n [1]` to the next one, as a function of the prefix Q, x mod 6 and n mod 6, presumably again with linear maps. The nesting would then be "the same kind of table one level down". The mod-3 obstruction would have to be checked for this table; if it holds there too, that is the induction step for a proof.
 
+- **Towards a non-halting proof (26 Oct 2026).** Tools: `fwin.c`, `snaps2.c`, `irr2.py` in `scan/m31/`.
+  - *Local HALT condition.* F is entered only from A on a 1, and A only from C on a 1, both moving right. So the machine halts exactly when **state C reads a 1 that is followed by two more 1s** (C → A → F → `---`).
+    - In 3·10⁹ steps F is entered 88,860 times, and every time it reads 0.
+    - C reads a 1 about 5·10⁸ times, nearly always at the end of a 1-block (`…11111[1]00100…`).
+    - A proof has to show that the pattern "C before `111`" never occurs.
+  - *General deciders.* No proof found:
+    - MITM-WFAR (Iijil1/MITMWFAR) with up to 13 non-dead transitions (also with memory 1);
+    - MITM-DFA with 5 states per side.
+
+    The Rust FAR decider of bbchallenge could not be built here (no access to the crate registry); it could be run with larger automata on another computer.
+  - *The machine as a list-of-counters machine.* Record every clean tape at which the head is in state A on a 0. In 5·10¹⁰ steps there are 341,683 such tapes (`snaps2.c`). Between two consecutive ones the machine almost always applies **one rule**: at the gap where the head is, the left block grows by 4 and the right block shrinks by 3, i.e. (x, y) → (x + 4, y − 3); a single trailing `1` comes and goes in between.
+
+    Only **113** transitions do something else (`irregular_transitions_5e10.txt`). They happen when the right block is used up (y < 3) and depend on y, on the tail and on the small neighbouring blocks, e.g.:
+    - `N 2` → head one gap to the left, `N+7`;
+    - `1 N` → `10 N−6 1`;
+    - `10 N 1` → `1 39 2 N−29`;
+    - `1 39 N 1` → `54 N−12`;
+    - `54 N` → `73 2 N−20 1`.
+
+    The prefix values 39, 54, 73, 138, … are created by these end rules.
+  - *Plan for a proof.*
+    1. Write down the end rules generally, with the small blocks as parameters. In 113 transitions there are 84 different patterns (not yet saturated), so the rules still have to be written in general form.
+    2. Show that the conversion rule and the end rules describe the machine completely.
+    3. Show that no end rule, in any reachable context, puts C in front of `111`. The mod-3 obstruction found above should be the core of this argument.
+
 <img src="diagrams/m31_bell_types.png" alt="Bell types of no. 31" width="700">
 
 *Steps 0–214,000, time downward, 160 steps per row; Bell number, type and prefix P at the left (green C, blue B, red A).*
