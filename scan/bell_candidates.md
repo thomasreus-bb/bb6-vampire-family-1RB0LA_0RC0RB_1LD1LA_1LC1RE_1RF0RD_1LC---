@@ -5,6 +5,7 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
 - **Class** (from the scan): **A** = regular geometric growth like TM1/TM2 (sd < 0.12, one phase per level); **B** = Bell-like with another factor or several phases per level; **C** = irregular.
 - **Level analysis**: a second detector (single-block Bell configurations, up to 3·10⁸ steps) looks at the tape at the start of each level: the long block, its growth ratio, and how many *different* short tails occur. Many different tails at a regular ratio is the signature of a vampire-like machine (a finite Bell table can then be derived); one or two tails means a "needle" (all information is in one number; halting needs an exact value).
 - **Holdout status (24 Oct 2026)**: compared with the current list of 623 BB(6) holdouts (`holdouts_623.txt`). 40 machines of the old list of 663 have been decided since (`decided_663_to_623.txt`); **none of them is among the 56 candidates**. All 56 candidates, including TM1, TM2 and the halting machine `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC`, are still in the holdout list.
+- **BusyBeaverWiki (26 Oct 2026)**: **14 of the 56 candidates have their own article on the [BusyBeaverWiki](https://wiki.bbchallenge.org/wiki/Category:Individual_machines)** (marked **wiki** in the table and linked in the section): nos. 10, 13, 14, 15, 24, 28, 33, 34, 40, 41, 49, 50, 55, 56. Three of them are cryptids: no. 15, no. 33 ("Space Needle") and no. 40 ("Lucy's Moonlight"). No. 24 is listed as chaotic but not a cryptid. Checked against the 119 pages of the wiki category *Individual machines* and the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page; machines with an article outside that category, or under an equivalent form of the code, would be missed.
 - **Diagram**: time runs downward, one pixel column per tape cell (scaled up for narrow tapes), symbol 1 orange, 0 white; at most 700 sampled rows. Each diagram runs up to the start of the 8th Bell found by the detector (so the first 7 Bells are complete) or until the tape is 1000 cells wide, whichever comes first.
 
 ## The vampire method: when does it apply?
@@ -91,12 +92,12 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | [7](#7) | A | `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` | 1.58 | vampire family (orbits O1–O4 of this repository) |
 | [8](#8) | B | `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` | 1.33 | **halts** (vampire method, [halt-found repository](https://github.com/thomasreus-bb/halt-found-1rb0rb_1lc1rf_0rd0lb_0ra1le_1ld---_0rb0rc)) |
 | [9](#9) | B | `1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB` | 1.33 | needle-like: only 2 tails (all information in one number) |
-| [10](#10) | B | `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` | 1.24 | two-register system, exact Bell map with types A/B/C; no HALT in 10¹⁰ Bells (about 2·10³⁰ steps); HALT needs an exact hit (see [10](#10)) |
+| [10](#10) | B | `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE) | 1.24 | two-register system, exact Bell map with types A/B/C; no HALT in 10¹⁰ Bells (about 2·10³⁰ steps); HALT needs an exact hit (see [10](#10)) |
 | [11](#11) | B | `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` | 1.21 | multi-register system; no HALT up to 10²² steps; low halting rate |
 | [12](#12) | B | `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` | 1.27 | no clear single-block Bell configuration found |
-| [13](#13) | B | `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` | 1.33 | needle-like: only 2 tails (all information in one number) |
-| [14](#14) | B | `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` | 1.21 | needle-like: only 1 tail (all information in one number) |
-| [15](#15) | B | `1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC` | 1.36 | needle-like: only 2 tails (all information in one number) |
+| [13](#13) | B | `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB) | 1.33 | needle-like: only 2 tails (all information in one number) |
+| [14](#14) | B | `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA) | 1.21 | needle-like: only 1 tail (all information in one number) |
+| [15](#15) | B | `1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC) | 1.36 | needle-like: only 2 tails (all information in one number) |
 | [16](#16) | B | `1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE` | 1.26 | two-register system like 10; no HALT up to 4.5·10¹³ steps |
 | [17](#17) | B | `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` | 1.29 | two-register system; no HALT up to 10¹⁴ steps |
 | [18](#18) | B | `1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD` | 1.36 | no clear single-block Bell configuration found |
@@ -105,24 +106,24 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | [21](#21) | B | `1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD` | 1.40 | needle-like: only 1 tail (all information in one number) |
 | [22](#22) | B | `1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE` | 1.40 | needle-like: only 2 tails (all information in one number) |
 | [23](#23) | B | `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---` | 1.39 | no clear single-block Bell configuration found |
-| [24](#24) | B | `1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE` | 1.25 | needle-like: only 1 tail (all information in one number) |
+| [24](#24) | B | `1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE) | 1.25 | needle-like: only 1 tail (all information in one number) |
 | [25](#25) | B | `1RB0LE_1LC0RD_0RA1LD_0LC1RA_1LF1LA_---1LA` | 1.55 | needle-like: only 2 tails (all information in one number) |
 | [26](#26) | B | `1RB1LC_1LA0RD_1LB1LF_1LE1RE_0LA0RB_0LB---` | 1.37 | needle-like: only 2 tails (all information in one number) |
 | [27](#27) | B | `1RB1LC_1LC0RD_0LE1LA_0RF1RA_1LA0LA_---0RB` | 1.64 | needle-like: only 1 tail (all information in one number) |
-| [28](#28) | B | `1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC` | 1.24 | no clear single-block Bell configuration found |
+| [28](#28) | B | `1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC) | 1.24 | no clear single-block Bell configuration found |
 | [29](#29) | B | `1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB` | 1.49 | needle-like: only 2 tails (all information in one number) |
 | [30](#30) | B | `1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB` | 1.54 | needle-like: only 1 tail (all information in one number) |
 | [31](#31) | B | `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` | 1.34 | **vampire-like, base 3 (factor 4/3)** with a nested sub-process; no HALT in 1.9·10⁶ test Bells |
 | [32](#32) | B | `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` | 1.33 | same dynamics as 31 |
-| [33](#33) | B | `1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD` | 1.69 | needle-like: only 1 tail (all information in one number) |
-| [34](#34) | B | `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` | 1.34 | no clear single-block Bell configuration found |
+| [33](#33) | B | `1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD` [**wiki**](https://wiki.bbchallenge.org/wiki/Space_Needle) | 1.69 | needle-like: only 1 tail (all information in one number) |
+| [34](#34) | B | `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD) | 1.34 | no clear single-block Bell configuration found |
 | [35](#35) | B | `1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA` | 1.25 | register system; no HALT up to 5·10¹⁶ steps |
 | [36](#36) | B | `1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB` | 1.56 | needle-like: only 1 tail (all information in one number) |
 | [37](#37) | B | `1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC` | 1.26 | no clear single-block Bell configuration found |
 | [38](#38) | C | `1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC` | 1.55 | growing list of blocks (nested); no HALT up to 4·10³³ steps |
 | [39](#39) | C | `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number) |
-| [40](#40) | C | `1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA` | 1.48 | no clear single-block Bell configuration found |
-| [41](#41) | C | `1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD` | 1.40 | needle-like: only 1 tail (all information in one number) |
+| [40](#40) | C | `1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA` [**wiki**](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | 1.48 | no clear single-block Bell configuration found |
+| [41](#41) | C | `1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD) | 1.40 | needle-like: only 1 tail (all information in one number) |
 | [42](#42) | C | `1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD` | 1.42 | needle-like: only 1 tail (all information in one number) |
 | [43](#43) | C | `1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB` | 1.41 | needle-like: only 2 tails (all information in one number) |
 | [44](#44) | C | `1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---` | 1.90 | needle-like: only 1 tail (all information in one number) |
@@ -130,14 +131,14 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | [46](#46) | C | `1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD` | 1.74 | needle-like: only 2 tails (all information in one number) |
 | [47](#47) | C | `1RB0LF_1LC0LD_1RD1LB_---1RE_0RA1RE_1LA0LE` | 1.47 | needle-like: only 1 tail (all information in one number) |
 | [48](#48) | C | `1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---` | 1.52 | no clear single-block Bell configuration found |
-| [49](#49) | C | `1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF` | 1.44 | no clear single-block Bell configuration found |
-| [50](#50) | C | `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` | 1.50 | no clear single-block Bell configuration found |
+| [49](#49) | C | `1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF) | 1.44 | no clear single-block Bell configuration found |
+| [50](#50) | C | `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE) | 1.50 | no clear single-block Bell configuration found |
 | [51](#51) | C | `1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---` | 1.60 | needle-like: only 1 tail (all information in one number) |
 | [52](#52) | C | `1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---` | 1.61 | no clear single-block Bell configuration found |
 | [53](#53) | C | `1RB1RE_1LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` | 1.66 | no clear single-block Bell configuration found |
 | [54](#54) | C | `1RB1RF_1LC---_1LE1RD_1RA0RC_0LF0LA_0LD0RB` | 1.53 | needle-like: only 1 tail (all information in one number) |
-| [55](#55) | C | `1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA` | 1.48 | no clear single-block Bell configuration found |
-| [56](#56) | C | `1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD` | 1.43 | needle-like: only 1 tail (all information in one number) |
+| [55](#55) | C | `1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA) | 1.48 | no clear single-block Bell configuration found |
+| [56](#56) | C | `1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD) | 1.43 | needle-like: only 1 tail (all information in one number) |
 
 <a id="1"></a>
 ## 1. `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A)
@@ -224,6 +225,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="10"></a>
 ## 10. `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` (class B)
+- **BusyBeaverWiki article:** [1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE)
 
 - scan: 21 levels, 240 phases, mean factor 1.24 (sd 0.09); level starts: 42 51 70 90 113 148 188 249 271 306 412 474 555 628
 - level analysis: Bell type `RC`, 31 levels; n: 278 367 418 496 632 706 831 899 980 1076 1181 1299 1458 1758 1942 2205; ratios: 1.117 1.177 1.082 1.090 1.098 1.098 1.100 1.122 1.206 1.105 1.135; 22 different tails
@@ -351,6 +353,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="13"></a>
 ## 13. `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` (class B)
+- **BusyBeaverWiki article:** [1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB](https://wiki.bbchallenge.org/wiki/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB)
 
 - scan: 20 levels, 41 phases, mean factor 1.33 (sd 0.10); level starts: 34 43 64 77 91 119 175 231 350 441 665 1001 1505 2261
 - level analysis: Bell type `RC`, 25 levels; n: 66 75 117 180 229 348 439 663 999 1503 2259 3393 5094 5735 8607 12915; ratios: 1.520 1.261 1.510 1.507 1.505 1.503 1.502 1.501 1.126 1.501 1.501; 2 different tails
@@ -361,6 +364,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="14"></a>
 ## 14. `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` (class B)
+- **BusyBeaverWiki article:** [1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA](https://wiki.bbchallenge.org/wiki/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA)
 
 - scan: 30 levels, 87 phases, mean factor 1.21 (sd 0.10); level starts: 428 466 541 604 783 850 984 1046 1180 1372 1615 1882 2136 2262
 - level analysis: Bell type `LC` with left part `01`, 13 levels; n: 8 14 26 74 106 122 440 1088 2366 4862 6538 7376 17540; ratios: 1.857 2.846 1.432 1.151 3.607 2.473 2.175 2.055 1.345 1.128 2.378; 1 different tails
@@ -371,6 +375,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="15"></a>
 ## 15. `1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC` (class B)
+- **BusyBeaverWiki article:** [1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC](https://wiki.bbchallenge.org/wiki/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: listed as a cryptid
 
 - scan: 19 levels, 45 phases, mean factor 1.36 (sd 0.11); level starts: 36 55 65 87 101 125 165 249 315 475 715 1075 1615 2425
 - level analysis: Bell type `RC`, 23 levels; n: 86 100 128 163 248 313 473 713 1073 1613 2423 3638 4096 5123 7688 9613; ratios: 1.262 1.511 1.507 1.505 1.503 1.502 1.501 1.126 1.251 1.501 1.250; 2 different tails
@@ -477,6 +482,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="24"></a>
 ## 24. `1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE` (class B)
+- **BusyBeaverWiki article:** [1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE](https://wiki.bbchallenge.org/wiki/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: listed under "chaotic machines not classified as cryptids"
 
 - scan: 23 levels, 76 phases, mean factor 1.25 (sd 0.14); level starts: 182 264 310 342 380 474 552 590 946 1104 1182 1884 2202 2360
 - level analysis: Bell type `LB` with left part `01`, 13 levels; n: 10 20 50 106 200 328 398 608 1238 2494 4988 9916 19586; ratios: 2.500 2.120 1.887 1.640 1.213 1.528 2.036 2.015 2.000 1.988 1.975; 1 different tails
@@ -517,6 +523,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="28"></a>
 ## 28. `1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC` (class B)
+- **BusyBeaverWiki article:** [1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC](https://wiki.bbchallenge.org/wiki/1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC)
 
 - scan: 20 levels, 176 phases, mean factor 1.24 (sd 0.15); level starts: 45 53 59 74 91 157 184 229 253 324 355 401 464 495
 - verdict: no clear single-block Bell configuration found
@@ -575,6 +582,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="33"></a>
 ## 33. `1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD` (class B)
+- **BusyBeaverWiki article:** [Space Needle](https://wiki.bbchallenge.org/wiki/Space_Needle); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: cryptid "Space Needle"
 
 - scan: 9 levels, 407 phases, mean factor 1.69 (sd 0.17); level starts: 12 20 36 56 96 146 311 371 778
 - level analysis: Bell type `LD` with left part `01`, 8 levels; n: 5 9 16 40 100 250 625 1094; ratios: 1.800 1.778 2.500 2.500 2.500 2.500 1.750; 1 different tails
@@ -585,6 +593,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="34"></a>
 ## 34. `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` (class B)
+- **BusyBeaverWiki article:** [1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD)
 
 - scan: 13 levels, 29 phases, mean factor 1.34 (sd 0.18); level starts: 13 16 18 28 46 60 72 150 182 234 258 316 452
 - level analysis: Bell type `RD`, 5 levels; n: 5 6 9 15 54; ratios: 1.200 1.500 1.667 3.600; 3 different tails
@@ -649,6 +658,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="40"></a>
 ## 40. `1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA` (class C)
+- **BusyBeaverWiki article:** [Lucy's Moonlight](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: cryptid "Lucy's Moonlight"
 
 - scan: 13 levels, 26 phases, mean factor 1.48 (sd 0.22); level starts: 8 10 17 22 34 46 50 57 114 155 324 435 884
 - level analysis: Bell type `RC`, 2 levels; n: 9 22; ratios: 2.444; 1 different tails
@@ -659,6 +669,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="41"></a>
 ## 41. `1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD` (class C)
+- **BusyBeaverWiki article:** [1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD](https://wiki.bbchallenge.org/wiki/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD)
 
 - scan: 17 levels, 63 phases, mean factor 1.40 (sd 0.23); level starts: 39 90 118 131 156 298 456 534 1006 1130 1209 1644 1962 2120
 - level analysis: Bell type `LD` with left part `01 11 01 11 01 11 01 11 01 11 01 11 01`, 7 levels; n: 9 49 177 593 2257 5905 16113; ratios: 5.444 3.612 3.350 3.806 2.616 2.729; 1 different tails
@@ -737,6 +748,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="49"></a>
 ## 49. `1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF` (class C)
+- **BusyBeaverWiki article:** [1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF](https://wiki.bbchallenge.org/wiki/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF)
 
 - scan: 11 levels, 31 phases, mean factor 1.44 (sd 0.27); level starts: 18 25 73 86 138 238 281 312 456 593 711
 - level analysis: Bell type `LA` with left part `01`, 4 levels; n: 6 12 27 746; ratios: 2.000 2.250 27.630; 3 different tails
@@ -747,6 +759,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="50"></a>
 ## 50. `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` (class C)
+- **BusyBeaverWiki article:** [1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE](https://wiki.bbchallenge.org/wiki/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE)
 
 - scan: 10 levels, 28 phases, mean factor 1.50 (sd 0.28); level starts: 12 14 38 58 122 148 190 224 376 456
 - level analysis: Bell type `RB`, 3 levels; n: 4 6 52; ratios: 1.500 8.667; 2 different tails
@@ -795,6 +808,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="55"></a>
 ## 55. `1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA` (class C)
+- **BusyBeaverWiki article:** [1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA](https://wiki.bbchallenge.org/wiki/1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA)
 
 - scan: 10 levels, 26 phases, mean factor 1.48 (sd 0.32); level starts: 12 14 16 52 70 134 176 226 366 420
 - level analysis: Bell type `LA` with left part `01 12 01`, 2 levels; n: 4 9; ratios: 2.250; 1 different tails
@@ -805,6 +819,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="56"></a>
 ## 56. `1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD` (class C)
+- **BusyBeaverWiki article:** [1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD](https://wiki.bbchallenge.org/wiki/1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD)
 
 - scan: 14 levels, 28 phases, mean factor 1.43 (sd 0.32); level starts: 10 24 27 31 35 51 57 61 73 102 204 224 349 1056
 - level analysis: Bell type `RB`, 11 levels; n: 5 8 14 39 110 232 357 1064 1614 4539 13610; ratios: 1.600 1.750 2.786 2.821 2.109 1.539 2.980 1.517 2.812 2.998; 1 different tails
