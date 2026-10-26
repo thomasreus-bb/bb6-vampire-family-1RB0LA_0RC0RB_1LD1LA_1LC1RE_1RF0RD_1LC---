@@ -669,6 +669,25 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
     2. Show that the conversion rule and the end rules describe the machine completely.
     3. Show that no end rule, in any reachable context, puts C in front of `111`. The mod-3 obstruction found above should be the core of this argument.
 
+- **End rules (26 Oct 2026).** Tools: `mstep.c`, `endrules.py`; results in `endrules.txt` in `scan/m31/`.
+  - *`mstep`.* It performs one macro step (from one clean tape to the next) of the real TM from any block list and head gap. It reproduces the first 3000 macro steps of the orbit exactly.
+  - *End rules.* For each irregular transition of the orbit with one large block, the large block was replaced by N = 3000 + r and 3600 + r (r = 0 … 5), and the result written in terms of N. All these end rules are **linear in N and depend only on N mod 3**. In the notation `a | N` the head is at the gap between a small block a and the large block N:
+
+    | N mod 3 | what happens | examples |
+    |---|---|---|
+    | 0 or 2 | an ordinary conversion step (the left block grows by 4, N shrinks by 3), or the end of the conversion | `a N` → `a+4 N−3`, `N 2` → `N+7` |
+    | **1** | the **small left block is rebuilt**, in a jump much larger than 4 | `1 N` → `10 N−6`, `10 N 1` → `1 39 2 N−29`, `54 N` → `73 2 N−20`, `73 N` → `138 2 N−65`, `138 N 2 1` → `185 N−45`, `81 N 1 1` → `109 2 N−26`, `77 N 2 1` → `1 176 2 N−95` |
+
+    The sequence of prefix values 10 → 1 39, 54 → 73 → 138 → 185 → 1 432 … is therefore driven by the residue N ≡ 1 (mod 3) of the main block. For `185 N 1 1` with N ≡ 1 the result is no longer linear: from there on the inner block runs through its own process (the coupled nesting described above).
+  - *Coupled transitions.* 42 of the 113 orbit transitions involve two large blocks: the nesting. Their outcome depends on the relative size of the blocks, as in no. 10.
+  - *Why a simple finite abstraction fails.* A first abstract search (`absbfs.py`: blocks above a bound S are abstracted to their residue mod 6) fails for the same reason: with independent large values the nested block can grow into the main block, and the result changes.
+  - *Assessment.* The machine is a list-of-counters machine with:
+    - the conversion rule;
+    - end rules that depend only on N mod 3, as long as one block is large;
+    - a recursive part, where a small block reaches the size at which it is itself processed like a main block.
+
+    A non-halting proof needs a recursive invariant over these levels, for example "in every reachable configuration of every level, the block a and the residue N mod 3 never meet as in the halting entries `1 2`, `48 64`, `48 109`". This is a substantial piece of work, comparable to the analyses of the known cryptids.
+
 <img src="diagrams/m31_bell_types.png" alt="Bell types of no. 31" width="700">
 
 *Steps 0–214,000, time downward, 160 steps per row; Bell number, type and prefix P at the left (green C, blue B, red A).*
