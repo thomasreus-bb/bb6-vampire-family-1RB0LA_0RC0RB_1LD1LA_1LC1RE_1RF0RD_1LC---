@@ -199,8 +199,6 @@ Tests: `belldc` reproduces the KCHECK values of `bellntt` at every checkpoint (O
 ### `belldcf`: `belldc` with FLINT on several cores
 `belldcf` (in each orbit directory) is `belldc` with two changes; the orbit, the checkpoints and the log lines are the same, so the programs can continue each other's runs.
 
-**Size limit of `belldc` and `belldcf`.** GMP stores the size of an integer as a 32-bit number of 64-bit limbs, so k can have at most (2³¹ − 1)·64 ≈ 1.37·10¹¹ bits (16 GB), however much RAM there is. At full precision k reaches this size at about Bell 2.35·10¹¹; a pruned run reaches it only if 0.37·T > 1.37·10¹¹, i.e. for a target T above about 3.7·10¹¹. Beyond that only `belldco` works (k on disk, processed in pieces). Reported by Duke, who switched from `belldcf` to `belldco` at about 2.3·10¹¹ on O3.
-
 - The big multiplications use FLINT's `fft_small` multiplication (`flint_mpn_mul`), which is faster than GMP already on one core and runs on up to 8 threads per product.
 - The product of the high part with 3^h does not depend on the Bells on the low part, so for large numbers it runs in a second thread while the low part is advanced. This happens both at the top level, where q·3^B runs during the B Bells on r, and inside the recursion.
 
@@ -225,6 +223,8 @@ Measurements: O2, 2 cores, FLINT 3.4.0. k at the end is 292 MB. All times are fr
 With `-m`, `belldcf` is about 3 times as fast as `belldc -m` on 2 cores. It needs about 2.2 × the size of k in memory, against 1.6 × for `belldc -m`. That memory includes freeing FLINT's FFT buffers after every block and returning freed memory to the system at once. Without `-m`, `belldcf` is a little faster but needs about 7 × k. More cores should give more speed, but not linearly: the bottom of the recursion, at most 32 Bells on a 64-bit word, stays sequential. Measurements on 4–8 cores are still missing.
 
 Tests: `belldcf` gives the same KCHECK, bit length and S as `belldc` at all compared checkpoints (O2: 3·10⁸, 1.3·10⁹, 4·10⁹; pruned towards 5·10⁸; with `-j 1`, `-j 2` and `-j auto`), and finds a HALT at the same Bell (artificial start).
+
+**Size limit of `belldc` and `belldcf`.** GMP stores the size of an integer as a 32-bit number of 64-bit limbs, so k can have at most (2³¹ − 1)·64 ≈ 1.37·10¹¹ bits (16 GB), however much RAM there is. At full precision k reaches this size at about Bell 2.35·10¹¹; a pruned run reaches it only if 0.37·T > 1.37·10¹¹, i.e. for a target T above about 3.7·10¹¹. Beyond that only `belldco` works (k on disk, processed in pieces). Reported by Duke, who switched from `belldcf` to `belldco` at about 2.3·10¹¹ on O3.
 
 ### `belldco`: k on disk (out of core)
 `belldco` (in each orbit directory) removes the memory limit. The number k stays on disk as a binary file; only the parts needed for one block of Bells are in RAM. The orbit, the checkpoints and the log lines are the same as in `belldc` / `belldcf`; a checkpoint written by `belldco` is byte for byte the same as one written by `belldc`, apart from the date, time and program lines.
