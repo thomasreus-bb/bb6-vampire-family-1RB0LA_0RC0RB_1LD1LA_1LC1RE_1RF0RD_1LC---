@@ -96,7 +96,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | [11](#11) | B | `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` | 1.21 | multi-register system; no HALT up to 10²² steps; low halting rate |
 | [12](#12) | B | `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` | 1.27 | no clear single-block Bell configuration found |
 | [13](#13) | B | `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB) | 1.33 | needle-like: only 2 tails (all information in one number) |
-| [14](#14) | B | `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA) | 1.21 | needle-like: only 1 tail (all information in one number) |
+| [14](#14) | B | `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA) | 1.21 | needle: exact Collatz-like map on (m, r), HALT only if a cycle ends with m = 2^k − k − 1; very probably non-halting (see [14](#14)) |
 | [15](#15) | B | `1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC) | 1.36 | needle-like: only 2 tails (all information in one number) |
 | [16](#16) | B | `1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE` | 1.26 | two-register system like 10; no HALT up to 4.5·10¹³ steps |
 | [17](#17) | B | `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` | 1.29 | two-register system; no HALT up to 10¹⁴ steps |
@@ -370,6 +370,35 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 - level analysis: Bell type `LC` with left part `01`, 13 levels; n: 8 14 26 74 106 122 440 1088 2366 4862 6538 7376 17540; ratios: 1.857 2.846 1.432 1.151 3.607 2.473 2.175 2.055 1.345 1.128 2.378; 1 different tails
 - verdict: needle-like: only 1 tail (all information in one number)
 - diagram: 619,684 steps, tape width 1001 cells
+
+- **Examined in detail (28 Oct 2026): an exact Collatz-like map; HALT needs an exact hit.** Tools: `scan/m14/`.
+  - *Configuration.* Each time the head reaches a new cell at the left end in state C, the tape is
+
+        (01)^m 1^r
+
+    with the head on the first 0. All information is in the two numbers (m, r).
+  - *Exact map* (`map14.py`): it reproduces all 114 events of the direct simulation (3·10⁹ steps), and `scan14.py` checks it against the TM for all small start tapes.
+    - **Phase 1 (doubling):** while r ≥ 2m: (m, r) → (2m+1, r−2m). Starting from m = 1, m runs through 1, 3, 7, 15, …, 2^k − 1.
+    - **Phase 2 (factor 3/2):** if r < 2m, let X = 3m + (r+1)/2. If X is even, the next event is (X/2, 0); if X is odd, it is ((X−1)/2, 2), and phase 2 continues with X = 3m + 3.
+    - **New cycle:** (m, 0) → (1, 2m+1).
+  - *Bells = cycles.* A cycle (from m = 1 to the next m = 1) consists of k doublings and j ≥ 1 steps of phase 2. The Bell types are given by j:
+    - **A** (j = 1): 50 %;
+    - **B** (j = 2): 26 %;
+    - **C** (j = 3): 12 %;
+    - … geometric, as for the parity of a random number.
+
+    First 100 cycles:
+
+        1–10   AABAACCBBA      51–60   DBACCBBBAA
+       11–20   ACEBGBDBCD      61–70   BAAABBACBA
+       21–30   AABACABBAA      71–80   BBAAADBBBB
+       31–40   AAAAAAAAEA      81–90   BBDCABCCCA
+       41–50   AAAAACABAA      91–100  AACBEABAAB
+
+    The numbers grow by about 0.76 bits per cycle (factor 1.7). The level ratios 1.1 … 3.6 of the scan are the cycles with different j.
+  - *HALT condition.* The TM halts exactly at the tape (m, r) = (2^k − 1, 1), i.e. when phase 1 leaves exactly one 1. This happens if and only if a cycle starts with r = 2^(k+1) − 2k − 1, i.e. if the previous cycle ends with **m = 2^k − k − 1** (4, 11, 26, 57, 120, 247, …). Checked with the TM for all m = 2^k − 1 (k ≤ 8) and r ≤ 2m + 3: the only halting tapes are (2^k − 1, 1). Phase 2 never halts.
+  - *Iteration.* 3000 cycles with the exact map (numbers of about 2300 bits): no hit.
+  - *Assessment.* A "needle". At the end of each cycle, m must hit one particular number per power of 2, so the chance per cycle is about 1/m. Since m grows exponentially, these chances add up to a tiny total after the first cycles: **the machine very probably never halts**. A proof would have to show that the Collatz-like orbit never hits the numbers 2^k − k − 1, which is a typical Collatz-type question.
 
 <img src="diagrams/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA.png" alt="space-time diagram" height="350">
 
