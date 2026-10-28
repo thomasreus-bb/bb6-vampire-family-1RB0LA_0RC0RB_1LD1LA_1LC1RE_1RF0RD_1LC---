@@ -398,6 +398,26 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
     The numbers grow by about 0.76 bits per cycle (factor 1.7). The level ratios 1.1 … 3.6 of the scan are the cycles with different j.
   - *HALT condition.* The TM halts exactly at the tape (m, r) = (2^k − 1, 1), i.e. when phase 1 leaves exactly one 1. This happens if and only if a cycle starts with r = 2^(k+1) − 2k − 1, i.e. if the previous cycle ends with **m = 2^k − k − 1** (4, 11, 26, 57, 120, 247, …). Checked with the TM for all m = 2^k − 1 (k ≤ 8) and r ≤ 2m + 3: the only halting tapes are (2^k − 1, 1). Phase 2 never halts.
   - *Iteration.* 3000 cycles with the exact map (numbers of about 2300 bits): no hit.
+  - *Comparison with the BusyBeaverWiki.*
+    - **The wiki's rules.** The wiki article lists the machine as a potential cryptid, found by Marco Dos Santos ("At the Limits of Computability", arXiv 2610.22603), with status undecided and "probvious behaviour not yet analysed". He uses C(a, b) = `0^∞ E> (10)^a 1^b 0^∞` with the rules:
+      - C(a, b) → C(2a+2, b−2a−2) if b > 2a+2;
+      - C(a, 1) → C(2, 2a+2);
+      - C(a, 2k) → C((6a+2k+2)/4, (6a+2k+2) mod 4 + 1);
+      - C(a, 2k+1) → C((6a+2k+6)/4, (6a+2k+6) mod 4 + 1);
+      - C(a, 2) halts; start C(0, 3).
+    - **Same rules.** With **a = m − 1, b = r + 1** these are exactly the rules above:
+      - doubling: m' = 2m + 1, r' = r − 2m;
+      - phase 2: m' = (6m + r + 1)/4, and b' = 1 or 3 corresponds to r' = 0 or 2;
+      - new cycle: C(a, 1) → C(2, 2a+2) is our (m, 0) → (1, 2m+1) together with the first doubling step;
+      - HALT: b = 2 corresponds to r = 1;
+      - start: C(0, 3) corresponds to (1, 2).
+
+      The two descriptions were found independently.
+    - **New here:**
+      - the closed form of the HALT condition (a cycle has to end with m = 2^k − k − 1);
+      - the Bell types and their geometric distribution;
+      - 3000 cycles without a hit;
+      - the probabilistic assessment.
   - *Assessment.* A "needle". At the end of each cycle, m must hit one particular number per power of 2, so the chance per cycle is about 1/m. Since m grows exponentially, these chances add up to a tiny total after the first cycles: **the machine very probably never halts**. A proof would have to show that the Collatz-like orbit never hits the numbers 2^k − k − 1, which is a typical Collatz-type question.
 
 <img src="diagrams/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA.png" alt="space-time diagram" height="350">
