@@ -458,7 +458,20 @@ Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; 
 ## Open points
 - The identifications are observations from simulations and tables (checked for finitely many cases), not proofs.
 - Markov estimate for the orbits O3 and O4 not recomputed (expected: the same as for TM1/TM2).
-- Long simulations: O2 is at 4.6·10¹¹ Bells, O3 at 10¹², O1 at 1.08·10¹⁰, O4 at 10¹⁰ (see the simulation status at the top); O1 and O4 still to be taken to 10¹¹.
+- Long simulations: O2 is at 4.6·10¹¹ Bells (run to 10¹² in progress), O3 at 10¹², O4 at 2.25·10¹¹, O1 at 10¹¹ (see the simulation status at the top); O1, O2 and O4 still to be taken to 10¹².
+- **Equivalence of TM2b and TM2b' (idea for a Rocq proof, 28 Oct 2026).** The two machines are the same core with different F0 (`1RB` and `1LC`) and different start states, so they are not equivalent by renaming. Observation (`src/bellcmp.c`):
+  - Start TM2b at the Bell end `P (10)^n 11 F>` and TM2b' at `P (10)^(n+1) 11 F>`.
+  - After the hand-over (1 step of TM2b, 10 steps of TM2b') the two machines run **in lockstep**: the tape of TM2b' is the tape of TM2b with one extra `11` in the long 1-block. All turning points and states agree; to the right of the insertion everything is shifted by 2 cells.
+  - Both reach the next Bell end, (P', n') and (P', n'+1).
+  - Checked for all 3,003 words of the TM2b table with n = 40, 41, 42: 5,996 of 6,006 cases agree exactly. In the other 10 the extra `10` sits at the start of P' (which itself begins with `1010…`) instead of in the (10)-block, which is the same relation.
+
+  The relation is "one extra period inside a long periodic run" (`11` in a 1-block, `00` in a 0-block, `10` in a (10)-block). A Rocq proof would consist of:
+  1. the finite start-up from the blank tape to related Bell-1 configurations;
+  2. a simulation lemma: one core step (not F0) of TM2b corresponds to one step of TM2b' and keeps the relation. The proof is a finite case analysis on the tape around the head, placing the insertion on the side of the run away from the head, which needs a minimum run length;
+  3. a hand-over lemma for F0 (1 versus 10 steps, finite);
+  4. induction: TM2b halts if and only if TM2b' halts.
+
+  This argument is local and does not need the (not closed) Bell table. Not yet checked: that the relation holds at *every* step (so far only at Bell ends and at the turning points), and the minimum run length needed. Postponed.
 - **From a HALT to a Coq proof.** If an orbit reaches a HALT entry, a formal proof would consist of (1) the Turing machine semantics (available from the bbchallenge Coq work), (2) the few steps from the blank tape to the first Bell, (3) one lemma per table entry, `0^∞ 1^k F> S 0^∞` → `0^∞ 1^(3⌊k/2⌋+c) F> S' 0^∞` for all k by induction (several thousand lemmas, but uniform, so the proof scripts can be generated from the table), (4) the reduction "the machine halts iff the iterated Bell map reaches HALT", and (5) the computation of the orbit up to the halting Bell. Parts (1)–(4) look feasible; part (5) is the open problem: about 10¹² iterations with numbers of up to ~10¹¹ bits are far beyond what Coq can compute itself, and the orbit is pseudo-random, so there is no closed formula to shortcut it. A realistic route would be a Coq proof of (1)–(4) together with the computation done outside Coq by at least two independently written programs on different computers, agreeing in their checkpoint values (KCHECK); whether bbchallenge accepts such a combined proof is to be asked. A halt after roughly 10^(10¹¹) steps would not be a new BB(6) record, but it would decide every machine of the family on the halting orbit.
 
 ## Files
@@ -469,6 +482,7 @@ Seven of them (class A) grow very regularly by a factor of about 1.56 per Bell; 
 | `src/cyc.c` | Bell simulator for the TM2-type machines: direct simulation, and single Bells from a given (P, n) |
 | `src/table.py` | builds a table by breadth-first search with `cyc` |
 | `src/compare.py` | the checks behind this document: machine core, tables against TM2, orbits |
+| `src/bellcmp.c` | one Bell of TM2b from (P, n) and of TM2b' from (P, n+1), compared for all table words (equivalence check) |
 | `tables/TM2.json`, `TM2a.json`, `TM2b.json` | tables of TM2, TM2a, TM2b (about 3,000 words each) |
 | `scan/bellscan.c`, `scan/bell_candidates.txt`, `scan/holdouts_663.txt` | Bell detector, its results, and the list of holdouts it was run on |
 | `scan/bell_candidates.md`, `scan/diagrams/`, `scan/viz.c` | the 56 candidates with classification, level analysis, verdict and a space-time diagram each |
