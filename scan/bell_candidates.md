@@ -38,6 +38,21 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
       - For n = 4 … 39 (`bmapAB.py`) the Bell map of no. 13 is exactly that of no. 15 plus one: **F₁₃(n) = F₁₅(n) + 1**, with the same halting values (n = 11, 27) and the same exceptional values (n = 7, 19).
       - The orbits differ: no. 15 runs through n = 4, 9, 14, 24, 39, 47, …; no. 13 through 10, 19, 26, 35, 42, 67, ….
       - So the machines are not equivalent. But an analysis of the cryptid no. 15 (its map F₁₅) applies to no. 13 with the shifted map F₁₅ + 1.
+  - *Nos. 57–108 (29 Oct 2026).* All 108 candidates were compared with `groups.py`.
+    - **Same table, different start state:** 12 new groups.
+
+      | group | note |
+      |---|---|
+      | 44, 81, 89, 96 | no. 44 is one of the first 56 |
+      | 51, 61, 71, 93 | no. 51 (probviously halting cryptid) is one of the first 56; no. 61 is also a probviously halting cryptid |
+      | 58, 68 | both Antihydra-like cryptids, probviously nonhalting |
+      | 72, 73, 97 · 74, 77 · 75, 106 · 76, 99 · 78, 79, 92 · 80, 91, 108 · 94, 103 | |
+
+      For all 26 pairs within these groups (`equiv_57_108.py candidates_108.txt 20000000 200000000`, with `meet.c`), the configuration of one run after 2·10⁷ steps does **not** occur in the other run within 2·10⁸ steps, in both directions. The record events (`recev.c`, `cmpev.py`, 3·10⁸ steps) also show no "same interior, different ends" pattern as for 31/32. Nos. 72/97 have the same interior only at the beginning (widths 144–155), then they separate. **No equivalence found.**
+    - **Tables that differ in one transition:** nos. 63 and 98. **In two transitions:** 53/85, 70/86 and 84/101. The transitions in which they differ are all used, so they are not trivially the same.
+      - **70/86** run almost identically: tape widths after 3·10⁸ steps are 27,942 and 27,922, the same record widths occur, and the step lag grows only slowly (0.2 %).
+      - The other pairs separate more clearly (widths 14,910/16,491, 26,711/26,455, 14,060/14,673).
+      - Not checked further.
 - **Diagram**: time runs downward, one pixel column per tape cell (scaled up for narrow tapes), symbol 1 orange, 0 white; at most 700 sampled rows. Each diagram runs up to the start of the 8th Bell found by the detector (so the first 7 Bells are complete) or until the tape is 1000 cells wide, whichever comes first.
 
 ## The vampire method: when does it apply?
@@ -211,7 +226,7 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [92](#92) | – | `1RB0RA_0RC0LB`<br>`1LD1RF_1LE1RA`<br>`1RD1RB_1LA---` | – | for later analysis | 1113 | Bell-like |   |   |   |
 | [93](#93) | – | `1RB0LC_1RC1RE`<br>`1LA0LD_0RB0RA`<br>`1RB1RF_1RD---` | – | for later analysis | 1114 | Bell-like |   |   |   |
 | [94](#94) | – | `1RB0RA_1LC0LE`<br>`1RA1LD_0LB1LF`<br>`1LD0RC_1LB---` | – | for later analysis | 1116 | Bell-like |   |   |   |
-| [95](#95) | – | `1RB0LE_1RC---`<br>`1RD1RE_1LA0RF`<br>`0RC0LA_0LC0RB` | – | for later analysis | 1117 | Bell-like |   |   |   |
+| [95](#95) | – | `1RB0LE_1RC---`<br>`1RD1RE_1LA0RF`<br>`0RC0LA_0LC0RB` | – | Bell types A/B/C (list of counters), 102 Bells (≈10⁷⁹ steps) without HALT, see below | 1117 | Bell-like |   |   |   |
 | [96](#96) | – | `1RB1RE_1LC0LE`<br>`1RD0LB_0RA1RC`<br>`0RC0RF_1RA---` | – | for later analysis | 1118 | Bell-like |   |   |   |
 | [97](#97) | – | `1RB1LB_1RC1LD`<br>`1LA1RE_1RD0LA`<br>`0RB0RF_0RA---` | – | for later analysis | 1121 | Bell-like |   |   |   |
 | [98](#98) | – | `1RB1LA_1LC0RE`<br>`1LF1LD_1RE0LC`<br>`1LB1RA_---0LA` | – | for later analysis | 1123 | Bell-like |   |   |   |
@@ -1412,6 +1427,52 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 - diagram: 599,812 steps, tape width 1001 cells
 
 <img src="diagrams/1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB.png" alt="space-time diagram" height="350">
+
+### No. 95: Bell types (29 Oct 2026)
+
+**Tape at a Bell start** (head at the blank left end, state A; written left to right):
+
+    (1000)^a   [middle counters]   001 0^7   U^k   1 0^5 1 0^3 101          U = 1 0^5 1 0^7  (14 cells)
+
+- **Left block** (1000)^a. It grows by 3 for every two units of U that are used up.
+- **Reservoir** U^k. Each pass of the head over the tape uses up one unit.
+- **Middle counters.** These are long alternating stretches (10)^x between the left block and the reservoir. Each one is one counter.
+  - With one counter: x grows by 12 per two units.
+  - With two counters x, y: x grows by 7 and y by 5 per two units (the two swap places within each cycle).
+- **End of a Bell.** When U is used up, the rightmost counter, of length c, is rebuilt into the new reservoir with about c/2 units. The other counters stay in the middle.
+- **Start of type A.** A Bell without counters first converts the old left block: it becomes (0010)^z, which is used up step by step while new counters arise at the same time. In the end there are one, two or three counters, depending on the phase at which z reaches 0.
+
+So the machine is a list of counters (similar to no. 31):
+- the reservoir is used up;
+- the counters grow linearly;
+- at the end of each Bell the rightmost counter becomes the next reservoir.
+
+**Types.** The type is the number of middle counters at the Bell start: **A** = none, **B** = one, **C** = two. No Bell with three counters occurred.
+
+**Order of the first 102 Bells** (Bell 1 at step 1,613, Bell 102 at about 1.06·10⁷⁹ steps):
+
+    AABABABACB ABACBACBBA ABBAABBAAB CBBCBBBBAB ABBBBCBABB BCBAABBBBB BBABABBAAB BAACBBAABA BBBABBBCBB BAABBAACBA BA
+
+- **Frequencies:** A 35, B 57, C 10.
+- **Transitions:** BB 28, BA 24, AB 19, AA 10, CB 10, AC 5, BC 5.
+- **Fixed rule:** C is **always** followed by B. A and B can be followed by A, B or C.
+- **First 16 Bells:** they alternate almost strictly (A B A B A B A C B A B A C B A C). After that, runs like BB, AA and BBBB… appear.
+- **No period** can be seen. The next type is **not** determined by the parity (or the residue mod 4) of a, k or the counters. Apparently it depends on finer phase relations, e.g. where in its cycle the conversion of the left block ends.
+- **Growth:** the number of steps grows by a factor of about 6 per Bell.
+- **No HALT** within the 102 Bells. HALT needs B1 (`---`); a condition for it has not been derived.
+
+<p align="center"><img src="diagrams/m95_bell_types.png" alt="Bell types of no. 95" width="760"></p>
+
+**Fast simulation** (`m95/`). Usage: `python3 fastbe.py TM MAXEVENTS > out.txt; python3 classify.py out.txt`. The simulation has three levels:
+- **Chain steps** (`chain.py`). A run w^c of identical words is crossed in one step if the head leaves one copy on the far side in the same state. A variant with a "backsymbol" also handles zigzag passes, where the head bounces back over cells it has just written.
+- **Canonical form** (`fast.py`). Whenever the head stands at a blank end of the tape, the tape is brought into a canonical run-length form.
+- **Extrapolation.** If the same run structure recurs with the same count differences over two periods, as many periods as safe are skipped in one go. The step count is extrapolated quadratically.
+
+Checks:
+- `val.py`: the chain simulator agrees configuration by configuration with direct simulation.
+- The Bell starts agree with direct simulation (`ex4.c`, up to 2.2·10¹⁰ steps, 11 Bells), up to a constant offset of the event point.
+- Two runs with different thresholds for the extrapolation give the same step numbers and types for all 102 Bells.
+- The result `m95/bells_102.txt` took 100 seconds.
 
 <a id="96"></a>
 ## 96. `1RB1RE_1LC0LE_1RD0LB_0RA1RC_0RC0RF_1RA---` (for later analysis)
