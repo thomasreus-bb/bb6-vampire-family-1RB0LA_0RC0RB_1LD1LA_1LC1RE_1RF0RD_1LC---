@@ -15,8 +15,7 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
     | 1, 2, 5 | vampire family: TM1-F, TM1, TM2a (core with F0 = `1LA`); three different orbits (O2, O1, O3) |
     | 3, 7 | vampire family: TM2, TM2b' (F0 = `1LC`); orbits O2 and O4 |
     | 4, 6 | vampire family: TM2', TM2b (F0 = `1RB`); orbits O2 and O4 |
-    | 31, 32 | nearly the same Bell sequence (the numbers differ by about 2, the prefixes are sometimes shifted by one Bell), but no common configuration; possibly a relation like TM2b/TM2b' (one extra period), not checked |
-    | 26 (with 31, 32) | other run |
+    | 26, 31, 32 | 31 and 32: nearly the same Bell sequence (the numbers differ by about 2, the prefixes are sometimes shifted by one Bell), but no common configuration; possibly a relation like TM2b/TM2b' (one extra period), not checked. No. 26 runs differently (no common configuration) |
     | 19, 20, 39 · 22, 42, 43 · 45, 52 · 46, 54 | no common configuration found |
 
     "No common configuration" means: the configuration of one run after 2·10⁷ steps does not occur in the other run within 2·10⁸ steps, in both directions. A meeting later, or an equivalence with a small difference on the tape (as for 31/32), is not excluded. For 22/42 the tapes after 2·10⁷ steps have the same structure with slightly different numbers.
