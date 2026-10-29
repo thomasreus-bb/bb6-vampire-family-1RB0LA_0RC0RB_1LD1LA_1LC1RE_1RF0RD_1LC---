@@ -93,7 +93,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | [8](#8) | B | `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` | 1.33 | **halts** (vampire method, [halt-found repository](https://github.com/thomasreus-bb/halt-found-1rb0rb_1lc1rf_0rd0lb_0ra1le_1ld---_0rb0rc)) |
 | [9](#9) | B | `1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB` | 1.33 | needle-like: only 2 tails (all information in one number) |
 | [10](#10) | B | `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE) | 1.24 | two-register system, exact Bell map with types A/B/C; no HALT in 10¹⁰ Bells (about 2·10³⁰ steps); HALT needs an exact hit (see [10](#10)) |
-| [11](#11) | B | `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` | 1.21 | multi-register system; no HALT up to 10²² steps; low halting rate |
+| [11](#11) | B | `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` | 1.21 | multi-register system; no HALT up to 10²² steps; low halting rate; **equivalent to [37](#37)** (mirrored, renamed) |
 | [12](#12) | B | `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` | 1.27 | no clear single-block Bell configuration found |
 | [13](#13) | B | `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB) | 1.33 | needle-like: only 2 tails (all information in one number) |
 | [14](#14) | B | `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA) | 1.21 | needle: exact Collatz-like map on (m, r), HALT only if a cycle ends with m = 2^k − k − 1; very probably non-halting (see [14](#14)) |
@@ -119,7 +119,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | [34](#34) | B | `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` [**wiki**](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD) | 1.34 | no clear single-block Bell configuration found |
 | [35](#35) | B | `1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA` | 1.25 | register system; no HALT up to 5·10¹⁶ steps |
 | [36](#36) | B | `1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB` | 1.56 | needle-like: only 1 tail (all information in one number) |
-| [37](#37) | B | `1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC` | 1.26 | no clear single-block Bell configuration found |
+| [37](#37) | B | `1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC` | 1.26 | no clear single-block Bell configuration found; **equivalent to [11](#11)** (mirrored, renamed) |
 | [38](#38) | C | `1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC` | 1.55 | growing list of blocks (nested); no HALT up to 4·10³³ steps |
 | [39](#39) | C | `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number) |
 | [40](#40) | C | `1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA` [**wiki**](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | 1.48 | no clear single-block Bell configuration found |
@@ -331,6 +331,10 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="11"></a>
 ## 11. `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` (class B)
+- **Equivalent to no. 37** (checked 29 Oct 2026, observation by post-apocalyptic sphere on Discord; `scan/iso_11_37.py`).
+  - **Same transition table.** No. 37 is this machine **mirrored**, with the states renamed: A→D, B→E, C→A, D→B, E→C, F→F. All 12 transitions agree under this map, with left and right swapped. Only the start state differs: no. 37 starts in the state that is C here.
+  - **Same configuration.** After 8,277,490 steps of no. 11 and 7,454,917 steps of no. 37 the tapes are identical up to mirroring: 1674 cells, the head at the same position, state D here and B there (B = image of D).
+  - **Conclusion.** From these steps on, the two runs correspond step by step, and neither machine halted before. So **no. 11 halts if and only if no. 37 halts**.
 
 - scan: 20 levels, 95 phases, mean factor 1.21 (sd 0.10); level starts: 83 107 129 157 171 196 242 274 345 420 620 684 745 799
 - level analysis: Bell type `LC` with left part `01`, 16 levels; n: 5 12 18 48 96 110 200 232 376 478 702 794 968 1512 1832 3912; ratios: 1.146 1.818 1.160 1.621 1.271 1.469 1.131 1.219 1.562 1.212 2.135; 13 different tails
@@ -801,6 +805,10 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 <a id="37"></a>
 ## 37. `1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC` (class B)
+- **Equivalent to no. 11** (checked 29 Oct 2026, observation by post-apocalyptic sphere on Discord; `scan/iso_11_37.py`).
+  - **Same transition table.** This machine is no. 11 **mirrored**, with the states renamed (no. 11 → here: A→D, B→E, C→A, D→B, E→C, F→F). All 12 transitions agree under this map, with left and right swapped. Only the start state differs: this machine starts in A, which corresponds to C of no. 11.
+  - **Same configuration.** After 8,277,490 steps of no. 11 and 7,454,917 steps of no. 37 the tapes are identical up to mirroring: 1674 cells, the head at the same position, state D in no. 11 and B here (B = image of D).
+  - **Conclusion.** From these steps on, the two runs correspond step by step, and neither machine halted before. So **this machine halts if and only if no. 11 halts**.
 
 - scan: 20 levels, 66 phases, mean factor 1.26 (sd 0.19); level starts: 98 127 160 216 251 276 323 344 375 565 620 675 799 853
 - level analysis: Bell type `RF` with left part `11 01 11 03`, 3 levels; n: 21 51 403; ratios: 2.429 7.902; 1 different tails
