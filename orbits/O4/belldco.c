@@ -7,13 +7,19 @@
 // Bell numbers, checkpoint names and the progress log use the Bell numbering of TM2 (see README.md).
 //
 // Compile: gcc -O3 -march=native -o belldco belldco.c -lflint -lmpfr -lgmp -lpthread -lm   (needs FLINT >= 3)
-// Usage:   ./belldco [-t TARGET [-p]] [-i INTERVAL] [-M GB] [-w DIR] [-j N | -j auto[:MAX]] [-b B]
+// Usage:   ./belldco [-t TARGET [-p]] [-i INTERVAL] [-M GB] [-w DIR] [-j N | -j auto[:MAX]] [-P G] [-b B]
 //   -t, -p, -i   as in belldc (target, horizon pruning, checkpoint interval)
 //   -M GB        memory budget for the parts kept in RAM (default 4); it sets the largest block of Bells
 //                (GB * 2^30 / 6 Bells per block; measured about 5 bytes per Bell, so the peak stays near the budget)
 //   -w DIR       directory for the two work files with k in binary (default: the current directory);
 //                each is as large as k (8 bytes per 64 bits), e.g. 46 GB at Bell 6.3e11
 //   -j N, auto   threads as in belldcf (default: all cores)
+//   -P G         compute G chunks of the big product q*3^B at the same time, each on its own thread (default 1).
+//                The FLINT threads (-j) are shared among them.  Useful on machines with many cores: e.g. -j 8 -P 4
+//                or -j 16 -P 8.  Each extra chunk needs a few times the size of 3^B in RAM (about 1-2 bytes per Bell
+//                of a block).  It only helps when the product is the slow part: compare "low part" and "streamed
+//                products" in the final line (or test with -t); this is the case when k is much larger than 8*B,
+//                i.e. for large k with B limited by -M.
 //   -b B         fixed block size in Bells (default: bits of k / 8, at most the -M limit)
 //          ./belldco init BELL K S          write a first checkpoint (K < 2^64)
 // Disk space: two work files of the size of k plus the checkpoints (hex text, 2 times the size of k each;
@@ -146,6 +152,7 @@ static void ckpt_name_h(char*buf,size_t sz,long long bell,int pruned){ snprintf(
 typedef struct { char path[512]; int fd; long long nl; } kfile;
 static char wdir[400]=".";
 static long long memlimit=4LL<<30;        // -M: memory budget for the in-RAM parts, bytes
+static int pw_workers=1;                  // -P: chunk products computed at the same time (1 = one after the other)
 
 static void die(const char*m){ fprintf(stderr,"%s: %s\n",m,strerror(errno)); exit(1); }
 static void kf_open(kfile*f,const char*name,int create){
@@ -280,6 +287,20 @@ static void log_progress_kf(long long bell,kfile*K,int s,double t,const char*wha
    chunks of C limbs, each chunk is multiplied by P = 3^nb in RAM and the result is written in order to the new
    file (the upper vn limbs of each chunk product are carried into the next one).  Meanwhile the main thread
    advances r in RAM.  With pruning only the limbs below 2^keep are produced (keep = (horizon - Bell) + 128). */
+// one chunk of q times P = 3^nb: read q limbs off..off+len-1 (shifted by wt bits), product into T (len+vn limbs)
+typedef struct { kfile*src; long long ws; int wt; long long off,len,vn; const u64*PW; u64*in,*A,*T; } cjob;
+static void* chunk_product(void*a){
+  cjob*j=a; long long len=j->len, vn=j->vn;
+  kf_pread(j->src,j->in,len+1,j->ws+j->off);
+  if(j->ws+j->off+len+1>j->src->nl){ long long valid=j->src->nl-(j->ws+j->off); if(valid<0) valid=0; for(long long i=valid;i<len+1;i++) j->in[i]=0; }
+  for(long long i=0;i<len;i++) j->A[i]= j->wt? (j->in[i]>>j->wt)|(j->in[i+1]<<(64-j->wt)) : j->in[i];
+  long long an=len; while(an>0&&j->A[an-1]==0) an--;
+  if(an==0) memset(j->T,0,(len+vn)*8);
+  else { if(an>=vn) flint_mpn_mul(j->T,j->A,an,j->PW,vn); else flint_mpn_mul(j->T,j->PW,vn,j->A,an);
+    for(long long i=an+vn;i<len+vn;i++) j->T[i]=0; }
+  return NULL; }
+// the same in a separate thread: free FLINT's thread-local multiplication data at the end (otherwise it leaks)
+static void* chunk_thread(void*a){ chunk_product(a); flint_cleanup(); return NULL; }
 typedef struct { kfile*src; kfile*dst; long long ws; int wt; mpz_srcptr P; long long limZ; long long C; int qcut; double t; } sjob;
 static void* stream_product(void*a){
   sjob*J=a; double t0=now();
@@ -295,22 +316,30 @@ static void* stream_product(void*a){
   if(ftruncate(dst->fd,0)) die("truncate k file");
 #define EMITY(y) do{ u64 _y=(y); if(zpos<J->limZ){ ob[obn++]=(_y<<2)|(prev>>62); zpos++; if(obn==OB){ kf_pwrite(dst,ob,obn,zpos-obn); obn=0; } } prev=_y; }while(0)
   long long yout=0;                                           // Y limbs emitted
-  for(long long off=0; off<qlim && yout<limY; off+=C){
-    long long len=qlim-off<C?qlim-off:C;
-    // q limbs off..off+len-1 = bits of src from limb ws+off with shift wt
-    kf_pread(src,in,len+1,ws+off);
-    if(ws+off+len+1>src->nl){ long long valid=src->nl-(ws+off); if(valid<0) valid=0; for(long long i=valid;i<len+1;i++) in[i]=0; }
-    for(long long i=0;i<len;i++) A[i]= wt? (in[i]>>wt)|(in[i+1]<<(64-wt)) : in[i];
-    long long an=len; while(an>0&&A[an-1]==0) an--;
-    long long tn;
-    if(an==0){ memset(T,0,(len+vn)*8); tn=len+vn; }
-    else { if(an>=vn) flint_mpn_mul(T,A,an,PW,vn); else flint_mpn_mul(T,PW,vn,A,an);
-      tn=an+vn; for(long long i=tn;i<len+vn;i++) T[i]=0; tn=len+vn; }
-    // add the carry (vn limbs) into T
-    u64 cy=0; for(long long i=0;i<vn;i++){ unsigned __int128 sum=(unsigned __int128)T[i]+carry[i]+cy; T[i]=(u64)sum; cy=(u64)(sum>>64); }
-    for(long long i=vn;cy&&i<tn;i++){ T[i]+=cy; cy=(T[i]==0); }
-    for(long long i=0;i<len&&yout<limY;i++,yout++) EMITY(T[i]);
-    memcpy(carry,T+len,vn*8); }
+  int G=pw_workers<1?1:pw_workers;
+  long long nchunks=0; for(long long off=0; off<qlim && off<limY; off+=C) nchunks++;
+  if(G>nchunks) G=(int)(nchunks>0?nchunks:1);
+  // per worker: input, shifted chunk and product buffer; worker 0 reuses in/A/T
+  u64**Win=malloc(G*sizeof(u64*)),**WA=malloc(G*sizeof(u64*)),**WT=malloc(G*sizeof(u64*)); long long*Wlen=malloc(G*8);
+  Win[0]=in; WA[0]=A; WT[0]=T;
+  for(int g=1;g<G;g++){ Win[g]=malloc((C+1)*8); WA[g]=malloc(C*8); WT[g]=malloc((C+vn+1)*8);
+    if(!Win[g]||!WA[g]||!WT[g]){ fprintf(stderr,"out of memory in the parallel streamed product (reduce -P or -M)\n"); exit(1); } }
+  cjob*jobs=malloc(G*sizeof(cjob)); pthread_t*ths=malloc(G*sizeof(pthread_t));
+  for(long long c0=0;c0<nchunks && yout<limY;c0+=G){
+    int ng=(int)(nchunks-c0<G?nchunks-c0:G);
+    for(int g=0;g<ng;g++){ long long off=(c0+g)*C; long long len=qlim-off<C?qlim-off:C; Wlen[g]=len;
+      jobs[g]=(cjob){src,ws,wt,off,len,vn,PW,Win[g],WA[g],WT[g]};
+      if(g>0&&pthread_create(&ths[g],NULL,chunk_thread,&jobs[g])){ fprintf(stderr,"cannot start a thread\n"); exit(1); } }
+    chunk_product(&jobs[0]);
+    for(int g=1;g<ng;g++) pthread_join(ths[g],NULL);
+    for(int g=0;g<ng&&yout<limY;g++){ u64*Tg=WT[g]; long long len=Wlen[g], tn=len+vn;
+      // add the carry (vn limbs) into the chunk product, emit its low len limbs, keep the upper vn limbs as carry
+      u64 cy=0; for(long long i=0;i<vn;i++){ unsigned __int128 sum=(unsigned __int128)Tg[i]+carry[i]+cy; Tg[i]=(u64)sum; cy=(u64)(sum>>64); }
+      for(long long i=vn;cy&&i<tn;i++){ Tg[i]+=cy; cy=(Tg[i]==0); }
+      for(long long i=0;i<len&&yout<limY;i++,yout++) EMITY(Tg[i]);
+      memcpy(carry,Tg+len,vn*8); } }
+  for(int g=1;g<G;g++){ free(Win[g]); free(WA[g]); free(WT[g]); }
+  free(Win); free(WA); free(WT); free(Wlen); free(jobs); free(ths);
   // the rest: the carry limbs (only needed without cut, or up to limY)
   for(long long i=0;i<vn&&yout<limY;i++,yout++) EMITY(carry[i]);
   if(yout<limY) EMITY(0);                                     // the top two bits of the last Y limb
@@ -344,8 +373,9 @@ int main(int argc,char**argv){
       else if(!strcmp(argv[i],"-p")) prune=1;
       else if(!strcmp(argv[i],"-M")&&i+1<argc){ double g=atof(argv[++i]); if(g<0.25){ fprintf(stderr,"-M needs at least 0.25 (GB)\n"); return 2; } memlimit=(long long)(g*(1<<30)); }
       else if(!strcmp(argv[i],"-w")&&i+1<argc) snprintf(wdir,sizeof wdir,"%s",argv[++i]);
+      else if(!strcmp(argv[i],"-P")&&i+1<argc){ pw_workers=atoi(argv[++i]); if(pw_workers<1){ fprintf(stderr,"-P needs a number >= 1\n"); return 2; } }
       else if(!strcmp(argv[i],"-j")&&i+1<argc){ i++; if(!strncmp(argv[i],"auto",4)){ jauto=1; if(argv[i][4]==':') jmax=atoi(argv[i]+5); } else { jset=atoi(argv[i]); if(jset<1){ fprintf(stderr,"-j needs a number >= 1 or auto\n"); return 2; } } }
-      else { fprintf(stderr,"usage: %s [-t TARGET [-p]] [-i INTERVAL] [-M GB] [-w DIR] [-j N|auto[:MAX]] [-b B]   or   %s init BELL K S\n",argv[0],argv[0]); return 2; } } }
+      else { fprintf(stderr,"usage: %s [-t TARGET [-p]] [-i INTERVAL] [-M GB] [-w DIR] [-j N|auto[:MAX]] [-P G] [-b B]   or   %s init BELL K S\n",argv[0],argv[0]); return 2; } } }
   if(jauto){ jcur=0; set_threads(1); jcur=1; jlast=-1e9; } else { int j=jset?jset:ncpu; flint_set_num_threads(j); jcur=j; }
   if(target<=0||interval<=0||B<0){ fprintf(stderr,"TARGET, INTERVAL and B must be positive\n"); return 2; }
   if(prune&&target==LLONG_MAX){ fprintf(stderr,"-p needs a target (-t TARGET)\n"); return 2; }
@@ -400,6 +430,7 @@ int main(int argc,char**argv){
   else printf("orbit %s: start %s (Bell %lld), target Bell %lld, checkpoint every %lld Bells, B = %s\n",orbit,startname,bell,target,interval,bdesc);
   if(horizon>0) printf("horizon pruning towards Bell %lld: k is kept mod 2^((%lld - Bell) + %d)\n",horizon,horizon,PMARGIN);
   if(jauto) printf("threads: automatic (1 to %d, %d cores)\n",jmax>0?jmax:ncpu,ncpu); else printf("threads: %d (%d cores)\n",jcur,ncpu);
+  if(pw_workers>1) printf("big product: %d chunks at the same time (-P)\n",pw_workers);
   printf("k on disk: %s/belldco_k_a.bin and _b.bin (now %.2f GB each at most)\n",wdir,kf_bits(K)/8.0/(1<<30));
   { int mx=0; for(int i=0;i<n;i++) if(dist[i]<INT_MAX/2&&dist[i]>mx) mx=dist[i];
     printf("distance to HALT: d(S) between 1 and %d over the %d words of the table\n",mx,n); }

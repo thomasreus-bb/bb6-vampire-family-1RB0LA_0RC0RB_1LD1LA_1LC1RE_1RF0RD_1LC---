@@ -243,6 +243,10 @@ So each block reads k once and writes it once. With pruning, only the part of th
 - `-w DIR`: directory for the two work files (default: the current directory). Each work file is as large as k; for a pruned run to 10¹² the largest k, at Bell ≈ 6.3·10¹¹, is about 46 GB.
 - Disk space for a run to 10¹²: the two work files plus the checkpoints. Checkpoints are hex text, twice the size of k; the start checkpoint, the newest one and with `-p` the last exact one are kept, so allow about 400 GB.
 - `-j`, `-t`, `-p`, `-i`, `-b` work as in `belldcf`.
+- `-P G` (since 29 Oct): compute G chunks of the big product q·3^B **at the same time**, each on its own thread. The FLINT threads (`-j`) are shared among them; on a machine with many cores e.g. `-j 8 -P 4` or `-j 16 -P 8`.
+  - **When it helps:** only when the product is the slow part. The final line of a run shows "low part … s" and "streamed products … s"; `-P` helps when the second is larger. That is the case for large k when the block size is limited by `-M` (k much larger than 8·B), i.e. in the long out-of-core runs. For small k the low part dominates and `-P` changes nothing.
+  - **Memory:** each extra chunk needs about 1–2 bytes per Bell of a block.
+  - **Tests:** with `-P 1`, `-P 3` and `-P 4`, also pruned and with `-b 1234567`, the results are identical to the previous version (O2: KCHECK, bit length and S at 10⁸, 2·10⁸, 3·10⁸, and pruned at 5·10⁸). Speed-ups could not be measured here (2 cores).
 
 **Checkpoint size and a full disk** (all three programs, since 25 Oct).
 - **Size.** A full-precision checkpoint at Bell N holds about 0.585·N bits of k as hex text, i.e. about 0.15·N bytes: 15 GB at 10¹¹, 33 GB at 2.25·10¹¹. While the new one is written, the previous one still exists, so about twice that is needed. With `-p` the size is at most 0.37·T bits (at Bell ≈ T/1.585) and then shrinks.
