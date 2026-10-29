@@ -261,6 +261,18 @@ Smaller blocks are not slower here, because the streamed product runs in paralle
 
 Tests: same KCHECK, bit length and S as `belldc` / `belldcf` at 3·10⁶, 3·10⁸ and 4·10⁹, with block sizes 999, 1,234,567 and automatic, with `-M 0.25` and `-M 4`. A pruned run towards 5·10⁸ gives the same result as `belldc -p` and keeps the exact checkpoint at 3·10⁸. Checkpoints of `belldc`, both exact and pruned, are read, and the written checkpoints are identical to those of `belldc`. A HALT is found at the same Bell (artificial start).
 
+**Reference runs on two machines (O2 and O3 to 10¹²).**
+
+| | notebook (Thomas Reus) | cluster node (Ahmer Raza) |
+|---|---|---|
+| hardware | 8 cores, 16 GB RAM, WSL | 8 of 96 cores of two AMD EPYC 9475F (3.65 GHz, boost 4.4–4.8 GHz), 192 GiB RAM |
+| options | `-j auto -M 8 -t 1000000000000 -p -i 20000000000` | `-j 8 -M 32 -t 1000000000000 -p -i 10000000000` |
+| work files (`-w`) | on the WSL disk | in a private directory under `/dev/shm`, i.e. in RAM |
+| FLINT build | default | compiled with `-O3 -mavx2 -mfma` |
+| time to 10¹² | about 13–14 days (from 8·10¹⁰) | about 23 hours (from the start, `belldcf` up to 2.3·10¹¹, then `belldco`) |
+
+The difference of about 15× comes from the fast CPU, a large `-M` (larger blocks, fewer passes over the files), the work files in RAM and the FLINT build. The programs themselves were the same.
+
 ---
 
 ## TM1
