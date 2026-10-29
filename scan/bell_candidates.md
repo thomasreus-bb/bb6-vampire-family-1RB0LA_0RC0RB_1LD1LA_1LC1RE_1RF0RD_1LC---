@@ -113,7 +113,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 ## The 56 candidates
 
-The columns Row to Done by are copied from the community BB6 sheet (tab "Holdouts (From the 1534 list)", read on 29 Oct 2026; Row = row number in the sheet). The same data as a separate table: [`bb6_sheet_extract.md`](bb6_sheet_extract.md). The Sources numbers link to the referenced post or wiki page.
+The columns Row to Done by are copied from the community BB6 sheet (tab "Holdouts (From the 1534 list)", read on 29 Oct 2026; Row = row number in the sheet). The Sources numbers link to the referenced post or wiki page.
 
 | # | class | machine | factor | verdict | Row | Status | Classification | Notes | Sources | Done by |
 |---|---|---|---|---|---:|---|---|---|---|---|
