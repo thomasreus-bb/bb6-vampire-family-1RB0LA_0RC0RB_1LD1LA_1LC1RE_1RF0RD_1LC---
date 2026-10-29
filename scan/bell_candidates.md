@@ -15,8 +15,8 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
     | 1, 2, 5 | vampire family: TM1-F, TM1, TM2a (core with F0 = `1LA`); three different orbits (O2, O1, O3) |
     | 3, 7 | vampire family: TM2, TM2b' (F0 = `1LC`); orbits O2 and O4 |
     | 4, 6 | vampire family: TM2', TM2b (F0 = `1RB`); orbits O2 and O4 |
-    | 26, 31, 32 | 31 and 32: nearly the same Bell sequence (the numbers differ by about 2, the prefixes are sometimes shifted by one Bell), but no common configuration; possibly a relation like TM2b/TM2b' (one extra period), not checked. No. 26 runs differently (no common configuration) |
-    | 19, 20, 39 · 22, 42, 43 · 45, 52 · 46, 54 | no common configuration found |
+    | 26, 31, 32 | 31 and 32: nearly the same Bell sequence (the numbers differ by about 2, the prefixes are sometimes shifted by one Bell), but no common configuration; very probably equivalent: the long Bells coincide with a one-cell difference (see below). No. 26 runs differently (no common configuration) |
+    | 19, 20, 39 · 22, 42, 43 · 45, 52 · 46, 54 | no common configuration found; 22/42 drift apart (see below) |
 
     "No common configuration" means: the configuration of one run after 2·10⁷ steps does not occur in the other run within 2·10⁸ steps, in both directions. A meeting later, or an equivalence with a small difference on the tape (as for 31/32), is not excluded. For 22/42 the tapes after 2·10⁷ steps have the same structure with slightly different numbers.
   - *Tables that differ in one or two transitions.*
@@ -25,6 +25,19 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
     - Nos. 27/29, 34/55 and 50/55 differ in two.
 
     Whether their runs are related has not been checked.
+  - *Closer look (29 Oct 2026).*
+    - **31 / 32: very probably equivalent.** In the naming of no. 31, no. 32 is the same table started in D (`m31/bellsQ.c`). Compare the starts of the long Bells (new right cell in state A) of both runs.
+      - All long Bells occur in both runs with the same tape width: 27 of them, from width 172 to 192,220, up to 1.6·10¹⁰ steps.
+      - Each time the state is the same, and the tapes differ in **exactly one cell**, the third from the right end: one run has `1^n` there, the other `1^(n−2) 0 1`.
+      - The other run is 7,978 … 8,012 steps behind, a bounded lag.
+
+      So the two runs follow each other with a one-cell difference that never grows. A proof would need a local lemma showing that this difference survives every Bell and never leads to a different HALT decision. Not proven.
+    - **22 / 42: not equivalent.** Same table, but the runs drift apart. Tape widths after 10⁹ steps are 39,335 and 39,747, after 2·10⁹ steps 59,649 and 40,160. The record configurations agree only at the ends of the tape, not inside (`recev.c`, `cmpev.py`).
+    - **13 / 15: the same Bell skeleton, shifted by one.** In the naming of no. 15, no. 13 differs only in A0 (`1RE` instead of `1RB`), and A0 is used once per Bell.
+      - Both machines have Bell configurations `1^n [0] 11` (head on the 0, state A).
+      - For n = 4 … 39 (`bmapAB.py`) the Bell map of no. 13 is exactly that of no. 15 plus one: **F₁₃(n) = F₁₅(n) + 1**, with the same halting values (n = 11, 27) and the same exceptional values (n = 7, 19).
+      - The orbits differ: no. 15 runs through n = 4, 9, 14, 24, 39, 47, …; no. 13 through 10, 19, 26, 35, 42, 67, ….
+      - So the machines are not equivalent. But an analysis of the cryptid no. 15 (its map F₁₅) applies to no. 13 with the shifted map F₁₅ + 1.
 - **Diagram**: time runs downward, one pixel column per tape cell (scaled up for narrow tapes), symbol 1 orange, 0 white; at most 700 sampled rows. Each diagram runs up to the start of the 8th Bell found by the detector (so the first 7 Bells are complete) or until the tape is 1000 cells wide, whichever comes first.
 
 ## The vampire method: when does it apply?
