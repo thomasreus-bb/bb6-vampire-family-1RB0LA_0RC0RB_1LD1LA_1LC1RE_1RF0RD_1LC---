@@ -6,7 +6,7 @@ tab "Holdouts (From the 1534 list)", read on 29 Oct 2026 (1534 rows).
 All 56 candidates of [`bell_candidates.txt`](bell_candidates.txt) appear in the sheet, each exactly once and
 in exactly the same notation (no renaming or mirroring needed; matching was done up to renaming and mirroring).
 "No." is our candidate number, "Row" the row number in the sheet (row 1 = header).
-Empty cells are empty in the sheet. "Sources" is the sheet's reference number, linked to the referenced post or wiki page (the export holds only one link per cell, so for nos. 49 and 56 only reference 1 is linked).
+Empty cells are empty in the sheet. "Sources" is the sheet's reference number, linked to the referenced post or wiki page.
 
 Summary of the sheet's classification: Bell-like 21, Quadratic Mess 24, Cubic Mess 8,
 Fractal in Bouncer 1, Chaotic Bell Class 2 1, Unknown 1. Status: CRYPTID for nos. 15, 40, 51; all others empty
@@ -62,11 +62,11 @@ Fractal in Bouncer 1, Chaotic Bell Class 2 1, Unknown 1. Status: CRYPTID for nos
 | 46 | 751 | `1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD` | | Quadratic Mess | Simulated to 1e2848 | [1](https://discord.com/channels/960643023006490684/1239205785913790465/1456268738428145684) | Alistaire |
 | 47 | 764 | `1RB0LF_1LC0LD_1RD1LB_---1RE_0RA1RE_1LA0LE` | | Quadratic Mess | | | |
 | 48 | 29 | `1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---` | | Unknown | Simulated to 1.08e17 steps. | [1](https://discord.com/channels/960643023006490684/1239205785913790465/1456934113943621653) | Alistaire |
-| 49 | 686 | `1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF` | | Cubic Mess | Potential cryptid. One of 3 holdouts with 2 undefined transitions, may be cryptid. 10^14 doesn't halt. Analysed thoroughly using formal proofs from Claude Opus 4.6. | [1](https://discord.com/channels/960643023006490684/1410023564249403577/1410023564249403577), 2 | dyuan, mxdys, hipparcos, DrDisentangle |
+| 49 | 686 | `1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF` | | Cubic Mess | Potential cryptid. One of 3 holdouts with 2 undefined transitions, may be cryptid. 10^14 doesn't halt. Analysed thoroughly using formal proofs from Claude Opus 4.6. | [1](https://discord.com/channels/960643023006490684/1410023564249403577/1410023564249403577), [2](https://wiki.bbchallenge.org/wiki/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF) | dyuan, mxdys, hipparcos, DrDisentangle |
 | 50 | 794 | `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` | | Quadratic Mess | | | |
 | 51 | 1063 | `1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---` | CRYPTID | Bell-like | Probviously halting cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA) | -d |
 | 52 | 765 | `1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---` | | Quadratic Mess | | | |
 | 53 | 1080 | `1RB1RE_1LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` | | Bell-like | | | |
 | 54 | 787 | `1RB1RF_1LC---_1LE1RD_1RA0RC_0LF0LA_0LD0RB` | | Quadratic Mess | | | |
 | 55 | 770 | `1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA` | | Quadratic Mess | | | |
-| 56 | 753 | `1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD` | | Quadratic Mess | Simulated to 10^190,000 | [1](https://wiki.bbchallenge.org/wiki/User:Polygon/Page_for_analyses#1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD_(bbch)); 2; 3 | Polygon, hipparcos |
+| 56 | 753 | `1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD` | | Quadratic Mess | Simulated to 10^190,000 | [1](https://wiki.bbchallenge.org/wiki/User:Polygon/Page_for_analyses#1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD_(bbch)); [2](https://discord.com/channels/960643023006490684/1239205785913790465/1453010575901593643); [3](https://discord.com/channels/960643023006490684/1466628778905305292/1466628778905305292) | Polygon, hipparcos |
