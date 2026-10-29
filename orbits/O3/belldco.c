@@ -31,6 +31,7 @@
 // own thread while the main thread computes r_B in RAM (divide and conquer with FLINT, as in belldcf).
 // Finally r_B is added at the bottom of the new file.  One block reads k once and writes it once.
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
@@ -282,6 +283,59 @@ static void log_progress_kf(long long bell,kfile*K,int s,double t,const char*wha
   fputs(line,stdout); fflush(stdout);
   FILE*f=fopen("progress.log","a"); if(f){ fputs(line,f); fclose(f); } }
 
+/* ---------- time forecast (suggested by Ahmer Raza) ----------
+   After each block the pair (Bell x, run time y) is stored.  At each checkpoint the model
+       y = c1 x ln^2 x + c2 x ln x + c3 x + c4        (the O(N log^2 N) growth of the run time)
+   is fitted by least squares to all pairs of this run (columns scaled, QR in long double), and
+   the times of the next checkpoint and of the target are forecast.  With fewer than 6 pairs
+   only y = c1 x ln^2 x + c4 is fitted.  With horizon pruning (-p) the cost per Bell drops near
+   the target, so the forecast is then an upper estimate. */
+#define ETAMAX 65536
+static double etax[ETAMAX], etay[ETAMAX]; static int etan=0;
+static void eta_add(long long bell,double t){
+  if(etan==ETAMAX){ int j=0; for(int i=0;i<ETAMAX;i+=2){ etax[j]=etax[i]; etay[j]=etay[i]; j++; } etan=j; }
+  if(etan>0&&etax[etan-1]==(double)bell){ etay[etan-1]=t; return; }
+  etax[etan]=(double)bell; etay[etan]=t; etan++; }
+static long double eta_f(int j,long double x){ long double l=logl(x);
+  switch(j){ case 0: return x*l*l; case 1: return x*l; case 2: return x; default: return 1; } }
+// least squares fit with the columns in cols[]; returns 0 on success
+static int eta_fit(const int*cols,int m,long double*c){
+  int n=etan; if(n<m) return -1;
+  long double *A=malloc(sizeof(long double)*n*m), sc[4], Rm[4][4], qy[4];
+  if(!A) return -1;
+  for(int k=0;k<m;k++){ sc[k]=0; for(int i=0;i<n;i++){ long double v=eta_f(cols[k],etax[i]); A[i*m+k]=v; if(fabsl(v)>sc[k]) sc[k]=fabsl(v); }
+    if(sc[k]==0) sc[k]=1; for(int i=0;i<n;i++) A[i*m+k]/=sc[k]; }
+  // modified Gram-Schmidt: A = Q R
+  for(int k=0;k<m;k++){
+    for(int j=0;j<k;j++){ long double d=0; for(int i=0;i<n;i++) d+=A[i*m+j]*A[i*m+k]; Rm[j][k]=d; for(int i=0;i<n;i++) A[i*m+k]-=d*A[i*m+j]; }
+    long double nr=0; for(int i=0;i<n;i++) nr+=A[i*m+k]*A[i*m+k]; nr=sqrtl(nr);
+    if(nr<1e-15L){ free(A); return -1; }
+    Rm[k][k]=nr; for(int i=0;i<n;i++) A[i*m+k]/=nr; }
+  for(int k=0;k<m;k++){ long double d=0; for(int i=0;i<n;i++) d+=A[i*m+k]*etay[i]; qy[k]=d; }
+  for(int k=m-1;k>=0;k--){ long double v=qy[k]; for(int j=k+1;j<m;j++) v-=Rm[k][j]*c[j]; c[k]=v/Rm[k][k]; }
+  for(int k=0;k<m;k++) c[k]/=sc[k];
+  free(A); return 0; }
+static void eta_dur(char*b,size_t sz,double s){
+  if(s<0) s=0;
+  if(s<60) snprintf(b,sz,"%.0fs",s);
+  else if(s<3600) snprintf(b,sz,"%dm%02ds",(int)(s/60),(int)fmod(s,60));
+  else if(s<86400) snprintf(b,sz,"%dh%02dm",(int)(s/3600),(int)(fmod(s,3600)/60));
+  else snprintf(b,sz,"%dd%02dh",(int)(s/86400),(int)(fmod(s,86400)/3600)); }
+static void eta_report(long long bell,double tnow,long long next,long long target){
+  static const int c4[4]={0,1,2,3}, c2[2]={0,3}; long double c[4]; const int*cols; int m;
+  if(etan>=6){ cols=c4; m=4; } else if(etan>=2){ cols=c2; m=2; } else return;
+  if(eta_fit(cols,m,c)){ if(m==4){ cols=c2; m=2; if(eta_fit(cols,m,c)) return; } else return; }
+  #define ETAP(x) ({ long double _y=0; for(int _k=0;_k<m;_k++) _y+=c[_k]*eta_f(cols[_k],(long double)(x)); (double)_y; })
+  char line[512], d1[32], d2[32], ts[32]=""; time_t nt=time(NULL); char now_s[32]; strftime(now_s,sizeof now_s,"%Y-%m-%d %H:%M:%S",localtime(&nt));
+  int len=snprintf(line,sizeof line,"%s  eta      bell %lld",now_s,bell);
+  if(next>bell){ eta_dur(d1,sizeof d1,ETAP(next)-tnow); len+=snprintf(line+len,sizeof line-len,"  next checkpoint (Bell %lld) in ~%s",next,d1); }
+  if(target!=LLONG_MAX&&target>bell){ double r=ETAP(target)-tnow; eta_dur(d2,sizeof d2,r); time_t tt=nt+(time_t)(r>0?r:0); strftime(ts,sizeof ts,"%Y-%m-%d %H:%M",localtime(&tt));
+    len+=snprintf(line+len,sizeof line-len,"  target (Bell %lld) in ~%s, at ~%s",target,d2,ts); }
+  snprintf(line+len,sizeof line-len,"  (fit of %d points, %s)\n",etan,m==4?"x ln^2 x, x ln x, x, 1":"x ln^2 x, 1");
+  #undef ETAP
+  fputs(line,stdout); fflush(stdout);
+  FILE*f=fopen("progress.log","a"); if(f){ fputs(line,f); fclose(f); } }
+
 /* ---------- one block of nb Bells with k on disk ----------
    k = q*2^w + r (w = nb+2).  New k = q*3^nb*4 + r_nb.  The product is streamed: q is read from the k file in
    chunks of C limbs, each chunk is multiplied by P = 3^nb in RAM and the result is written in order to the new
@@ -440,6 +494,7 @@ int main(int argc,char**argv){
   long long nextck=(bell/interval+1)*interval; char prevname[256]=""; int prevcut=0;
   long long lastck_bell=bell, prevck_bell=bell; double lastck_time=now(), prevck_time=0;
   log_progress_kf(bell,K,s,0,"start  ");
+  eta_add(bell,0);
   while(bell<target){
     update_threads();
     long long bits=kf_bits(K);
@@ -478,10 +533,12 @@ int main(int argc,char**argv){
     flint_cleanup();
     tio+=now()-tc;
     bell+=nb;
+    eta_add(bell,now()-t0);
     if(bell==nextck||bell==target){
       double span=now()-lastck_time; long long from=lastck_bell; double secs=span;
       if(bell-lastck_bell<interval/2&&prevck_bell<lastck_bell){ from=prevck_bell; secs=prevck_time+span; }
       log_progress_kf(bell,K,s,now()-t0,bell==target?"target ":"ckpt   ");
+      if(bell<target){ long long nx=(bell==nextck)?nextck+interval:nextck; if(nx>target) nx=target; eta_report(bell,now()-t0,nx,target); }
       // the KCHECK line is logged first, so it is not lost if the checkpoint cannot be written (e.g. disk full)
       if(write_ckpt_kf(bell,K,s,from,secs)){
         char msg[300]; snprintf(msg,sizeof msg,"checkpoint at Bell %lld could NOT be written (disk full?); the previous checkpoint is kept; continuing\n",bell);

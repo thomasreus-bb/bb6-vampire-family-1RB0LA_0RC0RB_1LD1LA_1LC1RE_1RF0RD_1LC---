@@ -247,6 +247,13 @@ So each block reads k once and writes it once. With pruning, only the part of th
   - **When it helps:** only when the product is the slow part. The final line of a run shows "low part … s" and "streamed products … s"; `-P` helps when the second is larger. That is the case for large k when the block size is limited by `-M` (k much larger than 8·B), i.e. in the long out-of-core runs. For small k the low part dominates and `-P` changes nothing.
   - **Memory:** each extra chunk needs about 1–2 bytes per Bell of a block.
   - **Tests:** with `-P 1`, `-P 3` and `-P 4`, also pruned and with `-b 1234567`, the results are identical to the previous version (O2: KCHECK, bit length and S at 10⁸, 2·10⁸, 3·10⁸, and pruned at 5·10⁸). Speed-ups could not be measured here (2 cores).
+- **Time forecast** (since 29 Oct, suggested by Ahmer Raza). After every checkpoint `belldco` writes an extra `eta` line to the screen and to `progress.log`, e.g.
+
+      2026-10-29 20:16:45  eta      bell 200000000  next checkpoint (Bell 225000000) in ~6s  target (Bell 400000000) in ~60s, at ~2026-10-29 20:17  (fit of 104 points, x ln^2 x, x ln x, x, 1)
+
+  - **Model:** after every block the pair (Bell x, run time y) is stored. At each checkpoint the model y = c₁·x ln²x + c₂·x ln x + c₃·x + c₄ (the O(N log² N) growth) is fitted by least squares to all pairs **of the current run**; with fewer than 6 pairs only y = c₁·x ln²x + c₄.
+  - **Limits:** run times are counted from the start of the run, so after a restart the forecast starts again with few points. With `-p` the work per Bell drops once pruning takes over (at about 0.63 of the target), so the forecast for the target is then too high. In a test (O4, 10⁶ → 4·10⁸) the forecast for the target was too low by about 20 % halfway and became accurate towards the end.
+  - The KCHECK lines are unchanged.
 
 **Checkpoint size and a full disk** (all three programs, since 25 Oct).
 - **Size.** A full-precision checkpoint at Bell N holds about 0.585·N bits of k as hex text, i.e. about 0.15·N bytes: 15 GB at 10¹¹, 33 GB at 2.25·10¹¹. While the new one is written, the previous one still exists, so about twice that is needed. With `-p` the size is at most 0.37·T bits (at Bell ≈ T/1.585) and then shrinks.
