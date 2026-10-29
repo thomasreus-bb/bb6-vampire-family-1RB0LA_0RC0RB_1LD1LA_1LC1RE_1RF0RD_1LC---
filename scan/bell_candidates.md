@@ -113,7 +113,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 ## The 56 candidates
 
-The columns Row to Done by are copied from the community BB6 sheet (tab "Holdouts (From the 1534 list)", read on 29 Oct 2026; Row = row number in the sheet; the sheet status, CRYPTID for nos. 15, 40 and 51, is shown in bold above the classification). The Sources numbers link to the referenced post or wiki page.
+The columns Row to Done by are copied from the community BB6 sheet (tab "Holdouts (From the 1534 list)", read on 29 Oct 2026; Row = row number in the sheet; a sheet status such as CRYPTID is shown in bold above the classification). The Sources numbers link to the referenced post or wiki page; for nos. 58, 67 and 69 only reference 1 is linked so far. Nos. 57–108 are the remaining Bell-like holdouts of the sheet, added for later analysis (see [the section at the end](#candidates-57108-bell-like-holdouts-from-the-bb6-sheet-for-later-analysis)).
 
 | # | class | machine | factor | verdict | Row | Classification | Notes | Sources | Done by |
 |---|---|---|---|---|---:|---|---|---|---|
@@ -173,6 +173,58 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [54](#54) | C | `1RB1RF_1LC---`<br>`1LE1RD_1RA0RC`<br>`0LF0LA_0LD0RB` | 1.53 | needle-like: only 1 tail (all information in one number) | 787 | Quadratic Mess |   |   |   |
 | [55](#55) | C | `1RB1LF_0RC1RD`<br>`1LA1LD_1LE0RA`<br>`---1LC_0LA1LA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA) | 1.48 | no clear single-block Bell configuration found | 770 | Quadratic Mess |   |   |   |
 | [56](#56) | C | `1RB1LE_1LB1LC`<br>`1RD0LE_---0RB`<br>`1RF1LA_0RA0RD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD) | 1.43 | needle-like: only 1 tail (all information in one number) | 753 | Quadratic Mess | Simulated to 10^190,000 | [1](https://wiki.bbchallenge.org/wiki/User:Polygon/Page_for_analyses#1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD_(bbch)); [2](https://discord.com/channels/960643023006490684/1239205785913790465/1453010575901593643); [3](https://discord.com/channels/960643023006490684/1466628778905305292/1466628778905305292) | Polygon, hipparcos |
+| [57](#57) | – | `1RB1RC_1LC1LE`<br>`1RA1RD_0RF0RE`<br>`1LA0LB_---1RA` | – | for later analysis | 1057 | **CRYPTID**<br>Bell-like | A variant of Hydra and Antihydra | [1](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA) | mxdys, dyuan |
+| [58](#58) | – | `1RB0LD_1RC1RF`<br>`1LA0RA_0LA0LE`<br>`1LD1LA_0RB---` | – | for later analysis | 1058 | **CRYPTID**<br>Bell-like | Antihydra-like cryptid, probviously nonhalting | [1](https://discord.com/channels/960643023006490684/1239205785913790465/1280916092683812916); 2; 3 | dyuan, mxdys |
+| [59](#59) | – | `1RB1RA_0LC1LE`<br>`1LD1LC_1LA0LB`<br>`1LF1RE_---0RA` | – | for later analysis | 1059 | **CRYPTID**<br>Bell-like | Antihydra. Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/Antihydra) |   |
+| [60](#60) | – | `1RB1RA_0RC1RC`<br>`1LD0LF_0LE1LE`<br>`1RA0LB_---0LC` | – | for later analysis | 1061 | **CRYPTID**<br>Bell-like | One of (canonical) collection of 16 probviously halting tetrational cryptids | [1](https://wiki.bbchallenge.org/wiki/1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC) | mxdys |
+| [61](#61) | – | `1RB---_0RC0RE`<br>`1RD1RF_1LE0LB`<br>`1RC0LD_1RC1RA` | – | for later analysis | 1062 | **CRYPTID**<br>Bell-like | Probviously halting cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA) | Racheline |
+| [62](#62) | – | `1RB0LD_1RC1RA`<br>`1LD0RB_1LE1LA`<br>`1RF0RC_---1RE` | – | for later analysis | 1064 | **CRYPTID**<br>Bell-like | Probviously halting cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE) | mxdys |
+| [63](#63) | – | `1RB0LC_1LC0RD`<br>`1LF1LA_1LB1RE`<br>`1RB1LE_---0LE` | – | for later analysis | 1065 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE) | Racheline |
+| [64](#64) | – | `1RB0RE_1LC1LD`<br>`0RA0LD_1LB0LA`<br>`1RF1RA_---1LB` | – | for later analysis | 1066 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB) | Racheline, N1vi |
+| [65](#65) | – | `1RB1RE_1LC1LD`<br>`---1LA_1LB1LE`<br>`0RF0RA_1LD1RF` | – | for later analysis | 1067 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF) | Racheline |
+| [66](#66) | – | `1RB0LC_0LC0RF`<br>`1RD1LC_0RA1LE`<br>`---0LD_1LF1LA` | – | for later analysis | 1068 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid, Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA) | Racheline |
+| [67](#67) | – | `1RB1LD_1RC1RE`<br>`0LA1LB_0LD1LC`<br>`1RF0RA_---0RC` | – | for later analysis | 1069 | **CRYPTID**<br>Bell-like | Probviously nonhalting cryptid, similar to Antihydra | [1](https://discord.com/channels/960643023006490684/1239205785913790465/1275205992405274656), 2 | mxdys |
+| [68](#68) | – | `1RB0LB_1LC0RE`<br>`1LA1LD_0LC---`<br>`0RB0RF_1RE1RB` | – | for later analysis | 1070 | **CRYPTID**<br>Bell-like | Probviously nonhalting cryptid, similar to Antihydra | [1](https://wiki.bbchallenge.org/wiki/1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB) | Racheline |
+| [69](#69) | – | `1RB1LE_0LC0LB`<br>`1RD1LC_1RD1RA`<br>`1RF0LA_---1RE` | – | for later analysis | 1071 | **CRYPTID**<br>Bell-like | Tetrational cryptid (3/5 of becoming TC, 2/5 of halting), see source 2 for more exact chances and refinements, Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE), 2 | Racheline |
+| [70](#70) | – | `1RB1RF_1LC1RD`<br>`1LA1LC_1RA0RE`<br>`1RD1LA_---0LE` | – | for later analysis | 1074 | Bell-like | Simulated to 10^4600 steps, code with log reduction | [1](https://discord.com/channels/960643023006490684/1451285809553477763/1451285809553477763) | nerdyjoe |
+| [71](#71) | – | `1RB1RD_1LC0LE`<br>`1RA0LB_1RA1RF`<br>`0RA0RC_1RE---` | – | for later analysis | 1075 | Bell-like | Could be solvable |   |   |
+| [72](#72) | – | `1RB1LE_1LC1RC`<br>`1LA1RD_1LD0RB`<br>`0LC0LF_0LB---` | – | for later analysis | 1076 | Bell-like |   | [1](https://discord.com/channels/960643023006490684/1400456788955893840/1404371323265876010) | -d |
+| [73](#73) | – | `1RB1LF_1LC1RD`<br>`1RA1LA_0RA0RE`<br>`0RC---_1RF0LC` | – | for later analysis | 1079 | Bell-like |   |   |   |
+| [74](#74) | – | `1RB0RD_1RC0LF`<br>`1LA0LB_---1RE`<br>`1LB1RA_0LC0RA` | – | for later analysis | 1081 | Bell-like |   |   |   |
+| [75](#75) | – | `1RB1RD_1RC1LD`<br>`0LA1RA_1LE0RC`<br>`---1LF_0LA0LB` | – | for later analysis | 1082 | Bell-like |   |   |   |
+| [76](#76) | – | `1RB1LF_1LC0RD`<br>`---1LD_1RB1RE`<br>`1LA0LB_0LA0LE` | – | for later analysis | 1086 | Bell-like |   |   |   |
+| [77](#77) | – | `1RB0LF_1LC0LA`<br>`1RA0RD_---1RE`<br>`1LA1RC_0LB0RC` | – | for later analysis | 1087 | Bell-like |   |   |   |
+| [78](#78) | – | `1RB1LF_1RC1LD`<br>`1LB1LE_1LE0LD`<br>`0LA0RE_1RD---` | – | for later analysis | 1088 | Bell-like |   |   |   |
+| [79](#79) | – | `1RB1LC_1LA1LD`<br>`1LD0LC_0LE0RD`<br>`1RA1LF_1RC---` | – | for later analysis | 1089 | Bell-like |   |   |   |
+| [80](#80) | – | `1RB1RA_1LC0RB`<br>`1LE0LD_0LB1LD`<br>`0RA0LF_---0RE` | – | for later analysis | 1090 | Bell-like |   |   |   |
+| [81](#81) | – | `1RB0LD_0RC1RA`<br>`1RD1RE_1LA0LE`<br>`0RA0RF_1RC---` | – | for later analysis | 1091 | Bell-like |   |   |   |
+| [82](#82) | – | `1RB0RE_0LC1LE`<br>`0RD1LD_1RA1LF`<br>`1LC0RA_0LB---` | – | for later analysis | 1092 | Bell-like |   |   |   |
+| [83](#83) | – | `1RB1RA_1LC0RB`<br>`1LD0LB_1RA0LE`<br>`---1LF_1LB0LA` | – | for later analysis | 1093 | Bell-like |   |   |   |
+| [84](#84) | – | `1RB0LC_1LC0RE`<br>`1RF1LD_1LA0LB`<br>`1RD1RA_1LB---` | – | for later analysis | 1094 | Bell-like |   |   |   |
+| [85](#85) | – | `1RB0RF_0LC1RE`<br>`---1LD_1LE0LB`<br>`0RF0LD_1RD1RA` | – | for later analysis | 1095 | Bell-like |   |   |   |
+| [86](#86) | – | `1RB0RE_1RC0RF`<br>`1LD1RA_1LB1LD`<br>`1RA1LB_---0LD` | – | for later analysis | 1099 | Bell-like |   |   |   |
+| [87](#87) | – | `1RB1LC_1RC0RF`<br>`1RD0LB_1RE0LD`<br>`1LF---_0RA1LA` | – | for later analysis | 1100 | Bell-like |   |   |   |
+| [88](#88) | – | `1RB0LE_1RC0RF`<br>`0RD0RB_1RE0RC`<br>`1LA0LA_1RA---` | – | for later analysis | 1102 | Bell-like |   |   |   |
+| [89](#89) | – | `1RB---_1RC1RE`<br>`1LD0LE_1RF0LC`<br>`0RD0RA_0RB1RD` | – | for later analysis | 1104 | Bell-like |   |   |   |
+| [90](#90) | – | `1RB1LB_1LC1LA`<br>`1RD0LB_1RA1RE`<br>`1RF0RD_---1RD` | – | for later analysis | 1108 | Bell-like |   |   |   |
+| [91](#91) | – | `1RB0LA_1RC0RE`<br>`0LD0RF_1LA1LD`<br>`0RA1RE_---0LC` | – | for later analysis | 1110 | Bell-like |   |   |   |
+| [92](#92) | – | `1RB0RA_0RC0LB`<br>`1LD1RF_1LE1RA`<br>`1RD1RB_1LA---` | – | for later analysis | 1113 | Bell-like |   |   |   |
+| [93](#93) | – | `1RB0LC_1RC1RE`<br>`1LA0LD_0RB0RA`<br>`1RB1RF_1RD---` | – | for later analysis | 1114 | Bell-like |   |   |   |
+| [94](#94) | – | `1RB0RA_1LC0LE`<br>`1RA1LD_0LB1LF`<br>`1LD0RC_1LB---` | – | for later analysis | 1116 | Bell-like |   |   |   |
+| [95](#95) | – | `1RB0LE_1RC---`<br>`1RD1RE_1LA0RF`<br>`0RC0LA_0LC0RB` | – | for later analysis | 1117 | Bell-like |   |   |   |
+| [96](#96) | – | `1RB1RE_1LC0LE`<br>`1RD0LB_0RA1RC`<br>`0RC0RF_1RA---` | – | for later analysis | 1118 | Bell-like |   |   |   |
+| [97](#97) | – | `1RB1LB_1RC1LD`<br>`1LA1RE_1RD0LA`<br>`0RB0RF_0RA---` | – | for later analysis | 1121 | Bell-like |   |   |   |
+| [98](#98) | – | `1RB1LA_1LC0RE`<br>`1LF1LD_1RE0LC`<br>`1LB1RA_---0LA` | – | for later analysis | 1123 | Bell-like |   |   |   |
+| [99](#99) | – | `1RB0RC_1LC1RF`<br>`1RE0LD_1LC1LA`<br>`---1RD_0RB0RA` | – | for later analysis | 1124 | Bell-like |   |   |   |
+| [100](#100) | – | `1RB1RD_1LC0RD`<br>`1RF1RB_1LE0RA`<br>`0LB0LE_---0RC` | – | for later analysis | 1126 | Bell-like |   |   |   |
+| [101](#101) | – | `1RB1RC_1LC0LF`<br>`1RF0LD_0RE1LB`<br>`1RC---_1LD0RA` | – | for later analysis | 1128 | Bell-like |   |   |   |
+| [102](#102) | – | `1RB1RA_0LC0RA`<br>`1RC1LD_0LB1LE`<br>`1LF0RC_---0LD` | – | for later analysis | 1129 | Bell-like |   |   |   |
+| [103](#103) | – | `1RB0RE_1LC1RD`<br>`1LA0LC_0RA1RF`<br>`1RD0LB_1RA---` | – | for later analysis | 1130 | Bell-like |   |   |   |
+| [104](#104) | – | `1RB1RE_1LC1LB`<br>`1LE0LD_1LE1LC`<br>`0RF1RA_---1RA` | – | for later analysis | 1133 | Bell-like |   |   |   |
+| [105](#105) | – | `1RB1LF_1LC0RD`<br>`---1LA_0LA0RE`<br>`1LA1RA_1LB0LD` | – | for later analysis | 1134 | Bell-like |   |   |   |
+| [106](#106) | – | `1RB1LD_0LC1RC`<br>`1RA1RD_1LE0RB`<br>`---1LF_0LC0LA` | – | for later analysis | 1135 | Bell-like |   |   |   |
+| [107](#107) | – | `1RB1LD_0RC1RC`<br>`1RD0RE_0LA0LF`<br>`0RF---_1RA1LA` | – | for later analysis | 1136 | Bell-like |   |   |   |
+| [108](#108) | – | `1RB0RE_0LC0RF`<br>`1LD1LC_1RA0LD`<br>`0RD1RE_---0LB` | – | for later analysis | 1137 | Bell-like |   |   |   |
 
 <a id="1"></a>
 ## 1. `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A)
@@ -1045,3 +1097,422 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 
 <img src="diagrams/1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD.png" alt="space-time diagram" height="350">
 
+## Candidates 57–108: Bell-like holdouts from the BB6 sheet (for later analysis)
+
+Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet that are still in the holdout list (`holdouts_623.txt`) and were not among nos. 1–56. They are taken over from the sheet without own analysis; they are not in `bell_candidates.txt`. The space-time diagrams start from the blank tape (time downwards) and stop after 10 Bell levels, 2e7 steps or a tape width of 1000 cells.
+
+<a id="57"></a>
+## 57. `1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA` (for later analysis)
+
+- BB6 sheet: row 1057, **CRYPTID**, Bell-like, notes: A variant of Hydra and Antihydra
+- diagram: 248,932 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA.png" alt="space-time diagram" height="350">
+
+<a id="58"></a>
+## 58. `1RB0LD_1RC1RF_1LA0RA_0LA0LE_1LD1LA_0RB---` (for later analysis)
+
+- BB6 sheet: row 1058, **CRYPTID**, Bell-like, notes: Antihydra-like cryptid, probviously nonhalting
+- diagram: 450,585 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LD_1RC1RF_1LA0RA_0LA0LE_1LD1LA_0RB---.png" alt="space-time diagram" height="350">
+
+<a id="59"></a>
+## 59. `1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA` (for later analysis)
+
+- BB6 sheet: row 1059, **CRYPTID**, Bell-like, notes: Antihydra. Part of Category 1
+- diagram: 564,453 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA.png" alt="space-time diagram" height="350">
+
+<a id="60"></a>
+## 60. `1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC` (for later analysis)
+
+- BB6 sheet: row 1061, **CRYPTID**, Bell-like, notes: One of (canonical) collection of 16 probviously halting tetrational cryptids
+- diagram: 703,225 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC.png" alt="space-time diagram" height="350">
+
+<a id="61"></a>
+## 61. `1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA` (for later analysis)
+
+- BB6 sheet: row 1062, **CRYPTID**, Bell-like, notes: Probviously halting cryptid
+- diagram: 158,016 steps, tape width 1001 cells
+
+<img src="diagrams/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA.png" alt="space-time diagram" height="350">
+
+<a id="62"></a>
+## 62. `1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE` (for later analysis)
+
+- BB6 sheet: row 1064, **CRYPTID**, Bell-like, notes: Probviously halting cryptid
+- diagram: 493,812 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE.png" alt="space-time diagram" height="350">
+
+<a id="63"></a>
+## 63. `1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE` (for later analysis)
+
+- BB6 sheet: row 1065, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
+- diagram: 1,197,908 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE.png" alt="space-time diagram" height="350">
+
+<a id="64"></a>
+## 64. `1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB` (for later analysis)
+
+- BB6 sheet: row 1066, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
+- diagram: 282,270 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB.png" alt="space-time diagram" height="350">
+
+<a id="65"></a>
+## 65. `1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF` (for later analysis)
+
+- BB6 sheet: row 1067, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
+- diagram: 181,696 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF.png" alt="space-time diagram" height="350">
+
+<a id="66"></a>
+## 66. `1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA` (for later analysis)
+
+- BB6 sheet: row 1068, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid, Part of Category 1
+- diagram: 945,825 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA.png" alt="space-time diagram" height="350">
+
+<a id="67"></a>
+## 67. `1RB1LD_1RC1RE_0LA1LB_0LD1LC_1RF0RA_---0RC` (for later analysis)
+
+- BB6 sheet: row 1069, **CRYPTID**, Bell-like, notes: Probviously nonhalting cryptid, similar to Antihydra
+- diagram: 511,588 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LD_1RC1RE_0LA1LB_0LD1LC_1RF0RA_---0RC.png" alt="space-time diagram" height="350">
+
+<a id="68"></a>
+## 68. `1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB` (for later analysis)
+
+- BB6 sheet: row 1070, **CRYPTID**, Bell-like, notes: Probviously nonhalting cryptid, similar to Antihydra
+- diagram: 501,256 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB.png" alt="space-time diagram" height="350">
+
+<a id="69"></a>
+## 69. `1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE` (for later analysis)
+
+- BB6 sheet: row 1071, **CRYPTID**, Bell-like, notes: Tetrational cryptid (3/5 of becoming TC, 2/5 of halting), see source 2 for more exact chances and refinements, Part of Category 1
+- diagram: 268,228 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE.png" alt="space-time diagram" height="350">
+
+<a id="70"></a>
+## 70. `1RB1RF_1LC1RD_1LA1LC_1RA0RE_1RD1LA_---0LE` (for later analysis)
+
+- BB6 sheet: row 1074, Bell-like, notes: Simulated to 10^4600 steps, code with log reduction
+- diagram: 361,348 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RF_1LC1RD_1LA1LC_1RA0RE_1RD1LA_---0LE.png" alt="space-time diagram" height="350">
+
+<a id="71"></a>
+## 71. `1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---` (for later analysis)
+
+- BB6 sheet: row 1075, Bell-like, notes: Could be solvable
+- diagram: 157,428 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---.png" alt="space-time diagram" height="350">
+
+<a id="72"></a>
+## 72. `1RB1LE_1LC1RC_1LA1RD_1LD0RB_0LC0LF_0LB---` (for later analysis)
+
+- BB6 sheet: row 1076, Bell-like
+- diagram: 491,380 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LE_1LC1RC_1LA1RD_1LD0RB_0LC0LF_0LB---.png" alt="space-time diagram" height="350">
+
+<a id="73"></a>
+## 73. `1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC` (for later analysis)
+
+- BB6 sheet: row 1079, Bell-like
+- diagram: 492,524 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC.png" alt="space-time diagram" height="350">
+
+<a id="74"></a>
+## 74. `1RB0RD_1RC0LF_1LA0LB_---1RE_1LB1RA_0LC0RA` (for later analysis)
+
+- BB6 sheet: row 1081, Bell-like
+- diagram: 715,875 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RD_1RC0LF_1LA0LB_---1RE_1LB1RA_0LC0RA.png" alt="space-time diagram" height="350">
+
+<a id="75"></a>
+## 75. `1RB1RD_1RC1LD_0LA1RA_1LE0RC_---1LF_0LA0LB` (for later analysis)
+
+- BB6 sheet: row 1082, Bell-like
+- diagram: 557,574 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RD_1RC1LD_0LA1RA_1LE0RC_---1LF_0LA0LB.png" alt="space-time diagram" height="350">
+
+<a id="76"></a>
+## 76. `1RB1LF_1LC0RD_---1LD_1RB1RE_1LA0LB_0LA0LE` (for later analysis)
+
+- BB6 sheet: row 1086, Bell-like
+- diagram: 775,501 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LF_1LC0RD_---1LD_1RB1RE_1LA0LB_0LA0LE.png" alt="space-time diagram" height="350">
+
+<a id="77"></a>
+## 77. `1RB0LF_1LC0LA_1RA0RD_---1RE_1LA1RC_0LB0RC` (for later analysis)
+
+- BB6 sheet: row 1087, Bell-like
+- diagram: 675,039 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LF_1LC0LA_1RA0RD_---1RE_1LA1RC_0LB0RC.png" alt="space-time diagram" height="350">
+
+<a id="78"></a>
+## 78. `1RB1LF_1RC1LD_1LB1LE_1LE0LD_0LA0RE_1RD---` (for later analysis)
+
+- BB6 sheet: row 1088, Bell-like
+- diagram: 623,823 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LF_1RC1LD_1LB1LE_1LE0LD_0LA0RE_1RD---.png" alt="space-time diagram" height="350">
+
+<a id="79"></a>
+## 79. `1RB1LC_1LA1LD_1LD0LC_0LE0RD_1RA1LF_1RC---` (for later analysis)
+
+- BB6 sheet: row 1089, Bell-like
+- diagram: 571,776 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LC_1LA1LD_1LD0LC_0LE0RD_1RA1LF_1RC---.png" alt="space-time diagram" height="350">
+
+<a id="80"></a>
+## 80. `1RB1RA_1LC0RB_1LE0LD_0LB1LD_0RA0LF_---0RE` (for later analysis)
+
+- BB6 sheet: row 1090, Bell-like
+- diagram: 313,854 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RA_1LC0RB_1LE0LD_0LB1LD_0RA0LF_---0RE.png" alt="space-time diagram" height="350">
+
+<a id="81"></a>
+## 81. `1RB0LD_0RC1RA_1RD1RE_1LA0LE_0RA0RF_1RC---` (for later analysis)
+
+- BB6 sheet: row 1091, Bell-like
+- diagram: 162,354 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LD_0RC1RA_1RD1RE_1LA0LE_0RA0RF_1RC---.png" alt="space-time diagram" height="350">
+
+<a id="82"></a>
+## 82. `1RB0RE_0LC1LE_0RD1LD_1RA1LF_1LC0RA_0LB---` (for later analysis)
+
+- BB6 sheet: row 1092, Bell-like
+- diagram: 744,077 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RE_0LC1LE_0RD1LD_1RA1LF_1LC0RA_0LB---.png" alt="space-time diagram" height="350">
+
+<a id="83"></a>
+## 83. `1RB1RA_1LC0RB_1LD0LB_1RA0LE_---1LF_1LB0LA` (for later analysis)
+
+- BB6 sheet: row 1093, Bell-like
+- diagram: 562,740 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RA_1LC0RB_1LD0LB_1RA0LE_---1LF_1LB0LA.png" alt="space-time diagram" height="350">
+
+<a id="84"></a>
+## 84. `1RB0LC_1LC0RE_1RF1LD_1LA0LB_1RD1RA_1LB---` (for later analysis)
+
+- BB6 sheet: row 1094, Bell-like
+- diagram: 1,555,978 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LC_1LC0RE_1RF1LD_1LA0LB_1RD1RA_1LB---.png" alt="space-time diagram" height="350">
+
+<a id="85"></a>
+## 85. `1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` (for later analysis)
+
+- BB6 sheet: row 1095, Bell-like
+- diagram: 467,874 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA.png" alt="space-time diagram" height="350">
+
+<a id="86"></a>
+## 86. `1RB0RE_1RC0RF_1LD1RA_1LB1LD_1RA1LB_---0LD` (for later analysis)
+
+- BB6 sheet: row 1099, Bell-like
+- diagram: 366,736 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RE_1RC0RF_1LD1RA_1LB1LD_1RA1LB_---0LD.png" alt="space-time diagram" height="350">
+
+<a id="87"></a>
+## 87. `1RB1LC_1RC0RF_1RD0LB_1RE0LD_1LF---_0RA1LA` (for later analysis)
+
+- BB6 sheet: row 1100, Bell-like
+- diagram: 439,921 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LC_1RC0RF_1RD0LB_1RE0LD_1LF---_0RA1LA.png" alt="space-time diagram" height="350">
+
+<a id="88"></a>
+## 88. `1RB0LE_1RC0RF_0RD0RB_1RE0RC_1LA0LA_1RA---` (for later analysis)
+
+- BB6 sheet: row 1102, Bell-like
+- diagram: 124,792 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LE_1RC0RF_0RD0RB_1RE0RC_1LA0LA_1RA---.png" alt="space-time diagram" height="350">
+
+<a id="89"></a>
+## 89. `1RB---_1RC1RE_1LD0LE_1RF0LC_0RD0RA_0RB1RD` (for later analysis)
+
+- BB6 sheet: row 1104, Bell-like
+- diagram: 146,380 steps, tape width 1001 cells
+
+<img src="diagrams/1RB---_1RC1RE_1LD0LE_1RF0LC_0RD0RA_0RB1RD.png" alt="space-time diagram" height="350">
+
+<a id="90"></a>
+## 90. `1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD` (for later analysis)
+
+- BB6 sheet: row 1108, Bell-like
+- diagram: 318,582 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD.png" alt="space-time diagram" height="350">
+
+<a id="91"></a>
+## 91. `1RB0LA_1RC0RE_0LD0RF_1LA1LD_0RA1RE_---0LC` (for later analysis)
+
+- BB6 sheet: row 1110, Bell-like
+- diagram: 389,932 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LA_1RC0RE_0LD0RF_1LA1LD_0RA1RE_---0LC.png" alt="space-time diagram" height="350">
+
+<a id="92"></a>
+## 92. `1RB0RA_0RC0LB_1LD1RF_1LE1RA_1RD1RB_1LA---` (for later analysis)
+
+- BB6 sheet: row 1113, Bell-like
+- diagram: 615,561 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RA_0RC0LB_1LD1RF_1LE1RA_1RD1RB_1LA---.png" alt="space-time diagram" height="350">
+
+<a id="93"></a>
+## 93. `1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---` (for later analysis)
+
+- BB6 sheet: row 1114, Bell-like
+- diagram: 188,839 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---.png" alt="space-time diagram" height="350">
+
+<a id="94"></a>
+## 94. `1RB0RA_1LC0LE_1RA1LD_0LB1LF_1LD0RC_1LB---` (for later analysis)
+
+- BB6 sheet: row 1116, Bell-like
+- diagram: 437,402 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RA_1LC0LE_1RA1LD_0LB1LF_1LD0RC_1LB---.png" alt="space-time diagram" height="350">
+
+<a id="95"></a>
+## 95. `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB` (for later analysis)
+
+- BB6 sheet: row 1117, Bell-like
+- diagram: 599,812 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB.png" alt="space-time diagram" height="350">
+
+<a id="96"></a>
+## 96. `1RB1RE_1LC0LE_1RD0LB_0RA1RC_0RC0RF_1RA---` (for later analysis)
+
+- BB6 sheet: row 1118, Bell-like
+- diagram: 149,689 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RE_1LC0LE_1RD0LB_0RA1RC_0RC0RF_1RA---.png" alt="space-time diagram" height="350">
+
+<a id="97"></a>
+## 97. `1RB1LB_1RC1LD_1LA1RE_1RD0LA_0RB0RF_0RA---` (for later analysis)
+
+- BB6 sheet: row 1121, Bell-like
+- diagram: 515,725 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LB_1RC1LD_1LA1RE_1RD0LA_0RB0RF_0RA---.png" alt="space-time diagram" height="350">
+
+<a id="98"></a>
+## 98. `1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA` (for later analysis)
+
+- BB6 sheet: row 1123, Bell-like
+- diagram: 1,197,278 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA.png" alt="space-time diagram" height="350">
+
+<a id="99"></a>
+## 99. `1RB0RC_1LC1RF_1RE0LD_1LC1LA_---1RD_0RB0RA` (for later analysis)
+
+- BB6 sheet: row 1124, Bell-like
+- diagram: 593,858 steps, tape width 920 cells
+
+<img src="diagrams/1RB0RC_1LC1RF_1RE0LD_1LC1LA_---1RD_0RB0RA.png" alt="space-time diagram" height="350">
+
+<a id="100"></a>
+## 100. `1RB1RD_1LC0RD_1RF1RB_1LE0RA_0LB0LE_---0RC` (for later analysis)
+
+- BB6 sheet: row 1126, Bell-like
+- diagram: 417,003 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RD_1LC0RD_1RF1RB_1LE0RA_0LB0LE_---0RC.png" alt="space-time diagram" height="350">
+
+<a id="101"></a>
+## 101. `1RB1RC_1LC0LF_1RF0LD_0RE1LB_1RC---_1LD0RA` (for later analysis)
+
+- BB6 sheet: row 1128, Bell-like
+- diagram: 1,355,799 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RC_1LC0LF_1RF0LD_0RE1LB_1RC---_1LD0RA.png" alt="space-time diagram" height="350">
+
+<a id="102"></a>
+## 102. `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD` (for later analysis)
+
+- BB6 sheet: row 1129, Bell-like
+- diagram: 1,113,602 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD.png" alt="space-time diagram" height="350">
+
+<a id="103"></a>
+## 103. `1RB0RE_1LC1RD_1LA0LC_0RA1RF_1RD0LB_1RA---` (for later analysis)
+
+- BB6 sheet: row 1130, Bell-like
+- diagram: 415,453 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RE_1LC1RD_1LA0LC_0RA1RF_1RD0LB_1RA---.png" alt="space-time diagram" height="350">
+
+<a id="104"></a>
+## 104. `1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA` (for later analysis)
+
+- BB6 sheet: row 1133, Bell-like
+- diagram: 241,570 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA.png" alt="space-time diagram" height="350">
+
+<a id="105"></a>
+## 105. `1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD` (for later analysis)
+
+- BB6 sheet: row 1134, Bell-like
+- diagram: 70,802 steps, tape width 319 cells
+
+<img src="diagrams/1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD.png" alt="space-time diagram" height="350">
+
+<a id="106"></a>
+## 106. `1RB1LD_0LC1RC_1RA1RD_1LE0RB_---1LF_0LC0LA` (for later analysis)
+
+- BB6 sheet: row 1135, Bell-like
+- diagram: 548,093 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LD_0LC1RC_1RA1RD_1LE0RB_---1LF_0LC0LA.png" alt="space-time diagram" height="350">
+
+<a id="107"></a>
+## 107. `1RB1LD_0RC1RC_1RD0RE_0LA0LF_0RF---_1RA1LA` (for later analysis)
+
+- BB6 sheet: row 1136, Bell-like
+- diagram: 941,116 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LD_0RC1RC_1RD0RE_0LA0LF_0RF---_1RA1LA.png" alt="space-time diagram" height="350">
+
+<a id="108"></a>
+## 108. `1RB0RE_0LC0RF_1LD1LC_1RA0LD_0RD1RE_---0LB` (for later analysis)
+
+- BB6 sheet: row 1137, Bell-like
+- diagram: 311,138 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0RE_0LC0RF_1LD1LC_1RA0LD_0RD1RE_---0LB.png" alt="space-time diagram" height="350">
