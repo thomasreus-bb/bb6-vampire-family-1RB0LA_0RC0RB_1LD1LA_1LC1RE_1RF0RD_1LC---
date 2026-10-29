@@ -113,6 +113,8 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 ## The 56 candidates
 
+The status, classification and notes of all 56 machines in the community BB6 sheet (tab "Holdouts (From the 1534 list)") are collected in [`bb6_sheet_extract.md`](bb6_sheet_extract.md).
+
 | # | class | machine | factor | verdict |
 |---|---|---|---|---|
 | [1](#1) | A | `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` | 1.55 | vampire family (orbits O1–O4 of this repository) |
