@@ -6,6 +6,26 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
 - **Level analysis**: a second detector (single-block Bell configurations, up to 3·10⁸ steps) looks at the tape at the start of each level: the long block, its growth ratio, and how many *different* short tails occur. Many different tails at a regular ratio is the signature of a vampire-like machine (a finite Bell table can then be derived); one or two tails means a "needle" (all information is in one number; halting needs an exact value).
 - **Holdout status (24 Oct 2026)**: compared with the current list of 623 BB(6) holdouts (`holdouts_623.txt`). 40 machines of the old list of 663 have been decided since (`decided_663_to_623.txt`); **none of them is among the 56 candidates**. All 56 candidates, including TM1, TM2 and the halting machine `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC`, are still in the holdout list.
 - **BusyBeaverWiki (26 Oct 2026)**: **14 of the 56 candidates have their own article on the [BusyBeaverWiki](https://wiki.bbchallenge.org/wiki/Category:Individual_machines)** (marked **wiki** in the table and linked in the section): nos. 10, 13, 14, 15, 24, 28, 33, 34, 40, 41, 49, 50, 55, 56. Three of them are cryptids: no. 15, no. 33 ("Space Needle") and no. 40 ("Lucy's Moonlight"). No. 24 is listed as chaotic but not a cryptid. Checked against the 119 pages of the wiki category *Individual machines* and the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page; machines with an article outside that category, or under an equivalent form of the code, would be missed.
+- **Related machines among the candidates (29 Oct 2026).** Tools: `scan/groups.py` (transition tables compared up to renaming of the states and mirroring), `scan/meet.c` and `scan/pairs.py` (do two runs reach the same configuration?).
+  - *Same table, different start state.* 9 groups have exactly the same transition table up to renaming and mirroring; they differ only in the start state:
+
+    | group | what is known |
+    |---|---|
+    | 11, 37 | **equivalent**: the runs reach the same configuration (no. 11 at step 8,277,490, no. 37 at step 7,454,917), so one halts iff the other does |
+    | 1, 2, 5 | vampire family: TM1-F, TM1, TM2a (core with F0 = `1LA`); three different orbits (O2, O1, O3) |
+    | 3, 7 | vampire family: TM2, TM2b' (F0 = `1LC`); orbits O2 and O4 |
+    | 4, 6 | vampire family: TM2', TM2b (F0 = `1RB`); orbits O2 and O4 |
+    | 31, 32 | nearly the same Bell sequence (the numbers differ by about 2, the prefixes are sometimes shifted by one Bell), but no common configuration; possibly a relation like TM2b/TM2b' (one extra period), not checked |
+    | 26 (with 31, 32) | other run |
+    | 19, 20, 39 · 22, 42, 43 · 45, 52 · 46, 54 | no common configuration found |
+
+    "No common configuration" means: the configuration of one run after 2·10⁷ steps does not occur in the other run within 2·10⁸ steps, in both directions. A meeting later, or an equivalence with a small difference on the tape (as for 31/32), is not excluded. For 22/42 the tapes after 2·10⁷ steps have the same structure with slightly different numbers.
+  - *Tables that differ in one or two transitions.*
+    - Nos. 1–7 (the vampire family, one transition: F0). Equivalent orbits are known there: TM2, TM1-F and TM2' share orbit O2, and TM2b and TM2b' share O4 (see the main README).
+    - Nos. **13 and 15** (no. 15 is a cryptid on the wiki; no. 13 has its own article) and nos. **34 and 50** differ in one transition.
+    - Nos. 27/29, 34/55 and 50/55 differ in two.
+
+    Whether their runs are related has not been checked.
 - **Diagram**: time runs downward, one pixel column per tape cell (scaled up for narrow tapes), symbol 1 orange, 0 white; at most 700 sampled rows. Each diagram runs up to the start of the 8th Bell found by the detector (so the first 7 Bells are complete) or until the tape is 1000 cells wide, whichever comes first.
 
 ## The vampire method: when does it apply?
