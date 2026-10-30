@@ -34,10 +34,19 @@ Data of TM1 are not copied here; this document refers to that repository.
 >   | **steps** ≈ 1.2 … 2.7·n² | **≈ 10^(2.6316574·10¹¹)** | **≈ 10^(2.5776204·10¹¹)** |
 >
 >   The machines on one orbit differ only by a few Bells at the start, so their numbers agree to the digits shown.
-> - **O3: HALT as well** (reported 30 Oct 2026 by Ahmer Raza). This decides **TM2a** = `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---`.
->   - **Bell:** the exact Bell number was not reported yet; it lies between 1.73·10¹² (last report without halt) and 2·10¹² (target of the run).
+> - **O3: HALT at Bell 1,961,935,897,288**, S_pascal = `1101111` (reported 30 Oct 2026 by Ahmer Raza). This decides **TM2a** = `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---`.
 >   - **Run:** 8 cores of an AMD EPYC 9475F, 320 GiB RAM, about 172 GiB of it as `/dev/shm`. The last full checkpoint is 171.6 GiB. Compute time was 79 h 13 min, of which 65 h 10 min were new progress; parts had to be repeated because the space for the checkpoint was too small.
->   - **Estimate** (as for O1/O2, for a HALT between 1.73·10¹² and 2·10¹²): tape ≈ 10^(3.05 … 3.52·10¹¹) cells, steps ≈ 10^(6.09 … 7.04·10¹¹).
+>   - **Estimate** (as for O1/O2, for a HALT between 1.73·10¹² and 2·10¹²): tape ≈ 10^(3.4547976·10¹¹) cells, steps ≈ 10^(6.9095952·10¹¹); log₂ n ≈ 1.1476589·10¹².
+> - **Plausibility checks of the logs** (`orbits/O1…O3/progress_halt_AhmerRaza.log`, checked 30 Oct):
+>   - **Same KCHECK values as other runs:**
+>     - O2: at all 23 checkpoints that Thomas Reus's own O2 run also reached (1.6·10¹¹ … 5.6·10¹¹, other computer, same program), and at 2·10¹⁰, 10¹¹ and 1.4·10¹¹ (Ersen's independent engine, `bellntt`, `belldc`);
+>     - O1: at 10¹⁰ and 10¹¹ (Ersen, `bellntt`);
+>     - O3: at 10¹⁰ and 10¹¹ (Ersen, Andrew Ducharme, `belldc`);
+>     - the two O3 runs (towards 10¹² and towards 2·10¹², each from its own checkpoint) agree at all 37 common checkpoints 6.4·10¹¹ … 10¹².
+>   - **Bit lengths:** at full precision they grow by 0.5849625 bits per Bell (= log₂ 1.5) at every checkpoint. In the pruned parts they equal (horizon − Bell) + 128, up to leading zeros.
+>   - **D:** it decreases monotonically (O1: 3 from Bell 6.4·10⁹ on; O2: 8 → 7 → 5 → 3; O3: 9 → 4 → 3 → 2). All three runs end in the same HALT word `1101111`, one of the two words that carry most of the halt rate.
+>   - **Restarts** (O1/O2 at 4·10¹⁰, O3 at 2.4·10¹¹ and 6.3·10¹¹) continue with identical values.
+>   - **Result:** no inconsistency. What is still missing is an independent run up to the HALT Bells themselves.
 > - **Only orbit O4 (TM2b, TM2b') is still open.**
 > - These five machines are the first of the family to be decided. The Markov estimate (below) gave about 59 % per orbit for a HALT before Bell 10¹².
 
@@ -48,19 +57,23 @@ Data of TM1 are not copied here; this document refers to that repository.
 |---|---|---|---|---|
 | O1 | TM1 | **HALT at Bell 747,242,483,684** (Ahmer Raza, `belldco`, 30 Oct); before: 10¹¹ without halt (Ersen) | **at 10¹⁰** (`bellntt` = Ersen); Ersen's two engines agree up to 4.3·10¹⁰ | – |
 | O2 | TM2, TM1-F, TM2' | **HALT at Bell 731,899,010,932** (Ahmer Raza, `belldco`, 30 Oct); before: 5·10¹¹ without halt (Thomas Reus, `belldc` / `belldco`, run towards 10¹² in progress; Ersen 10¹¹) | **up to 10¹¹** (two programs); 10¹¹ … 1.4·10¹¹ two runs | **3** (Bell 139,153,319,148) |
-| O3 | TM2a | **HALT** between 1.73·10¹² and 2·10¹² (Ahmer Raza alias Duke, `belldco`, 30 Oct; exact Bell to be reported); before: 1.73·10¹² without halt | up to 10¹¹ (Duke = Ersen); up to 1.4·10¹⁰ also Andrew Ducharme, at 10¹⁰ also `belldc` | **2** (Bell 969,789,861,680) |
+| O3 | TM2a | **HALT at Bell 1,961,935,897,288** (Ahmer Raza alias Duke, `belldco`, 30 Oct) | up to 10¹¹ (Duke = Ersen); up to 1.4·10¹⁰ also Andrew Ducharme, at 10¹⁰ also `belldc` | **2** (Bell 969,789,861,680) |
 | O4 | TM2b, TM2b' | **7.6·10¹¹** (Ahmer Raza, `belldco`, run in progress); before: 2.25·10¹¹ (Andrew Ducharme, `belldc`) | at 10¹⁰ (`belldc`) | **2** (Bell 517,830,298,755) |
 
 **Closest approaches.** D is d(S) at the first Bell where this distance was reached. d = 1 means that the word of this Bell has a HALT entry, so the Bell halts if the bit of k fits; otherwise the orbit goes on. Bell numbers are in TM2 numbering.
 
 | orbit | D = 3 | D = 2 | D = 1 | HALT |
 |---|---|---|---|---|
-| O1 | ≤ 747,242,483,682 | ≤ 747,242,483,683 | ≤ 747,242,483,684 | **747,242,483,684** |
-| O2 | 139,153,319,148 | ≤ 731,899,010,931 (not up to 5·10¹¹) | ≤ 731,899,010,932 | **731,899,010,932** |
-| O3 | 112,674,809,806 | 969,789,861,680 | ≤ HALT Bell | **between 1.73·10¹² and 2·10¹²** (exact Bell to be reported) |
+| O1 | 6,386,007,549 | ≤ 747,242,483,683 (still 3 at 7.4·10¹¹) | ≤ 747,242,483,684 | **747,242,483,684** |
+| O2 | 139,153,319,148 | ≤ 731,899,010,931 (still 3 at 7.3·10¹¹) | ≤ 731,899,010,932 | **731,899,010,932** |
+| O3 | 112,674,809,806 | 969,789,861,680 | ≤ 1,961,935,897,288 | **1,961,935,897,288** |
 | O4 | ≤ 517,830,298,754 (between 1.75·10¹¹ and 5.18·10¹¹; D = 5 at 126,461,964,813) | 517,830,298,755 | not reached (up to 7.6·10¹¹) | – |
 
 - **"≤" entries.** The exact Bell is not in the logs. Since d drops by at most 1 per Bell, each value is reached at the latest on the Bells just before the HALT (d = 1 at the HALT Bell itself). An earlier, separate approach is possible. The `progress.log` files of Ahmer Raza's O1, O2 and O4 runs would give the exact values.
+- **Records from Ahmer Raza's logs** (D: first Bell):
+  - O1: 3: 6,386,007,549. The run starts at Bell 10⁶; D = 3 was already reached before 10¹⁰ and stayed there up to the last checkpoint before the HALT.
+  - O2: 8: 1,114,642,067; 7: 22,437,059,179; 5: 87,404,383,391; 3: 139,153,319,148.
+  - O3: 9: 420,738,969; 4: 45,304,426,048; 3: 112,674,809,806; 2: 969,789,861,680.
 - **Earlier records**, from a run with a record print, Bells 5 … 2·10⁶:
   - O1: D = 15 at 1,056,246.
   - O2: D = 19 at 1,447,932.
