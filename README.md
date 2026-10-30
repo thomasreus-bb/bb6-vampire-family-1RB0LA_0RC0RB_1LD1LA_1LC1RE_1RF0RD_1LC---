@@ -24,7 +24,16 @@ Data of TM1 are not copied here; this document refers to that repository.
 > - **Not yet verified independently.** Open checks:
 >   - the run of Thomas Reus on O2 (`belldco`, pruned towards 10¹², at 5·10¹¹ on 29 Oct) passes Bell 731,899,010,932 in a few days; this is the same program on other hardware, from its own checkpoints;
 >   - a second, independently written program (as Ersen's engine was up to 10¹¹);
->   - the step count of the halting Turing machines, which has not been computed yet.
+>   - the exact step count of the halting Turing machines, which has not been computed yet.
+> - **Estimate of tape size and steps.** At the HALT, n (TM2 coordinates; the tape is about `(10)^n`, i.e. 2n cells) follows from the bit length of k in the checkpoints (k has about 0.5849625·N bits, n ≈ k/2). A Bell takes about (3/2)·n² steps, so the run up to the halting Bell takes about 1.2·n² to 2.7·n² steps (the position of the HALT within the last Bell is not known).
+>
+>   | | O1 (TM1) | O2 (TM2, TM1-F, TM2') |
+>   |---|---|---|
+>   | log₂ n | ≈ 4.371088·10¹¹ | ≈ 4.281335·10¹¹ |
+>   | **tape** ≈ 2n cells | **≈ 10^(1.3158287·10¹¹)**, a number with about 131.6 billion digits | **≈ 10^(1.2888102·10¹¹)**, about 128.9 billion digits |
+>   | **steps** ≈ 1.2 … 2.7·n² | **≈ 10^(2.6316574·10¹¹)** | **≈ 10^(2.5776204·10¹¹)** |
+>
+>   The machines on one orbit differ only by a few Bells at the start, so their numbers agree to the digits shown.
 > - These four machines are the first of the family to be decided. The Markov estimate (below) gave about 59 % per orbit for a HALT before Bell 10¹².
 
 ## Simulation status (30 Oct 2026)
