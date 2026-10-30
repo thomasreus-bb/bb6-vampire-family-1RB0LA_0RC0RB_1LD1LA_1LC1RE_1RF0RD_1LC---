@@ -44,7 +44,7 @@ Data of TM1 are not copied here; this document refers to that repository.
 >     - O3: at 10¹⁰ and 10¹¹ (Ersen, Andrew Ducharme, `belldc`);
 >     - the two O3 runs (towards 10¹² and towards 2·10¹², each from its own checkpoint) agree at all 37 common checkpoints 6.4·10¹¹ … 10¹².
 >   - **Bit lengths:** at full precision they grow by 0.5849625 bits per Bell (= log₂ 1.5) at every checkpoint. In the pruned parts they equal (horizon − Bell) + 128, up to leading zeros.
->   - **D:** it decreases monotonically (O1: 3 from Bell 6.4·10⁹ on; O2: 8 → 7 → 5 → 3; O3: 9 → 4 → 3 → 2). All three runs end in the same HALT word `1101111`, one of the two words that carry most of the halt rate.
+>   - **D:** it decreases monotonically (O1: 3 from Bell 6.4·10⁹ on; O2: 8 → 7 → 5 → 3; O3: 9 → 4 → 3 → 2). All three runs end in the same HALT word `1101111`.
 >   - **Restarts** (O1/O2 at 4·10¹⁰, O3 at 2.4·10¹¹ and 6.3·10¹¹) continue with identical values.
 >   - **Result:** no inconsistency. What is still missing is an independent run up to the HALT Bells themselves.
 > - **Only orbit O4 (TM2b, TM2b') is still open.**
