@@ -137,13 +137,13 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 
 | # | class | machine | factor | verdict | Row | Classification | Notes | Sources | Done by |
 |---|---|---|---|---|---:|---|---|---|---|
-| [1](#1) | A | `1RB0RF_1LC---`<br>`1RD0LC_0RE0RD`<br>`1LF1LC_1LE1RA` | 1.55 | vampire family (orbits O1–O4 of this repository) | 1120 | Bell-like |   |   |   |
-| [2](#2) | A | `1RB---_1LC0RB`<br>`0LD0LC_1RE1RB`<br>`1RD1LF_1LA0LE` | 1.56 | vampire family (orbits O1–O4 of this repository) | 1083 | Bell-like |   |   |   |
-| [3](#3) | A | `1RB0LA_0RC0RB`<br>`1LD1LA_1LC1RE`<br>`1RF0RD_1LC---` | 1.57 | vampire family (orbits O1–O4 of this repository) | 1073 | Bell-like | Probviously halting machine | [1](https://discord.com/channels/960643023006490684/1390082340008755333/1390082340008755333) | Peacemaker, Legion, hipparcos, dyuan |
-| [4](#4) | A | `1RB0RE_1RC---`<br>`0RD0RC_1LE1LF`<br>`1LD1RA_1RC0LF` | 1.57 | vampire family (orbits O1–O4 of this repository) | 1111 | Bell-like |   |   |   |
-| [5](#5) | A | `1RB0LA_0RC0RB`<br>`1LD1LA_1LC1RE`<br>`1RF0RD_1LA---` | 1.56 | vampire family (orbits O1–O4 of this repository) | 1131 | Bell-like |   |   |   |
-| [6](#6) | A | `1RB---_0RC0RB`<br>`1LD1LE_1LC1RF`<br>`1RB0LE_1RA0RD` | 1.58 | vampire family (orbits O1–O4 of this repository) | 1107 | Bell-like |   |   |   |
-| [7](#7) | A | `1RB0RF_1LC---`<br>`1LF1LD_1RE0LD`<br>`0RC0RE_1LC1RA` | 1.58 | vampire family (orbits O1–O4 of this repository) | 1125 | Bell-like |   |   |   |
+| [1](#1) | A | `1RB0RF_1LC---`<br>`1RD0LC_0RE0RD`<br>`1LF1LC_1LE1RA` | 1.55 | vampire family, TM1-F, orbit O2: **HALT at Bell 731,899,010,932** (Ahmer Raza, 30 Oct 2026, not yet independently verified) | 1120 | Bell-like |   |   |   |
+| [2](#2) | A | `1RB---_1LC0RB`<br>`0LD0LC_1RE1RB`<br>`1RD1LF_1LA0LE` | 1.56 | vampire family, TM1, orbit O1: **HALT at Bell 747,242,483,684** (Ahmer Raza, 30 Oct 2026, not yet independently verified) | 1083 | Bell-like |   |   |   |
+| [3](#3) | A | `1RB0LA_0RC0RB`<br>`1LD1LA_1LC1RE`<br>`1RF0RD_1LC---` | 1.57 | vampire family, TM2, orbit O2: **HALT at Bell 731,899,010,932** (Ahmer Raza, 30 Oct 2026, not yet independently verified) | 1073 | Bell-like | Probviously halting machine | [1](https://discord.com/channels/960643023006490684/1390082340008755333/1390082340008755333) | Peacemaker, Legion, hipparcos, dyuan |
+| [4](#4) | A | `1RB0RE_1RC---`<br>`0RD0RC_1LE1LF`<br>`1LD1RA_1RC0LF` | 1.57 | vampire family, TM2', orbit O2: **HALT at Bell 731,899,010,932** (Ahmer Raza, 30 Oct 2026, not yet independently verified) | 1111 | Bell-like |   |   |   |
+| [5](#5) | A | `1RB0LA_0RC0RB`<br>`1LD1LA_1LC1RE`<br>`1RF0RD_1LA---` | 1.56 | vampire family, TM2a, orbit O3: no halt so far | 1131 | Bell-like |   |   |   |
+| [6](#6) | A | `1RB---_0RC0RB`<br>`1LD1LE_1LC1RF`<br>`1RB0LE_1RA0RD` | 1.58 | vampire family, TM2b, orbit O4: no halt so far | 1107 | Bell-like |   |   |   |
+| [7](#7) | A | `1RB0RF_1LC---`<br>`1LF1LD_1RE0LD`<br>`0RC0RE_1LC1RA` | 1.58 | vampire family, TM2b', orbit O4: no halt so far | 1125 | Bell-like |   |   |   |
 | [8](#8) | B | `1RB0RB_1LC1RF`<br>`0RD0LB_0RA1LE`<br>`1LD---_0RB0RC` | 1.33 | **halts**, formal proof accepted, no longer a holdout (vampire method, [halt-found repository](https://github.com/thomasreus-bb/halt-found-1rb0rb_1lc1rf_0rd0lb_0ra1le_1ld---_0rb0rc)) | 1078 | Bell-like |   | [1](https://discord.com/channels/960643023006490684/960643023530762341/1309905887451938927) | Racheline |
 | [9](#9) | B | `1RB0RB_1LB0LC`<br>`1RD1LC_1RE0RA`<br>`0RF1RA_---1LB` | 1.33 | needle-like: only 2 tails (all information in one number) | 756 | Quadratic Mess | Part of Category 1 |   |   |
 | [10](#10) | B | `1RB---_0RC0RD`<br>`1LD1RB_0LE0LC`<br>`1RA0LF_1LD1LE`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE) | 1.24 | two-register system, exact Bell map with types A/B/C; no HALT in 10¹⁰ Bells (about 2·10³⁰ steps); HALT needs an exact hit (see [10](#10)) | 688 | Cubic Mess | Part of Category 1 |   |   |
