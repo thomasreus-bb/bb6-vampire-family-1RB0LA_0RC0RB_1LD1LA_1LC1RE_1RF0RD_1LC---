@@ -1,7 +1,7 @@
 # A family of seven vampire-like BB(6) holdouts
 
 Author: Thomas Reus, with the AI model Claude Opus 5.5  
-Status: 30 Oct 2026 (**HALT found on orbits O1 and O2**, not yet independently verified; labels such as TM2a or TM2' are provisional)
+Status: 30 Oct 2026 (**HALT found on orbits O1, O2 and O3**, not yet independently verified; labels such as TM2a or TM2' are provisional)
 
 This repository is about a **family of seven "energy vampire"-like Turing machines** from the recent holdout list (BB6_holdouts_663).
 
@@ -34,16 +34,21 @@ Data of TM1 are not copied here; this document refers to that repository.
 >   | **steps** ≈ 1.2 … 2.7·n² | **≈ 10^(2.6316574·10¹¹)** | **≈ 10^(2.5776204·10¹¹)** |
 >
 >   The machines on one orbit differ only by a few Bells at the start, so their numbers agree to the digits shown.
-> - These four machines are the first of the family to be decided. The Markov estimate (below) gave about 59 % per orbit for a HALT before Bell 10¹².
+> - **O3: HALT as well** (reported 30 Oct 2026 by Ahmer Raza). This decides **TM2a** = `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---`.
+>   - **Bell:** the exact Bell number was not reported yet; it lies between 1.73·10¹² (last report without halt) and 2·10¹² (target of the run).
+>   - **Run:** 8 cores of an AMD EPYC 9475F, 320 GiB RAM, about 172 GiB of it as `/dev/shm`. The last full checkpoint is 171.6 GiB. Compute time was 79 h 13 min, of which 65 h 10 min were new progress; parts had to be repeated because the space for the checkpoint was too small.
+>   - **Estimate** (as for O1/O2, for a HALT between 1.73·10¹² and 2·10¹²): tape ≈ 10^(3.05 … 3.52·10¹¹) cells, steps ≈ 10^(6.09 … 7.04·10¹¹).
+> - **Only orbit O4 (TM2b, TM2b') is still open.**
+> - These five machines are the first of the family to be decided. The Markov estimate (below) gave about 59 % per orbit for a HALT before Bell 10¹².
 
 ## Simulation status (30 Oct 2026)
-**O1 and O2 halt** (see above). No halt has been found so far on O3 and O4.
+**O1, O2 and O3 halt** (see above). No halt has been found so far on O4.
 
 | orbit | machines | reached without halt | confirmed independently | closest approach (D) |
 |---|---|---|---|---|
 | O1 | TM1 | **HALT at Bell 747,242,483,684** (Ahmer Raza, `belldco`, 30 Oct); before: 10¹¹ without halt (Ersen) | **at 10¹⁰** (`bellntt` = Ersen); Ersen's two engines agree up to 4.3·10¹⁰ | – |
 | O2 | TM2, TM1-F, TM2' | **HALT at Bell 731,899,010,932** (Ahmer Raza, `belldco`, 30 Oct); before: 5·10¹¹ without halt (Thomas Reus, `belldc` / `belldco`, run towards 10¹² in progress; Ersen 10¹¹) | **up to 10¹¹** (two programs); 10¹¹ … 1.4·10¹¹ two runs | **3** (Bell 139,153,319,148) |
-| O3 | TM2a | **1.73·10¹²** (Ahmer Raza alias Duke, `belldcf` / `belldco`, run towards 2·10¹² in progress) | up to 10¹¹ (Duke = Ersen); up to 1.4·10¹⁰ also Andrew Ducharme, at 10¹⁰ also `belldc` | **2** (Bell 969,789,861,680) |
+| O3 | TM2a | **HALT** between 1.73·10¹² and 2·10¹² (Ahmer Raza alias Duke, `belldco`, 30 Oct; exact Bell to be reported); before: 1.73·10¹² without halt | up to 10¹¹ (Duke = Ersen); up to 1.4·10¹⁰ also Andrew Ducharme, at 10¹⁰ also `belldc` | **2** (Bell 969,789,861,680) |
 | O4 | TM2b, TM2b' | **7.6·10¹¹** (Ahmer Raza, `belldco`, run in progress); before: 2.25·10¹¹ (Andrew Ducharme, `belldc`) | at 10¹⁰ (`belldc`) | **2** (Bell 517,830,298,755) |
 
 **Closest approaches.** D is d(S) at the first Bell where this distance was reached. d = 1 means that the word of this Bell has a HALT entry, so the Bell halts if the bit of k fits; otherwise the orbit goes on. Bell numbers are in TM2 numbering.
@@ -52,7 +57,7 @@ Data of TM1 are not copied here; this document refers to that repository.
 |---|---|---|---|---|
 | O1 | ≤ 747,242,483,682 | ≤ 747,242,483,683 | ≤ 747,242,483,684 | **747,242,483,684** |
 | O2 | 139,153,319,148 | ≤ 731,899,010,931 (not up to 5·10¹¹) | ≤ 731,899,010,932 | **731,899,010,932** |
-| O3 | 112,674,809,806 | 969,789,861,680 | not reached (up to 1.73·10¹²) | – |
+| O3 | 112,674,809,806 | 969,789,861,680 | ≤ HALT Bell | **between 1.73·10¹² and 2·10¹²** (exact Bell to be reported) |
 | O4 | ≤ 517,830,298,754 (between 1.75·10¹¹ and 5.18·10¹¹; D = 5 at 126,461,964,813) | 517,830,298,755 | not reached (up to 7.6·10¹¹) | – |
 
 - **"≤" entries.** The exact Bell is not in the logs. Since d drops by at most 1 per Bell, each value is reached at the latest on the Bells just before the HALT (d = 1 at the HALT Bell itself). An earlier, separate approach is possible. The `progress.log` files of Ahmer Raza's O1, O2 and O4 runs would give the exact values.
