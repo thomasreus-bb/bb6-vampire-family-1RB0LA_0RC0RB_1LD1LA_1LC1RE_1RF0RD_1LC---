@@ -58,7 +58,7 @@ Data of TM1 are not copied here; this document refers to that repository.
 | O1 | TM1 | **HALT at Bell 747,242,483,684** (Ahmer Raza, `belldco`, 30 Oct); before: 10¹¹ without halt (Ersen) | **at 10¹⁰** (`bellntt` = Ersen); Ersen's two engines agree up to 4.3·10¹⁰ | – |
 | O2 | TM2, TM1-F, TM2' | **HALT at Bell 731,899,010,932** (Ahmer Raza, `belldco`, 30 Oct); before: 5·10¹¹ without halt (Thomas Reus, `belldc` / `belldco`, run towards 10¹² in progress; Ersen 10¹¹) | **up to 10¹¹** (two programs); 10¹¹ … 1.4·10¹¹ two runs | **3** (Bell 139,153,319,148) |
 | O3 | TM2a | **HALT at Bell 1,961,935,897,288** (Ahmer Raza alias Duke, `belldco`, 30 Oct) | up to 10¹¹ (Duke = Ersen); up to 1.4·10¹⁰ also Andrew Ducharme, at 10¹⁰ also `belldc` | **2** (Bell 969,789,861,680) |
-| O4 | TM2b, TM2b' | **10¹²** (Ahmer Raza, `belldco`, 30 Oct; run towards 2·10¹² in progress); before: 2.25·10¹¹ (Andrew Ducharme, `belldc`) | at 10¹⁰ (`belldc`) | **2** (Bell 517,830,298,755) |
+| O4 | TM2b, TM2b' | **1.7·10¹²** (Ahmer Raza, `belldco`, 31 Oct; run towards 2·10¹² in progress); before: 2.25·10¹¹ (Andrew Ducharme, `belldc`) | at 10¹⁰ (`belldc`) | **1** (Bell 1,512,353,417,238) |
 
 **Closest approaches.** D is d(S) at the first Bell where this distance was reached. d = 1 means that the word of this Bell has a HALT entry, so the Bell halts if the bit of k fits; otherwise the orbit goes on. Bell numbers are in TM2 numbering.
 
@@ -67,7 +67,7 @@ Data of TM1 are not copied here; this document refers to that repository.
 | O1 | 6,386,007,549 | ≤ 747,242,483,683 (still 3 at 7.4·10¹¹) | ≤ 747,242,483,684 | **747,242,483,684** |
 | O2 | 139,153,319,148 | ≤ 731,899,010,931 (still 3 at 7.3·10¹¹) | ≤ 731,899,010,932 | **731,899,010,932** |
 | O3 | 112,674,809,806 | 969,789,861,680 | ≤ 1,961,935,897,288 | **1,961,935,897,288** |
-| O4 | ≤ 517,830,298,754 (between 1.75·10¹¹ and 5.18·10¹¹; D = 5 at 126,461,964,813) | 517,830,298,755 | not reached (up to 10¹²) | – |
+| O4 | ≤ 517,830,298,754 (between 1.75·10¹¹ and 5.18·10¹¹; D = 5 at 126,461,964,813) | 517,830,298,755 | **1,512,353,417,238** (no halt: the bit of k did not fit) | – (up to 1.7·10¹²) |
 
 - **"≤" entries.** The exact Bell is not in the logs. Since d drops by at most 1 per Bell, each value is reached at the latest on the Bells just before the HALT (d = 1 at the HALT Bell itself). An earlier, separate approach is possible. The `progress.log` files of Ahmer Raza's O1, O2 and O4 runs would give the exact values.
 - **Records from Ahmer Raza's logs** (D: first Bell):
@@ -90,6 +90,7 @@ Data of TM1 are not copied here; this document refers to that repository.
   - O4 reached **7.6·10¹¹**: KCHECK `8034801435628474394 444571500553 1`, full precision. Closest approach now **D = 2 at Bell 517,830,298,755**.
   - No halt on either orbit.
 - **Ahmer Raza, 30 Oct (O4):** reached **10¹²** without halt: KCHECK `14423409210756283151 584962500726 1`, full precision, D still 2 (Bell 517,830,298,755). Run continued towards 2·10¹².
+- **Ahmer Raza, 31 Oct (O4):** reached **1.7·10¹²** without halt: KCHECK `6524293751407318290`, S = `1`, pruned towards 2·10¹². The orbit came within **one Bell** of a halt: **D = 1 at Bell 1,512,353,417,238**. The word there has a HALT entry, but the bit of k did not select it.
 - In pruned runs only the low part of k is kept, so beyond 0.63·T only KCHECK = k mod 2⁶⁴ and S are compared, not the bit length.
 - **Next:** all four orbits are now at 10¹¹ or beyond. Beyond 1.4·10¹¹ on a 16 GB computer: `belldco` (k on disk, see below); a pruned run to 7·10¹¹ needs about 200 GB of free disk space, to 10¹² about 280 GB.
 - **Halting probability** (Markov estimate, see [below](#halt-expected-markov-estimate)): up to Bell 10¹¹ about 8.5 % per orbit (30 % for at least one of the four orbits), up to 10¹² about 59 % per orbit (97 % for at least one); the value for four orbits assumes that they behave like independent random sequences.
