@@ -137,10 +137,10 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 
 | # | class | machine | factor | verdict | Row | Classification | Notes | Sources | Done by |
 |---|---|---|---|---|---:|---|---|---|---|
-| [1](#1) | A | `1RB0RF_1LC---`<br>`1RD0LC_0RE0RD`<br>`1LF1LC_1LE1RA` | 1.55 | vampire family, TM1-F, orbit O2: **HALT at Bell 731,899,010,932** (Ahmer Raza, 30 Oct 2026, not yet independently verified) | 1120 | Bell-like |   |   |   |
+| [1](#1) | A | `1RB0RF_1LC---`<br>`1RD0LC_0RE0RD`<br>`1LF1LC_1LE1RA` | 1.55 | vampire family, TM1-F, orbit O2: **HALT at Bell 731,899,010,932** (Ahmer Raza, 30 Oct 2026; confirmed on a second computer by Thomas Reus, 31 Oct) | 1120 | Bell-like |   |   |   |
 | [2](#2) | A | `1RB---_1LC0RB`<br>`0LD0LC_1RE1RB`<br>`1RD1LF_1LA0LE` | 1.56 | vampire family, TM1, orbit O1: **HALT at Bell 747,242,483,684** (Ahmer Raza, 30 Oct 2026, not yet independently verified) | 1083 | Bell-like |   |   |   |
-| [3](#3) | A | `1RB0LA_0RC0RB`<br>`1LD1LA_1LC1RE`<br>`1RF0RD_1LC---` | 1.57 | vampire family, TM2, orbit O2: **HALT at Bell 731,899,010,932** (Ahmer Raza, 30 Oct 2026, not yet independently verified) | 1073 | Bell-like | Probviously halting machine | [1](https://discord.com/channels/960643023006490684/1390082340008755333/1390082340008755333) | Peacemaker, Legion, hipparcos, dyuan |
-| [4](#4) | A | `1RB0RE_1RC---`<br>`0RD0RC_1LE1LF`<br>`1LD1RA_1RC0LF` | 1.57 | vampire family, TM2', orbit O2: **HALT at Bell 731,899,010,932** (Ahmer Raza, 30 Oct 2026, not yet independently verified) | 1111 | Bell-like |   |   |   |
+| [3](#3) | A | `1RB0LA_0RC0RB`<br>`1LD1LA_1LC1RE`<br>`1RF0RD_1LC---` | 1.57 | vampire family, TM2, orbit O2: **HALT at Bell 731,899,010,932** (Ahmer Raza, 30 Oct 2026; confirmed on a second computer by Thomas Reus, 31 Oct); **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) – listed although it halts (orbit O2) | 1073 | Bell-like | Probviously halting machine | [1](https://discord.com/channels/960643023006490684/1390082340008755333/1390082340008755333) | Peacemaker, Legion, hipparcos, dyuan |
+| [4](#4) | A | `1RB0RE_1RC---`<br>`0RD0RC_1LE1LF`<br>`1LD1RA_1RC0LF` | 1.57 | vampire family, TM2', orbit O2: **HALT at Bell 731,899,010,932** (Ahmer Raza, 30 Oct 2026; confirmed on a second computer by Thomas Reus, 31 Oct) | 1111 | Bell-like |   |   |   |
 | [5](#5) | A | `1RB0LA_0RC0RB`<br>`1LD1LA_1LC1RE`<br>`1RF0RD_1LA---` | 1.56 | vampire family, TM2a, orbit O3: **HALT at Bell 1,961,935,897,288** (Ahmer Raza, 30 Oct 2026, not yet independently verified) | 1131 | Bell-like |   |   |   |
 | [6](#6) | A | `1RB---_0RC0RB`<br>`1LD1LE_1LC1RF`<br>`1RB0LE_1RA0RD` | 1.58 | vampire family, TM2b, orbit O4: **HALT at Bell 1,941,376,761,248** (Ahmer Raza, 1 Nov 2026, not yet independently verified) | 1107 | Bell-like |   |   |   |
 | [7](#7) | A | `1RB0RF_1LC---`<br>`1LF1LD_1RE0LD`<br>`0RC0RE_1LC1RA` | 1.58 | vampire family, TM2b', orbit O4: **HALT at Bell 1,941,376,761,248** (Ahmer Raza, 1 Nov 2026, not yet independently verified) | 1125 | Bell-like |   |   |   |
@@ -176,7 +176,7 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [37](#37) | B | `1RB1RF_1RC0RB`<br>`0RD1LF_1LE1RE`<br>`1LA---_1RA0LC` | 1.26 | no clear single-block Bell configuration found; **equivalent to [11](#11)** (mirrored, renamed); still in the holdout list of 30 Oct 2026, although no. 11 is decided | 729 | Cubic Mess |   |   |   |
 | [38](#38) | C | `1RB0RE_1LC0RA`<br>`0LD0LB_1RE0LB`<br>`1RF---_0RB0RC` | 1.55 | growing list of blocks (nested); no HALT up to 4·10³³ steps | 973 | Chaotic Bell Class 2 |   |   |   |
 | [39](#39) | C | `1RB1LC_1LC0RF`<br>`0LF1LD_0LE---`<br>`1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number) | 1122 | Bell-like |   |   |   |
-| [40](#40) | C | `1RB0RD_0RC1RE`<br>`1RD0LA_1LE1LC`<br>`1RF0LD_---0RA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | 1.48 | no clear single-block Bell configuration found | 1060 | **CRYPTID**<br>Bell-like | Lucy's Moonlight. Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | Racheline, Shawn Ligocki |
+| [40](#40) | C | `1RB0RD_0RC1RE`<br>`1RD0LA_1LE1LC`<br>`1RF0LD_---0RA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | 1.48 | no clear single-block Bell configuration found; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1060 | **CRYPTID**<br>Bell-like | Lucy's Moonlight. Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | Racheline, Shawn Ligocki |
 | [41](#41) | C | `1RB1LD_1RC0RA`<br>`1LA1RE_0LA0LB`<br>`0RB1RF_---1RD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD) | 1.40 | needle-like: only 1 tail (all information in one number) | 755 | Quadratic Mess | Part of Category 1 |   |   |
 | [42](#42) | C | `1RB0RF_1LC0RA`<br>`1LD1LB_0LE---`<br>`1LA0LA_1RE1LD` | 1.42 | needle-like: only 1 tail (all information in one number) | 761 | Quadratic Mess |   |   |   |
 | [43](#43) | C | `1RB1RE_0RC---`<br>`1RD0RD_1LE0LF`<br>`1RA0LD_1LC1RB` | 1.41 | needle-like: only 2 tails (all information in one number) | 760 | Quadratic Mess |   |   |   |
@@ -187,7 +187,7 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [48](#48) | C | `1RB1RD_1LC0LE`<br>`1LD0LB_0RB0RA`<br>`1RD1LF_0LC---` | 1.52 | no clear single-block Bell configuration found | 29 | Unknown | Simulated to 1.08e17 steps. | [1](https://discord.com/channels/960643023006490684/1239205785913790465/1456934113943621653) | Alistaire |
 | [49](#49) | C | `1RB1LA_1RC0RF`<br>`1RD---_0LE1RB`<br>`---0LA_1LD1RF`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF) | 1.44 | no clear single-block Bell configuration found | 686 | Cubic Mess | Potential cryptid. One of 3 holdouts with 2 undefined transitions, may be cryptid. 10^14 doesn't halt. Analysed thoroughly using formal proofs from Claude Opus 4.6. | [1](https://discord.com/channels/960643023006490684/1410023564249403577/1410023564249403577), [2](https://wiki.bbchallenge.org/wiki/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF) | dyuan, mxdys, hipparcos, DrDisentangle |
 | [50](#50) | C | `1RB1RB_1LC0RE`<br>`---1LD_0RA1LB`<br>`1RA1LF_0LE1LE`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE) | 1.50 | no clear single-block Bell configuration found | 794 | Quadratic Mess |   |   |   |
-| [51](#51) | C | `1RB0RE_1LC0RA`<br>`1LA1LD_1LC1LF`<br>`0LC0LB_1LE---` | 1.60 | needle-like: only 1 tail (all information in one number) | 1063 | **CRYPTID**<br>Bell-like | Probviously halting cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA) | -d |
+| [51](#51) | C | `1RB0RE_1LC0RA`<br>`1LA1LD_1LC1LF`<br>`0LC0LB_1LE---` | 1.60 | needle-like: only 1 tail (all information in one number); **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) – "equivalent to no. 61 (?)" there | 1063 | **CRYPTID**<br>Bell-like | Probviously halting cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA) | -d |
 | [52](#52) | C | `1RB0LC_1RC1RF`<br>`1LD0RA_1LE0LD`<br>`1RC0LA_0LA---` | 1.61 | no clear single-block Bell configuration found | 765 | Quadratic Mess |   |   |   |
 | [53](#53) | C | `1RB1RE_1LC1RE`<br>`---1LD_1LE0LB`<br>`0RF0LD_1RD1RA` | 1.66 | no clear single-block Bell configuration found | 1080 | Bell-like |   |   |   |
 | [54](#54) | C | `1RB1RF_1LC---`<br>`1LE1RD_1RA0RC`<br>`0LF0LA_0LD0RB` | 1.53 | needle-like: only 1 tail (all information in one number) | 787 | Quadratic Mess |   |   |   |
@@ -196,16 +196,16 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [57](#57) | – | `1RB1RC_1LC1LE`<br>`1RA1RD_0RF0RE`<br>`1LA0LB_---1RA` | – | for later analysis | 1057 | **CRYPTID**<br>Bell-like | A variant of Hydra and Antihydra | [1](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA) | mxdys, dyuan |
 | [58](#58) | – | `1RB0LD_1RC1RF`<br>`1LA0RA_0LA0LE`<br>`1LD1LA_0RB---` | – | for later analysis | 1058 | **CRYPTID**<br>Bell-like | Antihydra-like cryptid, probviously nonhalting | [1](https://discord.com/channels/960643023006490684/1239205785913790465/1280916092683812916); 2; 3 | dyuan, mxdys |
 | [59](#59) | – | `1RB1RA_0LC1LE`<br>`1LD1LC_1LA0LB`<br>`1LF1RE_---0RA` | – | for later analysis | 1059 | **CRYPTID**<br>Bell-like | Antihydra. Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/Antihydra) |   |
-| [60](#60) | – | `1RB1RA_0RC1RC`<br>`1LD0LF_0LE1LE`<br>`1RA0LB_---0LC` | – | for later analysis | 1061 | **CRYPTID**<br>Bell-like | One of (canonical) collection of 16 probviously halting tetrational cryptids | [1](https://wiki.bbchallenge.org/wiki/1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC) | mxdys |
-| [61](#61) | – | `1RB---_0RC0RE`<br>`1RD1RF_1LE0LB`<br>`1RC0LD_1RC1RA` | – | for later analysis | 1062 | **CRYPTID**<br>Bell-like | Probviously halting cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA) | Racheline |
-| [62](#62) | – | `1RB0LD_1RC1RA`<br>`1LD0RB_1LE1LA`<br>`1RF0RC_---1RE` | – | for later analysis | 1064 | **CRYPTID**<br>Bell-like | Probviously halting cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE) | mxdys |
-| [63](#63) | – | `1RB0LC_1LC0RD`<br>`1LF1LA_1LB1RE`<br>`1RB1LE_---0LE` | – | for later analysis | 1065 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE) | Racheline |
-| [64](#64) | – | `1RB0RE_1LC1LD`<br>`0RA0LD_1LB0LA`<br>`1RF1RA_---1LB` | – | for later analysis | 1066 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB) | Racheline, N1vi |
-| [65](#65) | – | `1RB1RE_1LC1LD`<br>`---1LA_1LB1LE`<br>`0RF0RA_1LD1RF` | – | for later analysis | 1067 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF) | Racheline |
-| [66](#66) | – | `1RB0LC_0LC0RF`<br>`1RD1LC_0RA1LE`<br>`---0LD_1LF1LA` | – | for later analysis | 1068 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid, Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA) | Racheline |
+| [60](#60) | – | `1RB1RA_0RC1RC`<br>`1LD0LF_0LE1LE`<br>`1RA0LB_---0LC` | – | for later analysis; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1061 | **CRYPTID**<br>Bell-like | One of (canonical) collection of 16 probviously halting tetrational cryptids | [1](https://wiki.bbchallenge.org/wiki/1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC) | mxdys |
+| [61](#61) | – | `1RB---_0RC0RE`<br>`1RD1RF_1LE0LB`<br>`1RC0LD_1RC1RA` | – | for later analysis; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1062 | **CRYPTID**<br>Bell-like | Probviously halting cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA) | Racheline |
+| [62](#62) | – | `1RB0LD_1RC1RA`<br>`1LD0RB_1LE1LA`<br>`1RF0RC_---1RE` | – | for later analysis; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1064 | **CRYPTID**<br>Bell-like | Probviously halting cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE) | mxdys |
+| [63](#63) | – | `1RB0LC_1LC0RD`<br>`1LF1LA_1LB1RE`<br>`1RB1LE_---0LE` | – | for later analysis; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1065 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE) | Racheline |
+| [64](#64) | – | `1RB0RE_1LC1LD`<br>`0RA0LD_1LB0LA`<br>`1RF1RA_---1LB` | – | for later analysis; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1066 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB) | Racheline, N1vi |
+| [65](#65) | – | `1RB1RE_1LC1LD`<br>`---1LA_1LB1LE`<br>`0RF0RA_1LD1RF` | – | for later analysis; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1067 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid | [1](https://wiki.bbchallenge.org/wiki/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF) | Racheline |
+| [66](#66) | – | `1RB0LC_0LC0RF`<br>`1RD1LC_0RA1LE`<br>`---0LD_1LF1LA` | – | for later analysis; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1068 | **CRYPTID**<br>Bell-like | Probviously halting tetrational cryptid, Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA) | Racheline |
 | [67](#67) | – | `1RB1LD_1RC1RE`<br>`0LA1LB_0LD1LC`<br>`1RF0RA_---0RC` | – | for later analysis | 1069 | **CRYPTID**<br>Bell-like | Probviously nonhalting cryptid, similar to Antihydra | [1](https://discord.com/channels/960643023006490684/1239205785913790465/1275205992405274656), 2 | mxdys |
 | [68](#68) | – | `1RB0LB_1LC0RE`<br>`1LA1LD_0LC---`<br>`0RB0RF_1RE1RB` | – | for later analysis | 1070 | **CRYPTID**<br>Bell-like | Probviously nonhalting cryptid, similar to Antihydra | [1](https://wiki.bbchallenge.org/wiki/1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB) | Racheline |
-| [69](#69) | – | `1RB1LE_0LC0LB`<br>`1RD1LC_1RD1RA`<br>`1RF0LA_---1RE` | – | for later analysis | 1071 | **CRYPTID**<br>Bell-like | Tetrational cryptid (3/5 of becoming TC, 2/5 of halting), see source 2 for more exact chances and refinements, Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE), 2 | Racheline |
+| [69](#69) | – | `1RB1LE_0LC0LB`<br>`1RD1LC_1RD1RA`<br>`1RF0LA_---1RE` | – | for later analysis; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1071 | **CRYPTID**<br>Bell-like | Tetrational cryptid (3/5 of becoming TC, 2/5 of halting), see source 2 for more exact chances and refinements, Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE), 2 | Racheline |
 | [70](#70) | – | `1RB1RF_1LC1RD`<br>`1LA1LC_1RA0RE`<br>`1RD1LA_---0LE` | – | for later analysis | 1074 | Bell-like | Simulated to 10^4600 steps, code with log reduction | [1](https://discord.com/channels/960643023006490684/1451285809553477763/1451285809553477763) | nerdyjoe |
 | [71](#71) | – | `1RB1RD_1LC0LE`<br>`1RA0LB_1RA1RF`<br>`0RA0RC_1RE---` | – | for later analysis | 1075 | Bell-like | Could be solvable |   |   |
 | [72](#72) | – | `1RB1LE_1LC1RC`<br>`1LA1RD_1LD0RB`<br>`0LC0LF_0LB---` | – | for later analysis | 1076 | Bell-like |   | [1](https://discord.com/channels/960643023006490684/1400456788955893840/1404371323265876010) | -d |
@@ -245,6 +245,10 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [106](#106) | – | `1RB1LD_0LC1RC`<br>`1RA1RD_1LE0RB`<br>`---1LF_0LC0LA` | – | for later analysis | 1135 | Bell-like |   |   |   |
 | [107](#107) | – | `1RB1LD_0RC1RC`<br>`1RD0RE_0LA0LF`<br>`0RF---_1RA1LA` | – | for later analysis | 1136 | Bell-like |   |   |   |
 | [108](#108) | – | `1RB0RE_0LC0RF`<br>`1LD1LC_1RA0LD`<br>`0RD1RE_---0LB` | – | for later analysis | 1137 | Bell-like |   |   |   |
+| [109](#109) | – | `1RB1LE_0LC1RE`<br>`---1LD_0RD1LA`<br>`0RF1RF_1RA0LB` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 605 | Shift-overflow structural counter | Possibly tetrational machine | [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178) | Racheline |
+| [110](#110) | – | `1RB1RD_1LC1RA`<br>`---1LD_1LE0RA`<br>`1LF0LE_0RB0LB` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 563 | Shift-overflow bouncer counter | Possibly tetrational machine | [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178) | Racheline |
+| [111](#111) | – | `1RB0LE_0RC0RA`<br>`1LD0LC_1LA0LB`<br>`1RA1LF_---0LC` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 564 | Shift-overflow bouncer counter | Possibly tetrational machine | [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178) | Racheline |
+| [112](#112) | – | `1RB1LD_1RC0LE`<br>`1LA1RE_0LF1LA`<br>`1RB0RB_---0LB` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 560 | **CRYPTID**<br>Shift-overflow bouncer counter | Probviously halting cryptid | [1](https://discord.com/channels/960643023006490684/1239205785913790465/1337994337790853181), 2 | Racheline |
 
 <a id="1"></a>
 ## 1. `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A)
@@ -1582,3 +1586,50 @@ Checks:
 - diagram: 311,138 steps, tape width 1001 cells
 
 <img src="diagrams/1RB0RE_0LC0RF_1LD1LC_1RA0LD_0RD1RE_---0LB.png" alt="space-time diagram" height="350">
+
+## Candidates 109–112: potential cryptids from "Machines at the Edge" (for later analysis)
+
+The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (1 Nov 2026), 18 in all, are compared here with our list and with the holdout list of 608 machines.
+- **Already candidates:** 11 of them are marked **potential cryptid** in the table: nos. 3 (TM2, which halts, see orbit O2), 40 (Lucy's Moonlight), 51, 60, 61, 62, 63, 64, 65, 66, 69.
+  - The page says that no. 51 is "equivalent to" no. 61 "(?)". Here both have the same table up to renaming and mirroring, but no common configuration was found (see "Related machines").
+- **Not holdouts:** three machines of Racheline's tetrational list are not in the holdout list of 608, and were not in the earlier list of 623 either (also not up to renaming or mirroring), so they are not taken over:
+  - `1RB0RC_0RC0RA_1RD1LA_1LE0LB_0LB1LF_0LD---`
+  - `1RB0LF_0RC1RB_1LD0RB_1LE---_1RF1LA_0LC0LE`
+  - `1RB1RF_1LC0RA_---0LD_0LE0LB_1RF1RB_1RE1LF`
+- **New:** the remaining four are still holdouts and become **nos. 109–112**. In the BB6 sheet they are not classified as Bell-like, so they were not among nos. 57–108.
+
+<a id="109"></a>
+## 109. `1RB1LE_0LC1RE_---1LD_0RD1LA_0RF1RF_1RA0LB` (potential cryptid, for later analysis)
+
+- source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), Racheline's list of possibly tetrational machines
+- BB6 sheet: row 605, Shift-overflow structural counter, notes: Possibly tetrational machine
+- diagram: 685,839 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LE_0LC1RE_---1LD_0RD1LA_0RF1RF_1RA0LB.png" alt="space-time diagram" height="350">
+
+<a id="110"></a>
+## 110. `1RB1RD_1LC1RA_---1LD_1LE0RA_1LF0LE_0RB0LB` (potential cryptid, for later analysis)
+
+- source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), Racheline's list of possibly tetrational machines
+- BB6 sheet: row 563, Shift-overflow bouncer counter, notes: Possibly tetrational machine
+- diagram: 431,586 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1RD_1LC1RA_---1LD_1LE0RA_1LF0LE_0RB0LB.png" alt="space-time diagram" height="350">
+
+<a id="111"></a>
+## 111. `1RB0LE_0RC0RA_1LD0LC_1LA0LB_1RA1LF_---0LC` (potential cryptid, for later analysis)
+
+- source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), Racheline's list of possibly tetrational machines
+- BB6 sheet: row 564, Shift-overflow bouncer counter, notes: Possibly tetrational machine
+- diagram: 362,577 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LE_0RC0RA_1LD0LC_1LA0LB_1RA1LF_---0LC.png" alt="space-time diagram" height="350">
+
+<a id="112"></a>
+## 112. `1RB1LD_1RC0LE_1LA1RE_0LF1LA_1RB0RB_---0LB` (potential cryptid, for later analysis)
+
+- source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), probviously halting cryptids
+- BB6 sheet: row 560, CRYPTID, Shift-overflow bouncer counter, notes: Probviously halting cryptid
+- diagram: 388,426 steps, tape width 1001 cells
+
+<img src="diagrams/1RB1LD_1RC0LE_1LA1RE_0LF1LA_1RB0RB_---0LB.png" alt="space-time diagram" height="350">
