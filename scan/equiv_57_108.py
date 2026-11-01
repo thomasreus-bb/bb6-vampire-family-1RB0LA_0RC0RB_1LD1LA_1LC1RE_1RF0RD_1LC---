@@ -1,4 +1,4 @@
-# usage: gcc -O2 -o meet meet.c; python3 equiv_57_108.py candidates_108.txt 20000000 200000000
+# usage: gcc -O2 -o meet meet.c; python3 equiv_57_108.py candidates_112.txt 20000000 200000000
 import itertools,subprocess,sys
 exec(open("groups.py").read().split("L=[l.split()[1]")[0])
 L=[l.split()[1] for l in open(sys.argv[1]) if not l.startswith("#")]

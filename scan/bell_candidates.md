@@ -53,7 +53,7 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
       | 58, 68 | both Antihydra-like cryptids, probviously nonhalting |
       | 72, 73, 97 · 74, 77 · 75, 106 · 76, 99 · 78, 79, 92 · 80, 91, 108 · 94, 103 | |
 
-      For all 26 pairs within these groups (`equiv_57_108.py candidates_108.txt 20000000 200000000`, with `meet.c`), the configuration of one run after 2·10⁷ steps does **not** occur in the other run within 2·10⁸ steps, in both directions. The record events (`recev.c`, `cmpev.py`, 3·10⁸ steps) also show no "same interior, different ends" pattern as for 31/32. Nos. 72/97 have the same interior only at the beginning (widths 144–155), then they separate. **No equivalence found.**
+      For all 26 pairs within these groups (`equiv_57_108.py candidates_112.txt 20000000 200000000`, with `meet.c`), the configuration of one run after 2·10⁷ steps does **not** occur in the other run within 2·10⁸ steps, in both directions. The record events (`recev.c`, `cmpev.py`, 3·10⁸ steps) also show no "same interior, different ends" pattern as for 31/32. Nos. 72/97 have the same interior only at the beginning (widths 144–155), then they separate. **No equivalence found.**
     - **Tables that differ in one transition:** nos. 63 and 98. **In two transitions:** 53/85, 70/86 and 84/101. The transitions in which they differ are all used, so they are not trivially the same.
       - **70/86** run almost identically: tape widths after 3·10⁸ steps are 27,942 and 27,922, the same record widths occur, and the step lag grows only slowly (0.2 %).
       - The other pairs separate more clearly (widths 14,910/16,491, 26,711/26,455, 14,060/14,673).
@@ -1596,6 +1596,7 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
   - `1RB0RC_0RC0RA_1RD1LA_1LE0LB_0LB1LF_0LD---`
   - `1RB0LF_0RC1RB_1LD0RB_1LE---_1RF1LA_0LC0LE`
   - `1RB1RF_1LC0RA_---0LD_0LE0LB_1RF1RB_1RE1LF`
+- **Equivalences of the new machines:** nos. 109–112 share no table with any of the 112 candidates (up to renaming and mirroring), and none differs from another candidate in only one or two transitions (`groups.py` on `candidates_112.txt`).
 - **New:** the remaining four are still holdouts and become **nos. 109–112**. In the BB6 sheet they are not classified as Bell-like, so they were not among nos. 57–108.
 
 <a id="109"></a>
