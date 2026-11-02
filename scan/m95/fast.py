@@ -4,9 +4,10 @@
 repeating event cycles (same run signature, constant count differences over two periods).
 Usage: fast.py TM maxevents [T] """
 import sys
-import os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, '/tmp/claude-0/-home-claude/67237a5a-00c9-59c6-8915-11e66e9078ee/scratchpad/m95')
 from chain import Sim, Side
 
+REPORT_STATE = 0
 PER = (1, 2, 3, 4, 7, 14)
 
 def compress(s):
@@ -89,7 +90,7 @@ def run(M, maxev, T=9, report=None, verbose=False):
             out = canon_right(S, T, side)
             ev += 1
             sg = (d, S.s, sig(out, T)); cnt = [c for w, c in out if c >= T]
-            if report and d == -1 and S.s == 0: report(S, out)
+            if report and d == -1 and S.s == REPORT_STATE: report(S, out)
             hist.append((sg, cnt, S.steps))
             if len(hist) > 160: hist.pop(0)
             for p in range(1, 61):

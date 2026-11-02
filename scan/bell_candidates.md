@@ -174,7 +174,7 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [36](#36) | B | `1RB1LC_1LC0RD`<br>`0LE1LA_---1RA`<br>`1RF0LA_0RF0RB` | 1.56 | needle-like: only 1 tail (all information in one number) | 783 | Quadratic Mess |   |   |   |
 | [37](#37) | B | `1RB1RF_1RC0RB`<br>`0RD1LF_1LE1RE`<br>`1LA---_1RA0LC` | 1.26 | multi-register system; no HALT up to 10²² steps; low halting rate; **equivalent to [11](#11)** | 729 | Cubic Mess |   |   |   |
 | [38](#38) | C | `1RB0RE_1LC0RA`<br>`0LD0LB_1RE0LB`<br>`1RF---_0RB0RC` | 1.55 | growing list of blocks (nested); no HALT up to 4·10³³ steps | 973 | Chaotic Bell Class 2 |   |   |   |
-| [39](#39) | C | `1RB1LC_1LC0RF`<br>`0LF1LD_0LE---`<br>`1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number) | 1122 | Bell-like |   |   |   |
+| [39](#39) | C | `1RB1LC_1LC0RF`<br>`0LF1LD_0LE---`<br>`1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number); **analysed** (2 Nov 2026): list of counters, exact Bell map without tail, 128 Bells (3·10⁴⁸ steps) without HALT, see below | 1122 | Bell-like |   |   |   |
 | [40](#40) | C | `1RB0RD_0RC1RE`<br>`1RD0LA_1LE1LC`<br>`1RF0LD_---0RA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | 1.48 | no clear single-block Bell configuration found; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1060 | **CRYPTID**<br>Bell-like | Lucy's Moonlight. Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | Racheline, Shawn Ligocki |
 | [41](#41) | C | `1RB1LD_1RC0RA`<br>`1LA1RE_0LA0LB`<br>`0RB1RF_---1RD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD) | 1.40 | needle-like: only 1 tail (all information in one number) | 755 | Quadratic Mess | Part of Category 1 |   |   |
 | [42](#42) | C | `1RB0RF_1LC0RA`<br>`1LD1LB_0LE---`<br>`1LA0LA_1RE1LD` | 1.42 | needle-like: only 1 tail (all information in one number) | 761 | Quadratic Mess |   |   |   |
@@ -946,6 +946,52 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 - diagram: 10,129 steps, tape width 136 cells
 
 <img src="diagrams/1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA.png" alt="space-time diagram" height="350">
+
+### No. 39: detailed analysis (2 Nov 2026)
+
+**Bell start** (from Bell 3,923 on): head on the blank cell at the left end, state C:
+
+    [0]  P  1^N  T            P = "" (type A) or "10" (type B),  T = tail
+
+- **T = tail:** empty, or `011`, or a list of further blocks `0 1^m1 0 1^m2 … 011`.
+- **What a Bell does:** each pair of passes turns the left end of the block 1^N into `(011)^k`. The block loses 4 ones per pair of passes, k grows by 2. At the right end the whole `(011)^k` is turned into ones again, and the next Bell begins with a block of about 1.5·N ones.
+- **Tape width:** w' = (3w + c)/2 with a small c.
+
+**Exact Bell map without tail counters** (checked with `m39/step.c`, `m39/table.py`; N' = (3N + d)/2):
+
+| P, T | N ≡ 0 (mod 4) | N ≡ 1 | N ≡ 2 | N ≡ 3 |
+|---|---|---|---|---|
+| "", – | P' = "", T' = –, d = 8 | "10", `011`, 1 | "10", –, 4 | "", `011`, 5 |
+| "10", – | "", –, 14 | "10", `011`, 7 | "10", –, 10 | "", `011`, 11 |
+| "", `011` | "", –, 14 | "", `0 1^8 011`, −1 | "10", –, 10 | "10", `0 1^8 011`, −5 |
+| "10", `011` | "", –, 20 | "", `0 1^8 011`, 5 | "10", –, 16 | "10", `0 1^8 011`, 1 |
+
+Example: N = 88 → 136 → 208 → 316 → 478 (d = 8, N ≡ 0 or 2); 478 ≡ 2 → P' = "10", N' = (1434 + 4)/2 = 719; 719 ≡ 3 → (2157 + 11)/2 = 1084 with T' = `011`, and so on.
+
+**Tail counters.** A tail `0 1^m 011` is a second counter.
+- **N ≡ 0, 2 (mod 4):** it is absorbed into the main block.
+- **N ≡ 1, 3:** it survives and is transformed, m → m'. The transformation is irregular: m = 8 → 26 → 359 → … (tested with N large: m = 2 → 35, 11 → 89, 14 → 62, 20 → 53, 26 → 359, 35 → 1088). Sometimes it splits into two blocks.
+- **Structure:** the machine is a list of counters (similar to nos. 31 and 95). The main block grows by about 1.5 per Bell; a surviving tail counter grows by about 3.4.
+
+**Order of the Bell types** (letter = prefix; digit = tail: 0 none, 1 only `011`, 2 or 3 = number of blocks including `011`), first 128 Bells from N = 88:
+
+    A0 A0 A0 A0 A0 B0 A1 A0 B1 B0 A1 B0 A0 B1 B0 B1 B2 A2 B2 B2
+    A0 B1 B0 A1 B0 B0 B0 B0 A0 A1 B2 A0 B1 A0 B0 A1 A0 B1 B0 A1
+    A0 B1 A0 B0 B1 A2 A0 A0 B0 B1 B2 A2 A2 A2 A0 B0 B1 A2 A0 B0
+    A1 B0 B0 B0 B0 A0 A1 A2 B2 B2 A2 A2 B0 A1 A0 A1 A2 B2 B2 B2
+    A0 A1 B2 A0 A1 A2 B2 A2 B2 B2 A0 A1 A2 A2 B0 B1 A2 A0 A0 B0
+    B1 A2 A0 B0 B1 A2 B0 A1 B0 B0 B0 B0 A0 B1 B0 A1 A0 A1 A2 B2
+    B2 A2 B2 B2 A2 A2 A2 B3
+
+- **Frequencies:** A0 28, A1 16, A2 22, B0 29, B1 14, B2 18, B3 1 (the last one: three blocks at Bell 128).
+- **No fixed period**, because the types depend on N mod 4 and on the tail.
+- **Counters live longer later on:** at Bells 121–127 a tail counter survives seven Bells in a row (m = 359, 1232, 2780, 6263, 21158, 71423, 241073). With N ≈ 1.5·10²⁴ it is still tiny compared with N.
+
+<p align="center"><img src="diagrams/m39_bells.png" alt="no. 39: main block and tail counters" width="740"></p>
+
+**Fast simulation:** `m39/run39.py`, with the chain, backsymbol and extrapolation simulator of no. 95. It reaches **Bell 128 at about 3·10⁴⁸ steps** (N ≈ 2.2·10²⁴) in 100 seconds, with no HALT. The Bell starts agree exactly with direct simulation up to 2.4·10⁹ steps (21 Bells). The data are in `m39/bells39.txt`.
+
+**HALT:** only through D1 (`---`). No condition for it has been derived yet. Presumably it needs a tail counter that grows to the size of the main block, or a special configuration at the boundary between them.
 
 <a id="40"></a>
 ## 40. `1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA` (class C)
