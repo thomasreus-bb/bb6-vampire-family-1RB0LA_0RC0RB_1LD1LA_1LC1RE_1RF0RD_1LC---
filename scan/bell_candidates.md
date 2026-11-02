@@ -9,7 +9,7 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
   - **no. 8** (`1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC`): halt found with the vampire method; the formal Coq/Rocq proof (busycoq PR #41) has been accepted;
   - **no. 11** (`1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE`). removed from the list because it is equivalent to **no. 37**
 
-  All other candidates (nos. 1–56 and 57–108) are still holdouts. No. 8 is decided; no. 11 is represented by no. 37.
+  All other candidates (nos. 1–56 and 57–108) are still holdouts. No. 8 is decided; no. 11 is equivalent to no. 37.
 - **BusyBeaverWiki (26 Oct 2026)**: **14 of the 56 candidates have their own article on the [BusyBeaverWiki](https://wiki.bbchallenge.org/wiki/Category:Individual_machines)** (marked **wiki** in the table and linked in the section): nos. 10, 13, 14, 15, 24, 28, 33, 34, 40, 41, 49, 50, 55, 56. Three of them are cryptids: no. 15, no. 33 ("Space Needle") and no. 40 ("Lucy's Moonlight"). No. 24 is listed as chaotic but not a cryptid. Checked against the 119 pages of the wiki category *Individual machines* and the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page; machines with an article outside that category, or under an equivalent form of the code, would be missed.
 - **Related machines among the candidates (29 Oct 2026).** Tools: `scan/groups.py` (transition tables compared up to renaming of the states and mirroring), `scan/meet.c` and `scan/pairs.py` (do two runs reach the same configuration?).
   - *Same table, different start state.* 9 groups have exactly the same transition table up to renaming and mirroring; they differ only in the start state:
