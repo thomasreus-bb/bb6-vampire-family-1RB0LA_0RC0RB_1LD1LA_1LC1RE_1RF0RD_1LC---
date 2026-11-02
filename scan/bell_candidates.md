@@ -7,7 +7,7 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
 - **Holdout status (24 Oct 2026)**: compared with the current list of 623 BB(6) holdouts (`holdouts_623.txt`). 40 machines of the old list of 663 have been decided since (`decided_663_to_623.txt`); **none of them is among the 56 candidates**. All 56 candidates, including TM1, TM2 and the halting machine `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC`, are still in the holdout list.
 - **Holdout status (30 Oct 2026)**: compared with the new list of 608 holdouts (`holdouts_608.txt`). 15 machines have been decided or proved to be equivalent since the list of 623 (`decided_623_to_608.txt`). Two of them are candidates:
   - **no. 8** (`1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC`): halt found with the vampire method; the formal Coq/Rocq proof (busycoq PR #41) has been accepted;
-  - **no. 11** (`1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE`). It is **not decided**: it was removed from the list because it is equivalent to **no. 37**, whose run reaches the same configuration (see "Related machines" below). No. 37 stays in the list as the representative of both.
+  - **no. 11** (`1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE`). removed from the list because it is equivalent to **no. 37**
 
   All other candidates (nos. 1–56 and 57–108) are still holdouts. No. 8 is decided; no. 11 is represented by no. 37.
 - **BusyBeaverWiki (26 Oct 2026)**: **14 of the 56 candidates have their own article on the [BusyBeaverWiki](https://wiki.bbchallenge.org/wiki/Category:Individual_machines)** (marked **wiki** in the table and linked in the section): nos. 10, 13, 14, 15, 24, 28, 33, 34, 40, 41, 49, 50, 55, 56. Three of them are cryptids: no. 15, no. 33 ("Space Needle") and no. 40 ("Lucy's Moonlight"). No. 24 is listed as chaotic but not a cryptid. Checked against the 119 pages of the wiki category *Individual machines* and the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page; machines with an article outside that category, or under an equivalent form of the code, would be missed.
@@ -440,7 +440,7 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 
 <a id="11"></a>
 ## 11. `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` (class B)
-- **Equivalent to [no. 37](#37)** (mirrored, renamed, different start state; the runs reach the same configuration). Removed from the BB(6) holdout list on 30 Oct 2026 because of this equivalence, not decided. All information is collected under no. 37.
+- **Equivalent to [no. 37](#37)**  Removed from the BB(6) holdout list on 30 Oct 2026 because of this equivalence. All information is collected under no. 37.
 
 <a id="12"></a>
 ## 12. `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` (class B)
