@@ -1010,6 +1010,14 @@ Example: N = 88 → 136 → 208 → 316 → 478 (d = 8, N ≡ 0 or 2); 478 ≡ 2
   - no HALT in any of these 1200 Bells.
 - **Consequence:** a HALT of no. 39 needs a level beyond 400. That needs more than 400 odd N in a row, probability about 2^−400 per Bell. So the machine **very probably does not halt** (probviously non-halting). This is not a proof: deeper levels and the regime m ≈ N have not been covered.
 
+**Towards a proof (2 Nov 2026, not successful).**
+- **Local HALT condition:** C reads a 1 (writes 1, moves left, goes to D), and the cell to the left is also 1. In all observed configurations C reads a 1 only when there is a 0 to its left.
+- **Inner process of the tail** (end phase of a large Bell, observed with N = 4001 and 8001): the converted main block, `(100)^K`, `(010)^K` or `(001)^K`, serves as a reservoir. The tail block 1^m is converted and rebuilt several times in small Bells of its own. Each small Bell uses about m/6 units of the reservoir.
+  - Example m = 26: the small Bells go 26 → 45 → 69 → 105 → 159 → 240, then the tail is rebuilt to 359.
+  - Inside the run m → (3m + 3)/2 holds (45 → 69 → 105 → 159 → 240). With y = m + 3 this is y → 3y/2, and the run continues while y is even. So the number j of small Bells is essentially the number of factors 2 in y: a Collatz-type map, as for Antihydra.
+- **When m is large compared with N** (m + 3 = 2^k·3 with small N), the tail is absorbed into the main block instead; no HALT occurred in these tests either.
+- **What a proof would need:** that along the chain the configuration "C reads 1 with a 1 to its left" never occurs, for every level, i.e. a statement about the iteration y → 3y/2 together with the entry and exit rules of the small runs. Statements of this kind (compare Antihydra) are at present out of reach, so the computations above (level 400, 2^−400) are evidence, not a proof.
+
 The first 100 Bell starts `[0] P 1^N T` are listed in [`m39/bells_100.md`](m39/bells_100.md).
 
 **Fast simulation:** `m39/run39.py`, with the chain, backsymbol and extrapolation simulator of no. 95. It reaches **Bell 128 at about 3·10⁴⁸ steps** (N ≈ 2.2·10²⁴) in 100 seconds, with no HALT. The Bell starts agree exactly with direct simulation up to 2.4·10⁹ steps (21 Bells). The data are in `m39/bells39.txt`.
