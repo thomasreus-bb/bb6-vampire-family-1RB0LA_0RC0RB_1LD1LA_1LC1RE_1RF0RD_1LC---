@@ -989,6 +989,16 @@ Example: N = 88 → 136 → 208 → 316 → 478 (d = 8, N ≡ 0 or 2); 478 ≡ 2
 
 <p align="center"><img src="diagrams/m39_bells.png" alt="no. 39: main block and tail counters" width="740"></p>
 
+**When does the tail go up, vanish or restart?** All 127 transitions of the first 128 Bells follow one rule, and only the parity of N matters:
+- **N odd (N ≡ 1, 3 mod 4): one level up.** Empty tail → `011` → `0 1^8 011` → m = 26 → 359 → 1232 → 2780 → 6263 → 21158 → 71423 → 241073 → (1220465 + a new 8) → 4119110 → 13902011 …
+  - This chain is fixed: the next level does not depend on N or P (checked with very large N).
+  - Each step multiplies m by 1.5^j (j = 2, 3 or 4): the tail runs j small Bells of its own during one large Bell.
+- **N even (N ≡ 0, 2 mod 4): the tail is absorbed into the main block.**
+  - If m is even (or the tail is only `011`), the tail becomes empty.
+  - If m is odd, a new counter starts at m = 8; this was observed after m = 359, and with large N it holds for every odd m tested (1 … 39).
+- **The tail never goes down part of the way.** It either climbs one level or starts again from the bottom.
+- **Consequence:** for the tail to reach level k, about k odd values of N in a row are needed, roughly probability 2^−k. A HALT can come only from the chain itself.
+
 The first 100 Bell starts `[0] P 1^N T` are listed in [`m39/bells_100.md`](m39/bells_100.md).
 
 **Fast simulation:** `m39/run39.py`, with the chain, backsymbol and extrapolation simulator of no. 95. It reaches **Bell 128 at about 3·10⁴⁸ steps** (N ≈ 2.2·10²⁴) in 100 seconds, with no HALT. The Bell starts agree exactly with direct simulation up to 2.4·10⁹ steps (21 Bells). The data are in `m39/bells39.txt`.
