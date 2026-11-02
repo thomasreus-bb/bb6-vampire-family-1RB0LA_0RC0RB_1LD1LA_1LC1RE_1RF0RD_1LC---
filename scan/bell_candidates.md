@@ -174,7 +174,7 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [36](#36) | B | `1RB1LC_1LC0RD`<br>`0LE1LA_---1RA`<br>`1RF0LA_0RF0RB` | 1.56 | needle-like: only 1 tail (all information in one number) | 783 | Quadratic Mess |   |   |   |
 | [37](#37) | B | `1RB1RF_1RC0RB`<br>`0RD1LF_1LE1RE`<br>`1LA---_1RA0LC` | 1.26 | multi-register system; no HALT up to 10²² steps; low halting rate; **equivalent to [11](#11)** | 729 | Cubic Mess |   |   |   |
 | [38](#38) | C | `1RB0RE_1LC0RA`<br>`0LD0LB_1RE0LB`<br>`1RF---_0RB0RC` | 1.55 | growing list of blocks (nested); no HALT up to 4·10³³ steps | 973 | Chaotic Bell Class 2 |   |   |   |
-| [39](#39) | C | `1RB1LC_1LC0RF`<br>`0LF1LD_0LE---`<br>`1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number); **analysed** (2 Nov 2026): list of counters, exact Bell map without tail, 128 Bells (3·10⁴⁸ steps) without HALT, see below | 1122 | Bell-like |   |   |   |
+| [39](#39) | C | `1RB1LC_1LC0RF`<br>`0LF1LD_0LE---`<br>`1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number); **analysed** (2 Nov 2026): main block plus a tail counter that follows one fixed chain; no HALT on the chain up to level 400, so very probably non-halting; see below | 1122 | Bell-like |   |   |   |
 | [40](#40) | C | `1RB0RD_0RC1RE`<br>`1RD0LA_1LE1LC`<br>`1RF0LD_---0RA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | 1.48 | no clear single-block Bell configuration found; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1060 | **CRYPTID**<br>Bell-like | Lucy's Moonlight. Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | Racheline, Shawn Ligocki |
 | [41](#41) | C | `1RB1LD_1RC0RA`<br>`1LA1RE_0LA0LB`<br>`0RB1RF_---1RD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD) | 1.40 | needle-like: only 1 tail (all information in one number) | 755 | Quadratic Mess | Part of Category 1 |   |   |
 | [42](#42) | C | `1RB0RF_1LC0RA`<br>`1LD1LB_0LE---`<br>`1LA0LA_1RE1LD` | 1.42 | needle-like: only 1 tail (all information in one number) | 761 | Quadratic Mess |   |   |   |
@@ -998,6 +998,17 @@ Example: N = 88 → 136 → 208 → 316 → 478 (d = 8, N ≡ 0 or 2); 478 ≡ 2
   - If m is odd, a new counter starts at m = 8; this was observed after m = 359, and with large N it holds for every odd m tested (1 … 39).
 - **The tail never goes down part of the way.** It either climbs one level or starts again from the bottom.
 - **Consequence:** for the tail to reach level k, about k odd values of N in a row are needed, roughly probability 2^−k. A HALT can come only from the chain itself.
+
+**The chain computed to level 400** (2 Nov 2026; `m39/chainrun.py`, result in `m39/chain_400.txt`). Each level is one large Bell with a huge N (N ≈ 10^(digits of m + 25), odd) and only the tail.
+- **Simulator:** a variant of the fast simulator also canonicalizes and extrapolates at every turn of the head, not only at the tape ends. With it, the small inner Bells of the tail are skipped as well, and all 400 levels take a few seconds. Up to level 9 the result is identical, step count included, to the earlier simulator.
+- **Result:** **no HALT up to level 400.** The tail grows to m ≈ 1.6·10²⁷⁶.
+  - Per level m is multiplied by exactly 1.5^j: j = 2 (90 times), 3 (118), 4 (95), 5 (34), 6 (21), 7 (9), 8 (15), 9 (8), 10 (2), 11 (3), 12 (1) and 22 (1).
+  - 28 times an extra small counter 8 is split off; it is absorbed again at the next level.
+- **Check** (`m39/check.py`, levels 0–149, each with P = "" and "10" and all four N mod 4):
+  - N odd always gives the same next level;
+  - N even gives an empty tail, 8 or 26, i.e. a restart near the bottom;
+  - no HALT in any of these 1200 Bells.
+- **Consequence:** a HALT of no. 39 needs a level beyond 400. That needs more than 400 odd N in a row, probability about 2^−400 per Bell. So the machine **very probably does not halt** (probviously non-halting). This is not a proof: deeper levels and the regime m ≈ N have not been covered.
 
 The first 100 Bell starts `[0] P 1^N T` are listed in [`m39/bells_100.md`](m39/bells_100.md).
 

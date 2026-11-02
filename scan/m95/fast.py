@@ -77,8 +77,8 @@ def canon_right(S, T, side=1):
 def sig(out, T):
     return tuple((w, c if c < T else None) for w, c in out)
 
-def run(M, maxev, T=9, report=None, verbose=False):
-    S = Sim(M)
+def run(M, maxev, T=9, report=None, verbose=False, S0=None):
+    S = S0 if S0 is not None else Sim(M)
     hist = []   # (signature, counts, steps)
     ev = 0
     while ev < maxev and not S.halted:
@@ -121,3 +121,47 @@ if __name__ == '__main__':
         pass
     S = run(M, N, T, verbose=True)
     print(S.steps, S.halted)
+
+def run2(M, maxev, T=9, report=None, verbose=False, S0=None, every=1):
+    """like run, but events at every turn of the head (both sides canonicalized);
+    report(S) is called at left-end events in state REPORT_STATE as in run()."""
+    S = S0 if S0 is not None else Sim(M)
+    hist = []; ev = 0; lastd = S.d; turns = 0
+    while ev < maxev and not S.halted:
+        S.step()
+        d = S.d
+        E = S.side[d]
+        atend = (not E.runs and '1' not in E.buf)
+        if d == lastd and not atend: continue
+        lastd = d
+        if atend: E.buf = ''
+        turns += 1
+        if not atend and turns % every: continue
+        outL = canon_right(S, T, -1); outR = canon_right(S, T, 1)
+        ev += 1
+        if report and atend and d == -1 and S.s == REPORT_STATE: report(S, outR)
+        sg = (d, S.s, sig(outL, T), sig(outR, T))
+        cnt = [c for w, c in outL if c >= T] + [c for w, c in outR if c >= T]
+        hist.append((sg, cnt, S.steps))
+        if len(hist) > 200: hist.pop(0)
+        for p in range(1, 81):
+            if len(hist) < 2*p+1: break
+            s0, c0, t0 = hist[-1-2*p]; s1, c1, t1 = hist[-1-p]; s2, c2, t2 = hist[-1]
+            if not (s0 == s1 == s2): continue
+            d1 = [b-a for a, b in zip(c0, c1)]; d2 = [b-a for a, b in zip(c1, c2)]
+            if d1 != d2 or not any(d1): continue
+            n = None
+            for c, dl in zip(c2, d2):
+                if dl < 0:
+                    k = (c - T - 2*(-dl)) // (-dl)
+                    n = k if n is None else min(n, k)
+            if n is None or n < 2: continue
+            e1 = t1 - t0; e2 = t2 - t1; dd = e2 - e1
+            S.steps += n*e2 + dd*n*(n+1)//2
+            big = [x for x in reversed(S.side[-1].runs) if x[1] >= T] + [x for x in reversed(S.side[1].runs) if x[1] >= T]
+            for x, dl in zip(big, d2): x[1] += n*dl
+            ev += n*p
+            hist.clear()
+            if verbose: print('  extrapolated', n, 'periods of', p, file=sys.stderr)
+            break
+    return S
