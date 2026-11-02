@@ -1046,6 +1046,49 @@ The first 100 Bell starts `[0] P 1^N T` are listed in [`m39/bells_100.md`](m39/b
 
 <img src="diagrams/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD.png" alt="space-time diagram" height="350">
 
+### No. 41: AB analysis (2 Nov 2026)
+
+The space-time diagram shows two alternating phases: a large curved phase **A** and a short dark block phase **B**. Both have exact rules. One cycle runs from one Bell to the next; a Bell is the right-record event `1 (10)^n [0]` in state A.
+
+**Phase B (turnover + doubling cascade + bounces).**
+1. Turnover: the head sweeps once to the left and turns the whole tape into a solid block of ones: `1 (10)^n [0]` → `[0] 010 1^(2n+1)` (the dark block).
+2. Doubling cascade: at the left end, in state A, the tape is `[0] (01)^x 1^y`. Each sweep doubles the `01` region and eats ones:
+   (x, y) → (2x + 3, y − 2x − 4), starting from x₀ = 7, y₀ = 2n − 8.
+   So x_k = 10·2^k − 3 (7, 17, 37, 77, 157, 317, 637, …) and y_k = 2n + 12 + 2k − 20·2^k. There are about log₂(n/10) doublings.
+3. Bounces: when the ones run out (y_k < 2x_k + 4), the sweep reaches the right end (`(1)^a 0 (01)^b 0 [0]`) and the process runs back from the right. This repeats 0 to 14 times (a ping-pong between the two ends) until the configuration `[0] (01)^x 1^y` in state **B** is reached.
+
+**Phase A (linear phase, the curved part).** Each sweep turns one `1` into `01 01`:
+(x, y) → (x + 2, y − 1), in state B, for exactly y sweeps, until `[0] (01)^(x+2y)`. The next sweep to the right gives the next Bell with
+**n' = x + 2y + 1**.
+Phase A has y sweeps over a tape of width ≈ 2n, so it takes ≈ n² steps. This makes it the large curved part of the diagram.
+
+**Bell sequence** (checked against direct simulation up to 6·10⁹ steps, 9 Bells; then run with the fast simulator `scan/m95/fast.py run2` up to 8·10⁵⁹ steps, 70 Bells, no HALT; script `scan/m41/run41.py`, parser `scan/m41/cycles41.py`, all 70 cycles in `scan/m41/cycles_70.txt`):
+
+| Bell | n | doublings | bounces | phase A start (x, y) | next n = x+2y+1 | ratio |
+|---:|---:|---:|---:|---|---:|---:|
+| 1 | 8 | 0 | 0 | (15, 6) | 28 | 3.5000 |
+| 2 | 28 | 1 | 0 | (15, 38) | 92 | 3.2857 |
+| 3 | 92 | 3 | 2 | (39, 130) | 300 | 3.2609 |
+| 4 | 300 | 4 | 0 | (35, 548) | 1132 | 3.7733 |
+| 5 | 1132 | 6 | 0 | (539, 1208) | 2956 | 2.6113 |
+| 6 | 2956 | 8 | 1 | (1275, 3392) | 8060 | 2.7267 |
+| 7 | 8060 | 9 | 1 | (4911, 6338) | 17588 | 2.1821 |
+| 8 | 17588 | 10 | 0 | (11499, 12208) | 35916 | 2.0421 |
+| 9 | 35916 | 11 | 0 | (20103, 31658) | 83420 | 2.3226 |
+| 10 | 83420 | 13 | 4 | (55467, 55952) | 167372 | 2.0064 |
+| 11 | 167372 | 14 | 4 | (87955, 158888) | 405732 | 2.4241 |
+| 12 | 405732 | 15 | 6 | (215623, 380286) | 976196 | 2.4060 |
+| 13 | 976196 | 16 | 2 | (496723, 959008) | 2414740 | 2.4736 |
+| 14 | 2414740 | 17 | 0 | (826703, 3176118) | 7178940 | 2.9730 |
+| 15 | 7178940 | 19 | 4 | (3080987, 8195992) | 19472972 | 2.7125 |
+| 16 | 19472972 | 20 | 0 | (5994083, 26957828) | 59909740 | 3.0766 |
+
+Over the 70 cycles the ratio n'/n is irregular, between 1.15 and 3.95, with geometric mean 2.59. The number of bounces is 0 in 28 cycles and at most 14. The cascade and phase A are exact and regular; all the irregularity sits in the bounce phase, which acts like a pseudo-random map from (n, remainder) to the start (x, y) of phase A. The Bell sequence starts 8, 28, 92, 300, 1132, 2956, 8060, 17588, 35916, 83420, … (the old level list 9 49 177 593 2257 … is 2n − 7).
+
+**HALT condition.** The only undefined transition is F0. F is reached only through E1 (`1RF`), and E only through C1 (`1RE`). So the machine halts exactly when state E reads a 1 whose right neighbour is 0. In the first 2.5·10⁶ steps, E reads a 1 with a 0 to its right only at steps 12 and 340 (start-up); after that E-on-1 always has another 1 to its right. A HALT would therefore need a bounce configuration that does not occur in these 70 cycles.
+
+**Verdict:** a Bell machine with an exact two-phase cycle (A linear, B doubling + bounces). The map n → n' is not closed, because of the bounce phase, so the vampire method does not apply directly. A non-halting proof would need a rule for the bounces (or an invariant that excludes "E on 1, then 0").
+
 <a id="42"></a>
 ## 42. `1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD` (class C)
 
