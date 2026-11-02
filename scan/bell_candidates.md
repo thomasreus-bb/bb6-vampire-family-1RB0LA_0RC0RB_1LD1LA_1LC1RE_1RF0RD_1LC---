@@ -16,7 +16,6 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
 
     | group | what is known |
     |---|---|
-    | 11, 37 | **equivalent**: the runs reach the same configuration (no. 11 at step 8,277,490, no. 37 at step 7,454,917), so one halts iff the other does |
     | 1, 2, 5 | vampire family: TM1-F, TM1, TM2a (core with F0 = `1LA`); three different orbits (O2, O1, O3) |
     | 3, 7 | vampire family: TM2, TM2b' (F0 = `1LC`); orbits O2 and O4 |
     | 4, 6 | vampire family: TM2', TM2b (F0 = `1RB`); orbits O2 and O4 |
