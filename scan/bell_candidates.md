@@ -7,9 +7,9 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
 - **Holdout status (24 Oct 2026)**: compared with the current list of 623 BB(6) holdouts (`holdouts_623.txt`). 40 machines of the old list of 663 have been decided since (`decided_663_to_623.txt`); **none of them is among the 56 candidates**. All 56 candidates, including TM1, TM2 and the halting machine `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC`, are still in the holdout list.
 - **Holdout status (30 Oct 2026)**: compared with the new list of 608 holdouts (`holdouts_608.txt`). 15 machines have been decided since the list of 623 (`decided_623_to_608.txt`). Two of them are candidates:
   - **no. 8** (`1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC`): halt found with the vampire method; the formal Coq/Rocq proof (busycoq PR #41) has been accepted;
-  - **no. 11** (`1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE`). Its partner **no. 37** is still in the list, although the two runs reach the same configuration (see "Related machines" below), so no. 37 has the same status as no. 11.
+  - **no. 11** (`1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE`). It is **not decided**: it was removed from the list because it is equivalent to **no. 37**, whose run reaches the same configuration (see "Related machines" below). No. 37 stays in the list as the representative of both.
 
-  All other candidates (nos. 1–56 and 57–108) are still holdouts.
+  All other candidates (nos. 1–56 and 57–108) are still holdouts. No. 8 is decided; no. 11 is represented by no. 37.
 - **BusyBeaverWiki (26 Oct 2026)**: **14 of the 56 candidates have their own article on the [BusyBeaverWiki](https://wiki.bbchallenge.org/wiki/Category:Individual_machines)** (marked **wiki** in the table and linked in the section): nos. 10, 13, 14, 15, 24, 28, 33, 34, 40, 41, 49, 50, 55, 56. Three of them are cryptids: no. 15, no. 33 ("Space Needle") and no. 40 ("Lucy's Moonlight"). No. 24 is listed as chaotic but not a cryptid. Checked against the 119 pages of the wiki category *Individual machines* and the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page; machines with an article outside that category, or under an equivalent form of the code, would be missed.
 - **Related machines among the candidates (29 Oct 2026).** Tools: `scan/groups.py` (transition tables compared up to renaming of the states and mirroring), `scan/meet.c` and `scan/pairs.py` (do two runs reach the same configuration?).
   - *Same table, different start state.* 9 groups have exactly the same transition table up to renaming and mirroring; they differ only in the start state:
@@ -147,7 +147,7 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [8](#8) | B | `1RB0RB_1LC1RF`<br>`0RD0LB_0RA1LE`<br>`1LD---_0RB0RC` | 1.33 | **halts**, formal proof accepted, no longer a holdout (vampire method, [halt-found repository](https://github.com/thomasreus-bb/halt-found-1rb0rb_1lc1rf_0rd0lb_0ra1le_1ld---_0rb0rc)) | 1078 | Bell-like |   | [1](https://discord.com/channels/960643023006490684/960643023530762341/1309905887451938927) | Racheline |
 | [9](#9) | B | `1RB0RB_1LB0LC`<br>`1RD1LC_1RE0RA`<br>`0RF1RA_---1LB` | 1.33 | needle-like: only 2 tails (all information in one number) | 756 | Quadratic Mess | Part of Category 1 |   |   |
 | [10](#10) | B | `1RB---_0RC0RD`<br>`1LD1RB_0LE0LC`<br>`1RA0LF_1LD1LE`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE) | 1.24 | two-register system, exact Bell map with types A/B/C; no HALT in 10¹⁰ Bells (about 2·10³⁰ steps); HALT needs an exact hit (see [10](#10)) | 688 | Cubic Mess | Part of Category 1 |   |   |
-| [11](#11) | B | `1RB1LB_1RC---`<br>`1LD1LF_1LE0LD`<br>`0LA1RF_1LC0RE` | 1.21 | multi-register system; no HALT up to 10²² steps; low halting rate; **equivalent to [37](#37)** (mirrored, renamed); **decided**: no longer in the holdout list of 30 Oct 2026 | 703 | Cubic Mess |   |   |   |
+| [11](#11) | B | `1RB1LB_1RC---`<br>`1LD1LF_1LE0LD`<br>`0LA1RF_1LC0RE` | 1.21 | **equivalent to [37](#37)** (mirrored, renamed); removed from the holdout list (30 Oct 2026) because of this equivalence, not decided; all information under no. 37 | 703 | Cubic Mess |   |   |   |
 | [12](#12) | B | `1RB1RA_1LC1LB`<br>`1RE0LD_1RA0LB`<br>`---0RF_1RC0RA` | 1.27 | no clear single-block Bell configuration found | 731 | Cubic Mess |   |   |   |
 | [13](#13) | B | `1RB0RF_1RC1RF`<br>`1LD0LE_---1LC`<br>`1RA1LE_1LC1RB`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB) | 1.33 | needle-like: only 2 tails (all information in one number) | 754 | Quadratic Mess | Part of Category 1 | [1](https://discord.com/channels/960643023006490684/1448375857046360094/1491403477421785158) | sheep |
 | [14](#14) | B | `1RB0LF_1LC1RA`<br>`0RE0RD_---1LE`<br>`1LF1RC_1LC1LA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA) | 1.21 | needle: exact Collatz-like map on (m, r), HALT only if a cycle ends with m = 2^k − k − 1; very probably non-halting (see [14](#14)) | 797 | Quadratic Mess |   |   |   |
@@ -173,7 +173,7 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [34](#34) | B | `1RB1RC_1LC1LC`<br>`1RE0LD_1LB1RF`<br>`---1RA_0RD1RD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD) | 1.34 | no clear single-block Bell configuration found | 792 | Quadratic Mess |   |   |   |
 | [35](#35) | B | `1RB---_0RC0LD`<br>`1LB1RC_0LE0LF`<br>`1RD1LE_1RF1RA` | 1.25 | register system; no HALT up to 5·10¹⁶ steps | 697 | Cubic Mess |   |   |   |
 | [36](#36) | B | `1RB1LC_1LC0RD`<br>`0LE1LA_---1RA`<br>`1RF0LA_0RF0RB` | 1.56 | needle-like: only 1 tail (all information in one number) | 783 | Quadratic Mess |   |   |   |
-| [37](#37) | B | `1RB1RF_1RC0RB`<br>`0RD1LF_1LE1RE`<br>`1LA---_1RA0LC` | 1.26 | no clear single-block Bell configuration found; **equivalent to [11](#11)** (mirrored, renamed); still in the holdout list of 30 Oct 2026, although no. 11 is decided | 729 | Cubic Mess |   |   |   |
+| [37](#37) | B | `1RB1RF_1RC0RB`<br>`0RD1LF_1LE1RE`<br>`1LA---_1RA0LC` | 1.26 | multi-register system; no HALT up to 10²² steps; low halting rate; **equivalent to [11](#11)** (mirrored, renamed); holdout, representative of both (no. 11 was removed from the list because of the equivalence) | 729 | Cubic Mess |   |   |   |
 | [38](#38) | C | `1RB0RE_1LC0RA`<br>`0LD0LB_1RE0LB`<br>`1RF---_0RB0RC` | 1.55 | growing list of blocks (nested); no HALT up to 4·10³³ steps | 973 | Chaotic Bell Class 2 |   |   |   |
 | [39](#39) | C | `1RB1LC_1LC0RF`<br>`0LF1LD_0LE---`<br>`1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number) | 1122 | Bell-like |   |   |   |
 | [40](#40) | C | `1RB0RD_0RC1RE`<br>`1RD0LA_1LE1LC`<br>`1RF0LD_---0RA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | 1.48 | no clear single-block Bell configuration found; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1060 | **CRYPTID**<br>Bell-like | Lucy's Moonlight. Part of Category 1 | [1](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | Racheline, Shawn Ligocki |
@@ -441,19 +441,7 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 
 <a id="11"></a>
 ## 11. `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` (class B)
-- **Equivalent to no. 37** (checked 29 Oct 2026, observation by post-apocalyptic sphere on Discord; `scan/iso_11_37.py`).
-  - **Same transition table.** No. 37 is this machine **mirrored**, with the states renamed: A→D, B→E, C→A, D→B, E→C, F→F. All 12 transitions agree under this map, with left and right swapped. Only the start state differs: no. 37 starts in the state that is C here.
-  - **Same configuration.** After 8,277,490 steps of no. 11 and 7,454,917 steps of no. 37 the tapes are identical up to mirroring: 1674 cells, the head at the same position, state D here and B there (B = image of D).
-  - **Conclusion.** From these steps on, the two runs correspond step by step, and neither machine halted before. So **no. 11 halts if and only if no. 37 halts**.
-
-- scan: 20 levels, 95 phases, mean factor 1.21 (sd 0.10); level starts: 83 107 129 157 171 196 242 274 345 420 620 684 745 799
-- level analysis: Bell type `LC` with left part `01`, 16 levels; n: 5 12 18 48 96 110 200 232 376 478 702 794 968 1512 1832 3912; ratios: 1.146 1.818 1.160 1.621 1.271 1.469 1.131 1.219 1.562 1.212 2.135; 13 different tails
-- verdict: 13 different tails, but the growth ratio varies
-- diagram: 202,912 steps, tape width 407 cells
-
-- **examined (24 Oct 2026):** multi-register system. At Bell starts the tape is `(10)^m (01)^n 0`, head right, state F. In between there are 3–4 large blocks, e.g. `11^a 01^b 00 10^c`. `accsim` (2·10¹⁰ real operations) reaches **10²² steps** with blocks of about 3·10⁸: no HALT. Perturbed real starts gave 1 HALT in 120 runs over growth factor 10, right at the start, so the halting rate is at most about 0.1 % per Bell.
-
-<img src="diagrams/1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE.png" alt="space-time diagram" height="350">
+- **Equivalent to [no. 37](#37)** (mirrored, renamed, different start state; the runs reach the same configuration). Removed from the BB(6) holdout list on 30 Oct 2026 because of this equivalence, not decided. All information is collected under no. 37.
 
 <a id="12"></a>
 ## 12. `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` (class B)
@@ -920,12 +908,26 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
   - **Same configuration.** After 8,277,490 steps of no. 11 and 7,454,917 steps of no. 37 the tapes are identical up to mirroring: 1674 cells, the head at the same position, state D in no. 11 and B here (B = image of D).
   - **Conclusion.** From these steps on, the two runs correspond step by step, and neither machine halted before. So **this machine halts if and only if no. 11 halts**.
 
+- **Holdout status:** no. 37 is in the BB(6) holdout list (608 machines, 30 Oct 2026) as the representative of both; no. 11 was removed because of the equivalence.
+
 - scan: 20 levels, 66 phases, mean factor 1.26 (sd 0.19); level starts: 98 127 160 216 251 276 323 344 375 565 620 675 799 853
 - level analysis: Bell type `RF` with left part `11 01 11 03`, 3 levels; n: 21 51 403; ratios: 2.429 7.902; 1 different tails
 - verdict: no clear single-block Bell configuration found
 - diagram: 175,420 steps, tape width 403 cells
 
 <img src="diagrams/1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC.png" alt="space-time diagram" height="350">
+
+**Results obtained on the equivalent run of no. 11** (formerly listed under no. 11; the tape is mirrored there, so left and right are swapped compared with this machine):
+- scan of no. 11: 20 levels, 95 phases, mean factor 1.21 (sd 0.10); level starts: 83 107 129 157 171 196 242 274 345 420 620 684 745 799
+- level analysis of no. 11: Bell type `LC` with left part `01`, 16 levels; n: 5 12 18 48 96 110 200 232 376 478 702 794 968 1512 1832 3912; ratios: 1.146 1.818 1.160 1.621 1.271 1.469 1.131 1.219 1.562 1.212 2.135; 13 different tails. In that orientation a clear Bell type appears, which this run does not show.
+- **examined (24 Oct 2026): multi-register system.**
+  - **Bell starts:** in the orientation of no. 11 the tape is `(10)^m (01)^n 0`, head on the right, state F. In between there are 3–4 large blocks, e.g. `11^a 01^b 00 10^c`.
+  - **Simulation:** `accsim` (2·10¹⁰ real operations) reaches **10²² steps**, with blocks of about 3·10⁸: no HALT.
+  - **Halting rate:** perturbed real starts gave 1 HALT in 120 runs over a growth factor of 10, right at the start, so the rate is at most about 0.1 % per Bell.
+  - Because the runs coincide, all of this holds for this machine as well.
+- diagram of no. 11 (202,912 steps, tape width 407 cells):
+
+<img src="diagrams/1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE.png" alt="space-time diagram of no. 11" height="350">
 
 <a id="38"></a>
 ## 38. `1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC` (class C)
