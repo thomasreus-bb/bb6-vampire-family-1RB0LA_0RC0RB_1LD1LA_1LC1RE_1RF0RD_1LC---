@@ -989,6 +989,8 @@ Example: N = 88 → 136 → 208 → 316 → 478 (d = 8, N ≡ 0 or 2); 478 ≡ 2
 
 <p align="center"><img src="diagrams/m39_bells.png" alt="no. 39: main block and tail counters" width="740"></p>
 
+The first 100 Bell starts `[0] P 1^N T` are listed in [`m39/bells_100.md`](m39/bells_100.md).
+
 **Fast simulation:** `m39/run39.py`, with the chain, backsymbol and extrapolation simulator of no. 95. It reaches **Bell 128 at about 3·10⁴⁸ steps** (N ≈ 2.2·10²⁴) in 100 seconds, with no HALT. The Bell starts agree exactly with direct simulation up to 2.4·10⁹ steps (21 Bells). The data are in `m39/bells39.txt`.
 
 **HALT:** only through D1 (`---`). No condition for it has been derived yet. Presumably it needs a tail counter that grows to the size of the main block, or a special configuration at the boundary between them.
