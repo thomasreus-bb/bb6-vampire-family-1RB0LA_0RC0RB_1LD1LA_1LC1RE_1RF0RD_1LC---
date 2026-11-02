@@ -924,9 +924,6 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
   - **Simulation:** `accsim` (2·10¹⁰ real operations) reaches **10²² steps**, with blocks of about 3·10⁸: no HALT.
   - **Halting rate:** perturbed real starts gave 1 HALT in 120 runs over a growth factor of 10, right at the start, so the rate is at most about 0.1 % per Bell.
   - Because the runs coincide, all of this holds for this machine as well.
-- diagram of no. 11 (202,912 steps, tape width 407 cells):
-
-<img src="diagrams/1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE.png" alt="space-time diagram of no. 11" height="350">
 
 <a id="38"></a>
 ## 38. `1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC` (class C)
