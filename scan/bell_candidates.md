@@ -989,7 +989,7 @@ Example: N = 88 → 136 → 208 → 316 → 478 (d = 8, N ≡ 0 or 2); 478 ≡ 2
 
 <p align="center"><img src="diagrams/m39_bells.png" alt="no. 39: main block and tail counters" width="740"></p>
 
-**When does the tail go up, vanish or restart?** All 127 transitions of the first 128 Bells follow one rule, and only the parity of N matters:
+**When does the tail go up, vanish or restart?** All 127 transitions of the first 128 Bells follow one rule. What matters is the parity of N and, when the tail is absorbed, the parity of m:
 - **N odd (N ≡ 1, 3 mod 4): one level up.** Empty tail → `011` → `0 1^8 011` → m = 26 → 359 → 1232 → 2780 → 6263 → 21158 → 71423 → 241073 → (1220465 + a new 8) → 4119110 → 13902011 …
   - This chain is fixed: the next level does not depend on N or P (checked with very large N).
   - Each step multiplies m by 1.5^j (j = 2, 3 or 4): the tail runs j small Bells of its own during one large Bell.
