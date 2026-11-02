@@ -1087,7 +1087,66 @@ Over the 70 cycles the ratio n'/n is irregular, between 1.15 and 3.95, with geom
 
 **HALT condition.** The only undefined transition is F0. F is reached only through E1 (`1RF`), and E only through C1 (`1RE`). So the machine halts exactly when state E reads a 1 whose right neighbour is 0. In the first 2.5·10⁶ steps, E reads a 1 with a 0 to its right only at steps 12 and 340 (start-up); after that E-on-1 always has another 1 to its right. A HALT would therefore need a bounce configuration that does not occur in these 70 cycles.
 
-**Verdict:** a Bell machine with an exact two-phase cycle (A linear, B doubling + bounces). The map n → n' is not closed, because of the bounce phase, so the vampire method does not apply directly. A non-halting proof would need a rule for the bounces (or an invariant that excludes "E on 1, then 0").
+**End of phase A.** After j sweeps the tape is `[0] (01)^(x+2j) 1^(y−j)`. At the end (j = y) it is `[0] (01)^m`, with m = x + 2y, in state B; the tape width is 2m + 1. The next sweep gives the Bell `1 (10)^(m+1) [0]`, so n' = m + 1.
+
+### No. 41: phase B in detail (2 Nov 2026)
+
+Phase B is made of four zigzag regimes on a three-block tape: left ones `1^a`, a middle block, and right ones `1^c`. Each line below is the configuration at a turn of the head; one round is one zigzag over the middle block.
+
+| regime | configuration | state | one round |
+|---|---|---|---|
+| P1 (middle collapses) | `(1)^a [0] (10)^b (1)^c` | B | (a+3, b−1, c−1) |
+| P2 (middle expands) | `(1)^a 0 [0] (10)^b (1)^c` | A | (a−3, b+2, c−1) |
+| P3 (right wall) | `(1)^a 0 (01)^b 1 [0] (1)^c` | C | (a, b−1, c+2) |
+| Q (right wall, no separator) | `(1)^a (01)^b 1 [0] (1)^c` | C | (a, b−1, c+2) |
+| A (phase A) | `[0] (01)^x (1)^y` | B | (x+2, y−1) |
+
+Exits:
+
+- **P1:** b = 0 → P2(a+3, 0, c−4) [`d`]; c = 1 first → P3(a+2, b−1, 2) [`X`].
+- **P2:** the left wall is reached when a ≤ 2. Then:
+  - a = 0 → P1(1, b+1, c−1) [`L0`];
+  - a = 1 → P1(1, b+2, c−1) [`L1`];
+  - a = 2 → A(b+3, c−2) (phase A starts).
+  If instead c = 1 comes first → Q(a, b+1, 2) [`Y`].
+- **P3:** b = 0 → P2(a−3, 1, c+2).
+- **Q:** b = 0 → P2(a−2, 0, c+2).
+- **A:** y = 0 → Bell n = x+1 → Q(2, n−1, 2) → P2(0, 0, 2n+2) → L0 → P1(1, 1, 2n+1).
+
+This macro model (`scan/m41/macro41.py`) reproduces all 70 simulated Bells exactly from Bell 28 on. The step 8 → 28 is a start-up case with small counters.
+
+**The residue rule.** P1 always starts with a = 1, so P2 starts with a ≡ 1 (mod 3) after `d` and with a ≡ 0 after `X`. Each bounce `Y` (Q) changes a by −2, i.e. raises the residue r = a mod 3 by 1. When P2 reaches the left wall, r alone decides what follows:
+
+- r = 0 → `L0` (new cascade);
+- r = 1 → `L1` (new cascade);
+- r = 2 → **phase A**.
+
+**Segments.** Phase B is a sequence of segments. A segment starts at P1(1, b, c) and ends at the next P1 start or at phase A. Only 13 segment types occur in 1500 cycles, all of the form `d Y^j` or `X Y^j`. Each type is an exact affine map on (b, c). The type is chosen by t = c/b:
+
+| segment | t = c/b (observed) | result |
+|---|---|---|
+| `d L1` (= one doubling D) | t ≥ 2 | (b', c') = (2b+4, c−2b−6) |
+| `d Y` | 1.2 ≤ t < 2 | **A**: x = 4b−2c+13, y = −6b+5c−21, so n' = 8(c−b)−28 |
+| `d Y Y L0` | 1.048 ≤ t < 1.2 | (b', c') = (12b−10c+41, −22b+21c−75) |
+| `d Y³ L1` | 1.012 ≤ t < 1.048 | (44b−42c+150, −86b+85c−289) |
+| `d Y⁴` | 1.003 ≤ t < 1.012 | **A**: x = 172b−170c+579, y = −342b+341c−1144 |
+| `d Y⁵ L0`, `d Y⁶ L1`, … | t → 1⁺ | (rare) |
+| `X L0` | t < 2/3 | (b', c') = (2c, 2b−3c+4) |
+| `X Y L1` | 2/3 < t < 0.909 | (−4b+6c−8, 10b−11c+24) |
+| `X Y Y` | 0.909 < t < 0.976 | **A**: x = −20b+22c−47, y = 42b−43c+105 |
+| `X Y³ L0` | 0.977 < t < 0.994 | (−84b+86c−211, 170b−171c+435) |
+| `X Y⁴ L1` | 0.994 < t < 0.998 | (−340b+342c−870, 682b−683c+1757) |
+
+The coefficients grow by a factor of about 4 per bounce. For `d Y^j` they are (2·4^j+4)/3 and (4^(j+1)+2)/3 (4, 12, 44, 172 and 6, 22, 86, 342). The thresholds approach t = 1 from both sides, at distances ≈ 1/(c·4^j). So the number of bounces is j ≈ log₄(1/|t−1|), and t = 1 is the only accumulation point.
+
+**First segment after a Bell.** From P1(1, 1, 2n+1), the cascade gives b_k = 5·2^k − 4 and c_k = 2n + 11 + 2k − 10·2^k. It stops at the first k with c_k < 2b_k + 6. So t ∈ [0, 2), and t ≈ 0.4·n/2^k − 2 is set by the mantissa of n in base 2.
+
+- In 36% of cycles, t ≥ 1.2 (path `L0 D^k d Y`). Then exactly n' = 8(c_k − b_k) − 28 = 16n + 92 + 16k − 120·2^k, and n'/n ∈ (1, 4).
+- Otherwise the segment returns to P1 with new (b', c'). A new cascade follows, then the next segment, until a segment with final residue 2 starts phase A.
+
+Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word per cycle), `scan/m41/segments41.py` (segment types, t ranges, affine maps; output in `scan/m41/segments_1500.txt`).
+
+**Verdict:** a Bell machine with an exact two-phase cycle. Phase A is linear. Phase B is an iterated piecewise affine map on (b, c), whose pieces are cut out by t = c/b with thresholds accumulating at t = 1. So the Bell map n → n' is piecewise affine with infinitely many pieces, not a finite table; the vampire method does not apply directly. A non-halting proof would have to show that every transition of the macro model is valid for all counter values reached (no small-counter edge case that leads to "E on 1, then 0").
 
 <a id="42"></a>
 ## 42. `1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD` (class C)
