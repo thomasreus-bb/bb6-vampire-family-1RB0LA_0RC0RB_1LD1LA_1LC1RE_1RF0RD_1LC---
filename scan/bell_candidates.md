@@ -158,7 +158,7 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [20](#20) | B | `1RB1LC_1LA0RD`<br>`0LB1LF_1RE1LC`<br>`1LC0RB_0LA---` | 1.40 | needle-like: only 2 tails (all information in one number) | 1098 | Bell-like |   |   |   |
 | [21](#21) | B | `1RB0LE_1RC1RE`<br>`0RD1RC_1LA0LB`<br>`1LF0RB_---1LD` | 1.40 | needle-like: only 1 tail (all information in one number) | 932 | Fractal in Bouncer |   |   |   |
 | [22](#22) | B | `1RB0RB_1LC0LF`<br>`1RD0LB_1RE1RC`<br>`0RA---_1LA1RE` | 1.40 | needle-like: only 2 tails (all information in one number) | 782 | Quadratic Mess |   |   |   |
-| [23](#23) | B | `1RB0LD_0RC1RD`<br>`1LA1RA_1LE0LE`<br>`1RF0LA_0RA---` | 1.39 | no clear single-block Bell configuration found | 1115 | Bell-like |   |   |   |
+| [23](#23) | B | `1RB0LD_0RC1RD`<br>`1LA1RA_1LE0LE`<br>`1RF0LA_0RA---` | 1.39 | **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173)); no clear single-block Bell configuration found | 1115 | Bell-like |   |   |   |
 | [24](#24) | B | `1RB0LD_1LC0RA`<br>`1RA1LB_1LA1LE`<br>`1RF0LC_---0RE`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE) | 1.25 | needle-like: only 1 tail (all information in one number) | 750 | Quadratic Mess | Potential cryptid, Part of Category 1. BMO 5. | [1](https://wiki.bbchallenge.org/wiki/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE) | dyuan, mxdys |
 | [25](#25) | B | `1RB0LE_1LC0RD`<br>`0RA1LD_0LC1RA`<br>`1LF1LA_---1LA` | 1.55 | needle-like: only 2 tails (all information in one number) | 1085 | Bell-like |   |   |   |
 | [26](#26) | B | `1RB1LC_1LA0RD`<br>`1LB1LF_1LE1RE`<br>`0LA0RB_0LB---` | 1.37 | needle-like: only 2 tails (all information in one number) | 1103 | Bell-like |   |   |   |
@@ -230,14 +230,14 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 | [92](#92) | – | `1RB0RA_0RC0LB`<br>`1LD1RF_1LE1RA`<br>`1RD1RB_1LA---` | – | for later analysis | 1113 | Bell-like |   |   |   |
 | [93](#93) | – | `1RB0LC_1RC1RE`<br>`1LA0LD_0RB0RA`<br>`1RB1RF_1RD---` | – | for later analysis | 1114 | Bell-like |   |   |   |
 | [94](#94) | – | `1RB0RA_1LC0LE`<br>`1RA1LD_0LB1LF`<br>`1LD0RC_1LB---` | – | for later analysis | 1116 | Bell-like |   |   |   |
-| [95](#95) | – | `1RB0LE_1RC---`<br>`1RD1RE_1LA0RF`<br>`0RC0LA_0LC0RB` | – | Bell types A/B/C (list of counters), 102 Bells (≈10⁷⁹ steps) without HALT, see below | 1117 | Bell-like |   |   |   |
+| [95](#95) | – | `1RB0LE_1RC---`<br>`1RD1RE_1LA0RF`<br>`0RC0LA_0LC0RB` | – | **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173)); Bell types A/B/C (list of counters), 102 Bells (≈10⁷⁹ steps) without HALT, see below | 1117 | Bell-like |   |   |   |
 | [96](#96) | – | `1RB1RE_1LC0LE`<br>`1RD0LB_0RA1RC`<br>`0RC0RF_1RA---` | – | for later analysis | 1118 | Bell-like |   |   |   |
 | [97](#97) | – | `1RB1LB_1RC1LD`<br>`1LA1RE_1RD0LA`<br>`0RB0RF_0RA---` | – | for later analysis | 1121 | Bell-like |   |   |   |
 | [98](#98) | – | `1RB1LA_1LC0RE`<br>`1LF1LD_1RE0LC`<br>`1LB1RA_---0LA` | – | for later analysis | 1123 | Bell-like |   |   |   |
 | [99](#99) | – | `1RB0RC_1LC1RF`<br>`1RE0LD_1LC1LA`<br>`---1RD_0RB0RA` | – | for later analysis | 1124 | Bell-like |   |   |   |
 | [100](#100) | – | `1RB1RD_1LC0RD`<br>`1RF1RB_1LE0RA`<br>`0LB0LE_---0RC` | – | for later analysis | 1126 | Bell-like |   |   |   |
 | [101](#101) | – | `1RB1RC_1LC0LF`<br>`1RF0LD_0RE1LB`<br>`1RC---_1LD0RA` | – | for later analysis | 1128 | Bell-like |   |   |   |
-| [102](#102) | – | `1RB1RA_0LC0RA`<br>`1RC1LD_0LB1LE`<br>`1LF0RC_---0LD` | – | for later analysis | 1129 | Bell-like |   |   |   |
+| [102](#102) | – | `1RB1RA_0LC0RA`<br>`1RC1LD_0LB1LE`<br>`1LF0RC_---0LD` | – | **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173)); for later analysis | 1129 | Bell-like |   |   |   |
 | [103](#103) | – | `1RB0RE_1LC1RD`<br>`1LA0LC_0RA1RF`<br>`1RD0LB_1RA---` | – | for later analysis | 1130 | Bell-like |   |   |   |
 | [104](#104) | – | `1RB1RE_1LC1LB`<br>`1LE0LD_1LE1LC`<br>`0RF1RA_---1RA` | – | for later analysis | 1133 | Bell-like |   |   |   |
 | [105](#105) | – | `1RB1LF_1LC0RD`<br>`---1LA_0LA0RE`<br>`1LA1RA_1LB0LD` | – | for later analysis | 1134 | Bell-like |   |   |   |
@@ -622,6 +622,7 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 
 <a id="23"></a>
 ## 23. `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---` (class B)
+- **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 
 - scan: 16 levels, 27 phases, mean factor 1.39 (sd 0.13); level starts: 26 37 40 55 79 111 150 203 276 506 681 910 1633 2187
 - level analysis: Bell type `RD` with left part `11 01 11 01`, 1 levels; n: 4; ratios: –; 1 different tails
@@ -1608,6 +1609,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 
 <a id="95"></a>
 ## 95. `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB` (for later analysis)
+- **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 
 - BB6 sheet: row 1117, Bell-like
 - diagram: 599,812 steps, tape width 1001 cells
@@ -1710,6 +1712,7 @@ Checks:
 
 <a id="102"></a>
 ## 102. `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD` (for later analysis)
+- **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 
 - BB6 sheet: row 1129, Bell-like
 - diagram: 1,113,602 steps, tape width 1001 cells
