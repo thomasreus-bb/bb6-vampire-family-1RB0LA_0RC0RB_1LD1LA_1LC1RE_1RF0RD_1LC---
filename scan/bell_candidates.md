@@ -1714,6 +1714,12 @@ Checks:
 <a id="102"></a>
 ## 102. `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD` (for later analysis)
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
+- **From the Rocq proof:** `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD`. No custom checker: only `ES_v3` and `Individual62`. At its left records in state D the tape is one of three forms, each a few periodic blocks with counts plus a short fixed word:
+  * A(a, c) = `100 (101)^a 110 (011)^c`
+  * B(j, b, c) = `10010111 (010)^j (110)^b 1110 (011)^c`
+  * C(j, x, c) = `10010111 (010)^j 0 (011)^x 10 (011)^c`
+
+  Every rule is linear in the counts. The loops are A(a, c) -> A(a-5, c+8), B(j, b, c) -> B(j+3, b-27, c+27) and C(j, x, c) -> C(j-24, x-27, c+54). The only case splits are the exits a = 1..5, b = 0..26 and j = 0..23, one rule each, and none of them halts. The main theorem is `progress_nonhalt` on an inductive invariant of linear inequalities, with 59 one-line `es'` rules. Before Rocq: the register machine equals the plain machine's tapes cell by cell on all 14,430 D records from step 672,894 to 7.55e9, with the invariant true at each. `Eqv_v3.v` (TM502) makes `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0LB_---0LD` equivalent to this one.
 
 - BB6 sheet: row 1129, Bell-like
 - diagram: 1,113,602 steps, tape width 1001 cells
