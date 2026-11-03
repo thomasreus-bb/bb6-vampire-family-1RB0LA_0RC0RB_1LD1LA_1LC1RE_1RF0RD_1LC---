@@ -1610,6 +1610,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <a id="95"></a>
 ## 95. `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB` (for later analysis)
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
+- **From the Rocq proof:** `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB`. No custom checker: only `ES_v3` and `Individual62`. The machine has no chaotic tail. At its left records the tape is a few periodic blocks with counts plus a short fixed end word, so it runs as a register machine on eight tape forms. Every rule is linear in the counts, for example N1(a, b, d) -> N1(a+3, b+12, d-2); the only case splits are small d, parity of the counts, and z = 1..5 at the end of a conversion. An inductive invariant of linear inequalities keeps every rule applicable, and no rule halts. The main theorem is `progress_nonhalt` on that invariant, with 34 one-line rules (`es'`, or a local `esr` for more than three counts). Before Rocq: the register machine equals the plain machine's tapes cell by cell on all 4,534 records from step 50,497 to 5.1e9.
 
 - BB6 sheet: row 1117, Bell-like
 - diagram: 599,812 steps, tape width 1001 cells
