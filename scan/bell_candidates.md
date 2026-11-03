@@ -632,6 +632,50 @@ The columns Row to Done by are copied from the community BB6 sheet (tab "Holdout
 
 <img src="diagrams/1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---.png" alt="space-time diagram" height="350">
 
+### No. 23: how the proof works (explanation, 3 Nov 2026)
+
+This is our reading of the summary above; the Rocq file itself is not in this repository.
+
+**Tape structure (checked by simulation).** At the left records in state A, which are 6267 of 6288 records up to 2·10⁷ steps, the tape is `(001)^k 0000 (01)^j Y`, up to alignment:
+
+```
+[0](010)^39  0000 (10)^40  1            (step 21176)
+[0](010)^129 0000 (10)^26  0010110101   (step 95646)
+[0](010)^89  0000 (10)^106 0010110101   (step 122606)
+```
+
+One round is (k, j) → (k−1, j+2). Y is an irregular remainder at the right end, which grows from cycle to cycle. Because of Y, a register machine with a few counters (as for nos. 95 and 102) is not possible here.
+
+**1. Core logic: a set closed under predecessors.** Take a set S of configurations such that:
+- (a) every halting configuration is in S;
+- (b) S is closed backwards: if c → c' in one step and c' ∈ S, then c ∈ S.
+
+Then every configuration from which HALT is reachable is in S (by induction backwards along the run). So if the real configuration is not in S, the machine never halts. The work is to describe such an S finitely.
+
+**2. Two halves of the tape.**
+- *Left of the head* the tape is kept exactly, as a stack. A move to the left pops a symbol, a move to the right pushes one. This gives a pushdown system: finite control plus an unbounded stack.
+- *Right of the head* only the state of a fixed DFA with 11,253 states is kept. The DFA reads the right half from the far end up to the head.
+- The control is (TM state, symbol under the head, DFA state), a finite set.
+
+A move to the left adds a cell to the right half, and the DFA runs on deterministically. A move to the right removes the nearest right cell; this cell is not known from the DFA state alone, so every cell and predecessor state consistent with the DFA is allowed. This is an over-approximation, which is enough for non-halting: if even the abstract system cannot halt, the real machine cannot halt either.
+
+**3. pre* saturation (Bouajjani, Esparza and Maler).** For a pushdown system, the set of configurations from which a target is reachable (pre*) is regular. It is given by a finite automaton on stack contents, and it is computed by saturation: start from the halting controls and add transitions (control, stack symbol, control) until nothing changes. Here this gives 933,744 triples. They are the finite description of S: a configuration is in S if the automaton accepts its stack from its control.
+
+**4. Division of labour in Rocq.**
+- `saturate` computes the triples in Rocq's VM. It needs no proof, because the result is checked afterwards.
+- `check_all` checks three things: (1) closure, i.e. for every machine rule the needed predecessor transition is present (property b); (2) the halting controls are accepted (property a); (3) the real configuration after 1000 steps is not accepted.
+- `sound` is a general theorem, proved once: `check_all = true → ~halts`, for any machine, DFA and triple set.
+- At `Qed`, Rocq evaluates `check_all = true` with the VM (`vm_cast_no_check`). `coqchk` would redo this by slow reduction, which is why it did not finish within its 20-minute cap. The trusted base therefore includes Rocq's VM, as is usual for such computational proofs.
+
+**5. Cross-checks, so that the check is not vacuous.**
+- With a different start (after 100 steps instead of 1000), or with one machine entry changed, the proof fails at `Qed`.
+- An independent C checker passes 1,978,289 closure checks with 0 failures.
+- An independent Python saturation gets the same 933,744 triples, with the same hash as the VM.
+
+**Role of the (k, j) dynamics.** The description (k, j) → (k−1, j+2), with growth of about 4/3 per cycle, is only for understanding; the proof does not use it. It explains why a finite DFA can be enough: apart from Y, the tape has a regular shape of `001` and `01` blocks, and Y is never read in a round. Finding the DFA is the creative part (done by the generator scripts); the proof only has to check it.
+
+**Comparison with nos. 95 and 102.** There the whole tape is described by counters, and a linear invariant suffices. Here the tape has an irregular part Y, so instead of a formula the proof uses a large finite certificate (a DFA plus triples) that the computer checks. This is a closed-tape-language / regular-invariant approach, extended by an exact stack for the left half.
+
 <a id="24"></a>
 ## 24. `1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE` (class B)
 - **BusyBeaverWiki article:** [1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE](https://wiki.bbchallenge.org/wiki/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: listed under "chaotic machines not classified as cryptids"
