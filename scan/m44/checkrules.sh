@@ -1,5 +1,6 @@
 #!/bin/sh
 # check the macro rules of nos. 44 and 51 with nxt for many x (and y up to 12)
+cd "$(dirname "$0")" && gcc -O2 -o nxt nxt.c || exit 1
 M44=1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---; M51=1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---
 python3 - "$M44" "$M51" <<'PY'
 import subprocess,sys

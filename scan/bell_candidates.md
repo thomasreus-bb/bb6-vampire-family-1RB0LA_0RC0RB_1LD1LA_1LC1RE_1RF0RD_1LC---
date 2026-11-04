@@ -1379,7 +1379,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
   - n ≡ 1 (mod 3): n' = (8n + 13)/3
   - n ≡ 2 (mod 3): A(x, 2) with x = (8n + 5)/3, then the y = 2 rules
 
-  From the blank tape: 3, 12, 36, 100, 271, 727, 1943 (≡ 2, x ≡ 2) → 13828, 36879, 98348 (≡ 2, x ≡ 0: fresh run) → 1864991, … The level analysis above saw 3890 instead of 1943 because of rounding in the detector; the direct run (`snap`) gives 1943 and 13828. The macro iteration (`scan/m44/macro44_51.py`) gets 11 Bells and then stops at A(x, 2) with x ≡ 1 (mod 9), x with 7 digits, a case without a known rule.
+  From the blank tape: 3, 12, 36, 100, 271, 727, 1943 (≡ 2, x ≡ 2) → 13828, 36879, 98348 (≡ 2, x ≡ 0: fresh run) → 1864991, … (The level analysis above counts a different block, so its n values differ; the direct run gives exactly these Bells, e.g. Bell(13828) at step 166,972,077.) The macro iteration (`scan/m44/macro44_51.py`) gets 11 Bells and then stops at A(x, 2) with x ≡ 1 (mod 9), x with 7 digits, a case without a known rule.
 
   **HALT** (F1) does not occur in the regular rules. Halting would have to come from one of the irregular A(x, 2) sub-runs. This fits the Holdout Guide: "its halting reduces to a Collatz-like question".
 
