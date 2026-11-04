@@ -1356,6 +1356,9 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 - verdict: needle-like: only 1 tail (all information in one number)
 - diagram: 166,941 steps, tape width 1001 cells
 
+- **Same table as no. 61 (4 Nov 2026).** No. 51 is no. 61 (`1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA`) started in state D, written in normal form; the [wiki article of no. 61](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA) lists it as "start state D". So it is the same transition table but a different start, a different trajectory, and a separate holdout. Comparison with the wiki:
+  - The wiki (Racheline; @-d for start D) models the machine as A(n, r): a main number n, multiplied by about 8/3 per step, with n mod 3 choosing one of three rules, and a left-side string r that stores information between steps. This matches our Bell map. Our regular rules are the steps in which the left side stays a single `1`; our "irregular" cases A(x, 2) are the steps in which r changes. So our macro model is the special case r = empty, and it stops where r becomes non-trivial.
+  - @-d found a halting path of 108 rule applications by breadth-first search over r, and gave a Lean proof that the family n = 3^108·k + c with empty r halts for every k ≥ 0. Racheline estimates the halting probability per reset at about 3^−80, i.e. a halting time around 10^10^38. Status: "probviously halting" cryptid.
 - **Detailed analysis (4 Nov 2026).** Same structure as no. 44, with an extra `1` at the left end:
   - Bell(n) = `1 (10)^n 1 [0]`, state B (head right of the tape);
   - A(x, y) = `[0] 1 (10)^x 1^y`, state A (head left of the tape).
