@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""No. 51 with the memory word r: C(m, r) = [0] 10 1^m r, state A (head left of the tape).
+"""No. 51 (or the machine in $TMCODE, e.g. no. 44) with the memory word r: C(m, r) = [0] 10 1^m r, state A (head left of the tape).
 For each r and residue class of m, find r' and the affine law m' = (a*m + b) by sampling,
 refining the modulus 3, 9, 27, ... when r' or the law is not constant on a class."""
 import ctypes, sys, os
 L=ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)),'clib.so'))
-M=b'1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---'; L.setup(M)
+M=os.environ.get('TMCODE','1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---').encode(); L.setup(M)
 L.cstep.argtypes=[ctypes.c_long,ctypes.c_char_p,ctypes.c_longlong,ctypes.c_long,ctypes.POINTER(ctypes.c_long),ctypes.c_char_p,ctypes.POINTER(ctypes.c_longlong)]
 def step(m,r,mx=200000000):
     mo=ctypes.c_long(); ro=ctypes.create_string_buffer(512); st=ctypes.c_longlong()

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """No. 51: shortest path from r = '' to HALT in the r-graph (graph51.pkl), the residue class of m
 that follows it, and an exact check of the path with the macro laws."""
-import pickle, sys
+import os, pickle, sys
 from collections import deque
 sys.set_int_max_str_digits(0)
-G=pickle.load(open('graph51.pkl','rb'))
+G=pickle.load(open(os.environ.get('TMTAG','51').join(['graph','.pkl']),'rb'))
 prev={'':None}; dq=deque(['']); end=None
 while dq:
     r=dq.popleft()
@@ -43,5 +43,5 @@ ms=fwd(a if a>40 else a+Mod)
 print('smallest such m (> 40) has',len(str(ms[0])),'digits; m before the halting step has',len(str(ms[-1])),'digits')
 ok=all(ms[i]%cons[i][0]==cons[i][1] for i in range(len(cons)))
 print('residue check along the path:',ok)
-open('halt51_path.txt','w').write('\n'.join('%3d  m=%d mod %d  r=%s'%(i+1,c,mod,p) for i,(p,mod,c,l) in enumerate(path))+'\n%3d  m=%d mod %d  r=%s  -> HALT\n'%(L,end[2],end[1],end[0]))
+open(os.environ.get('TMTAG','51').join(['halt','_path.txt']),'w').write('\n'.join('%3d  m=%d mod %d  r=%s'%(i+1,c,mod,p) for i,(p,mod,c,l) in enumerate(path))+'\n%3d  m=%d mod %d  r=%s  -> HALT\n'%(L,end[2],end[1],end[0]))
 print('start class:',a,'mod',Mod)

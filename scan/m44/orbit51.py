@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Real trajectory of no. 51 at the macro level C(m, r), from C(10, '') (step 39 of the blank-tape run).
 m' = y0 + (m - m0) * d / mod for the residue class (mod, c) of m (law sampled by rmodel51.rules)."""
-import sys, pickle, os
+import os, sys, pickle, os
 from rmodel51 import rules
 sys.set_int_max_str_digits(0)
-dist=pickle.load(open('dist51.pkl','rb')) if os.path.exists('dist51.pkl') else {}
+dist=pickle.load(open(os.environ.get('TMTAG','51').join(['dist','.pkl']),'rb')) if os.path.exists(os.environ.get('TMTAG','51').join(['dist','.pkl'])) else {}
 cache={}
 def macro(m,r):
     if r not in cache: cache[r]=rules(r)
@@ -15,7 +15,7 @@ def macro(m,r):
             d,mo=l[2]; m0,y0=l[3]
             return l[1], y0+(m-m0)*d//mo
     return '?',None
-m,r=10,''; K=int(sys.argv[1]) if len(sys.argv)>1 else 300
+m,r=int(os.environ.get('M0','10')),''; K=int(sys.argv[1]) if len(sys.argv)>1 else 300
 best=None
 for k in range(K):
     dd=dist.get(r)
