@@ -176,9 +176,9 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <a id="t36"></a>[36](#36) | B | `1RB1LC_1LC0RD`<br>`0LE1LA_---1RA`<br>`1RF0LA_0RF0RB` | 1.56 | needle-like: only 1 tail (all information in one number) | 783; Quadratic Mess | **#344 Rules known, no proof**: A 3/2 map (a,b) to (a-2,b+3) with a complete event model, not in Rocq. The open question is whether every state returns. |
 | <a id="t37"></a>[37](#37) | B | `1RB1RF_1RC0RB`<br>`0RD1LF_1LE1RE`<br>`1LA---_1RA0LC` | 1.26 | multi-register system; no HALT up to 10²² steps; low halting rate; **equivalent to [11](#11)** | 729; Cubic Mess | **#460 Looks like a lottery**: Our experiments suggest the outcome turns on chaotic digits. |
 | <a id="t38"></a>[38](#38) | C | `1RB0RE_1LC0RA`<br>`0LD0LB_1RE0LB`<br>`1RF---_0RB0RC` | 1.55 | growing list of blocks (nested); no HALT up to 4·10³³ steps | 973; Chaotic Bell Class 2 | **#353 Reported by others**: Someone reported a proof. We have not verified it. |
-| <a id="t39"></a>[39](#39) | C | `1RB1LC_1LC0RF`<br>`0LF1LD_0LE---`<br>`1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number); **analysed** (2 Nov 2026): main block plus a tail counter that follows one fixed chain; no HALT on the chain up to level 400, so very probably non-halting; see below | 1122; Bell-like | **#442 Some structure seen**: A 3/2 Bell whose phases spawn nested counters. |
+| 🟨 <a id="t39"></a>[39](#39) | 🟨 C | 🟨<br>`1RB1LC_1LC0RF`<br>`0LF1LD_0LE---`<br>`1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number); **analysed** (2 Nov 2026): main block plus a tail counter that follows one fixed chain; no HALT on the chain up to level 400, so very probably non-halting; see below | 1122; Bell-like | **#442 Some structure seen**: A 3/2 Bell whose phases spawn nested counters. |
 | <a id="t40"></a>[40](#40) | C | `1RB0RD_0RC1RE`<br>`1RD0LA_1LE1LC`<br>`1RF0LD_---0RA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | 1.48 | no clear single-block Bell configuration found; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1060; **CRYPTID**, Bell-like; Lucy's Moonlight. Part of Category 1; [1](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight); Racheline, Shawn Ligocki | **#569 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t41"></a>[41](#41) | C | `1RB1LD_1RC0RA`<br>`1LA1RE_0LA0LB`<br>`0RB1RF_---1RD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD) | 1.40 | needle-like: only 1 tail (all information in one number) | 755; Quadratic Mess; Part of Category 1 | **#112 Cryptid**: Its halting reduces to a Collatz-like question. |
+| 🟨 <a id="t41"></a>[41](#41) | 🟨 C | 🟨<br>`1RB1LD_1RC0RA`<br>`1LA1RE_0LA0LB`<br>`0RB1RF_---1RD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD) | 1.40 | needle-like: only 1 tail (all information in one number) | 755; Quadratic Mess; Part of Category 1 | **#112 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <a id="t42"></a>[42](#42) | C | `1RB0RF_1LC0RA`<br>`1LD1LB_0LE---`<br>`1LA0LA_1RE1LD` | 1.42 | needle-like: only 1 tail (all information in one number) | 761; Quadratic Mess | **#37 Looks like a lottery**: Close to a known machine with 3 entries changed. Built tapes halt at specific values tied to the machine's own orbit. |
 | <a id="t43"></a>[43](#43) | C | `1RB1RE_0RC---`<br>`1RD0RD_1LE0LF`<br>`1RA0LD_1LC1RB` | 1.41 | needle-like: only 2 tails (all information in one number) | 760; Quadratic Mess | **#25 Reported by others**: Others have worked on it or discussed it. Close to a known machine with 3 entries changed. Built tapes halt at specific values tied to the machine's own orbit. |
 | <a id="t44"></a>[44](#44) | C | `1RB0RE_1LC0RA`<br>`0LD1LB_1LA1LE`<br>`0LB0LF_1LD---` | 1.90 | needle-like: only 1 tail (all information in one number) | 1127; Bell-like | **#507 Rules known, no proof**: One table, four starts. Exact macro law proved in Rocq. Real runs stay small, but the residues behave like Collatz digits, so a proof has to allow every sequence. |
@@ -986,7 +986,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC.png" alt="space-time diagram" height="350">
 
 <a id="39"></a>
-## [39](#t39). `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` (class C)
+## 🟨 [39](#t39). `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` (class C)
 
 - scan: 21 levels, 54 phases, mean factor 1.36 (sd 0.21); level starts: 156 198 237 306 358 468 541 713 814 1074 1225 1623 2444 3677
 - level analysis: Bell type `LC` with left part `01`, 11 levels; n: 4 10 88 136 208 316 478 1084 1633 5530 12457; ratios: 2.500 8.800 1.545 1.529 1.519 1.513 2.268 1.506 3.386 2.253; 2 different tails
@@ -1084,7 +1084,7 @@ The first 100 Bell starts `[0] P 1^N T` are listed in [`m39/bells_100.md`](m39/b
 <img src="diagrams/1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA.png" alt="space-time diagram" height="350">
 
 <a id="41"></a>
-## [41](#t41). `1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD` (class C)
+## 🟨 [41](#t41). `1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD` (class C)
 - **BusyBeaverWiki article:** [1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD](https://wiki.bbchallenge.org/wiki/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD)
 
 - scan: 17 levels, 63 phases, mean factor 1.40 (sd 0.23); level starts: 39 90 118 131 156 298 456 534 1006 1130 1209 1644 1962 2120
