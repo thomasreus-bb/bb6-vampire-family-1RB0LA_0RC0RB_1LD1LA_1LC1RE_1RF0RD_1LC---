@@ -7,7 +7,7 @@ L=ctypes.CDLL(os.path.join(os.path.dirname(os.path.abspath(__file__)),'clib.so')
 M=os.environ.get('TMCODE','1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---').encode(); L.setup(M)
 L.cstep.argtypes=[ctypes.c_long,ctypes.c_char_p,ctypes.c_longlong,ctypes.c_long,ctypes.POINTER(ctypes.c_long),ctypes.c_char_p,ctypes.POINTER(ctypes.c_longlong)]
 def step(m,r,mx=200000000):
-    mo=ctypes.c_long(); ro=ctypes.create_string_buffer(512); st=ctypes.c_longlong()
+    mo=ctypes.c_long(); ro=ctypes.create_string_buffer(1<<20); st=ctypes.c_longlong()
     k=L.cstep(m,r.encode(),mx,4,ctypes.byref(mo),ro,ctypes.byref(st))
     return (['MAX','C','HALT'][k], mo.value, ro.value.decode(), st.value)
 def law(r, mod, res, base=40):

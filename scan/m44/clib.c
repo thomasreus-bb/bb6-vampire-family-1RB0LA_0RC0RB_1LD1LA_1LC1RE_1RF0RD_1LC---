@@ -11,6 +11,6 @@ int cstep(long m, const char*r, long long mx, long kmin, long*mout, char*rout, l
     if(h<=0||h>=W-1) return 0;
     if(h<lo){ lo=h; if(s==0){ long a=h+1; while(a<=hi&&!t[a])a++; long z=hi; while(z>=a&&!t[z])z--;
         if(a<=z-1 && t[a]==1&&t[a+1]==0){ long q=a+2,k=0; while(q<=z&&t[q]==1){k++;q++;}
-          if(k>=kmin && (q>z || (t[q]==0 && z-q+1<=200))){ *mout=k; long j=0; for(long i=q;i<=z;i++) rout[j++]='0'+t[i]; rout[j]=0; *steps=n; return 1; } } } }
+          if(k>=kmin && (q>z || (t[q]==0 && z-q+1<=200000))){ *mout=k; long j=0; for(long i=q;i<=z;i++) rout[j++]='0'+t[i]; rout[j]=0; *steps=n; return 1; } } } }
     if(h>hi) hi=h; }
   *steps=n; return 0; }
