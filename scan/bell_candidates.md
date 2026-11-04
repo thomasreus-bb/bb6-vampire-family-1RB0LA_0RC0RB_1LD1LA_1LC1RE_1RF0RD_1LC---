@@ -1372,36 +1372,12 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
     | [1, x, …] | [x, …] (the top block 1 is removed) | … | … |
     | **[2, 2, …], [1, 2, 2, …]** | … | … | **HALT** |
 
+    Inside one macro step the head runs a zigzag loop over the ones: with A(x, y) = `[0] 1 (10)^x 1^y` in state A, each round is A(x, y) → A(x+4, y−3). The loop ends when fewer than 4 ones are left, and the remainder y mod 3 (that is, m mod 3) decides how it ends. This is where the division by 3 and the dependence on m mod 3 come from (loop checked with `scan/m44/nxt.c` / `checkrules.sh` for x < 200, y < 13).
+
     So r works like a stack of numbers. With m ≡ 2 a block k ≥ 3 is split into 1, 1, k−3; with m ≡ 0 a top block 1 is removed; with m ≡ 1 r is often cleared. Our earlier regular rules are the cases with r empty, and our "irregular" A(x, 2) cases are the steps where r becomes non-empty.
   - **HALT condition:** m ≡ 2 (mod 3) while r starts with the blocks 2, 2 (or 1, 2, 2), i.e. `011011…` or `01011011…`.
   - **The way to HALT.** A breadth-first search over r from r = empty (`scan/m44/graph51.py`, 300,000 words) finds that every explored word has a path to HALT. The shortest path from r = empty has **108 macro steps**, the same length that @-d found. It starts with residues 2, 2, 0, 0, 2, 0, … and words [] → [6] → [1, 1, 3] → [1, 3] → [3] → …. It ends with … → [1, 1, 5, 2] → [1, 5, 2] → [5, 2] → [1, 1, 2, 2] → [1, 2, 2], m ≡ 2 → HALT. The full list is in `scan/m44/halt51_path.txt`. Since every rule has slope 8/3, the residue sequence of the path fixes m modulo 3^108. The machine therefore halts from C(m, empty) exactly when m ≡ 1975700577069254261393123959451562008800234946348087 (mod 3^108) (computed by `halt51.py`; residues checked along the whole path). This matches @-d's Lean result "n = 3^108·k + constant halts", with our m in place of his n. The smallest such m has 52 digits, and m has 97 digits before the halting step.
   - **Real trajectory.** `orbit51.py` follows the real run for 400 macro steps (m up to 161 digits) with the exact rules. r is reset to empty again and again, so the run keeps returning to the start of the halting path. Its closest approach is at macro step 266, with r = [1], 102 macro steps from HALT. Each reset is a new "lottery ticket": the next 108 residues of m would have to match. With many possible halting paths, the wiki estimates the chance per reset at about 3^−80 and the halting time at about 10^10^38. So the machine is a probviously halting cryptid, but neither halting nor non-halting from the blank tape is proved.
-- **Detailed analysis (4 Nov 2026).** Same structure as no. 44, with an extra `1` at the left end:
-  - Bell(n) = `1 (10)^n 1 [0]`, state B (head right of the tape);
-  - A(x, y) = `[0] 1 (10)^x 1^y`, state A (head left of the tape).
-
-  Rules (checked with `scan/m44/nxt.c` and `scan/m44/checkrules.sh` for n < 200, x < 200, y < 13, no mismatch):
-
-  | from | to |
-  |---|---|
-  | Bell(n) | A(3, 2n+1) |
-  | A(x, y), y ≥ 4 | A(x+4, y−3) |
-  | A(x, 3) | A(x+3, 1) |
-  | A(x, 1) | Bell(x+1) |
-  | A(x, 0) | Bell(x) |
-  | A(x, 2), x ≡ 0 (mod 3) | A(3, 16x/3 + 5) (a fresh long run, like a new Bell with y = 16x/3 + 5) |
-  | A(x, 2), x ≡ 2 (mod 3) | A(8(x−2)/3 + 4, 6) |
-  | A(x, 2), x ≡ 7 (mod 9) | A(64(x−7)/9 + 46, 3) |
-  | A(x, 2), x ≡ 1, 4 (mod 9) | irregular, e.g. x = 4 → A(184, 3), x = 13 → A(1689, 1), x = 31 → A(11004, 10) after 10⁸ steps |
-
-  **Bell map:**
-  - n ≡ 0 (mod 3): n' = 8n/3 + 4
-  - n ≡ 1 (mod 3): n' = (8n + 13)/3
-  - n ≡ 2 (mod 3): A(x, 2) with x = (8n + 5)/3, then the y = 2 rules
-
-  From the blank tape: 3, 12, 36, 100, 271, 727, 1943 (≡ 2, x ≡ 2) → 13828, 36879, 98348 (≡ 2, x ≡ 0: fresh run) → 1864991, … (The level analysis above counts a different block, so its n values differ; the direct run gives exactly these Bells, e.g. Bell(13828) at step 166,972,077.) The macro iteration (`scan/m44/macro44_51.py`) gets 11 Bells and then stops at A(x, 2) with x ≡ 1 (mod 9), x with 7 digits, a case without a known rule.
-
-  **HALT** (F1) does not occur in the regular rules. Halting would have to come from one of the irregular A(x, 2) sub-runs. This fits the Holdout Guide: "its halting reduces to a Collatz-like question".
 
 <img src="diagrams/1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---.png" alt="space-time diagram" height="350">
 
