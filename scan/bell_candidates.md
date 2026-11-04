@@ -157,7 +157,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | 🟩 <a id="t17"></a>[17](#17) | 🟩<br>B | 🟩<br>`1RB0RC_1RC---`<br>`1LD1RE_1LE0LD`<br>`1RA0LF_0RC0RB` | 1.29 | two-register system; no HALT up to 10¹⁴ steps | 766; Quadratic Mess | **#61 Proof ready, PR soon**: We have a reviewed Rocq proof that it never halts and plan to post it soon. |
 | <a id="t18"></a>[18](#18) | B | `1RB---_1LC0LD`<br>`0RF0LD_0LE0RA`<br>`0LC1RA_1RC1RD` | 1.36 | no clear single-block Bell configuration found | 1101; Bell-like | **#268 Looks like a lottery**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t19"></a>[19](#19) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>B | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB0LC_1LA1RE`<br>`1LD1RE_1RE0LA`<br>`0RA1RF_0RB---` | 1.32 | **two-number system** (examined in detail, see [19](#19)): no HALT found | 1077; Bell-like; [1](https://discord.com/channels/960643023006490684/1337004420138799106/1337004420138799106); nerdyjoe | **#556 Reported by others**: Others have worked on it or discussed it. |
-| <a id="t20"></a>[20](#20) | B | `1RB1LC_1LA0RD`<br>`0LB1LF_1RE1LC`<br>`1LC0RB_0LA---` | 1.40 | needle-like: only 2 tails (all information in one number) | 1098; Bell-like | **#237 Some structure seen**: A 3/2 Bell whose phases spawn nested counters. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t20"></a>[20](#20) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LC_1LA0RD`<br>`0LB1LF_1RE1LC`<br>`1LC0RB_0LA---` | 1.40 | needle-like: only 2 tails (all information in one number) | 1098; Bell-like | **#237 Some structure seen**: A 3/2 Bell whose phases spawn nested counters. |
 | <a id="t21"></a>[21](#21) | B | `1RB0LE_1RC1RE`<br>`0RD1RC_1LA0LB`<br>`1LF0RB_---1LD` | 1.40 | needle-like: only 1 tail (all information in one number) | 932; Fractal in Bouncer | – (not in the guide: proved in busycoq after 30 Oct 2026, the one machine the guide removes from the 608 list) |
 | <a id="t22"></a>[22](#22) | B | `1RB0RB_1LC0LF`<br>`1RD0LB_1RE1RC`<br>`0RA---_1LA1RE` | 1.40 | needle-like: only 2 tails (all information in one number) | 782; Quadratic Mess | **#336 Looks like a lottery**: Close to a known machine with 3 entries changed. Built tapes halt at specific values tied to the machine's own orbit. |
 | 🟩 <a id="t23"></a>[23](#23) | 🟩<br>B | 🟩<br>`1RB0LD_0RC1RD`<br>`1LA1RA_1LE0LE`<br>`1RF0LA_0RA---` | 1.39 | **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173)); no clear single-block Bell configuration found | 1115; Bell-like | **#385 Proof in an open PR**: Open PR 44, by Claude (Heron), proves that it never halts. Not merged yet. |
@@ -611,7 +611,9 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---.png" alt="space-time diagram" height="350">
 
 <a id="20"></a>
-## [20](#t20). `1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---` (class B)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [20](#t20). `1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---` (class B)
+
+This machine is the [BMO's 5th problem](https://wiki.bbchallenge.org/wiki/Beaver_Math_Olympiad#Unsolved_problems).
 
 - scan: 16 levels, 43 phases, mean factor 1.40 (sd 0.12); level starts: 55 65 85 102 165 255 305 460 694 917 1044 1380 2084 3134
 - level analysis: Bell type `LB` with left part `02 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01`, 8 levels; n: 10 76 139 229 1354 4681 10588 15904; ratios: 7.600 1.829 1.647 5.913 3.457 2.262 1.502; 2 different tails
