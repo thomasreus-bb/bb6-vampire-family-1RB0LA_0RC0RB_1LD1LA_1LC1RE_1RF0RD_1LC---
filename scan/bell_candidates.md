@@ -132,7 +132,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 
 ## The 56 candidates
 
-The columns Row to Done by are copied from the community BB6 sheet (tab "Holdouts (From the 1534 list)", read on 29 Oct 2026; Row = row number in the sheet; a sheet status such as CRYPTID is shown in bold above the classification). The Sources numbers link to the referenced post or wiki page; for nos. 58, 67 and 69 only reference 1 is linked so far. Nos. 57–108 are the remaining Bell-like holdouts of the sheet, added for later analysis (see [the section at the end](#candidates-57108-bell-like-holdouts-from-the-bb6-sheet-for-later-analysis)).
+The column "BB6 sheet" combines the sheet columns Row; Classification; Notes; Sources; Done by (in this order, separated by semicolons, empty fields left out), copied from the community BB6 sheet (tab "Holdouts (From the 1534 list)", read on 29 Oct 2026; Row = row number in the sheet; a sheet status such as CRYPTID is shown in bold before the classification). The Sources numbers link to the referenced post or wiki page; for nos. 58, 67 and 69 only reference 1 is linked so far. Nos. 57–108 are the remaining Bell-like holdouts of the sheet, added for later analysis (see [the section at the end](#candidates-57108-bell-like-holdouts-from-the-bb6-sheet-for-later-analysis)).
 
 Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https://claude.ai/artifact/8B8E5ms18otN4XHbEnxaP2) (status of 3 Nov 2026, 607 machines; text copy in `holdout_guide_2026-11-03.txt`), with the machine's number in the guide.
 
