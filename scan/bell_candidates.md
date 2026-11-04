@@ -1258,6 +1258,34 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 - verdict: needle-like: only 1 tail (all information in one number)
 - diagram: 108,486 steps, tape width 1001 cells
 
+- **Detailed analysis (4 Nov 2026).** Two configuration forms, both at record events:
+  - Bell(n) = `(10)^n 1 [0]`, state B (head right of the tape);
+  - A(x, y) = `[0] (10)^x 1^y`, state A (head left of the tape).
+
+  Rules (each arrow = run to the next configuration of one of the two forms; checked with `scan/m44/nxt.c` and `scan/m44/checkrules.sh` for n < 200, x < 200, y < 13, no mismatch):
+
+  | from | to |
+  |---|---|
+  | Bell(n) | A(1, 2n+3) |
+  | A(x, y), y ≥ 4 | A(x+5, y−3) (one zigzag: five more `10`, three ones fewer) |
+  | A(x, 3) | A(x+4, 1) |
+  | A(x, 1) | Bell(x+1) |
+  | A(x, 0) | Bell(x) |
+  | A(x, 2), x ≡ 0 (mod 3), x ≥ 6 | A(10x/3 − 12, 4) |
+  | A(x, 2), x ≡ 7 (mod 9) | A(100(x−7)/9 + 32, 4) |
+  | A(x, 2), other x | irregular: long nested runs, e.g. x = 10 → A(2379, 4) after 3.7·10⁶ steps; x = 37 and 41 need more than 3·10⁹ steps |
+
+  **Bell map.** From Bell(n) the loop runs from A(1, 2n+3) down to y ∈ {1, 2, 3}, so only n mod 3 matters:
+  - n ≡ 0 (mod 3): n' = 10n/3 + 6
+  - n ≡ 2 (mod 3): n' = (10n + 16)/3
+  - n ≡ 1 (mod 3): the run ends in A(x, 2) with x = (10n + 8)/3, the hard case. Then x mod 3 (and mod 9, …) decides, like Collatz digits.
+
+  The blank tape reaches Bell(0) at step 1 and Bell(6) at step 46. Then: 6, 26, 92, 312, 1046, 3492, 11646, 38826, 129426, 431426, 1438092, 4793646, 15978826 (≡ 1: A(x, 2) with x ≡ 0, regular), … With the rules above, the macro iteration (`scan/m44/macro44_51.py`) gets 16 Bells, up to n with 10 digits. It then stops at A(x, 2) with x ≡ 5 (mod 9), a case without a known rule. The Holdout Guide gives 1.2·10⁷⁹ simulated steps.
+
+  **HALT** (F1 is the only undefined transition) does not occur in any of the regular rules. It could only be hidden in the irregular sub-runs of A(x, 2).
+
+  **Relation to no. 51:** both machines start with `1RB0RE_1LC0RA`, and both have exactly the same structure. There is a loop on `(10)^x 1^y`, the exits depend on y mod 3, and the only hard case is y = 2 with an irregular residue of x.
+
 <img src="diagrams/1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---.png" alt="space-time diagram" height="350">
 
 <a id="45"></a>
@@ -1327,6 +1355,33 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 - level analysis: Bell type `LA` with left part `01 11 01`, 8 levels; n: 10 28 76 204 546 1458 3890 27660; ratios: 2.800 2.714 2.684 2.676 2.670 2.668 7.111; 1 different tails
 - verdict: needle-like: only 1 tail (all information in one number)
 - diagram: 166,941 steps, tape width 1001 cells
+
+- **Detailed analysis (4 Nov 2026).** Same structure as no. 44, with an extra `1` at the left end:
+  - Bell(n) = `1 (10)^n 1 [0]`, state B (head right of the tape);
+  - A(x, y) = `[0] 1 (10)^x 1^y`, state A (head left of the tape).
+
+  Rules (checked with `scan/m44/nxt.c` and `scan/m44/checkrules.sh` for n < 200, x < 200, y < 13, no mismatch):
+
+  | from | to |
+  |---|---|
+  | Bell(n) | A(3, 2n+1) |
+  | A(x, y), y ≥ 4 | A(x+4, y−3) |
+  | A(x, 3) | A(x+3, 1) |
+  | A(x, 1) | Bell(x+1) |
+  | A(x, 0) | Bell(x) |
+  | A(x, 2), x ≡ 0 (mod 3) | A(3, 16x/3 + 5) (a fresh long run, like a new Bell with y = 16x/3 + 5) |
+  | A(x, 2), x ≡ 2 (mod 3) | A(8(x−2)/3 + 4, 6) |
+  | A(x, 2), x ≡ 7 (mod 9) | A(64(x−7)/9 + 46, 3) |
+  | A(x, 2), x ≡ 1, 4 (mod 9) | irregular, e.g. x = 4 → A(184, 3), x = 13 → A(1689, 1), x = 31 → A(11004, 10) after 10⁸ steps |
+
+  **Bell map:**
+  - n ≡ 0 (mod 3): n' = 8n/3 + 4
+  - n ≡ 1 (mod 3): n' = (8n + 13)/3
+  - n ≡ 2 (mod 3): A(x, 2) with x = (8n + 5)/3, then the y = 2 rules
+
+  From the blank tape: 3, 12, 36, 100, 271, 727, 1943 (≡ 2, x ≡ 2) → 13828, 36879, 98348 (≡ 2, x ≡ 0: fresh run) → 1864991, … The level analysis above saw 3890 instead of 1943 because of rounding in the detector; the direct run (`snap`) gives 1943 and 13828. The macro iteration (`scan/m44/macro44_51.py`) gets 11 Bells and then stops at A(x, 2) with x ≡ 1 (mod 9), x with 7 digits, a case without a known rule.
+
+  **HALT** (F1) does not occur in the regular rules. Halting would have to come from one of the irregular A(x, 2) sub-runs. This fits the Holdout Guide: "its halting reduces to a Collatz-like question".
 
 <img src="diagrams/1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---.png" alt="space-time diagram" height="350">
 
