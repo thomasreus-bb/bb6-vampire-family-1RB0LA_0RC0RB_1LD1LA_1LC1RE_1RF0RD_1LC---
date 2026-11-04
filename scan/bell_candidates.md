@@ -252,7 +252,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <a id="t112"></a>[112](#112) | – | `1RB1LD_1RC0LE`<br>`1LA1RE_0LF1LA`<br>`1RB0RB_---0LB` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 560; **CRYPTID**, Shift-overflow bouncer counter; Probviously halting cryptid; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1337994337790853181), 2; Racheline | **#22 Cryptid**: Its halting reduces to a Collatz-like question. |
 
 <a id="1"></a>
-## 🟩 1. `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A) [↑ table](#t1)
+## 🟩 [1](#t1). `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A)
 
 - scan: 12 levels, 12 phases, mean factor 1.55 (sd 0.04); level starts: 18 31 51 81 126 193 294 445 672 1012 1521 2286
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -261,7 +261,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA.png" alt="space-time diagram" height="350">
 
 <a id="2"></a>
-## 🟩 2. `1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE` (class A) [↑ table](#t2)
+## 🟩 [2](#t2). `1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE` (class A)
 
 - scan: 12 levels, 12 phases, mean factor 1.56 (sd 0.05); level starts: 15 27 45 72 112 171 261 396 600 906 1365 2052
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -270,7 +270,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE.png" alt="space-time diagram" height="350">
 
 <a id="3"></a>
-## 🟩 3. `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---` (class A) [↑ table](#t3)
+## 🟩 [3](#t3). `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---` (class A)
 
 - scan: 12 levels, 12 phases, mean factor 1.57 (sd 0.06); level starts: 16 29 49 79 124 191 292 443 670 1010 1519 2284
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -279,7 +279,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---.png" alt="space-time diagram" height="350">
 
 <a id="4"></a>
-## 🟩 4. `1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF` (class A) [↑ table](#t4)
+## 🟩 [4](#t4). `1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF` (class A)
 
 - scan: 12 levels, 12 phases, mean factor 1.57 (sd 0.06); level starts: 16 29 49 79 124 191 292 443 670 1010 1519 2284
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -288,7 +288,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF.png" alt="space-time diagram" height="350">
 
 <a id="5"></a>
-## 🟩 5. `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---` (class A) [↑ table](#t5)
+## 🟩 [5](#t5). `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---` (class A)
 
 - scan: 13 levels, 13 phases, mean factor 1.56 (sd 0.06); level starts: 13 24 40 63 99 153 234 355 537 810 1221 1836 2758
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -297,7 +297,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---.png" alt="space-time diagram" height="350">
 
 <a id="6"></a>
-## 🟩 6. `1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD` (class A) [↑ table](#t6)
+## 🟩 [6](#t6). `1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD` (class A)
 
 - scan: 12 levels, 12 phases, mean factor 1.58 (sd 0.07); level starts: 16 31 52 83 130 200 304 461 697 1052 1582 2378
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -306,7 +306,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD.png" alt="space-time diagram" height="350">
 
 <a id="7"></a>
-## 🟩 7. `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` (class A) [↑ table](#t7)
+## 🟩 [7](#t7). `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` (class A)
 
 - scan: 12 levels, 12 phases, mean factor 1.58 (sd 0.07); level starts: 16 31 52 83 130 200 304 461 697 1052 1582 2378
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -315,7 +315,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA.png" alt="space-time diagram" height="350">
 
 <a id="8"></a>
-## 🟩 8. `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` (class B) [↑ table](#t8)
+## 🟩 [8](#t8). `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` (class B)
 
 - scan: 20 levels, 71 phases, mean factor 1.33 (sd 0.07); level starts: 78 109 152 206 278 374 502 678 909 1218 1629 2178 2909 3882
 - level analysis: Bell type `LD` with left part `01 12 01 11 01`, 26 levels; n: 284 380 508 684 915 1224 1635 2184 2915 3888 5187 6918 9227 12304 16411 21886; ratios: 1.338 1.336 1.336 1.335 1.334 1.334 1.334 1.334 1.333 1.334 1.334; 13 different tails
@@ -325,7 +325,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC.png" alt="space-time diagram" height="350">
 
 <a id="9"></a>
-## 9. `1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB` (class B) [↑ table](#t9)
+## [9](#t9). `1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB` (class B)
 
 - scan: 15 levels, 98 phases, mean factor 1.33 (sd 0.09); level starts: 20 29 34 52 76 107 126 173 199 273 370 501 675 905
 - level analysis: Bell type `RB`, 30 levels; n: 182 207 280 378 508 682 914 1246 1666 2226 2972 3307 4414 5890 7858 10482; ratios: 1.343 1.340 1.363 1.337 1.336 1.335 1.113 1.335 1.334 1.334 1.334; 2 different tails
@@ -335,7 +335,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB.png" alt="space-time diagram" height="350">
 
 <a id="10"></a>
-## 10. `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` (class B) [↑ table](#t10)
+## [10](#t10). `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` (class B)
 - **BusyBeaverWiki article:** [1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE)
 
 - scan: 21 levels, 240 phases, mean factor 1.24 (sd 0.09); level starts: 42 51 70 90 113 148 188 249 271 306 412 474 555 628
@@ -441,11 +441,11 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE.png" alt="space-time diagram" height="350">
 
 <a id="11"></a>
-## 11. `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` (class B) [↑ table](#t11)
+## [11](#t11). `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` (class B)
 - **Equivalent to [no. 37](#37)**  Removed from the BB(6) holdout list on 30 Oct 2026 because of this equivalence. All information is collected under no. 37.
 
 <a id="12"></a>
-## 12. `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` (class B) [↑ table](#t12)
+## [12](#t12). `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` (class B)
 
 - scan: 19 levels, 42 phases, mean factor 1.27 (sd 0.10); level starts: 47 63 80 87 96 122 144 181 252 288 391 576 684 834
 - level analysis: Bell type `LC` with left part `01`, 2 levels; n: 4 27; ratios: 6.750; 1 different tails
@@ -455,7 +455,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA.png" alt="space-time diagram" height="350">
 
 <a id="13"></a>
-## 13. `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` (class B) [↑ table](#t13)
+## [13](#t13). `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` (class B)
 - **BusyBeaverWiki article:** [1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB](https://wiki.bbchallenge.org/wiki/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB)
 
 - scan: 20 levels, 41 phases, mean factor 1.33 (sd 0.10); level starts: 34 43 64 77 91 119 175 231 350 441 665 1001 1505 2261
@@ -466,7 +466,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB.png" alt="space-time diagram" height="350">
 
 <a id="14"></a>
-## 14. `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` (class B) [↑ table](#t14)
+## [14](#t14). `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` (class B)
 - **BusyBeaverWiki article:** [1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA](https://wiki.bbchallenge.org/wiki/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA)
 
 - scan: 30 levels, 87 phases, mean factor 1.21 (sd 0.10); level starts: 428 466 541 604 783 850 984 1046 1180 1372 1615 1882 2136 2262
@@ -526,7 +526,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA.png" alt="space-time diagram" height="350">
 
 <a id="15"></a>
-## 15. `1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC` (class B) [↑ table](#t15)
+## [15](#t15). `1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC` (class B)
 - **BusyBeaverWiki article:** [1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC](https://wiki.bbchallenge.org/wiki/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: listed as a cryptid
 
 - scan: 19 levels, 45 phases, mean factor 1.36 (sd 0.11); level starts: 36 55 65 87 101 125 165 249 315 475 715 1075 1615 2425
@@ -537,7 +537,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC.png" alt="space-time diagram" height="350">
 
 <a id="16"></a>
-## 16. `1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE` (class B) [↑ table](#t16)
+## [16](#t16). `1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE` (class B)
 
 - scan: 15 levels, 109 phases, mean factor 1.26 (sd 0.11); level starts: 16 18 20 26 34 38 54 60 92 138 178 200 271 370
 - level analysis: Bell type `RB` with left part `01`, 26 levels; n: 380 436 488 528 592 648 706 778 848 989 1092 1208 1308 1500 1630 1853; ratios: 1.095 1.090 1.102 1.090 1.166 1.104 1.106 1.083 1.147 1.087 1.137; 10 different tails
@@ -549,7 +549,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE.png" alt="space-time diagram" height="350">
 
 <a id="17"></a>
-## 🟩 17. `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` (class B) [↑ table](#t17)
+## 🟩 [17](#t17). `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` (class B)
 
 - scan: 17 levels, 149 phases, mean factor 1.29 (sd 0.12); level starts: 23 33 39 55 59 75 111 137 163 183 215 279 359 459
 - level analysis: Bell type `LE` with left part `01`, 17 levels; n: 7 11 21 41 57 77 165 233 297 377 477 1137 1427 2141 4243 6365; ratios: 1.351 2.143 1.412 1.275 1.269 1.265 2.384 1.255 1.500 1.982 1.500; 3 different tails
@@ -561,7 +561,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB.png" alt="space-time diagram" height="350">
 
 <a id="18"></a>
-## 18. `1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD` (class B) [↑ table](#t18)
+## [18](#t18). `1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD` (class B)
 
 - scan: 13 levels, 114 phases, mean factor 1.36 (sd 0.12); level starts: 8 10 14 19 25 32 52 61 70 83 131 203 311
 - verdict: no clear single-block Bell configuration found
@@ -570,7 +570,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD.png" alt="space-time diagram" height="350">
 
 <a id="19"></a>
-## 19. `1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---` (class B) [↑ table](#t19)
+## [19](#t19). `1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---` (class B)
 
 - scan: 23 levels, 61 phases, mean factor 1.32 (sd 0.12); level starts: 166 212 253 329 382 498 577 759 868 1148 1306 1733 2604 3920
 - level analysis: Bell type `RB`, 13 levels; n: 20 22 35 92 143 335 767 1739 3926 5894 8846 13274 19916; ratios: 1.591 2.629 1.554 2.343 2.290 2.267 2.258 1.501 1.501 1.501 1.500; 3 different tails
@@ -593,7 +593,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---.png" alt="space-time diagram" height="350">
 
 <a id="20"></a>
-## 20. `1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---` (class B) [↑ table](#t20)
+## [20](#t20). `1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---` (class B)
 
 - scan: 16 levels, 43 phases, mean factor 1.40 (sd 0.12); level starts: 55 65 85 102 165 255 305 460 694 917 1044 1380 2084 3134
 - level analysis: Bell type `LB` with left part `02 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01 12 01`, 8 levels; n: 10 76 139 229 1354 4681 10588 15904; ratios: 7.600 1.829 1.647 5.913 3.457 2.262 1.502; 2 different tails
@@ -603,7 +603,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---.png" alt="space-time diagram" height="350">
 
 <a id="21"></a>
-## 21. `1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD` (class B) [↑ table](#t21)
+## [21](#t21). `1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD` (class B)
 
 - scan: 15 levels, 66 phases, mean factor 1.40 (sd 0.13); level starts: 14 17 28 31 43 50 76 135 213 281 396 537 729 985
 - level analysis: Bell type `RE`, 24 levels; n: 217 297 409 553 745 1001 1343 1554 2089 2793 3737 4991 6673 8905 11881 15849; ratios: 1.344 1.342 1.157 1.344 1.337 1.338 1.336 1.337 1.334 1.334 1.334; 1 different tails
@@ -613,7 +613,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD.png" alt="space-time diagram" height="350">
 
 <a id="22"></a>
-## 22. `1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE` (class B) [↑ table](#t22)
+## [22](#t22). `1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE` (class B)
 
 - scan: 12 levels, 30 phases, mean factor 1.40 (sd 0.13); level starts: 11 13 19 35 52 64 91 141 190 269 393 448
 - level analysis: Bell type `RA`, 7 levels; n: 6 15 40 146 398 1192 3390; ratios: 2.500 2.667 3.650 2.726 2.995 2.844; 2 different tails
@@ -623,7 +623,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE.png" alt="space-time diagram" height="350">
 
 <a id="23"></a>
-## 🟩 23. `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---` (class B) [↑ table](#t23)
+## 🟩 [23](#t23). `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---` (class B)
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 - **From the Rocq proof:** `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---`. 46 of the lines are the table; it needs only `Individual62`. At left-boundary visits the tape is `(001)^k 0000 (01)^j Y`, with the head in state A on its first cell. One round takes (k, j) to (k-1, j+2) and never reads Y. At k = 0 the run (01)^J is converted rigidly to about 2J/3 blocks of (101) on the left, so 2k + j grows by a factor of about 4/3 per cycle. The left half of the tape is kept exactly, as a stack. The right half is read from the far end by a fixed DFA with 11,253 states. A finite set of 933,744 triples (control, stack symbol, control), control = (state, head symbol, DFA state), is closed under the machine's rules (pre* saturation of a pushdown system, Bouajjani, Esparza and Maler), and a configuration it does not accept cannot reach a halt. `saturate` computes the triples inside the VM and needs no proof; `check_all` tests closure, that the halting controls are accepted, and that the real configuration after 1000 steps is not accepted; `sound` proves `check_all d P rs = true -> ~halts tm c0` for any table and any triples. Before Rocq, with no shared code: a separate C checker on the same table and triples, 1,978,289 closure checks, 0 failures, and a separate Python saturation that gets the same 933,744 triples, with the same order-independent hash as the VM. The file with the start taken after 100 steps, and the file with one machine entry changed, both fail at `Qed`. `coqchk` stopped at a 20 minute cap without a verdict; as far as I can tell it reduces the `vm_cast` without the VM, so it is not expected to finish, and this file relies on the kernel's VM check at `Qed`, like other `vm_cast_no_check` proofs.
 
@@ -679,7 +679,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 **Comparison with nos. 95 and 102.** There the whole tape is described by counters, and a linear invariant suffices. Here the tape has an irregular part Y, so instead of a formula the proof uses a large finite certificate (a DFA plus triples) that the computer checks. This is a closed-tape-language / regular-invariant approach, extended by an exact stack for the left half.
 
 <a id="24"></a>
-## 24. `1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE` (class B) [↑ table](#t24)
+## [24](#t24). `1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE` (class B)
 - **BusyBeaverWiki article:** [1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE](https://wiki.bbchallenge.org/wiki/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: listed under "chaotic machines not classified as cryptids"
 
 - scan: 23 levels, 76 phases, mean factor 1.25 (sd 0.14); level starts: 182 264 310 342 380 474 552 590 946 1104 1182 1884 2202 2360
@@ -690,7 +690,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE.png" alt="space-time diagram" height="350">
 
 <a id="25"></a>
-## 25. `1RB0LE_1LC0RD_0RA1LD_0LC1RA_1LF1LA_---1LA` (class B) [↑ table](#t25)
+## [25](#t25). `1RB0LE_1LC0RD_0RA1LD_0LC1RA_1LF1LA_---1LA` (class B)
 
 - scan: 8 levels, 32 phases, mean factor 1.55 (sd 0.14); level starts: 33 52 73 107 209 385 523 707
 - level analysis: Bell type `LD` with left part `01 11 01`, 16 levels; n: 8 13 23 45 64 85 119 221 397 535 719 5398 7197 9600 12802 17069; ratios: 1.328 1.400 1.857 1.796 1.348 1.344 7.508 1.333 1.334 1.334 1.333; 2 different tails
@@ -700,7 +700,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB0LE_1LC0RD_0RA1LD_0LC1RA_1LF1LA_---1LA.png" alt="space-time diagram" height="350">
 
 <a id="26"></a>
-## 26. `1RB1LC_1LA0RD_1LB1LF_1LE1RE_0LA0RB_0LB---` (class B) [↑ table](#t26)
+## [26](#t26). `1RB1LC_1LA0RD_1LB1LF_1LE1RE_0LA0RB_0LB---` (class B)
 
 - scan: 20 levels, 32 phases, mean factor 1.37 (sd 0.15); level starts: 63 88 138 186 261 343 411 461 615 1026 1085 1383 1842 3255
 - level analysis: Bell type `LA` with left part `01`, 11 levels; n: 4 9 15 30 62 146 270 1387 2475 10358 24548; ratios: 2.250 1.667 2.000 2.067 2.355 1.849 5.137 1.784 4.185 2.370; 2 different tails
@@ -710,7 +710,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB1LC_1LA0RD_1LB1LF_1LE1RE_0LA0RB_0LB---.png" alt="space-time diagram" height="350">
 
 <a id="27"></a>
-## 27. `1RB1LC_1LC0RD_0LE1LA_0RF1RA_1LA0LA_---0RB` (class B) [↑ table](#t27)
+## [27](#t27). `1RB1LC_1LC0RD_0LE1LA_0RF1RA_1LA0LA_---0RB` (class B)
 
 - scan: 8 levels, 12 phases, mean factor 1.64 (sd 0.15); level starts: 17 32 61 98 121 188 359 545
 - level analysis: Bell type `LA` with left part `01 12 02`, 6 levels; n: 33 99 189 546 1110 5589; ratios: 3.000 1.909 2.889 2.033 5.035; 1 different tails
@@ -720,7 +720,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB1LC_1LC0RD_0LE1LA_0RF1RA_1LA0LA_---0RB.png" alt="space-time diagram" height="350">
 
 <a id="28"></a>
-## 28. `1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC` (class B) [↑ table](#t28)
+## [28](#t28). `1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC` (class B)
 - **BusyBeaverWiki article:** [1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC](https://wiki.bbchallenge.org/wiki/1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC)
 
 - scan: 20 levels, 176 phases, mean factor 1.24 (sd 0.15); level starts: 45 53 59 74 91 157 184 229 253 324 355 401 464 495
@@ -730,7 +730,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC.png" alt="space-time diagram" height="350">
 
 <a id="29"></a>
-## 29. `1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB` (class B) [↑ table](#t29)
+## [29](#t29). `1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB` (class B)
 
 - scan: 12 levels, 25 phases, mean factor 1.49 (sd 0.16); level starts: 8 10 15 29 43 77 91 146 229 362 413 633
 - level analysis: Bell type `LA` with left part `01 12 02`, 10 levels; n: 8 30 78 147 363 636 960 2226 3354 5694; ratios: 3.750 2.600 1.885 2.469 1.752 1.509 2.319 1.507 1.698; 2 different tails
@@ -740,7 +740,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB.png" alt="space-time diagram" height="350">
 
 <a id="30"></a>
-## 30. `1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB` (class B) [↑ table](#t30)
+## [30](#t30). `1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB` (class B)
 
 - scan: 10 levels, 34 phases, mean factor 1.54 (sd 0.16); level starts: 13 16 35 58 97 140 211 270 412 625
 - level analysis: Bell type `RD`, 11 levels; n: 5 11 20 67 104 277 419 632 2070 5378 11434; ratios: 2.200 1.818 3.350 1.552 2.663 1.513 1.508 3.275 2.598 2.126; 1 different tails
@@ -750,7 +750,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB.png" alt="space-time diagram" height="350">
 
 <a id="31"></a>
-## 31. `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` (class B) [↑ table](#t31)
+## [31](#t31). `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` (class B)
 
 - scan: 22 levels, 40 phases, mean factor 1.34 (sd 0.17); level starts: 114 128 173 235 279 313 381 421 516 705 936 1260 2910 3969
 - level analysis: Bell type `RB`, 13 levels; n: 12 16 37 45 56 64 121 389 524 700 944 1260 3965; ratios: 2.312 1.216 1.244 1.143 1.891 3.215 1.347 1.336 1.349 1.335 3.147; 3 different tails
@@ -893,7 +893,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---.png" alt="space-time diagram" height="350">
 
 <a id="32"></a>
-## 32. `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` (class B) [↑ table](#t32)
+## [32](#t32). `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` (class B)
 
 - scan: 23 levels, 40 phases, mean factor 1.33 (sd 0.17); level starts: 130 174 233 288 315 390 420 525 696 945 1257 1323 2919 3966
 - level analysis: Bell type `RD` with left part `11 01`, 10 levels; n: 10 18 34 42 78 86 166 283 1690 5294; ratios: 1.800 1.889 1.235 1.857 1.103 1.930 1.705 5.972 3.133; 3 different tails
@@ -905,7 +905,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---.png" alt="space-time diagram" height="350">
 
 <a id="33"></a>
-## 33. `1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD` (class B) [↑ table](#t33)
+## [33](#t33). `1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD` (class B)
 - **BusyBeaverWiki article:** [Space Needle](https://wiki.bbchallenge.org/wiki/Space_Needle); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: cryptid "Space Needle"
 
 - scan: 9 levels, 407 phases, mean factor 1.69 (sd 0.17); level starts: 12 20 36 56 96 146 311 371 778
@@ -916,7 +916,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD.png" alt="space-time diagram" height="350">
 
 <a id="34"></a>
-## 34. `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` (class B) [↑ table](#t34)
+## [34](#t34). `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` (class B)
 - **BusyBeaverWiki article:** [1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD)
 
 - scan: 13 levels, 29 phases, mean factor 1.34 (sd 0.18); level starts: 13 16 18 28 46 60 72 150 182 234 258 316 452
@@ -927,7 +927,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD.png" alt="space-time diagram" height="350">
 
 <a id="35"></a>
-## 35. `1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA` (class B) [↑ table](#t35)
+## [35](#t35). `1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA` (class B)
 
 - scan: 16 levels, 128 phases, mean factor 1.25 (sd 0.18); level starts: 43 47 53 61 91 114 125 137 159 187 217 229 277 592
 - level analysis: Bell type `RC`, 8 levels; n: 7 9 14 19 24 100 374 644; ratios: 1.286 1.556 1.357 1.263 4.167 3.740 1.722; 4 different tails
@@ -939,7 +939,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA.png" alt="space-time diagram" height="350">
 
 <a id="36"></a>
-## 36. `1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB` (class B) [↑ table](#t36)
+## [36](#t36). `1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB` (class B)
 
 - scan: 7 levels, 12 phases, mean factor 1.56 (sd 0.19); level starts: 51 83 134 149 230 485 734
 - level analysis: Bell type `RA` with left part `11 01`, 10 levels; n: 87 138 234 738 1122 1698 2568 4626 6951 10434; ratios: 1.586 1.696 3.154 1.520 1.513 1.512 1.801 1.503 1.501; 1 different tails
@@ -949,7 +949,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB.png" alt="space-time diagram" height="350">
 
 <a id="37"></a>
-## 37. `1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC` (class B) [↑ table](#t37)
+## [37](#t37). `1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC` (class B)
 - **Equivalent to no. 11** (checked 29 Oct 2026, observation by post-apocalyptic sphere on Discord; `scan/iso_11_37.py`).
   - **Same transition table.** This machine is no. 11 **mirrored**, with the states renamed (no. 11 → here: A→D, B→E, C→A, D→B, E→C, F→F). All 12 transitions agree under this map, with left and right swapped. Only the start state differs: this machine starts in A, which corresponds to C of no. 11.
   - **Same configuration.** After 8,277,490 steps of no. 11 and 7,454,917 steps of no. 37 the tapes are identical up to mirroring: 1674 cells, the head at the same position, state D in no. 11 and B here (B = image of D).
@@ -974,7 +974,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
   - Because the runs coincide, all of this holds for this machine as well.
 
 <a id="38"></a>
-## 38. `1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC` (class C) [↑ table](#t38)
+## [38](#t38). `1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC` (class C)
 
 - scan: 10 levels, 18 phases, mean factor 1.55 (sd 0.20); level starts: 8 14 20 28 54 60 78 154 203 404
 - level analysis: Bell type `RA`, 7 levels; n: 4 14 20 54 60 154 404; ratios: 3.500 1.429 2.700 1.111 2.567 2.623; 4 different tails
@@ -986,7 +986,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC.png" alt="space-time diagram" height="350">
 
 <a id="39"></a>
-## 39. `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` (class C) [↑ table](#t39)
+## [39](#t39). `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` (class C)
 
 - scan: 21 levels, 54 phases, mean factor 1.36 (sd 0.21); level starts: 156 198 237 306 358 468 541 713 814 1074 1225 1623 2444 3677
 - level analysis: Bell type `LC` with left part `01`, 11 levels; n: 4 10 88 136 208 316 478 1084 1633 5530 12457; ratios: 2.500 8.800 1.545 1.529 1.519 1.513 2.268 1.506 3.386 2.253; 2 different tails
@@ -1073,7 +1073,7 @@ The first 100 Bell starts `[0] P 1^N T` are listed in [`m39/bells_100.md`](m39/b
 **HALT:** only through D1 (`---`). No condition for it has been derived yet. Presumably it needs a tail counter that grows to the size of the main block, or a special configuration at the boundary between them.
 
 <a id="40"></a>
-## 40. `1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA` (class C) [↑ table](#t40)
+## [40](#t40). `1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA` (class C)
 - **BusyBeaverWiki article:** [Lucy's Moonlight](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: cryptid "Lucy's Moonlight"
 
 - scan: 13 levels, 26 phases, mean factor 1.48 (sd 0.22); level starts: 8 10 17 22 34 46 50 57 114 155 324 435 884
@@ -1084,7 +1084,7 @@ The first 100 Bell starts `[0] P 1^N T` are listed in [`m39/bells_100.md`](m39/b
 <img src="diagrams/1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA.png" alt="space-time diagram" height="350">
 
 <a id="41"></a>
-## 41. `1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD` (class C) [↑ table](#t41)
+## [41](#t41). `1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD` (class C)
 - **BusyBeaverWiki article:** [1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD](https://wiki.bbchallenge.org/wiki/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD)
 
 - scan: 17 levels, 63 phases, mean factor 1.40 (sd 0.23); level starts: 39 90 118 131 156 298 456 534 1006 1130 1209 1644 1962 2120
@@ -1197,7 +1197,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 **Verdict:** a Bell machine with an exact two-phase cycle. Phase A is linear. Phase B is an iterated piecewise affine map on (b, c), whose pieces are cut out by t = c/b with thresholds accumulating at t = 1. So the Bell map n → n' is piecewise affine with infinitely many pieces, not a finite table; the vampire method does not apply directly. A non-halting proof would have to show that every transition of the macro model is valid for all counter values reached (no small-counter edge case that leads to "E on 1, then 0").
 
 <a id="42"></a>
-## 42. `1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD` (class C) [↑ table](#t42)
+## [42](#t42). `1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD` (class C)
 
 - scan: 14 levels, 45 phases, mean factor 1.42 (sd 0.23); level starts: 13 15 37 44 53 72 155 198 257 407 458 593 975 1200
 - level analysis: Bell type `LD` with left part `01`, 6 levels; n: 4 44 162 414 1204 3402; ratios: 11.000 3.682 2.556 2.908 2.826; 1 different tails
@@ -1207,7 +1207,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD.png" alt="space-time diagram" height="350">
 
 <a id="43"></a>
-## 43. `1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB` (class C) [↑ table](#t43)
+## [43](#t43). `1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB` (class C)
 
 - scan: 15 levels, 32 phases, mean factor 1.41 (sd 0.25); level starts: 14 32 37 50 61 73 86 156 264 325 397 451 593 1412
 - level analysis: Bell type `RC`, 7 levels; n: 8 13 42 157 330 1416 3614; ratios: 1.625 3.231 3.738 2.102 4.291 2.552; 2 different tails
@@ -1217,7 +1217,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB.png" alt="space-time diagram" height="350">
 
 <a id="44"></a>
-## 44. `1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---` (class C) [↑ table](#t44)
+## [44](#t44). `1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---` (class C)
 
 - scan: 7 levels, 13 phases, mean factor 1.90 (sd 0.25); level starts: 13 17 48 79 180 299 620
 - level analysis: Bell type `LB` with left part `01`, 7 levels; n: 14 54 186 626 2094 6986 23294; ratios: 3.857 3.444 3.366 3.345 3.336 3.334; 1 different tails
@@ -1227,7 +1227,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---.png" alt="space-time diagram" height="350">
 
 <a id="45"></a>
-## 45. `1RB0LD_1LC0RD_1LA0LC_1RE0LB_1RB1RF_0LD---` (class C) [↑ table](#t45)
+## [45](#t45). `1RB0LD_1LC0RD_1LA0LC_1RE0LB_1RB1RF_0LD---` (class C)
 
 - scan: 10 levels, 21 phases, mean factor 1.53 (sd 0.25); level starts: 11 15 19 25 44 62 152 170 233 515
 - verdict: no clear single-block Bell configuration found
@@ -1236,7 +1236,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB0LD_1LC0RD_1LA0LC_1RE0LB_1RB1RF_0LD---.png" alt="space-time diagram" height="350">
 
 <a id="46"></a>
-## 46. `1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD` (class C) [↑ table](#t46)
+## [46](#t46). `1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD` (class C)
 
 - scan: 7 levels, 14 phases, mean factor 1.74 (sd 0.26); level starts: 16 24 56 108 220 416 440
 - level analysis: Bell type `RD`, 11 levels; n: 4 12 39 119 839 1079 1847 2567 3271 4639 8423; ratios: 3.000 3.250 3.051 7.050 1.286 1.712 1.390 1.274 1.418 1.816; 2 different tails
@@ -1246,7 +1246,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD.png" alt="space-time diagram" height="350">
 
 <a id="47"></a>
-## 47. `1RB0LF_1LC0LD_1RD1LB_---1RE_0RA1RE_1LA0LE` (class C) [↑ table](#t47)
+## [47](#t47). `1RB0LF_1LC0LD_1RD1LB_---1RE_0RA1RE_1LA0LE` (class C)
 
 - scan: 10 levels, 38 phases, mean factor 1.47 (sd 0.26); level starts: 16 18 21 51 108 119 176 249 330 499
 - level analysis: Bell type `RE`, 10 levels; n: 4 12 29 62 120 256 516 1016 2108 17222; ratios: 3.000 2.417 2.138 1.935 2.133 2.016 1.969 2.075 8.170; 1 different tails
@@ -1256,7 +1256,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB0LF_1LC0LD_1RD1LB_---1RE_0RA1RE_1LA0LE.png" alt="space-time diagram" height="350">
 
 <a id="48"></a>
-## 48. `1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---` (class C) [↑ table](#t48)
+## [48](#t48). `1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---` (class C)
 
 - scan: 7 levels, 1751 phases, mean factor 1.52 (sd 0.27); level starts: 12 15 20 54 85 116 146
 - verdict: no clear single-block Bell configuration found
@@ -1265,7 +1265,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---.png" alt="space-time diagram" height="350">
 
 <a id="49"></a>
-## 49. `1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF` (class C) [↑ table](#t49)
+## [49](#t49). `1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF` (class C)
 - **BusyBeaverWiki article:** [1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF](https://wiki.bbchallenge.org/wiki/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF)
 
 - scan: 11 levels, 31 phases, mean factor 1.44 (sd 0.27); level starts: 18 25 73 86 138 238 281 312 456 593 711
@@ -1276,7 +1276,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF.png" alt="space-time diagram" height="350">
 
 <a id="50"></a>
-## 50. `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` (class C) [↑ table](#t50)
+## [50](#t50). `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` (class C)
 - **BusyBeaverWiki article:** [1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE](https://wiki.bbchallenge.org/wiki/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE)
 
 - scan: 10 levels, 28 phases, mean factor 1.50 (sd 0.28); level starts: 12 14 38 58 122 148 190 224 376 456
@@ -1287,7 +1287,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE.png" alt="space-time diagram" height="350">
 
 <a id="51"></a>
-## 51. `1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---` (class C) [↑ table](#t51)
+## [51](#t51). `1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---` (class C)
 
 - scan: 10 levels, 19 phases, mean factor 1.60 (sd 0.29); level starts: 21 25 28 69 89 197 260 539 716 1451
 - level analysis: Bell type `LA` with left part `01 11 01`, 8 levels; n: 10 28 76 204 546 1458 3890 27660; ratios: 2.800 2.714 2.684 2.676 2.670 2.668 7.111; 1 different tails
@@ -1297,7 +1297,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---.png" alt="space-time diagram" height="350">
 
 <a id="52"></a>
-## 52. `1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---` (class C) [↑ table](#t52)
+## [52](#t52). `1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---` (class C)
 
 - scan: 11 levels, 28 phases, mean factor 1.61 (sd 0.30); level starts: 8 26 32 42 83 160 244 322 539 860 941
 - verdict: no clear single-block Bell configuration found
@@ -1306,7 +1306,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---.png" alt="space-time diagram" height="350">
 
 <a id="53"></a>
-## 53. `1RB1RE_1LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` (class C) [↑ table](#t53)
+## [53](#t53). `1RB1RE_1LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` (class C)
 
 - scan: 9 levels, 146 phases, mean factor 1.66 (sd 0.30); level starts: 8 12 15 17 46 57 136 247 471
 - verdict: no clear single-block Bell configuration found
@@ -1315,7 +1315,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB1RE_1LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA.png" alt="space-time diagram" height="350">
 
 <a id="54"></a>
-## 54. `1RB1RF_1LC---_1LE1RD_1RA0RC_0LF0LA_0LD0RB` (class C) [↑ table](#t54)
+## [54](#t54). `1RB1RF_1LC---_1LE1RD_1RA0RC_0LF0LA_0LD0RB` (class C)
 
 - scan: 10 levels, 49 phases, mean factor 1.53 (sd 0.30); level starts: 12 20 46 52 58 124 135 262 288 564
 - level analysis: Bell type `LA` with left part `02`, 9 levels; n: 31 47 111 127 255 1135 3551 6111 12303; ratios: 1.516 2.362 1.144 2.008 4.451 3.129 1.721 2.013; 1 different tails
@@ -1325,7 +1325,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB1RF_1LC---_1LE1RD_1RA0RC_0LF0LA_0LD0RB.png" alt="space-time diagram" height="350">
 
 <a id="55"></a>
-## 55. `1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA` (class C) [↑ table](#t55)
+## [55](#t55). `1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA` (class C)
 - **BusyBeaverWiki article:** [1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA](https://wiki.bbchallenge.org/wiki/1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA)
 
 - scan: 10 levels, 26 phases, mean factor 1.48 (sd 0.32); level starts: 12 14 16 52 70 134 176 226 366 420
@@ -1336,7 +1336,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 <img src="diagrams/1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA.png" alt="space-time diagram" height="350">
 
 <a id="56"></a>
-## 56. `1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD` (class C) [↑ table](#t56)
+## [56](#t56). `1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD` (class C)
 - **BusyBeaverWiki article:** [1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD](https://wiki.bbchallenge.org/wiki/1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD)
 
 - scan: 14 levels, 28 phases, mean factor 1.43 (sd 0.32); level starts: 10 24 27 31 35 51 57 61 73 102 204 224 349 1056
@@ -1351,7 +1351,7 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet that are still in the holdout list (`holdouts_623.txt`) and were not among nos. 1–56. They are taken over from the sheet without own analysis; they are not in `bell_candidates.txt`. The space-time diagrams start from the blank tape (time downwards) and stop after 10 Bell levels, 2e7 steps or a tape width of 1000 cells.
 
 <a id="57"></a>
-## 57. `1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA` (for later analysis) [↑ table](#t57)
+## [57](#t57). `1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA` (for later analysis)
 
 - BB6 sheet: row 1057, **CRYPTID**, Bell-like, notes: A variant of Hydra and Antihydra
 - diagram: 248,932 steps, tape width 1001 cells
@@ -1359,7 +1359,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA.png" alt="space-time diagram" height="350">
 
 <a id="58"></a>
-## 58. `1RB0LD_1RC1RF_1LA0RA_0LA0LE_1LD1LA_0RB---` (for later analysis) [↑ table](#t58)
+## [58](#t58). `1RB0LD_1RC1RF_1LA0RA_0LA0LE_1LD1LA_0RB---` (for later analysis)
 
 - BB6 sheet: row 1058, **CRYPTID**, Bell-like, notes: Antihydra-like cryptid, probviously nonhalting
 - diagram: 450,585 steps, tape width 1001 cells
@@ -1367,7 +1367,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LD_1RC1RF_1LA0RA_0LA0LE_1LD1LA_0RB---.png" alt="space-time diagram" height="350">
 
 <a id="59"></a>
-## 59. `1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA` (for later analysis) [↑ table](#t59)
+## [59](#t59). `1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA` (for later analysis)
 
 - BB6 sheet: row 1059, **CRYPTID**, Bell-like, notes: Antihydra. Part of Category 1
 - diagram: 564,453 steps, tape width 1001 cells
@@ -1375,7 +1375,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA.png" alt="space-time diagram" height="350">
 
 <a id="60"></a>
-## 60. `1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC` (for later analysis) [↑ table](#t60)
+## [60](#t60). `1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC` (for later analysis)
 
 - BB6 sheet: row 1061, **CRYPTID**, Bell-like, notes: One of (canonical) collection of 16 probviously halting tetrational cryptids
 - diagram: 703,225 steps, tape width 1001 cells
@@ -1383,7 +1383,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC.png" alt="space-time diagram" height="350">
 
 <a id="61"></a>
-## 61. `1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA` (for later analysis) [↑ table](#t61)
+## [61](#t61). `1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA` (for later analysis)
 
 - BB6 sheet: row 1062, **CRYPTID**, Bell-like, notes: Probviously halting cryptid
 - diagram: 158,016 steps, tape width 1001 cells
@@ -1391,7 +1391,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA.png" alt="space-time diagram" height="350">
 
 <a id="62"></a>
-## 62. `1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE` (for later analysis) [↑ table](#t62)
+## [62](#t62). `1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE` (for later analysis)
 
 - BB6 sheet: row 1064, **CRYPTID**, Bell-like, notes: Probviously halting cryptid
 - diagram: 493,812 steps, tape width 1001 cells
@@ -1399,7 +1399,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE.png" alt="space-time diagram" height="350">
 
 <a id="63"></a>
-## 63. `1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE` (for later analysis) [↑ table](#t63)
+## [63](#t63). `1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE` (for later analysis)
 
 - BB6 sheet: row 1065, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
 - diagram: 1,197,908 steps, tape width 1001 cells
@@ -1407,7 +1407,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE.png" alt="space-time diagram" height="350">
 
 <a id="64"></a>
-## 64. `1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB` (for later analysis) [↑ table](#t64)
+## [64](#t64). `1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB` (for later analysis)
 
 - BB6 sheet: row 1066, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
 - diagram: 282,270 steps, tape width 1001 cells
@@ -1415,7 +1415,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB.png" alt="space-time diagram" height="350">
 
 <a id="65"></a>
-## 65. `1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF` (for later analysis) [↑ table](#t65)
+## [65](#t65). `1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF` (for later analysis)
 
 - BB6 sheet: row 1067, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
 - diagram: 181,696 steps, tape width 1001 cells
@@ -1423,7 +1423,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF.png" alt="space-time diagram" height="350">
 
 <a id="66"></a>
-## 66. `1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA` (for later analysis) [↑ table](#t66)
+## [66](#t66). `1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA` (for later analysis)
 
 - BB6 sheet: row 1068, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid, Part of Category 1
 - diagram: 945,825 steps, tape width 1001 cells
@@ -1431,7 +1431,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA.png" alt="space-time diagram" height="350">
 
 <a id="67"></a>
-## 67. `1RB1LD_1RC1RE_0LA1LB_0LD1LC_1RF0RA_---0RC` (for later analysis) [↑ table](#t67)
+## [67](#t67). `1RB1LD_1RC1RE_0LA1LB_0LD1LC_1RF0RA_---0RC` (for later analysis)
 
 - BB6 sheet: row 1069, **CRYPTID**, Bell-like, notes: Probviously nonhalting cryptid, similar to Antihydra
 - diagram: 511,588 steps, tape width 1001 cells
@@ -1439,7 +1439,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1LD_1RC1RE_0LA1LB_0LD1LC_1RF0RA_---0RC.png" alt="space-time diagram" height="350">
 
 <a id="68"></a>
-## 68. `1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB` (for later analysis) [↑ table](#t68)
+## [68](#t68). `1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB` (for later analysis)
 
 - BB6 sheet: row 1070, **CRYPTID**, Bell-like, notes: Probviously nonhalting cryptid, similar to Antihydra
 - diagram: 501,256 steps, tape width 1001 cells
@@ -1447,7 +1447,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB.png" alt="space-time diagram" height="350">
 
 <a id="69"></a>
-## 69. `1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE` (for later analysis) [↑ table](#t69)
+## [69](#t69). `1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE` (for later analysis)
 
 - BB6 sheet: row 1071, **CRYPTID**, Bell-like, notes: Tetrational cryptid (3/5 of becoming TC, 2/5 of halting), see source 2 for more exact chances and refinements, Part of Category 1
 - diagram: 268,228 steps, tape width 1001 cells
@@ -1455,7 +1455,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE.png" alt="space-time diagram" height="350">
 
 <a id="70"></a>
-## 70. `1RB1RF_1LC1RD_1LA1LC_1RA0RE_1RD1LA_---0LE` (for later analysis) [↑ table](#t70)
+## [70](#t70). `1RB1RF_1LC1RD_1LA1LC_1RA0RE_1RD1LA_---0LE` (for later analysis)
 
 - BB6 sheet: row 1074, Bell-like, notes: Simulated to 10^4600 steps, code with log reduction
 - diagram: 361,348 steps, tape width 1001 cells
@@ -1463,7 +1463,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RF_1LC1RD_1LA1LC_1RA0RE_1RD1LA_---0LE.png" alt="space-time diagram" height="350">
 
 <a id="71"></a>
-## 71. `1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---` (for later analysis) [↑ table](#t71)
+## [71](#t71). `1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---` (for later analysis)
 
 - BB6 sheet: row 1075, Bell-like, notes: Could be solvable
 - diagram: 157,428 steps, tape width 1001 cells
@@ -1471,7 +1471,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---.png" alt="space-time diagram" height="350">
 
 <a id="72"></a>
-## 72. `1RB1LE_1LC1RC_1LA1RD_1LD0RB_0LC0LF_0LB---` (for later analysis) [↑ table](#t72)
+## [72](#t72). `1RB1LE_1LC1RC_1LA1RD_1LD0RB_0LC0LF_0LB---` (for later analysis)
 
 - BB6 sheet: row 1076, Bell-like
 - diagram: 491,380 steps, tape width 1001 cells
@@ -1479,7 +1479,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1LE_1LC1RC_1LA1RD_1LD0RB_0LC0LF_0LB---.png" alt="space-time diagram" height="350">
 
 <a id="73"></a>
-## 73. `1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC` (for later analysis) [↑ table](#t73)
+## [73](#t73). `1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC` (for later analysis)
 
 - BB6 sheet: row 1079, Bell-like
 - diagram: 492,524 steps, tape width 1001 cells
@@ -1487,7 +1487,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC.png" alt="space-time diagram" height="350">
 
 <a id="74"></a>
-## 74. `1RB0RD_1RC0LF_1LA0LB_---1RE_1LB1RA_0LC0RA` (for later analysis) [↑ table](#t74)
+## [74](#t74). `1RB0RD_1RC0LF_1LA0LB_---1RE_1LB1RA_0LC0RA` (for later analysis)
 
 - BB6 sheet: row 1081, Bell-like
 - diagram: 715,875 steps, tape width 1001 cells
@@ -1495,7 +1495,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0RD_1RC0LF_1LA0LB_---1RE_1LB1RA_0LC0RA.png" alt="space-time diagram" height="350">
 
 <a id="75"></a>
-## 75. `1RB1RD_1RC1LD_0LA1RA_1LE0RC_---1LF_0LA0LB` (for later analysis) [↑ table](#t75)
+## [75](#t75). `1RB1RD_1RC1LD_0LA1RA_1LE0RC_---1LF_0LA0LB` (for later analysis)
 
 - BB6 sheet: row 1082, Bell-like
 - diagram: 557,574 steps, tape width 1001 cells
@@ -1503,7 +1503,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RD_1RC1LD_0LA1RA_1LE0RC_---1LF_0LA0LB.png" alt="space-time diagram" height="350">
 
 <a id="76"></a>
-## 76. `1RB1LF_1LC0RD_---1LD_1RB1RE_1LA0LB_0LA0LE` (for later analysis) [↑ table](#t76)
+## [76](#t76). `1RB1LF_1LC0RD_---1LD_1RB1RE_1LA0LB_0LA0LE` (for later analysis)
 
 - BB6 sheet: row 1086, Bell-like
 - diagram: 775,501 steps, tape width 1001 cells
@@ -1511,7 +1511,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1LF_1LC0RD_---1LD_1RB1RE_1LA0LB_0LA0LE.png" alt="space-time diagram" height="350">
 
 <a id="77"></a>
-## 77. `1RB0LF_1LC0LA_1RA0RD_---1RE_1LA1RC_0LB0RC` (for later analysis) [↑ table](#t77)
+## [77](#t77). `1RB0LF_1LC0LA_1RA0RD_---1RE_1LA1RC_0LB0RC` (for later analysis)
 
 - BB6 sheet: row 1087, Bell-like
 - diagram: 675,039 steps, tape width 1001 cells
@@ -1519,7 +1519,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LF_1LC0LA_1RA0RD_---1RE_1LA1RC_0LB0RC.png" alt="space-time diagram" height="350">
 
 <a id="78"></a>
-## 78. `1RB1LF_1RC1LD_1LB1LE_1LE0LD_0LA0RE_1RD---` (for later analysis) [↑ table](#t78)
+## [78](#t78). `1RB1LF_1RC1LD_1LB1LE_1LE0LD_0LA0RE_1RD---` (for later analysis)
 
 - BB6 sheet: row 1088, Bell-like
 - diagram: 623,823 steps, tape width 1001 cells
@@ -1527,7 +1527,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1LF_1RC1LD_1LB1LE_1LE0LD_0LA0RE_1RD---.png" alt="space-time diagram" height="350">
 
 <a id="79"></a>
-## 79. `1RB1LC_1LA1LD_1LD0LC_0LE0RD_1RA1LF_1RC---` (for later analysis) [↑ table](#t79)
+## [79](#t79). `1RB1LC_1LA1LD_1LD0LC_0LE0RD_1RA1LF_1RC---` (for later analysis)
 
 - BB6 sheet: row 1089, Bell-like
 - diagram: 571,776 steps, tape width 1001 cells
@@ -1535,7 +1535,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1LC_1LA1LD_1LD0LC_0LE0RD_1RA1LF_1RC---.png" alt="space-time diagram" height="350">
 
 <a id="80"></a>
-## 80. `1RB1RA_1LC0RB_1LE0LD_0LB1LD_0RA0LF_---0RE` (for later analysis) [↑ table](#t80)
+## [80](#t80). `1RB1RA_1LC0RB_1LE0LD_0LB1LD_0RA0LF_---0RE` (for later analysis)
 
 - BB6 sheet: row 1090, Bell-like
 - diagram: 313,854 steps, tape width 1001 cells
@@ -1543,7 +1543,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RA_1LC0RB_1LE0LD_0LB1LD_0RA0LF_---0RE.png" alt="space-time diagram" height="350">
 
 <a id="81"></a>
-## 81. `1RB0LD_0RC1RA_1RD1RE_1LA0LE_0RA0RF_1RC---` (for later analysis) [↑ table](#t81)
+## [81](#t81). `1RB0LD_0RC1RA_1RD1RE_1LA0LE_0RA0RF_1RC---` (for later analysis)
 
 - BB6 sheet: row 1091, Bell-like
 - diagram: 162,354 steps, tape width 1001 cells
@@ -1551,7 +1551,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LD_0RC1RA_1RD1RE_1LA0LE_0RA0RF_1RC---.png" alt="space-time diagram" height="350">
 
 <a id="82"></a>
-## 82. `1RB0RE_0LC1LE_0RD1LD_1RA1LF_1LC0RA_0LB---` (for later analysis) [↑ table](#t82)
+## [82](#t82). `1RB0RE_0LC1LE_0RD1LD_1RA1LF_1LC0RA_0LB---` (for later analysis)
 
 - BB6 sheet: row 1092, Bell-like
 - diagram: 744,077 steps, tape width 1001 cells
@@ -1559,7 +1559,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0RE_0LC1LE_0RD1LD_1RA1LF_1LC0RA_0LB---.png" alt="space-time diagram" height="350">
 
 <a id="83"></a>
-## 83. `1RB1RA_1LC0RB_1LD0LB_1RA0LE_---1LF_1LB0LA` (for later analysis) [↑ table](#t83)
+## [83](#t83). `1RB1RA_1LC0RB_1LD0LB_1RA0LE_---1LF_1LB0LA` (for later analysis)
 
 - BB6 sheet: row 1093, Bell-like
 - diagram: 562,740 steps, tape width 1001 cells
@@ -1567,7 +1567,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RA_1LC0RB_1LD0LB_1RA0LE_---1LF_1LB0LA.png" alt="space-time diagram" height="350">
 
 <a id="84"></a>
-## 🟩 84. `1RB0LC_1LC0RE_1RF1LD_1LA0LB_1RD1RA_1LB---` (for later analysis) [↑ table](#t84)
+## 🟩 [84](#t84). `1RB0LC_1LC0RE_1RF1LD_1LA0LB_1RD1RA_1LB---` (for later analysis)
 
 - BB6 sheet: row 1094, Bell-like
 - diagram: 1,555,978 steps, tape width 1001 cells
@@ -1575,7 +1575,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LC_1LC0RE_1RF1LD_1LA0LB_1RD1RA_1LB---.png" alt="space-time diagram" height="350">
 
 <a id="85"></a>
-## 85. `1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` (for later analysis) [↑ table](#t85)
+## [85](#t85). `1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` (for later analysis)
 
 - BB6 sheet: row 1095, Bell-like
 - diagram: 467,874 steps, tape width 1001 cells
@@ -1583,7 +1583,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA.png" alt="space-time diagram" height="350">
 
 <a id="86"></a>
-## 86. `1RB0RE_1RC0RF_1LD1RA_1LB1LD_1RA1LB_---0LD` (for later analysis) [↑ table](#t86)
+## [86](#t86). `1RB0RE_1RC0RF_1LD1RA_1LB1LD_1RA1LB_---0LD` (for later analysis)
 
 - BB6 sheet: row 1099, Bell-like
 - diagram: 366,736 steps, tape width 1001 cells
@@ -1591,7 +1591,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0RE_1RC0RF_1LD1RA_1LB1LD_1RA1LB_---0LD.png" alt="space-time diagram" height="350">
 
 <a id="87"></a>
-## 87. `1RB1LC_1RC0RF_1RD0LB_1RE0LD_1LF---_0RA1LA` (for later analysis) [↑ table](#t87)
+## [87](#t87). `1RB1LC_1RC0RF_1RD0LB_1RE0LD_1LF---_0RA1LA` (for later analysis)
 
 - BB6 sheet: row 1100, Bell-like
 - diagram: 439,921 steps, tape width 1001 cells
@@ -1599,7 +1599,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1LC_1RC0RF_1RD0LB_1RE0LD_1LF---_0RA1LA.png" alt="space-time diagram" height="350">
 
 <a id="88"></a>
-## 88. `1RB0LE_1RC0RF_0RD0RB_1RE0RC_1LA0LA_1RA---` (for later analysis) [↑ table](#t88)
+## [88](#t88). `1RB0LE_1RC0RF_0RD0RB_1RE0RC_1LA0LA_1RA---` (for later analysis)
 
 - BB6 sheet: row 1102, Bell-like
 - diagram: 124,792 steps, tape width 1001 cells
@@ -1607,7 +1607,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LE_1RC0RF_0RD0RB_1RE0RC_1LA0LA_1RA---.png" alt="space-time diagram" height="350">
 
 <a id="89"></a>
-## 89. `1RB---_1RC1RE_1LD0LE_1RF0LC_0RD0RA_0RB1RD` (for later analysis) [↑ table](#t89)
+## [89](#t89). `1RB---_1RC1RE_1LD0LE_1RF0LC_0RD0RA_0RB1RD` (for later analysis)
 
 - BB6 sheet: row 1104, Bell-like
 - diagram: 146,380 steps, tape width 1001 cells
@@ -1615,7 +1615,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB---_1RC1RE_1LD0LE_1RF0LC_0RD0RA_0RB1RD.png" alt="space-time diagram" height="350">
 
 <a id="90"></a>
-## 90. `1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD` (for later analysis) [↑ table](#t90)
+## [90](#t90). `1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD` (for later analysis)
 
 - BB6 sheet: row 1108, Bell-like
 - diagram: 318,582 steps, tape width 1001 cells
@@ -1623,7 +1623,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD.png" alt="space-time diagram" height="350">
 
 <a id="91"></a>
-## 91. `1RB0LA_1RC0RE_0LD0RF_1LA1LD_0RA1RE_---0LC` (for later analysis) [↑ table](#t91)
+## [91](#t91). `1RB0LA_1RC0RE_0LD0RF_1LA1LD_0RA1RE_---0LC` (for later analysis)
 
 - BB6 sheet: row 1110, Bell-like
 - diagram: 389,932 steps, tape width 1001 cells
@@ -1631,7 +1631,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LA_1RC0RE_0LD0RF_1LA1LD_0RA1RE_---0LC.png" alt="space-time diagram" height="350">
 
 <a id="92"></a>
-## 92. `1RB0RA_0RC0LB_1LD1RF_1LE1RA_1RD1RB_1LA---` (for later analysis) [↑ table](#t92)
+## [92](#t92). `1RB0RA_0RC0LB_1LD1RF_1LE1RA_1RD1RB_1LA---` (for later analysis)
 
 - BB6 sheet: row 1113, Bell-like
 - diagram: 615,561 steps, tape width 1001 cells
@@ -1639,7 +1639,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0RA_0RC0LB_1LD1RF_1LE1RA_1RD1RB_1LA---.png" alt="space-time diagram" height="350">
 
 <a id="93"></a>
-## 93. `1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---` (for later analysis) [↑ table](#t93)
+## [93](#t93). `1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---` (for later analysis)
 
 - BB6 sheet: row 1114, Bell-like
 - diagram: 188,839 steps, tape width 1001 cells
@@ -1647,7 +1647,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---.png" alt="space-time diagram" height="350">
 
 <a id="94"></a>
-## 94. `1RB0RA_1LC0LE_1RA1LD_0LB1LF_1LD0RC_1LB---` (for later analysis) [↑ table](#t94)
+## [94](#t94). `1RB0RA_1LC0LE_1RA1LD_0LB1LF_1LD0RC_1LB---` (for later analysis)
 
 - BB6 sheet: row 1116, Bell-like
 - diagram: 437,402 steps, tape width 1001 cells
@@ -1655,7 +1655,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0RA_1LC0LE_1RA1LD_0LB1LF_1LD0RC_1LB---.png" alt="space-time diagram" height="350">
 
 <a id="95"></a>
-## 🟩 95. `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB` (for later analysis) [↑ table](#t95)
+## 🟩 [95](#t95). `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB` (for later analysis)
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 - **From the Rocq proof:** `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB`. No custom checker: only `ES_v3` and `Individual62`. The machine has no chaotic tail. At its left records the tape is a few periodic blocks with counts plus a short fixed end word, so it runs as a register machine on eight tape forms. Every rule is linear in the counts, for example N1(a, b, d) -> N1(a+3, b+12, d-2); the only case splits are small d, parity of the counts, and z = 1..5 at the end of a conversion. An inductive invariant of linear inequalities keeps every rule applicable, and no rule halts. The main theorem is `progress_nonhalt` on that invariant, with 34 one-line rules (`es'`, or a local `esr` for more than three counts). Before Rocq: the register machine equals the plain machine's tapes cell by cell on all 4,534 records from step 50,497 to 5.1e9.
 
@@ -1711,7 +1711,7 @@ Checks:
 - The result `m95/bells_102.txt` took 100 seconds.
 
 <a id="96"></a>
-## 96. `1RB1RE_1LC0LE_1RD0LB_0RA1RC_0RC0RF_1RA---` (for later analysis) [↑ table](#t96)
+## [96](#t96). `1RB1RE_1LC0LE_1RD0LB_0RA1RC_0RC0RF_1RA---` (for later analysis)
 
 - BB6 sheet: row 1118, Bell-like
 - diagram: 149,689 steps, tape width 1001 cells
@@ -1719,7 +1719,7 @@ Checks:
 <img src="diagrams/1RB1RE_1LC0LE_1RD0LB_0RA1RC_0RC0RF_1RA---.png" alt="space-time diagram" height="350">
 
 <a id="97"></a>
-## 97. `1RB1LB_1RC1LD_1LA1RE_1RD0LA_0RB0RF_0RA---` (for later analysis) [↑ table](#t97)
+## [97](#t97). `1RB1LB_1RC1LD_1LA1RE_1RD0LA_0RB0RF_0RA---` (for later analysis)
 
 - BB6 sheet: row 1121, Bell-like
 - diagram: 515,725 steps, tape width 1001 cells
@@ -1727,7 +1727,7 @@ Checks:
 <img src="diagrams/1RB1LB_1RC1LD_1LA1RE_1RD0LA_0RB0RF_0RA---.png" alt="space-time diagram" height="350">
 
 <a id="98"></a>
-## 98. `1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA` (for later analysis) [↑ table](#t98)
+## [98](#t98). `1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA` (for later analysis)
 
 - BB6 sheet: row 1123, Bell-like
 - diagram: 1,197,278 steps, tape width 1001 cells
@@ -1735,7 +1735,7 @@ Checks:
 <img src="diagrams/1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA.png" alt="space-time diagram" height="350">
 
 <a id="99"></a>
-## 99. `1RB0RC_1LC1RF_1RE0LD_1LC1LA_---1RD_0RB0RA` (for later analysis) [↑ table](#t99)
+## [99](#t99). `1RB0RC_1LC1RF_1RE0LD_1LC1LA_---1RD_0RB0RA` (for later analysis)
 
 - BB6 sheet: row 1124, Bell-like
 - diagram: 593,858 steps, tape width 920 cells
@@ -1743,7 +1743,7 @@ Checks:
 <img src="diagrams/1RB0RC_1LC1RF_1RE0LD_1LC1LA_---1RD_0RB0RA.png" alt="space-time diagram" height="350">
 
 <a id="100"></a>
-## 100. `1RB1RD_1LC0RD_1RF1RB_1LE0RA_0LB0LE_---0RC` (for later analysis) [↑ table](#t100)
+## [100](#t100). `1RB1RD_1LC0RD_1RF1RB_1LE0RA_0LB0LE_---0RC` (for later analysis)
 
 - BB6 sheet: row 1126, Bell-like
 - diagram: 417,003 steps, tape width 1001 cells
@@ -1751,7 +1751,7 @@ Checks:
 <img src="diagrams/1RB1RD_1LC0RD_1RF1RB_1LE0RA_0LB0LE_---0RC.png" alt="space-time diagram" height="350">
 
 <a id="101"></a>
-## 🟩 101. `1RB1RC_1LC0LF_1RF0LD_0RE1LB_1RC---_1LD0RA` (for later analysis) [↑ table](#t101)
+## 🟩 [101](#t101). `1RB1RC_1LC0LF_1RF0LD_0RE1LB_1RC---_1LD0RA` (for later analysis)
 
 - BB6 sheet: row 1128, Bell-like
 - diagram: 1,355,799 steps, tape width 1001 cells
@@ -1759,7 +1759,7 @@ Checks:
 <img src="diagrams/1RB1RC_1LC0LF_1RF0LD_0RE1LB_1RC---_1LD0RA.png" alt="space-time diagram" height="350">
 
 <a id="102"></a>
-## 🟩 102. `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD` (for later analysis) [↑ table](#t102)
+## 🟩 [102](#t102). `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD` (for later analysis)
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 - **From the Rocq proof:** `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD`. No custom checker: only `ES_v3` and `Individual62`. At its left records in state D the tape is one of three forms, each a few periodic blocks with counts plus a short fixed word:
   * A(a, c) = `100 (101)^a 110 (011)^c`
@@ -1774,7 +1774,7 @@ Checks:
 <img src="diagrams/1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD.png" alt="space-time diagram" height="350">
 
 <a id="103"></a>
-## 103. `1RB0RE_1LC1RD_1LA0LC_0RA1RF_1RD0LB_1RA---` (for later analysis) [↑ table](#t103)
+## [103](#t103). `1RB0RE_1LC1RD_1LA0LC_0RA1RF_1RD0LB_1RA---` (for later analysis)
 
 - BB6 sheet: row 1130, Bell-like
 - diagram: 415,453 steps, tape width 1001 cells
@@ -1782,7 +1782,7 @@ Checks:
 <img src="diagrams/1RB0RE_1LC1RD_1LA0LC_0RA1RF_1RD0LB_1RA---.png" alt="space-time diagram" height="350">
 
 <a id="104"></a>
-## 104. `1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA` (for later analysis) [↑ table](#t104)
+## [104](#t104). `1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA` (for later analysis)
 
 - BB6 sheet: row 1133, Bell-like
 - diagram: 241,570 steps, tape width 1001 cells
@@ -1790,7 +1790,7 @@ Checks:
 <img src="diagrams/1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA.png" alt="space-time diagram" height="350">
 
 <a id="105"></a>
-## 105. `1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD` (for later analysis) [↑ table](#t105)
+## [105](#t105). `1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD` (for later analysis)
 
 - BB6 sheet: row 1134, Bell-like
 - diagram: 70,802 steps, tape width 319 cells
@@ -1798,7 +1798,7 @@ Checks:
 <img src="diagrams/1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD.png" alt="space-time diagram" height="350">
 
 <a id="106"></a>
-## 106. `1RB1LD_0LC1RC_1RA1RD_1LE0RB_---1LF_0LC0LA` (for later analysis) [↑ table](#t106)
+## [106](#t106). `1RB1LD_0LC1RC_1RA1RD_1LE0RB_---1LF_0LC0LA` (for later analysis)
 
 - BB6 sheet: row 1135, Bell-like
 - diagram: 548,093 steps, tape width 1001 cells
@@ -1806,7 +1806,7 @@ Checks:
 <img src="diagrams/1RB1LD_0LC1RC_1RA1RD_1LE0RB_---1LF_0LC0LA.png" alt="space-time diagram" height="350">
 
 <a id="107"></a>
-## 107. `1RB1LD_0RC1RC_1RD0RE_0LA0LF_0RF---_1RA1LA` (for later analysis) [↑ table](#t107)
+## [107](#t107). `1RB1LD_0RC1RC_1RD0RE_0LA0LF_0RF---_1RA1LA` (for later analysis)
 
 - BB6 sheet: row 1136, Bell-like
 - diagram: 941,116 steps, tape width 1001 cells
@@ -1814,7 +1814,7 @@ Checks:
 <img src="diagrams/1RB1LD_0RC1RC_1RD0RE_0LA0LF_0RF---_1RA1LA.png" alt="space-time diagram" height="350">
 
 <a id="108"></a>
-## 108. `1RB0RE_0LC0RF_1LD1LC_1RA0LD_0RD1RE_---0LB` (for later analysis) [↑ table](#t108)
+## [108](#t108). `1RB0RE_0LC0RF_1LD1LC_1RA0LD_0RD1RE_---0LB` (for later analysis)
 
 - BB6 sheet: row 1137, Bell-like
 - diagram: 311,138 steps, tape width 1001 cells
@@ -1834,7 +1834,7 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 - **New:** the remaining four are still holdouts and become **nos. 109–112**. In the BB6 sheet they are not classified as Bell-like, so they were not among nos. 57–108.
 
 <a id="109"></a>
-## 109. `1RB1LE_0LC1RE_---1LD_0RD1LA_0RF1RF_1RA0LB` (potential cryptid, for later analysis) [↑ table](#t109)
+## [109](#t109). `1RB1LE_0LC1RE_---1LD_0RD1LA_0RF1RF_1RA0LB` (potential cryptid, for later analysis)
 
 - source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), Racheline's list of possibly tetrational machines
 - BB6 sheet: row 605, Shift-overflow structural counter, notes: Possibly tetrational machine
@@ -1843,7 +1843,7 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 <img src="diagrams/1RB1LE_0LC1RE_---1LD_0RD1LA_0RF1RF_1RA0LB.png" alt="space-time diagram" height="350">
 
 <a id="110"></a>
-## 110. `1RB1RD_1LC1RA_---1LD_1LE0RA_1LF0LE_0RB0LB` (potential cryptid, for later analysis) [↑ table](#t110)
+## [110](#t110). `1RB1RD_1LC1RA_---1LD_1LE0RA_1LF0LE_0RB0LB` (potential cryptid, for later analysis)
 
 - source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), Racheline's list of possibly tetrational machines
 - BB6 sheet: row 563, Shift-overflow bouncer counter, notes: Possibly tetrational machine
@@ -1852,7 +1852,7 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 <img src="diagrams/1RB1RD_1LC1RA_---1LD_1LE0RA_1LF0LE_0RB0LB.png" alt="space-time diagram" height="350">
 
 <a id="111"></a>
-## 111. `1RB0LE_0RC0RA_1LD0LC_1LA0LB_1RA1LF_---0LC` (potential cryptid, for later analysis) [↑ table](#t111)
+## [111](#t111). `1RB0LE_0RC0RA_1LD0LC_1LA0LB_1RA1LF_---0LC` (potential cryptid, for later analysis)
 
 - source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), Racheline's list of possibly tetrational machines
 - BB6 sheet: row 564, Shift-overflow bouncer counter, notes: Possibly tetrational machine
@@ -1861,7 +1861,7 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 <img src="diagrams/1RB0LE_0RC0RA_1LD0LC_1LA0LB_1RA1LF_---0LC.png" alt="space-time diagram" height="350">
 
 <a id="112"></a>
-## 112. `1RB1LD_1RC0LE_1LA1RE_0LF1LA_1RB0RB_---0LB` (potential cryptid, for later analysis) [↑ table](#t112)
+## [112](#t112). `1RB1LD_1RC0LE_1LA1RE_0LF1LA_1RB0RB_---0LB` (potential cryptid, for later analysis)
 
 - source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), probviously halting cryptids
 - BB6 sheet: row 560, CRYPTID, Shift-overflow bouncer counter, notes: Probviously halting cryptid
