@@ -1273,6 +1273,15 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
     | 2 | r = [1^a] (no k) | [1^6, 2a+4] | |
     | any | r = empty | m ≡ 0, 1: empty (b = +15, +11); m ≡ 2: [1^6, 4] (b = −47) | |
 
+  - **The case k = 2 (m ≡ 2): a carry (5 Nov 2026).** When the first group ends with a block 2, the m ≡ 2 rule does not stop at this group; it passes on to the rest T of the word, like a carry. Write rule₂(T) for the result of the m ≡ 2 rule on T alone.
+    - a ≥ 3 and T not empty: [1^a, 2] + T → [1^6, 2a − 6] + rule₂(T). Example: [1^4, 2, 1^2, 5] → [1^6, 2, 1^9, 2].
+    - a ≥ 5 and T empty: [1^a, 2] → [1^6, 2a − 10, 1^6, 4] (rule₂(empty) = [1^6, 4]).
+    - a = 2: [1, 1, 2, 1^b, k] → [1^6, 2b + 2k + 12] for k ≢ 2 (mod 3); for k ≡ 2 a second group follows.
+    - a = 1: [1, 2, 1^b, k] → [2, 1^(b+3), k − 3], i.e. rule₂ of the next group with the first four 1-blocks merged into a block 2.
+    - a = 0: [2] + T behaves roughly like the m ≡ 1 rule on T: T = [1^b, k] → empty if k ≢ 2, [1^6, 4] if k ≡ 2 (mod 3). Nested 2-blocks give extra groups.
+
+    Because the carry can run through several groups in a row, the words become longer stacks of groups (r = G₁ G₂ G₃ …). This is the source of the shapes 1^a k 1^b l … found by the search.
+  - **Brute force over group words** (`scan/m44/groups44.py`): every word with up to 3 groups [1^a, k], a ≤ 6, 2 ≤ k ≤ 6, which is 44,135 words with 3 residue classes each. None of them gives HALT, and none needs a finer modulus than 3.
   - **No way to HALT found.** A breadth-first search over r from r = empty (`graph51.py` with TMTAG = 44) visited 50,000 reachable words, up to 524 cells long: shapes 1^a k, 1^a k 1^b l and a few with single blocks in between. In **none** of them does any residue class lead to HALT, and every class was decided by m mod 3 (no finer modulus was needed). This is the opposite of no. 51, where every explored word has a path to HALT, the shortest of length 108.
   - **Real trajectory.** `orbit51.py` (TMTAG = 44, M0 = 15) follows the real run for 300 macro steps, up to m with 146 digits. r is cleared again and again, and words up to about 40 cells occur. There is no HALT.
   - **Conclusion:** no. 44 is a three-register machine: m, plus the counts a and k in the memory word, which can stack into several groups. Unlike no. 51, no halting word is known. A non-halting proof could try to show that the language of reachable words (groups 1^a k) is closed under the rules and contains no halting case: a closed-language / invariant proof on r.
