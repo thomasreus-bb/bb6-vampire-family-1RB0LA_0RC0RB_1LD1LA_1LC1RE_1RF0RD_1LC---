@@ -625,6 +625,20 @@ This machine is the [BMO's 5th problem](https://wiki.bbchallenge.org/wiki/Beaver
 <a id="21"></a>
 ## [21](#t21). `1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD` (class B)
 
+Discord, 22 Dec 2025:
+
+> **Peacemaker II** (12:01): what do you think of this one? `1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD`
+>
+> **mxdys** (12:12): it's terrible to analyze, and likely to be cryptid
+>
+> **Peacemaker II** (12:14): it's interesting because it keeps coming back to the config `0^inf <A 1^2n+1 0^inf`
+>
+> **Peacemaker II**: in fact I have tried `0^inf <A 1^2n+1 0^inf` as input for 1<n<1000 and none of them halt before reaching another config of the same form
+>
+> **Peacemaker II**: but the behavior is not exactly predictable either
+>
+> **Peacemaker II**: well, it actually is predictable for certain residue classes and chaotic for others
+
 - scan: 15 levels, 66 phases, mean factor 1.40 (sd 0.13); level starts: 14 17 28 31 43 50 76 135 213 281 396 537 729 985
 - level analysis: Bell type `RE`, 24 levels; n: 217 297 409 553 745 1001 1343 1554 2089 2793 3737 4991 6673 8905 11881 15849; ratios: 1.344 1.342 1.157 1.344 1.337 1.338 1.336 1.337 1.334 1.334 1.334; 1 different tails
 - verdict: needle-like: only 1 tail (all information in one number)
