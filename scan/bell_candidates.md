@@ -1258,33 +1258,24 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 - verdict: needle-like: only 1 tail (all information in one number)
 - diagram: 108,486 steps, tape width 1001 cells
 
-- **Detailed analysis (4 Nov 2026).** Two configuration forms, both at record events:
-  - Bell(n) = `(10)^n 1 [0]`, state B (head right of the tape);
-  - A(x, y) = `[0] (10)^x 1^y`, state A (head left of the tape).
+- **Model with the memory word r (4 Nov 2026), as for [no. 51](#51).** The macro state is C(m, r) = `[0] 10 1^m r` in state A (head on the blank left of the tape). r is a word at the right end of the tape, a sequence of blocks `0 1^k`, written as the list of k. The Bells are the C(m, empty) with m = 2n + 3. The blank tape reaches C(15, empty) at step 63 (after Bell 6).
+  - **Inside one macro step** the head runs a zigzag loop over the ones: with A(x, y) = `[0] (10)^x 1^y`, each round is A(x, y) → A(x+5, y−3). The remainder y mod 3, i.e. m mod 3, decides how the loop ends. Checked with `scan/m44/nxt.c` / `checkrules.sh` for x < 200 and y < 13.
+  - **Rules.** For every word r there are exactly three rules, one for each m mod 3: m' = (10m + b)/3 (factor 10/3 instead of 8/3 for no. 51), with b and r' fixed by (r, m mod 3). They were sampled with `cstep.c` / `rmodel51.py` (TMCODE = no. 44), four values per class, no exception. The reachable words have the shape (1^a k)(1^a' k')…: groups of a ones-blocks followed by one longer block. For one group, r = [1^a, k]:
 
-  Rules (each arrow = run to the next configuration of one of the two forms; checked with `scan/m44/nxt.c` and `scan/m44/checkrules.sh` for n < 200, x < 200, y < 13, no mismatch):
+    | m mod 3 | condition | r' | b |
+    |---|---|---|---|
+    | 0 | a ≥ 1 | [1^(a−1), k] (one 1-block removed) | +18 |
+    | 0 | a = 0 | empty | 3k + 15 |
+    | 1 | k ≡ 2 (mod 3) | [1^6, 4] | 10k + 6a − 51 |
+    | 1 | k ≡ 0, 1 (mod 3) | empty | 10k + 6a + 11 (k ≡ 0) or 10k + 6a + 7 (k ≡ 1) |
+    | 2 | k ≥ 3 | [1^(a+7), k−3] (a block k−3 = 1 joins the ones, k−3 = 0 disappears) | −35 |
+    | 2 | k = 2 | depends on a: e.g. a = 0 → [1, 7], a = 1 → [1^10], a = 2 → empty, a = 5 → a second group | |
+    | 2 | r = [1^a] (no k) | [1^6, 2a+4] | |
+    | any | r = empty | m ≡ 0, 1: empty (b = +15, +11); m ≡ 2: [1^6, 4] (b = −47) | |
 
-  | from | to |
-  |---|---|
-  | Bell(n) | A(1, 2n+3) |
-  | A(x, y), y ≥ 4 | A(x+5, y−3) (one zigzag: five more `10`, three ones fewer) |
-  | A(x, 3) | A(x+4, 1) |
-  | A(x, 1) | Bell(x+1) |
-  | A(x, 0) | Bell(x) |
-  | A(x, 2), x ≡ 0 (mod 3), x ≥ 6 | A(10x/3 − 12, 4) |
-  | A(x, 2), x ≡ 7 (mod 9) | A(100(x−7)/9 + 32, 4) |
-  | A(x, 2), other x | irregular: long nested runs, e.g. x = 10 → A(2379, 4) after 3.7·10⁶ steps; x = 37 and 41 need more than 3·10⁹ steps |
-
-  **Bell map.** From Bell(n) the loop runs from A(1, 2n+3) down to y ∈ {1, 2, 3}, so only n mod 3 matters:
-  - n ≡ 0 (mod 3): n' = 10n/3 + 6
-  - n ≡ 2 (mod 3): n' = (10n + 16)/3
-  - n ≡ 1 (mod 3): the run ends in A(x, 2) with x = (10n + 8)/3, the hard case. Then x mod 3 (and mod 9, …) decides, like Collatz digits.
-
-  The blank tape reaches Bell(0) at step 1 and Bell(6) at step 46. Then: 6, 26, 92, 312, 1046, 3492, 11646, 38826, 129426, 431426, 1438092, 4793646, 15978826 (≡ 1: A(x, 2) with x ≡ 0, regular), … With the rules above, the macro iteration (`scan/m44/macro44_51.py`) gets 16 Bells, up to n with 10 digits. It then stops at A(x, 2) with x ≡ 5 (mod 9), a case without a known rule. The Holdout Guide gives 1.2·10⁷⁹ simulated steps.
-
-  **HALT** (F1 is the only undefined transition) does not occur in any of the regular rules. It could only be hidden in the irregular sub-runs of A(x, 2).
-
-  **Relation to no. 51:** both machines start with `1RB0RE_1LC0RA`, and both have exactly the same structure. There is a loop on `(10)^x 1^y`, the exits depend on y mod 3, and the only hard case is y = 2 with an irregular residue of x.
+  - **No way to HALT found.** A breadth-first search over r from r = empty (`graph51.py` with TMTAG = 44) visited 50,000 reachable words, up to 524 cells long: shapes 1^a k, 1^a k 1^b l and a few with single blocks in between. In **none** of them does any residue class lead to HALT, and every class was decided by m mod 3 (no finer modulus was needed). This is the opposite of no. 51, where every explored word has a path to HALT, the shortest of length 108.
+  - **Real trajectory.** `orbit51.py` (TMTAG = 44, M0 = 15) follows the real run for 300 macro steps, up to m with 146 digits. r is cleared again and again, and words up to about 40 cells occur. There is no HALT.
+  - **Conclusion:** no. 44 is a three-register machine: m, plus the counts a and k in the memory word, which can stack into several groups. Unlike no. 51, no halting word is known. A non-halting proof could try to show that the language of reachable words (groups 1^a k) is closed under the rules and contains no halting case: a closed-language / invariant proof on r.
 
 <img src="diagrams/1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---.png" alt="space-time diagram" height="350">
 
