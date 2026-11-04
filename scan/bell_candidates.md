@@ -548,6 +548,21 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE.png" alt="space-time diagram" height="350">
 
+- **Red and green sections (4 Nov 2026).** Seen in the 500,000-step Blaze diagram: *red* = a vertically striped block at the left edge, *green* = a small notch at the right edge.
+  - **Green = restart of the right counter (a Bell start).** The right part runs down to a pure block of ones, `… (1)^a [0]`; then the `01` counter restarts and doubles, b = 2, 6, 14, 30, 62, 126, … (b = 2^k − 2), eating the ones: (a, b) → (a − 2b − 2, 2b + 2). These are exactly the level starts of the level analysis above (n = 380, 436, 989, 1308, 1500, 1853, …). Green events up to 10⁷ steps: 27, 213, 10,526, 212,887, 432,060 (both with a = 165; these are the two green boxes in the diagram), 1,966,727 (a = 380), 3,213,509 (a = 436).
+  - **Red = the left part is a frozen block `1 (10)^m`.** A red section starts at a left record in state A, `[0] (1)^(2m) (01)^c 0`, where the left block of 2m ones is folded into `1 (10)^m`. The block then stays untouched and acts as a wall for the right process. The section ends at the next left record, in state E, `[0] 0 (1)^x (01)^c 0`, where the block is turned back into ones.
+
+    | red section | steps | m |
+    |---|---|---|
+    | 1 (small red box) | 412 – 12,807 | 7 (from `(1)^14`) |
+    | 2 (large red box) | 225,310 – 444,589 | 53 (from `(1)^106`) |
+    | 3 | 43,553,622 – 43,556,893 | 497 (from `(1)^994`) |
+    | 4 | 262,103,544 – 262,207,789 | 851 (from `(1)^1702`) |
+
+    So up to 10⁷ steps there are only the two red sections visible in the diagram; up to 3·10⁹ steps there are four. These eight left records are the only left records at all (after the start-up at steps 21–133).
+  - **Relation.** Every start and every end of a red section comes shortly after a green event that ends at a right record in state E (`(1)^a [0]`, stE): 213 → 412, 10,526 → 12,807, 212,887 → 225,310, 432,060 → 444,589, 43,052,523 → 43,553,622, 43,555,700 → 43,556,893, 260,493,637 → 262,103,544. Green events without that record (1,966,727, 3,213,509, 92,466,003, 113,297,533, 139,969,291) do not reach the left end, and the left part stays as it is. In sections 2 and 3 the red start and the red end follow the same right-hand sequence: `(1)^165 [0]`, then (163, 2), (157, 6), (143, 14), (113, 30), (51, 62), and the overflow at (51, 62) sends the head to the left end.
+  - **Open:** the exact overflow rule of the right counter (when the doubling does not fit, a ≤ 2b + 2) and therefore which green events reach the left end. The four values m = 7, 53, 497, 851 show no simple pattern yet.
+
 <a id="17"></a>
 ## 🟩 [17](#t17). `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` (class B)
 
