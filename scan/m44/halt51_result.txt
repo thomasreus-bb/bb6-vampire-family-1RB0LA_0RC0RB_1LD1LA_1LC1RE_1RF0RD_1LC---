@@ -1,0 +1,5 @@
+shortest path to HALT: 108 macro steps (the last one halts); halting word r = 01011011 with m = 2 mod 3
+start classes: m = 1975700577069254261393123959451562008800234946348087 (mod 3^108)
+smallest such m (> 40) has 52 digits; m before the halting step has 97 digits
+residue check along the path: True
+start class: 1975700577069254261393123959451562008800234946348087 mod 3381391913522726342930221472392241170198527451848561
