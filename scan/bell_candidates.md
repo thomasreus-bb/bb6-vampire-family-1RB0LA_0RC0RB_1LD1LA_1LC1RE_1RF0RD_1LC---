@@ -252,7 +252,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <a id="t112"></a>[112](#112) | – | `1RB1LD_1RC0LE`<br>`1LA1RE_0LF1LA`<br>`1RB0RB_---0LB` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 560; **CRYPTID**, Shift-overflow bouncer counter; Probviously halting cryptid; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1337994337790853181), 2; Racheline | **#22 Cryptid**: Its halting reduces to a Collatz-like question. |
 
 <a id="1"></a>
-## 1. `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A) [↑ table](#t1)
+## 🟩 1. `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A) [↑ table](#t1)
 
 - scan: 12 levels, 12 phases, mean factor 1.55 (sd 0.04); level starts: 18 31 51 81 126 193 294 445 672 1012 1521 2286
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -261,7 +261,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA.png" alt="space-time diagram" height="350">
 
 <a id="2"></a>
-## 2. `1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE` (class A) [↑ table](#t2)
+## 🟩 2. `1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE` (class A) [↑ table](#t2)
 
 - scan: 12 levels, 12 phases, mean factor 1.56 (sd 0.05); level starts: 15 27 45 72 112 171 261 396 600 906 1365 2052
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -270,7 +270,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE.png" alt="space-time diagram" height="350">
 
 <a id="3"></a>
-## 3. `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---` (class A) [↑ table](#t3)
+## 🟩 3. `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---` (class A) [↑ table](#t3)
 
 - scan: 12 levels, 12 phases, mean factor 1.57 (sd 0.06); level starts: 16 29 49 79 124 191 292 443 670 1010 1519 2284
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -279,7 +279,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---.png" alt="space-time diagram" height="350">
 
 <a id="4"></a>
-## 4. `1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF` (class A) [↑ table](#t4)
+## 🟩 4. `1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF` (class A) [↑ table](#t4)
 
 - scan: 12 levels, 12 phases, mean factor 1.57 (sd 0.06); level starts: 16 29 49 79 124 191 292 443 670 1010 1519 2284
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -288,7 +288,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF.png" alt="space-time diagram" height="350">
 
 <a id="5"></a>
-## 5. `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---` (class A) [↑ table](#t5)
+## 🟩 5. `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---` (class A) [↑ table](#t5)
 
 - scan: 13 levels, 13 phases, mean factor 1.56 (sd 0.06); level starts: 13 24 40 63 99 153 234 355 537 810 1221 1836 2758
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -297,7 +297,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---.png" alt="space-time diagram" height="350">
 
 <a id="6"></a>
-## 6. `1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD` (class A) [↑ table](#t6)
+## 🟩 6. `1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD` (class A) [↑ table](#t6)
 
 - scan: 12 levels, 12 phases, mean factor 1.58 (sd 0.07); level starts: 16 31 52 83 130 200 304 461 697 1052 1582 2378
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -306,7 +306,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD.png" alt="space-time diagram" height="350">
 
 <a id="7"></a>
-## 7. `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` (class A) [↑ table](#t7)
+## 🟩 7. `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` (class A) [↑ table](#t7)
 
 - scan: 12 levels, 12 phases, mean factor 1.58 (sd 0.07); level starts: 16 31 52 83 130 200 304 461 697 1052 1582 2378
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -315,7 +315,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA.png" alt="space-time diagram" height="350">
 
 <a id="8"></a>
-## 8. `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` (class B) [↑ table](#t8)
+## 🟩 8. `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` (class B) [↑ table](#t8)
 
 - scan: 20 levels, 71 phases, mean factor 1.33 (sd 0.07); level starts: 78 109 152 206 278 374 502 678 909 1218 1629 2178 2909 3882
 - level analysis: Bell type `LD` with left part `01 12 01 11 01`, 26 levels; n: 284 380 508 684 915 1224 1635 2184 2915 3888 5187 6918 9227 12304 16411 21886; ratios: 1.338 1.336 1.336 1.335 1.334 1.334 1.334 1.334 1.333 1.334 1.334; 13 different tails
@@ -549,7 +549,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE.png" alt="space-time diagram" height="350">
 
 <a id="17"></a>
-## 17. `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` (class B) [↑ table](#t17)
+## 🟩 17. `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` (class B) [↑ table](#t17)
 
 - scan: 17 levels, 149 phases, mean factor 1.29 (sd 0.12); level starts: 23 33 39 55 59 75 111 137 163 183 215 279 359 459
 - level analysis: Bell type `LE` with left part `01`, 17 levels; n: 7 11 21 41 57 77 165 233 297 377 477 1137 1427 2141 4243 6365; ratios: 1.351 2.143 1.412 1.275 1.269 1.265 2.384 1.255 1.500 1.982 1.500; 3 different tails
@@ -623,7 +623,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE.png" alt="space-time diagram" height="350">
 
 <a id="23"></a>
-## 23. `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---` (class B) [↑ table](#t23)
+## 🟩 23. `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---` (class B) [↑ table](#t23)
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 - **From the Rocq proof:** `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---`. 46 of the lines are the table; it needs only `Individual62`. At left-boundary visits the tape is `(001)^k 0000 (01)^j Y`, with the head in state A on its first cell. One round takes (k, j) to (k-1, j+2) and never reads Y. At k = 0 the run (01)^J is converted rigidly to about 2J/3 blocks of (101) on the left, so 2k + j grows by a factor of about 4/3 per cycle. The left half of the tape is kept exactly, as a stack. The right half is read from the far end by a fixed DFA with 11,253 states. A finite set of 933,744 triples (control, stack symbol, control), control = (state, head symbol, DFA state), is closed under the machine's rules (pre* saturation of a pushdown system, Bouajjani, Esparza and Maler), and a configuration it does not accept cannot reach a halt. `saturate` computes the triples inside the VM and needs no proof; `check_all` tests closure, that the halting controls are accepted, and that the real configuration after 1000 steps is not accepted; `sound` proves `check_all d P rs = true -> ~halts tm c0` for any table and any triples. Before Rocq, with no shared code: a separate C checker on the same table and triples, 1,978,289 closure checks, 0 failures, and a separate Python saturation that gets the same 933,744 triples, with the same order-independent hash as the VM. The file with the start taken after 100 steps, and the file with one machine entry changed, both fail at `Qed`. `coqchk` stopped at a 20 minute cap without a verdict; as far as I can tell it reduces the `vm_cast` without the VM, so it is not expected to finish, and this file relies on the kernel's VM check at `Qed`, like other `vm_cast_no_check` proofs.
 
@@ -1567,7 +1567,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RA_1LC0RB_1LD0LB_1RA0LE_---1LF_1LB0LA.png" alt="space-time diagram" height="350">
 
 <a id="84"></a>
-## 84. `1RB0LC_1LC0RE_1RF1LD_1LA0LB_1RD1RA_1LB---` (for later analysis) [↑ table](#t84)
+## 🟩 84. `1RB0LC_1LC0RE_1RF1LD_1LA0LB_1RD1RA_1LB---` (for later analysis) [↑ table](#t84)
 
 - BB6 sheet: row 1094, Bell-like
 - diagram: 1,555,978 steps, tape width 1001 cells
@@ -1655,7 +1655,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0RA_1LC0LE_1RA1LD_0LB1LF_1LD0RC_1LB---.png" alt="space-time diagram" height="350">
 
 <a id="95"></a>
-## 95. `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB` (for later analysis) [↑ table](#t95)
+## 🟩 95. `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB` (for later analysis) [↑ table](#t95)
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 - **From the Rocq proof:** `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB`. No custom checker: only `ES_v3` and `Individual62`. The machine has no chaotic tail. At its left records the tape is a few periodic blocks with counts plus a short fixed end word, so it runs as a register machine on eight tape forms. Every rule is linear in the counts, for example N1(a, b, d) -> N1(a+3, b+12, d-2); the only case splits are small d, parity of the counts, and z = 1..5 at the end of a conversion. An inductive invariant of linear inequalities keeps every rule applicable, and no rule halts. The main theorem is `progress_nonhalt` on that invariant, with 34 one-line rules (`es'`, or a local `esr` for more than three counts). Before Rocq: the register machine equals the plain machine's tapes cell by cell on all 4,534 records from step 50,497 to 5.1e9.
 
@@ -1751,7 +1751,7 @@ Checks:
 <img src="diagrams/1RB1RD_1LC0RD_1RF1RB_1LE0RA_0LB0LE_---0RC.png" alt="space-time diagram" height="350">
 
 <a id="101"></a>
-## 101. `1RB1RC_1LC0LF_1RF0LD_0RE1LB_1RC---_1LD0RA` (for later analysis) [↑ table](#t101)
+## 🟩 101. `1RB1RC_1LC0LF_1RF0LD_0RE1LB_1RC---_1LD0RA` (for later analysis) [↑ table](#t101)
 
 - BB6 sheet: row 1128, Bell-like
 - diagram: 1,355,799 steps, tape width 1001 cells
@@ -1759,7 +1759,7 @@ Checks:
 <img src="diagrams/1RB1RC_1LC0LF_1RF0LD_0RE1LB_1RC---_1LD0RA.png" alt="space-time diagram" height="350">
 
 <a id="102"></a>
-## 102. `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD` (for later analysis) [↑ table](#t102)
+## 🟩 102. `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD` (for later analysis) [↑ table](#t102)
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 - **From the Rocq proof:** `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD`. No custom checker: only `ES_v3` and `Individual62`. At its left records in state D the tape is one of three forms, each a few periodic blocks with counts plus a short fixed word:
   * A(a, c) = `100 (101)^a 110 (011)^c`
