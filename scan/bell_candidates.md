@@ -549,6 +549,9 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <img src="diagrams/1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE.png" alt="space-time diagram" height="350">
 
 - **Red and green sections (4 Nov 2026).** Seen in the 500,000-step Blaze diagram: *red* = a vertically striped block at the left edge, *green* = a small notch at the right edge.
+
+  <img src="diagrams/m16_red_green.png" alt="no. 16, 500,000 steps, red and green sections marked" height="450">
+
   - **Green = restart of the right counter (a Bell start).** The right part runs down to a pure block of ones, `… (1)^a [0]`; then the `01` counter restarts and doubles, b = 2, 6, 14, 30, 62, 126, … (b = 2^k − 2), eating the ones: (a, b) → (a − 2b − 2, 2b + 2). These are exactly the level starts of the level analysis above (n = 380, 436, 989, 1308, 1500, 1853, …). Green events up to 10⁷ steps: 27, 213, 10,526, 212,887, 432,060 (both with a = 165; these are the two green boxes in the diagram), 1,966,727 (a = 380), 3,213,509 (a = 436).
   - **Red = the left part is a frozen block `1 (10)^m`.** A red section starts at a left record in state A, `[0] (1)^(2m) (01)^c 0`, where the left block of 2m ones is folded into `1 (10)^m`. The block then stays untouched and acts as a wall for the right process. The section ends at the next left record, in state E, `[0] 0 (1)^x (01)^c 0`, where the block is turned back into ones.
 
