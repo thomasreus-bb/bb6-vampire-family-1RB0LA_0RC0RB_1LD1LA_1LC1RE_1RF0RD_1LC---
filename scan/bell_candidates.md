@@ -975,6 +975,18 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 - diagram: 6,352 steps, tape width 55 cells
 
 - **examined briefly (24 Oct 2026):** register system with blocks like `11^4·10⁵ 01 11^2.8·10⁵`. `accsim` with 10⁹ real operations reaches **5·10¹⁶ steps**: no HALT.
+- **Detailed analysis and fast simulator (7 Nov 2026).** Holdout Guide: "Halts if and only if it reaches one of three critical pairs", simulated 2.7·10¹⁹ there.
+  - **Simulator** `scan/m35/sim35.c`. The tape is a linked list of runs. Two moves are done in one jump: the chain steps over 1-blocks (state C to the right, state E to the left), and the inner loop. The inner loop is: in state A on a single 0 between 1^X and 1^Y 00 1^Z, one round is (X, Y, Z) → (X+2, Y−3, Z+1) in 2Y + 16 steps (checked for all rounds in `round35`; valid for Y ≥ 4). The step counts are exact (128-bit). The left records agree with the direct simulation up to 3·10⁷ steps. Speed: 10¹⁸ steps in 2 s, 10¹⁹ in 7 s, **10²² steps in a few minutes: no HALT** (26,270,859 left records in state E). Options: a start configuration (`"a|b c d"`), the tape at HALT, and `NEARMISS=1` (print every record with a small first or inner counter).
+  - **Structure.** At its left records (state E) the tape is a list of counters `a | b c d …`: blocks of ones separated by single 0s, with `00` after the first.
+    - *Left phase:* a ≡ 0 (mod 3): a → 2a/3, a new counter 1 is put in front, and the old first counter grows by a/3 − 1. a ≡ 2: a → (2a+2)/3, b → b + (a+1)/3. a ≡ 1: the right phase starts, which processes the whole list (with the inner loop above) and returns with a new first counter a₀.
+    - *HALT* (state A reading 1) at the start of a right phase only for small values: a ∈ {1, 10} with b = 1, or a + 3b = 13 ((1,4), (4,3), (7,2), (10,1)); and also when a counter 1 stands inside the list. With b = 1 and an arbitrary list behind it, exactly a = 1 and a = 10 halt (tested with random large counters).
+  - **Why these values are (almost) never reached.** Both left-phase maps give **even** results: 2a/3 = 2·(a/3) and (2a+2)/3 = 2·(a+1)/3. After the first step of a left phase, a is therefore always even. In the run, every first counter a ≤ 60 seen after 10⁹ steps is even, and with b = 1 always a ≡ 4 (mod 12). Hence:
+    - a = 1 is impossible;
+    - a = 10 with b = 1 would need the previous a = 15, which is odd;
+    - (4,3) and (7,2) need b = 2 or 3, which needs an odd previous a;
+    - an inner counter 1 needs a = 3.
+    All halting routes therefore need a small *odd* value, and only the right phase can deliver one directly, as its output a₀.
+  - **Halting probability.** Measured over the 876,000 right phases up to 10¹⁹ steps (T = total number of ones, T ≈ 9·K after K right phases): P(a₀/T < x) ≈ 0.86·x³ for 0.01 ≤ x ≤ 0.5 (power law with exponent 3). Extrapolated to a₀ ≲ 15, the chance per right phase is about 0.86·(15/T)³. Summed over all later right phases (T ≈ 9K) this gives **P(HALT after step S) ≈ 2/K(S)² ∝ S^(−2/3)**: about 3·10⁻¹² after 10¹⁹ steps and about 3·10⁻¹⁴ after 10²² steps. This is a heuristic: the cubic tail has to be extrapolated over five orders of magnitude, and the rarer halting routes (small b, inner 1) are bounded by the same small-a₀ condition. Unlike nos. 10 and 51 (halting chance ∝ 1/T per cycle, so it halts with probability 1), the chance here falls like 1/T³ and the sum converges: **the machine is very likely never to halt**. The guide's "lottery" label refers to the same critical pairs.
 
 <img src="diagrams/1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA.png" alt="space-time diagram" height="350">
 
