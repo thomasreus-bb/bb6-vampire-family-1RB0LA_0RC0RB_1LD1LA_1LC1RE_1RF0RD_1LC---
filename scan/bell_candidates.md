@@ -121,7 +121,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> 16 | two-register (like 10) | 4.5·10¹³ steps | not measurable yet |
 | 🟩 17 | two-register | 10¹⁴ steps | – |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> 31, 32 | vampire-like, base 3 (4/3), nested sub-process; Bell types A/B/C, prefix table mod 6, HALT entries blocked mod 3 (26 Oct) | 10³⁵·⁵ steps (202 Bells) | below 2·10⁻⁶ |
-| 35 | register system | 5·10¹⁶ steps | – |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> 35 | register system | 5·10¹⁶ steps | – |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> 37 | multi-register | 10²² steps | at most about 0.1 % |
 | 38 | growing list of blocks | 4·10³³ steps | – |
 
@@ -172,7 +172,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t32"></a>[32](#32) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>B | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB1LB_0RC0LD`<br>`1LD1RE_1RC0LA`<br>`1RD1RF_0RD---` | 1.33 | same dynamics as 31 | 1119; Bell-like | **#418 Little known** (being worked on): One table, three starts. Being decoded now. |
 | <a id="t33"></a>[33](#33) | B | `1RB1LA_1LC0RE`<br>`1LF1LD_0RB0LA`<br>`1RC1RE_---0LD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/Space_Needle) | 1.69 | needle-like: only 1 tail (all information in one number) | 693; Cubic Mess; Space Needle. BMO 6. Possible cryptid; [1](https://wiki.bbchallenge.org/wiki/1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD); Katelyn Douchette | **#366 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <a id="t34"></a>[34](#34) | B | `1RB1RC_1LC1LC`<br>`1RE0LD_1LB1RF`<br>`---1RA_0RD1RD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD) | 1.34 | no clear single-block Bell configuration found | 792; Quadratic Mess | **#524 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t35"></a>[35](#35) | B | `1RB---_0RC0LD`<br>`1LB1RC_0LE0LF`<br>`1RD1LE_1RF1RA` | 1.25 | register system; no HALT up to 5·10¹⁶ steps | 697; Cubic Mess | **#57 Looks like a lottery**: Halts if and only if it reaches one of three critical pairs. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t35"></a>[35](#35) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB---_0RC0LD`<br>`1LB1RC_0LE0LF`<br>`1RD1LE_1RF1RA` | 1.25 | register system; no HALT up to 5·10¹⁶ steps | 697; Cubic Mess | **#57 Looks like a lottery**: Halts if and only if it reaches one of three critical pairs. |
 | <a id="t36"></a>[36](#36) | B | `1RB1LC_1LC0RD`<br>`0LE1LA_---1RA`<br>`1RF0LA_0RF0RB` | 1.56 | needle-like: only 1 tail (all information in one number) | 783; Quadratic Mess | **#344 Rules known, no proof**: A 3/2 map (a,b) to (a-2,b+3) with a complete event model, not in Rocq. The open question is whether every state returns. |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t37"></a>[37](#37) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>B | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB1RF_1RC0RB`<br>`0RD1LF_1LE1RE`<br>`1LA---_1RA0LC` | 1.26 | multi-register system; no HALT up to 10²² steps; low halting rate; **equivalent to [11](#11)** | 729; Cubic Mess | **#460 Looks like a lottery**: Our experiments suggest the outcome turns on chaotic digits. |
 | <a id="t38"></a>[38](#38) | C | `1RB0RE_1LC0RA`<br>`0LD0LB_1RE0LB`<br>`1RF---_0RB0RC` | 1.55 | growing list of blocks (nested); no HALT up to 4·10³³ steps | 973; Chaotic Bell Class 2 | **#353 Reported by others**: Someone reported a proof. We have not verified it. |
@@ -967,7 +967,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD.png" alt="space-time diagram" height="350">
 
 <a id="35"></a>
-## [35](#t35). `1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA` (class B)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [35](#t35). `1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA` (class B)
 
 - scan: 16 levels, 128 phases, mean factor 1.25 (sd 0.18); level starts: 43 47 53 61 91 114 125 137 159 187 217 229 277 592
 - level analysis: Bell type `RC`, 8 levels; n: 7 9 14 19 24 100 374 644; ratios: 1.286 1.556 1.357 1.263 4.167 3.740 1.722; 4 different tails
