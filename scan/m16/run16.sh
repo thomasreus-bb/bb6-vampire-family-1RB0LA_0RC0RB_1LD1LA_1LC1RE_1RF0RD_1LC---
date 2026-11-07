@@ -7,6 +7,7 @@
 # examples:
 #   bash run16.sh        # 10^24 steps, a few seconds
 #   bash run16.sh 30     # 10^30 steps, about 7 minutes
+#   bash run16.sh 33     # 10^33 steps, about 70 minutes
 # needs: curl (or wget) and gcc on a 64-bit system (Linux, macOS, or WSL on Windows)
 set -euo pipefail
 
