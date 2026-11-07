@@ -33,16 +33,23 @@ static void move(int d){
   if(d>0){ if(off+1<head_run->len) off++; else { ensure_right(); head_run=head_run->next; off=0; } }
   else   { if(off>0) off--; else { ensure_left(); head_run=head_run->prev; off=head_run->len-1; } }
 }
-int T[6][2][3];
+int T[6][2][3]; static int FILTER=0;
 static void print_tape(void){
   Run*r=leftmost; while(r && r->sym==0) r=r->next;
   Run*z=rightmost; while(z && z->sym==0) z=z->prev;
   for(;r;r=r->next){ if(r->sym) printf("%lld",r->len); else printf(r->len==1?" ":(r->len==2?" | ":" |%lld| "),r->len); if(r==z) break; }
 }
+static int near_miss(void){
+  Run*r=leftmost; while(r && r->sym==0) r=r->next; if(!r) return 0;
+  long long a=r->len; if(a<=1000) return 1;
+  int k=0; Run*z=rightmost; while(z && z->sym==0) z=z->prev;
+  for(Run*q=r->next;q;q=q->next){ if(q->sym==1){ k++; if(k>=2 && q!=z && q->len<=100) return 1; } if(q==z) break; }
+  return 0; }
 static void p128(u128 x){ char b[64]; int i=63; b[i]=0; if(!x){printf("0");return;} while(x){ b[--i]='0'+(int)(x%10); x/=10;} printf("%s",b+i); }
 int main(int argc,char**argv){
   const char*M="1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA";
   for(int s=0;s<6;s++)for(int b=0;b<2;b++){const char*p=M+7*s+3*b; if(p[2]=='-'){T[s][b][2]=-1;continue;} T[s][b][0]=p[0]-'0';T[s][b][1]=p[1]=='R'?1:-1;T[s][b][2]=p[2]-'A';}
+  if(getenv("NEARMISS")) FILTER=1;
   int ex=atoi(argv[1]); u128 MAX=1; for(int i=0;i<ex;i++) MAX*=10; long long every=argc>2?atoll(argv[2]):1;
   head_run=newrun(0,2000000); leftmost=rightmost=head_run; off=1000000;
   long long pos=0, lo=0; long long nrec=0; u128 steps=0; int s=0; long long loops=0;
@@ -55,7 +62,7 @@ int main(int argc,char**argv){
   while(steps<MAX){
     int b=head_run->sym;
     if(s==2 && b==1){ long long k=head_run->len-off; steps+=k; pos+=k; off=head_run->len-1; move(1); continue; }   /* C over 1s */
-    if(s==4 && b==1){ long long k=off+1; steps+=k; pos-=k; off=0; move(-1); if(pos<lo){ lo=pos; nrec++; if(nrec%every==0){ printf("L "); p128(steps); printf(" stE: "); print_tape(); printf("\n"); fflush(stdout);} } continue; }       /* E over 1s */
+    if(s==4 && b==1){ long long k=off+1; steps+=k; pos-=k; off=0; move(-1); if(pos<lo){ lo=pos; nrec++; if(nrec%every==0 || (FILTER && near_miss())){ printf("L "); p128(steps); printf(" stE: "); print_tape(); printf("\n"); fflush(stdout);} } continue; }       /* E over 1s */
     if(s==0 && b==0 && head_run->len==1 && head_run->prev && head_run->prev->sym==1 && head_run->next && head_run->next->sym==1){
       Run*Y=head_run->next, *Zs=Y->next;
       if(Zs && Zs->sym==0 && Zs->len==2 && Zs->next && Zs->next->sym==1 && Y->len>=7){
@@ -63,8 +70,8 @@ int main(int argc,char**argv){
         steps += (u128)(2*k*y - 3*k*(k-1) + 16*k);
         head_run->prev->len += 2*k; Y->len -= 3*k; Zs->next->len += k; pos += 2*k; loops++;
         continue; } }
-    if(T[s][b][2]<0){ printf("HALT at step "); p128(steps); printf("\n"); return 0; }
+    if(T[s][b][2]<0){ printf("HALT at step "); p128(steps); printf("  tape: "); { Run*r=leftmost; while(r&&r->sym==0&&r!=head_run) r=r->next; Run*z=rightmost; while(z&&z->sym==0&&z!=head_run) z=z->prev; for(;r;r=r->next){ if(r==head_run) printf("[%d:%lld/%lld]",r->sym,off,r->len); else if(r->sym) printf("%lld",r->len); else printf(r->len==1?" ":(r->len==2?" | ":" |%lld| "),r->len); if(r==z) break; } } printf("\n"); return 0; }
     write_cell(T[s][b][0]); int d=T[s][b][1]; move(d); pos+=d; s=T[s][b][2]; steps++;
-    if(pos<lo){ lo=pos; if(s==4){ nrec++; if(nrec%every==0){ printf("L "); p128(steps); printf(" stE: "); print_tape(); printf("\n"); fflush(stdout);} } }
+    if(pos<lo){ lo=pos; if(s==4){ nrec++; if(nrec%every==0 || (FILTER && near_miss())){ printf("L "); p128(steps); printf(" stE: "); print_tape(); printf("\n"); fflush(stdout);} } }
   }
   printf("END steps "); p128(steps); printf(" left records %lld loop jumps %lld\n",nrec,loops); return 0; }
