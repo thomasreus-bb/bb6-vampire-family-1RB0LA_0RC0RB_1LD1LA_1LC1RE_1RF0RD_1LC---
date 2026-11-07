@@ -7,3 +7,4 @@ scan/m44/clib.so
 scan/m44/__pycache__/
 scan/m44/*.pkl
 scan/m44/*_log.txt
+scan/m35/sim35
