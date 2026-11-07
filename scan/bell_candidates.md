@@ -125,6 +125,29 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> 37 | multi-register | 10²² steps | at most about 0.1 % |
 | 38 | growing list of blocks | 4·10³³ steps | – |
 
+**Assessment of the yellow machines (7 Nov 2026).** The key question is how fast the chance of a HALT falls as the machine grows. If it falls like 1/T per cycle, the sum diverges and the machine halts with probability 1; this is how no. 10 halted, after about 8.3·10⁴¹ steps. If it falls faster, or is blocked by structure, the machine probably never halts.
+
+*HALT likely, ranked by the prospects of a fast simulator:*
+
+| rank | no. | why HALT is likely | prospects with a fast simulator |
+|---|---|---|---|
+| 1 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [16](#16) | two-register system like no. 10, so probably a halting chance of about 1/T per Bell | **good**: no. 10 needed about 7·10¹³ rule steps (about 33 h on one core). Realistic with exact macro rules and a C simulator as for no. 35. So far only 4.5·10¹³ steps; rules still missing |
+| 2 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [37](#37) (≡ no. 11) | multi-register system, guide: "lottery, chaotic digits"; at most 0.1 % per Bell measured | **medium**: the decay is unknown. Reached 10²² steps so far; exact macro rules and a measurement as for no. 35 are missing |
+| 3 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [31](#31) / <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [32](#32) (very probably equivalent) | vampire-like, factor 4/3; HALT entries exist; rate < 2·10⁻⁶ per Bell | **uncertain**: if the rate stays constant, a Bell-map simulator in the style of the vampire method (`belldco` did 7·10¹¹ Bells) could succeed. But the HALT entries found are blocked mod 3, so the rate might also be 0 |
+| 4 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [51](#51) / <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [61](#61) (same table) | almost certainly halting: a 108-step halting path is known, with a Lean proof for a whole family | **hopeless**: expected halting time about 10^10^38 steps |
+
+*HALT unlikely:*
+
+| no. | reason |
+|---|---|
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [19](#19) | two-number system; unusual left parts become exponentially rarer with every Bell |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [39](#39) | needle type; HALT only beyond level 400 of the fixed chain, chance about 2⁻⁴⁰⁰ per Bell |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [41](#41) | needle type; HALT needs an exact hit, which becomes less likely as n grows; no HALT in 70 Bells up to 8·10⁵⁹ steps |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [44](#44) | no halting case in 50,000 reachable memory words and 44,135 tested group words |
+
+The ranks for "likely" are estimates, not measurements; for nos. 16 and 37 the halting chance has not yet been studied as closely as for nos. 10 and 35. Proposed next step: no. 16 (exact macro rules, C simulator, measurement of the halting chance).
+
+
 **New findings for the method:**
 1. Besides the vampires there are **two-number machines**. For no. 10 the Bell map on two numbers has been found exactly (25 Oct, see [10](#10)): three Bell types A, B, C, and HALT only when a C Bell leaves exactly 0 or −1 cells. Iterated over 10¹⁰ Bells there is no HALT. (The halting rate of about 2 % estimated on 24 Oct from varied starts was wrong for the real orbit.)
 2. Nos. 31/32 are vampires in base 3 whose table only closes with several blocks. This is the natural next step for the table method.
