@@ -118,6 +118,9 @@ class Sim:
         h=s.hist3.setdefault(sh,[])
         h.append((c,s.steps))
         if len(h)>4: h.pop(0)
+        if key[1]==807 and len(h)>=2:
+            dd0=[b-a for a,b in zip(h[-2][0],h[-1][0])]
+            print('ANCHOR807 occurrences',len(h),'steps',s.steps,'step diff',h[-1][1]-h[-2][1],'changed runs',[(i,x) for i,x in enumerate(dd0) if x],'runs',len(c),'state',s.q,s.d,flush=True)
         if len(h)<4: return
         C=[x[0] for x in h]; T=[x[1] for x in h]
         d=[[b-a for a,b in zip(C[i],C[i+1])] for i in range(3)]
