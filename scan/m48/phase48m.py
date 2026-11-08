@@ -1,7 +1,7 @@
 # real-run phase starts of no. 48 from the accelerated simulator: at every left record in state C test whether the
 # tape starts with 010101(1001)^B or 0100(1001)^B (B >= 10) followed by a near tail of at most 64 cells before
 # 20 zeros; print step, prefix, B, near tail, length of the first gap of zeros ('inf' = end of tape)
-import sys,time
+import sys,time,os,pickle
 from msim48 import Sim,BS
 def cells(t,p,R):
     for c in t[p:]: yield c
@@ -73,7 +73,14 @@ def hook(sim,t,p,q,steps):
         g+=1
         if g>10**40: g='inf'; break
     out.append((steps,pre,B,''.join(map(str,near)),g))
-    if B<5000: sim.anchor=(pre,B,''.join(map(str,near)))   # small phase: candidate anchor for a whole restart cycle
+    if B<5000: sim.anchor=(pre,B,''.join(map(str,near)))
+    if B==807 and pre=='010101' and not near and os.environ.get('TCDUMP'):
+        # exact tape at the restart (a left record in state C): cells from the head, as runs
+        runs=[(''.join(map(str,t[p:])),1)]+[(''.join(map(str,b)),n) for b,n in reversed(sim.R)]
+        total=len(t)-p+sum(n for b,n in sim.R)*BS
+        with open(os.environ['TCDUMP'],'ab') as f: pickle.dump((steps,q,runs,total,sim.minR),f)
+        print('RESTART step',steps,'cells from head',total,'min cells right of head in the previous cycle',sim.minR,flush=True)
+        sim.minR=10**60   # small phase: candidate anchor for a whole restart cycle
     print('PH %d %s %d %s %s'%(steps,pre,B,''.join(map(str,near)) or '-',g),flush=True)
 if __name__=='__main__':
     sim=Sim(); sim.edgehook=hook; t0=time.time()

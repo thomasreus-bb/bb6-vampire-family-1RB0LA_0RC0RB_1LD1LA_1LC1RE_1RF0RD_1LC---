@@ -30,7 +30,7 @@ def push(st,blk,n):
     else: st.append([blk,n])
 class Sim:
     def __init__(s):
-        s.L=[];s.R=[];s.chained=False;s.edgehook=None;s.anchor=None;s.hist3={};s.cyclejumps=0;s.q=0;s.d='R';s.steps=0;s.hist={};s.halt=None;s.events=0;s.jumps=0
+        s.L=[];s.R=[];s.minR=None;s.chained=False;s.edgehook=None;s.anchor=None;s.hist3={};s.cyclejumps=0;s.q=0;s.d='R';s.steps=0;s.hist={};s.halt=None;s.events=0;s.jumps=0
     def edge(s):
         # the head moves left into the leftmost block (or into blank tape): simulate that block cell by cell,
         # so that every left record can be shown to s.edgehook(s, cells, p, state, steps)
@@ -73,6 +73,10 @@ class Sim:
             else: src[-1][1]-=1
             if nd==s.d: push(dst,nb,1)
             else: push(src,nb,1)
+            if s.d=='R' and nd=='L' and s.minR is not None:
+                # the head turned inside block blk; cells right of the turning point >= cells in R
+                c=sum(x[1] for x in s.R)*BS-BS   # R already contains the turning block again
+                if c<s.minR: s.minR=c
             s.q=nq; s.d=nd; s.steps+=st
         # normalise the blank runs
         for side in (s.L,s.R):
