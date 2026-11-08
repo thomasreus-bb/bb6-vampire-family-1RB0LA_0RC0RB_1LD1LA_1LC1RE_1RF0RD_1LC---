@@ -115,6 +115,10 @@ class Sim:
         # called at a macro boundary right after a marked moment (e.g. a restart of the small sub-run);
         # if the whole tape shape recurs there with the same change of run lengths 3 times, jump k cycles
         sh=(key,)+s.shape(); c=s.counts()
+        if key[1]==807:
+            import hashlib
+            print('ANCHOR807 steps',s.steps,'state',s.q,s.d,'nL',len(s.L),'nR',len(s.R),'shapehash',hashlib.md5(repr(sh).encode()).hexdigest()[:10],
+                  'L',[(''.join(map(str,b)),n) for b,n in s.L],'R(from head)',[(''.join(map(str,b)),n) for b,n in reversed(s.R)][-14:],flush=True)
         h=s.hist3.setdefault(sh,[])
         h.append((c,s.steps))
         if len(h)>4: h.pop(0)
