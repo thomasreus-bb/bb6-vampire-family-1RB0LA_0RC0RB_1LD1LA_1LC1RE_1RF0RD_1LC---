@@ -117,6 +117,8 @@ class Sim:
         sh=(key,)+s.shape(); c=s.counts()
         if key[1]==807:
             import hashlib
+            import pickle,os
+            with open(os.environ.get('ANCHORDUMP','/dev/null'),'ab') as f: pickle.dump((s.steps,s.q,s.d,[list(x) for x in s.L],[list(x) for x in s.R]),f)
             print('ANCHOR807 steps',s.steps,'state',s.q,s.d,'nL',len(s.L),'nR',len(s.R),'shapehash',hashlib.md5(repr(sh).encode()).hexdigest()[:10],
                   'L',[(''.join(map(str,b)),n) for b,n in s.L],'R(from head)',[(''.join(map(str,b)),n) for b,n in reversed(s.R)][-14:],flush=True)
         h=s.hist3.setdefault(sh,[])
