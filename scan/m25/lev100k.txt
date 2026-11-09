@@ -1,0 +1,53 @@
+lev 0 log10n=0.9 W=  tab 0
+newmax 1 log10n=1.1 W=2 k/n=0.154
+newmax 3 log10n=1.4 W=7.2 k/n=0.259
+lev 2000 log10n=251.1 W= 54 tab 25
+lev 4000 log10n=501.0 W= 2 tab 25
+lev 6000 log10n=750.9 W=  tab 31
+lev 8000 log10n=1000.7 W=  tab 31
+lev 10000 log10n=1250.6 W= 2 tab 33
+lev 12000 log10n=1500.5 W= 7.2 tab 34
+lev 14000 log10n=1750.4 W= 2 tab 34
+lev 16000 log10n=2000.3 W= 2 tab 34
+lev 18000 log10n=2250.1 W= 2 tab 35
+lev 20000 log10n=2500.0 W= 17.2 tab 35
+lev 22000 log10n=2749.9 W= 7.2 tab 35
+lev 24000 log10n=2999.8 W= 2 tab 36
+lev 26000 log10n=3249.6 W=  tab 36
+lev 28000 log10n=3499.5 W= 17.2 tab 38
+lev 30000 log10n=3749.4 W= 7.2 tab 38
+lev 32000 log10n=3999.3 W= 2 tab 38
+lev 34000 log10n=4249.2 W= 2 tab 38
+lev 36000 log10n=4499.0 W= 7.2 tab 38
+lev 38000 log10n=4748.9 W= 2 tab 38
+lev 40000 log10n=4998.8 W= 2 tab 39
+lev 42000 log10n=5248.7 W= 17.2 tab 41
+lev 44000 log10n=5498.5 W= 2 tab 41
+lev 46000 log10n=5748.4 W=  tab 41
+lev 48000 log10n=5998.3 W= 2 tab 41
+lev 50000 log10n=6248.2 W= 7.2 tab 41
+lev 52000 log10n=6498.0 W= 2 tab 43
+lev 54000 log10n=6747.9 W= 17.7.2 tab 43
+lev 56000 log10n=6997.8 W= 2 tab 43
+lev 58000 log10n=7247.7 W=  tab 43
+lev 60000 log10n=7497.6 W= 2 tab 43
+lev 62000 log10n=7747.4 W= 2 tab 43
+lev 64000 log10n=7997.3 W= 7.2 tab 43
+lev 66000 log10n=8247.2 W= 2 tab 44
+lev 68000 log10n=8497.1 W= 7.2 tab 44
+lev 70000 log10n=8746.9 W= 2 tab 44
+lev 72000 log10n=8996.8 W=  tab 44
+lev 74000 log10n=9246.7 W=  tab 44
+lev 76000 log10n=9496.6 W= 7.2 tab 44
+lev 78000 log10n=9746.5 W= 2 tab 44
+lev 80000 log10n=9996.3 W=  tab 44
+lev 82000 log10n=10246.2 W=  tab 44
+lev 84000 log10n=10496.1 W= 17.7.2 tab 44
+lev 86000 log10n=10746.0 W= 2 tab 44
+lev 88000 log10n=10995.8 W= 2 tab 44
+lev 90000 log10n=11245.7 W= 2 tab 44
+lev 92000 log10n=11495.6 W=  tab 44
+lev 94000 log10n=11745.5 W= 7.2 tab 44
+lev 96000 log10n=11995.4 W= 17.2 tab 44
+lev 98000 log10n=12245.2 W= 2 tab 44
+done 100000 log10n=12495.0 maxlen 249 tab 44
