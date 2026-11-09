@@ -185,7 +185,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <a id="t22"></a>[22](#22) | B | `1RB0RB_1LC0LF`<br>`1RD0LB_1RE1RC`<br>`0RA---_1LA1RE` | 1.40 | needle-like: only 2 tails (all information in one number) | 782; Quadratic Mess | **#336 Looks like a lottery**: Close to a known machine with 3 entries changed. Built tapes halt at specific values tied to the machine's own orbit. |
 | 🟩 <a id="t23"></a>[23](#23) | 🟩<br>B | 🟩<br>`1RB0LD_0RC1RD`<br>`1LA1RA_1LE0LE`<br>`1RF0LA_0RA---` | 1.39 | **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173)); no clear single-block Bell configuration found | 1115; Bell-like | **#385 Proof in an open PR**: Open PR 44, by Claude (Heron), proves that it never halts. Not merged yet. |
 | <a id="t24"></a>[24](#24) | B | `1RB0LD_1LC0RA`<br>`1RA1LB_1LA1LE`<br>`1RF0LC_---0RE`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE) | 1.25 | needle-like: only 1 tail (all information in one number) | 750; Quadratic Mess; Potential cryptid, Part of Category 1. BMO 5.; [1](https://wiki.bbchallenge.org/wiki/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE); dyuan, mxdys | **#186 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t25"></a>[25](#25) | B | `1RB0LE_1LC0RD`<br>`0RA1LD_0LC1RA`<br>`1LF1LA_---1LA` | 1.55 | needle-like: only 2 tails (all information in one number) | 1085; Bell-like | **#118 Looks like a lottery**: A 4/3 Bell where a second counter drains the main one. |
+| <a id="t25"></a>[25](#25) | B | `1RB0LE_1LC0RD`<br>`0RA1LD_0LC1RA`<br>`1LF1LA_---1LA` | 1.55 | family `1 0 1^N (0 1^k)*` looks closed, N only grows, HALT found only for N ≤ 4 (9 Nov 2026): probably a non-halter; needle-like: only 2 tails (all information in one number) | 1085; Bell-like | **#118 Looks like a lottery**: A 4/3 Bell where a second counter drains the main one. |
 | <a id="t26"></a>[26](#26) | B | `1RB1LC_1LA0RD`<br>`1LB1LF_1LE1RE`<br>`0LA0RB_0LB---` | 1.37 | needle-like: only 2 tails (all information in one number) | 1103; Bell-like | **#290 Little known** (being worked on): One table, three starts. Being decoded now. |
 | <a id="t27"></a>[27](#27) | B | `1RB1LC_1LC0RD`<br>`0LE1LA_0RF1RA`<br>`1LA0LA_---0RB` | 1.64 | needle-like: only 1 tail (all information in one number) | 789; Quadratic Mess | **#475 Rules known, no proof**: A 3/2 map (a,b) to (a-2,b+3) with a complete event model, not in Rocq. The open question is whether every state returns. |
 | <a id="t28"></a>[28](#28) | B | `1RB1LE_1LC0RA`<br>`0RF0LD_1LE1LA`<br>`1RC0LB_---1RC`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC) | 1.24 | no clear single-block Bell configuration found | 752; Quadratic Mess; Very strange machine; [1](https://wiki.bbchallenge.org/wiki/1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC); -d | **#399 Cryptid**: Its halting reduces to a Collatz-like question. |
@@ -245,10 +245,10 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <a id="t82"></a>[82](#82) | – | `1RB0RE_0LC1LE`<br>`0RD1LD_1RA1LF`<br>`1LC0RA_0LB---` | – | for later analysis | 1092; Bell-like | **#197 Looks like a lottery**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
 | <a id="t83"></a>[83](#83) | – | `1RB1RA_1LC0RB`<br>`1LD0LB_1RA0LE`<br>`---1LF_1LB0LA` | – | for later analysis | 1093; Bell-like | **#204 Looks like a lottery**: Our experiments suggest the outcome turns on chaotic digits. |
 | 🟩 <a id="t84"></a>[84](#84) | 🟩<br>– | 🟩<br>`1RB0LC_1LC0RE`<br>`1RF1LD_1LA0LB`<br>`1RD1RA_1LB---` | – | for later analysis | 1094; Bell-like | **#207 Proof in an open PR**: Open PR 47, by Dahoas, proves that it halts. Not merged yet. |
-| <a id="t85"></a>[85](#85) | – | `1RB0RF_0LC1RE`<br>`---1LD_1LE0LB`<br>`0RF0LD_1RD1RA` | – | for later analysis | 1095; Bell-like | **#208 Looks like a lottery**: A 3/2 Bell with several long segments. |
+| <a id="t85"></a>[85](#85) | – | `1RB0RF_0LC1RE`<br>`---1LD_1LE0LB`<br>`0RF0LD_1RD1RA` | – | 3/2 Bell with several long segments; 92 outer events to 10³⁰⁰ and about 900 perturbed outer events without HALT (9 Nov 2026): HALT unlikely | 1095; Bell-like | **#208 Looks like a lottery**: A 3/2 Bell with several long segments. |
 | <a id="t86"></a>[86](#86) | – | `1RB0RE_1RC0RF`<br>`1LD1RA_1LB1LD`<br>`1RA1LB_---0LD` | – | for later analysis | 1099; Bell-like | **#241 Looks like a lottery**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
 | <a id="t87"></a>[87](#87) | – | `1RB1LC_1RC0RF`<br>`1RD0LB_1RE0LD`<br>`1LF---_0RA1LA` | – | for later analysis | 1100; Bell-like | **#245 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t88"></a>[88](#88) | – | `1RB0LE_1RC0RF`<br>`0RD0RB_1RE0RC`<br>`1LA0LA_1RA---` | – | for later analysis | 1102; Bell-like | **#269 Some structure seen**: A Bell with several counters, growing by about 3/2 or by irregular doubling. |
+| <a id="t88"></a>[88](#88) | – | `1RB0LE_1RC0RF`<br>`0RD0RB_1RE0RC`<br>`1LA0LA_1RA---` | – | several counters (gaps ×3/2, main gap ×2 per phase); 11,860 perturbed phases without HALT (9 Nov 2026): HALT unlikely | 1102; Bell-like | **#269 Some structure seen**: A Bell with several counters, growing by about 3/2 or by irregular doubling. |
 | <a id="t89"></a>[89](#89) | – | `1RB---_1RC1RE`<br>`1LD0LE_1RF0LC`<br>`0RD0RA_0RB1RD` | – | for later analysis | 1104; Bell-like | **#297 Rules known, no proof**: One table, four starts. Exact macro law proved in Rocq. Real runs stay small, but the residues behave like Collatz digits, so a proof has to allow every sequence. |
 | <a id="t90"></a>[90](#90) | – | `1RB1LB_1LC1LA`<br>`1RD0LB_1RA1RE`<br>`1RF0RD_---1RD` | – | for later analysis | 1108; Bell-like | **#321 Looks like a lottery**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
 | <a id="t91"></a>[91](#91) | – | `1RB0LA_1RC0RE`<br>`0LD0RF_1LA1LD`<br>`0RA1RE_---0LC` | – | for later analysis | 1110; Bell-like | **#326 Some structure seen**: A Bell with an escalating refill: a counter that counts down and refills at growing levels. |
@@ -778,6 +778,13 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 - level analysis: Bell type `LD` with left part `01 11 01`, 16 levels; n: 8 13 23 45 64 85 119 221 397 535 719 5398 7197 9600 12802 17069; ratios: 1.328 1.400 1.857 1.796 1.348 1.344 7.508 1.333 1.334 1.334 1.333; 2 different tails
 - verdict: needle-like: only 2 tails (all information in one number)
 - diagram: 464,164 steps, tape width 1001 cells
+- **Structure (9 Nov 2026).** Tools: `scan/m25/`, generic tools `scan/mgen/`. The tape grows to the left. At the outer phase starts (head at the left end in state D) the tape is `1 0 1^N T`, where T is a short list `(0 1^k)*`; in the real run T is empty, `011`, `0 1^7 011`, `0 1^17 011` or `0 1^54`. Inside a phase the levels have the form `(110)^a 100 1^b T` in state A: a sweep turns each `110` into four 1s, so the counter grows by a factor of 4/3 per level, and the residue of the counter decides when the phase ends and the tail T (the second counter) changes. From one outer phase to the next N grows by (4/3)^k with k between 1 and about 100 (20 on average).
+- **HALT condition.** HALT needs E on a 0 and then F on a 0 (E: 0 → 1LF, F: 0 → HALT), so a leftward E has to meet `00`. On these tapes this is only possible at the left blank or at the `00` of `100`.
+- **Run.** Accelerated simulator (12-cell blocks): 84 outer phases up to 10³⁰⁰ steps (N ≈ 10¹⁴³), 305 outer phases up to 10¹⁰⁰⁰ steps (N ≈ 10⁵⁰⁰), no HALT (`ph25D.txt`, `ph25_1e1000.txt`).
+- **Halting tests.**
+  - Direct simulation (`fam25.py`, `fam25c.py`, `fam25d.py`, `fam25e.py`): 1,100 random tapes of both forms, with N up to 5,000, a up to 1,500 and up to 5 tail entries of up to 300 ones. Every run reaches the next outer phase, and in the 500 runs checked the result is again of the form `1 0 1^N′ (0 1^k)*`. HALT occurs only for tiny N (N ≤ 4).
+  - Accelerated simulation (`hit25.py`): 900 outer phases from random N up to 10⁹ with 15 different tails (about 17,800 levels). No HALT, and N always grew (by at least 4/3).
+- **Assessment (measurement, not a proof).** The family `1 0 1^N (0 1^k)*` / `(110)^a 100 1^b (0 1^k)*` looks closed, N only grows, and a HALT was found only for N ≤ 4. So this is probably not a lottery but a non-halter. A proof needs the exact level law (4/3 with the residue branches) and the tail rules for all N, e.g. as a closed set of macro rules. **Chance of HALT: practically 0.**
 
 <img src="diagrams/1RB0LE_1LC0RD_0RA1LD_0LC1RA_1LF1LA_---1LA.png" alt="space-time diagram" height="350">
 
@@ -1769,6 +1776,18 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 - BB6 sheet: row 1095, Bell-like
 - diagram: 467,874 steps, tape width 1001 cells
+- **Structure (9 Nov 2026).** Tools: `scan/m85/`, generic tools `scan/mgen/`. The tape grows to the right.
+  - At the right end, the inner levels work on several long segments of `01`, `1101`, `0111` and `1110`, often of related lengths (a, a, 2a, 4a).
+  - At the left end, outer events alternate between E and D. In E the tape starts with `(10)^X`. In the following D it starts with `(01)^Y`, where Y ≈ 3X/2 or the run is split into two halves of about X/2.
+  - Between two outer events lie about 80 right-end events, and the steps grow by a factor of 10⁶ to 10⁸.
+
+  This is the "3/2 Bell with several long segments" of the Holdout Guide.
+- **HALT condition.** HALT needs C on a 0, and C comes only from B on a 0 (`0LC`). So a leftward B has to meet `00`.
+- **Run.** Accelerated simulator (40-cell blocks): 92 outer events up to 10³⁰⁰ steps, no HALT (`ph85raw.txt`). The right-end events up to 10³⁰ are in `ph85m.txt` (706 events).
+- **Halting tests.**
+  - `scan/mgen/hitgen.py`: started from real outer events (checked: the unchanged restart reproduces the real run), with every long segment changed by a random 0 … 39 units. 156 runs × 6 outer events, about 900 outer events (roughly 70,000 right-end events): no HALT.
+  - `scan/mgen/famgen.py`: direct simulation of the small inner events with all repeat counts changed by −3 … +10: 150 runs × 3·10⁸ steps, no HALT (`fam85.txt`).
+- **Assessment (estimate).** No halting mechanism was found. The chance per outer event is below about 3·10⁻³ (95 % bound). No restart and no repeating structure (TC) was seen. **HALT unlikely.**
 
 <img src="diagrams/1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA.png" alt="space-time diagram" height="350">
 
@@ -1793,6 +1812,25 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 - BB6 sheet: row 1102, Bell-like
 - diagram: 124,792 steps, tape width 1001 cells
+- **Structure (9 Nov 2026).** Tools: `scan/m88/`, generic tools `scan/mgen/`. The tape grows to the right (the scripts use the mirrored machine). At a phase start, read from the head, the tape has:
+  - a short piece;
+  - one long zero gap Z;
+  - a list of zero gaps separated by `111` markers;
+  - a fixed piece at the far end.
+
+  In each phase:
+  - the head fills Z with `01` and then rebuilds it;
+  - Z doubles (ratio 2.000 ± 0.001, so the steps grow ×4 and log10(steps) by 0.602 per phase);
+  - every long gap of the list grows by a factor of about 3/2.
+
+  All gaps are odd. Changing one gap by an odd number removes it, so the parity is part of the structure. Short gaps appear, merge and vanish; up to 11 long gaps were present at the same time. This is the "several counters, 3/2 or doubling" of the Holdout Guide.
+- **HALT condition.** HALT needs F on a 1, and F comes only from B on a 1 (`0RF`). So B has to step onto a run of at least two 1s in its direction of motion: a `111` marker or the `11` at the far end.
+- **Run.** Accelerated simulator (40-cell blocks, `ph88.py`): 493 phases up to 10³⁰⁰ steps in 5 minutes, 1,655 phases up to 10¹⁰⁰⁰ steps in about half an hour (`ph88_1e1000.txt`), no HALT (`ph88.txt`).
+- **Halting tests.**
+  - `hit88.py`: started from real phase starts (the unchanged restart reproduces the real phases exactly), with every long gap changed by a random even number 0 … 38. 60 runs × 25 phases and 259 runs × 40 phases, together 11,860 phases: no HALT.
+  - `fam88.py`: direct simulation of the first 9 real phase starts with all gaps changed by even random amounts, 120 runs × 3·10⁸ steps: no HALT. Without the parity rule (`fam88b.py`, 40 runs × 3·10⁷ steps): no HALT.
+  - `rnd88.py`: completely random tapes of 1-runs and 0-runs: 2 of 600 halt within 10⁷ steps.
+- **Assessment (estimate).** No halting mechanism was found. With no HALT in 11,860 phases, the chance per phase is below about 2.5·10⁻⁴ (95 % bound), and probably much smaller. If there were a constant chance per phase, the total would grow without limit, but the tests give no sign of such a chance. No restart and no repeating structure (TC) was seen. **HALT unlikely.**
 
 <img src="diagrams/1RB0LE_1RC0RF_0RD0RB_1RE0RC_1LA0LA_1RA---.png" alt="space-time diagram" height="350">
 
