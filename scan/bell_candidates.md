@@ -245,7 +245,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <a id="t82"></a>[82](#82) | – | `1RB0RE_0LC1LE`<br>`0RD1LD_1RA1LF`<br>`1LC0RA_0LB---` | – | for later analysis | 1092; Bell-like | **#197 Looks like a lottery**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
 | <a id="t83"></a>[83](#83) | – | `1RB1RA_1LC0RB`<br>`1LD0LB_1RA0LE`<br>`---1LF_1LB0LA` | – | for later analysis | 1093; Bell-like | **#204 Looks like a lottery**: Our experiments suggest the outcome turns on chaotic digits. |
 | 🟩 <a id="t84"></a>[84](#84) | 🟩<br>– | 🟩<br>`1RB0LC_1LC0RE`<br>`1RF1LD_1LA0LB`<br>`1RD1RA_1LB---` | – | for later analysis | 1094; Bell-like | **#207 Proof in an open PR**: Open PR 47, by Dahoas, proves that it halts. Not merged yet. |
-| <a id="t85"></a>[85](#85) | – | `1RB0RF_0LC1RE`<br>`---1LD_1LE0LB`<br>`0RF0LD_1RD1RA` | – | 3/2 Bell with several long segments; 92 outer events to 10³⁰⁰ and about 900 perturbed outer events without HALT (9 Nov 2026): HALT unlikely | 1095; Bell-like | **#208 Looks like a lottery**: A 3/2 Bell with several long segments. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t85"></a>[85](#85) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0RF_0LC1RE`<br>`---1LD_1LE0LB`<br>`0RF0LD_1RD1RA` | – | 3/2 Bell with several long segments; 92 outer events to 10³⁰⁰ and about 900 perturbed outer events without HALT (9 Nov 2026): HALT unlikely | 1095; Bell-like | **#208 Looks like a lottery**: A 3/2 Bell with several long segments. |
 | <a id="t86"></a>[86](#86) | – | `1RB0RE_1RC0RF`<br>`1LD1RA_1LB1LD`<br>`1RA1LB_---0LD` | – | for later analysis | 1099; Bell-like | **#241 Looks like a lottery**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
 | <a id="t87"></a>[87](#87) | – | `1RB1LC_1RC0RF`<br>`1RD0LB_1RE0LD`<br>`1LF---_0RA1LA` | – | for later analysis | 1100; Bell-like | **#245 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t88"></a>[88](#88) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0LE_1RC0RF`<br>`0RD0RB_1RE0RC`<br>`1LA0LA_1RA---` | – | several counters (gaps ×3/2, main gap ×2 per phase); 11,860 perturbed phases without HALT (9 Nov 2026): HALT unlikely | 1102; Bell-like | **#269 Some structure seen**: A Bell with several counters, growing by about 3/2 or by irregular doubling. |
@@ -1785,7 +1785,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <img src="diagrams/1RB0LC_1LC0RE_1RF1LD_1LA0LB_1RD1RA_1LB---.png" alt="space-time diagram" height="350">
 
 <a id="85"></a>
-## [85](#t85). `1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [85](#t85). `1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` (for later analysis)
 
 - BB6 sheet: row 1095, Bell-like
 - diagram: 467,874 steps, tape width 1001 cells
