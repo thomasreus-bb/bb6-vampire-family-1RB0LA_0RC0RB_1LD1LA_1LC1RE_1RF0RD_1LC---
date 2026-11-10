@@ -1716,6 +1716,15 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
   - *All residue sequences:* the closure of the tails over **every** sequence of residues (not only probable ones) was computed exactly up to depth 400, for all tails up to 3,000 cells. It contains no HALT. The tails grow only slowly (1,848 tails); 254 branches went over the cap, all of them long chains of the kind tested above.
   - *Shape of the tails:* `3.5.2^j.3`, `8.2^j.3`, `3.K`, `K` and nested variants such as `3.5.2^j.3.5.2^j.3`. The tail behaves like a stack of chains.
 - **Assessment (10 Nov 2026).** Unlike no. 25 and no. 105, no residue sequence leading to a HALT was found: none within 400 levels, and no HALT from long chains. No. 73 is probably a real non-halter. A proof would need exact rules for the tail shapes, including the nested chains: possible in principle, but considerably more work than one level table. **HALT very unlikely; candidate for a non-halting proof.**
+- **Exact event rules, step towards a proof (10 Nov 2026, `scan/m73/xmap.c`, `xm.py`, `rules73.py`).** Mirrored machine. The finest useful event is X(m, S): state C, head left of all nonzero cells, tape `0 0 1^m S`, S = `0 1^a₁ 0 1^a₂ …`, written as the run list [a₁, a₂, …].
+  - *Real run:* in the first 2·10¹⁰ steps (61,387 events) every event has this form, and all runs are at least 2.
+  - *Main loop:* for m ≡ 2 (mod 3), X(m, [2, k] + R) → X(m + k + 7, R). Tested for all m ≤ 119 with m ≡ 2, k ≤ 19 and four different R (2,888 cases): exact. A chain 2^j = `(011)^j` is eaten two units at a time, +9 each.
+  - *Level end:* for m ≡ 0 (mod 3), X(m, [k] + R) → X(4, [2]^(m/3) + [k+3] + R). Tested for all m ≤ 117 with m ≡ 0, k ≤ 19 and three R (2,166 cases): exact. The 1^m becomes the new chain (011)^(m/3) of the next level.
+  - *Other cases:* m ≡ 1 or 2 with a first run k ≥ 3. They are periodic in k mod 3 (3-blocks of ones become `011` units). They either end the level, or add 4 to 7 to m and rewrite the next runs: a run 1^k further back can become a chain `2^((k−c)/3)` plus a short rest, so one event may reach deep into the tail.
+- **Why the proof is not finished.**
+  - *The simple family is not closed:* "all runs ≥ 2, no `00`" is not closed under one event. From random S with all runs ≥ 2, 18 of 3,000 events produce a `00` deep in the tail (`invc.py`). It disappears again after 2 to 20 events (`follow.py`), and the real run never produces it.
+  - *What a proof would need:* an invariant set of tails between this family and the exact reachable set. The reachable set over all residue sequences (1,848 tails up to depth 400) has nested chains (`3.5.2^j.3.5.2^j.3`). It looks regular, but describing it exactly and proving it closed (by symbolic execution of the event rules for all chain lengths, e.g. with busycoq's `es`) is a larger project.
+  - The standard CTL deciders (CPS, RWL_mod, NG) failed in 43 parameter sets; they were not run further.
 
 <img src="diagrams/1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC.png" alt="space-time diagram" height="350">
 
