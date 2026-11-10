@@ -1686,6 +1686,30 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
   - *Cycle after that:* with B ≡ 1 the machine halts at its end, with B ≡ 3 it halts if the end value is odd. If the residues of s behave like fair coins, the chance of a HALT at the end of that cycle is **3/4**. This is consistent with the B-rules on the wiki.
   - *To decide it:* one would need s_t mod 4 for t ≈ 1.15·10¹⁴, the same kind of computation as the TM2 run (parity of a ×3/2 sequence), but about 115× as many steps. With pruning, the largest number would be about 4·10¹³ bits (≈ 5 TB), and the time roughly 10⁴ × the TM2 run.
   - Even then, the HALT would come only after the following, tetrationally long cycle (about 10^(10^13) TM steps and more).
+- **Cycle table and Markov chain (10 Nov 2026, `scan/m65/markov65.py`).** The end of a cycle depends only on r = B mod 4 and on a = s_t mod 8 (t = ⌊B/4⌋). Table (next B mod 4, or H = HALT), checked with 50 values of the higher bits each:
+
+  | r = B mod 4 | a≡0 | a≡1 | a≡2 | a≡3 | a≡4 | a≡5 | a≡6 | a≡7 |
+  |---|---|---|---|---|---|---|---|---|
+  | 0 | 0 | H | 2 | H | 0 | H | 2 | H |
+  | 1 | H | H | H | H | H | H | H | H |
+  | 2 | 3 | 1 | 1 | 3 | 3 | 1 | 1 | 3 |
+  | 3 | H | 0 | 2 | H | H | 2 | 0 | H |
+
+  - *Uniform bits:* the low bits of s are equally distributed; s_t mod 8 for 1,000 < t ≤ 200,000 gives each value 12.4–12.6 %.
+  - *Markov chain on r:* from r = 0 → 0 (¼), 2 (¼), H (½); r = 1 → H; r = 2 → 1 (½), 3 (½); r = 3 → 0 (¼), 2 (¼), H (½). HALT is the only absorbing state, so the machine halts with probability 1 under this model.
+  - *Real run:* r = 2, 3, 0, then 2 for the current cycle B = 459,271,258,863,234.
+  - *From the current cycle (r = 2)*, the cycle ends are numbered with the current one as end 1:
+
+    | cycle end | HALT there | cumulative |
+    |---|---|---|
+    | 1 (current) | 0 | 0 |
+    | 2 | 75 % | 75 % |
+    | 3 | 6 % | 81 % |
+    | 4 | 11 % | 92 % |
+    | 5 | 3.5 % | 96 % |
+    | 10 | | 99.9 % |
+
+    Expected: 2.6 cycle ends including the current one. Every cycle is tetrationally longer than the one before, so even end 2 lies at about 10^(10^13) TM steps and more.
 - **Assessment.** A tetrational cryptid, "probviously halting": each cycle with B ≢ 2 (mod 4) halts with chance ½ to 1. Not decidable by simulation and not provable either way with current methods.
 
 <img src="diagrams/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF.png" alt="space-time diagram" height="350">
