@@ -234,7 +234,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <a id="t70"></a>[70](#70) | – | `1RB1RF_1LC1RD`<br>`1LA1LC_1RA0RE`<br>`1RD1LA_---0LE` | – | for later analysis | 1074; Bell-like; Simulated to 10^4600 steps, code with log reduction; [1](https://discord.com/channels/960643023006490684/1451285809553477763/1451285809553477763); nerdyjoe | **#148 Reported by others**: Others have worked on it or discussed it. |
 | <a id="t71"></a>[71](#71) | – | `1RB1RD_1LC0LE`<br>`1RA0LB_1RA1RF`<br>`0RA0RC_1RE---` | – | for later analysis | 1075; Bell-like; Could be solvable | **#212 Reported by others**: Others have worked on it or discussed it. |
 | <a id="t72"></a>[72](#72) | – | `1RB1LE_1LC1RC`<br>`1LA1RD_1LD0RB`<br>`0LC0LF_0LB---` | – | for later analysis | 1076; Bell-like; [1](https://discord.com/channels/960643023006490684/1400456788955893840/1404371323265876010); -d | **#84 Reported by others**: Others have worked on it or discussed it. |
-| <a id="t73"></a>[73](#73) | – | `1RB1LF_1LC1RD`<br>`1RA1LA_0RA0RE`<br>`0RC---_1RF0LC` | – | 3/2 Bell, exact level map, 50,000 levels to n ≈ 10⁸⁸⁰⁶; HALT only from tails the real run never produces (9 Nov 2026): HALT very unlikely, candidate for a proof | 1079; Bell-like | **#12 Looks like a lottery**: A 3/2 Bell. Every known halt needs a case that real transitions avoid. |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t73"></a>[73](#73) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>– | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB1LF_1LC1RD`<br>`1RA1LA_0RA0RE`<br>`0RC---_1RF0LC` | – | 3/2 Bell, exact level map, 50,000 levels to n ≈ 10⁸⁸⁰⁶; HALT only from tails the real run never produces (9 Nov 2026): HALT very unlikely, candidate for a proof | 1079; Bell-like | **#12 Looks like a lottery**: A 3/2 Bell. Every known halt needs a case that real transitions avoid. |
 | <a id="t74"></a>[74](#74) | – | `1RB0RD_1RC0LF`<br>`1LA0LB_---1RE`<br>`1LB1RA_0LC0RA` | – | for later analysis | 1081; Bell-like | **#42 Some structure seen**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
 | <a id="t75"></a>[75](#75) | – | `1RB1RD_1RC1LD`<br>`0LA1RA_1LE0RC`<br>`---1LF_0LA0LB` | – | for later analysis | 1082; Bell-like | **#67 Rules known, no proof**: One table, two starts. Law proved in Rocq: a 4/3 map whose branches depend on n mod 6. Collatz-like, with a large margin so far. |
 | <a id="t76"></a>[76](#76) | – | `1RB1LF_1LC0RD`<br>`---1LD_1RB1RE`<br>`1LA0LB_0LA0LE` | – | for later analysis | 1086; Bell-like | **#129 Rules known, no proof** (being worked on): Exact macro machine proved in Rocq for all sizes. A halt needs one rare event that real runs avoid. No invariant yet. |
@@ -1709,7 +1709,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <img src="diagrams/1RB1LE_1LC1RC_1LA1RD_1LD0RB_0LC0LF_0LB---.png" alt="space-time diagram" height="350">
 
 <a id="73"></a>
-## [73](#t73). `1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC` (for later analysis)
+## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [73](#t73). `1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC` (for later analysis)
 
 - BB6 sheet: row 1079, Bell-like
 - diagram: 492,524 steps, tape width 1001 cells
