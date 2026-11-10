@@ -265,7 +265,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | 🟩 <a id="t102"></a>[102](#102) | 🟩<br>– | 🟩<br>`1RB1RA_0LC0RA`<br>`1RC1LD_0LB1LE`<br>`1LF0RC_---0LD` | – | **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173)); for later analysis | 1129; Bell-like | **#528 Proof in an open PR**: Open PR 44, by Claude (Heron), proves that it never halts. Not merged yet. |
 | <a id="t103"></a>[103](#103) | – | `1RB0RE_1LC1RD`<br>`1LA0LC_0RA1RF`<br>`1RD0LB_1RA---` | – | for later analysis | 1130; Bell-like | **#530 Rules known, no proof** (being worked on): One table, two starts. Token rules proved in Rocq. Marks on a periodic background act as a base-3 odometer. Invariant open. |
 | <a id="t104"></a>[104](#104) | – | `1RB1RE_1LC1LB`<br>`1LE0LD_1LE1LC`<br>`0RF1RA_---1RA` | – | for later analysis | 1133; Bell-like | **#595 Looks like a lottery**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
-| <a id="t105"></a>[105](#105) | – | `1RB1LF_1LC0RD`<br>`---1LA_0LA0RE`<br>`1LA1RA_1LB0LD` | – | 4/3 Bell with a small tail counter; exact level map, 100,000 levels to n ≈ 10¹²⁴⁹⁵ without HALT; a 35-level residue path to HALT exists (checked), chance 1.1·10⁻¹⁴ per level, constant (9 Nov 2026): **potential cryptid**, probviously halting | 1134; Bell-like | **#596 Some structure seen**: A 4/3 Bell where a second counter drains the main one. |
+| <a id="t105"></a>[105](#105) | – | `1RB1LF_1LC0RD`<br>`---1LA_0LA0RE`<br>`1LA1RA_1LB0LD` | – | 4/3 Bell with a small tail counter; exact level map, 100,000 levels to n ≈ 10¹²⁴⁹⁵ without HALT; a 35-level residue path to HALT exists (checked), chance 1.1·10⁻¹⁴ per level, constant, about 5,000× the effort of the TM2 run (9 Nov 2026): **potential cryptid**, probviously halting | 1134; Bell-like | **#596 Some structure seen**: A 4/3 Bell where a second counter drains the main one. |
 | <a id="t106"></a>[106](#106) | – | `1RB1LD_0LC1RC`<br>`1RA1RD_1LE0RB`<br>`---1LF_0LC0LA` | – | for later analysis | 1135; Bell-like | **#597 Rules known, no proof**: One table, two starts. Law proved in Rocq: a 4/3 map whose branches depend on n mod 6. Collatz-like, with a large margin so far. |
 | <a id="t107"></a>[107](#107) | – | `1RB1LD_0RC1RC`<br>`1RD0RE_0LA0LF`<br>`0RF---_1RA1LA` | – | for later analysis | 1136; Bell-like | **#599 Looks like a lottery**: A 3/2 Bell. |
 | <a id="t108"></a>[108](#108) | – | `1RB0RE_0LC0RF`<br>`1LD1LC_1RA0LD`<br>`0RD1RE_---0LB` | – | for later analysis | 1137; Bell-like | **#604 Some structure seen**: A Bell with an escalating refill: a counter that counts down and refills at growing levels. |
@@ -2066,7 +2066,22 @@ Checks:
   - `constr105.py`: with the exact level map, n₀ = 9,766,370,237,762,426 follows exactly this sequence, so P(n₀, `011`) halts in level 35.
   - `ver105.py`: checked independently with the accelerated simulator, P(n₀, `011`) halts after 37,935,856,547,639,058,576,139,391,116,028,229,062,882 ≈ 3.8·10⁴⁰ steps.
 - **Halting chance (Markov chain over the tails, `markov.py`).** With each residue taken with probability 1/3, the chance of a HALT is **1.1·10⁻¹⁴ per level**, constant from level 50 on. It does not depend on n, because the tail is reset again and again.
-- **Assessment.** No. 105 is a Collatz-like lottery with a **constant** chance per level: "probviously halting", expected after about 10¹⁴ levels, when n has about 10¹³ digits (about 10^(2·10¹³) steps). This is far beyond any simulation. A non-halting proof is impossible (it would contradict the construction above for suitable residues), and a halting proof needs the real residue sequence, which cannot be computed that far. **Potential cryptid (probviously halting), like no. 62.**
+- **Assessment.** No. 105 is a Collatz-like lottery with a **constant** chance per level: "probviously halting", expected after about 9·10¹³ levels (50 % by 6·10¹³). A non-halting proof is impossible: it would contradict the construction above for suitable residues. **Potential cryptid (probviously halting), like no. 62.**
+- **Comparison with TM2 (vampire family, orbit O2).** Both machines are of the same type and could be simulated the same way: level table, divide and conquer, and pruning, since the next L residues depend only on the last L digits of n.
+
+  | | TM2 (O2) | no. 105 |
+  |---|---|---|
+  | level map | n → 3n/2 (residue mod 2) | n → 4n/3 (residue mod 3) |
+  | halting chance per level (Markov) | 8.9·10⁻¹³ | 1.1·10⁻¹⁴ (about 80× smaller) |
+  | expected HALT | after ≈ 1.1·10¹² Bells | after ≈ 9·10¹³ levels |
+  | levels H for ≈ 59 % | 10¹² | ≈ 8·10¹³ |
+  | largest number with pruning | ≈ 0.37·H bits ≈ 4·10¹¹ bits ≈ 46 GB | ≈ 0.33·H bits ≈ 2.7·10¹³ bits ≈ 3.3 TB |
+  | run time | ≈ 13–14 days (`belldco`, 8 threads) to 10¹² | roughly 5,000× more: about 200 years on such a notebook, a few years on a large cluster |
+  | result | HALT at Bell 7.3·10¹¹ | – |
+
+  - *Pruning:* the needed precision falls by 1 bit per level for TM2 (binary digits) and by 1.585 bits for no. 105 (base-3 digits). At the same time n grows by 0.585 resp. 0.415 bits per level. This gives the largest sizes above; for TM2 they match the observed k lengths of about 2.9·10¹¹ bits.
+  - *Run time:* `belldco` needs about 1.1·10⁻⁷ s per bit of k per 2·10¹⁰ Bells, so the total time grows like H². This gives the 13 days for TM2; for no. 105 the figure is an extrapolation, a simulator would still have to be written.
+  - So a HALT of no. 105 can in principle be found the same way as for TM2, but the effort is orders of magnitude beyond the TM2 run, which was already at the limit. A Rocq proof of a HALT as in `Bellv2.v` would be correspondingly larger.
 
 <img src="diagrams/1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD.png" alt="space-time diagram" height="350">
 
