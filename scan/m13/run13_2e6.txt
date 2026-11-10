@@ -1,0 +1,6 @@
+step 1000: n has 121 decimal digits (log10 n = 121.0), 0s
+step 10000: n has 1211 decimal digits (log10 n = 1211.0), 0s
+step 100000: n has 12073 decimal digits (log10 n = 12072.2), 1s
+step 1000000: n has 120906 decimal digits (log10 n = 120905.4), 106s
+step 2000000: n has 241796 decimal digits (log10 n = 241795.7), 431s
+done 2000000

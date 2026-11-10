@@ -174,7 +174,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | 🟩 <a id="t10"></a>[10](#10) | 🟩<br>B | 🟩<br>`1RB---_0RC0RD`<br>`1LD1RB_0LE0LC`<br>`1RA0LF_1LD1LE`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE) | 1.24 | **HALT after ≈ 8.3·10⁴¹ steps** (exact number in the [chapter](#10)) (Yeyito, 7 Nov 2026; Rocq proof); two-register system, exact Bell map with types A/B/C; no HALT in 10¹⁰ Bells (about 2·10³⁰ steps); HALT needs an exact hit (see [10](#10)) | 688; Cubic Mess; Part of Category 1 | **#395 Reported by others**: Others have worked on it or discussed it. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t11"></a>[11](#11) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LB_1RC---`<br>`1LD1LF_1LE0LD`<br>`0LA1RF_1LC0RE` | 1.21 | **equivalent to [37](#37)** ; all information under no. 37 | 703; Cubic Mess | – (not in the guide: removed, equivalent to no. 37) |
 | <a id="t12"></a>[12](#12) | B | `1RB1RA_1LC1LB`<br>`1RE0LD_1RA0LB`<br>`---0RF_1RC0RA` | 1.27 | no clear single-block Bell configuration found | 731; Cubic Mess | **#486 Looks like a lottery**: Our experiments suggest the outcome turns on chaotic digits. |
-| <a id="t13"></a>[13](#13) | B | `1RB0RF_1RC1RF`<br>`1LD0LE_---1LC`<br>`1RA1LE_1LC1RB`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB) | 1.33 | needle-like: only 2 tails (all information in one number) | 754; Quadratic Mess; Part of Category 1; [1](https://discord.com/channels/960643023006490684/1448375857046360094/1491403477421785158); sheep | **#503 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <a id="t13"></a>[13](#13) | B | `1RB0RF_1RC1RF`<br>`1LD0LE_---1LC`<br>`1RA1LE_1LC1RB`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB) | 1.33 | needle: exact Bell map (Sheep, Apr 2026; checked 10 Nov 2026), HALT iff n + 2 = 2^k; 2·10⁶ Bells to n ≈ 10²⁴¹⁷⁹⁶ without HALT: convergent, almost certainly never halts (Collatz-like, no proof) | 754; Quadratic Mess; Part of Category 1; [1](https://discord.com/channels/960643023006490684/1448375857046360094/1491403477421785158); sheep | **#503 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t14"></a>[14](#14) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0LF_1LC1RA`<br>`0RE0RD_---1LE`<br>`1LF1RC_1LC1LA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA) | 1.21 | needle: exact Collatz-like map on (m, r), HALT only if a cycle ends with m = 2^k − k − 1; very probably non-halting (see [14](#14)) | 797; Quadratic Mess | **#565 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t15"></a>[15](#15) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0RB_1LC1RE`<br>`1LF0LD_1RA1LD`<br>`1RC1RB_---1LC`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC) | 1.36 | needle-like: only 2 tails (all information in one number) | 747; **CRYPTID**, Quadratic Mess; Cryptid, Part of Category 1; [1](https://wiki.bbchallenge.org/wiki/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC); Andrew Ducharme, DrDisentangle | **#198 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t16"></a>[16](#16) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LF_1RC1RF`<br>`0LD1RE_---1LC`<br>`0RB1RE_1LA0LE` | 1.26 | two-register system like 10; exact macro rules, no HALT up to 10³³ steps | 700; Cubic Mess | **#81 Cryptid**: Its halting reduces to a Collatz-like question. |
@@ -492,6 +492,28 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 - level analysis: Bell type `RC`, 25 levels; n: 66 75 117 180 229 348 439 663 999 1503 2259 3393 5094 5735 8607 12915; ratios: 1.520 1.261 1.510 1.507 1.505 1.503 1.502 1.501 1.126 1.501 1.501; 2 different tails
 - verdict: needle-like: only 2 tails (all information in one number)
 - diagram: 1,313,195 steps, tape width 1001 cells
+- **Exact Bell map (10 Nov 2026).** Tools: `scan/m13/` (`f13.py`, `map13.py`, `run13.py`). In the mirrored machine, at every B-event (state B, head at the end of the tape) the tape is exactly `1^n`. All the information is in one number.
+  - *The map* (derived from direct simulation for every n < 1,100, checked for 47 larger values and against the real run):
+    - n odd: n′ = (3n + 5)/2.
+    - n even, n + 2 = 2^k·m with m odd:
+      - m = 1: **HALT**;
+      - otherwise n′ = F = ((2^(k+1) + 1)·m + 2k − 1)/2;
+      - exception m = 3 with k even: n′ = (3F + 3)/2.
+  - *Real orbit:* from n = 1 it reproduces all 26 Bells of the real run up to 2·10⁹ steps (1, 4, 8, 13, 22, 28, …, 29,074, 32,712).
+  - *Long run:* 2,000,000 Bells with the exact map: no HALT, n ≈ 10²⁴¹⁷⁹⁶. One Bell takes about 1.1–1.5·n² steps, so this is about 10⁴⁸³⁵⁹² steps.
+- **HALT condition.** The machine halts exactly when n = 2^k − 2. Direct simulation of all n < 1,100: exactly 2, 6, 14, 30, 62, 126, 254, 510 and 1,022 halt.
+- **Discord (Sheep, 8 Apr 2026).** Sheep had already derived the same rules ("needle rules"). With x = n + 2:
+  - HALT iff x is a power of 2;
+  - x = (2a+1)·2^b → x + a + b + 2;
+  - a = 1 with b even: 3(x + b)/2 + 5.
+
+  This agrees exactly with the map above.
+
+  <img src="diagrams/discord_13_sheep.png" alt="Discord message by Sheep with the rules of 1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB" width="520">
+
+- **Assessment.** A Collatz-like needle. It halts only if the orbit ever hits n + 2 = 2^k exactly. For a pseudo-random n of size N the chance per Bell is about 1/N, and n grows by about ×1.32 per Bell, so the sum converges.
+  - Up to n ≈ 10²⁴¹⁷⁹⁶ (exact, 2·10⁶ Bells) no HALT; the remaining chance is far below 10⁻²⁴⁰⁰⁰⁰.
+  - A non-halting proof would have to show that the orbit never meets a power of 2. That is a Collatz-type statement, so it is a cryptid in the sense of the Holdout Guide ("halting reduces to a Collatz-like question"), but one whose answer is almost certainly "never halts".
 
 <img src="diagrams/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB.png" alt="space-time diagram" height="350">
 
