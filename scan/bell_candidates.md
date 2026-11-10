@@ -2079,17 +2079,19 @@ Checks:
 
 - **Comparison with TM2 (vampire family, orbit O2).** Both machines are of the same type and could be simulated the same way: level table, divide and conquer, and pruning, since the next L residues depend only on the last L digits of n.
 
-  | | TM2 (O2) | no. 105 |
+  | | TM2 (O2, `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---`) | no. 105 (`1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD`) |
   |---|---|---|
   | level map | n → 3n/2 (residue mod 2) | n → 4n/3 (residue mod 3) |
   | halting chance per level (Markov) | 8.9·10⁻¹³ | 1.1·10⁻¹⁴ (about 80× smaller) |
   | expected HALT | after ≈ 1.1·10¹² Bells | after ≈ 9·10¹³ levels |
+  | step count at the expected HALT | ≈ 10^(3.9·10¹¹) (the HALT found at Bell 7.3·10¹¹: ≈ 10^(2.6·10¹¹)) | ≈ 10^(2.25·10¹³) (at 50 %, 6.3·10¹³ levels: ≈ 10^(1.6·10¹³)) |
   | levels H for ≈ 59 % | 10¹² | ≈ 8·10¹³ |
   | largest number with pruning | ≈ 0.37·H bits ≈ 4·10¹¹ bits ≈ 46 GB | ≈ 0.33·H bits ≈ 2.7·10¹³ bits ≈ 3.3 TB |
   | run time | ≈ 13–14 days (`belldco`, 8 threads) to 10¹² | roughly 5,000× more: about 200 years on such a notebook, a few years on a large cluster |
   | result | HALT at Bell 7.3·10¹¹ | – |
 
   - *Pruning:* the needed precision falls by 1 bit per level for TM2 (binary digits) and by 1.585 bits for no. 105 (base-3 digits). At the same time n grows by 0.585 resp. 0.415 bits per level. This gives the largest sizes above; for TM2 they match the observed k lengths of about 2.9·10¹¹ bits.
+  - *Step count:* one level of no. 105 takes about 0.56·n² steps (measured: 0.5598 at n = 3,000, 0.5577 at n = 6,000), and n grows by log10(4/3) = 0.1249 decimal digits per level. Up to level L the run takes about (16/7)·0.56·n_L² ≈ 1.3·n_L² steps, i.e. about 10^(0.25·L) steps. For TM2 a Bell takes about (3/2)·n² steps and n grows by log10(3/2) = 0.176 digits per Bell.
   - *Run time:* `belldco` needs about 1.1·10⁻⁷ s per bit of k per 2·10¹⁰ Bells, so the total time grows like H². This gives the 13 days for TM2; for no. 105 the figure is an extrapolation, a simulator would still have to be written.
   - So a HALT of no. 105 can in principle be found the same way as for TM2, but the effort is orders of magnitude beyond the TM2 run, which was already at the limit. A Rocq proof of a HALT as in `Bellv2.v` would be correspondingly larger.
 
