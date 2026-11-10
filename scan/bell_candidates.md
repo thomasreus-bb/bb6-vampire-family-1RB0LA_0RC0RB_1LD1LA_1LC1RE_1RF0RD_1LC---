@@ -266,7 +266,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | 🟩 <a id="t102"></a>[102](#102) | 🟩<br>– | 🟩<br>`1RB1RA_0LC0RA`<br>`1RC1LD_0LB1LE`<br>`1LF0RC_---0LD` | – | **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173)); for later analysis | 1129; Bell-like | **#528 Proof in an open PR**: Open PR 44, by Claude (Heron), proves that it never halts. Not merged yet. |
 | <a id="t103"></a>[103](#103) | – | `1RB0RE_1LC1RD`<br>`1LA0LC_0RA1RF`<br>`1RD0LB_1RA---` | – | for later analysis | 1130; Bell-like | **#530 Rules known, no proof** (being worked on): One table, two starts. Token rules proved in Rocq. Marks on a periodic background act as a base-3 odometer. Invariant open. |
 | <a id="t104"></a>[104](#104) | – | `1RB1RE_1LC1LB`<br>`1LE0LD_1LE1LC`<br>`0RF1RA_---1RA` | – | for later analysis | 1133; Bell-like | **#595 Looks like a lottery**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
-| <a id="t105"></a>[105](#105) | – | `1RB1LF_1LC0RD`<br>`---1LA_0LA0RE`<br>`1LA1RA_1LB0LD` | – | 4/3 Bell with a small tail counter; exact level map, 100,000 levels to n ≈ 10¹²⁴⁹⁵ without HALT; a 35-level residue path to HALT exists (checked), chance 1.1·10⁻¹⁴ per level, constant, about 5,000× the effort of the TM2 run (9 Nov 2026): **potential cryptid**, probviously halting | 1134; Bell-like | **#596 Some structure seen**: A 4/3 Bell where a second counter drains the main one. |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t105"></a>[105](#105) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>– | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB1LF_1LC0RD`<br>`---1LA_0LA0RE`<br>`1LA1RA_1LB0LD` | – | 4/3 Bell with a small tail counter; exact level map, 100,000 levels to n ≈ 10¹²⁴⁹⁵ without HALT; a 35-level residue path to HALT exists (checked), chance 1.1·10⁻¹⁴ per level, constant, about 5,000× the effort of the TM2 run (9 Nov 2026): **potential cryptid**, probviously halting | 1134; Bell-like | **#596 Some structure seen**: A 4/3 Bell where a second counter drains the main one. |
 | <a id="t106"></a>[106](#106) | – | `1RB1LD_0LC1RC`<br>`1RA1RD_1LE0RB`<br>`---1LF_0LC0LA` | – | for later analysis | 1135; Bell-like | **#597 Rules known, no proof**: One table, two starts. Law proved in Rocq: a 4/3 map whose branches depend on n mod 6. Collatz-like, with a large margin so far. |
 | <a id="t107"></a>[107](#107) | – | `1RB1LD_0RC1RC`<br>`1RD0RE_0LA0LF`<br>`0RF---_1RA1LA` | – | for later analysis | 1136; Bell-like | **#599 Looks like a lottery**: A 3/2 Bell. |
 | <a id="t108"></a>[108](#108) | – | `1RB0RE_0LC0RF`<br>`1LD1LC_1RA0LD`<br>`0RD1RE_---0LB` | – | for later analysis | 1137; Bell-like | **#604 Some structure seen**: A Bell with an escalating refill: a counter that counts down and refills at growing levels. |
@@ -2048,7 +2048,7 @@ Checks:
 <img src="diagrams/1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA.png" alt="space-time diagram" height="350">
 
 <a id="105"></a>
-## [105](#t105). `1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD` (for later analysis)
+## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [105](#t105). `1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD` (for later analysis)
 
 - BB6 sheet: row 1134, Bell-like
 - diagram: 70,802 steps, tape width 319 cells
