@@ -1710,6 +1710,11 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
   - HALT was found only from tails with isolated single 1s (`0101…`) or with `00`, which the real run never produces.
 - **Assessment.** As the Holdout Guide says, every known HALT needs a case that the real transitions avoid. No halting configuration with tail runs of at least 2 is known. **HALT very unlikely; candidate for a non-halting proof** (closed family with runs of 1s ≥ 2, still to be made exact).
 - **Markov chain over the tails (9 Nov 2026, `scan/m105/markov.py`).** Each residue is taken with probability 1/2. Over 300 levels and all tails up to 3,000 cells: no HALT. But about 1.1·10⁻⁵ of the probability per level goes to long chains `(011)^j`, and in the early real run such chains reached the size of n (`(011)^194` at n ≈ 200). So, as in no. 25, a HALT is not excluded once a chain catches up with n. That was not tested, so this case is open.
+- **Long chains and all residue sequences (10 Nov 2026, `scan/m73/chain73.py`, `clos73.py`).**
+  - *Long chains:* levels from small n (4 … 59) with tails of the 25 shortest kinds followed by a chain `(011)^j`, with j from 0.3·n up to 60·n, were simulated directly for up to 80 levels. In all 8,110 runs the chain was used up without a HALT.
+  - *All residue sequences:* the closure of the tails over **every** sequence of residues (not only probable ones) was computed exactly up to depth 400, for all tails up to 3,000 cells. It contains no HALT. The tails grow only slowly (1,848 tails); 254 branches went over the cap, all of them long chains of the kind tested above.
+  - *Shape of the tails:* `3.5.2^j.3`, `8.2^j.3`, `3.K`, `K` and nested variants such as `3.5.2^j.3.5.2^j.3`. The tail behaves like a stack of chains.
+- **Assessment (10 Nov 2026).** Unlike no. 25 and no. 105, no residue sequence leading to a HALT was found: none within 400 levels, and no HALT from long chains. No. 73 is probably a real non-halter. A proof would need exact rules for the tail shapes, including the nested chains: possible in principle, but considerably more work than one level table. **HALT very unlikely; candidate for a non-halting proof.**
 
 <img src="diagrams/1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC.png" alt="space-time diagram" height="350">
 
