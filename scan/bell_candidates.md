@@ -2068,6 +2068,10 @@ Checks:
   - `ver105.py`: checked independently with the accelerated simulator, P(n₀, `011`) halts after 37,935,856,547,639,058,576,139,391,116,028,229,062,882 ≈ 3.8·10⁴⁰ steps.
 - **Halting chance (Markov chain over the tails, `markov.py`).** With each residue taken with probability 1/3, the chance of a HALT is **1.1·10⁻¹⁴ per level**, constant from level 50 on. It does not depend on n, because the tail is reset again and again.
 - **Assessment.** No. 105 is a Collatz-like lottery with a **constant** chance per level: "probviously halting", expected after about 9·10¹³ levels (50 % by 6·10¹³). A non-halting proof is impossible: it would contradict the construction above for suitable residues. **Potential cryptid (probviously halting), like no. 62.**
+- **Discord (Peacemaker II, 22 Feb 2026).** The machine was already called an "energy vampire" similar to TM2, with an expected number of Bell iterations to the HALT "in the tens of trillions", ">100 trillion" in the worst case, and a size factor of about 4/3 per iteration. This agrees with the Markov estimate above (about 9·10¹³ levels).
+
+  <img src="diagrams/discord_105_peacemaker.png" alt="Discord comment by Peacemaker II on 1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD" width="600">
+
 - **Comparison with TM2 (vampire family, orbit O2).** Both machines are of the same type and could be simulated the same way: level table, divide and conquer, and pruning, since the next L residues depend only on the last L digits of n.
 
   | | TM2 (O2) | no. 105 |
