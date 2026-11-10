@@ -124,6 +124,7 @@ The candidates with several tails but a varying growth factor (nos. 10, 11, 16, 
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> 35 | register system | 5·10¹⁶ steps | – |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> 37 | multi-register | 10²² steps | at most about 0.1 % |
 | 38 | growing list of blocks | 4·10³³ steps | – |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> 105 | vampire-like, base 3 (4/3), small tail counter; exact level map, 35-level residue path to HALT (9 Nov) | 100,000 levels, n ≈ 10¹²⁴⁹⁵ | 1.1·10⁻¹⁴ per level, constant (Markov); expected HALT after ≈ 9·10¹³ levels |
 
 **Assessment of the yellow machines (7 Nov 2026).** The key question is how fast the chance of a HALT falls as the machine grows. If it falls like 1/T per cycle, the sum diverges and the machine halts with probability 1; this is how no. 10 halted, after about 8.3·10⁴¹ steps. If it falls faster, or is blocked by structure, the machine probably never halts.
 
