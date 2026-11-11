@@ -1798,7 +1798,23 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
   - *All residue sequences:* the closure of the tails over **every** sequence of residues (not only probable ones) was computed exactly up to depth 400, for all tails up to 3,000 cells. It contains no HALT. The tails grow only slowly (1,848 tails); 254 branches went over the cap, all of them long chains of the kind tested above.
   - *Shape of the tails:* `3.5.2^j.3`, `8.2^j.3`, `3.K`, `K` and nested variants such as `3.5.2^j.3.5.2^j.3`. The tail behaves like a stack of chains.
 - **Same level map as nos. 72 and 97 (10 Nov 2026).** No. 72 (`1RB1LE_1LC1RC_1LA1RD_1LD0RB_0LC0LF_0LB---`) and no. 97 (`1RB1LB_1RC1LD_1LA1RE_1RD0LA_0RB0RF_0RA---`) run the same Bell system from other starts; all table entries agree. See [no. 72](#72) and [no. 97](#97).
-- **Assessment (10 Nov 2026).** Unlike no. 25 and no. 105, no residue sequence leading to a HALT was found: none within 400 levels, and no HALT from long chains. No. 73 is probably a real non-halter. A proof would need exact rules for the tail shapes, including the nested chains: possible in principle, but considerably more work than one level table. **HALT very unlikely; candidate for a non-halting proof.**
+- **Towards a closed family (11 Nov 2026, `scan/m73/`: `gram73.py`, `symtab.py`, `reach73.py`, `shapes73.py`, `shapescheck.py`).** Level-start notation; W is the list of runs of ones.
+  - *Grammar of the reachable tails:* all 1,848 reachable tails (all residue sequences, depth 400) are of the form X* Y, with
+    - blocks X = `3.5.2^j` (P) or `8.2^j` (Q), j ≥ 1;
+    - end Y = `[3t]` or `[3, 3t]`.
+
+    With two or more blocks, Y is only `3` or `3.6`, and the later chains are short (≤ 13) while the first one is long (up to 1,491).
+  - *Exact rules with parameters* (for large n, both residues; `symtab.py`):
+    - `[3t]`: r = 0 → e = 6+t, W′ = `[3]`; r = 1 → e = 6, W′ = `[3, 3t+3]`.
+    - `[3, 3t]`: r = 0 → e = 7, W′ = `[3t+3]`; r = 1 → e = 6, W′ = `3.5.2^(t−1).3`.
+    - P block with r = 0: becomes a Q block (`3.5` → `8`), and everything behind it stays unchanged.
+    - P block with r = 1: the chain grows (by 1 for even j, by 3 for odd j), and the next block is processed with residue 1 resp. 0.
+    - Q block: swallowed into n. Its parity flips the residue (even j flips), e grows by about 3j/2, and processing continues with the next block.
+
+    So a level is a left-to-right pass over the blocks with a carried residue.
+  - *The simple grammar is not closed for arbitrary parameters:* for example a long second chain gives `3.0.K.2^j` (a `00`), or a P block with chain length 0. Letting the family grow automatically (every form filled in with random parameters, all successor forms added until nothing new appears) gave 345 forms with up to 4 blocks. A fresh check with 4,140 more levels found 16 further forms. The family is infinite (nesting) and needs a regular description with more separators: `3.5`, `8`, `K₂` (a value ≡ 2 mod 3), `3.K₂`, `3.0.K₂`, `9.5`, `3.6.5`, `11`, …
+  - *No HALT anywhere:* no HALT in any of these runs (about 12,000 levels from arbitrary members of the grown family, plus 150 levels over all residues from tails with long second chains).
+- **Assessment (10 Nov 2026).** Unlike no. 25 and no. 105, no residue sequence leading to a HALT was found: none within 400 levels, and no HALT from long chains. No. 73 is probably a real non-halter. A proof would need exact rules for the tail shapes, including the nested chains: possible in principle, but considerably more work than one level table. **HALT very unlikely; candidate for a non-halting proof.** State of the proof (11 Nov 2026): the reachable tails have a simple grammar, but a family that is closed for all parameter values is larger and only partly described (see above); the proof is not finished.
 - **Exact event rules, step towards a proof (10 Nov 2026, `scan/m73/xmap.c`, `xm.py`, `rules73.py`).** Mirrored machine. The finest useful event is X(m, S): state C, head left of all nonzero cells, tape `0 0 1^m S`, S = `0 1^a₁ 0 1^a₂ …`, written as the run list [a₁, a₂, …].
   - *Real run:* in the first 2·10¹⁰ steps (61,387 events) every event has this form, and all runs are at least 2.
   - *Main loop:* for m ≡ 2 (mod 3), X(m, [2, k] + R) → X(m + k + 7, R). Tested for all m ≤ 119 with m ≡ 2, k ≤ 19 and four different R (2,888 cases): exact. A chain 2^j = `(011)^j` is eaten two units at a time, +9 each.
