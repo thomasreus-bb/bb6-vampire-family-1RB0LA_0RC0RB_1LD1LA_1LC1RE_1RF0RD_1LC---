@@ -1,0 +1,8 @@
+1. three blocks P_a P_b P_c and end 3, n = 41: all a < 7, b < 25, c < 90
+   8 of 15750 HALT: [(0, 6, 23), (0, 6, 24), (2, 12, 41), (2, 12, 42), (4, 18, 59), (4, 18, 60), (6, 24, 77), (6, 24, 78)]
+   all of them have b = 3a + 6 and c = 9a + 23 or 9a + 24: True
+2. the same tails for other n (gmap2):
+   tail 3.5.2^2.3.5.2^12.3.5.2^41.3: HALT for all odd n tested: True; for no even n: True
+   tail 3.5.2^4.3.5.2^18.3.5.2^59.3: HALT for all odd n tested: True; for no even n: True
+3. two blocks P_a P_b and end 3, all n < 25, a < 25, b < 100, followed for 3 levels
+   4 of 62500 HALT: [(2, 4, 17), (2, 4, 18), (2, 4, 19), (2, 4, 20)]
