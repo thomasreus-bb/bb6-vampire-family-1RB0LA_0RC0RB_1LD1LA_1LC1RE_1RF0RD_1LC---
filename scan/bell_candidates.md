@@ -1341,6 +1341,30 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 
 **Verdict:** a Bell machine with an exact two-phase cycle. Phase A is linear. Phase B is an iterated piecewise affine map on (b, c), whose pieces are cut out by t = c/b with thresholds accumulating at t = 1. So the Bell map n → n' is piecewise affine with infinitely many pieces, not a finite table; the vampire method does not apply directly. A non-halting proof would have to show that every transition of the macro model is valid for all counter values reached (no small-counter edge case that leads to "E on 1, then 0").
 
+### No. 41: attempt at a non-halting proof (12 Nov 2026)
+
+Tools in `scan/m41/exact/`. Result: **there are Bell values n that halt, also in the residue class of the real run, so a proof with a closed set of macro configurations is not possible.**
+
+- **Exact macro step for all counter values.** One macro step is the first later configuration of the form P1, P2, P3, Q, A or Bell. It was tabulated by direct simulation for all counters ≤ 14 (10,822 of these entries have a counter above 7 and agree with the affine continuation of the smaller ones). With jumps over the loops, the model gives the 70 Bells of `cycles_70.txt` exactly, up to n = 606,883,091,006,796,836,107,927,983,740.
+- **The only HALT of the macro model** is P1(a, 0, 2), for every a. It is reached from P1(a, b, b + 2): the round (a+3, b−1, c−1) keeps c − b.
+- **Halting Bell values.** Up to n = 400,000 the cycle from `1 (10)^n [0]` ends in HALT for n = 1, 4, 9, 19, 24, 80, 7896, 32179, 62156 and 248567. Direct simulation confirms n = 24 (26,491 steps), n = 80 (111,382 steps) and n = 62156 (63,992,305,558 steps).
+- **Residue of the Bells.** For all n from 5 to 19,999 whose cycle does not halt, the next Bell is ≡ 4 (mod 8); the real Bells are ≡ 4 (mod 8) from 28 on. But n = 62156 ≡ 4 (mod 8) halts, so this residue does not protect the run. Among the 7,499 values n ≡ 4 (mod 8) from 12 to 60,000 none halts.
+- **Residue classes.** The closure of the classes (regime, a, b, c modulo 24), started from the Bell class n ≡ 4 (mod 8), has 956 classes and contains P1 with c − b ≡ 2, which halts when c − b = 2 exactly. In the first cascade after a Bell this cannot happen (c − b is odd there), but later in the cycle c − b is even and above 2 in about 5 % of the entries into P1 (2,763 of 57,874 entries from P2, for n ≡ 4 (mod 8) below 30,000).
+- **Assessment.** The Bell map is exact but acts like a pseudo-random map, and the halting values are a sparse set (10 values up to 400,000, one of them ≡ 4 mod 8 and above 4). The real run halts only if a Bell hits this set. With Bells growing by a factor of about 2.6 this is very unlikely (the run is already at n ≈ 6·10²⁹), but excluding it would need control over the whole Bell sequence. **Probviously non-halting; no proof in sight.**
+
+### No. 41: probviously non-halting, rough estimate (12 Nov 2026)
+
+A heuristic estimate, not a proof. It treats the Bell map as a random map and uses the halting Bell values found above.
+
+- **Chance per Bell.** The 10 halting values up to 400,000 (1, 4, 9, 19, 24, 80, 7896, 32179, 62156, 248567) are spread roughly evenly over the orders of magnitude, about 1.5 per factor of 10. This corresponds to a chance of about 0.65/n that a Bell of size n halts. The constant comes from 10 values only and is uncertain by a factor of 2 to 3; for the class n ≡ 4 (mod 8) of the real run it is rather smaller (only 4 and 62156 up to 400,000).
+- **Sum over the Bells.** Each Bell is about 2.6 times the one before, so the chances form a geometric series with a finite sum. The total chance of a HALT is therefore below 1, and nearly all of it lies in the first Bells. This is the difference to a probviously halting machine, where the chance per cycle falls so slowly that the sum diverges.
+- **Numbers.**
+  - From the start: 0.65 · (1/8 + 1/28 + 1/92 + …) ≈ 0.1.
+  - From Bell 71 on (n ≈ 6·10²⁹): about 0.65/n · 1.6 ≈ 10⁻³⁰.
+  - From the 10¹¹ cycles already simulated without HALT: n has roughly 4·10¹⁰ decimal digits there, and the remaining chance is of the order 10^(−4·10¹⁰).
+- **No expected halting time.** The machine halts with a chance far below 1, so an expected number of steps until HALT does not exist (it is infinite). Only the chance of ever halting can be given.
+- **A sharper estimate** would count, per cycle, the entries into P1 with even c − b (about 5 % of the entries) and the chance that the cascade then hits c − b = 2 exactly. The expected form is a chance of constant · log n / n per Bell, which gives the same conclusion with a better constant. Not done yet.
+
 <a id="42"></a>
 ## [42](#t42). `1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD` (class C)
 
@@ -1808,12 +1832,12 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
     - `[3t]`: r = 0 → e = 6+t, W′ = `[3]`; r = 1 → e = 6, W′ = `[3, 3t+3]`.
     - `[3, 3t]`: r = 0 → e = 7, W′ = `[3t+3]`; r = 1 → e = 6, W′ = `3.5.2^(t−1).3`.
     - P block with r = 0: becomes a Q block (`3.5` → `8`), and everything behind it stays unchanged.
-    - P block with r = 1: the chain grows (by 1 for even j, by 3 for odd j), and the next block is processed with residue 1 resp. 0.
+    - P block with r = 1: the chain grows by 3/2 (2i → 3i, 2i+1 → 3i+4 when only `3` follows), and the next block is processed with residue 1 resp. 0. *(Corrected 12 Nov 2026; the earlier "by 1 for even j, by 3 for odd j" fits only j = 1 and 2.)*
     - Q block: swallowed into n. Its parity flips the residue (even j flips), e grows by about 3j/2, and processing continues with the next block.
 
     So a level is a left-to-right pass over the blocks with a carried residue.
   - *The simple grammar is not closed for arbitrary parameters:* for example a long second chain gives `3.0.K.2^j` (a `00`), or a P block with chain length 0. Letting the family grow automatically (every form filled in with random parameters, all successor forms added until nothing new appears) gave 345 forms with up to 4 blocks. A fresh check with 4,140 more levels found 16 further forms. The family is infinite (nesting) and needs a regular description with more separators: `3.5`, `8`, `K₂` (a value ≡ 2 mod 3), `3.K₂`, `3.0.K₂`, `9.5`, `3.6.5`, `11`, …
-  - *No HALT anywhere:* no HALT in any of these runs (about 12,000 levels from arbitrary members of the grown family, plus 150 levels over all residues from tails with long second chains).
+  - *No HALT in these runs (but see 12 Nov 2026 below: some tails of the grammar do halt):* no HALT in any of these runs (about 12,000 levels from arbitrary members of the grown family, plus 150 levels over all residues from tails with long second chains).
 - **Assessment (10 Nov 2026).** Unlike no. 25 and no. 105, no residue sequence leading to a HALT was found: none within 400 levels, and no HALT from long chains. No. 73 is probably a real non-halter. A proof would need exact rules for the tail shapes, including the nested chains: possible in principle, but considerably more work than one level table. **HALT very unlikely; candidate for a non-halting proof.** State of the proof (11 Nov 2026): the reachable tails have a simple grammar, but a family that is closed for all parameter values is larger and only partly described (see above); the proof is not finished.
 - **Exact event rules, step towards a proof (10 Nov 2026, `scan/m73/xmap.c`, `xm.py`, `rules73.py`).** Mirrored machine. The finest useful event is X(m, S): state C, head left of all nonzero cells, tape `0 0 1^m S`, S = `0 1^a₁ 0 1^a₂ …`, written as the run list [a₁, a₂, …].
   - *Real run:* in the first 2·10¹⁰ steps (61,387 events) every event has this form, and all runs are at least 2.
@@ -1824,6 +1848,36 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
   - *The simple family is not closed:* "all runs ≥ 2, no `00`" is not closed under one event. From random S with all runs ≥ 2, 18 of 3,000 events produce a `00` deep in the tail (`invc.py`). It disappears again after 2 to 20 events (`follow.py`), and the real run never produces it.
   - *What a proof would need:* an invariant set of tails between this family and the exact reachable set. The reachable set over all residue sequences (1,848 tails up to depth 400) has nested chains (`3.5.2^j.3.5.2^j.3`). It looks regular, but describing it exactly and proving it closed (by symbolic execution of the event rules for all chain lengths, e.g. with busycoq's `es`) is a larger project.
   - The standard CTL deciders (CPS, RWL_mod, NG) failed in 43 parameter sets; they were not run further.
+
+- **Nested counters, halting tails, and what is left to prove (12 Nov 2026, `scan/m73/`: `tail_family.py`, `halting_tails.py`, `reachable_exact.py`, `level.c`, `dstep.c`; outputs in the `.txt` files of the same names).** Mirrored machine, level-start notation, W is the list of runs of ones, P_j = `3.5.2^j`. All of this is computed, not proved.
+  - *The tail is a stack of 3/2 counters.* A block `3.5.2^j` is a frozen copy of the whole machine: `3` is a wall, `5` the run that the head extends, and the chain `2^j` plays the role of n. More generally `3.K.2^j` with K ≡ 2 (mod 3) behaves like `3.5.2^(j + (K−5)/3)`.
+    - With residue 1 the chain 2i becomes 3i + (e_R − 6) and the rest R gets residue 1; the chain 2i+1 becomes 3i + (e_R − 3) and R gets residue 0. Here e_R is the value e of the level map for R alone.
+    - The counter to the left of the block (n, or the chain of the block before) loses one `110` per oscillation of the inner counter, about half of the inner chain. For the main counter this is e = 6 − ⌈j/2⌉.
+    - Checked for j = 0 … 59 and for two blocks; an exact model built from these rules agrees with direct simulation in 14,970 level computations.
+  - *Why the grammar X\*Y is not closed.* A block needs about half of its chain from its left neighbour. If the neighbour is too short, the special forms appear. With a first chain of 4 and a second chain of 12, 14, 16, 18, 20 the result is a chain of length 0, `3.6.5…`, `3.0.14…`, both blocks swallowed into n, and `3.101…`. They return to blocks `3.K.2^j` / `K.2^j` after one or two levels.
+  - *Shape of the tails.* T = tails whose runs are all ≡ 0 or 2 (mod 3), with a last run ≡ 0 (mod 3); runs of length 0 (`00`) are allowed inside. T contains X\*Y and the special forms. In 84,884 level computations with n large compared with the tail (all 12,442 small tails, 30,000 random ones, both residues) the result was always in T, without HALT. T describes the shape only; it is not free of HALT (next point).
+  - *Tails of the grammar that halt.*
+    - `(110)^n` followed by `3.5.2^2.3.5.2^12.3.5.2^41.3` halts for every odd n tested (5 … 39, 61, 151; `gmap2.c`), and for no even n.
+    - Among all tails P_a P_b P_c `3` with a < 7, b < 25, c < 90 (n = 41) exactly 8 of 15,750 halt, and all of them have b = 3a + 6 and c = 9a + 23 or 9a + 24.
+    - One level higher, with n as the outer counter: among all `(110)^n` P_a P_b `3` with n < 25, a < 25, b < 100 exactly 4 of 62,500 halt (n = 2, a = 4, b = 17 … 20).
+    - One counter running out is harmless in everything tested: all 37,820 configurations `(110)^n` P_a X_b Y with n = 5 … 9, a ≤ 30, b ≤ 60 ran 4 levels without HALT. Every HALT found inside the grammar fits the case where two neighbouring counters run out in the same level.
+    - So the earlier statements "no tail leads to a HALT" and "a HALT needs `00` or isolated single 1s" hold for reachable and for random tails, but not for all tails of the grammar.
+  - *The reachable tails without a size limit* (`reachable_exact.py`; chains are stored as numbers). All residue sequences up to depth 400:
+
+    | start tail | tails | blocks `3.5` | a counter inside the tail runs out | largest share taken from a lending chain |
+    |---|---|---|---|---|
+    | no. 73, `3.9` | 92,816 | at most 3 | never | 7.05 % (depth 13), below 1.9 % after depth 50 |
+    | no. 72, `3.3` | 92,374 | at most 3 | once, depth 4 | the same |
+    | no. 97, `3.6` | 51,692 | at most 3 | never | 1.85 % |
+
+    - The 1,848 tails given above are too few: the cap of 3,000 cells drops the branches with a long first chain (with residue 1 at every level the first chain grows by 3/2 per level).
+    - The one exception is real: from `3.3` the residues 1,1,1,1 lead to `3.5.3.5.2.3`, and the next residue 1 gives `3.6.5.2^4.3`, which is not in X\*Y. The real run of no. 72 does not take this path.
+    - A HALT needs an inner chain about three times as long as its left neighbour; the reachable tails have inner chains of a few percent. The reason: a second block grows only in levels where the first chain is even. As soon as the first chain is odd, the second block becomes an `8` block and is swallowed. With residue 1 at every level the first chain reaches 300,000 after 28 levels while the second never exceeds 13.
+  - *What is left to prove.*
+    - The regular part (shape of the tails, blocks as nested counters) should be provable, by induction on the nesting depth.
+    - No inequality between neighbouring chain lengths is preserved by the level map on its own: while the first chain a stays even, both blocks grow by 3/2 and a loses half of the second chain b, so a/b drops by about 1/3 per level. After about 3a/b such levels in a row the first chain would be used up.
+    - So the proof hangs on one statement: *a chain that grows by a ↦ 3a/2 − (small amount) does not stay even for about a/b levels in a row.* For a ↦ 3a/2 alone this is trivial (at most log₂ a levels). With the small amount, "even for L levels" fixes a modulo 2^L, and for L > log₂ a this leaves exactly one value of a; one has to show that the real a is never this value. This is a weak statement of the Collatz kind, and no method for it is known to us.
+- **Assessment (12 Nov 2026).** HALT practically excluded: the reachable tails stay far from the thin halting set. A complete non-halting proof is unlikely with the present methods, because of the one parity statement above. The machine is reduced to that statement, with an exact model of the level map and an explicit family of halting tails. The same holds for nos. 72 and 97.
 
 <img src="diagrams/1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC.png" alt="space-time diagram" height="350">
 
