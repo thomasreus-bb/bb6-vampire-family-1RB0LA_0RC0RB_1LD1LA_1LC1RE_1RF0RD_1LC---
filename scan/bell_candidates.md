@@ -1341,6 +1341,17 @@ Scripts: `scan/m41/macro41.py` (macro model), `scan/m41/words41.py` (regime word
 
 **Verdict:** a Bell machine with an exact two-phase cycle. Phase A is linear. Phase B is an iterated piecewise affine map on (b, c), whose pieces are cut out by t = c/b with thresholds accumulating at t = 1. So the Bell map n → n' is piecewise affine with infinitely many pieces, not a finite table; the vampire method does not apply directly. A non-halting proof would have to show that every transition of the macro model is valid for all counter values reached (no small-counter edge case that leads to "E on 1, then 0").
 
+### No. 41: attempt at a non-halting proof (12 Nov 2026)
+
+Tools in `scan/m41/exact/`. Result: **there are Bell values n that halt, also in the residue class of the real run, so a proof with a closed set of macro configurations is not possible.**
+
+- **Exact macro step for all counter values.** One macro step is the first later configuration of the form P1, P2, P3, Q, A or Bell. It was tabulated by direct simulation for all counters ≤ 14 (10,822 of these entries have a counter above 7 and agree with the affine continuation of the smaller ones). With jumps over the loops, the model gives the 70 Bells of `cycles_70.txt` exactly, up to n = 606,883,091,006,796,836,107,927,983,740.
+- **The only HALT of the macro model** is P1(a, 0, 2), for every a. It is reached from P1(a, b, b + 2): the round (a+3, b−1, c−1) keeps c − b.
+- **Halting Bell values.** Up to n = 400,000 the cycle from `1 (10)^n [0]` ends in HALT for n = 1, 4, 9, 19, 24, 80, 7896, 32179, 62156 and 248567. Direct simulation confirms n = 24 (26,491 steps), n = 80 (111,382 steps) and n = 62156 (63,992,305,558 steps).
+- **Residue of the Bells.** For all n from 5 to 19,999 whose cycle does not halt, the next Bell is ≡ 4 (mod 8); the real Bells are ≡ 4 (mod 8) from 28 on. But n = 62156 ≡ 4 (mod 8) halts, so this residue does not protect the run. Among the 7,499 values n ≡ 4 (mod 8) from 12 to 60,000 none halts.
+- **Residue classes.** The closure of the classes (regime, a, b, c modulo 24), started from the Bell class n ≡ 4 (mod 8), has 956 classes and contains P1 with c − b ≡ 2, which halts when c − b = 2 exactly. In the first cascade after a Bell this cannot happen (c − b is odd there), but after a bounce segment c − b is even in about one case in eight.
+- **Assessment.** The Bell map is exact but acts like a pseudo-random map, and the halting values are a sparse set (10 values up to 400,000, one of them ≡ 4 mod 8 and above 4). The real run halts only if a Bell hits this set. With Bells growing by a factor of about 2.6 this is very unlikely (the run is already at n ≈ 6·10²⁹), but excluding it would need control over the whole Bell sequence. **Probviously non-halting; no proof in sight.**
+
 <a id="42"></a>
 ## [42](#t42). `1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD` (class C)
 
