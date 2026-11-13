@@ -232,6 +232,155 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 129 | `1RB---_0LC0RB_1RA1LD_1LE1LF_1LB0LF_0RC0LA` | #450: start A, structure<br>#555: start D, mirrored, structure | Shift-overflow counter |
 | 130 | `1RB0RC_1LC0RE_0LD0LB_1RA1LE_1LB1RF_---0RD` | #506: start A, lottery<br>#547: start D, lottery | Shift-overflow counter |
 
+## Tables that differ in one transition, among the 607 holdouts (13 Nov 2026)
+
+All 607 machines were compared again, this time allowing **one** different transition, up to renaming of the states and mirroring (`scan/groups607/onediff.py`). Machines with the same table (previous section) count as one table here.
+
+- **133 pairs of tables in 37 families, 172 machines.** Family sizes (number of tables): 25 × 2, 7 × 3, 1 × 4, 1 × 5, 2 × 6, 1 × 16.
+- Column "transition": the transition in which the two machines differ, in each machine's own naming (e.g. `F0 1LA → C1 0RB` means: F0 = `1LA` in the first machine corresponds to C1 = `0RB` in the second).
+- Column "used": how often this transition is used in the first 10⁸ steps from the blank tape, in the first / second machine (`usage.c`).
+- Column "kind":
+  - **start**: the transition is used only in the first few steps (at most 20 times, last use before step 10⁵). After that both machines run with identical tables; they differ only in what the first steps wrote. Such pairs often reach the same configuration and are then equivalent; this is the easiest kind to check.
+  - **rare**: used again and again, but at most 10,000 times in 10⁸ steps, e.g. once per Bell as F0 in the vampire family. Between the uses the machines run the same way. These are the best candidates for a shared analysis.
+  - **mixed** / **frequent**: used often in one or both machines; the runs are probably quite different.
+- Same table and one transition apart does not mean equivalent; whether the runs meet was not checked here.
+
+| family | machine 1 | machine 2 | transition | used in 10⁸ steps | kind |
+|---|---|---|---|---|---|
+| 1 | #32 (group 14) | #49 (group 22) | `F0` 0RC → `F0` 1RA | 2× / 3× | **rare** |
+|  | #32 (group 14) | #52 (group 23) | `F0` 0RC → `F0` 1RC | 2× / 3× | **rare** |
+|  | #32 (group 14) | #68 (group 32) | `F0` 0RC → `F0` 0RD | 2× / 2× | **rare** |
+|  | #32 (group 14) | #71 (group 35) | `F0` 0RC → `F0` 0LC | 2× / 2× | **rare** |
+|  | #32 (group 14) | #216 (group 84) | `F0` 0RC → `F0` 0LA | 2× / 3× | **rare** |
+|  | #32 (group 14) | #232 (group 87) | `F0` 0RC → `F0` 1LC | 2× / 2× | **rare** |
+|  | #49 (group 22) | #52 (group 23) | `F0` 1RA → `F0` 1RC | 3× / 3× | **rare** |
+|  | #49 (group 22) | #68 (group 32) | `F0` 1RA → `F0` 0RD | 3× / 2× | **rare** |
+|  | #49 (group 22) | #71 (group 35) | `F0` 1RA → `F0` 0LC | 3× / 2× | **rare** |
+|  | #49 (group 22) | #216 (group 84) | `F0` 1RA → `F0` 0LA | 3× / 3× | **rare** |
+|  | #49 (group 22) | #232 (group 87) | `F0` 1RA → `F0` 1LC | 3× / 2× | **rare** |
+|  | #52 (group 23) | #78 (group 38) | `E1` 0RF → `F1` 1RA | 3× / 2× | **rare** |
+|  | #52 (group 23) | #68 (group 32) | `F0` 1RC → `F0` 0RD | 3× / 2× | **rare** |
+|  | #52 (group 23) | #71 (group 35) | `F0` 1RC → `F0` 0LC | 3× / 2× | **rare** |
+|  | #52 (group 23) | #216 (group 84) | `F0` 1RC → `F0` 0LA | 3× / 3× | **rare** |
+|  | #52 (group 23) | #232 (group 87) | `F0` 1RC → `F0` 1LC | 3× / 2× | **rare** |
+|  | #68 (group 32) | #71 (group 35) | `F0` 0RD → `F0` 0LC | 2× / 2× | **rare** |
+|  | #68 (group 32) | #216 (group 84) | `F0` 0RD → `F0` 0LA | 2× / 3× | **rare** |
+|  | #68 (group 32) | #232 (group 87) | `F0` 0RD → `F0` 1LC | 2× / 2× | **rare** |
+|  | #71 (group 35) | #216 (group 84) | `F0` 0LC → `F0` 0LA | 2× / 3× | **rare** |
+|  | #71 (group 35) | #232 (group 87) | `F0` 0LC → `F0` 1LC | 2× / 2× | **rare** |
+|  | #78 (group 38) | #249 (group 93) | `A0` 1RB → `F0` 1LD | 3× / 2× | **rare** |
+|  | #213 | #32 (group 14) | `F0` 1LA → `F0` 0RC | 2× / 2× | **rare** |
+|  | #213 | #49 (group 22) | `F0` 1LA → `F0` 1RA | 2× / 3× | **rare** |
+|  | #213 | #52 (group 23) | `F0` 1LA → `F0` 1RC | 2× / 3× | **rare** |
+|  | #213 | #68 (group 32) | `F0` 1LA → `F0` 0RD | 2× / 2× | **rare** |
+|  | #213 | #71 (group 35) | `F0` 1LA → `F0` 0LC | 2× / 2× | **rare** |
+|  | #213 | #216 (group 84) | `F0` 1LA → `F0` 0LA | 2× / 3× | **rare** |
+|  | #213 | #232 (group 87) | `F0` 1LA → `F0` 1LC | 2× / 2× | **rare** |
+|  | #213 | #359 (group 116) | `F0` 1LA → `F0` 0LB | 2× / 2× | **rare** |
+|  | #216 (group 84) | #232 (group 87) | `F0` 0LA → `F0` 1LC | 3× / 2× | **rare** |
+|  | #276 | #216 (group 84) | `D1` 1LF → `E1` 0RF | 2× / 3× | **rare** |
+|  | #276 | #78 (group 38) | `F0` 0RE → `A0` 1RB | 2× / 3× | **rare** |
+|  | #276 | #249 (group 93) | `F0` 0RE → `F0` 1LD | 2× / 2× | **rare** |
+|  | #276 | #335 (group 113) | `F0` 0RE → `F0` 0RB | 2× / 2× | **rare** |
+|  | #276 | #346 (group 114) | `F0` 0RE → `F0` 0RC | 2× / 1× (last at step 49,250) | **rare** |
+|  | #276 | #406 (group 125) | `F0` 0RE → `F0` 0LA | 2× / 2× | **rare** |
+|  | #276 | #563 | `F0` 0RE → `F0` 1LD | 2× / 7× | **rare** |
+|  | #335 (group 113) | #78 (group 38) | `F0` 0RB → `A0` 1RB | 2× / 3× | **rare** |
+|  | #335 (group 113) | #249 (group 93) | `F0` 0RB → `F0` 1LD | 2× / 2× | **rare** |
+|  | #335 (group 113) | #346 (group 114) | `F0` 0RB → `F0` 0RC | 2× / 1× (last at step 49,250) | **rare** |
+|  | #335 (group 113) | #406 (group 125) | `F0` 0RB → `F0` 0LA | 2× / 2× | **rare** |
+|  | #346 (group 114) | #78 (group 38) | `F0` 0RC → `A0` 1RB | 1× (last at step 49,250) / 3× | **rare** |
+|  | #346 (group 114) | #249 (group 93) | `F0` 0RC → `F0` 1LD | 1× (last at step 49,250) / 2× | **rare** |
+|  | #346 (group 114) | #406 (group 125) | `F0` 0RC → `F0` 0LA | 1× (last at step 49,250) / 2× | **rare** |
+|  | #359 (group 116) | #32 (group 14) | `F0` 0LB → `F0` 0RC | 2× / 2× | **rare** |
+|  | #359 (group 116) | #49 (group 22) | `F0` 0LB → `F0` 1RA | 2× / 3× | **rare** |
+|  | #359 (group 116) | #52 (group 23) | `F0` 0LB → `F0` 1RC | 2× / 3× | **rare** |
+|  | #359 (group 116) | #68 (group 32) | `F0` 0LB → `F0` 0RD | 2× / 2× | **rare** |
+|  | #359 (group 116) | #71 (group 35) | `F0` 0LB → `F0` 0LC | 2× / 2× | **rare** |
+|  | #359 (group 116) | #216 (group 84) | `F0` 0LB → `F0` 0LA | 2× / 3× | **rare** |
+|  | #359 (group 116) | #232 (group 87) | `F0` 0LB → `F0` 1LC | 2× / 2× | **rare** |
+|  | #406 (group 125) | #78 (group 38) | `F0` 0LA → `A0` 1RB | 2× / 3× | **rare** |
+|  | #406 (group 125) | #249 (group 93) | `F0` 0LA → `F0` 1LD | 2× / 2× | **rare** |
+|  | #563 | #49 (group 22) | `B1` 1RF → `D1` 0LF | 7× / 3× | **rare** |
+|  | #563 | #78 (group 38) | `F0` 1LD → `A0` 1RB | 7× / 3× | **rare** |
+|  | #563 | #249 (group 93) | `F0` 1LD → `F0` 1LD | 7× / 2× | **rare** |
+|  | #563 | #335 (group 113) | `F0` 1LD → `F0` 0RB | 7× / 2× | **rare** |
+|  | #563 | #346 (group 114) | `F0` 1LD → `F0` 0RC | 7× / 1× (last at step 49,250) | **rare** |
+|  | #563 | #406 (group 125) | `F0` 1LD → `F0` 0LA | 7× / 2× | **rare** |
+| 2 | #231 | #352 (group 115) | `F0` 1RA → `F0` 1RE | 19× / 15× | **rare** |
+|  | #231 | #529 | `F0` 1RA → `F0` 1RC | 19× / 5× (last at step 21,705) | **rare** |
+|  | #246 | #265 | `F0` 0LC → `F0` 1RC | 4× / 4× | **rare** |
+|  | #246 | #407 | `F0` 0LC → `F0` 0RB | 4× / 4× | **rare** |
+|  | #265 | #529 | `A1` 0RF → `A1` 1RF | 4× / 5× (last at step 21,704) | **rare** |
+|  | #265 | #407 | `F0` 1RC → `F0` 0RB | 4× / 4× | **rare** |
+|  | #529 | #352 (group 115) | `F0` 1RC → `F0` 1RE | 5× (last at step 21,705) / 15× | **rare** |
+| 3 | #138 (group 57) | #188 (group 80) | `F1` 1RF → `F1` 0RF | 8,306× / 5,715× | **rare** |
+|  | #138 (group 57) | #210 (group 83) | `F1` 1RF → `F1` 1RE | 8,306× / 35,844× | mixed |
+|  | #188 (group 80) | #210 (group 83) | `F1` 0RF → `F1` 1RE | 5,715× / 35,844× | mixed |
+|  | #598 | #247 (group 92) | `F0` 0RD → `F0` 0RB | 6,254× / 6,639× | **rare** |
+|  | #608 | #247 (group 92) | `D0` 1LE → `A0` 1RB | 9,990,005× / 12,486,089× | frequent |
+|  | #608 | #138 (group 57) | `F1` 0LE → `F1` 1RF | 5,817× / 8,306× | **rare** |
+|  | #608 | #188 (group 80) | `F1` 0LE → `F1` 0RF | 5,817× / 5,715× | **rare** |
+|  | #608 | #210 (group 83) | `F1` 0LE → `F1` 1RE | 5,817× / 35,844× | mixed |
+| 4 | #8 | #425 (group 127) | `F0` 0LA → `F0` 1RA | 15× / 9× | **rare** |
+|  | #34 | #8 | `F0` 0LC → `F0` 0LA | 14× / 15× | **rare** |
+|  | #34 | #425 (group 127) | `F0` 0LC → `F0` 1RA | 14× / 9× | **rare** |
+|  | #225 | #8 | `F0` 1LA → `F0` 0LA | 7× / 15× | **rare** |
+|  | #225 | #34 | `F0` 1LA → `F0` 0LC | 7× / 14× | **rare** |
+|  | #225 | #230 | `F0` 1LA → `F0` 1LE | 7× / 13× | **rare** |
+|  | #225 | #425 (group 127) | `F0` 1LA → `F0` 1RA | 7× / 9× | **rare** |
+|  | #230 | #8 | `F0` 1LE → `F0` 0LA | 13× / 15× | **rare** |
+|  | #230 | #34 | `F0` 1LE → `F0` 0LC | 13× / 14× | **rare** |
+|  | #230 | #425 (group 127) | `F0` 1LE → `F0` 1RA | 13× / 9× | **rare** |
+| 5 | #337 | #559 | `A1` 0RF → `F1` --- | 1× (last at step 11) / 0× (last at step 1) | start |
+|  | #522 | #558 | `E1` 0LE → `E1` 1RC | 4× (last at step 11) / 1× (last at step 8) | start |
+|  | #522 | #559 | `E1` 0LE → `E1` --- | 4× (last at step 11) / 0× (last at step 1) | start |
+|  | #558 | #559 | `E1` 1RC → `E1` --- | 1× (last at step 8) / 0× (last at step 1) | start |
+| 6 | #120 | #198 = [15](#15) | `B0` 0LC → `A0` 1RB | 27× / 24× | **rare** |
+|  | #120 | #503 = [13](#13) | `B0` 0LC → `A0` 1RB | 27× / 22× | **rare** |
+|  | #198 = [15](#15) | #503 = [13](#13) | `A0` 1RB → `A0` 1RB | 24× / 22× | **rare** |
+| 7 | #128 | #458 | `A0` 1RB → `D0` 0RD | 5,882,233× / 5,263,019× | frequent |
+|  | #128 | #450 (group 129) | `F0` 1RB → `F0` 0RC | 2,941,245× / 2,777,863× | frequent |
+| 8 | #135 | #400 | `C0` 1LA → `C0` 0RA | 494× / 478× | **rare** |
+|  | #135 | #483 | `C0` 1LA → `D0` 1LE | 494× / 493× | **rare** |
+|  | #400 | #483 | `C0` 0RA → `D0` 1LE | 478× / 493× | **rare** |
+| 9 | #191 | #504 | `D1` 0LD → `F1` 1RA | 26,166× / 22,458× | frequent |
+|  | #504 | #98 (group 43) | `A0` 1RB → `F0` 1LA | 22,852× / 25,679× | frequent |
+| 10 | #312 | #88 | `E1` 1RF → `E1` 1RB | 220× / 220× | **rare** |
+|  | #312 | #449 | `E1` 1RF → `E1` 0LC | 220× / 220× | **rare** |
+|  | #449 | #88 | `E1` 0LC → `E1` 1RB | 220× / 220× | **rare** |
+| 11 | #303 = [6](#6) (group 109) | #75 = [2](#2) (group 36) | `A0` 1RB → `A0` 1RB | 18× / 18× | **rare** |
+|  | #303 = [6](#6) (group 109) | #421 = [3](#3) (group 126) | `A0` 1RB → `F0` 1LC | 18× / 17× | **rare** |
+|  | #421 = [3](#3) (group 126) | #75 = [2](#2) (group 36) | `F0` 1LC → `A0` 1RB | 17× / 18× | **rare** |
+| 12 | #54 (group 24) | #17 (group 6) | `E0` 1RD → `B0` 1RC | 20× / 16× | **rare** |
+|  | #54 (group 24) | #145 (group 59) | `E0` 1RD → `E0` 1RB | 20× / 21× | **rare** |
+|  | #145 (group 59) | #17 (group 6) | `E0` 1RB → `B0` 1RC | 21× / 16× | **rare** |
+| 13 | #101 | #158 | `E0` 1RE → `B0` 1RC | 8,327,695× / 9,988,679× | frequent |
+| 14 | #107 | #517 | `A1` 1RF → `A1` 1RD | 16× / 8× | **rare** |
+| 15 | #123 | #223 | `E1` 0RE → `E1` 1RB | 4,334,579× / 4,756,717× | frequent |
+| 16 | #192 | #606 | `F1` 1RE → `F1` 0RC | 15,424× / 11,791× | frequent |
+| 17 | #194 | #492 | `D0` 1LA → `D0` 1RE | 2× (last at step 1,198) / 2× (last at step 323) | start |
+| 18 | #196 | #404 | `F0` 0RB → `F0` 1RC | 6× / 6× | **rare** |
+| 19 | #199 | #177 (group 72) | `C0` 1LD → `C0` 1LA | 4× (last at step 47,350) / 6× | **rare** |
+| 20 | #226 | #242 | `F0` 0LE → `F0` 0LB | 17× / 17× | **rare** |
+| 21 | #239 | #484 | `F0` 0RA → `F0` 0RD | 47,204× / 21,288× | frequent |
+| 22 | #253 | #432 | `F0` 0LE → `F0` 1LC | 8,304,914× / 9,961,346× | frequent |
+| 23 | #351 | #356 | `E1` 0LB → `A1` 1LE | 6,562× / 6,494× | **rare** |
+| 24 | #379 | #444 | `F0` 0RA → `F0` 0LD | 45,375× / 45,363× | frequent |
+| 25 | #389 | #571 | `B0` 1LC → `D0` 1LB | 461× / 466× | **rare** |
+| 26 | #434 | #386 (group 122) | `D0` 1LC → `E0` 1LA | 3,223,970× / 3,446,510× | frequent |
+| 27 | #452 | #549 | `D0` 0LB → `F0` 0RC | 16,632,813× / 12,475,701× | frequent |
+| 28 | #479 = [111](#111) | #506 (group 130) | `C1` 0LC → `D1` 1LE | 10,060× / 7,142,858× | frequent |
+| 29 | #392 | #50 | `E0` 1LE → `E0` 1RE | 166,440× / 101,958× | frequent |
+| 30 | #524 = [34](#34) | #548 = [50](#50) | `A0` 1RB → `D0` 0RA | 2× (last at step 11) / 2× (last at step 14) | start |
+| 31 | #445 | #56 = [47](#47) | `F0` 1LE → `C0` 1RD | 22× / 38× | **rare** |
+| 32 | #459 = [98](#98) | #72 = [63](#63) | `D0` 1RE → `A0` 1RB | 42× / 39× | **rare** |
+| 33 | #520 | #81 = [16](#16) | `A0` 1RB → `A0` 1RB | 7× / 5× | **rare** |
+| 34 | #47 (group 21) | #69 (group 33) | `F1` 1RB → `F1` 1RD | 5,537,426× / 5,536,258× | frequent |
+| 35 | #90 (group 42) | #178 (group 73) | `D1` 1LD → `B1` 0RE | 2,136,152× / 2,046,727× | frequent |
+| 36 | #295 (group 106) | #20 (group 7) | `B0` 1RC → `B0` 1LC | 318× / 351× | **rare** |
+| 37 | #280 (group 102) | #187 (group 79) | `E0` 1RA → `E0` 1LA | 6× (last at step 3,831) / 9× (last at step 28,971) | start |
+
 ## The vampire method: when does it apply?
 
 A machine is a candidate for the vampire method if its Bell map can be written as a **closed finite table**. This section collects what that means, what it proves and what it does not prove, as a basis for finding further vampire candidates in BB(6), BB(7) and other classes.
