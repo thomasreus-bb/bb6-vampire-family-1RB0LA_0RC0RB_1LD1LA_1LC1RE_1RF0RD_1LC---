@@ -45,6 +45,7 @@ def cat(k,s):
     return 'frequent'
 def u(k,s):
     n,la=use[info[k][0]][1][s]
+    if n==0: return 'never'
     return '%s×'%format(n,',') if cat(k,s)!='start' else '%d× (last at step %s)'%(n,format(la+1,','))
 rows=[]; rare=[]
 for fi,c in enumerate(comps,1):

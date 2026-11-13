@@ -332,10 +332,10 @@ All 607 machines were compared again, this time allowing **one** different trans
 |  | #230 | #8 | `F0` 1LE → `F0` 0LA | 13× / 15× | **rare** |
 |  | #230 | #34 | `F0` 1LE → `F0` 0LC | 13× / 14× | **rare** |
 |  | #230 | #425 (group 127) | `F0` 1LE → `F0` 1RA | 13× / 9× | **rare** |
-| 5 | #337 | #559 | `A1` 0RF → `F1` --- | 1× (last at step 11) / 0× (last at step 1) | start |
+| 5 | #337 | #559 | `A1` 0RF → `F1` --- | 1× (last at step 11) / never | start |
 |  | #522 | #558 | `E1` 0LE → `E1` 1RC | 4× (last at step 11) / 1× (last at step 8) | start |
-|  | #522 | #559 | `E1` 0LE → `E1` --- | 4× (last at step 11) / 0× (last at step 1) | start |
-|  | #558 | #559 | `E1` 1RC → `E1` --- | 1× (last at step 8) / 0× (last at step 1) | start |
+|  | #522 | #559 | `E1` 0LE → `E1` --- | 4× (last at step 11) / never | start |
+|  | #558 | #559 | `E1` 1RC → `E1` --- | 1× (last at step 8) / never | start |
 | 6 | #120 | #198 = [15](#15) | `B0` 0LC → `A0` 1RB | 27× / 24× | **rare** |
 |  | #120 | #503 = [13](#13) | `B0` 0LC → `A0` 1RB | 27× / 22× | **rare** |
 |  | #198 = [15](#15) | #503 = [13](#13) | `A0` 1RB → `A0` 1RB | 24× / 22× | **rare** |
