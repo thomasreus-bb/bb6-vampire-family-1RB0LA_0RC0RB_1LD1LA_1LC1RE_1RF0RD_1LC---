@@ -8,9 +8,9 @@ static const char*TM="1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD";
 int W[8][2],D[8][2],N[8][2];
 int main(int argc,char**argv){ long long maxs=argc>1?atoll(argv[1]):100000000000LL;
  for(int i=0;i<6;i++)for(int b=0;b<2;b++){const char*x=TM+7*i+3*b; if(x[0]=='-'){N[i][b]=-1;continue;} W[i][b]=x[0]-'0';D[i][b]=x[1]=='R'?1:-1;N[i][b]=x[2]-'A';}
- long SZ=1L<<27; unsigned char*t=malloc(SZ); char ty[4]; long x,y;
+ long SZ=1L<<27; unsigned char*t=calloc(SZ,1); long ulo=SZ/2, uhi=SZ/2; char ty[4]; long x,y;
  while(scanf("%3s %ld %ld",ty,&x,&y)==3){
-  memset(t,0,SZ); long base=SZ/2, p=base, i=base+1;
+  memset(t+ulo,0,uhi-ulo+2); long base=SZ/2, p=base, i=base+1;
   if(ty[0]=='Z'){i+=2;}
   if(ty[0]=='M'){ for(int k=0;k<3;k++){t[i]=1;i+=2;} t[i++]=1;t[i++]=1; i++; }
   for(long k=0;k<x;k++){t[i]=1;i+=2;} for(long k=0;k<y;k++)t[i++]=1;
@@ -27,6 +27,7 @@ int main(int argc,char**argv){ long long maxs=argc>1?atoll(argv[1]):100000000000
         done=1; break; } }
   }
   if(!done) printf("MAX\n");
+  ulo=lo<base?lo:base; uhi=hi+2;
   fflush(stdout);
  }
 }

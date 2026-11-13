@@ -26,3 +26,15 @@ Events: state A, head on a new leftmost cell. X(a,b) = tape (10)^a 1^b; Z(c,e) =
 - M(c,e), c even: no closed rule yet (several regimes). **M(c,2) with c even halts.**
 
 Consequence: R1–R4 never produce Z(·,2) (D_k is odd). A HALT needs a merge M(c,e) with c even that produces Z(c'',2) with c'' even. Example: M(12,5) → Z(22,2) → HALT.
+
+## Merges with even c (13 Nov 2026)
+
+- For c even, M(c,e) halts **exactly for e in H**, independently of c (checked for c = 2, 4, 50, 52, 200, 1000 and e < 1500).
+  H below 5000 (`hset_M2_e1-4999.txt`, from M(2,e)): 2, 28, 74, 114, 288, 622, 715, 772, 1044, 1209, 3391.
+- Inside such a merge the block 1^e is erased and a new process grows from the right end into the gap until it meets the left part.
+  The outcome depends on where this process stands when it meets the wall, so H is tied to the machine's own dynamics (as the Holdout Guide says).
+- Since R1–R4 are exact and never halt, **the machine halts iff some merge M(c,e) with c even has e in H.**
+
+## Macro orbit (`orbit42.py`)
+
+Even merges of the real run (c, e): (32,31), (56,15), (266,307), (4214,1563), (5888,447), (6008,367), (314,39155), …; none has e in H.
