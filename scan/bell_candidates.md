@@ -1407,7 +1407,18 @@ A heuristic estimate, not a proof. It treats the Bell map as a random map and us
 - verdict: needle-like: only 1 tail (all information in one number)
 - diagram: 1,076,279 steps, tape width 1001 cells
 
-<img src="diagrams/1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD.png" alt="space-time diagram" height="350">
+<img src="diagrams/1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD_Z.png" alt="space-time diagram with the Z events marked" height="350">
+
+Z events in the diagram (red circles; tape `00 (10)^c 1^e`, head in state A on the new left cell; made with `m42/markZ.py`):
+
+| | step | c | e | next: merge M(c, e) |
+|---|---|---|---|---|
+| Z1 | 112 | 5 | 1 | c odd (R4) → X(7, 13) |
+| Z2 | 6,086 | 32 | 31 | c even → X(55, 6) |
+| Z3 | 15,743 | 56 | 15 | c even → X(68, 11) |
+| Z4 | 519,572 | 266 | 307 | c even → X(422, 44) |
+
+The diagram ends at step 1,076,279. The later Z events of the run are listed under "The real run" below.
 
 ### No. 42: detailed analysis (13 Nov 2026)
 
