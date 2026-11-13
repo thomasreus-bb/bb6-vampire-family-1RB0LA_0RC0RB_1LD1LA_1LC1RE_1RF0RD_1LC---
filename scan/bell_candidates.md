@@ -89,6 +89,149 @@ Not included:
 
 More machines can be added here as they are found.
 
+## Same table among the 607 holdouts (13 Nov 2026)
+
+All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, transition table against transition table, up to renaming of the states and mirroring (L ↔ R) (`scan/groups607/groups607.py`, table made with `mk_table.py`). Two machines with the same table are the same machine, started in different states, like nos. 51, 61, 71 and 93.
+
+- **130 groups, 335 of the 607 machines.** Group sizes: 71 of size 2, 45 of size 3, 12 of size 4, 2 of size 5.
+- "start X" means: this machine is the machine in column 2 (the first member of the group) started in state X, possibly mirrored. In bbchallenge normal form each start state gives another code.
+- Same table does not mean equivalent. The runs from the different starts are different halting questions, unless they meet; this was checked only for the candidates (see *Related machines among the candidates*).
+- A proof for one member (e.g. a closed family of configurations that never halts) often transfers to the others if it covers their starts too. In the guide such proofs always cover the whole group: groups 11, 72 and 119 (proof in an open PR) and 75 and 96 (proof ready) have the same status for all members. Cryptids occur in groups 27 (= nos. 51, 61, 71, 93), 44 (= nos. 46, 54), 74 (= nos. 58, 68) and 78 (no. 24 and two others).
+- Column 3: Holdout Guide number, candidate number (if any), start state, guide status (wip = being worked on). Column 4: the guide's classes of the members.
+
+| group | machine (first member) | members | class |
+|---|---|---|---|
+| 1 | `1RB1LD_1LC0RF_0RD0LB_1LB0LE_1LA---_0RA0RF` | #5: start A, structure<br>#286: start D, mirrored, structure | Bouncer + Chaotic Edge |
+| 2 | `1RB1LE_0RC1RC_0RD0RB_1RE0RF_1LA0LE_---1RB` | #7: start A, structure<br>#535: start E, mirrored, little known | Chaotic Fractal Type 1 |
+| 3 | `1RB0LE_1RC0LB_1RD1RF_1RE0RB_1LA0RD_0RE---` | #11: start A, structure<br>#287: start C, structure<br>#423: start E, mirrored, structure | Chaotic Bell Class 3 |
+| 4 | `1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC` | #12 = [73](#73): start A, lottery<br>#84 = [72](#72): start B, mirrored, reported by others<br>#440 = [97](#97): start C, lottery | Bell-like |
+| 5 | `1RB0LB_1RC0LA_1RD---_0RE1LD_1LF0RF_1LA1RB` | #13: start A, little known<br>#243: start E, mirrored, little known | Skelet 1-like Class 1 |
+| 6 | `1RB0LE_1RC1RF_1RD0RA_1LE0RC_1LC0LD_0RD---` | #17: start A, structure<br>#168: start D, mirrored, structure<br>#332: start C, structure<br>#342: start E, mirrored, structure | Chaotic Bell Class 3 |
+| 7 | `1RB1LD_1LC---_1RE0LD_1LC1LD_1RF0RE_1RA0RC` | #20: start A, rules known<br>#588: start F, rules known | Structural counter + chaotic edge |
+| 8 | `1RB0LD_1RC0RF_1LA1RF_0LA0RE_1LD---_0RA0RD` | #21: start A, little known<br>#106: start C, mirrored, little known<br>#182: start E, mirrored, little known<br>#214: start B, lottery | Skelet 1-like Class 1 |
+| 9 | `1RB1RA_1LC0RF_1LD1LC_1LE0LB_0LF---_1RA1RB` | #23: start A, reported by others<br>#215: start B, mirrored, reported by others<br>#288: start D, mirrored, reported by others<br>#502: start F, reported by others | – |
+| 10 | `1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB` | #25 = [43](#43): start A, reported by others<br>#37 = [42](#42): start D, mirrored, lottery<br>#336 = [22](#22): start C, lottery | Quadratic Mess |
+| 11 | `1RB0RE_1RC0RA_0LD0LB_0LA1LE_1LC1LF_0LA---` | #28: start A, **open PR**<br>#430: start E, mirrored, **open PR** | Chaotic Bell Class 3 |
+| 12 | `1RB1RA_1LC1LE_1RA1LD_0LB0LC_1LF0RE_1LB---` | #30: start A, rules known<br>#73: start B, mirrored, rules known<br>#169: start E, mirrored, rules known<br>#354: start F, mirrored, rules known | Shift-overflow counter |
+| 13 | `1RB1LF_1LC1RB_1LF1LD_1LE0RD_1LB---_1LA0LA` | #31: start A, rules known (wip)<br>#222: start B, mirrored, rules known (wip) | Shift-overflow structural counter |
+| 14 | `1RB0LC_0RC0RF_1RD0RE_1LE0RA_0LA0LE_0RC---` | #32: start A, structure<br>#170: start C, lottery<br>#333: start D, mirrored, structure | Skelet 1-like Class 1 |
+| 15 | `1RB0LF_1LC0RB_0LD1LA_0RA1LE_0LA0RA_1LA---` | #33: start A, lottery<br>#39: start B, mirrored, lottery | Chaotic Fractal Type 1 |
+| 16 | `1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---` | #38 = [48](#48): start A, rules known<br>#59: start B, mirrored, structure<br>#124: start C, mirrored, structure | Unknown |
+| 17 | `1RB0LE_1RC1RA_1RD0RF_1RE0RA_1LA1LD_1RA---` | #40: start A, rules known<br>#250: start E, mirrored, rules known<br>#327: start C, rules known<br>#540: start D, rules known | Unknown |
+| 18 | `1RB0RD_1RC0LF_1LA0LB_---1RE_1LB1RA_0LC0RA` | #42 = [74](#74): start A, structure<br>#140 = [77](#77): start B, structure | Bell-like |
+| 19 | `1RB0LF_1RC0RB_0RD1LE_0LE0RA_1LC1LA_0LD---` | #44: start A, structure<br>#390: start B, structure | Unknown |
+| 20 | `1RB0LF_1RC1RB_1LD0RA_1LA0LE_0LC1LC_1LE---` | #46: start A, structure<br>#526: start B, structure<br>#576: start F, mirrored, structure | Unknown |
+| 21 | `1RB1LD_1RC1RE_1LA0RA_1RC0LB_0LA1RF_---1RB` | #47: start A, little known<br>#91: start C, mirrored, little known | Skelet 1-like Class 1 |
+| 22 | `1RB0LC_0RC0RB_1LD0RE_0LE0LF_1LA0LB_1RA---` | #49: start A, structure<br>#100: start C, mirrored, structure<br>#248: start E, mirrored, lottery | Skelet 1-like Class 1 |
+| 23 | `1RB0RC_1LC0RD_0LD0LC_1RE0LA_0RA0RF_1RC---` | #52: start A, lottery<br>#263: start D, structure<br>#541: start B, mirrored, structure | Skelet 1-like Class 1 |
+| 24 | `1RB0LC_1RC0RA_1LA0LD_1LE0RB_1RD1LF_0LA---` | #54: start A, structure<br>#200: start B, structure<br>#272: start D, mirrored, structure<br>#545: start C, mirrored, structure<br>#570: start E, structure | Chaotic Bell Class 3 |
+| 25 | `1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---` | #58 = [52](#52): start A, rules known<br>#104 = [45](#45): start E, structure | Quadratic Mess |
+| 26 | `1RB1RC_1LC1LE_1RD0RA_1LB0RA_0LD1LF_1LD---` | #60: start A, lottery<br>#146: start D, mirrored, lottery<br>#218: start C, lottery<br>#485: start B, mirrored, lottery | Skelet 1-like Class 1 |
+| 27 | `1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA` | #62 = [61](#61): start A, **cryptid**<br>#212 = [71](#71): start C, reported by others<br>#369 = [51](#51): start D, mirrored, **cryptid**<br>#377 = [93](#93): start E, reported by others | – |
+| 28 | `1RB0RE_0RC1RE_1RD1LE_0LE---_1RA1LF_1RF0LC` | #64: start A, little known<br>#371: start C, lottery<br>#602: start E, little known | Skelet 1-like Class 1 |
+| 29 | `1RB0LD_1RC0RF_0LD0LE_1RF1LC_0LB1LE_0RA---` | #65: start A, lottery<br>#381: start B, lottery<br>#590: start D, lottery | Skelet 1-like Class 1 |
+| 30 | `1RB0LD_1RC0RB_1RD1RF_1LE0LD_1RB1LA_---0RE` | #66: start A, reported by others<br>#438: start B, structure<br>#532: start C, structure | Unknown |
+| 31 | `1RB1RD_1RC1LD_0LA1RA_1LE0RC_---1LF_0LA0LB` | #67 = [75](#75): start A, rules known<br>#597 = [106](#106): start B, rules known | Bell-like |
+| 32 | `1RB0RC_1LC0RD_0LD0LC_1RE0LA_0RA0RF_0RD---` | #68: start A, lottery<br>#97: start B, mirrored, structure<br>#334: start D, structure | Skelet 1-like Class 1 |
+| 33 | `1RB1LD_1RC1RE_1LA0RA_1RC0LB_0LA1RF_---1RD` | #69: start A, little known<br>#166: start B, little known | Skelet 1-like Class 1 |
+| 34 | `1RB---_0RC0LA_1LD0RB_1LE0RF_1LF1LC_1LB0LD` | #70: start A, rules known<br>#85: start C, mirrored, structure<br>#409: start D, mirrored, structure | Shift-overflow bouncer counter |
+| 35 | `1RB0RC_1LC0RD_0LD0LC_1RE0LA_0RA0RF_0LC---` | #71: start A, lottery<br>#105: start B, mirrored, structure<br>#338: start D, structure | Skelet 1-like Class 1 |
+| 36 | `1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE` | #75 = [2](#2): start A, lottery<br>#419 = [1](#1): start F, mirrored, lottery<br>#552 = [5](#5): start B, mirrored, lottery | Bell-like |
+| 37 | `1RB---_0RC0RF_0RD0RA_1RE0LB_1LF0LE_1RC0LE` | #77: start A, structure<br>#498: start E, mirrored, structure | Unknown |
+| 38 | `1RB---_0LC0LB_1RF0LD_1RE0RB_1LB0RC_0RD1RA` | #78: start A, lottery<br>#403: start E, mirrored, lottery<br>#408: start C, reported by others | Skelet 1-like Class 1 |
+| 39 | `1RB0LA_0RC1RF_0LD1RE_1LA0RB_0RD---_1RA1RD` | #79: start A, structure<br>#282: start D, mirrored, structure | Shift-overflow counter |
+| 40 | `1RB0RC_1RC1RA_1LD0RA_0LE1RA_---1LF_1RB0LF` | #80: start A, structure<br>#270: start B, structure | Bouncer + Chaotic Edge |
+| 41 | `1RB1RF_1RC0RA_1LD1RB_1LE0LD_0RA0LB_0RB---` | #83: start A, rules known (wip)<br>#402: start B, rules known (wip)<br>#462: start D, mirrored, rules known (wip) | Shift-overflow counter |
+| 42 | `1RB---_0RC0LA_1LD0RB_1LE1LD_1LF0LC_1LB1RE` | #90: start A, lottery<br>#203: start D, mirrored, lottery<br>#292: start F, mirrored, lottery | Chaotic 1dCA-like in bouncer |
+| 43 | `1RB1RA_1LC0RA_1LD0LC_0LE0LB_1LF1RF_1LA---` | #98: start A, structure<br>#455: start B, mirrored, structure | Structural counter + chaotic edge |
+| 44 | `1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD` | #103 = [46](#46): start A, **cryptid**<br>#464 = [54](#54): start F, mirrored, **cryptid** | – |
+| 45 | `1RB1RF_1LC0RE_1LE1LD_1RE0LC_1RA1RA_1RD---` | #108: start A, structure<br>#163: start F, structure | Shift-overflow counter |
+| 46 | `1RB1RA_1LC0LF_1RA1LD_1LB1LE_1LC0LC_---0RA` | #109: start A, structure<br>#372: start B, mirrored, structure<br>#572: start D, mirrored, structure | Spaghetti |
+| 47 | `1RB0RA_0RC0LE_0LD1RA_1LB0RF_0LD1LC_1RD---` | #113: start A, structure<br>#453: start D, mirrored, structure | Unknown |
+| 48 | `1RB---_0RC0LF_1LD0RE_1RC0LB_1RD1RA_1LB0LC` | #114: start A, rules known<br>#367: start D, rules known<br>#378: start C, mirrored, rules known | Monotone list |
+| 49 | `1RB0RF_1RC0RA_1LD1RB_1LE0LD_1LB0LB_0RB---` | #115: start A, rules known<br>#144: start B, rules known<br>#456: start D, mirrored, rules known<br>#537: start E, mirrored, rules known | Shift-overflow counter |
+| 50 | `1RB0RA_1LC0RA_0LD0LC_1RD1RE_1LF0LE_---0LB` | #116: start A, lottery<br>#513: start B, mirrored, lottery | Unknown |
+| 51 | `1RB---_1LC0RF_1LD0LC_0RE0LF_0RD1LA_1RB0LE` | #117: start A, structure<br>#405: start C, mirrored, structure | Unknown |
+| 52 | `1RB0RA_1LC0RE_0LD0LB_1LA1LF_1RA0LF_1LC---` | #126: start A, rules known<br>#154: start D, mirrored, rules known<br>#370: start B, mirrored, rules known<br>#463: start E, rules known | Unknown |
+| 53 | `1RB0LB_1RC0LD_0LA1RD_1LC1LE_1LF0RE_1LD---` | #127: start A, structure<br>#291: start E, mirrored, structure | Unknown |
+| 54 | `1RB1LF_1LC0RD_---1LD_1RB1RE_1LA0LB_0LA0LE` | #129 = [76](#76): start A, rules known (wip)<br>#465 = [99](#99): start E, mirrored, rules known (wip) | Bell-like |
+| 55 | `1RB1RC_1LC0RC_0RA0LD_0LE---_0LF1LD_1LC1LE` | #132: start A, little known<br>#143: start B, mirrored, little known | Chaotic Ack-like Bell |
+| 56 | `1RB0LC_1LC0RE_1LD1LB_1LA1LD_1RF0RA_---1RE` | #133: start A, reported by others<br>#581: start C, mirrored, little known | Skelet 1-like Class 1 |
+| 57 | `1RB1RE_1RC0RF_0LD---_1LE1LD_1RA0LB_0RE1RF` | #138: start A, lottery<br>#227: start E, lottery<br>#308: start B, lottery<br>#358: start D, mirrored, lottery | Unknown |
+| 58 | `1RB0LE_0RC---_1RD0LA_1RE0RA_1LC0LF_0RC1LC` | #141: start A, rules known<br>#315: start E, mirrored, rules known | Monotone list |
+| 59 | `1RB0LC_1RC0RA_1LA0LD_1LE0RB_1RB1LF_0LA---` | #145: start A, structure<br>#310: start C, mirrored, structure<br>#313: start B, structure | Chaotic Bell Class 3 |
+| 60 | `1RB0LE_0LC0RB_1RD1LD_1RA1LF_0LB1LE_---1LB` | #147: start A, structure<br>#394: start C, structure | Shift-overflow counter |
+| 61 | `1RB0RE_1LC0LE_---1LD_1LE1LB_1RA0LF_0RD1LA` | #149: start A, rules known<br>#328: start D, mirrored, rules known | Quadratic Mess |
+| 62 | `1RB1LF_1RC1LD_1LB1LE_1LE0LD_0LA0RE_1RD---` | #150 = [78](#78): start A, lottery<br>#160 = [79](#79): start B, lottery<br>#349 = [92](#92): start D, mirrored, lottery | Bell-like |
+| 63 | `1RB0RF_1LC1LF_1RD1LC_---1RE_0RC1RF_1RA0LB` | #151: start A, rules known (wip)<br>#472: start F, rules known (wip) | Shift-overflow counter |
+| 64 | `1RB1RE_0LC0LF_0LA0LD_1LE1LC_1RA0LB_---0RE` | #152: start A, rules known<br>#324: start E, rules known | Quadratic Mess |
+| 65 | `1RB0RF_0LC1LB_1RD1LA_1RE0LC_0RA1RD_---0RC` | #161: start A, structure<br>#553: start D, structure<br>#562: start C, structure | Chaotic Bell Class 1 |
+| 66 | `1RB1RF_0RC0LE_1RD0RF_1LB---_1LB1LE_1RA0LC` | #162: start A, structure<br>#202: start E, mirrored, structure<br>#477: start C, structure | Unknown |
+| 67 | `1RB0LC_1LA0RD_1RA0LA_1RE1RD_1RA1RF_1LC---` | #165: start A, reported by others<br>#373: start C, little known | Skelet 1-like Class 1 |
+| 68 | `1RB0RE_1LC0RA_1LD0LC_0LE0LB_1RA1RF_0LC---` | #172: start A, structure<br>#311: start C, mirrored, structure | Shift-overflow bouncer counter |
+| 69 | `1RB1RA_1LC0RB_1LE0LD_0LB1LD_0RA0LF_---0RE` | #174 = [80](#80): start A, structure<br>#326 = [91](#91): start B, mirrored, structure<br>#604 = [108](#108): start C, mirrored, structure | Bell-like |
+| 70 | `1RB0LD_0RC1RA_1RD1RE_1LA0LE_0RA0RF_1RC---` | #175 = [81](#81): start A, rules known<br>#297 = [89](#89): start F, rules known<br>#410 = [96](#96): start C, rules known<br>#507 = [44](#44): start D, mirrored, rules known | Bell-like |
+| 71 | `1RB1RE_1LC0RA_1LA0LD_1LB0LF_0RB0LE_0LA---` | #176: start A, rules known<br>#600: start D, mirrored, rules known | Quadratic Mess |
+| 72 | `1RB0RA_0RC0LD_1LA1RF_1LE1LD_1LB1RE_---1RA` | #177: start A, **open PR**<br>#574: start D, mirrored, **open PR** | Counter Class 3 |
+| 73 | `1RB0LE_1RC0RE_1RD0RA_1RE1LC_0LA0RF_1LE---` | #178: start A, lottery<br>#205: start F, mirrored, lottery<br>#491: start B, lottery | Chaotic 1dCA-like in bouncer |
+| 74 | `1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB` | #180 = [68](#68): start A, **cryptid**<br>#497 = [58](#58): start B, mirrored, **cryptid** | – |
+| 75 | `1RB0LD_0RC---_0RD0RF_1LE0LA_1LF1LE_1RA0RD` | #181: start A, **proof ready**<br>#343: start F, **proof ready**<br>#374: start D, mirrored, **proof ready** | Unknown |
+| 76 | `1RB0RF_1LC0RC_0LD1LC_1RE1LB_1RF---_1LE1RA` | #184: start A, structure<br>#510: start F, mirrored, structure | Chaotic Ack-like Bell |
+| 77 | `1RB---_0RC1RD_1LA0LA_1LE0RB_1LF1LE_1LC0LD` | #185: start A, reported by others<br>#422: start F, mirrored, reported by others<br>#441: start C, mirrored, reported by others<br>#490: start D, mirrored, reported by others<br>#538: start E, mirrored, reported by others | – |
+| 78 | `1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE` | #186 = [24](#24): start A, **cryptid**<br>#317: start D, mirrored, **cryptid**<br>#573: start C, **cryptid** | – |
+| 79 | `1RB0RB_1LC1RA_1LF0LD_0LE1LD_1LA1LC_---1LA` | #187: start A, structure<br>#516: start E, mirrored, structure | Shift-overflow bouncer counter |
+| 80 | `1RB1RE_1RC0RF_0LD---_1LE1LD_1RA0LB_0RE0RF` | #188: start A, structure<br>#415: start B, structure<br>#426: start D, mirrored, structure<br>#429: start E, structure | Chaotic Bell Class 1 |
+| 81 | `1RB1LE_1RC1LD_1RD0LF_0LA0RD_---1LB_0LD1LF` | #190: start A, structure<br>#277: start B, structure | Shift-overflow counter |
+| 82 | `1RB0LD_0LB1RC_0RD---_1RE0RF_1LF0RA_0LA0LF` | #201: start A, lottery<br>#505: start D, lottery | Skelet 1-like Class 1 |
+| 83 | `1RB1RA_1LC0RD_1LD1LB_1LE0LF_0RA---_0LB1RE` | #210: start A, structure<br>#439: start B, mirrored, structure<br>#546: start C, mirrored, structure | Unknown |
+| 84 | `1RB0RC_1LC0RD_0LD0LC_1RE0LA_0RA0RF_0LA---` | #216: start A, lottery<br>#219: start B, mirrored, structure | Skelet 1-like Class 1 |
+| 85 | `1RB0LE_0RC0RA_1LC1RD_0LB0LE_1LA0LF_1LE---` | #217: start A, little known<br>#387: start F, mirrored, little known<br>#417: start E, mirrored, little known | Chaotic Ack-like Bell; Skelet 1-like Class 1 |
+| 86 | `1RB0RA_1RC1RD_1LD1LB_0RF1LE_1LE0LC_---1RA` | #224: start A, rules known<br>#534: start C, mirrored, rules known | Quadratic Mess |
+| 87 | `1RB0LC_0RC0RB_1LD0RE_0LE0LF_1LA0LB_1LC---` | #232: start A, structure<br>#347: start C, mirrored, structure<br>#582: start E, mirrored, lottery | Skelet 1-like Class 1 |
+| 88 | `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` | #234 = [31](#31): start A, little known (wip)<br>#290 = [26](#26): start C, mirrored, little known (wip)<br>#418 = [32](#32): start D, little known (wip) | Bell-like |
+| 89 | `1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---` | #237 = [20](#20): start A, structure<br>#442 = [39](#39): start D, structure<br>#556 = [19](#19): start B, mirrored, reported by others | Bell-like |
+| 90 | `1RB0LF_0RC0LC_1LA1LD_1RE1LC_---1RA_0LC0RD` | #240: start A, little known<br>#592: start C, mirrored, little known | Skelet 1-like Class 1 |
+| 91 | `1RB0LE_1RC1RA_1LD0RE_1LA1LD_1LD0RF_0RA---` | #244: start A, structure<br>#339: start C, mirrored, structure<br>#489: start B, structure | Chaotic Bell Class 1 |
+| 92 | `1RB0LE_1RC1RB_1LD0RA_1LA1LC_0LC0LF_0RB---` | #247: start A, structure<br>#448: start D, mirrored, structure<br>#539: start C, mirrored, structure | Chaotic Bell Class 1 |
+| 93 | `1RB0LC_0RC0RB_1LD0RE_0LE1LF_1LA0LB_1LD---` | #249: start A, structure<br>#298: start C, mirrored, structure<br>#340: start E, mirrored, lottery | Skelet 1-like Class 1 |
+| 94 | `1RB---_0RC0RD_1LD0RF_0LE0LC_1RA0LC_1RC0RA` | #251: start A, structure<br>#353 = [38](#38): start F, reported by others<br>#424: start E, structure | Chaotic Bell Class 2 |
+| 95 | `1RB0LC_1LA0RE_0LD0LB_1RA1LD_0RC1RF_0RA---` | #252: start A, little known<br>#443: start B, mirrored, little known<br>#557: start D, little known | Chaotic Bell Class 3 |
+| 96 | `1RB1RF_0RC0LB_1LD1RE_1LB1RF_---0RF_1RD0RA` | #255: start A, **proof ready**<br>#278: start F, **proof ready** | Bell eats counter |
+| 97 | `1RB1LF_1LC0RD_0LD0LC_1RE0LA_0RA0RC_0RE---` | #257: start A, lottery<br>#267: start B, mirrored, lottery<br>#427: start D, lottery | Skelet 1-like Class 1 |
+| 98 | `1RB0RA_1RC0RD_1RD0LC_1LE1RA_---1LF_1RB0LC` | #259: start A, lottery<br>#578: start C, lottery | Bell eats counter |
+| 99 | `1RB0LE_1LC0RA_1RD0RC_1LA0LD_1LB0LF_1LC---` | #260: start A, structure<br>#397: start E, mirrored, structure | Unknown |
+| 100 | `1RB0RE_1LC0RA_0LD1LB_1LA1LF_0LB0RD_0LB---` | #274: start A, rules known<br>#518: start B, mirrored, rules known | Shift-overflow structural counter |
+| 101 | `1RB0LC_1RC1RA_1LD0RE_1LA1LD_0RA1RF_0LC---` | #279: start A, structure<br>#473: start C, mirrored, structure | Chaotic Bell Class 1 |
+| 102 | `1RB0RB_1LC1RA_1LF0LD_0LE1LD_1RA1LC_---1LA` | #280: start A, structure<br>#413: start E, structure | Shift-overflow bouncer counter |
+| 103 | `1RB0RF_1LC1RD_1LA1LC_1RA1RE_0RB0LD_---0LC` | #281: start A, structure<br>#454: start C, mirrored, structure | Spaghetti |
+| 104 | `1RB0RD_1LC0RA_1LF1LD_0RE0LC_---1LB_1RB1RC` | #283: start A, structure<br>#467: start C, mirrored, structure | Shift-overflow bouncer counter |
+| 105 | `1RB1RF_1RC0RA_1LD1RE_1LE0LE_0RA0LD_0RB---` | #285: start A, lottery<br>#362: start B, lottery<br>#561: start D, mirrored, lottery | Bell eats counter |
+| 106 | `1RB1LC_1RC---_1LD1LC_1RE0LC_1RF0RE_1RA0RD` | #295: start A, rules known<br>#393: start E, rules known | Structural counter + chaotic edge |
+| 107 | `1RB0LF_0RC1RD_0LD0RA_1RC0RE_1RF---_1LA0LB` | #299: start A, structure<br>#357: start E, structure | Chaotic Bell Class 2 |
+| 108 | `1RB1RA_0LC0RF_1LD1LC_1RE1LB_---0RA_1RF0RD` | #301: start A, structure<br>#329: start C, mirrored, structure | Bouncer + Chaotic Edge |
+| 109 | `1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD` | #303 = [6](#6): start A, reported by others<br>#331 = [4](#4): start F, lottery | Bell-like |
+| 110 | `1RB0LC_1RC0RC_1LD0RB_1LA0LE_1LD1LF_1LD---` | #306: start A, little known<br>#461: start D, mirrored, little known | Skelet 1-like Class 2 |
+| 111 | `1RB---_0RC1RA_1RD1RF_1LE0LF_1RB0LD_0RE0LC` | #318: start A, rules known<br>#322: start C, rules known | Shift-overflow structural counter |
+| 112 | `1RB1RF_1RC1LC_1LD0LE_---1LE_1RF0LB_0RA1RE` | #319: start A, structure<br>#447: start B, structure<br>#469: start E, structure | Unknown |
+| 113 | `1RB0LC_0RC1RF_1RD0RE_1LE0RA_0LA0LE_0RB---` | #335: start A, lottery<br>#468: start D, mirrored, lottery<br>#474: start C, lottery | Skelet 1-like Class 1 |
+| 114 | `1RB0RC_1LC0RD_0LD0LC_1RE0LA_0RA1RF_0RC---` | #346: start A, lottery<br>#480: start D, structure<br>#550: start B, mirrored, structure | Skelet 1-like Class 1 |
+| 115 | `1RB1RF_1LC1RE_0LD0LC_1RD0RB_1RA0RB_1RE---` | #352: start A, rules known<br>#493: start F, rules known | Shift-overflow counter |
+| 116 | `1RB0RC_1LC0RD_0LD0LC_1RE0LA_0RA0RF_0LB---` | #359: start A, lottery<br>#580: start B, mirrored, structure<br>#586: start D, structure | Skelet 1-like Class 1 |
+| 117 | `1RB0LE_1RC---_0RD0RE_1LE0RB_0LA0LF_0RC0LD` | #363: start A, lottery<br>#560: start D, mirrored, lottery | Quadratic Mess |
+| 118 | `1RB0LE_1LC1RD_1LA0RB_1RC1RB_1LF0LC_---0RC` | #364: start A, structure<br>#380: start B, mirrored, structure<br>#521: start C, mirrored, structure | Bouncer + Chaotic Edge |
+| 119 | `1RB1LA_1LA1RC_1RD0RB_1LE1LD_---1LF_1RA0LF` | #375: start A, **open PR**<br>#433: start B, mirrored, **open PR** | Shift-overflow counter |
+| 120 | `1RB0LC_0RC0RF_1RD0LE_1LA1RA_1LC1RB_0RB---` | #376: start A, rules known<br>#519: start D, mirrored, rules known | Unknown |
+| 121 | `1RB1LC_1LA0RE_0LD---_1LB1LD_1RB1RF_0LA0RB` | #384: start A, structure<br>#431: start B, mirrored, structure | Unknown |
+| 122 | `1RB0LF_1RC0LB_1RD1RB_1RE1RF_1LA---_0RC1LA` | #386: start A, rules known (wip)<br>#487: start D, rules known (wip) | Counter Class 2 |
+| 123 | `1RB1RF_1LC1RD_1RA1LD_1RE0LA_---0RC_0LC1RB` | #391: start A, little known<br>#543: start C, little known | Skelet 1-like Class 1 |
+| 124 | `1RB0RA_1LC0LE_1RA1LD_0LB1LF_1LD0RC_1LB---` | #398 = [94](#94): start A, rules known (wip)<br>#530 = [103](#103): start B, mirrored, rules known (wip) | Bell-like |
+| 125 | `1RB0LC_0RC1RF_1RD0RE_1LE0RA_0LA0LE_0LA---` | #406: start A, structure<br>#575: start C, lottery | Skelet 1-like Class 1 |
+| 126 | `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---` | #421 = [3](#3): start A, reported by others<br>#476 = [7](#7): start E, reported by others | Bell-like |
+| 127 | `1RB0LD_0LC0RE_1LA0RD_0RB0LD_1RC1RF_1RA---` | #425: start A, rules known<br>#488: start F, rules known | Shift-overflow counter |
+| 128 | `1RB0LF_1LC0LA_---1RD_1RF1RE_1LF1RD_1LB0RE` | #437: start A, structure<br>#501: start D, structure | Bouncer + Chaotic Edge |
+| 129 | `1RB---_0LC0RB_1RA1LD_1LE1LF_1LB0LF_0RC0LA` | #450: start A, structure<br>#555: start D, mirrored, structure | Shift-overflow counter |
+| 130 | `1RB0RC_1LC0RE_0LD0LB_1RA1LE_1LB1RF_---0RD` | #506: start A, lottery<br>#547: start D, lottery | Shift-overflow counter |
+
 ## The vampire method: when does it apply?
 
 A machine is a candidate for the vampire method if its Bell map can be written as a **closed finite table**. This section collects what that means, what it proves and what it does not prove, as a basis for finding further vampire candidates in BB(6), BB(7) and other classes.
