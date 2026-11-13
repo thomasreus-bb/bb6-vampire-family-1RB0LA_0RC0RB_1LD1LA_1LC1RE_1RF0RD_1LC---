@@ -14,4 +14,15 @@ Observed so far. C(a, b) means state A, head on the new left cell, tape `0 (10)^
   Seen: a = 43 → c = 32, d = 31; a = 59 → c = 56, d = 15.
 - Afterwards the two segments merge, e.g. C(3, 2) 0 (10)^32 1^31 → … → C(55, 6).
 
-Open: the exact rule for b = 2 and the merge, then the counter system and where HALT can occur.
+## Exact event rules (13 Nov 2026, checked in 8,120 cases with `ev42.c`, `rules42.py`)
+
+Events: state A, head on a new leftmost cell. X(a,b) = tape (10)^a 1^b; Z(c,e) = tape 00 (10)^c 1^e.
+- R1: X(a,b) → X(a+2, b−2) for b ≥ 3.
+- R2: X(a,1) → X(1, 2a+6).
+- R3: X(a,2): blocks D_k = 6·3^k − 1, A_k = 3^(k+1) − 3 − k (A = 0, 5, 22, 75, 236, …). For A_k ≤ a < A_(k+1), j = a − A_k:
+  j = 0 → X(1, D_k); j = 2i+1 → Z(2+3i, D_k−2−2i); j = 2i+2 → X(4+3i, D_k−2−2i).
+- Z(c,e) → X(1,4) 0 X(c,e) → X(3,2) 0 X(c,e) =: M(c,e) (two events).
+- R4: M(c,e), c odd: e ≥ 2 → X(c+6, e−1); e = 1 → R3 result of X(c+4, 2).
+- M(c,e), c even: no closed rule yet (several regimes). **M(c,2) with c even halts.**
+
+Consequence: R1–R4 never produce Z(·,2) (D_k is odd). A HALT needs a merge M(c,e) with c even that produces Z(c'',2) with c'' even. Example: M(12,5) → Z(22,2) → HALT.
