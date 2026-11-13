@@ -238,6 +238,7 @@ All 607 machines were compared again, this time allowing **one** different trans
 
 - **133 pairs of tables in 37 families, 172 machines.** Family sizes (number of tables): 25 × 2, 7 × 3, 1 × 4, 1 × 5, 2 × 6, 1 × 16.
 - Column "transition": the transition in which the two machines differ, in each machine's own naming (e.g. `F0 1LA → C1 0RB` means: F0 = `1LA` in the first machine corresponds to C1 = `0RB` in the second).
+- **[PR #n]** after a machine: a Rocq proof for it is in an open busycoq pull request (BB(6) holdout list of 13 Nov 2026, filter "proof in PR"; 44 machines). That list also mentions "+k equivalent machines" for some entries without naming them, so other members may be covered too.
 - Column "used": how often this transition is used in the first 10⁸ steps from the blank tape, in the first / second machine (`usage.c`).
 - Column "kind":
   - **start**: the transition is used only in the first few steps (at most 20 times, last use before step 10⁵). After that both machines run with identical tables; they differ only in what the first steps wrote. Such pairs often reach the same configuration and are then equivalent; this is the easiest kind to check.
@@ -348,9 +349,9 @@ All 607 machines were compared again, this time allowing **one** different trans
 |  | #400 | #483 | `C0` 0RA → `D0` 1LE | 478× / 493× | **rare** | no |
 | 9 | #191 | #504 | `D1` 0LD → `F1` 1RA | 26,166× / 22,458× | frequent | no |
 |  | #504 | #98 (group 43) | `A0` 1RB → `F0` 1LA | 22,852× / 25,679× | frequent | no |
-| 10 | #312 | #88 | `E1` 1RF → `E1` 1RB | 220× / 220× | **rare** | **yes** |
-|  | #312 | #449 | `E1` 1RF → `E1` 0LC | 220× / 220× | **rare** | **yes** |
-|  | #449 | #88 | `E1` 0LC → `E1` 1RB | 220× / 220× | **rare** | **yes** |
+| 10 | #312 **[PR [#59](https://github.com/ccz181078/busycoq/pull/59)]** | #88 **[PR [#59](https://github.com/ccz181078/busycoq/pull/59)]** | `E1` 1RF → `E1` 1RB | 220× / 220× | **rare** | **yes** |
+|  | #312 **[PR [#59](https://github.com/ccz181078/busycoq/pull/59)]** | #449 **[PR [#59](https://github.com/ccz181078/busycoq/pull/59)]** | `E1` 1RF → `E1` 0LC | 220× / 220× | **rare** | **yes** |
+|  | #449 **[PR [#59](https://github.com/ccz181078/busycoq/pull/59)]** | #88 **[PR [#59](https://github.com/ccz181078/busycoq/pull/59)]** | `E1` 0LC → `E1` 1RB | 220× / 220× | **rare** | **yes** |
 | 11 | #303 = [6](#6) (group 109) | #75 = [2](#2) (group 36) | `A0` 1RB → `A0` 1RB | 18× / 18× | **rare** | no |
 |  | #303 = [6](#6) (group 109) | #421 = [3](#3) (group 126) | `A0` 1RB → `F0` 1LC | 18× / 17× | **rare** | no |
 |  | #421 = [3](#3) (group 126) | #75 = [2](#2) (group 36) | `F0` 1LC → `A0` 1RB | 17× / 18× | **rare** | no |
@@ -363,10 +364,10 @@ All 607 machines were compared again, this time allowing **one** different trans
 | 16 | #192 | #606 | `F1` 1RE → `F1` 0RC | 15,424× / 11,791× | frequent | no |
 | 17 | #194 | #492 | `D0` 1LA → `D0` 1RE | 2× (last at step 1,198) / 2× (last at step 323) | start | no |
 | 18 | #196 | #404 | `F0` 0RB → `F0` 1RC | 6× / 6× | **rare** | **yes** |
-| 19 | #199 | #177 (group 72) | `C0` 1LD → `C0` 1LA | 4× (last at step 47,350) / 6× | **rare** | no |
+| 19 | #199 **[PR [#53](https://github.com/ccz181078/busycoq/pull/53)]** | #177 **[PR [#50](https://github.com/ccz181078/busycoq/pull/50)]** (group 72) | `C0` 1LD → `C0` 1LA | 4× (last at step 47,350) / 6× | **rare** | no |
 | 20 | #226 | #242 | `F0` 0LE → `F0` 0LB | 17× / 17× | **rare** | no |
 | 21 | #239 | #484 | `F0` 0RA → `F0` 0RD | 47,204× / 21,288× | frequent | no |
-| 22 | #253 | #432 | `F0` 0LE → `F0` 1LC | 8,304,914× / 9,961,346× | frequent | **yes** |
+| 22 | #253 **[PR [#54](https://github.com/ccz181078/busycoq/pull/54)]** | #432 **[PR [#54](https://github.com/ccz181078/busycoq/pull/54)]** | `F0` 0LE → `F0` 1LC | 8,304,914× / 9,961,346× | frequent | **yes** |
 | 23 | #351 | #356 | `E1` 0LB → `A1` 1LE | 6,562× / 6,494× | **rare** | no |
 | 24 | #379 | #444 | `F0` 0RA → `F0` 0LD | 45,375× / 45,363× | frequent | no |
 | 25 | #389 | #571 | `B0` 1LC → `D0` 1LB | 461× / 466× | **rare** | no |
@@ -375,7 +376,7 @@ All 607 machines were compared again, this time allowing **one** different trans
 | 28 | #479 = [111](#111) | #506 (group 130) | `C1` 0LC → `D1` 1LE | 10,060× / 7,142,858× | frequent | no |
 | 29 | #392 | #50 | `E0` 1LE → `E0` 1RE | 166,440× / 101,958× | frequent | no |
 | 30 | #524 = [34](#34) | #548 = [50](#50) | `A0` 1RB → `D0` 0RA | 2× (last at step 11) / 2× (last at step 14) | start | no |
-| 31 | #445 | #56 = [47](#47) | `F0` 1LE → `C0` 1RD | 22× / 38× | **rare** | no |
+| 31 | #445 **[PR [#67](https://github.com/ccz181078/busycoq/pull/67)]** | #56 = [47](#47) **[PR [#67](https://github.com/ccz181078/busycoq/pull/67)]** | `F0` 1LE → `C0` 1RD | 22× / 38× | **rare** | no |
 | 32 | #459 = [98](#98) | #72 = [63](#63) | `D0` 1RE → `A0` 1RB | 42× / 39× | **rare** | no |
 | 33 | #520 | #81 = [16](#16) | `A0` 1RB → `A0` 1RB | 7× / 5× | **rare** | **yes** |
 | 34 | #47 (group 21) | #69 (group 33) | `F1` 1RB → `F1` 1RD | 5,537,426× / 5,536,258× | frequent | no |

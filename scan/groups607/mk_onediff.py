@@ -13,8 +13,10 @@ tab={}
 for n,g in enumerate(groups,1):
     for x in g: tab[x[0]]=n
 node=lambda k: ('G%d'%tab[k]) if k in tab else '#%d'%k
+PR={int(k):v for k,v in json.load(open('pr_status.json')).items()}
 def lab(k):
-    c=cand.get(info[k][0]); return '#%d%s'%(k,' = [%d](#%d)'%(c,c) if c else '')
+    c=cand.get(info[k][0]); pr=' **[PR %s]**'%', '.join('[#%d](https://github.com/ccz181078/busycoq/pull/%d)'%(n,n) for n in PR[k]) if k in PR else ''
+    return '#%d%s%s'%(k,' = [%d](#%d)'%(c,c) if c else '',pr)
 def nodelab(v):
     if v[0]=='G':
         g=groups[int(v[1:])-1]; return 'group %s: '%v[1:]+', '.join(lab(x[0]) for x in g)
@@ -75,6 +77,7 @@ All 607 machines were compared again, this time allowing **one** different trans
 
 - **%d pairs of tables in %d families, %d machines.** Family sizes (number of tables): %s.
 - Column "transition": the transition in which the two machines differ, in each machine's own naming (e.g. `F0 1LA → C1 0RB` means: F0 = `1LA` in the first machine corresponds to C1 = `0RB` in the second).
+- **[PR #n]** after a machine: a Rocq proof for it is in an open busycoq pull request (BB(6) holdout list of 13 Nov 2026, filter "proof in PR"; 44 machines). That list also mentions "+k equivalent machines" for some entries without naming them, so other members may be covered too.
 - Column "used": how often this transition is used in the first 10⁸ steps from the blank tape, in the first / second machine (`usage.c`).
 - Column "kind":
   - **start**: the transition is used only in the first few steps (at most 20 times, last use before step 10⁵). After that both machines run with identical tables; they differ only in what the first steps wrote. Such pairs often reach the same configuration and are then equivalent; this is the easiest kind to check.
