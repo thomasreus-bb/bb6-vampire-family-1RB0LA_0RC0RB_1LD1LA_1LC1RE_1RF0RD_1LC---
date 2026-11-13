@@ -278,6 +278,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <a id="1"></a>
 ## 🟩 [1](#t1). `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A)
 
+- **Same table as nos. [2](#2), [5](#5), other start state (13 Nov 2026).** No. 1 is no. 2 (mirrored) started in state F; no. 5 started in state E. Vampire family, three different orbits (see the main README). Overview: *Related machines among the candidates* at the top.
+
 - scan: 12 levels, 12 phases, mean factor 1.55 (sd 0.04); level starts: 18 31 51 81 126 193 294 445 672 1012 1521 2286
 - verdict: vampire family (orbits O1–O4 of this repository)
 - diagram: 46,900 steps, tape width 389 cells
@@ -286,6 +288,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <a id="2"></a>
 ## 🟩 [2](#t2). `1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE` (class A)
+
+- **Same table as nos. [1](#1), [5](#5), other start state (13 Nov 2026).** No. 2 is no. 1 (mirrored) started in state B; no. 5 (mirrored) started in state F. Vampire family, three different orbits (see the main README). Overview: *Related machines among the candidates* at the top.
 
 - scan: 12 levels, 12 phases, mean factor 1.56 (sd 0.05); level starts: 15 27 45 72 112 171 261 396 600 906 1365 2052
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -296,6 +300,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <a id="3"></a>
 ## 🟩 [3](#t3). `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---` (class A)
 
+- **Same table as no. [7](#7), other start state (13 Nov 2026).** No. 3 is no. 7 started in state D. Vampire family, orbits O2 and O4. Overview: *Related machines among the candidates* at the top.
+
 - scan: 12 levels, 12 phases, mean factor 1.57 (sd 0.06); level starts: 16 29 49 79 124 191 292 443 670 1010 1519 2284
 - verdict: vampire family (orbits O1–O4 of this repository)
 - diagram: 19,400 steps, tape width 250 cells
@@ -304,6 +310,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <a id="4"></a>
 ## 🟩 [4](#t4). `1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF` (class A)
+
+- **Same table as no. [6](#6), other start state (13 Nov 2026).** No. 4 is no. 6 started in state F. Vampire family, orbits O2 and O4. Overview: *Related machines among the candidates* at the top.
 
 - scan: 12 levels, 12 phases, mean factor 1.57 (sd 0.06); level starts: 16 29 49 79 124 191 292 443 670 1010 1519 2284
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -314,6 +322,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <a id="5"></a>
 ## 🟩 [5](#t5). `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---` (class A)
 
+- **Same table as nos. [1](#1), [2](#2), other start state (13 Nov 2026).** No. 5 is no. 1 started in state C; no. 2 (mirrored) started in state B. Vampire family, three different orbits (see the main README). Overview: *Related machines among the candidates* at the top.
+
 - scan: 13 levels, 13 phases, mean factor 1.56 (sd 0.06); level starts: 13 24 40 63 99 153 234 355 537 810 1221 1836 2758
 - verdict: vampire family (orbits O1–O4 of this repository)
 - diagram: 67,202 steps, tape width 468 cells
@@ -323,6 +333,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <a id="6"></a>
 ## 🟩 [6](#t6). `1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD` (class A)
 
+- **Same table as no. [4](#4), other start state (13 Nov 2026).** No. 6 is no. 4 started in state B. Vampire family, orbits O2 and O4. Overview: *Related machines among the candidates* at the top.
+
 - scan: 12 levels, 12 phases, mean factor 1.58 (sd 0.07); level starts: 16 31 52 83 130 200 304 461 697 1052 1582 2378
 - verdict: vampire family (orbits O1–O4 of this repository)
 - diagram: 49,872 steps, tape width 403 cells
@@ -331,6 +343,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <a id="7"></a>
 ## 🟩 [7](#t7). `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` (class A)
+
+- **Same table as no. [3](#3), other start state (13 Nov 2026).** No. 7 is no. 3 started in state E. Vampire family, orbits O2 and O4. Overview: *Related machines among the candidates* at the top.
 
 - scan: 12 levels, 12 phases, mean factor 1.58 (sd 0.07); level starts: 16 31 52 83 130 200 304 461 697 1052 1582 2378
 - verdict: vampire family (orbits O1–O4 of this repository)
@@ -472,6 +486,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <a id="11"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [11](#t11). `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` (class B)
+
+- **Same table as no. [37](#37), other start state (13 Nov 2026).** No. 11 is no. 37 (mirrored) started in state D. The two are equivalent. Overview: *Related machines among the candidates* at the top.
 - **Equivalent to [no. 37](#37)**  Removed from the BB(6) holdout list on 30 Oct 2026 because of this equivalence. All information is collected under no. 37.
 
 <a id="12"></a>
@@ -661,6 +677,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <a id="19"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [19](#t19). `1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---` (class B)
 
+- **Same table as nos. [20](#20), [39](#39), other start state (13 Nov 2026).** No. 19 is no. 20 (mirrored) started in state B; no. 39 (mirrored) started in state F. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - scan: 23 levels, 61 phases, mean factor 1.32 (sd 0.12); level starts: 166 212 253 329 382 498 577 759 868 1148 1306 1733 2604 3920
 - level analysis: Bell type `RB`, 13 levels; n: 20 22 35 92 143 335 767 1739 3926 5894 8846 13274 19916; ratios: 1.591 2.629 1.554 2.343 2.290 2.267 2.258 1.501 1.501 1.501 1.500; 3 different tails
 - verdict (scan): vampire-like signature: regular growth, 3 different tails
@@ -683,6 +701,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <a id="20"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [20](#t20). `1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---` (class B)
+
+- **Same table as nos. [19](#19), [39](#39), other start state (13 Nov 2026).** No. 20 is no. 19 (mirrored) started in state B; no. 39 started in state E. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 This machine is the [BMO's 5th problem](https://wiki.bbchallenge.org/wiki/Beaver_Math_Olympiad#Unsolved_problems).
 
@@ -719,6 +739,8 @@ Discord, 22 Dec 2025:
 
 <a id="22"></a>
 ## [22](#t22). `1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE` (class B)
+
+- **Same table as nos. [42](#42), [43](#43), other start state (13 Nov 2026).** No. 22 is no. 42 (mirrored) started in state E; no. 43 started in state C. No common configuration found; the runs of 22 and 42 drift apart. Overview: *Related machines among the candidates* at the top.
 
 - scan: 12 levels, 30 phases, mean factor 1.40 (sd 0.13); level starts: 11 13 19 35 52 64 91 141 190 269 393 448
 - level analysis: Bell type `RA`, 7 levels; n: 6 15 40 146 398 1192 3390; ratios: 2.500 2.667 3.650 2.726 2.995 2.844; 2 different tails
@@ -827,6 +849,8 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <a id="26"></a>
 ## [26](#t26). `1RB1LC_1LA0RD_1LB1LF_1LE1RE_0LA0RB_0LB---` (class B)
 
+- **Same table as nos. [31](#31), [32](#32), other start state (13 Nov 2026).** No. 26 is no. 31 (mirrored) started in state C; no. 32 (mirrored) started in state C. 31 and 32 very probably equivalent (one-cell difference); 26 runs differently. Overview: *Related machines among the candidates* at the top.
+
 - scan: 20 levels, 32 phases, mean factor 1.37 (sd 0.15); level starts: 63 88 138 186 261 343 411 461 615 1026 1085 1383 1842 3255
 - level analysis: Bell type `LA` with left part `01`, 11 levels; n: 4 9 15 30 62 146 270 1387 2475 10358 24548; ratios: 2.250 1.667 2.000 2.067 2.355 1.849 5.137 1.784 4.185 2.370; 2 different tails
 - verdict: needle-like: only 2 tails (all information in one number)
@@ -884,6 +908,8 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <a id="31"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [31](#t31). `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` (class B)
+
+- **Same table as nos. [26](#26), [32](#32), other start state (13 Nov 2026).** No. 31 is no. 26 (mirrored) started in state C; no. 32 started in state E. 31 and 32 very probably equivalent (one-cell difference); 26 runs differently. Overview: *Related machines among the candidates* at the top.
 
 - scan: 22 levels, 40 phases, mean factor 1.34 (sd 0.17); level starts: 114 128 173 235 279 313 381 421 516 705 936 1260 2910 3969
 - level analysis: Bell type `RB`, 13 levels; n: 12 16 37 45 56 64 121 389 524 700 944 1260 3965; ratios: 2.312 1.216 1.244 1.143 1.891 3.215 1.347 1.336 1.349 1.335 3.147; 3 different tails
@@ -1028,6 +1054,8 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <a id="32"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [32](#t32). `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` (class B)
 
+- **Same table as nos. [26](#26), [31](#31), other start state (13 Nov 2026).** No. 32 is no. 26 (mirrored) started in state D; no. 31 started in state D. 31 and 32 very probably equivalent (one-cell difference); 26 runs differently. Overview: *Related machines among the candidates* at the top.
+
 - scan: 23 levels, 40 phases, mean factor 1.33 (sd 0.17); level starts: 130 174 233 288 315 390 420 525 696 945 1257 1323 2919 3966
 - level analysis: Bell type `RD` with left part `11 01`, 10 levels; n: 10 18 34 42 78 86 166 283 1690 5294; ratios: 1.800 1.889 1.235 1.857 1.103 1.930 1.705 5.972 3.133; 3 different tails
 - verdict: 3 different tails, but the growth ratio varies
@@ -1095,6 +1123,8 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <a id="37"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [37](#t37). `1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC` (class B)
+
+- **Same table as no. [11](#11), other start state (13 Nov 2026).** No. 37 is no. 11 (mirrored) started in state C. The two are equivalent. Overview: *Related machines among the candidates* at the top.
 - **Equivalent to no. 11** (checked 29 Oct 2026, observation by post-apocalyptic sphere on Discord; `scan/iso_11_37.py`).
   - **Same transition table.** This machine is no. 11 **mirrored**, with the states renamed (no. 11 → here: A→D, B→E, C→A, D→B, E→C, F→F). All 12 transitions agree under this map, with left and right swapped. Only the start state differs: this machine starts in A, which corresponds to C of no. 11.
   - **Same configuration.** After 8,277,490 steps of no. 11 and 7,454,917 steps of no. 37 the tapes are identical up to mirroring: 1674 cells, the head at the same position, state D in no. 11 and B here (B = image of D).
@@ -1132,6 +1162,8 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <a id="39"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [39](#t39). `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` (class C)
+
+- **Same table as nos. [19](#19), [20](#20), other start state (13 Nov 2026).** No. 39 is no. 19 (mirrored) started in state C; no. 20 started in state D. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - scan: 21 levels, 54 phases, mean factor 1.36 (sd 0.21); level starts: 156 198 237 306 358 468 541 713 814 1074 1225 1623 2444 3677
 - level analysis: Bell type `LC` with left part `01`, 11 levels; n: 4 10 88 136 208 316 478 1084 1633 5530 12457; ratios: 2.500 8.800 1.545 1.529 1.519 1.513 2.268 1.506 3.386 2.253; 2 different tails
@@ -1368,6 +1400,8 @@ A heuristic estimate, not a proof. It treats the Bell map as a random map and us
 <a id="42"></a>
 ## [42](#t42). `1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD` (class C)
 
+- **Same table as nos. [22](#22), [43](#43), other start state (13 Nov 2026).** No. 42 is no. 22 (mirrored) started in state B; no. 43 (mirrored) started in state D. No common configuration found; the runs of 22 and 42 drift apart. Overview: *Related machines among the candidates* at the top.
+
 - scan: 14 levels, 45 phases, mean factor 1.42 (sd 0.23); level starts: 13 15 37 44 53 72 155 198 257 407 458 593 975 1200
 - level analysis: Bell type `LD` with left part `01`, 6 levels; n: 4 44 162 414 1204 3402; ratios: 11.000 3.682 2.556 2.908 2.826; 1 different tails
 - verdict: needle-like: only 1 tail (all information in one number)
@@ -1378,6 +1412,8 @@ A heuristic estimate, not a proof. It treats the Bell map as a random map and us
 <a id="43"></a>
 ## [43](#t43). `1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB` (class C)
 
+- **Same table as nos. [22](#22), [42](#42), other start state (13 Nov 2026).** No. 43 is no. 22 started in state D; no. 42 (mirrored) started in state C. No common configuration found; the runs of 22 and 42 drift apart. Overview: *Related machines among the candidates* at the top.
+
 - scan: 15 levels, 32 phases, mean factor 1.41 (sd 0.25); level starts: 14 32 37 50 61 73 86 156 264 325 397 451 593 1412
 - level analysis: Bell type `RC`, 7 levels; n: 8 13 42 157 330 1416 3614; ratios: 1.625 3.231 3.738 2.102 4.291 2.552; 2 different tails
 - verdict: needle-like: only 2 tails (all information in one number)
@@ -1387,6 +1423,8 @@ A heuristic estimate, not a proof. It treats the Bell map as a random map and us
 
 <a id="44"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [44](#t44). `1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---` (class C)
+
+- **Same table as nos. [81](#81), [89](#89), [96](#96), other start state (13 Nov 2026).** No. 44 is no. 81 (mirrored) started in state D; no. 89 (mirrored) started in state C; no. 96 (mirrored) started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - scan: 7 levels, 13 phases, mean factor 1.90 (sd 0.25); level starts: 13 17 48 79 180 299 620
 - level analysis: Bell type `LB` with left part `01`, 7 levels; n: 14 54 186 626 2094 6986 23294; ratios: 3.857 3.444 3.366 3.345 3.336 3.334; 1 different tails
@@ -1443,6 +1481,8 @@ A heuristic estimate, not a proof. It treats the Bell map as a random map and us
 <a id="45"></a>
 ## [45](#t45). `1RB0LD_1LC0RD_1LA0LC_1RE0LB_1RB1RF_0LD---` (class C)
 
+- **Same table as no. [52](#52), other start state (13 Nov 2026).** No. 45 is no. 52 started in state E. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - scan: 10 levels, 21 phases, mean factor 1.53 (sd 0.25); level starts: 11 15 19 25 44 62 152 170 233 515
 - verdict: no clear single-block Bell configuration found
 - diagram: 444,830 steps, tape width 1001 cells
@@ -1451,6 +1491,8 @@ A heuristic estimate, not a proof. It treats the Bell map as a random map and us
 
 <a id="46"></a>
 ## [46](#t46). `1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD` (class C)
+
+- **Same table as no. [54](#54), other start state (13 Nov 2026).** No. 46 is no. 54 (mirrored) started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - scan: 7 levels, 14 phases, mean factor 1.74 (sd 0.26); level starts: 16 24 56 108 220 416 440
 - level analysis: Bell type `RD`, 11 levels; n: 4 12 39 119 839 1079 1847 2567 3271 4639 8423; ratios: 3.000 3.250 3.051 7.050 1.286 1.712 1.390 1.274 1.418 1.816; 2 different tails
@@ -1508,6 +1550,8 @@ A heuristic estimate, not a proof. It treats the Bell map as a random map and us
 <a id="51"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [51](#t51). `1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---` (class C)
 
+- **Same table as nos. [61](#61), [71](#71), [93](#93), other start state (13 Nov 2026).** No. 51 is no. 61 (mirrored) started in state D; no. 71 (mirrored) started in state B; no. 93 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA)
 
 - scan: 10 levels, 19 phases, mean factor 1.60 (sd 0.29); level starts: 21 25 28 69 89 197 260 539 716 1451
@@ -1540,6 +1584,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <a id="52"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [52](#t52). `1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---` (class C)
+
+- **Same table as no. [45](#45), other start state (13 Nov 2026).** No. 52 is no. 45 started in state D. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - scan: 11 levels, 28 phases, mean factor 1.61 (sd 0.30); level starts: 8 26 32 42 83 160 244 322 539 860 941
 - verdict: no clear single-block Bell configuration found
@@ -1580,6 +1626,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <a id="54"></a>
 ## [54](#t54). `1RB1RF_1LC---_1LE1RD_1RA0RC_0LF0LA_0LD0RB` (class C)
+
+- **Same table as no. [46](#46), other start state (13 Nov 2026).** No. 54 is no. 46 (mirrored) started in state F. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - scan: 10 levels, 49 phases, mean factor 1.53 (sd 0.30); level starts: 12 20 46 52 58 124 135 262 288 564
 - level analysis: Bell type `LA` with left part `02`, 9 levels; n: 31 47 111 127 255 1135 3551 6111 12303; ratios: 1.516 2.362 1.144 2.008 4.451 3.129 1.721 2.013; 1 different tails
@@ -1625,6 +1673,8 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <a id="58"></a>
 ## [58](#t58). `1RB0LD_1RC1RF_1LA0RA_0LA0LE_1LD1LA_0RB---` (for later analysis)
 
+- **Same table as no. [68](#68), other start state (13 Nov 2026).** No. 58 is no. 68 (mirrored) started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1058, **CRYPTID**, Bell-like, notes: Antihydra-like cryptid, probviously nonhalting
 - diagram: 450,585 steps, tape width 1001 cells
 
@@ -1648,6 +1698,8 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 
 <a id="61"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [61](#t61). `1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA` (for later analysis)
+
+- **Same table as nos. [51](#51), [71](#71), [93](#93), other start state (13 Nov 2026).** No. 61 is no. 51 (mirrored) started in state F; no. 71 started in state F; no. 93 started in state F. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA)
 
@@ -1759,6 +1811,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <a id="68"></a>
 ## [68](#t68). `1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB` (for later analysis)
 
+- **Same table as no. [58](#58), other start state (13 Nov 2026).** No. 68 is no. 58 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1070, **CRYPTID**, Bell-like, notes: Probviously nonhalting cryptid, similar to Antihydra
 - diagram: 501,256 steps, tape width 1001 cells
 
@@ -1783,6 +1837,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <a id="71"></a>
 ## [71](#t71). `1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---` (for later analysis)
 
+- **Same table as nos. [51](#51), [61](#61), [93](#93), other start state (13 Nov 2026).** No. 71 is no. 51 (mirrored) started in state C; no. 61 started in state C; no. 93 started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1075, Bell-like, notes: Could be solvable
 - diagram: 157,428 steps, tape width 1001 cells
 
@@ -1790,6 +1846,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <a id="72"></a>
 ## 🟩 [72](#t72). `1RB1LE_1LC1RC_1LA1RD_1LD0RB_0LC0LF_0LB---` (for later analysis)
+
+- **Same table as nos. [73](#73), [97](#97), other start state (13 Nov 2026).** No. 72 is no. 73 (mirrored) started in state B; no. 97 (mirrored) started in state C. The runs never meet (see no. 73). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1076, Bell-like
 - diagram: 491,380 steps, tape width 1001 cells
@@ -1804,6 +1862,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <a id="73"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [73](#t73). `1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC` (for later analysis)
+
+- **Same table as nos. [72](#72), [97](#97), other start state (13 Nov 2026).** No. 73 is no. 72 (mirrored) started in state C; no. 97 started in state B. The runs never meet (see no. 73). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1079, Bell-like
 - diagram: 492,524 steps, tape width 1001 cells
@@ -1886,6 +1946,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <a id="74"></a>
 ## [74](#t74). `1RB0RD_1RC0LF_1LA0LB_---1RE_1LB1RA_0LC0RA` (for later analysis)
 
+- **Same table as no. [77](#77), other start state (13 Nov 2026).** No. 74 is no. 77 started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1081, Bell-like
 - diagram: 715,875 steps, tape width 1001 cells
 
@@ -1893,6 +1955,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <a id="75"></a>
 ## [75](#t75). `1RB1RD_1RC1LD_0LA1RA_1LE0RC_---1LF_0LA0LB` (for later analysis)
+
+- **Same table as no. [106](#106), other start state (13 Nov 2026).** No. 75 is no. 106 started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1082, Bell-like
 - diagram: 557,574 steps, tape width 1001 cells
@@ -1902,6 +1966,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <a id="76"></a>
 ## [76](#t76). `1RB1LF_1LC0RD_---1LD_1RB1RE_1LA0LB_0LA0LE` (for later analysis)
 
+- **Same table as no. [99](#99), other start state (13 Nov 2026).** No. 76 is no. 99 (mirrored) started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1086, Bell-like
 - diagram: 775,501 steps, tape width 1001 cells
 
@@ -1909,6 +1975,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <a id="77"></a>
 ## [77](#t77). `1RB0LF_1LC0LA_1RA0RD_---1RE_1LA1RC_0LB0RC` (for later analysis)
+
+- **Same table as no. [74](#74), other start state (13 Nov 2026).** No. 77 is no. 74 started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1087, Bell-like
 - diagram: 675,039 steps, tape width 1001 cells
@@ -1918,6 +1986,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <a id="78"></a>
 ## [78](#t78). `1RB1LF_1RC1LD_1LB1LE_1LE0LD_0LA0RE_1RD---` (for later analysis)
 
+- **Same table as nos. [79](#79), [92](#92), other start state (13 Nov 2026).** No. 78 is no. 79 started in state E; no. 92 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1088, Bell-like
 - diagram: 623,823 steps, tape width 1001 cells
 
@@ -1925,6 +1995,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <a id="79"></a>
 ## [79](#t79). `1RB1LC_1LA1LD_1LD0LC_0LE0RD_1RA1LF_1RC---` (for later analysis)
+
+- **Same table as nos. [78](#78), [92](#92), other start state (13 Nov 2026).** No. 79 is no. 78 started in state B; no. 92 (mirrored) started in state D. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1089, Bell-like
 - diagram: 571,776 steps, tape width 1001 cells
@@ -1934,6 +2006,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <a id="80"></a>
 ## [80](#t80). `1RB1RA_1LC0RB_1LE0LD_0LB1LD_0RA0LF_---0RE` (for later analysis)
 
+- **Same table as nos. [91](#91), [108](#108), other start state (13 Nov 2026).** No. 80 is no. 91 (mirrored) started in state D; no. 108 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1090, Bell-like
 - diagram: 313,854 steps, tape width 1001 cells
 
@@ -1941,6 +2015,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <a id="81"></a>
 ## [81](#t81). `1RB0LD_0RC1RA_1RD1RE_1LA0LE_0RA0RF_1RC---` (for later analysis)
+
+- **Same table as nos. [44](#44), [89](#89), [96](#96), other start state (13 Nov 2026).** No. 81 is no. 44 (mirrored) started in state B; no. 89 started in state D; no. 96 started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1091, Bell-like
 - diagram: 162,354 steps, tape width 1001 cells
@@ -2037,6 +2113,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <a id="89"></a>
 ## [89](#t89). `1RB---_1RC1RE_1LD0LE_1RF0LC_0RD0RA_0RB1RD` (for later analysis)
 
+- **Same table as nos. [44](#44), [81](#81), [96](#96), other start state (13 Nov 2026).** No. 89 is no. 44 (mirrored) started in state F; no. 81 started in state F; no. 96 started in state F. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1104, Bell-like
 - diagram: 146,380 steps, tape width 1001 cells
 
@@ -2053,6 +2131,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <a id="91"></a>
 ## [91](#t91). `1RB0LA_1RC0RE_0LD0RF_1LA1LD_0RA1RE_---0LC` (for later analysis)
 
+- **Same table as nos. [80](#80), [108](#108), other start state (13 Nov 2026).** No. 91 is no. 80 (mirrored) started in state B; no. 108 started in state D. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1110, Bell-like
 - diagram: 389,932 steps, tape width 1001 cells
 
@@ -2060,6 +2140,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <a id="92"></a>
 ## [92](#t92). `1RB0RA_0RC0LB_1LD1RF_1LE1RA_1RD1RB_1LA---` (for later analysis)
+
+- **Same table as nos. [78](#78), [79](#79), other start state (13 Nov 2026).** No. 92 is no. 78 (mirrored) started in state D; no. 79 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1113, Bell-like
 - diagram: 615,561 steps, tape width 1001 cells
@@ -2069,6 +2151,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <a id="93"></a>
 ## [93](#t93). `1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---` (for later analysis)
 
+- **Same table as nos. [51](#51), [61](#61), [71](#71), other start state (13 Nov 2026).** No. 93 is no. 51 (mirrored) started in state B; no. 61 started in state E; no. 71 started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1114, Bell-like
 - diagram: 188,839 steps, tape width 1001 cells
 
@@ -2076,6 +2160,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <a id="94"></a>
 ## [94](#t94). `1RB0RA_1LC0LE_1RA1LD_0LB1LF_1LD0RC_1LB---` (for later analysis)
+
+- **Same table as no. [103](#103), other start state (13 Nov 2026).** No. 94 is no. 103 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1116, Bell-like
 - diagram: 437,402 steps, tape width 1001 cells
@@ -2141,6 +2227,8 @@ Checks:
 <a id="96"></a>
 ## [96](#t96). `1RB1RE_1LC0LE_1RD0LB_0RA1RC_0RC0RF_1RA---` (for later analysis)
 
+- **Same table as nos. [44](#44), [81](#81), [89](#89), other start state (13 Nov 2026).** No. 96 is no. 44 (mirrored) started in state D; no. 81 started in state C; no. 89 started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1118, Bell-like
 - diagram: 149,689 steps, tape width 1001 cells
 
@@ -2148,6 +2236,8 @@ Checks:
 
 <a id="97"></a>
 ## 🟩 [97](#t97). `1RB1LB_1RC1LD_1LA1RE_1RD0LA_0RB0RF_0RA---` (for later analysis)
+
+- **Same table as nos. [72](#72), [73](#73), other start state (13 Nov 2026).** No. 97 is no. 72 (mirrored) started in state B; no. 73 started in state C. The runs never meet (see no. 73). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1121, Bell-like
 - diagram: 515,725 steps, tape width 1001 cells
@@ -2170,6 +2260,8 @@ Checks:
 
 <a id="99"></a>
 ## [99](#t99). `1RB0RC_1LC1RF_1RE0LD_1LC1LA_---1RD_0RB0RA` (for later analysis)
+
+- **Same table as no. [76](#76), other start state (13 Nov 2026).** No. 99 is no. 76 (mirrored) started in state E. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1124, Bell-like
 - diagram: 593,858 steps, tape width 920 cells
@@ -2209,6 +2301,8 @@ Checks:
 
 <a id="103"></a>
 ## [103](#t103). `1RB0RE_1LC1RD_1LA0LC_0RA1RF_1RD0LB_1RA---` (for later analysis)
+
+- **Same table as no. [94](#94), other start state (13 Nov 2026).** No. 103 is no. 94 (mirrored) started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1130, Bell-like
 - diagram: 415,453 steps, tape width 1001 cells
@@ -2271,6 +2365,8 @@ Checks:
 <a id="106"></a>
 ## [106](#t106). `1RB1LD_0LC1RC_1RA1RD_1LE0RB_---1LF_0LC0LA` (for later analysis)
 
+- **Same table as no. [75](#75), other start state (13 Nov 2026).** No. 106 is no. 75 started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
+
 - BB6 sheet: row 1135, Bell-like
 - diagram: 548,093 steps, tape width 1001 cells
 
@@ -2286,6 +2382,8 @@ Checks:
 
 <a id="108"></a>
 ## [108](#t108). `1RB0RE_0LC0RF_1LD1LC_1RA0LD_0RD1RE_---0LB` (for later analysis)
+
+- **Same table as nos. [80](#80), [91](#91), other start state (13 Nov 2026).** No. 108 is no. 80 (mirrored) started in state C; no. 91 started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1137, Bell-like
 - diagram: 311,138 steps, tape width 1001 cells
