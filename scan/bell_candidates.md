@@ -76,10 +76,10 @@ Machines whose Bell map is driven by the digits of one large number n (n' ≈ q�
 | 🟩 [7](#7) | `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` (TM2b', O4) | as no. 1 | **simulated to HALT** (orbit O4, as no. 6) | as no. 1 | as no. 6 | ≈ 10^(6.84·10¹¹) |
 | 🟩 [8](#8) | `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` | vampire, 4/3, closed table (192 words) | **simulated to HALT + proof** (Bell 298,793,335, 21 Oct; Rocq proof busycoq PR #41, accepted) | 1.6·10⁻⁹ per Bell → ≈ 6·10⁸ Bells | ≈ 2 min on one core (`belldc3`) | ≈ 10^(7.5·10⁷) |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [105](#105) | `1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD` | vampire-like, 4/3, small tail counter; 35-level residue path to HALT | **open** (100,000 levels without HALT) | 1.1·10⁻¹⁴ per level → ≈ 9·10¹³ levels (median 6·10¹³) | ≈ 5,000× the TM2 run: about 200 years on a notebook, a few years on a large cluster (simulator still to be written) | ≈ 10^(2.25·10¹³) |
-| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [51](#51) | `1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---` | 8/3 map, memory word r as a stack (table **not** closed); 108-step path to HALT from r = empty | **open** (probviously halting cryptid) | about 3^−80 per reset of r (wiki, Racheline) | out of reach | ≈ 10^10^38 (wiki, heuristic) |
-| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [61](#61) | `1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA` | same machine as no. 51, start state A | **open** (probviously halting cryptid) | as no. 51 | out of reach | ≈ 10^10^38.1 (wiki, heuristic) |
-| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [71](#71) | `1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---` | same machine as no. 51, start state C | **open**, own run not analysed | presumably as no. 51 | out of reach | – |
-| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [93](#93) | `1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---` | same machine as no. 51, start state E (start F has the same run) | **open**, own run not analysed | presumably as no. 51 | out of reach | – |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [51](#51) | `1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---` | 8/3 map, memory word r as a stack (table **not** closed); 108-step path to HALT from r = empty | **open** (probviously halting cryptid; 400 macro steps, about 10^320 TM steps, no HALT; closest approach 102 macro steps) | about 3^−80 per reset of r (wiki, Racheline) | out of reach | ≈ 10^10^38 (wiki, heuristic) |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [61](#61) | `1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA` | same machine as no. 51, start state F (in the naming of no. 51); reaches C(12, [6]) after 111 steps | **open** (probviously halting cryptid; 400 macro steps without HALT, closest approach 103 macro steps) | as no. 51 | out of reach | ≈ 10^10^38.1 (wiki, heuristic) |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [71](#71) | `1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---` | same machine as no. 51, start state C; reaches C(16, empty) of no. 51 after 95 steps | **open** (400 macro steps, about 10^320 TM steps, no HALT; closest approach 101 macro steps) | as no. 51 | out of reach | ≈ 10^10^38 (as no. 51) |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [93](#93) | `1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---` | same machine as no. 51, start state B; reaches C(6, empty) of no. 51 after 18 steps | **open** (400 macro steps, about 10^320 TM steps, no HALT; closest approach 103 macro steps) | as no. 51 | out of reach | ≈ 10^10^38 (as no. 51) |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [31](#31) | `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` | vampire-like, 4/3, nested sub-process (prefix table mod 6); table with several blocks, not closed | **open** (202 Bells, 10³⁵·⁵ steps without HALT) | below 2·10⁻⁶ per Bell (measured upper bound) | unknown | – |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [32](#32) | `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` | as no. 31 (very probably equivalent) | **open** | as no. 31 | unknown | – |
 
@@ -2087,6 +2087,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 - BB6 sheet: row 1062, **CRYPTID**, Bell-like, notes: Probviously halting cryptid
 - diagram: 158,016 steps, tape width 1001 cells
 
+- **Macro analysis (13 Nov 2026, `m44/first51.py`, `m44/orbit_start.py`).** This is the table of no. 51 started in state F. From the blank tape it reaches the macro configuration C(12, [6]) after 111 steps of no. 51 (the model C(m, r) with the memory word r, see [no. 51](#51)). From there the exact macro rules of no. 51 apply unchanged. The run was followed for 400 macro steps (m up to 161 digits, about 10^320 TM steps): no HALT. r is reset to empty again and again, and every reset is a new "lottery ticket" with the same 108-step halting path as for no. 51. Closest approach: 103 macro steps from HALT (macro step 192, r = [1, 1]). So the estimate of no. 51 applies: about 3^−80 per reset (wiki), halting time around 10^10^38; probviously halting, out of reach for simulation.
+
 <img src="diagrams/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA.png" alt="space-time diagram" height="350">
 
 <a id="62"></a>
@@ -2220,6 +2222,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 - BB6 sheet: row 1075, Bell-like, notes: Could be solvable
 - diagram: 157,428 steps, tape width 1001 cells
+
+- **Macro analysis (13 Nov 2026, `m44/first51.py`, `m44/orbit_start.py`).** This is the table of no. 51 started in state C. From the blank tape it reaches the macro configuration C(16, empty) after 95 steps of no. 51 (the model C(m, r) with the memory word r, see [no. 51](#51)). From there the exact macro rules of no. 51 apply unchanged. The run was followed for 400 macro steps (m up to 161 digits, about 10^320 TM steps): no HALT. r is reset to empty again and again, and every reset is a new "lottery ticket" with the same 108-step halting path as for no. 51. Closest approach: 101 macro steps from HALT (macro step 181, r = [8]). So the estimate of no. 51 applies: about 3^−80 per reset (wiki), halting time around 10^10^38; probviously halting, out of reach for simulation.
 
 <img src="diagrams/1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---.png" alt="space-time diagram" height="350">
 
@@ -2534,6 +2538,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 - BB6 sheet: row 1114, Bell-like
 - diagram: 188,839 steps, tape width 1001 cells
+
+- **Macro analysis (13 Nov 2026, `m44/first51.py`, `m44/orbit_start.py`).** This is the table of no. 51 started in state B. From the blank tape it reaches the macro configuration C(6, empty) after 18 steps of no. 51 (the model C(m, r) with the memory word r, see [no. 51](#51)). From there the exact macro rules of no. 51 apply unchanged. The run was followed for 400 macro steps (m up to 161 digits, about 10^320 TM steps): no HALT. r is reset to empty again and again, and every reset is a new "lottery ticket" with the same 108-step halting path as for no. 51. Closest approach: 103 macro steps from HALT (macro step 250, r = [1, 1]). So the estimate of no. 51 applies: about 3^−80 per reset (wiki), halting time around 10^10^38; probviously halting, out of reach for simulation.
 
 <img src="diagrams/1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---.png" alt="space-time diagram" height="350">
 
