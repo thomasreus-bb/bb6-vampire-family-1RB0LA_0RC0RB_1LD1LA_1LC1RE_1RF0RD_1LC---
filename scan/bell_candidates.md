@@ -203,7 +203,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t39"></a>[39](#39) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>C | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB1LC_1LC0RF`<br>`0LF1LD_0LE---`<br>`1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number); **analysed** (2 Nov 2026): main block plus a tail counter that follows one fixed chain; no HALT on the chain up to level 400, so very probably non-halting; see below | 1122; Bell-like | **#442 Some structure seen**: A 3/2 Bell whose phases spawn nested counters. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t40"></a>[40](#40) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>C | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0RD_0RC1RE`<br>`1RD0LA_1LE1LC`<br>`1RF0LD_---0RA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight) | 1.48 | no clear single-block Bell configuration found; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1060; **CRYPTID**, Bell-like; Lucy's Moonlight. Part of Category 1; [1](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight); Racheline, Shawn Ligocki | **#569 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t41"></a>[41](#41) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>C | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LD_1RC0RA`<br>`1LA1RE_0LA0LB`<br>`0RB1RF_---1RD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD) | 1.40 | needle-like: only 1 tail (all information in one number) | 755; Quadratic Mess; Part of Category 1 | **#112 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t42"></a>[42](#42) | C | `1RB0RF_1LC0RA`<br>`1LD1LB_0LE---`<br>`1LA0LA_1RE1LD` | 1.42 | needle-like: only 1 tail (all information in one number) | 761; Quadratic Mess | **#37 Looks like a lottery**: Close to a known machine with 3 entries changed. Built tapes halt at specific values tied to the machine's own orbit. |
+| <a id="t42"></a>[42](#42) | C | `1RB0RF_1LC0RA`<br>`1LD1LB_0LE---`<br>`1LA0LA_1RE1LD` | 1.42 | needle-like: only 1 tail (all information in one number); **exact event rules; halts iff a merge with even c has e in H = {2, 28, 74, 114, 288, …} (13 Nov 2026), probviously non-halting** | 761; Quadratic Mess | **#37 Looks like a lottery**: Close to a known machine with 3 entries changed. Built tapes halt at specific values tied to the machine's own orbit. |
 | <a id="t43"></a>[43](#43) | C | `1RB1RE_0RC---`<br>`1RD0RD_1LE0LF`<br>`1RA0LD_1LC1RB` | 1.41 | needle-like: only 2 tails (all information in one number) | 760; Quadratic Mess | **#25 Reported by others**: Others have worked on it or discussed it. Close to a known machine with 3 entries changed. Built tapes halt at specific values tied to the machine's own orbit. |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t44"></a>[44](#44) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>C | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB0RE_1LC0RA`<br>`0LD1LB_1LA1LE`<br>`0LB0LF_1LD---` | 1.90 | needle-like: only 1 tail (all information in one number) | 1127; Bell-like | **#507 Rules known, no proof**: One table, four starts. Exact macro law proved in Rocq. Real runs stay small, but the residues behave like Collatz digits, so a proof has to allow every sequence. |
 | <a id="t45"></a>[45](#45) | C | `1RB0LD_1LC0RD`<br>`1LA0LC_1RE0LB`<br>`1RB1RF_0LD---` | 1.53 | no clear single-block Bell configuration found | 768; Quadratic Mess | **#104 Some structure seen**: Same table as another holdout, from another start. |
@@ -1408,6 +1408,50 @@ A heuristic estimate, not a proof. It treats the Bell map as a random map and us
 - diagram: 1,076,279 steps, tape width 1001 cells
 
 <img src="diagrams/1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD.png" alt="space-time diagram" height="350">
+
+### No. 42: detailed analysis (13 Nov 2026)
+
+Tools and data in `m42/` (`ev42.c`, `rules42.py`, `orbit42.py`, `hset.sh`, `NOTES.md`). The tape grows to the left; HALT is D reading 1.
+
+**Events.** An event is the moment when the head reaches a new leftmost cell in state A. Almost all events of the run are one of two kinds:
+- X(a, b): the tape is `(10)^a 1^b`;
+- Z(c, e): the tape is `00 (10)^c 1^e`.
+
+The first event, at step 6, is X(1, 4).
+
+**Exact event rules.** Checked against direct simulation in 10,120 cases (`rules42.py`), up to a = 20,000:
+- **R1.** X(a, b) → X(a+2, b−2) for b ≥ 3. The block 1^b is turned into (10) pairs.
+- **R2.** X(a, 1) → X(1, 2a+6).
+- **R3.** X(a, 2): this is a sweep with a hidden counter. The machine works through *blocks* of length D_k = 6·3^k − 1 (5, 17, 53, 161, 485, …), which start at a = A_k = 3^(k+1) − 3 − k (0, 5, 22, 75, 236, …). Write j = a − A_k for the position inside the block. Then:
+  - j = 0 gives X(1, D_k);
+  - j = 2i+1 gives Z(2+3i, D_k−2−2i);
+  - j = 2i+2 gives X(4+3i, D_k−2−2i).
+- **Z → merge.** From Z(c, e) a new segment appears on the left: X(1, 4) 0 X(c, e). One step of R1 gives X(3, 2) 0 X(c, e). Call this the merge M(c, e).
+- **R4.** If c is odd: M(c, e) → X(c+6, e−1) for e ≥ 2, and M(c, 1) gives the R3 result of X(c+4, 2).
+- **Merge with c even: no closed rule.** The block 1^e is erased, and a new process grows from the right end into the gap until it meets the left part. What comes out depends on where this inner process stands at that moment.
+
+**Where HALT can happen.**
+- R1–R4 never halt. They also never produce a Z(·, 2), because every D_k is odd.
+- So a HALT is only possible in a merge with c even. That merge halts **exactly when e is in a set H**, and H does not depend on c (checked for c from 2 to 20,000).
+- H below 5,000 (`m42/hset_M2_e1-4999.txt`): 2, 28, 74, 114, 288, 622, 715, 772, 1044, 1209, 3391.
+- H is produced by the machine's own rules, one level deeper (the inner process). This is what the Holdout Guide means by "built tapes halt at specific values tied to the machine's own orbit".
+- Example: M(12, 5) → Z(22, 2) → M(22, 2) → HALT.
+
+**Result.** No. 42 halts **if and only if** some merge M(c, e) with c even has e in H.
+
+**The real run** (`orbit42.py`: R1–R4 as formulas, merges with c even simulated directly). The merges with c even, as (c, e):
+
+  (32, 31), (56, 15), (266, 307), (4214, 1563), (5888, 447), (6008, 367), (314, 39155), (337616, 129215), …
+
+None of them halts. The run was followed through 91 macro events, up to tape width ≈ 10⁷ (X(4191793, 2) and further). The first macro events agree with the direct simulation, up to step 2.7·10⁸ (X(2548, 7391)).
+
+**Estimate.**
+- H has 11 values below 5,000, roughly 1.3·ln N values below N. So a merge with e near N halts with a chance of roughly 1.3/N.
+- In R3, the e of a Z is spread over the whole block, so a merge in a block of length D halts with a chance of about 1.3·ln D / D. For D ≈ 10⁶ that is about 2·10⁻⁵.
+- The blocks grow by a factor of 3, so the sum over all further merges stays of the same order.
+- **Probviously non-halting**, with a remaining chance of HALT of about 10⁻⁴ (a rough estimate from only 11 values of H).
+
+**Not a proof.** A proof would have to show that the run never meets a merge with c even and e in H. H is defined recursively by the same machine, so this is a lottery like the Collatz-type cryptids.
 
 <a id="43"></a>
 ## [43](#t43). `1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB` (class C)
