@@ -1,0 +1,55 @@
+0 m has 2 digits m mod 3 = 1 r =  dist to HALT: 108
+1 m has 2 digits m mod 3 = 2 r =  dist to HALT: 108
+2 m has 3 digits m mod 3 = 2 r = 0111111 dist to HALT: 107
+3 m has 3 digits m mod 3 = 2 r = 01010111 dist to HALT: 106
+4 m has 3 digits m mod 3 = 2 r = 01010101 dist to HALT: 105
+5 m has 4 digits m mod 3 = 0 r = 011111111111111 dist to HALT: 107
+6 m has 4 digits m mod 3 = 0 r =  dist to HALT: 108
+7 m has 5 digits m mod 3 = 2 r =  dist to HALT: 108
+8 m has 5 digits m mod 3 = 0 r = 0111111 dist to HALT: 107
+9 m has 6 digits m mod 3 = 1 r =  dist to HALT: 108
+10 m has 6 digits m mod 3 = 2 r =  dist to HALT: 108
+11 m has 6 digits m mod 3 = 1 r = 0111111 dist to HALT: 107
+12 m has 7 digits m mod 3 = 2 r =  dist to HALT: 108
+13 m has 7 digits m mod 3 = 0 r = 0111111 dist to HALT: 107
+14 m has 8 digits m mod 3 = 2 r =  dist to HALT: 108
+15 m has 8 digits m mod 3 = 2 r = 0111111 dist to HALT: 107
+16 m has 8 digits m mod 3 = 1 r = 01010111 dist to HALT: 106
+17 m has 9 digits m mod 3 = 2 r =  dist to HALT: 108
+18 m has 9 digits m mod 3 = 0 r = 0111111 dist to HALT: 107
+19 m has 10 digits m mod 3 = 0 r =  dist to HALT: 108
+20 m has 10 digits m mod 3 = 0 r =  dist to HALT: 108
+21 m has 11 digits m mod 3 = 0 r =  dist to HALT: 108
+22 m has 11 digits m mod 3 = 0 r =  dist to HALT: 108
+23 m has 11 digits m mod 3 = 2 r =  dist to HALT: 108
+24 m has 12 digits m mod 3 = 1 r = 0111111 dist to HALT: 107
+25 m has 12 digits m mod 3 = 1 r =  dist to HALT: 108
+26 m has 13 digits m mod 3 = 0 r =  dist to HALT: 108
+27 m has 13 digits m mod 3 = 0 r =  dist to HALT: 108
+28 m has 14 digits m mod 3 = 1 r =  dist to HALT: 108
+29 m has 14 digits m mod 3 = 2 r =  dist to HALT: 108
+30 m has 14 digits m mod 3 = 0 r = 0111111 dist to HALT: 107
+31 m has 15 digits m mod 3 = 2 r =  dist to HALT: 108
+32 m has 15 digits m mod 3 = 0 r = 0111111 dist to HALT: 107
+33 m has 16 digits m mod 3 = 0 r =  dist to HALT: 108
+34 m has 16 digits m mod 3 = 1 r =  dist to HALT: 108
+35 m has 17 digits m mod 3 = 1 r =  dist to HALT: 108
+36 m has 17 digits m mod 3 = 2 r =  dist to HALT: 108
+37 m has 17 digits m mod 3 = 2 r = 0111111 dist to HALT: 107
+38 m has 18 digits m mod 3 = 1 r = 01010111 dist to HALT: 106
+39 m has 18 digits m mod 3 = 0 r =  dist to HALT: 108
+50 m has 23 digits m mod 3 = 2 r = 0111111 dist to HALT: 107
+75 m has 34 digits m mod 3 = 2 r = 0111111 dist to HALT: 107
+100 m has 44 digits m mod 3 = 0 r = 0111111 dist to HALT: 107
+125 m has 55 digits m mod 3 = 1 r = 0111111 dist to HALT: 107
+150 m has 66 digits m mod 3 = 0 r =  dist to HALT: 108
+175 m has 76 digits m mod 3 = 2 r = 0111111 dist to HALT: 107
+200 m has 87 digits m mod 3 = 1 r = 0111111 dist to HALT: 107
+225 m has 98 digits m mod 3 = 0 r = 0111111 dist to HALT: 107
+250 m has 108 digits m mod 3 = 0 r =  dist to HALT: 108
+275 m has 119 digits m mod 3 = 0 r =  dist to HALT: 108
+300 m has 129 digits m mod 3 = 1 r =  dist to HALT: 108
+325 m has 140 digits m mod 3 = 1 r = 0111111 dist to HALT: 107
+350 m has 151 digits m mod 3 = 0 r = 0111111 dist to HALT: 107
+375 m has 161 digits m mod 3 = 1 r =  dist to HALT: 108
+closest approach (macro steps to HALT, at step, r): (101, 181, '011111111')
