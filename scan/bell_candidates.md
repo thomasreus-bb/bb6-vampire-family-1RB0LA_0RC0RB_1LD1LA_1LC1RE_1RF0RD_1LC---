@@ -59,6 +59,36 @@ The 56 machines that the Bell scan (`bellscan.c`, 10⁷ steps per machine) marke
       - Not checked further.
 - **Diagram**: time runs downward, one pixel column per tape cell (scaled up for narrow tapes), symbol 1 orange, 0 white; at most 700 sampled rows. Each diagram runs up to the start of the 8th Bell found by the detector (so the first 7 Bells are complete) or until the tape is 1000 cells wide, whichever comes first.
 
+## Vampire-like TMs (13 Nov 2026)
+
+Machines whose Bell map is driven by the digits of one large number n (n' ≈ q·n, with q = 3/2 or 4/3) and a short word or tail, so that a HALT needs a certain sequence of residues of n ("lottery"). The expected values come from a Markov estimate (random residues) and are heuristics, not proofs.
+
+**Status:** *simulated to HALT* = the HALT was found by exact simulation of the Bell map; *+ proof* = in addition a formal Rocq proof; *open* = no HALT found yet.
+
+| no. | machine | type | status | expected HALT (Markov) | computing time to HALT | steps of the original TM |
+|---|---|---|---|---|---|---|
+| 🟩 [1](#1) | `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (TM1-F, orbit O2) | vampire family, 3/2, closed table (2,880 words) | **simulated to HALT** (Bell 731,899,010,932, Ahmer Raza, 30 Oct; confirmed by Thomas Reus) | 8.9·10⁻¹³ per Bell → ≈ 1.1·10¹² Bells (median 7.8·10¹¹) | 23 h 42 min on 8 cores (AMD EPYC 9655, `belldco`); ≈ 13–14 days on a notebook | ≈ 10^(2.58·10¹¹) |
+| 🟩 [2](#2) | `1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE` (TM1, O1) | as no. 1 | **simulated to HALT** (Bell 747,242,483,684, Ahmer Raza, 30 Oct) | as no. 1 | 24 h 29 min on 8 cores | ≈ 10^(2.63·10¹¹) |
+| 🟩 [3](#3) | `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---` (TM2, O2) | as no. 1 | **simulated to HALT** (orbit O2, as no. 1) | as no. 1 | as no. 1 | ≈ 10^(2.58·10¹¹) |
+| 🟩 [4](#4) | `1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF` (TM2', O2) | as no. 1 | **simulated to HALT** (orbit O2, as no. 1) | as no. 1 | as no. 1 | ≈ 10^(2.58·10¹¹) |
+| 🟩 [5](#5) | `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---` (TM2a, O3) | as no. 1 | **simulated to HALT** (Bell 1,961,935,897,288, Ahmer Raza, 30 Oct) | as no. 1 | 79 h on 8 cores (65 h of new progress) | ≈ 10^(6.91·10¹¹) |
+| 🟩 [6](#6) | `1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD` (TM2b, O4) | as no. 1 | **simulated to HALT** (Bell 1,941,376,761,248, Ahmer Raza, 1 Nov) | as no. 1 | several days on 8 cores | ≈ 10^(6.84·10¹¹) |
+| 🟩 [7](#7) | `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` (TM2b', O4) | as no. 1 | **simulated to HALT** (orbit O4, as no. 6) | as no. 1 | as no. 6 | ≈ 10^(6.84·10¹¹) |
+| 🟩 [8](#8) | `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` | vampire, 4/3, closed table (192 words) | **simulated to HALT + proof** (Bell 298,793,335, 21 Oct; Rocq proof busycoq PR #41, accepted) | 1.6·10⁻⁹ per Bell → ≈ 6·10⁸ Bells | ≈ 2 min on one core (`belldc3`) | ≈ 10^(7.5·10⁷) |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [105](#105) | `1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD` | vampire-like, 4/3, small tail counter; 35-level residue path to HALT | **open** (100,000 levels without HALT) | 1.1·10⁻¹⁴ per level → ≈ 9·10¹³ levels (median 6·10¹³) | ≈ 5,000× the TM2 run: about 200 years on a notebook, a few years on a large cluster (simulator still to be written) | ≈ 10^(2.25·10¹³) |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [51](#51) | `1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---` | 8/3 map, memory word r as a stack (table **not** closed); 108-step path to HALT from r = empty | **open** (probviously halting cryptid) | about 3^−80 per reset of r (wiki, Racheline) | out of reach | ≈ 10^10^38 (wiki, heuristic) |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [61](#61) | `1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA` | same machine as no. 51, start state A | **open** (probviously halting cryptid) | as no. 51 | out of reach | ≈ 10^10^38.1 (wiki, heuristic) |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [71](#71) | `1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---` | same machine as no. 51, start state C | **open**, own run not analysed | presumably as no. 51 | out of reach | – |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [93](#93) | `1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---` | same machine as no. 51, start state E (start F has the same run) | **open**, own run not analysed | presumably as no. 51 | out of reach | – |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [31](#31) | `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` | vampire-like, 4/3, nested sub-process (prefix table mod 6); table with several blocks, not closed | **open** (202 Bells, 10³⁵·⁵ steps without HALT) | below 2·10⁻⁶ per Bell (measured upper bound) | unknown | – |
+| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [32](#32) | `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` | as no. 31 (very probably equivalent) | **open** | as no. 31 | unknown | – |
+
+Not included:
+- No. 19: it has the scan signature "vampire-like", but a closer look shows a two-number system that is probably non-halting.
+- The tetrational cryptids (nos. 60, 62–66) and the needle-like machines (e.g. nos. 42, 45/52): HALT there needs an exact value of a counter, not a residue pattern.
+
+More machines can be added here as they are found.
+
 ## The vampire method: when does it apply?
 
 A machine is a candidate for the vampire method if its Bell map can be written as a **closed finite table**. This section collects what that means, what it proves and what it does not prove, as a basis for finding further vampire candidates in BB(6), BB(7) and other classes.
