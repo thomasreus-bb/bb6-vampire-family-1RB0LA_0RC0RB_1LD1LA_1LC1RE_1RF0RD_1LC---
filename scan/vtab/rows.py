@@ -1,5 +1,6 @@
 G,Y='g','y'
 rows=[
+(G,'1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC','','vampire, 4/3, closed table (192 words)','<b>simulated to HALT + proof</b> (Bell 298,793,335, 21 Oct; Rocq proof busycoq PR #41, accepted)','1.6·10⁻⁹ per Bell → ≈ 6·10⁸ Bells','≈ 2 min on one core (belldc3)','≈ 10^(7.5·10⁷)'),
 (G,'1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA','TM1-F, orbit O2','vampire family, 3/2, closed table (2,880 words)','<b>simulated to HALT</b> (Bell 731,899,010,932, Ahmer Raza, 30 Oct; confirmed by Thomas Reus)','8.9·10⁻¹³ per Bell → ≈ 1.1·10¹² Bells (median 7.8·10¹¹)','23 h 42 min on 8 cores (AMD EPYC 9655, belldco); ≈ 13–14 days on a notebook','≈ 10^(2.58·10¹¹)'),
 (G,'1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE','TM1, orbit O1','as TM1-F','<b>simulated to HALT</b> (Bell 747,242,483,684, Ahmer Raza, 30 Oct)','as TM1-F','24 h 29 min on 8 cores','≈ 10^(2.63·10¹¹)'),
 (G,'1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---','TM2, orbit O2','as TM1-F','<b>simulated to HALT</b> (orbit O2, as TM1-F)','as TM1-F','as TM1-F','≈ 10^(2.58·10¹¹)'),
@@ -7,7 +8,6 @@ rows=[
 (G,'1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---','TM2a, orbit O3','as TM1-F','<b>simulated to HALT</b> (Bell 1,961,935,897,288, Ahmer Raza, 30 Oct)','as TM1-F','79 h on 8 cores (65 h of new progress)','≈ 10^(6.91·10¹¹)'),
 (G,'1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD','TM2b, orbit O4','as TM1-F','<b>simulated to HALT</b> (Bell 1,941,376,761,248, Ahmer Raza, 1 Nov)','as TM1-F','several days on 8 cores','≈ 10^(6.84·10¹¹)'),
 (G,'1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA',"TM2b', orbit O4",'as TM1-F','<b>simulated to HALT</b> (orbit O4, as TM2b)','as TM1-F','as TM2b','≈ 10^(6.84·10¹¹)'),
-(G,'1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC','','vampire, 4/3, closed table (192 words)','<b>simulated to HALT + proof</b> (Bell 298,793,335, 21 Oct; Rocq proof busycoq PR #41, accepted)','1.6·10⁻⁹ per Bell → ≈ 6·10⁸ Bells','≈ 2 min on one core (belldc3)','≈ 10^(7.5·10⁷)'),
 (Y,'1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD','','vampire-like, 4/3, small tail counter; 35-level residue path to HALT','<b>open</b> (100,000 levels without HALT)','1.1·10⁻¹⁴ per level → ≈ 9·10¹³ levels (median 6·10¹³)','≈ 5,000× the TM2 run: about 200 years on a notebook, a few years on a large cluster (simulator still to be written)','≈ 10^(2.25·10¹³)'),
 (Y,'1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---','machine M','8/3 map, memory word r as a stack (table not closed); 108-step path to HALT from r = empty','<b>open</b> (probviously halting cryptid; 400 macro steps, about 10³²⁰ TM steps, no HALT; closest approach 102 macro steps)','about 3⁻⁸⁰ per reset of r (wiki, Racheline)','out of reach','≈ 10^10^38 (wiki, heuristic)'),
 (Y,'1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA','','same machine as M, start state F (in the naming of M); reaches C(12, [6]) after 111 steps','<b>open</b> (probviously halting cryptid; 400 macro steps without HALT, closest approach 103 macro steps)','as M','out of reach','≈ 10^10^38.1 (wiki, heuristic)'),
