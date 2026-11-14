@@ -19,7 +19,7 @@ def relate(Y,X):
             P=dict(zip('ABCDEF',p))
             if ren(dd,P)==dy: return mir,[k for k,v in P.items() if v=='A'][0]
 short={'Some structure seen':'structure','Looks like a lottery':'lottery','Rules known, no proof':'rules known','Rules known, no proof, being worked on':'rules known (wip)',
- 'Little known':'little known','Little known, being worked on':'little known (wip)','Reported by others':'reported by others','Cryptid':'**cryptid**',
+ 'Little known':'','Little known, being worked on':'(wip)','Reported by others':'reported by others','Cryptid':'**cryptid**',
  'Proof in an open PR':'**open PR**','Proof ready, PR soon':'**proof ready**'}
 rows=[]
 for n,gr in enumerate(g,1):
@@ -30,7 +30,7 @@ for n,gr in enumerate(g,1):
         if code==base: rel='start A'
         else:
             mir,s=relate(code,base); rel='start %s%s'%(s,', mirrored' if mir else '')
-        mem.append('#%d%s: %s, %s'%(k,' = [%d](#%d)'%(c,c) if c else '',rel,st))
+        mem.append('#%d%s: %s%s'%(k,' = [%d](#%d)'%(c,c) if c else '',rel,', '+st if st else ''))
         if info[k][2] and info[k][2] not in cls: cls.append(info[k][2])
     rows.append('| %d | `%s` | %s | %s |'%(n,base,'<br>'.join(mem),'; '.join(cls) or '–'))
 from collections import Counter
