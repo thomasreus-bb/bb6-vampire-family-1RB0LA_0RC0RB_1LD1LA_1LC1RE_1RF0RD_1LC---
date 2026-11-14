@@ -35,9 +35,9 @@ for n,gr in enumerate(g,1):
     rows.append('| %d | `%s` | %s | %s |'%(n,base,'<br>'.join(mem),'; '.join(cls) or '–'))
 from collections import Counter
 sizes=Counter(len(x) for x in g)
-hdr='''## Same table among the 607 holdouts (13 Nov 2026)
+hdr='''## Same transition table (the 12 TM rules) among the 607 holdouts (13 Nov 2026)
 
-All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, transition table against transition table, up to renaming of the states and mirroring (L ↔ R) (`scan/groups607.py`). Two machines with the same table are the same machine, started in different states, like nos. 51, 61, 71 and 93.
+All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, transition table against transition table, up to renaming of the states and mirroring (L ↔ R) (`scan/groups607.py`). Two machines with the same table are the same machine, started in different states, like nos. 51, 61, 71 and 93. "Table" here means the plain transition table of the Turing machine (its 12 rules, as in the machine code), not a macro table such as the Bell table of the vampire family.
 
 - **130 groups, 335 of the 607 machines.** Group sizes: %s.
 - "start X" means: this machine is the machine in column 2 (the first member of the group) started in state X, possibly mirrored. In bbchallenge normal form each start state gives another code.
