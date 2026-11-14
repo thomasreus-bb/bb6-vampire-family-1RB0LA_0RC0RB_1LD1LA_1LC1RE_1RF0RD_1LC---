@@ -122,7 +122,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 13 | `1RB1LF_1LC1RB_1LF1LD`<br>`1LE0RD_1LB---_1LA0LA` | #31: start A, rules known<br>#222: start B, mirrored, rules known | Shift-overflow structural counter | ok |
 | 14 | `1RB0LC_0RC0RF_1RD0RE`<br>`1LE0RA_0LA0LE_0RC---` | #32: start A, lottery<br>#170: start C, lottery<br>#333: start D, mirrored, lottery | Skelet 1-like Class 1 | ok |
 | 15 | `1RB0LF_1LC0RB_0LD1LA`<br>`0RA1LE_0LA0RA_1LA---` | #33: start A, lottery<br>#39: start B, mirrored, lottery | Chaotic Fractal Type 1 | ok |
-| 16 | `1RB1RD_1LC0LE_1LD0LB`<br>`0RB0RA_1RD1LF_0LC---` | #38 = [48](#48): start A, rules known<br>#59: start B, mirrored, structure<br>#124: start C, mirrored, structure | Unknown | ok; same behaviour by diagram (`diagrams/group16.png`) |
+| 16 | `1RB1RD_1LC0LE_1LD0LB`<br>`0RB0RA_1RD1LF_0LC---` | #38 = [48](#48): start A, rules known<br>#59: start B, mirrored, structure<br>#124: start C, mirrored, structure | Unknown | ok |
 | 17 | `1RB0LE_1RC1RA_1RD0RF`<br>`1RE0RA_1LA1LD_1RA---` | #40: start A, rules known<br>#250: start E, mirrored, rules known<br>#327: start C, rules known<br>#540: start D, rules known | Unknown | ok |
 | 18 | `1RB0RD_1RC0LF_1LA0LB`<br>`---1RE_1LB1RA_0LC0RA` | #42 = [74](#74): start A, structure<br>#140 = [77](#77): start B, structure | Bell-like | ok |
 | 19 | `1RB0LF_1RC0RB_0RD1LE`<br>`0LE0RA_1LC1LA_0LD---` | #44: start A, structure<br>#390: start B, structure | Unknown | ok |
