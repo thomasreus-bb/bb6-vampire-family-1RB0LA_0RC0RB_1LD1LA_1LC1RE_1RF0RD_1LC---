@@ -108,7 +108,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | group | machine (first member) | members | class | check (14 Nov 2026) |
 |---|---|---|---|---|
 | 1 | `1RB1LD_1LC0RF_0RD0LB`<br>`1LB0LE_1LA---_0RA0RF` | #5: start A, structure<br>#286: start D, mirrored, structure | Bouncer + Chaotic Edge | ok |
-| 2 | `1RB1LE_0RC1RC_0RD0RB`<br>`1RE0RF_1LA0LE_---1RB` | #7: start A, structure<br>#535: start E, mirrored | Chaotic Fractal Type 1 | ok; same behaviour by diagram (`diagrams/group2.png`) |
+| 2 | `1RB1LE_0RC1RC_0RD0RB`<br>`1RE0RF_1LA0LE_---1RB` | #7: start A, structure<br>#535: start E, mirrored, structure | Chaotic Fractal Type 1 | ok; same behaviour by diagram (`diagrams/group2.png`) |
 | 3 | `1RB0LE_1RC0LB_1RD1RF`<br>`1RE0RB_1LA0RD_0RE---` | #11: start A, structure<br>#287: start C, structure<br>#423: start E, mirrored, structure | Chaotic Bell Class 3 | behaviour test differs: #11/#287, #11/#423 |
 | 4 | `1RB1LF_1LC1RD_1RA1LA`<br>`0RA0RE_0RC---_1RF0LC` | #12 = [73](#73): start A, lottery<br>#84 = [72](#72): start B, mirrored, lottery<br>#440 = [97](#97): start C, lottery | Bell-like | ok; one machine, the same level map for all three (see no. 73) |
 | 5 | `1RB0LB_1RC0LA_1RD---`<br>`0RE1LD_1LF0RF_1LA1RB` | #13: start A<br>#243: start E, mirrored | Skelet 1-like Class 1 | ok |
