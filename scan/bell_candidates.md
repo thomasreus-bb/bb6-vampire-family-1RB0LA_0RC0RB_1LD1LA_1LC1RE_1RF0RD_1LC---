@@ -130,7 +130,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 21 | `1RB1LD_1RC1RE_1LA0RA`<br>`1RC0LB_0LA1RF_---1RB` | #47: start A<br>#91: start C, mirrored | Skelet 1-like Class 1 | ok |
 | 22 | `1RB0LC_0RC0RB_1LD0RE`<br>`0LE0LF_1LA0LB_1RA---` | #49: start A, lottery<br>#100: start C, mirrored, lottery<br>#248: start E, mirrored, lottery | Skelet 1-like Class 1 | ok |
 | 23 | `1RB0RC_1LC0RD_0LD0LC`<br>`1RE0LA_0RA0RF_1RC---` | #52: start A, lottery<br>#263: start D, lottery<br>#541: start B, mirrored, lottery | Skelet 1-like Class 1 | ok |
-| 24 | `1RB0LC_1RC0RA_1LA0LD`<br>`1LE0RB_1RD1LF_0LA---` | #54: start A, structure<br>#200: start B, structure<br>#272: start D, mirrored, structure<br>#545: start C, mirrored, structure<br>#570: start E, structure | Chaotic Bell Class 3 | behaviour test differs: #54/#272, #200/#272, #200/#545, #272/#545, #272/#570 |
+| 24 | `1RB0LC_1RC0RA_1LA0LD`<br>`1LE0RB_1RD1LF_0LA---` | #54: start A, structure<br>#200: start B, structure<br>#272: start D, mirrored, structure<br>#545: start C, mirrored, structure<br>#570: start E, structure | Chaotic Bell Class 3 | ok |
 | 25 | `1RB0LC_1RC1RF_1LD0RA`<br>`1LE0LD_1RC0LA_0LA---` | #58 = [52](#52): start A, rules known<br>#104 = [45](#45): start E, structure | Quadratic Mess | ok |
 | 26 | `1RB1RC_1LC1LE_1RD0RA`<br>`1LB0RA_0LD1LF_1LD---` | #60: start A, lottery<br>#146: start D, mirrored, lottery<br>#218: start C, lottery<br>#485: start B, mirrored, lottery | Skelet 1-like Class 1 | ok |
 | 27 | `1RB---_0RC0RE_1RD1RF`<br>`1LE0LB_1RC0LD_1RC1RA` | #62 = [61](#61): start A, **cryptid**<br>#212 = [71](#71): start C<br>#369 = [51](#51): start D, mirrored, **cryptid**<br>#377 = [93](#93): start E | Bell-like | ok |
