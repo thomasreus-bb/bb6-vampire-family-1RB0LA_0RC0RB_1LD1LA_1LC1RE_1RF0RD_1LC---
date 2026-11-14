@@ -118,7 +118,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 9 | `1RB1RA_1LC0RF_1LD1LC`<br>`1LE0LB_0LF---_1RA1RB` | #23: start A<br>#215: start B, mirrored<br>#288: start D, mirrored<br>#502: start F | – | ok |
 | 10 | `1RB1RE_0RC---_1RD0RD`<br>`1LE0LF_1RA0LD_1LC1RB` | #25 = [43](#43): start A, lottery<br>#37 = [42](#42): start D, mirrored, lottery<br>#336 = [22](#22): start C, lottery | Quadratic Mess | ok |
 | 11 | `1RB0RE_1RC0RA_0LD0LB`<br>`0LA1LE_1LC1LF_0LA---` | #28: start A, **open PR**<br>#430: start E, mirrored, **open PR** | Chaotic Bell Class 3 | ok |
-| 12 | `1RB1RA_1LC1LE_1RA1LD`<br>`0LB0LC_1LF0RE_1LB---` | #30: start A, rules known<br>#73: start B, mirrored, rules known<br>#169: start E, mirrored, rules known<br>#354: start F, mirrored, rules known | Shift-overflow counter | behaviour test differs: #73/#354 |
+| 12 | `1RB1RA_1LC1LE_1RA1LD`<br>`0LB0LC_1LF0RE_1LB---` | #30: start A, rules known<br>#73: start B, mirrored, rules known<br>#169: start E, mirrored, rules known<br>#354: start F, mirrored, rules known | Shift-overflow counter | ok |
 | 13 | `1RB1LF_1LC1RB_1LF1LD`<br>`1LE0RD_1LB---_1LA0LA` | #31: start A, rules known<br>#222: start B, mirrored, rules known | Shift-overflow structural counter | ok |
 | 14 | `1RB0LC_0RC0RF_1RD0RE`<br>`1LE0RA_0LA0LE_0RC---` | #32: start A, lottery<br>#170: start C, lottery<br>#333: start D, mirrored, lottery | Skelet 1-like Class 1 | ok |
 | 15 | `1RB0LF_1LC0RB_0LD1LA`<br>`0RA1LE_0LA0RA_1LA---` | #33: start A, lottery<br>#39: start B, mirrored, lottery | Chaotic Fractal Type 1 | ok |
