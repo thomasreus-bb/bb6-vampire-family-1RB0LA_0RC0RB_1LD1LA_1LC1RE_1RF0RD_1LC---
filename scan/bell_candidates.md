@@ -96,7 +96,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 - **130 groups, 335 of the 607 machines.** Group sizes: 71 of size 2, 45 of size 3, 12 of size 4, 2 of size 5.
 - "start X" means: this machine is the machine in column 2 (the first member of the group) started in state X, possibly mirrored. In bbchallenge normal form each start state gives another code.
 - Same table does not mean equivalent. The runs from the different starts are different halting questions, unless they meet; this was checked only for the candidates (see *Related machines among the candidates*).
-- A proof for one member (e.g. a closed family of configurations that never halts) often transfers to the others if it covers their starts too. In the guide such proofs always cover the whole group: groups 11 (PR #49), 72 (PR #50), 75 (PR #55), 96 (PR #55) and 119 (PR #43), all with the proof in an open PR, have the same status for all members. Cryptids occur in groups 27 (= nos. 51, 61, 71, 93), 44 (= nos. 46, 54), 74 (= nos. 58, 68) and 78 (no. 24 and two others).
+- A proof for one member (e.g. a closed family of configurations that never halts) often transfers to the others if it covers their starts too. In the guide such proofs always cover the whole group: groups 11 (PR #49, a halting proof), 72 (PR #50), 75 and 96 (both PR #55) and 119 (PR #43), all with the proof in an open busycoq PR, have the same status for all members. Cryptids occur in groups 27 (= nos. 51, 61, 71, 93), 44 (= nos. 46, 54), 74 (= nos. 58, 68) and 78 (no. 24 and two others).
 - Column 3: Holdout Guide number, candidate number (if any), start state, guide status. Column 4: the guide's classes of the members.
 
 - **Check (14 Nov 2026, our own):**
