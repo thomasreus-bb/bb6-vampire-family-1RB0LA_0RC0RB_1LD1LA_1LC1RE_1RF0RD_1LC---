@@ -225,7 +225,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 116 | `1RB0RC_1LC0RD_0LD0LC`<br>`1RE0LA_0RA0RF_0LB---` | #359: start A, lottery<br>#580: start B, mirrored, lottery<br>#586: start D, lottery | Skelet 1-like Class 1 | ok |
 | 117 | `1RB0LE_1RC---_0RD0RE`<br>`1LE0RB_0LA0LF_0RC0LD` | #363: start A, lottery<br>#560: start D, mirrored, lottery | Quadratic Mess | ok |
 | 118 | `1RB0LE_1LC1RD_1LA0RB`<br>`1RC1RB_1LF0LC_---0RC` | #364: start A, structure<br>#380: start B, mirrored, structure<br>#521: start C, mirrored, structure | Bouncer + Chaotic Edge | ok |
-| 119 | `1RB1LA_1LA1RC_1RD0RB`<br>`1LE1LD_---1LF_1RA0LF` | #375: start A, **open PR**<br>#433: start B, mirrored, **open PR** | Shift-overflow counter | behaviour test differs: #375/#433 |
+| 119 | `1RB1LA_1LA1RC_1RD0RB`<br>`1LE1LD_---1LF_1RA0LF` | #375: start A, **open PR**<br>#433: start B, mirrored, **open PR** | Shift-overflow counter | ok |
 | 120 | `1RB0LC_0RC0RF_1RD0LE`<br>`1LA1RA_1LC1RB_0RB---` | #376: start A, rules known<br>#519: start D, mirrored, rules known | Unknown | ok |
 | 121 | `1RB1LC_1LA0RE_0LD---`<br>`1LB1LD_1RB1RF_0LA0RB` | #384: start A, structure<br>#431: start B, mirrored, structure | Unknown | ok |
 | 122 | `1RB0LF_1RC0LB_1RD1RB`<br>`1RE1RF_1LA---_0RC1LA` | #386: start A, rules known<br>#487: start D, rules known | Counter Class 2 | ok |
