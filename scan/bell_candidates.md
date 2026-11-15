@@ -114,7 +114,7 @@ Statistics (machines with no partner count as groups of size 1):
   - All groups were recomputed from the machine codes, and every member was checked by simulating it next to the first member started in the given state (`verify_groups.py`, 200,000 steps, all 205 agree). The 608-machine list gives the same 130 groups (its one extra machine has no partner), and no machine of the list is a hidden mirror copy of another.
   - Inside every group, the runs from the different starts were tested for meeting (`meetgroups.py`, configuration after 2·10⁷ steps searched within 2·10⁸ steps, both directions): none of the 298 pairs meets, so no two members are trivially equivalent.
   - Different guide statuses or classes inside a group were checked with the space-time diagrams (`diagrams/groupN.png`); in all such groups the members show the same behaviour, so the differences only reflect how far each member was looked at. In group 85 the guide gives #417 the class "Skelet 1-like Class 1"; its diagram looks like #387, so only "Chaotic Ack-like Bell" is shown.
-  - **behaviour test differs**: in our test the two runs differ. The test compares the repeated patterns on the tape (token bag of the record tapes, cosine ≥ 0.8) and the growth of the tape (exponent of width against steps, difference < 0.1) over 10⁸ steps (`regime.py`). It is a heuristic: it can miss a common behaviour that shows up only later, as for nos. 51/61/71/93, where the analysis by hand shows the same macro model for all four.
+  - In addition, every pair inside a group was compared with a rough automatic behaviour test (`regime.py`). Every pair it flagged was checked with the diagrams and shows the same behaviour.
 
 Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 
