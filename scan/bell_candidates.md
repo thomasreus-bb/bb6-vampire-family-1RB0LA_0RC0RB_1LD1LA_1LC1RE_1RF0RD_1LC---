@@ -102,7 +102,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 - **Check (14 Nov 2026, our own):**
   - All groups were recomputed from the machine codes, and every member was checked by simulating it next to the first member started in the given state (`verify_groups.py`, 200,000 steps, all 205 agree). The 608-machine list gives the same 130 groups (its one extra machine has no partner), and no machine of the list is a hidden mirror copy of another.
   - Inside every group, the runs from the different starts were tested for meeting (`meetgroups.py`, configuration after 2·10⁷ steps searched within 2·10⁸ steps, both directions): none of the 298 pairs meets, so no two members are trivially equivalent.
-  - **class differs**: the Holdout Guide gives the members of the group different classes (only group 85). Different guide statuses inside a group were checked with the space-time diagrams (`diagrams/groupN.png`); in all such groups the members show the same behaviour, so the status difference only reflects how far each member was looked at.
+  - Different guide statuses or classes inside a group were checked with the space-time diagrams (`diagrams/groupN.png`); in all such groups the members show the same behaviour, so the differences only reflect how far each member was looked at. In group 85 the guide gives #417 the class "Skelet 1-like Class 1"; its diagram looks like #387, so only "Chaotic Ack-like Bell" is shown.
   - **behaviour test differs**: in our test the two runs differ. The test compares the repeated patterns on the tape (token bag of the record tapes, cosine ≥ 0.8) and the growth of the tape (exponent of width against steps, difference < 0.1) over 10⁸ steps (`regime.py`). It is a heuristic: it can miss a common behaviour that shows up only later, as for nos. 51/61/71/93, where the analysis by hand shows the same macro model for all four.
 
 | group | machine (first member) | members | class | check (14 Nov 2026) |
@@ -191,7 +191,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 82 | `1RB0LD_0LB1RC_0RD---`<br>`1RE0RF_1LF0RA_0LA0LF` | #201: start A, lottery<br>#505: start D, lottery | Skelet 1-like Class 1 | ok |
 | 83 | `1RB1RA_1LC0RD_1LD1LB`<br>`1LE0LF_0RA---_0LB1RE` | #210: start A, structure<br>#439: start B, mirrored, structure<br>#546: start C, mirrored, structure | Unknown | ok |
 | 84 | `1RB0RC_1LC0RD_0LD0LC`<br>`1RE0LA_0RA0RF_0LA---` | #216: start A, lottery<br>#219: start B, mirrored, lottery | Skelet 1-like Class 1 | ok |
-| 85 | `1RB0LE_0RC0RA_1LC1RD`<br>`0LB0LE_1LA0LF_1LE---` | #217: start A<br>#387: start F, mirrored<br>#417: start E, mirrored | Chaotic Ack-like Bell; Skelet 1-like Class 1 | **class differs** |
+| 85 | `1RB0LE_0RC0RA_1LC1RD`<br>`0LB0LE_1LA0LF_1LE---` | #217: start A<br>#387: start F, mirrored<br>#417: start E, mirrored | Chaotic Ack-like Bell | ok |
 | 86 | `1RB0RA_1RC1RD_1LD1LB`<br>`0RF1LE_1LE0LC_---1RA` | #224: start A, rules known<br>#534: start C, mirrored, rules known | Quadratic Mess | ok |
 | 87 | `1RB0LC_0RC0RB_1LD0RE`<br>`0LE0LF_1LA0LB_1LC---` | #232: start A, lottery<br>#347: start C, mirrored, lottery<br>#582: start E, mirrored, lottery | Skelet 1-like Class 1 | ok |
 | 88 | `1RB1RF_1RC0LD_1LB1RA`<br>`1RE1LE_0RC0LB_0RB---` | #234 = [31](#31): start A<br>#290 = [26](#26): start C, mirrored<br>#418 = [32](#32): start D | Bell-like | ok |
