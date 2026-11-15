@@ -178,7 +178,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 69 | `1RB1RA_1LC0RB_1LE0LD`<br>`0LB1LD_0RA0LF_---0RE` | #174 = [80](#80): start A, structure<br>#326 = [91](#91): start B, mirrored, structure<br>#604 = [108](#108): start C, mirrored, structure | Bell-like | ok |
 | 70 | `1RB0LD_0RC1RA_1RD1RE`<br>`1LA0LE_0RA0RF_1RC---` | #175 = [81](#81): start A, rules known<br>#297 = [89](#89): start F, rules known<br>#410 = [96](#96): start C, rules known<br>#507 = [44](#44): start D, mirrored, rules known | Bell-like | ok |
 | 71 | `1RB1RE_1LC0RA_1LA0LD`<br>`1LB0LF_0RB0LE_0LA---` | #176: start A, rules known<br>#600: start D, mirrored, rules known | Quadratic Mess | ok |
-| 72 | `1RB0RA_0RC0LD_1LA1RF`<br>`1LE1LD_1LB1RE_---1RA` | #177: start A, **open PR**<br>#574: start D, mirrored, **open PR** | Counter Class 3 | behaviour test differs: #177/#574 |
+| 72 | `1RB0RA_0RC0LD_1LA1RF`<br>`1LE1LD_1LB1RE_---1RA` | #177: start A, **open PR**<br>#574: start D, mirrored, **open PR** | Counter Class 3 | ok |
 | 73 | `1RB0LE_1RC0RE_1RD0RA`<br>`1RE1LC_0LA0RF_1LE---` | #178: start A, lottery<br>#205: start F, mirrored, lottery<br>#491: start B, lottery | Chaotic 1dCA-like in bouncer | ok |
 | 74 | `1RB0LB_1LC0RE_1LA1LD`<br>`0LC---_0RB0RF_1RE1RB` | #180 = [68](#68): start A, **cryptid**<br>#497 = [58](#58): start B, mirrored, **cryptid** | Bell-like | ok |
 | 75 | `1RB0LD_0RC---_0RD0RF`<br>`1LE0LA_1LF1LE_1RA0RD` | #181: start A, **proof ready**<br>#343: start F, **proof ready**<br>#374: start D, mirrored, **proof ready** | Unknown | behaviour test differs: #181/#374, #343/#374 |
