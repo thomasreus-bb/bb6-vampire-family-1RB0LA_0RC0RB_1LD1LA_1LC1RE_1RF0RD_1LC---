@@ -142,7 +142,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 33 | `1RB1LD_1RC1RE_1LA0RA`<br>`1RC0LB_0LA1RF_---1RD` | #69: start A<br>#166: start B | Skelet 1-like Class 1 | ok |
 | 34 | `1RB---_0RC0LA_1LD0RB`<br>`1LE0RF_1LF1LC_1LB0LD` | #70: start A, rules known<br>#85: start C, mirrored, structure<br>#409: start D, mirrored, structure | Shift-overflow bouncer counter | ok |
 | 35 | `1RB0RC_1LC0RD_0LD0LC`<br>`1RE0LA_0RA0RF_0LC---` | #71: start A, lottery<br>#105: start B, mirrored, lottery<br>#338: start D, lottery | Skelet 1-like Class 1 | ok |
-| 36 | `1RB---_1LC0RB_0LD0LC`<br>`1RE1RB_1RD1LF_1LA0LE` | #75 = [2](#2): start A, HALT found (TM1, O1)<br>#419 = [1](#1): start F, mirrored, HALT found (TM1-F, O2)<br>#552 = [5](#5): start B, mirrored, HALT found (TM2a, O3) | Bell-like | ok: vampire family, all members HALT found by simulation (30 Oct / 1 Nov); guide status of 3 Nov outdated |
+| 36 | `1RB---_1LC0RB_0LD0LC`<br>`1RE1RB_1RD1LF_1LA0LE` | #75 = [2](#2): start A, HALT found (TM1, O1)<br>#419 = [1](#1): start F, mirrored, HALT found (TM1-F, O2)<br>#552 = [5](#5): start B, mirrored, HALT found (TM2a, O3) | Bell-like | ok: vampire family |
 | 37 | `1RB---_0RC0RF_0RD0RA`<br>`1RE0LB_1LF0LE_1RC0LE` | #77: start A, structure<br>#498: start E, mirrored, structure | Unknown | ok |
 | 38 | `1RB---_0LC0LB_1RF0LD`<br>`1RE0RB_1LB0RC_0RD1RA` | #78: start A, lottery<br>#403: start E, mirrored, lottery<br>#408: start C, lottery | Skelet 1-like Class 1 | ok |
 | 39 | `1RB0LA_0RC1RF_0LD1RE`<br>`1LA0RB_0RD---_1RA1RD` | #79: start A, structure<br>#282: start D, mirrored, structure | Shift-overflow counter | ok |
@@ -215,7 +215,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 106 | `1RB1LC_1RC---_1LD1LC`<br>`1RE0LC_1RF0RE_1RA0RD` | #295: start A, rules known<br>#393: start E, rules known | Structural counter + chaotic edge | ok |
 | 107 | `1RB0LF_0RC1RD_0LD0RA`<br>`1RC0RE_1RF---_1LA0LB` | #299: start A, structure<br>#357: start E, structure | Chaotic Bell Class 2 | ok |
 | 108 | `1RB1RA_0LC0RF_1LD1LC`<br>`1RE1LB_---0RA_1RF0RD` | #301: start A, structure<br>#329: start C, mirrored, structure | Bouncer + Chaotic Edge | ok |
-| 109 | `1RB---_0RC0RB_1LD1LE`<br>`1LC1RF_1RB0LE_1RA0RD` | #303 = [6](#6): start A, HALT found (TM2b, O4)<br>#331 = [4](#4): start F, HALT found (TM2', O2) | Bell-like | ok: vampire family, all members HALT found by simulation (30 Oct / 1 Nov); guide status of 3 Nov outdated |
+| 109 | `1RB---_0RC0RB_1LD1LE`<br>`1LC1RF_1RB0LE_1RA0RD` | #303 = [6](#6): start A, HALT found (TM2b, O4)<br>#331 = [4](#4): start F, HALT found (TM2', O2) | Bell-like | ok: vampire family |
 | 110 | `1RB0LC_1RC0RC_1LD0RB`<br>`1LA0LE_1LD1LF_1LD---` | #306: start A<br>#461: start D, mirrored | Skelet 1-like Class 2 | ok |
 | 111 | `1RB---_0RC1RA_1RD1RF`<br>`1LE0LF_1RB0LD_0RE0LC` | #318: start A, rules known<br>#322: start C, rules known | Shift-overflow structural counter | ok |
 | 112 | `1RB1RF_1RC1LC_1LD0LE`<br>`---1LE_1RF0LB_0RA1RE` | #319: start A, structure<br>#447: start B, structure<br>#469: start E, structure | Unknown | ok |
