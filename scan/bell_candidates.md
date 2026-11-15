@@ -407,7 +407,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <a id="t46"></a>[46](#46) | C | `1RB---_1RC1LE`<br>`0RD0RF_0RE0LA`<br>`1LF0LB_1LA1LD` | 1.74 | needle-like: only 2 tails (all information in one number) | 751; Quadratic Mess; Simulated to 1e2848; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1456268738428145684); Alistaire | **#103 Cryptid**: Its halting reduces to a Collatz-like question. |
 | 🟩 <a id="t47"></a>[47](#47) | 🟩<br>C | 🟩<br>`1RB0LF_1LC0LD`<br>`1RD1LB_---1RE`<br>`0RA1RE_1LA0LE` | 1.47 | needle-like: only 1 tail (all information in one number) | 764; Quadratic Mess | **#56 Proof in an open PR**: Open [PR 67](https://github.com/ccz181078/busycoq/pull/67), by Dahoas (12 Nov 2026), proves that it never halts. Not merged yet. (Before: "Cryptid: Its halting reduces to a Collatz-like question.") |
 | 🟩 <a id="t48"></a>[48](#48) | 🟩<br>C | 🟩<br>`1RB1RD_1LC0LE`<br>`1LD0LB_0RB0RA`<br>`1RD1LF_0LC---` | 1.52 | translated cycler with period 4.1·10²⁴ steps (exact Lin check on the accelerated simulation): never halts, if the simulator is exact (8 Nov 2026); | 29; Unknown; Simulated to 1.08e17 steps.; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1456934113943621653); Alistaire | **#38 Rules known, no proof**: Exact sweep laws. A phase map picks (5b+d)/3, (7b+d)/5 or b+13 by residues. Built tapes can halt. |
-| <a id="t49"></a>[49](#49) | C | `1RB1LA_1RC0RF`<br>`1RD---_0LE1RB`<br>`---0LA_1LD1RF`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF) | 1.44 | no clear single-block Bell configuration found | 686; Cubic Mess; Potential cryptid. One of 3 holdouts with 2 undefined transitions, may be cryptid. 10^14 doesn't halt. Analysed thoroughly using formal proofs from Claude Opus 4.6.; [1](https://discord.com/channels/960643023006490684/1410023564249403577/1410023564249403577), [2](https://wiki.bbchallenge.org/wiki/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF); dyuan, mxdys, hipparcos, DrDisentangle | **#416 Reported by others**: Others have worked on it or discussed it. |
+| <a id="t49"></a>49 | entfernt | | | | | |
 | <a id="t50"></a>[50](#50) | C | `1RB1RB_1LC0RE`<br>`---1LD_0RA1LB`<br>`1RA1LF_0LE1LE`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE) | 1.50 | no clear single-block Bell configuration found | 794; Quadratic Mess | **#548 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t51"></a>[51](#51) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>C | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB0RE_1LC0RA`<br>`1LA1LD_1LC1LF`<br>`0LC0LB_1LE---` | 1.60 | needle-like: only 1 tail (all information in one number); **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) – "equivalent to no. 61 (?)" there | 1063; **CRYPTID**, Bell-like; Probviously halting cryptid; [1](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA); -d | **#369 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t52"></a>[52](#52) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>C | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0LC_1RC1RF`<br>`1LD0RA_1LE0LD`<br>`1RC0LA_0LA---` | 1.61 | stack of counters; HALT only for one exact z per level with an empty stack (17, 44, 285, 712, …); chance converges, about 10⁻⁵ after 10¹¹ steps (8 Nov 2026); no clear single-block Bell configuration found | 765; Quadratic Mess | **#58 Rules known, no proof**: A stack of counters drained by a level chain. A halt needs an exact hit of a small target set. |
@@ -1781,15 +1781,7 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 <img src="diagrams/1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---.png" alt="space-time diagram" height="350">
 
 <a id="49"></a>
-## [49](#t49). `1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF` (class C)
-- **BusyBeaverWiki article:** [1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF](https://wiki.bbchallenge.org/wiki/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF)
-
-- scan: 11 levels, 31 phases, mean factor 1.44 (sd 0.27); level starts: 18 25 73 86 138 238 281 312 456 593 711
-- level analysis: Bell type `LA` with left part `01`, 4 levels; n: 6 12 27 746; ratios: 2.000 2.250 27.630; 3 different tails
-- verdict: no clear single-block Bell configuration found
-- diagram: 42,959 steps, tape width 139 cells
-
-<img src="diagrams/1RB1LA_1RC0RF_1RD---_0LE1RB_---0LA_1LD1RF.png" alt="space-time diagram" height="350">
+## [49](#t49). entfernt
 
 <a id="50"></a>
 ## [50](#t50). `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` (class C)
