@@ -1,0 +1,8 @@
+step 49248 E1 at pos -64 (tape -429..25, head at 365 from left, 89 from right): 01010101[1]00010001
+step 18721951 E1 at pos -495 (tape -9417..34, head at 8922 from left, 529 from right): 01010101[1]00010001
+step 18863921 E1 at pos -9353 (tape -9718..34, head at 365 from left, 9387 from right): 01010101[1]00010001
+width 80974
+step 49248 E1 at pos -64 (tape -429..25, head at 365 from left, 89 from right): 01010101[1]00010001
+step 18721949 E1 at pos -495 (tape -9417..34, head at 8922 from left, 529 from right): 01010101[1]00010001
+step 18863917 E1 at pos -9353 (tape -9718..34, head at 365 from left, 9387 from right): 01010101[1]00010001
+width 80974
