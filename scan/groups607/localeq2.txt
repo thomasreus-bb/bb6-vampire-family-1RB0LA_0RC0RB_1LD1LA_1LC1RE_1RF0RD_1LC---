@@ -1,0 +1,9 @@
+#52/#216 slot F0: run of #52: FAIL: depth 30 not enough (context 01010101011010100); run of #216: FAIL: depth 30 not enough (context 1010101011010100)
+#265/#407 slot F0: run of #265: FAIL: depth 30 not enough (context 0101010101010101010101010101100); run of #407: FAIL: depth 30 not enough (context 1001100110011001100110011001100)
+#196/#404 slot F0: run of #196: FAIL: depth 30 not enough (context 1001100110011001100110011001100); run of #404: FAIL: depth 30 not enough (context 1111111111111111111111111111100)
+#123/#223 slot E1: run of #123: FAIL: depth 30 not enough (context 0110110110110110110110110110011); run of #223: FAIL: depth 30 not enough (context 0110011001100110011001100110011)
+#88/#312 slot E1: run of #88: FAIL: depth 30 not enough (context 0100010001000100010001000100011); run of #312: FAIL: depth 30 not enough (context 1011011011011011011011011011011)
+#88/#449 slot E1: run of #88: FAIL: depth 30 not enough (context 0100010001000100010001000100011); run of #449: FAIL: depth 30 not enough (context 0100010001000100010001000100011)
+#312/#449 slot E1: run of #312: FAIL: depth 30 not enough (context 1011011011011011011011011011011); run of #449: FAIL: depth 30 not enough (context 0100010001000100010001000100011)
+#253/#432 slot F0: run of #253: FAIL: depth 30 not enough (context 0111111111111111111111111111111); run of #432: FAIL: depth 30 not enough (context 0111111111111111111111111111111)
+#81/#520 slot A0: run of #81: FAIL: start chain of depth 0 fails; run of #520: FAIL: start chain of depth 0 fails

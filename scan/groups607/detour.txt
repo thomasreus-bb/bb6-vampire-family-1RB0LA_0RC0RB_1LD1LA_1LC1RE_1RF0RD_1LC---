@@ -1,0 +1,44 @@
+run of #52, detour #52 vs #216 at slot F0:
+uses 3, tested 3: meet 3, no meet 0; max detour 3 steps; detour lengths <10,<80,<640,<5120,...: 3 0 0 0 0 0 0 0
+run of #216, detour #216 vs #52 at slot F0:
+uses 3, tested 3: meet 3, no meet 0; max detour 3 steps; detour lengths <10,<80,<640,<5120,...: 3 0 0 0 0 0 0 0
+run of #265, detour #265 vs #407 at slot F0:
+uses 4, tested 4: meet 4, no meet 0; max detour 3 steps; detour lengths <10,<80,<640,<5120,...: 4 0 0 0 0 0 0 0
+run of #407, detour #407 vs #265 at slot F0:
+uses 4, tested 4: meet 4, no meet 0; max detour 3 steps; detour lengths <10,<80,<640,<5120,...: 4 0 0 0 0 0 0 0
+run of #196, detour #196 vs #404 at slot F0:
+uses 6, tested 6: meet 6, no meet 0; max detour 3 steps; detour lengths <10,<80,<640,<5120,...: 6 0 0 0 0 0 0 0
+run of #404, detour #404 vs #196 at slot F0:
+uses 6, tested 6: meet 6, no meet 0; max detour 3 steps; detour lengths <10,<80,<640,<5120,...: 6 0 0 0 0 0 0 0
+run of #81, detour #81 vs #520 at slot A0:
+no meeting within 2000000 steps at use 1 (step 0)
+  no meeting within 2000000 steps at use 2 (step 90)
+  no meeting within 2000000 steps at use 3 (step 412)
+uses 5, tested 5: meet 0, no meet 5; max detour 0 steps; detour lengths <10,<80,<640,<5120,...: 0 0 0 0 0 0 0 0
+run of #520, detour #520 vs #81 at slot A0:
+no meeting within 2000000 steps at use 1 (step 0)
+  no meeting within 2000000 steps at use 2 (step 87)
+  no meeting within 2000000 steps at use 3 (step 12354)
+uses 7, tested 7: meet 0, no meet 7; max detour 0 steps; detour lengths <10,<80,<640,<5120,...: 0 0 0 0 0 0 0 0
+run of #123, detour #123 vs #223 at slot E1:
+uses 4334579, tested 6332: meet 6332, no meet 0; max detour 3 steps; detour lengths <10,<80,<640,<5120,...: 6332 0 0 0 0 0 0 0
+run of #223, detour #223 vs #123 at slot E1:
+uses 4756717, tested 6754: meet 6754, no meet 0; max detour 3 steps; detour lengths <10,<80,<640,<5120,...: 6754 0 0 0 0 0 0 0
+run of #88, detour #88 vs #312 at slot E1:
+uses 220, tested 220: meet 220, no meet 0; max detour 2 steps; detour lengths <10,<80,<640,<5120,...: 220 0 0 0 0 0 0 0
+run of #312, detour #312 vs #88 at slot E1:
+uses 220, tested 220: meet 220, no meet 0; max detour 2 steps; detour lengths <10,<80,<640,<5120,...: 220 0 0 0 0 0 0 0
+run of #88, detour #88 vs #449 at slot E1:
+uses 220, tested 220: meet 220, no meet 0; max detour 5 steps; detour lengths <10,<80,<640,<5120,...: 220 0 0 0 0 0 0 0
+run of #449, detour #449 vs #88 at slot E1:
+uses 220, tested 220: meet 220, no meet 0; max detour 5 steps; detour lengths <10,<80,<640,<5120,...: 220 0 0 0 0 0 0 0
+run of #312, detour #312 vs #449 at slot E1:
+uses 220, tested 220: meet 220, no meet 0; max detour 6 steps; detour lengths <10,<80,<640,<5120,...: 220 0 0 0 0 0 0 0
+run of #449, detour #449 vs #312 at slot E1:
+uses 220, tested 220: meet 220, no meet 0; max detour 6 steps; detour lengths <10,<80,<640,<5120,...: 220 0 0 0 0 0 0 0
+
+[exited with code 124]
+run of #253, detour #253 vs #432 at slot F0:
+uses 8304914, tested 915: meet 915, no meet 0; max detour 3 steps; detour lengths <10,<80,<640,<5120,...: 915 0 0 0 0 0 0 0
+run of #432, detour #432 vs #253 at slot F0:
+uses 9961346, tested 998: meet 998, no meet 0; max detour 3 steps; detour lengths <10,<80,<640,<5120,...: 998 0 0 0 0 0 0 0
