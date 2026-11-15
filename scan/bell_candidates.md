@@ -858,8 +858,6 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <a id="18"></a>
 ## [18](#t18). `1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD` (class B)
 
-- scan: 13 levels, 114 phases, mean factor 1.36 (sd 0.12); level starts: 8 10 14 19 25 32 52 61 70 83 131 203 311
-- verdict: no clear single-block Bell configuration found
 - diagram: 2,207,708 steps, tape width 1001 cells
 
 <img src="diagrams/1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD.png" alt="space-time diagram" height="350">
