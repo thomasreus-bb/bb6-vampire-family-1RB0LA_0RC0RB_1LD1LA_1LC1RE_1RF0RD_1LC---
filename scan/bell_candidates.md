@@ -170,7 +170,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 61 | `1RB0RE_1LC0LE_---1LD`<br>`1LE1LB_1RA0LF_0RD1LA` | #149: start A, rules known<br>#328: start D, mirrored, rules known | Quadratic Mess | ok |
 | 62 | `1RB1LF_1RC1LD_1LB1LE`<br>`1LE0LD_0LA0RE_1RD---` | #150 = [78](#78): start A, lottery<br>#160 = [79](#79): start B, lottery<br>#349 = [92](#92): start D, mirrored, lottery | Bell-like | ok |
 | 63 | `1RB0RF_1LC1LF_1RD1LC`<br>`---1RE_0RC1RF_1RA0LB` | #151: start A, rules known<br>#472: start F, rules known | Shift-overflow counter | ok |
-| 64 | `1RB1RE_0LC0LF_0LA0LD`<br>`1LE1LC_1RA0LB_---0RE` | #152: start A, rules known<br>#324: start E, rules known | Quadratic Mess | behaviour test differs: #152/#324 |
+| 64 | `1RB1RE_0LC0LF_0LA0LD`<br>`1LE1LC_1RA0LB_---0RE` | #152: start A, rules known<br>#324: start E, rules known | Quadratic Mess | ok |
 | 65 | `1RB0RF_0LC1LB_1RD1LA`<br>`1RE0LC_0RA1RD_---0RC` | #161: start A, structure<br>#553: start D, structure<br>#562: start C, structure | Chaotic Bell Class 1 | ok |
 | 66 | `1RB1RF_0RC0LE_1RD0RF`<br>`1LB---_1LB1LE_1RA0LC` | #162: start A, structure<br>#202: start E, mirrored, structure<br>#477: start C, structure | Unknown | ok |
 | 67 | `1RB0LC_1LA0RD_1RA0LA`<br>`1RE1RD_1RA1RF_1LC---` | #165: start A<br>#373: start C | Skelet 1-like Class 1 | ok |
