@@ -153,7 +153,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 44 | `1RB---_1RC1LE_0RD0RF`<br>`0RE0LA_1LF0LB_1LA1LD` | #103 = [46](#46): start A, **cryptid**<br>#464 = [54](#54): start F, mirrored, **cryptid** | Quadratic Mess | ok |
 | 45 | `1RB1RF_1LC0RE_1LE1LD`<br>`1RE0LC_1RA1RA_1RD---` | #108: start A, structure<br>#163: start F, structure | Shift-overflow counter | ok |
 | 46 | `1RB1RA_1LC0LF_1RA1LD`<br>`1LB1LE_1LC0LC_---0RA` | #109: start A, structure<br>#372: start B, mirrored, structure<br>#572: start D, mirrored, structure | Spaghetti | ok |
-| 47 | `1RB0RA_0RC0LE_0LD1RA`<br>`1LB0RF_0LD1LC_1RD---` | #113: start A, structure<br>#453: start D, mirrored, structure | Unknown | behaviour test differs: #113/#453 |
+| 47 | `1RB0RA_0RC0LE_0LD1RA`<br>`1LB0RF_0LD1LC_1RD---` | #113: start A, structure<br>#453: start D, mirrored, structure | Unknown | ok |
 | 48 | `1RB---_0RC0LF_1LD0RE`<br>`1RC0LB_1RD1RA_1LB0LC` | #114: start A, rules known<br>#367: start D, rules known<br>#378: start C, mirrored, rules known | Monotone list | ok |
 | 49 | `1RB0RF_1RC0RA_1LD1RB`<br>`1LE0LD_1LB0LB_0RB---` | #115: start A, rules known<br>#144: start B, rules known<br>#456: start D, mirrored, rules known<br>#537: start E, mirrored, rules known | Shift-overflow counter | ok |
 | 50 | `1RB0RA_1LC0RA_0LD0LC`<br>`1RD1RE_1LF0LE_---0LB` | #116: start A, lottery<br>#513: start B, mirrored, lottery | Unknown | ok |
