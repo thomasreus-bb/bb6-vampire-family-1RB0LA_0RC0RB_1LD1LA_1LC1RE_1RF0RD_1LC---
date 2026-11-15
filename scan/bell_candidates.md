@@ -93,6 +93,17 @@ More machines can be added here as they are found.
 
 All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, transition table against transition table, up to renaming of the states and mirroring (L ↔ R) (`scan/groups607/groups607.py`, table made with `mk_table.py`). Two machines with the same table are the same machine, started in different states, like nos. 51, 61, 71 and 93. "Table" here means the plain transition table of the Turing machine (its 12 rules, as in the machine code), not a macro table such as the Bell table of the vampire family.
 
+Statistics (machines with no partner count as groups of size 1):
+
+| members per group | groups | machines |
+|---|---|---|
+| 1 | 272 | 272 |
+| 2 | 71 | 142 |
+| 3 | 45 | 135 |
+| 4 | 12 | 48 |
+| 5 | 2 | 10 |
+| **total** | **402** | **607** |
+
 - **130 groups, 335 of the 607 machines.** Group sizes: 71 of size 2, 45 of size 3, 12 of size 4, 2 of size 5.
 - "start X" means: this machine is the machine in column 2 (the first member of the group) started in state X, possibly mirrored. In bbchallenge normal form each start state gives another code.
 - Same table does not mean equivalent. The runs from the different starts are different halting questions, unless they meet; this was checked only for the candidates (see *Related machines among the candidates*).
