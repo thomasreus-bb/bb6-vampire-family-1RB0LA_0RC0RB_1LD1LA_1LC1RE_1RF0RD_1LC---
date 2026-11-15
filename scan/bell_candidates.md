@@ -232,7 +232,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 123 | `1RB1RF_1LC1RD_1RA1LD`<br>`1RE0LA_---0RC_0LC1RB` | #391: start A<br>#543: start C | Skelet 1-like Class 1 | ok |
 | 124 | `1RB0RA_1LC0LE_1RA1LD`<br>`0LB1LF_1LD0RC_1LB---` | #398 = [94](#94): start A, rules known<br>#530 = [103](#103): start B, mirrored, rules known | Bell-like | ok |
 | 125 | `1RB0LC_0RC1RF_1RD0RE`<br>`1LE0RA_0LA0LE_0LA---` | #406: start A, lottery<br>#575: start C, lottery | Skelet 1-like Class 1 | ok |
-| 126 | `1RB0LA_0RC0RB_1LD1LA`<br>`1LC1RE_1RF0RD_1LC---` | #421 = [3](#3): start A<br>#476 = [7](#7): start E | Bell-like | behaviour test differs: #421/#476 |
+| 126 | `1RB0LA_0RC0RB_1LD1LA`<br>`1LC1RE_1RF0RD_1LC---` | #421 = [3](#3): start A, HALT found (TM2, O2)<br>#476 = [7](#7): start E, HALT found (TM2b', O4) | Bell-like | ok: vampire family |
 | 127 | `1RB0LD_0LC0RE_1LA0RD`<br>`0RB0LD_1RC1RF_1RA---` | #425: start A, rules known<br>#488: start F, rules known | Shift-overflow counter | ok |
 | 128 | `1RB0LF_1LC0LA_---1RD`<br>`1RF1RE_1LF1RD_1LB0RE` | #437: start A, structure<br>#501: start D, structure | Bouncer + Chaotic Edge | ok |
 | 129 | `1RB---_0LC0RB_1RA1LD`<br>`1LE1LF_1LB0LF_0RC0LA` | #450: start A, structure<br>#555: start D, mirrored, structure | Shift-overflow counter | ok |
