@@ -182,7 +182,7 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
 | 73 | `1RB0LE_1RC0RE_1RD0RA`<br>`1RE1LC_0LA0RF_1LE---` | #178: start A, lottery<br>#205: start F, mirrored, lottery<br>#491: start B, lottery | Chaotic 1dCA-like in bouncer | ok |
 | 74 | `1RB0LB_1LC0RE_1LA1LD`<br>`0LC---_0RB0RF_1RE1RB` | #180 = [68](#68): start A, **cryptid**<br>#497 = [58](#58): start B, mirrored, **cryptid** | Bell-like | ok |
 | 75 | `1RB0LD_0RC---_0RD0RF`<br>`1LE0LA_1LF1LE_1RA0RD` | #181: start A, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)**<br>#343: start F, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)**<br>#374: start D, mirrored, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)** | Unknown | ok |
-| 76 | `1RB0RF_1LC0RC_0LD1LC`<br>`1RE1LB_1RF---_1LE1RA` | #184: start A, structure<br>#510: start F, mirrored, structure | Chaotic Ack-like Bell | behaviour test differs: #184/#510 |
+| 76 | `1RB0RF_1LC0RC_0LD1LC`<br>`1RE1LB_1RF---_1LE1RA` | #184: start A, structure<br>#510: start F, mirrored, structure | Chaotic Ack-like Bell | ok |
 | 77 | `1RB---_0RC1RD_1LA0LA`<br>`1LE0RB_1LF1LE_1LC0LD` | #185: start A<br>#422: start F, mirrored<br>#441: start C, mirrored<br>#490: start D, mirrored<br>#538: start E, mirrored | – | ok |
 | 78 | `1RB0LD_1LC0RA_1RA1LB`<br>`1LA1LE_1RF0LC_---0RE` | #186 = [24](#24): start A, **cryptid**<br>#317: start D, mirrored, **cryptid**<br>#573: start C, **cryptid** | Quadratic Mess | ok |
 | 79 | `1RB0RB_1LC1RA_1LF0LD`<br>`0LE1LD_1LA1LC_---1LA` | #187: start A, structure<br>#516: start E, mirrored, structure | Shift-overflow bouncer counter | ok |
