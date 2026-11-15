@@ -370,7 +370,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t9"></a>[9](#9) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0RB_1LB0LC`<br>`1RD1LC_1RE0RA`<br>`0RF1RA_---1LB` | 1.33 | needle-like: only 2 tails (all information in one number) | 756; Quadratic Mess; Part of Category 1 | **#314 Cryptid**: Its halting reduces to a Collatz-like question. |
 | 🟩 <a id="t10"></a>[10](#10) | 🟩<br>B | 🟩<br>`1RB---_0RC0RD`<br>`1LD1RB_0LE0LC`<br>`1RA0LF_1LD1LE`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE) | 1.24 | **HALT after ≈ 8.3·10⁴¹ steps** (exact number in the [chapter](#10)) (Yeyito, 7 Nov 2026; Rocq proof); two-register system, exact Bell map with types A/B/C; no HALT in 10¹⁰ Bells (about 2·10³⁰ steps); HALT needs an exact hit (see [10](#10)) | 688; Cubic Mess; Part of Category 1 | **#395 Reported by others**: Others have worked on it or discussed it. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t11"></a>[11](#11) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LB_1RC---`<br>`1LD1LF_1LE0LD`<br>`0LA1RF_1LC0RE` | 1.21 | **equivalent to [37](#37)** ; all information under no. 37 | 703; Cubic Mess | – (not in the guide: removed, equivalent to no. 37) |
-| <a id="t12"></a>[12](#12) | B | `1RB1RA_1LC1LB`<br>`1RE0LD_1RA0LB`<br>`---0RF_1RC0RA` | 1.27 | no clear single-block Bell configuration found | 731; Cubic Mess | **#486 Looks like a lottery**: Our experiments suggest the outcome turns on chaotic digits. |
+| <a id="t12"></a>12 | entfernt | | | | | |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t13"></a>[13](#13) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0RF_1RC1RF`<br>`1LD0LE_---1LC`<br>`1RA1LE_1LC1RB`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB) | 1.33 | needle: exact Bell map (Sheep, Apr 2026; checked 10 Nov 2026), HALT iff n + 2 = 2^k; 2·10⁶ Bells to n ≈ 10²⁴¹⁷⁹⁶ without HALT: convergent, almost certainly never halts (Collatz-like, no proof) | 754; Quadratic Mess; Part of Category 1; [1](https://discord.com/channels/960643023006490684/1448375857046360094/1491403477421785158); sheep | **#503 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t14"></a>[14](#14) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0LF_1LC1RA`<br>`0RE0RD_---1LE`<br>`1LF1RC_1LC1LA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA) | 1.21 | needle: exact Collatz-like map on (m, r), HALT only if a cycle ends with m = 2^k − k − 1; very probably non-halting (see [14](#14)) | 797; Quadratic Mess | **#565 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t15"></a>[15](#15) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0RB_1LC1RE`<br>`1LF0LD_1RA1LD`<br>`1RC1RB_---1LC`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC) | 1.36 | needle-like: only 2 tails (all information in one number) | 747; **CRYPTID**, Quadratic Mess; Cryptid, Part of Category 1; [1](https://wiki.bbchallenge.org/wiki/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC); Andrew Ducharme, DrDisentangle | **#198 Cryptid**: Its halting reduces to a Collatz-like question. |
@@ -688,14 +688,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 - **Equivalent to [no. 37](#37)**  Removed from the BB(6) holdout list on 30 Oct 2026 because of this equivalence. All information is collected under no. 37.
 
 <a id="12"></a>
-## [12](#t12). `1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA` (class B)
-
-- scan: 19 levels, 42 phases, mean factor 1.27 (sd 0.10); level starts: 47 63 80 87 96 122 144 181 252 288 391 576 684 834
-- level analysis: Bell type `LC` with left part `01`, 2 levels; n: 4 27; ratios: 6.750; 1 different tails
-- verdict: no clear single-block Bell configuration found
-- diagram: 38,184 steps, tape width 143 cells
-
-<img src="diagrams/1RB1RA_1LC1LB_1RE0LD_1RA0LB_---0RF_1RC0RA.png" alt="space-time diagram" height="350">
+## [12](#t12). entfernt
 
 <a id="13"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [13](#t13). `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` (class B)
