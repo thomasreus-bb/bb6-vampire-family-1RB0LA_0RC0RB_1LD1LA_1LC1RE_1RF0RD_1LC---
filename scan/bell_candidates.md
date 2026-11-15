@@ -105,6 +105,14 @@ All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, tran
   - Different guide statuses or classes inside a group were checked with the space-time diagrams (`diagrams/groupN.png`); in all such groups the members show the same behaviour, so the differences only reflect how far each member was looked at. In group 85 the guide gives #417 the class "Skelet 1-like Class 1"; its diagram looks like #387, so only "Chaotic Ack-like Bell" is shown.
   - **behaviour test differs**: in our test the two runs differ. The test compares the repeated patterns on the tape (token bag of the record tapes, cosine ≥ 0.8) and the growth of the tape (exponent of width against steps, difference < 0.1) over 10⁸ steps (`regime.py`). It is a heuristic: it can miss a common behaviour that shows up only later, as for nos. 51/61/71/93, where the analysis by hand shows the same macro model for all four.
 
+Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
+
+| | structure ("Some structure seen") | lottery ("Looks like a lottery") | rules known ("Rules known, no proof") |
+|---|---|---|---|
+| pattern seen | yes | yes | yes |
+| exact rules | no | partly, enough to see the lottery | yes, complete, often proved in Rocq |
+| what is missing | the rules | usually a way to rule out the lottery | an invariant or an argument that the rules never lead to HALT |
+
 | group | machine (first member) | members | class | check (14 Nov 2026) |
 |---|---|---|---|---|
 | 1 | `1RB1LD_1LC0RF_0RD0LB`<br>`1LB0LE_1LA---_0RA0RF` | #5: start A, structure<br>#286: start D, mirrored, structure | Bouncer + Chaotic Edge | ok |
