@@ -432,10 +432,10 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t71"></a>[71](#71) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>– | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB1RD_1LC0LE`<br>`1RA0LB_1RA1RF`<br>`0RA0RC_1RE---` | – | for later analysis | 1075; Bell-like; Could be solvable | **#212 Reported by others**: Others have worked on it or discussed it. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t72"></a>[72](#72) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LE_1LC1RC`<br>`1LA1RD_1LD0RB`<br>`0LC0LF_0LB---` | – | **same machine as no. 73** (mirrored, states renamed), started in state B; handled together with [73](#73), the runs never meet; earlier note: same level map as no. 73; 50,000 levels to n ≈ 10⁸⁸⁰⁶, no HALT for any residue sequence up to depth 400 (10 Nov 2026): HALT very unlikely, proof candidate together with no. 73 | 1076; Bell-like; [1](https://discord.com/channels/960643023006490684/1400456788955893840/1404371323265876010); -d | **#84 Reported by others**: Others have worked on it or discussed it. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t73"></a>[73](#73) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LF_1LC1RD`<br>`1RA1LA_0RA0RE`<br>`0RC---_1RF0LC` | – | 3/2 Bell, exact level map, 50,000 levels to n ≈ 10⁸⁸⁰⁶; HALT only from tails the real run never produces (9 Nov 2026): HALT very unlikely, candidate for a proof | 1079; Bell-like | **#12 Looks like a lottery**: A 3/2 Bell. Every known halt needs a case that real transitions avoid. |
-| <a id="t74"></a>[74](#74) | – | `1RB0RD_1RC0LF`<br>`1LA0LB_---1RE`<br>`1LB1RA_0LC0RA` | – | for later analysis | 1081; Bell-like | **#42 Some structure seen**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
+| 🟩 <a id="t74"></a>[74](#74) | 🟩<br>– | 🟩<br>`1RB0RD_1RC0LF`<br>`1LA0LB_---1RE`<br>`1LB1RA_0LC0RA` | – | **never halts**: open [PR 70](https://github.com/ccz181078/busycoq/pull/70) (Zohu, 16 Nov 2026) proves that it never halts | 1081; Bell-like | **#42 Some structure seen**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
 | <a id="t75"></a>[75](#75) | – | `1RB1RD_1RC1LD`<br>`0LA1RA_1LE0RC`<br>`---1LF_0LA0LB` | – | for later analysis | 1082; Bell-like | **#67 Rules known, no proof**: One table, two starts. Law proved in Rocq: a 4/3 map whose branches depend on n mod 6. Collatz-like, with a large margin so far. |
 | <a id="t76"></a>[76](#76) | – | `1RB1LF_1LC0RD`<br>`---1LD_1RB1RE`<br>`1LA0LB_0LA0LE` | – | for later analysis | 1086; Bell-like | **#129 Rules known, no proof** (being worked on): Exact macro machine proved in Rocq for all sizes. A halt needs one rare event that real runs avoid. No invariant yet. |
-| <a id="t77"></a>[77](#77) | – | `1RB0LF_1LC0LA`<br>`1RA0RD_---1RE`<br>`1LA1RC_0LB0RC` | – | for later analysis | 1087; Bell-like | **#140 Some structure seen**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
+| 🟩 <a id="t77"></a>[77](#77) | 🟩<br>– | 🟩<br>`1RB0LF_1LC0LA`<br>`1RA0RD_---1RE`<br>`1LA1RC_0LB0RC` | – | **never halts**: open [PR 69](https://github.com/ccz181078/busycoq/pull/69) (Zohu, 16 Nov 2026) proves that it never halts | 1087; Bell-like | **#140 Some structure seen**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
 | <a id="t78"></a>[78](#78) | – | `1RB1LF_1RC1LD`<br>`1LB1LE_1LE0LD`<br>`0LA0RE_1RD---` | – | for later analysis | 1088; Bell-like | **#150 Looks like a lottery**: Our experiments suggest the outcome turns on chaotic digits. |
 | <a id="t79"></a>[79](#79) | – | `1RB1LC_1LA1LD`<br>`1LD0LC_0LE0RD`<br>`1RA1LF_1RC---` | – | for later analysis | 1089; Bell-like | **#160 Looks like a lottery**: Our experiments suggest the outcome turns on chaotic digits. |
 | <a id="t80"></a>[80](#80) | – | `1RB1RA_1LC0RB`<br>`1LE0LD_0LB1LD`<br>`0RA0LF_---0RE` | – | for later analysis | 1090; Bell-like | **#174 Some structure seen**: A Bell with an escalating refill: a counter that counts down and refills at growing levels. |
@@ -467,7 +467,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <a id="t106"></a>[106](#106) | – | `1RB1LD_0LC1RC`<br>`1RA1RD_1LE0RB`<br>`---1LF_0LC0LA` | – | for later analysis | 1135; Bell-like | **#597 Rules known, no proof**: One table, two starts. Law proved in Rocq: a 4/3 map whose branches depend on n mod 6. Collatz-like, with a large margin so far. |
 | <a id="t107"></a>[107](#107) | – | `1RB1LD_0RC1RC`<br>`1RD0RE_0LA0LF`<br>`0RF---_1RA1LA` | – | for later analysis | 1136; Bell-like | **#599 Looks like a lottery**: A 3/2 Bell. |
 | <a id="t108"></a>[108](#108) | – | `1RB0RE_0LC0RF`<br>`1LD1LC_1RA0LD`<br>`0RD1RE_---0LB` | – | for later analysis | 1137; Bell-like | **#604 Some structure seen**: A Bell with an escalating refill: a counter that counts down and refills at growing levels. |
-| <a id="t109"></a>[109](#109) | – | `1RB1LE_0LC1RE`<br>`---1LD_0RD1LA`<br>`0RF1RF_1RA0LB` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 605; Shift-overflow structural counter; Possibly tetrational machine; [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178); Racheline | **#87 Some structure seen**: Nested shift-overflow counters on 2-cell units with base-4 levels. The first overflow freezes the old tape. |
+| 🟩 <a id="t109"></a>[109](#109) | 🟩<br>– | 🟩<br>`1RB1LE_0LC1RE`<br>`---1LD_0RD1LA`<br>`0RF1RF_1RA0LB` | – | **halts**: open [PR 75](https://github.com/ccz181078/busycoq/pull/75) (Zohu, 16 Nov 2026) proves that it halts; potential cryptid before | 605; Shift-overflow structural counter; Possibly tetrational machine; [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178); Racheline | **#87 Some structure seen**: Nested shift-overflow counters on 2-cell units with base-4 levels. The first overflow freezes the old tape. |
 | <a id="t110"></a>[110](#110) | – | `1RB1RD_1LC1RA`<br>`---1LD_1LE0RA`<br>`1LF0LE_0RB0LB` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 563; Shift-overflow bouncer counter; Possibly tetrational machine; [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178); Racheline | **#167 Some structure seen**: A wide shift-overflow bouncer counter. |
 | <a id="t111"></a>[111](#111) | – | `1RB0LE_0RC0RA`<br>`1LD0LC_1LA0LB`<br>`1RA1LF_---0LC` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 564; Shift-overflow bouncer counter; Possibly tetrational machine; [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178); Racheline | **#479 Some structure seen**: A wide shift-overflow bouncer counter. |
 | <a id="t112"></a>[112](#112) | – | `1RB1LD_1RC0LE`<br>`1LA1RE_0LF1LA`<br>`1RB0RB_---0LB` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 560; **CRYPTID**, Shift-overflow bouncer counter; Probviously halting cryptid; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1337994337790853181), 2; Racheline | **#22 Cryptid**: Its halting reduces to a Collatz-like question. |
@@ -2195,7 +2195,9 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <img src="diagrams/1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC.png" alt="space-time diagram" height="350">
 
 <a id="74"></a>
-## [74](#t74). `1RB0RD_1RC0LF_1LA0LB_---1RE_1LB1RA_0LC0RA` (for later analysis)
+## 🟩 [74](#t74). `1RB0RD_1RC0LF_1LA0LB_---1RE_1LB1RA_0LC0RA` (for later analysis)
+
+- **Never halts**: open [PR 70](https://github.com/ccz181078/busycoq/pull/70) by Zohu (16 Nov 2026), proof of nonhalting with an opaque-block certificate; holdout #42. Together with [77](#77) (same table, other start), both machines are covered by open PRs.
 
 - **Same table as no. [77](#77), other start state (13 Nov 2026).** No. 74 is no. 77 started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2225,7 +2227,9 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <img src="diagrams/1RB1LF_1LC0RD_---1LD_1RB1RE_1LA0LB_0LA0LE.png" alt="space-time diagram" height="350">
 
 <a id="77"></a>
-## [77](#t77). `1RB0LF_1LC0LA_1RA0RD_---1RE_1LA1RC_0LB0RC` (for later analysis)
+## 🟩 [77](#t77). `1RB0LF_1LC0LA_1RA0RD_---1RE_1LA1RC_0LB0RC` (for later analysis)
+
+- **Never halts**: open [PR 69](https://github.com/ccz181078/busycoq/pull/69) by Zohu (16 Nov 2026), proof of nonhalting with an opaque-block certificate; holdout #140. Together with [74](#74) (same table, other start), both machines are covered by open PRs.
 
 - **Same table as no. [74](#74), other start state (13 Nov 2026).** No. 77 is no. 74 started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2656,7 +2660,9 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 - **New:** the remaining four are still holdouts and become **nos. 109–112**. In the BB6 sheet they are not classified as Bell-like, so they were not among nos. 57–108.
 
 <a id="109"></a>
-## [109](#t109). `1RB1LE_0LC1RE_---1LD_0RD1LA_0RF1RF_1RA0LB` (potential cryptid, for later analysis)
+## 🟩 [109](#t109). `1RB1LE_0LC1RE_---1LD_0RD1LA_0RF1RF_1RA0LB` (potential cryptid, for later analysis)
+
+- **Halts**: open [PR 75](https://github.com/ccz181078/busycoq/pull/75) by Zohu (16 Nov 2026), proof that it halts; holdout #87.
 
 - source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), Racheline's list of possibly tetrational machines
 - BB6 sheet: row 605, Shift-overflow structural counter, notes: Possibly tetrational machine
