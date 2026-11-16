@@ -1245,6 +1245,18 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
     A non-halting proof needs a recursive invariant over these levels, for example "in every reachable configuration of every level, the block a and the residue N mod 3 never meet as in the halting entries `1 2`, `48 64`, `48 109`". This is a substantial piece of work, comparable to the analyses of the known cryptids.
 
+- **Conclusion (16 Nov 2026, Fable 5.2).** Tools: `mb.c`, `absfix.py`, `resize.py` in `scan/m31/`; they use the clean tapes of the real orbit (`snaps2 3000000000 > snaps.txt`, 83,022 tapes) and run exact macro steps of the real TM. Three spot checks, not a systematic study.
+  - *For a proof.*
+    - **Residues close when the blocks are large.** Each block is reduced to "exact value below 4, otherwise residue mod 3", together with the head position. With all large blocks really large and chosen independently, the set of classes closes at 209 classes without a HALT (6 tapes per class, a light sample).
+    - **The macro steps are simple:** nearly always the rule (x + 4, y − 3), otherwise a local end rule. The nested runs arise from many macro steps, so each rule could be proved on its own.
+  - *Against a proof.*
+    - **With small blocks the set does not close.** If block sizes just above the bound are allowed too, the set keeps growing (more than 3,900 classes after 27 rounds) and contains halting classes. Small and large blocks are coupled in the real orbit, and the abstraction loses this coupling.
+    - **Real tapes with new sizes.** Every large block of a real tape was replaced by a random size with the same residue. With the same residue mod 12, 1 of 3,000 tapes halts; with the same residue mod 3, 6 of 3,000.
+    - **The halting cases** are for example `1 71 35 1`, `1 44 5 1` and `39 52 1`, head at the right end. In the first two the main block is smaller than the prefix block before it.
+    - **A thin set.** Among all tapes `1 x y 1` with x, y from 4 to 109 (head at the right end) 47 of 11,236 halt, 85 % of them with y < x.
+  - *Assessment.* The same pattern as in no. [73](#73): the residues give a clean finite structure, but inside it there are halting configurations that are excluded only by the size relations of the blocks. A proof would have to show that these relations never occur in the real orbit, presumably a statement about the residues mod 3 of the 4/3 map, of the Collatz kind. **Not hopeless, but the chances are rather small** (my estimate: about two to one against). What speaks for the machine: no HALT in 1.9·10⁶ Bells from random starts (24 Oct 2026).
+  - *Not done.* The decisive test would be an exact model of the macro steps with block sizes as numbers, and with it all reachable configurations over all residue sequences, as for no. 73. Thomas decided not to pursue this.
+
 <img src="diagrams/m31_bell_types.png" alt="Bell types of no. 31" width="700">
 
 *Steps 0–214,000, time downward, 160 steps per row; Bell number, type and prefix P at the left (green C, blue B, red A).*
