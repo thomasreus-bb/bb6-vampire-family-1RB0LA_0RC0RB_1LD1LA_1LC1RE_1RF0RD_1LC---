@@ -2116,6 +2116,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [73](#t73). `1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC` (for later analysis)
 
 - **Same table as nos. [72](#72), [97](#97), other start state (13 Nov 2026).** No. 73 is no. 72 (mirrored) started in state C; no. 97 started in state B. The runs never meet (see no. 73). Overview: *Related machines among the candidates* at the top.
+- Repo: https://github.com/thomasreus-bb/1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC-plus-2-equivalent-TM
 
 - BB6 sheet: row 1079, Bell-like
 - diagram: 492,524 steps, tape width 1001 cells
