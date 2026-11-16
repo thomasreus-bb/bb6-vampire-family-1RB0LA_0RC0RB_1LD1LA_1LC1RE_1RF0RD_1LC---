@@ -1255,7 +1255,7 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
     - **The halting cases** are for example `1 71 35 1`, `1 44 5 1` and `39 52 1`, head at the right end. In the first two the main block is smaller than the prefix block before it.
     - **A thin set.** Among all tapes `1 x y 1` with x, y from 4 to 109 (head at the right end) 47 of 11,236 halt, 85 % of them with y < x.
   - *Assessment.* The same pattern as in no. [73](#73): the residues give a clean finite structure, but inside it there are halting configurations that are excluded only by the size relations of the blocks. A proof would have to show that these relations never occur in the real orbit, presumably a statement about the residues mod 3 of the 4/3 map, of the Collatz kind. **Not hopeless, but the chances are rather small** (my estimate: about two to one against). What speaks for the machine: no HALT in 1.9·10⁶ Bells from random starts (24 Oct 2026).
-  - *Not done.* The decisive test would be an exact model of the macro steps with block sizes as numbers, and with it all reachable configurations over all residue sequences, as for no. 73. Thomas decided not to pursue this.
+  - *Not done.* The decisive test would be an exact model of the macro steps with block sizes as numbers, and with it all reachable configurations over all residue sequences, as for no. 73. This was not pursued.
 
 <img src="diagrams/m31_bell_types.png" alt="Bell types of no. 31" width="700">
 
