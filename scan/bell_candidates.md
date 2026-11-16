@@ -1068,6 +1068,14 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB1LC_1LC0RD_0LE1LA_0RF1RA_1LA0LA_---0RB.png" alt="space-time diagram" height="350">
 
+- **Analysis (16 Nov 2026, `scan/m27/`).** Level configuration: state C on a new leftmost cell, then `0 1^N 00 1^t`. A run from such a synthetic tape (`syn.c`) reproduces the real run exactly; 45 such levels up to 3·10¹⁰ steps (`real27.txt`, last N = 70,647).
+  - Inside a level the machine runs the sweep rule (a, b) → (a − 2, b + 3) of the guide: a block of 1s is drained by 2 per sweep while the next block grows by 3. When a reaches 0 or 1, the blocks are rearranged.
+  - N even: exactly (N, t) → (N − 9, t + 12). N odd: the next level depends on more than N mod 6 (an inner chain of sweep phases); N changes by −10 … +300 and t' is one of 6, 9, …, 45.
+  - **t is always a multiple of 3** (all 45 real levels: t = 6 … 33). The sweep rule keeps b mod 3.
+  - **HALT search** (`hs.py`): from `0 1^N 00 1^t` with N ≤ 159, t ≤ 63, HALT occurs for N > 3 only at (4,0), (7,0), (15,0), (7,1), (7,4), (15,4), (15,19), (21,19), (63,31): always t = 0 or t not a multiple of 3. With t a positive multiple of 3, no HALT (also N = 300…335, t ≤ 33).
+  - **Conclusion:** the run probably never halts because t stays a positive multiple of 3. A proof needs this mod-3 invariant for all intermediate configurations of a level, i.e. the complete event model of the guide ("Rules known, no proof").
+
+
 <a id="28"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [28](#t28). `1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC` (class B)
 - **BusyBeaverWiki article:** [1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC](https://wiki.bbchallenge.org/wiki/1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC)
@@ -1087,6 +1095,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 - diagram: 6,792,964 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB.png" alt="space-time diagram" height="350">
+
+- **Analysis (16 Nov 2026, `scan/m27/`).** Same type as [27](#27). Level configuration: state D on a new leftmost cell, then `0 1^N 00 1^t` (`syn2.c` with start state D reproduces the real run; 41 levels found up to 4·10¹⁰ steps, `real29.txt`, last N = 70,959). Inside a level the same sweep rule (a, b) → (a − 2, b + 3).
+  - **t is always a multiple of 3** (all real levels: t = 6 … 33).
+  - **HALT search** (`hs2.py`, N ≤ 159, t ≤ 63): HALT for N > 3 only at (15,0), (7,1), (7,2), (15,11), (49,14): again t = 0 or t not a multiple of 3.
+  - **Conclusion:** as for 27: very probably never halts, because t stays a positive multiple of 3; a proof needs the mod-3 invariant through all intermediate configurations.
+
 
 <a id="30"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [30](#t30). `1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB` (class B)
