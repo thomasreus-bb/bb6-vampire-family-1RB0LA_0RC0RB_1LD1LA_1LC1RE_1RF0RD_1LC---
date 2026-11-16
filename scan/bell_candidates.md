@@ -1074,6 +1074,11 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
   - **t is always a multiple of 3** (all 45 real levels: t = 6 … 33). The sweep rule keeps b mod 3.
   - **HALT search** (`hs.py`): from `0 1^N 00 1^t` with N ≤ 159, t ≤ 63, HALT occurs for N > 3 only at (4,0), (7,0), (15,0), (7,1), (7,4), (15,4), (15,19), (21,19), (63,31): always t = 0 or t not a multiple of 3. With N > 3 and t a positive multiple of 3, no HALT (also N = 300…335, t ≤ 33).
   - **Conclusion:** the run probably never halts because t stays a positive multiple of 3. A proof needs this mod-3 invariant for all intermediate configurations of a level, i.e. the complete event model of the guide ("Rules known, no proof").
+  - **Attempt at a proof by a closed tape language (16 Nov 2026), not successful.**
+    - Data (`blkall.c`, `blkall6.c`, all ≈ 70,000 left-edge events up to 3·10¹⁰ steps): in state A the first block (followed by `00`) is always **even**; all blocks after the second are multiples of 3; the second block is mostly a multiple of 3, sometimes not. From synthetic level starts with N = 301…313 and t = 9, 12 the first block is also always even (`par.c`), so this looks structural, not arithmetic.
+    - Intermediate configurations `A 0 1^a 00 1^b 00 1^c` with c a multiple of 3 do halt for some odd a, e.g. (a, b, c) = (3, 3, 6), (5, 4, 6…15), (17, 16, 6) (`syn3.c`). So the needed invariant is "first block even" together with the mod-3 conditions.
+    - Abstract simulation (`absim.py`: every block is either exact, if shorter than K, or "at least K, residue mod 3 or mod 6"; sound over-approximation): with K = 3…9 a halting configuration is always reachable, and with K = 12 the state count exceeds 4 million. The abstraction loses the relation between neighbouring blocks (when a long block runs out, the others can have any length of the right residue) and so builds configurations the real run never shows (e.g. a third block of length 5).
+    - A working invariant would need these relations (an exact event model with the parity of the first block), which a simple residue abstraction cannot express.
 
 
 <a id="28"></a>
