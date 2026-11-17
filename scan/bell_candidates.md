@@ -1405,6 +1405,14 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC.png" alt="space-time diagram" height="350">
 
+- **Analysis (17 Nov 2026, `scan/m38/`), started from the observation that the thin vertical lines in the diagram are never crossed.**
+  - **Events** (`ev38.c`, real run up to 1.45·10¹¹ steps, `ev38.txt`): state E on a 0 with a 1 to its left, followed by `(10)^j X (10)^⌊j/2⌋ 1` and blank, with X = `1100` or `0100`. (The filling sweep afterwards produces such a configuration every 4 steps; only its first one is counted.) Sequence of (position, j, X): (406, 99, 1100), (410, 248, 0100), (920, 121, 1100), (924, 303, 1100), (924, 760, 0100), (2458, 377, 1100), (2462, 943, 1100), (2462, 2360, 0100), (7196, 1177, 1100), (7200, 2943, 1100), (7200, 7360, 0100), (21934, 3677, 1100), (21938, 9193, 1100), (21938, 22985, 1100), (21940, 57464, 0100), (136882, 28729, 1100), (136886, 71823, 1100), (136886, 179560, 0100).
+  - **X = `0100` ends a level:** (p, j) → (p + 2j + 14, j/2 − 3, `1100`) in all cases except the first (206 → 99). **X = `1100`:** j → about 5j/2 (exactly (5j + 1)/2, (5j + 3)/2 or (5j + 5)/2), position +0 … +4, and either `1100` again or `0100`. So this is a Bell with factor 5/2 inside a level and 1/2 at the level end.
+  - **The lines** are frozen islands of the form `1^B (10)^e 0 1^c 0 1 0 1 0 0 1` just left of the event position (`snap.c`), e.g. `0(10)^16 0(1)^7 010100` in the final tape. Inside a level every `1100` event lets the head go exactly 4 cells further left into the large block 1^B (minimum positions 21893, 21889, 21885 in the level at 21934; `appr.c`); this turns two more `11` into `1010` (e grows by 2, c by 2). After the `0100` event the head never comes back left of the old event position (minimum position of the next level = 21940, 136841, …).
+  - **Why the lines are not crossed (so far only an argument, no proof):** to get left of a line, the head would have to erode the whole block 1^B, 4 cells per `1100` event. B is about twice the previous j (e.g. 1491, 4694, …), but a level has only 1–3 `1100` events in the real run. A proof needs a bound on the number of consecutive `1100` events in a level.
+  - **Open:** the choice between `1100` and `0100` (and the exact offset 1, 3 or 5) is not a function of j alone. A synthetic start with a different left island gives different results (`syn38.c`, `syn38b.c`), so the left island takes part in the event map. An exact event model needs j together with the island parameters (e, c).
+
+
 <a id="39"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [39](#t39). `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` (class C)
 
