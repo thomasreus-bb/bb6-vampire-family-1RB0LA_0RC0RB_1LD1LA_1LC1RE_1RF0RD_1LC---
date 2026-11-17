@@ -175,7 +175,7 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 48 | `1RB---_0RC0LF_1LD0RE`<br>`1RC0LB_1RD1RA_1LB0LC` | #114: start A, rules known<br>#367: start D, rules known<br>#378: start C, mirrored, rules known | Monotone list |
 | 49 | `1RB0RF_1RC0RA_1LD1RB`<br>`1LE0LD_1LB0LB_0RB---` | #115: start A, rules known<br>#144: start B, rules known<br>#456: start D, mirrored, rules known<br>#537: start E, mirrored, rules known | Shift-overflow counter |
 | 50 | `1RB0RA_1LC0RA_0LD0LC`<br>`1RD1RE_1LF0LE_---0LB` | #116: start A, lottery<br>#513: start B, mirrored, lottery | Unknown |
-| 51 | `1RB---_1LC0RF_1LD0LC`<br>`0RE0LF_0RD1LA_1RB0LE` | #117: start A, structure<br>#405: start C, mirrored, structure | Unknown |
+| 51 | `1RB---_1LC0RF_1LD0LC`<br>`0RE0LF_0RD1LA_1RB0LE` | #117: start A, structure<br>#405: start C, mirrored, structure<br>**equivalence of #117 and #405 proved in open PR [#77](https://github.com/ccz181078/busycoq/pull/77)** | Unknown |
 | 52 | `1RB0RA_1LC0RE_0LD0LB`<br>`1LA1LF_1RA0LF_1LC---` | #126: start A, rules known<br>#154: start D, mirrored, rules known<br>#370: start B, mirrored, rules known<br>#463: start E, rules known | Unknown |
 | 53 | `1RB0LB_1RC0LD_0LA1RD`<br>`1LC1LE_1LF0RE_1LD---` | #127: start A, structure<br>#291: start E, mirrored, structure | Unknown |
 | 54 | `1RB1LF_1LC0RD_---1LD`<br>`1RB1RE_1LA0LB_0LA0LE` | #129 = [76](#76): start A, rules known<br>#465 = [99](#99): start E, mirrored, rules known | Bell-like |
