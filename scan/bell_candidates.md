@@ -394,7 +394,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t33"></a>[33](#33) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LA_1LC0RE`<br>`1LF1LD_0RB0LA`<br>`1RC1RE_---0LD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/Space_Needle) | 1.69 | needle-like: only 1 tail (all information in one number) | 693; Cubic Mess; Space Needle. BMO 6. Possible cryptid; [1](https://wiki.bbchallenge.org/wiki/1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD); Katelyn Douchette | **#366 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t34"></a>[34](#34) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1RC_1LC1LC`<br>`1RE0LD_1LB1RF`<br>`---1RA_0RD1RD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD) | 1.34 | no clear single-block Bell configuration found | 792; Quadratic Mess | **#524 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t35"></a>[35](#35) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB---_0RC0LD`<br>`1LB1RC_0LE0LF`<br>`1RD1LE_1RF1RA` | 1.25 | register system; no HALT up to 5·10¹⁶ steps | 697; Cubic Mess | **#57 Looks like a lottery**: Halts if and only if it reaches one of three critical pairs. |
-| <a id="t36"></a>[36](#36) | B | `1RB1LC_1LC0RD`<br>`0LE1LA_---1RA`<br>`1RF0LA_0RF0RB` | 1.56 | same type as 27 and 29: sweep rule (a,b) → (a−2,b+3), t always a multiple of 3; HALT only for t = 0 or t not divisible by 3 (17 Nov 2026) | 783; Quadratic Mess | **#344 Rules known, no proof**: A 3/2 map (a,b) to (a-2,b+3) with a complete event model, not in Rocq. The open question is whether every state returns. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t36"></a>[36](#36) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>B | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LC_1LC0RD`<br>`0LE1LA_---1RA`<br>`1RF0LA_0RF0RB` | 1.56 | same type as 27 and 29: sweep rule (a,b) → (a−2,b+3), t always a multiple of 3; HALT only for t = 0 or t not divisible by 3 (17 Nov 2026) | 783; Quadratic Mess | **#344 Rules known, no proof**: A 3/2 map (a,b) to (a-2,b+3) with a complete event model, not in Rocq. The open question is whether every state returns. |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t37"></a>[37](#37) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>B | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB1RF_1RC0RB`<br>`0RD1LF_1LE1RE`<br>`1LA---_1RA0LC` | 1.26 | multi-register system; no HALT up to 10²² steps; low halting rate; **equivalent to [11](#11)** | 729; Cubic Mess | **#460 Looks like a lottery**: Our experiments suggest the outcome turns on chaotic digits. |
 | <a id="t38"></a>[38](#38) | C | `1RB0RE_1LC0RA`<br>`0LD0LB_1RE0LB`<br>`1RF---_0RB0RC` | 1.55 | growing list of blocks (nested); no HALT up to 4·10³³ steps | 973; Chaotic Bell Class 2 | **#353 Reported by others**: Someone reported a proof. We have not verified it. |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t39"></a>[39](#39) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>C | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB1LC_1LC0RF`<br>`0LF1LD_0LE---`<br>`1RF1LC_1LE0RA` | 1.36 | needle-like: only 2 tails (all information in one number); **analysed** (2 Nov 2026): main block plus a tail counter that follows one fixed chain; no HALT on the chain up to level 400, so very probably non-halting; see below | 1122; Bell-like | **#442 Some structure seen**: A 3/2 Bell whose phases spawn nested counters. |
@@ -1061,6 +1061,8 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <a id="27"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [27](#t27). `1RB1LC_1LC0RD_0LE1LA_0RF1RA_1LA0LA_---0RB` (class B)
 
+- **Note:** nos. [27](#27), [29](#29) and [36](#36) have very similar analyses so far (same sweep rule (a, b) → (a − 2, b + 3), level configuration `0 1^N 00 1^t`, t always a multiple of 3, HALT only for t = 0 or t not divisible by 3).
+
 - scan: 8 levels, 12 phases, mean factor 1.64 (sd 0.15); level starts: 17 32 61 98 121 188 359 545
 - level analysis: Bell type `LA` with left part `01 12 02`, 6 levels; n: 33 99 189 546 1110 5589; ratios: 3.000 1.909 2.889 2.033 5.035; 1 different tails
 - verdict: needle-like: only 1 tail (all information in one number)
@@ -1093,6 +1095,8 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <a id="29"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [29](#t29). `1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB` (class B)
+
+- **Note:** nos. [27](#27), [29](#29) and [36](#36) have very similar analyses so far (same sweep rule (a, b) → (a − 2, b + 3), level configuration `0 1^N 00 1^t`, t always a multiple of 3, HALT only for t = 0 or t not divisible by 3).
 
 - scan: 12 levels, 25 phases, mean factor 1.49 (sd 0.16); level starts: 8 10 15 29 43 77 91 146 229 362 413 633
 - level analysis: Bell type `LA` with left part `01 12 02`, 10 levels; n: 8 30 78 147 363 636 960 2226 3354 5694; ratios: 3.750 2.600 1.885 2.469 1.752 1.509 2.319 1.507 1.698; 2 different tails
@@ -1343,7 +1347,9 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 <img src="diagrams/1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA.png" alt="space-time diagram" height="350">
 
 <a id="36"></a>
-## [36](#t36). `1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB` (class B)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [36](#t36). `1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB` (class B)
+
+- **Note:** nos. [27](#27), [29](#29) and [36](#36) have very similar analyses so far (same sweep rule (a, b) → (a − 2, b + 3), level configuration `0 1^N 00 1^t`, t always a multiple of 3, HALT only for t = 0 or t not divisible by 3).
 
 - scan: 7 levels, 12 phases, mean factor 1.56 (sd 0.19); level starts: 51 83 134 149 230 485 734
 - level analysis: Bell type `RA` with left part `11 01`, 10 levels; n: 87 138 234 738 1122 1698 2568 4626 6951 10434; ratios: 1.586 1.696 3.154 1.520 1.513 1.512 1.801 1.503 1.501; 1 different tails
