@@ -860,6 +860,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 - diagram: 2,207,708 steps, tape width 1001 cells
 
+- **Search for an attractor (18 Nov 2026, after PR 79 for no. 52; `m18/per18.py`).** The exact event map, continued for 300,000 events from the last real event (n then has 24,159 digits, tail index up to 1,237): no HALT and no eventually periodic sequence of tail types (last 8,000 events, periods up to 3,000). So no. 18 does not settle into a regular cycle in this range.
+
 <img src="diagrams/1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD.png" alt="space-time diagram" height="350">
 
 - **Bell events found (15 Nov 2026, `scan/m18/`).** The kinks of the left edge in the diagram (sudden growth of the tape to the left) are level starts. At each of them the configuration is
@@ -1126,6 +1128,8 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 - **Halting criterion.** An even argument N descends by N → N/2 − 2, i.e. N + 4 is halved, until the value is odd. It reaches 4, and so the HALT, exactly if **N + 4 is a power of two (≥ 8)**: N = 4, 12, 28, 60, 124, … For an argument of b bits the chance is about 2^(−b).
 - **Run.** `g30.py` evaluates G with an explicit stack and exact integers. The orbit reaches n ≈ 10^6,683 after 697 steps without a HALT; at step 697 one evaluation of G grows its arguments past 10^22,000 (`probe30.py`) and had not returned after 40 s. In the 697 completed orbit steps no argument was of the form 2^k − 4.
 - **Assessment.** All arguments are now thousands of digits long, so the chance of an argument 2^k − 4 is below 10^(−6000), and it only falls further. **HALT is practically excluded**; a simulator cannot help. The remaining question is a proof (does every G(n) return, or is there an endless recursion).
+
+- **Search for an attractor (18 Nov 2026).** Not applicable in the same way: the orbit of G is not a simple macro step but a nested recursion whose arguments already exceed 10^22,000; no periodic pattern is visible in the 697 completed orbit steps.
 
 <img src="diagrams/1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB.png" alt="space-time diagram" height="350">
 
@@ -1791,6 +1795,8 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
   - **Why it is hard** (`shadow.py`, `excwit.py` print the spurious runs next to concrete tapes). The DFA loses the count x of the `(10)^x` block, and x becomes the next m. So the abstract system reaches every residue sequence of m, and with it every memory word r of the r-graph, including long digit strings. During an excursion the head writes such a digit string W (a sequence of alternating runs and short words of unbounded length) and later walks back over it, turning several times. A DFA that keeps only a bounded part of W then hands back contents that never occur, and some of these lead to HALT. A working invariant therefore has to describe the language of the written digit strings W, which is presumably the image of the "ternary arithmetic" that the macro step performs on r.
   - **Conclusion:** no. 44 is a three-register machine: m, plus the counts a and k in the memory word, which can stack into several groups. Unlike no. 51, no halting word is known. A non-halting proof could try to show that the language of reachable words (groups 1^a k) is closed under the rules and contains no halting case: a closed-language / invariant proof on r.
 
+- **Search for an attractor (18 Nov 2026, after PR 79 for no. 52; `m44/orb44_long.py`).** The exact macro rules C(m, r), continued for 4,000 macro steps from C(15, empty) (m then has 2,093 digits): no HALT; only 122 different words r occur, of length up to 113 cells, and r is cleared again and again; the sequence (m mod 3, r) is not eventually periodic (last 1,500 steps, periods up to 700).
+
 <img src="diagrams/1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---.png" alt="space-time diagram" height="350">
 
 <a id="45"></a>
@@ -1888,6 +1894,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
   - **HALT condition:** m ≡ 2 (mod 3) while r starts with the blocks 2, 2 (or 1, 2, 2), i.e. `011011…` or `01011011…`.
   - **The way to HALT.** A breadth-first search over r from r = empty (`scan/m44/graph51.py`, 300,000 words) finds that every explored word has a path to HALT. The shortest path from r = empty has **108 macro steps**, the same length that @-d found. It starts with residues 2, 2, 0, 0, 2, 0, … and words [] → [6] → [1, 1, 3] → [1, 3] → [3] → …. It ends with … → [1, 1, 5, 2] → [1, 5, 2] → [5, 2] → [1, 1, 2, 2] → [1, 2, 2], m ≡ 2 → HALT. The full list is in `scan/m44/halt51_path.txt`. Since every rule has slope 8/3, the residue sequence of the path fixes m modulo 3^108. The machine therefore halts from C(m, empty) exactly when m ≡ 1975700577069254261393123959451562008800234946348087 (mod 3^108) (computed by `halt51.py`; residues checked along the whole path). This matches @-d's Lean result "n = 3^108·k + constant halts", with our m in place of his n. The smallest such m has 52 digits, and m has 97 digits before the halting step.
   - **Real trajectory.** `orbit51.py` follows the real run for 400 macro steps (m up to 161 digits) with the exact rules. r is reset to empty again and again, so the run keeps returning to the start of the halting path. Its closest approach is at macro step 266, with r = [1], 102 macro steps from HALT. Each reset is a new "lottery ticket": the next 108 residues of m would have to match. With many possible halting paths, the wiki estimates the chance per reset at about 3^−80 and the halting time at about 10^10^38. So the machine is a probviously halting cryptid, but neither halting nor non-halting from the blank tape is proved.
+
+- **Search for an attractor (18 Nov 2026, after PR 79 for no. 52; `m44/orb51_long.py`).** The exact macro rules, continued for 4,000 macro steps from C(10, empty) (m then has 1,705 digits): no HALT; 41 different words r, length up to 21; the sequence (m mod 3, r) is not eventually periodic. This fits the wiki picture of a lottery with a reset of r again and again.
 
 <img src="diagrams/1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---.png" alt="space-time diagram" height="350">
 
