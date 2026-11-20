@@ -415,18 +415,18 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <a id="t54"></a>[54](#54) | C | `1RB1RF_1LC---`<br>`1LE1RD_1RA0RC`<br>`0LF0LA_0LD0RB` | 1.53 | needle-like: only 1 tail (all information in one number) | 787; Quadratic Mess | **#464 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <a id="t55"></a>[55](#55) | C | `1RB1LF_0RC1RD`<br>`1LA1LD_1LE0RA`<br>`---1LC_0LA1LA`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA) | 1.48 | no clear single-block Bell configuration found | 770; Quadratic Mess | **#136 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <a id="t56"></a>[56](#56) | C | `1RB1LE_1LB1LC`<br>`1RD0LE_---0RB`<br>`1RF1LA_0RA0RD`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD) | 1.43 | needle-like: only 1 tail (all information in one number) | 753; Quadratic Mess; Simulated to 10^190,000; [1](https://wiki.bbchallenge.org/wiki/User:Polygon/Page_for_analyses#1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD_(bbch)); [2](https://discord.com/channels/960643023006490684/1239205785913790465/1453010575901593643); [3](https://discord.com/channels/960643023006490684/1466628778905305292/1466628778905305292); Polygon, hipparcos | **#93 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t57"></a>[57](#57) | – | `1RB1RC_1LC1LE`<br>`1RA1RD_0RF0RE`<br>`1LA0LB_---1RA` | – | for later analysis | 1057; **CRYPTID**, Bell-like; A variant of Hydra and Antihydra; [1](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA); mxdys, dyuan | **#591 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t58"></a>[58](#58) | – | `1RB0LD_1RC1RF`<br>`1LA0RA_0LA0LE`<br>`1LD1LA_0RB---` | – | for later analysis | 1058; **CRYPTID**, Bell-like; Antihydra-like cryptid, probviously nonhalting; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1280916092683812916); 2; 3; dyuan, mxdys | **#497 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t59"></a>[59](#59) | – | `1RB1RA_0LC1LE`<br>`1LD1LC_1LA0LB`<br>`1LF1RE_---0RA` | – | for later analysis | 1059; **CRYPTID**, Bell-like; Antihydra. Part of Category 1; [1](https://wiki.bbchallenge.org/wiki/Antihydra) | **#36 Cryptid**: Antihydra, the best-known cryptid. Its halting is a Collatz-like question. |
-| <a id="t60"></a>[60](#60) | – | `1RB1RA_0RC1RC`<br>`1LD0LF_0LE1LE`<br>`1RA0LB_---0LC` | – | for later analysis; **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1061; **CRYPTID**, Bell-like; One of (canonical) collection of 16 probviously halting tetrational cryptids; [1](https://wiki.bbchallenge.org/wiki/1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC); mxdys | **#89 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t57"></a>[57](#57) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1RC_1LC1LE`<br>`1RA1RD_0RF0RE`<br>`1LA0LB_---1RA` | – | for later analysis | 1057; **CRYPTID**, Bell-like; A variant of Hydra and Antihydra; [1](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA); mxdys, dyuan | **#591 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t58"></a>[58](#58) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0LD_1RC1RF`<br>`1LA0RA_0LA0LE`<br>`1LD1LA_0RB---` | – | for later analysis | 1058; **CRYPTID**, Bell-like; Antihydra-like cryptid, probviously nonhalting; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1280916092683812916); 2; 3; dyuan, mxdys | **#497 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t59"></a>[59](#59) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1RA_0LC1LE`<br>`1LD1LC_1LA0LB`<br>`1LF1RE_---0RA` | – | for later analysis | 1059; **CRYPTID**, Bell-like; Antihydra. Part of Category 1; [1](https://wiki.bbchallenge.org/wiki/Antihydra) | **#36 Cryptid**: Antihydra, the best-known cryptid. Its halting is a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t60"></a>[60](#60) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1RA_0RC1RC`<br>`1LD0LF_0LE1LE`<br>`1RA0LB_---0LC` | – | for later analysis; **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1061; **CRYPTID**, Bell-like; One of (canonical) collection of 16 probviously halting tetrational cryptids; [1](https://wiki.bbchallenge.org/wiki/1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC); mxdys | **#89 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t61"></a>[61](#61) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB---_0RC0RE`<br>`1RD1RF_1LE0LB`<br>`1RC0LD_1RC1RA` | – | for later analysis; **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1062; **CRYPTID**, Bell-like; Probviously halting cryptid; [1](https://wiki.bbchallenge.org/wiki/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA); Racheline | **#62 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t62"></a>[62](#62) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0LD_1RC1RA`<br>`1LD0RB_1LE1LA`<br>`1RF0RC_---1RE`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE) | – | tetrational phases; HALT only at a phase end, chance ½ each; no HALT up to about 10^80,000 steps, next chance after about 10^(10^40,000) steps (8 Nov 2026); **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1064; **CRYPTID**, Bell-like; Probviously halting cryptid; [1](https://wiki.bbchallenge.org/wiki/1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE); mxdys | **#536 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t63"></a>[63](#63) | – | `1RB0LC_1LC0RD`<br>`1LF1LA_1LB1RE`<br>`1RB1LE_---0LE` | – | for later analysis; **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1065; **CRYPTID**, Bell-like; Probviously halting tetrational cryptid; [1](https://wiki.bbchallenge.org/wiki/1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE); Racheline | **#72 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t64"></a>[64](#64) | – | `1RB0RE_1LC1LD`<br>`0RA0LD_1LB0LA`<br>`1RF1RA_---1LB` | – | for later analysis; **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1066; **CRYPTID**, Bell-like; Probviously halting tetrational cryptid; [1](https://wiki.bbchallenge.org/wiki/1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB); Racheline, N1vi | **#179 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t65"></a>[65](#65) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>– | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB1RE_1LC1LD`<br>`---1LA_1LB1LE`<br>`0RF0RA_1LD1RF`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF) | – | tetrational cryptid: exact rules (10 Nov 2026, agree with the wiki), B = 6, 23, 300, 459,271,258,863,234; the cycle after the current one halts with chance 3/4, decided by s_t mod 4 for t ≈ 1.15·10¹⁴; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1067; **CRYPTID**, Bell-like; Probviously halting tetrational cryptid; [1](https://wiki.bbchallenge.org/wiki/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF); Racheline | **#412 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t66"></a>[66](#66) | – | `1RB0LC_0LC0RF`<br>`1RD1LC_0RA1LE`<br>`---0LD_1LF1LA` | – | for later analysis; **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1068; **CRYPTID**, Bell-like; Probviously halting tetrational cryptid, Part of Category 1; [1](https://wiki.bbchallenge.org/wiki/1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA); Racheline | **#284 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t67"></a>[67](#67) | – | `1RB1LD_1RC1RE`<br>`0LA1LB_0LD1LC`<br>`1RF0RA_---0RC` | – | for later analysis | 1069; **CRYPTID**, Bell-like; Probviously nonhalting cryptid, similar to Antihydra; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1275205992405274656), 2; mxdys | **#325 Cryptid**: Its halting reduces to a Collatz-like question. |
-| <a id="t68"></a>[68](#68) | – | `1RB0LB_1LC0RE`<br>`1LA1LD_0LC---`<br>`0RB0RF_1RE1RB` | – | for later analysis | 1070; **CRYPTID**, Bell-like; Probviously nonhalting cryptid, similar to Antihydra; [1](https://wiki.bbchallenge.org/wiki/1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB); Racheline | **#180 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t63"></a>[63](#63) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0LC_1LC0RD`<br>`1LF1LA_1LB1RE`<br>`1RB1LE_---0LE` | – | for later analysis; **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1065; **CRYPTID**, Bell-like; Probviously halting tetrational cryptid; [1](https://wiki.bbchallenge.org/wiki/1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE); Racheline | **#72 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t64"></a>[64](#64) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0RE_1LC1LD`<br>`0RA0LD_1LB0LA`<br>`1RF1RA_---1LB` | – | for later analysis; **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1066; **CRYPTID**, Bell-like; Probviously halting tetrational cryptid; [1](https://wiki.bbchallenge.org/wiki/1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB); Racheline, N1vi | **#179 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t65"></a>[65](#65) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1RE_1LC1LD`<br>`---1LA_1LB1LE`<br>`0RF0RA_1LD1RF`<br>[**wiki**](https://wiki.bbchallenge.org/wiki/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF) | – | tetrational cryptid: exact rules (10 Nov 2026, agree with the wiki), B = 6, 23, 300, 459,271,258,863,234; the cycle after the current one halts with chance 3/4, decided by s_t mod 4 for t ≈ 1.15·10¹⁴; **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1067; **CRYPTID**, Bell-like; Probviously halting tetrational cryptid; [1](https://wiki.bbchallenge.org/wiki/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF); Racheline | **#412 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t66"></a>[66](#66) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0LC_0LC0RF`<br>`1RD1LC_0RA1LE`<br>`---0LD_1LF1LA` | – | for later analysis; **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1068; **CRYPTID**, Bell-like; Probviously halting tetrational cryptid, Part of Category 1; [1](https://wiki.bbchallenge.org/wiki/1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA); Racheline | **#284 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t67"></a>[67](#67) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LD_1RC1RE`<br>`0LA1LB_0LD1LC`<br>`1RF0RA_---0RC` | – | for later analysis | 1069; **CRYPTID**, Bell-like; Probviously nonhalting cryptid, similar to Antihydra; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1275205992405274656), 2; mxdys | **#325 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t68"></a>[68](#68) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0LB_1LC0RE`<br>`1LA1LD_0LC---`<br>`0RB0RF_1RE1RB` | – | for later analysis | 1070; **CRYPTID**, Bell-like; Probviously nonhalting cryptid, similar to Antihydra; [1](https://wiki.bbchallenge.org/wiki/1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB); Racheline | **#180 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <a id="t69"></a>[69](#69) | – | `1RB1LE_0LC0LB`<br>`1RD1LC_1RD1RA`<br>`1RF0LA_---1RE` | – | for later analysis; behaves like the probviously halting cryptids, but estimated 3/5 chance of becoming a translated cycler and 2/5 chance of halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids)); **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)) | 1071; **CRYPTID**, Bell-like; Tetrational cryptid (3/5 of becoming TC, 2/5 of halting), see source 2 for more exact chances and refinements, Part of Category 1; [1](https://wiki.bbchallenge.org/wiki/1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE), 2; Racheline | **#320 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <a id="t70"></a>[70](#70) | – | `1RB1RF_1LC1RD`<br>`1LA1LC_1RA0RE`<br>`1RD1LA_---0LE` | – | for later analysis | 1074; Bell-like; Simulated to 10^4600 steps, code with log reduction; [1](https://discord.com/channels/960643023006490684/1451285809553477763/1451285809553477763); nerdyjoe | **#148 Reported by others**: Others have worked on it or discussed it. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t71"></a>[71](#71) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1RD_1LC0LE`<br>`1RA0LB_1RA1RF`<br>`0RA0RC_1RE---` | – | for later analysis | 1075; Bell-like; Could be solvable | **#212 Reported by others**: Others have worked on it or discussed it. |
@@ -470,7 +470,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | 🟩 <a id="t109"></a>[109](#109) | 🟩<br>– | 🟩<br>`1RB1LE_0LC1RE`<br>`---1LD_0RD1LA`<br>`0RF1RF_1RA0LB` | – | **halts**: open [PR 75](https://github.com/ccz181078/busycoq/pull/75) (Zohu, 16 Nov 2026) proves that it halts; potential cryptid before | 605; Shift-overflow structural counter; Possibly tetrational machine; [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178); Racheline | **#87 Some structure seen**: Nested shift-overflow counters on 2-cell units with base-4 levels. The first overflow freezes the old tape. |
 | <a id="t110"></a>[110](#110) | – | `1RB1RD_1LC1RA`<br>`---1LD_1LE0RA`<br>`1LF0LE_0RB0LB` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 563; Shift-overflow bouncer counter; Possibly tetrational machine; [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178); Racheline | **#167 Some structure seen**: A wide shift-overflow bouncer counter. |
 | <a id="t111"></a>[111](#111) | – | `1RB0LE_0RC0RA`<br>`1LD0LC_1LA0LB`<br>`1RA1LF_---0LC` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 564; Shift-overflow bouncer counter; Possibly tetrational machine; [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178); Racheline | **#479 Some structure seen**: A wide shift-overflow bouncer counter. |
-| <a id="t112"></a>[112](#112) | – | `1RB1LD_1RC0LE`<br>`1LA1RE_0LF1LA`<br>`1RB0RB_---0LB` | – | **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 560; **CRYPTID**, Shift-overflow bouncer counter; Probviously halting cryptid; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1337994337790853181), 2; Racheline | **#22 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t112"></a>[112](#112) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LD_1RC0LE`<br>`1LA1RE_0LF1LA`<br>`1RB0RB_---0LB` | – | **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 560; **CRYPTID**, Shift-overflow bouncer counter; Probviously halting cryptid; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1337994337790853181), 2; Racheline | **#22 Cryptid**: Its halting reduces to a Collatz-like question. |
 
 <a id="1"></a>
 ## 🟩 [1](#t1). `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A)
@@ -1985,7 +1985,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet that are still in the holdout list (`holdouts_623.txt`) and were not among nos. 1–56. They are taken over from the sheet without own analysis; they are not in `bell_candidates.txt`. The space-time diagrams start from the blank tape (time downwards) and stop after 10 Bell levels, 2e7 steps or a tape width of 1000 cells.
 
 <a id="57"></a>
-## [57](#t57). `1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [57](#t57). `1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA` (for later analysis)
 
 - BB6 sheet: row 1057, **CRYPTID**, Bell-like, notes: A variant of Hydra and Antihydra
 - diagram: 248,932 steps, tape width 1001 cells
@@ -1993,7 +1993,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA.png" alt="space-time diagram" height="350">
 
 <a id="58"></a>
-## [58](#t58). `1RB0LD_1RC1RF_1LA0RA_0LA0LE_1LD1LA_0RB---` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [58](#t58). `1RB0LD_1RC1RF_1LA0RA_0LA0LE_1LD1LA_0RB---` (for later analysis)
 
 - **Same table as no. [68](#68), other start state (13 Nov 2026).** No. 58 is no. 68 (mirrored) started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2003,7 +2003,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB0LD_1RC1RF_1LA0RA_0LA0LE_1LD1LA_0RB---.png" alt="space-time diagram" height="350">
 
 <a id="59"></a>
-## [59](#t59). `1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [59](#t59). `1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA` (for later analysis)
 
 - BB6 sheet: row 1059, **CRYPTID**, Bell-like, notes: Antihydra. Part of Category 1
 - diagram: 564,453 steps, tape width 1001 cells
@@ -2011,7 +2011,7 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <img src="diagrams/1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA.png" alt="space-time diagram" height="350">
 
 <a id="60"></a>
-## [60](#t60). `1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [60](#t60). `1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC` (for later analysis)
 
 - BB6 sheet: row 1061, **CRYPTID**, Bell-like, notes: One of (canonical) collection of 16 probviously halting tetrational cryptids
 - diagram: 703,225 steps, tape width 1001 cells
@@ -2052,7 +2052,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <img src="diagrams/1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE.png" alt="space-time diagram" height="350">
 
 <a id="63"></a>
-## [63](#t63). `1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [63](#t63). `1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE` (for later analysis)
 
 - BB6 sheet: row 1065, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
 - diagram: 1,197,908 steps, tape width 1001 cells
@@ -2060,7 +2060,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <img src="diagrams/1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE.png" alt="space-time diagram" height="350">
 
 <a id="64"></a>
-## [64](#t64). `1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [64](#t64). `1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB` (for later analysis)
 
 - BB6 sheet: row 1066, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
 - diagram: 282,270 steps, tape width 1001 cells
@@ -2068,7 +2068,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <img src="diagrams/1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB.png" alt="space-time diagram" height="350">
 
 <a id="65"></a>
-## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [65](#t65). `1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [65](#t65). `1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF` (for later analysis)
 
 - BB6 sheet: row 1067, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
 - BusyBeaverWiki: [1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF](https://wiki.bbchallenge.org/wiki/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF)
@@ -2117,7 +2117,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <img src="diagrams/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF.png" alt="space-time diagram" height="350">
 
 <a id="66"></a>
-## [66](#t66). `1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [66](#t66). `1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA` (for later analysis)
 
 - BB6 sheet: row 1068, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid, Part of Category 1
 - diagram: 945,825 steps, tape width 1001 cells
@@ -2125,7 +2125,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <img src="diagrams/1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA.png" alt="space-time diagram" height="350">
 
 <a id="67"></a>
-## [67](#t67). `1RB1LD_1RC1RE_0LA1LB_0LD1LC_1RF0RA_---0RC` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [67](#t67). `1RB1LD_1RC1RE_0LA1LB_0LD1LC_1RF0RA_---0RC` (for later analysis)
 
 - BB6 sheet: row 1069, **CRYPTID**, Bell-like, notes: Probviously nonhalting cryptid, similar to Antihydra
 - diagram: 511,588 steps, tape width 1001 cells
@@ -2133,7 +2133,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <img src="diagrams/1RB1LD_1RC1RE_0LA1LB_0LD1LC_1RF0RA_---0RC.png" alt="space-time diagram" height="350">
 
 <a id="68"></a>
-## [68](#t68). `1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [68](#t68). `1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB` (for later analysis)
 
 - **Same table as no. [58](#58), other start state (13 Nov 2026).** No. 68 is no. 58 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2766,7 +2766,7 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 <img src="diagrams/1RB0LE_0RC0RA_1LD0LC_1LA0LB_1RA1LF_---0LC.png" alt="space-time diagram" height="350">
 
 <a id="112"></a>
-## [112](#t112). `1RB1LD_1RC0LE_1LA1RE_0LF1LA_1RB0RB_---0LB` (potential cryptid, for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [112](#t112). `1RB1LD_1RC0LE_1LA1RE_0LF1LA_1RB0RB_---0LB` (potential cryptid, for later analysis)
 
 - source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), probviously halting cryptids
 - BB6 sheet: row 560, CRYPTID, Shift-overflow bouncer counter, notes: Probviously halting cryptid
