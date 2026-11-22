@@ -24,25 +24,27 @@ def blocks(d):
         if out and out[-1][0]==b: out[-1][1]+=k
         else: out.append([b,k])
     return out
-class Stop(Exception): pass
-def h(a,b): raise Stop()
-signal.signal(signal.SIGALRM,h); signal.alarm(int(sys.argv[1]))
-last=[None]; n=[0]; sizes={}
-def cb(s):
-    if s.q!=QEV: return
-    b=blocks(describe([],0,s.R))
-    if not b or b[0][0]!=1 or len(b)<4: return
-    ones=[k for v,k in b if v==1]; zer=[k for v,k in b if v==0]
-    # stack = blocks of ones from the 3rd on, gaps from the 3rd on
-    key=(tuple(ones[2:]),tuple(zer[2:]))
-    for k in ones[2:]: sizes[k]=sizes.get(k,0)+1
-    if key!=last[0]:
-        n[0]+=1
-        d=len(str(s.steps))
-        print('step~10^%d  first=%s  gap=%s  m=%s | blocks %s | gaps %s'%(d-1,ones[0] if len(str(ones[0]))<9 else '%d digits'%len(str(ones[0])),
-              zer[0] if len(str(zer[0]))<9 else '%d digits'%len(str(zer[0])), ones[1] if len(ones)>1 else '-', ' '.join(map(str,ones[2:])),' '.join(map(str,zer[1:]))),flush=True)
-        last[0]=key
-s=Sim()
-try: r=s.run(10**10**6,cb); print('RESULT',r,s.halt)
-except Stop: print('time up; step count has',len(str(s.steps)),'digits')
-print('block sizes in the stack (count over events):',sorted(sizes.items())[:40])
+if __name__=='__main__':
+    class Stop(Exception): pass
+    def h(a,b): raise Stop()
+    signal.signal(signal.SIGALRM,h); signal.alarm(int(sys.argv[1]))
+    last=[None]; n=[0]; sizes={}
+    def cb(s):
+        if s.q!=QEV: return
+        b=blocks(describe([],0,s.R))
+        if not b or b[0][0]!=1 or len(b)<4: return
+        ones=[k for v,k in b if v==1]; zer=[k for v,k in b if v==0]
+        # stack = blocks of ones from the 3rd on, gaps from the 3rd on
+        key=(tuple(ones[2:]),tuple(zer[2:]))
+        for k in ones[2:]: sizes[k]=sizes.get(k,0)+1
+        if key!=last[0]:
+            n[0]+=1
+            d=len(str(s.steps))
+            print('step~10^%d  first=%s  gap=%s  m=%s | blocks %s | gaps %s'%(d-1,ones[0] if len(str(ones[0]))<9 else '%d digits'%len(str(ones[0])),
+                  zer[0] if len(str(zer[0]))<9 else '%d digits'%len(str(zer[0])), ones[1] if len(ones)>1 else '-', ' '.join(map(str,ones[2:])),' '.join(map(str,zer[1:]))),flush=True)
+            last[0]=key
+    s=Sim()
+    try: r=s.run(10**10**6,cb); print('RESULT',r,s.halt)
+    except Stop: print('time up; step count has',len(str(s.steps)),'digits')
+    print('block sizes in the stack (count over events):',sorted(sizes.items())[:40])
+

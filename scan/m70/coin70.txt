@@ -1,0 +1,4 @@
+coin model: runs 7 levels 1201844 HALTs 0 at levels [] rules 9442 600 s
+coin model: runs 7 levels 1249753 HALTs 0 at levels [] rules 9629 600 s
+coin model: runs 4 levels 766428 HALTs 0 at levels [] rules 9194 600 s
+coin model: runs 4 levels 760367 HALTs 0 at levels [] rules 9164 600 s
