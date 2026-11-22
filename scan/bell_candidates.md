@@ -1822,6 +1822,11 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 - verdict: needle-like: only 2 tails (all information in one number)
 - diagram: 1,701,691 steps, tape width 1001 cells
 
+- **Analysis (22 Nov 2026, `m46/`).** Events: state E on a new leftmost cell, tape exactly `(01)^N` (all information in one number). A synthetic start (`syn46.c`) reproduces the real run exactly (e.g. 4 → 9 after 139 steps). Real events (`ev46.c`, 1.26·10¹⁰ steps): N = 4, 9, 113, 225, 1185, 6665, 10329, 24217, 31393, 60097; from 9 on always N ≡ 1 (mod 8).
+  - Inside an event two phases: (1) `(1)^4 (01)^n (1)^M` with M = 8(2ʲ − 1): the 1-block doubles while n shrinks by 2ʲ − 1, until the next chunk does not fit; (2) a linear phase, each `01` becomes four 1s. So the next N depends on the binary size of N: the map N → N' is piecewise linear with slopes 4, 16, … between thresholds near powers of 2 (table for N < 200 and for N = 8x + 1, x < 160). A closed formula was not derived yet.
+  - **HALT condition:** HALT exactly for N = 2ᵏ − k (2, 5, 12, 27, 58, 121, 248, 503, 1014, 2037 checked, k = 2 … 11), and besides only for the small N = 6, 16, 67 (all N < 200 tested). Since the real N are ≡ 1 (mod 8), only k ≡ 7 (mod 8) can be hit (k = 7: 121, k = 15: 32753 — already passed —, k = 23: 8,388,585, …).
+  - One halting value per doubling of N, so the chance per event is about 1/N: Collatz-like, very probably nonhalting (**cryptid**, as in the guide). Proof would need the exact map and a number-theoretic argument.
+
 <img src="diagrams/1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD.png" alt="space-time diagram" height="350">
 
 <a id="47"></a>
@@ -1859,6 +1864,14 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 - level analysis: Bell type `RB`, 3 levels; n: 4 6 52; ratios: 1.500 8.667; 2 different tails
 - verdict: no clear single-block Bell configuration found
 - diagram: 932,951 steps, tape width 1001 cells
+
+- **Analysis (22 Nov 2026, `m50/`). Exact event map.** X(a, c) = state E on a new leftmost cell, then `00 1^a 0 1^c`. In between, three blocks `0 1^x 0 1^y 0 1^z` are swept: (x, y, z) → (x − 2, y − 2, z + 6), until x or y is used up. Fitted on all a, c < 70 and checked on a < 120 with |c − a| ≤ 6 (`syn50.c`), no mismatch:
+  - a even: X(a, c) → X(a − 3, c + 6).
+  - a odd, c even: a < c: X(c − a − 2, 3a + 6); a > c: X(a − c − 2, 3c + 6).
+  - a odd, c odd: a < c: X(c − a − 1, 3a + 3); a > c: X(a − c − 3, 3c + 6).
+  - **HALT exactly when c − a ∈ {−2, −1, 0, 1}** (a odd); in the real run a is always odd.
+  - Real run (`lev50.c`): X(15, 78) → X(61, 51) → X(7, 159) → X(151, 24) → X(125, 78) → X(45, 240) → X(193, 141) → X(49, 429) → … (the map `m50/fast50.py` reproduces it).
+  - A subtractive (Euclid-like) map with a factor 3: HALT needs a and c to come within 2 of each other. Fast map: 2,000,000 events without HALT (numbers then have over 4,000 digits); heuristic chance about 4/max(a, c) per event, summed about 0.3 over all events, but only 1.8·10⁻⁴ after max(a, c) > 10⁵ (already passed). **Cryptid**, very probably nonhalting; a proof would need to show that |a − c| never becomes ≤ 2.
 
 <img src="diagrams/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE.png" alt="space-time diagram" height="350">
 
