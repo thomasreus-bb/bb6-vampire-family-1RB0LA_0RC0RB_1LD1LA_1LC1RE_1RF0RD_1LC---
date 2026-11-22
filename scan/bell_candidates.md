@@ -258,7 +258,7 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 
 ## Families of similar machines (22 Nov 2026)
 
-Machines among the candidates whose tables differ in only one or two transitions (after renaming the states, mirroring allowed, any start state), or whose analyses show the same kind of rules. Machines with exactly the same table (same machine, other start) are in the next section. Search: `groups607/families_cand.py` (all pairs of candidates).
+Machines among the candidates whose tables differ in only one or two transitions (after renaming the states, mirroring allowed, any start state), or whose analyses show the same kind of rules. Machines with exactly the same table (same machine, other start) are in the previous section. Search: `groups607/families_cand.py` (all pairs of candidates).
 
 | family | machines | how close | common behaviour |
 |---|---|---|---|
