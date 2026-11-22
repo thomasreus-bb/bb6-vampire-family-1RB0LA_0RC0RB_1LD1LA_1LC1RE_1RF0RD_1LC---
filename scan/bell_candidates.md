@@ -267,7 +267,7 @@ Machines among the candidates whose tables differ in only one or two transitions
 | 27 / 29 / 36 | [27](#27), [29](#29), [36](#36) | 27–29: 2 transitions (B0, E0); 36: same states A, B, C as 27, exit part D, E, F different | sweep rule (a, b) → (a − 2, b + 3), level `0 1^N 00 1^t`, t always a multiple of 3, HALT only for t = 0 or t not divisible by 3 |
 | 34 / 50 / 55 | [34](#34), [50](#50), [55](#55) | 34–50: 1 transition (D0); 34–55 and 50–55: 2 transitions | 34 and 50: **exactly the same event map** X(a, c) (the changed transition D0 is only used for c = 0, which is never reached), only the start differs: 34 from X(1, 5), 50 from X(1, 3); the two orbits never meet. 55: same kind of map with factor 6. All three: difference of two numbers plus a factor, HALT when the two numbers are nearly equal |
 | 53 / 85 | [53](#53), [85](#85) | 2 transitions (A1, B0); rows C–F equal | same kind of events (blocks `(10)^a` with short separators at the left end, state E); one rule is the same (53: P(a) → P((3a + 5)/2), a odd; 85: A(a) → A(3a/2 + 2), a even, with A(a) = P(a − 1)). But 85 stays in a closed two-number family and halts at a = 2ᵏ − 3 (any size), while 53 also builds lists of 3–4 long segments and halts only when a first counter is 1 (small) |
-| 63 / 98 | [63](#63), [98](#98) | 1 transition (D0) | not yet compared |
+| 63 / 98 | [63](#63), [98](#98) | 1 transition (D0; 63 renamed A→D, D→E, E→A) | same macro configuration C(a, b, c, d) and the same inner loop C(a + 2, b) → C(a, b + 3); only the turnaround at the left end (a ≤ 1) is shifted by one cell. Both: c counts down by 2 per pass, a round ends at c ≤ 1 with a reset c ≈ b/2 (tetrational growth) or HALT, about 1/4 chance per round |
 | 70 / 86 | [70](#70), [86](#86) | 2 transitions (B1, F1) | not yet compared |
 | 84 / 101 | [84](#84), [101](#101) | 2 transitions (D0, E0) | not yet compared |
 
@@ -2112,6 +2112,12 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 - BB6 sheet: row 1065, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
 - diagram: 1,197,908 steps, tape width 1001 cells
+- **BusyBeaverWiki article:** [1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE](https://wiki.bbchallenge.org/wiki/1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE). Racheline: probviously halting tetrational cryptid, it "uses the hydra map", lower bound for the halting time about 10^10^120395, chance about 1/4 per exponentiation. mxdys (21 Sep 2025): equivalence class of 3 machines, `1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE`, `1RB1LA_1LC0RE_1LF1LD_1RB0LC_1LB1RA_---0LA`, `1RB1LA_1LC0RE_1LF1LD_0RA0LC_1LB1RA_---0LA`. Our no. [98](#98) is not in this class. Lean-verified local rules by Opus 4.7 / DrDisentangle ("5-step bump family").
+- **Related to no. [98](#98) (22 Nov 2026, `m63/`).** Renamed (A→D, B→B, C→C, D→E, E→A, F→F), no. 63 is `1RB1LA_1LC0RE_1LF1LD_1RB0LC_1LB1RA_---0LA` started in state D (this is the second member of mxdys' class). It differs from no. 98 (`1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA`) only in D0 (63: `1RB`, 98: `1RE`).
+  - In the configurations C(a, b, c, d) of the wiki rules for no. 98 (see chapter 98), the renamed no. 63 has the **same inner loop** C(a + 2, b, c, d) → C(a, b + 3, c, d) (all 3,072 synthetic starts a < 12, b < 16, c < 8, d ∈ {3, 6}, `m63/checkC.py 63r`; no mismatch for a ≥ 2) and the same pass C(a, b, c + 2, d) → C(a + b + 3, 3, c, d) for a ≤ 1 (98: a + b + 4).
+  - The turnaround at the left end is **shifted by one cell**: no. 63 with a = 1 acts exactly like no. 98 with a = 0 (same results, same HALT cases), and no. 63 with a = 0 is a further case (left block empty) that no. 98 does not have. So the parities that decide each round, and with them the halting lottery, are different.
+  - Real run (left events, `m63/evL.c`): at the start of each round the tape is `1^f 0 1^n (0 1)^k …` with f = 3 or 4; per event n → (3n + c₀)/2 with c₀ ∈ {8, 11, 14} and k → k − 2. Round lengths (start values of k): no. 63: 1, 3, 11, 60 (the round with k = 60 is still running at 3·10¹⁰ steps); no. 98: 2, 5, 23, 1137.
+  - **Same mechanism as no. 98:** a counter c counted down by 2 per pass of a hydra-like map n → about 3n/2, a reset c ≈ b/2 at the end of each round (so the rounds grow tetrationally), and a HALT chance of about 1/4 at each round end. Both machines are tetrational, probviously halting lotteries; the real runs differ.
 
 <img src="diagrams/1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE.png" alt="space-time diagram" height="350">
 
@@ -2670,6 +2676,13 @@ Checks:
 
 - BB6 sheet: row 1123, Bell-like
 - diagram: 1,197,278 steps, tape width 1001 cells
+- **BusyBeaverWiki article:** [1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA](https://wiki.bbchallenge.org/wiki/1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA): potential cryptid found by Marco Dos Santos (with Gemini), "probvious behavior not yet analyzed". His rules use C(a, b, c, d) = `0^inf 1^(a+1) C> 00 1^(b+4) (01)^c 1^d 011 0^inf`, d ∈ {3, 6}; start C(4, 0, 0, 3) after 162 steps.
+- **Analysis (22 Nov 2026, `m63/`).**
+  - **Wiki rules checked:** all 3,072 synthetic starts a < 12, b < 16, c < 8, d ∈ {3, 6} agree with the wiki rules, including all HALT cases (`m63/checkC.py 98`, `m63/synC.c`). The start C(4, 0, 0, 3) at step 162 was confirmed.
+  - **Structure:** the inner loop C(a + 2, b, c, d) → C(a, b + 3, c, d) turns a into b with a factor 3/2; at a ≤ 1 the next pass starts with C(a + b + 4, 3, c − 2, d). So c is a counter that goes down by 2 per pass of a hydra-like map n → about 3n/2. When c reaches 0 or 1, the round ends: HALT for C(0, odd, 0, 3), C(0, even, 1, 3) (and via d = 6), otherwise a reset with a new c ≈ b/2. Since b has grown by (3/2)^(c/2) in the round, the rounds grow tetrationally.
+  - **Macro run** (`m63/macro98.py`, the a-loop in one jump): 4 round ends without HALT; the start values of c are 3, 5, 23 (k = 2, 5, 23 in the real run), then about 1137 (the round in which the real run is at 6·10⁶ steps, `evL.c`), and after it c has 101 digits. That round needs about 10¹⁰¹ passes of the hydra-like map, which cannot be accelerated; its end, and with it the next HALT test, comes after about 10^10^100 steps.
+  - **Assessment (estimate):** the chance at each round end is about 1/4 (one parity of a and one parity of b), so no. 98 is, like no. 63, a **tetrational, probviously halting cryptid**; whether the next round end halts cannot be computed.
+- **Related to no. [63](#63) (22 Nov 2026).** Renamed no. 63 differs from no. 98 only in D0 and has the same configurations and the same inner loop; only the left-end turnaround is shifted by one cell (details in chapter 63). No. 98 is not in mxdys' equivalence class of no. 63.
 
 <img src="diagrams/1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA.png" alt="space-time diagram" height="350">
 
