@@ -2211,8 +2211,13 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 - BB6 sheet: row 1071, **CRYPTID**, Bell-like, notes: Tetrational cryptid (3/5 of becoming TC, 2/5 of halting), see source 2 for more exact chances and refinements, Part of Category 1
 - diagram: 268,228 steps, tape width 1001 cells
-
-<img src="diagrams/1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE.png" alt="space-time diagram" height="350">
+- **BusyBeaverWiki article:** [1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE](https://wiki.bbchallenge.org/wiki/1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE): tetrational cryptid found by Racheline (30 Jul 2024), "the first discovered Cryptid which is neither probviously halting nor probviously non-halting"; estimate 3/5 translated cycler, 2/5 HALT. Rules (Racheline) with A(n + 6, m) = `0^inf <C (10)^n 1^m 0^inf`: A(2n, m) → A(3n, m − 3), A(2n + 1, m) → A(3n + 1, m − 2) (m ≥ 3); A(n, 1) = A(n + 1, 0); A(2n, 0) → translated cycler; A(2n + 1, 0) → A(6, 6n − 15); A(2n, 2) → HALT; A(2n + 1, 2) → A(6, 6n − 10); start A(6, 3). Formalized in Lean (rwst).
+- **Check and analysis (22 Nov 2026, `m69/`).**
+  - **Rules checked:** all 2,120 synthetic starts A(N, m), 7 ≤ N < 60, m < 40, agree with the wiki rules, including HALT and the cycler case (`check69.py`, `syn69.c`). A(2n, 0) goes to A(6, 0) = blank tape in state C, and C0 = D0 = `1RD`: the machine writes 1s to the right forever (translated cycler). The real run passes A(6, 3) → A(9, 0) → A(6, 9) → A(9, 6) → A(13, 4) → A(19, 2) → A(6, 44) … as in the wiki (`ev69.c`).
+  - **Structure:** within a round, n grows by 3/2 per Bell and m falls by 3 (n even) or 2 (n odd); a round ends when m < 3. Then it halts, becomes a translated cycler, or starts a new round A(6, m') with m' ≈ 3n. Since n has grown by (3/2)^(m/2.5) in the round, the rounds grow tetrationally.
+  - **Where the run is** (`orbit69.py`): round starts A(6, 9) at Bell 2, A(6, 44) at Bell 6, A(6, 16172) at Bell 24, A(6, m) with m of **1,139 digits** at Bell 6,481. The next round needs about m/2.5 ≈ 10¹¹³⁸ Bells; its outcome cannot be computed (Hydra-like parities, no acceleration known).
+  - **Probabilities (fair-coin model):** with steps −3 / −2 equally likely, the round ends at m = 0, 1, 2 with probability 0.2, 0.4, 0.4 (exact for large m). With the parity of n as a coin: HALT 0.2 (m = 2, n even), translated cycler 0.3 (m ∈ {0, 1}, m + n even), new round 0.5. Over all rounds: **HALT 2/5, translated cycler 3/5**, as Racheline says. Each further round is decided with chance 1/2; four rounds have continued so far (chance 1/16).
+  - **Not vampire-like in the practical sense:** a single round is already out of reach, so no estimate of the computing time to HALT can be given; it is a tetrational lottery (like nos. 63 and 98).
 
 <a id="70"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [70](#t70). `1RB1RF_1LC1RD_1LA1LC_1RA0RE_1RD1LA_---0LE` (for later analysis)
@@ -2536,8 +2541,10 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 - BB6 sheet: row 1100, Bell-like
 - diagram: 439,921 steps, tape width 1001 cells
-
-<img src="diagrams/1RB1LC_1RC0RF_1RD0LB_1RE0LD_1LF---_0RA1LA.png" alt="space-time diagram" height="350">
+- **Compared with no. [69](#69) (22 Nov 2026, `m69/`).** The tables are far apart: under every renaming and mirroring at least 9 of 12 transitions differ (`rel69_87.py`). The dynamics are different too:
+  - Right-edge events in state E: `(1100)^n 100100 1111 E>` with n = 23, 73, 228, 708, 2,196 (steps 5,212 … 38,979,322), then `(1100)^6808 11 1100 1111` at step 374,132,455 (`rle87.c`); n grows by a factor of about 3.1 per round, i.e. exponentially, not tetrationally as in no. 69.
+  - Inside a round, the left part `(1100)^k` grows by one unit about every second left event, while the right part is a word over the pieces `10` and `110` that is read and rewritten piece by piece (left events in state A). No. 69 instead has two plain counters (10)^n 1^m.
+  - So nos. 69 and 87 are not similar in any precise sense. The word over `10` / `110` in no. 87 looks more like a tag-system-like process, which fits the suspicion of HALT or TC; it needs its own analysis.
 
 <a id="88"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [88](#t88). `1RB0LE_1RC0RF_0RD0RB_1RE0RC_1LA0LA_1RA---` (for later analysis)
