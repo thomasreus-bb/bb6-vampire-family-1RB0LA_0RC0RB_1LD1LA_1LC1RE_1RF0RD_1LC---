@@ -265,8 +265,8 @@ Machines among the candidates whose tables differ in only one or two transitions
 | vampire family | [1](#1)–[7](#7) | 0–1 transitions (same table or F0/A0/B0 changed) | 3/2 Bell, see "Vampire-like TMs" |
 | 13 / 15 | [13](#13), [15](#15) | 1 transition (A0) | both cryptids |
 | 27 / 29 / 36 | [27](#27), [29](#29), [36](#36) | 27–29: 2 transitions (B0, E0); 36: same states A, B, C as 27, exit part D, E, F different | sweep rule (a, b) → (a − 2, b + 3), level `0 1^N 00 1^t`, t always a multiple of 3, HALT only for t = 0 or t not divisible by 3 |
-| 34 / 50 / 55 | [34](#34), [50](#50), [55](#55) | 34–50: 1 transition (D0); 34–55 and 50–55: 2 transitions | three counters swept (x − 2, y − 2, z + 6); map: difference of two numbers plus a factor 3 or 6, HALT when the two numbers are nearly equal |
-| 53 / 85 | [53](#53), [85](#85) | 2 transitions (A1, B0) | not yet compared |
+| 34 / 50 / 55 | [34](#34), [50](#50), [55](#55) | 34–50: 1 transition (D0); 34–55 and 50–55: 2 transitions | 34 and 50: **exactly the same event map** X(a, c) (the changed transition D0 is only used for c = 0, which is never reached), only the start differs: 34 from X(1, 5), 50 from X(1, 3); the two orbits never meet. 55: same kind of map with factor 6. All three: difference of two numbers plus a factor, HALT when the two numbers are nearly equal |
+| 53 / 85 | [53](#53), [85](#85) | 2 transitions (A1, B0); rows C–F equal | same kind of events (blocks `(10)^a` with short separators at the left end, state E); one rule is the same (53: P(a) → P((3a + 5)/2), a odd; 85: A(a) → A(3a/2 + 2), a even, with A(a) = P(a − 1)). But 85 stays in a closed two-number family and halts at a = 2ᵏ − 3 (any size), while 53 also builds lists of 3–4 long segments and halts only when a first counter is 1 (small) |
 | 63 / 98 | [63](#63), [98](#98) | 1 transition (D0) | not yet compared |
 | 70 / 86 | [70](#70), [86](#86) | 2 transitions (B1, F1) | not yet compared |
 | 84 / 101 | [84](#84), [101](#101) | 2 transitions (D0, E0) | not yet compared |
@@ -1332,6 +1332,10 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <a id="34"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [34](#t34). `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` (class B)
+- **Same event map as no. [50](#50) (22 Nov 2026, `m34/`).** Renamed (A→D, B→A, C→B, D→E, E→C, F→F) and mirrored, no. 34 is `1RB1RB_1LC0RE_---1LD_1LA1LB_1RA1LF_0LE1LE`, started in state D (`m34/rel34.py`). It differs from no. 50 (`1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE`) only in D0 (34: `1LA`, 50: `0RA`).
+  - With X(a, c) as in no. 50 (state E on a new leftmost cell, then `00 1^a 0 1^c`, renamed and mirrored machine), synthetic starts give **exactly the map of no. 50** (`m50/fast50.py`): all 1,600 starts a, c < 40 agree for a ≥ 3, c ≥ 1, and all 768 starts a < 120, |c − a| ≤ 6, including all HALT cases c − a ∈ {−2, −1, 0, 1} (`m34/syn34.c`, `m34/fit34.py`). The only differences: c = 0 (34: X(a, 0) → X(a − 4, 9), 50: X(a − 2, 6)) and a ∈ {0, 2} (34 halts). c = 0 never occurs, because every rule gives c' ≥ 3, and a stays odd as in no. 50.
+  - The real run (`m34/lev34.c`, 3·10⁹ steps) starts at X(1, 5) → X(3, 6) → X(1, 15) → X(13, 6) → X(5, 24) → X(17, 21) → X(3, 54) → X(49, 15) → X(31, 51) → X(19, 96) → …; the map reproduces all 35 transitions. No. 50 starts at X(1, 3) → X(1, 6) → X(3, 9) → …; the first 20,000 events of the two orbits have no common pair.
+  - **Run** (`m34/fast34.py`): 2,000,000 events without HALT (the numbers then have about 184,600 digits). Heuristic chance about 4/max(a, c) per event; after max(a, c) > 10⁵ about 1.7·10⁻⁴ in total. **Cryptid** like no. 50: one map, two different orbits; a proof for one would very probably work for the other.
 - **BusyBeaverWiki article:** [1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD](https://wiki.bbchallenge.org/wiki/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD)
 
 - scan: 13 levels, 29 phases, mean factor 1.34 (sd 0.18); level starts: 13 16 18 28 46 60 72 150 182 234 258 316 452
@@ -1874,6 +1878,7 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 <a id="50"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [50](#t50). `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` (class C)
 - **Related to no. [55](#55) (22 Nov 2026).** After renaming the states of no. 55 (A→E, B→A, C→D, D→B, E→C), its table is `0RD1RB_1LC0RE_---1LD_1LE1LB_1RA1LF_0LE1LE`, started in state E. It differs from no. 50 (`1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE`) in only two transitions: A0 (50: `1RB`, 55: `0RD`) and D0 (50: `0RA`, 55: `1LE`). Both follow the same kind of map: two numbers, the difference of the two plus a factor 3 (no. 50) or 6 (no. 55, in b), HALT when the two numbers come within 1 or 2 of each other.
+- **Same event map as no. [34](#34) (22 Nov 2026).** No. 34, renamed and mirrored, differs from no. 50 only in D0, and it follows exactly the same map X(a, c); only the start differs (34: X(1, 5), 50: X(1, 3)). Details in chapter 34.
 - **BusyBeaverWiki article:** [1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE](https://wiki.bbchallenge.org/wiki/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE)
 
 - scan: 10 levels, 28 phases, mean factor 1.50 (sd 0.28); level starts: 12 14 38 58 122 148 190 224 376 456
@@ -1887,7 +1892,7 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
   - a odd, c odd: a < c: X(c − a − 1, 3a + 3); a > c: X(a − c − 3, 3c + 6).
   - **HALT exactly when c − a ∈ {−2, −1, 0, 1}** (a odd); in the real run a is always odd.
   - Real run (`lev50.c`): X(15, 78) → X(61, 51) → X(7, 159) → X(151, 24) → X(125, 78) → X(45, 240) → X(193, 141) → X(49, 429) → … (the map `m50/fast50.py` reproduces it).
-  - A subtractive (Euclid-like) map with a factor 3: HALT needs a and c to come within 2 of each other. Fast map: 2,000,000 events without HALT (numbers then have over 4,000 digits); heuristic chance about 4/max(a, c) per event, summed about 0.3 over all events, but only 1.8·10⁻⁴ after max(a, c) > 10⁵ (already passed). **Cryptid**, very probably nonhalting; a proof would need to show that |a − c| never becomes ≤ 2.
+  - A subtractive (Euclid-like) map with a factor 3: HALT needs a and c to come within 2 of each other. Fast map: 2,000,000 events without HALT (numbers then have about 184,000 digits; corrected 22 Nov 2026, the earlier text said 4,000); heuristic chance about 4/max(a, c) per event, summed about 0.3 over all events, but only 1.8·10⁻⁴ after max(a, c) > 10⁵ (already passed). **Cryptid**, very probably nonhalting; a proof would need to show that |a − c| never becomes ≤ 2.
 
 <img src="diagrams/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE.png" alt="space-time diagram" height="350">
 
@@ -1951,6 +1956,14 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <a id="53"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [53](#t53). `1RB1RE_1LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` (class C)
 
+- **Comparison with no. [85](#85) (22 Nov 2026, `m53/vs85/`).** Nos. 53 and 85 have the same rows C–F and differ in A1 (53: `1RE`, 85: `0RF`) and B0 (53: `1LC`, 85: `0LC`).
+  - Events as for no. 85: state E on a 0, blank to the left. Short configurations: P(a) = `(10)^a 1`, Q(a, b) = `(10)^a 11100 (10)^b 1`, R(a, b) = `(10)^a 11101100 (10)^b 1`. Exact rules (`rules53.py`, checked on 3,539 synthetic starts a < 60, b < 30, no mismatch):
+    - P(a): a odd → P((3a + 5)/2); a even → R(a/2 − 1, a − 1).
+    - Q(a, b): a even → P(3a/2 + b + 3); a = 1 → **HALT**; a odd ≥ 3, b odd → Q((a − 3)/2, a + (3b + 5)/2); a odd, b even → a list with more long segments.
+    - R(a, b): a even → Q(a/2 + 2, a + b); a = 1 → **HALT**; a odd ≥ 3 → a list with more long segments.
+  - **Same as 85:** the rule for P(a), a odd, is the rule of no. 85 for A(a), a even (A(a) = P(a − 1)): A(a) → A(3a/2 + 2).
+  - **Different from 85:** no. 85 stays in a closed family of two numbers A(a), B(a, b), and it halts when a = 2ᵏ − 3, for numbers of any size (a Collatz-like question). No. 53 is not closed: Q(a odd, b even) and R(a odd) build lists with 3 or 4 long segments, which later collapse again to P (e.g. P(4263) at step 39,921,319). In the real run up to 1.9·10¹⁰ steps, 31 of 44 events are P, Q or R, 13 are longer lists (`real53.txt`). No. 53 halts only when a first counter is 1 (Q(1, b), R(1, b)), i.e. only while numbers are small, in line with the halting tests below.
+  - So the two machines are related in their tables and share one rule, but the halting mechanisms differ: 85 is a number lottery at every size, 53 is a convergent lottery of small counters.
 - scan: 9 levels, 146 phases, mean factor 1.66 (sd 0.30); level starts: 8 12 15 17 46 57 136 247 471
 - verdict: no clear single-block Bell configuration found
 - diagram: 488,651 steps, tape width 1001 cells
@@ -2440,6 +2453,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
   - `scan/mgen/famgen.py`: direct simulation of the small inner events with all repeat counts changed by −3 … +10: 150 runs × 3·10⁸ steps, no HALT (`fam85.txt`).
 - **Assessment (estimate).** No halting mechanism was found. The chance per outer event is below about 3·10⁻³ (95 % bound). No restart and no repeating structure (TC) was seen. **HALT unlikely.**
 
+- **Comparison with no. [53](#53) (22 Nov 2026).** Same rows C–F, A1 and B0 changed. One rule is shared (A(a) → A(3a/2 + 2) for a even); otherwise no. 53 builds longer segment lists and halts only at a small first counter, while no. 85 stays in A/B and halts at a = 2ᵏ − 3. Details in chapter 53.
 - **Exact event rules (22 Nov 2026; rules proposed on Discord by Big_numbersOP, checked and corrected here; `m85/ab2.c`, `m85/rules85.py`, `m85/fitB.py`).** Configurations (as in the real run, which has a final 1):
   - A(a) = state E on a 0, then `(10)^(a−1) 1`; B(a, b) = state E on a 0, then `(10)^a 1100 (10)^(b−1) 1`; blank elsewhere.
   - A(a): a even → A(3a/2 + 2); a odd → B((a − 3)/2, (a + 1)/2).
