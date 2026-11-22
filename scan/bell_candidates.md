@@ -271,7 +271,7 @@ Machines among the candidates whose tables differ in only one or two transitions
 | 53 / 85 | [53](#53), [85](#85) | 2 transitions (A1, B0); rows C–F equal | same kind of events (blocks `(10)^a` with short separators at the left end, state E); one rule is the same (53: P(a) → P((3a + 5)/2), a odd; 85: A(a) → A(3a/2 + 2), a even, with A(a) = P(a − 1)). But 85 stays in a closed two-number family and halts at a = 2ᵏ − 3 (any size), while 53 also builds lists of 3–4 long segments and halts only when a first counter is 1 (small) |
 | 63 / 98 | [63](#63), [98](#98) | 1 transition (D0; 63 renamed A→D, D→E, E→A) | same macro configuration C(a, b, c, d) and the same inner loop C(a + 2, b) → C(a, b + 3); only the turnaround at the left end (a ≤ 1) is shifted by one cell. Both: c counts down by 2 per pass, a round ends at c ≤ 1 with a reset c ≈ b/2 (tetrational growth) or HALT, about 1/4 chance per round |
 | 70 / 86 | [70](#70), [86](#86) | 2 transitions (B1, F1; 70 renamed A→B, B→C, C→D, D→A) | **70 is exactly equivalent to 86 started in state B** (the two changed transitions are used only in one 3-step detour that gives the same configuration in both). The runs of 70 and 86 (from A) are in lockstep from step about 3.5·10⁵ on: all 44,200 left events up to 3·10⁹ steps are equal (step offset 1,082), only a short frozen part at the right end of the tape differs |
-| 84 / 101 | [84](#84), [101](#101) | 2 transitions (D0, E0) | not yet compared |
+| 84 / 101 | [84](#84), [101](#101) | 2 transitions (D0, E0) | not compared, not needed: both are proved to halt in the open busycoq PR 47 (Dahoas) |
 
 ## The vampire method: when does it apply?
 
