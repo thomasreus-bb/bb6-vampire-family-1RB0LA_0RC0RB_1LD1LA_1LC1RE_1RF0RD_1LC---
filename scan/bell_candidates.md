@@ -1858,6 +1858,7 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 
 <a id="50"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [50](#t50). `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` (class C)
+- **Related to no. [55](#55) (22 Nov 2026).** After renaming the states of no. 55 (A→E, B→A, C→D, D→B, E→C), its table is `0RD1RB_1LC0RE_---1LD_1LE1LB_1RA1LF_0LE1LE`, started in state E. It differs from no. 50 (`1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE`) in only two transitions: A0 (50: `1RB`, 55: `0RD`) and D0 (50: `0RA`, 55: `1LE`). Both follow the same kind of map: two numbers, the difference of the two plus a factor 3 (no. 50) or 6 (no. 55, in b), HALT when the two numbers come within 1 or 2 of each other.
 - **BusyBeaverWiki article:** [1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE](https://wiki.bbchallenge.org/wiki/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE)
 
 - scan: 10 levels, 28 phases, mean factor 1.50 (sd 0.28); level starts: 12 14 38 58 122 148 190 224 376 456
@@ -1973,6 +1974,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <a id="55"></a>
 ## [55](#t55). `1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA` (class C)
+- **Related to no. [50](#50) (22 Nov 2026).** Renamed (A→E, B→A, C→D, D→B, E→C), no. 55 is `0RD1RB_1LC0RE_---1LD_1LE1LB_1RA1LF_0LE1LE` started in state E; it differs from no. 50 only in A0 (`1RB` → `0RD`) and D0 (`0RA` → `1LE`). Same kind of map (difference plus factor, HALT when the two numbers are nearly equal).
 - **BusyBeaverWiki article:** [1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA](https://wiki.bbchallenge.org/wiki/1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA)
 
 - scan: 10 levels, 26 phases, mean factor 1.48 (sd 0.32); level starts: 12 14 16 52 70 134 176 226 366 420
