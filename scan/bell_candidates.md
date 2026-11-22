@@ -268,7 +268,7 @@ Machines among the candidates whose tables differ in only one or two transitions
 | 34 / 50 / 55 | [34](#34), [50](#50), [55](#55) | 34–50: 1 transition (D0); 34–55 and 50–55: 2 transitions | 34 and 50: **exactly the same event map** X(a, c) (the changed transition D0 is only used for c = 0, which is never reached), only the start differs: 34 from X(1, 5), 50 from X(1, 3); the two orbits never meet. 55: same kind of map with factor 6. All three: difference of two numbers plus a factor, HALT when the two numbers are nearly equal |
 | 53 / 85 | [53](#53), [85](#85) | 2 transitions (A1, B0); rows C–F equal | same kind of events (blocks `(10)^a` with short separators at the left end, state E); one rule is the same (53: P(a) → P((3a + 5)/2), a odd; 85: A(a) → A(3a/2 + 2), a even, with A(a) = P(a − 1)). But 85 stays in a closed two-number family and halts at a = 2ᵏ − 3 (any size), while 53 also builds lists of 3–4 long segments and halts only when a first counter is 1 (small) |
 | 63 / 98 | [63](#63), [98](#98) | 1 transition (D0; 63 renamed A→D, D→E, E→A) | same macro configuration C(a, b, c, d) and the same inner loop C(a + 2, b) → C(a, b + 3); only the turnaround at the left end (a ≤ 1) is shifted by one cell. Both: c counts down by 2 per pass, a round ends at c ≤ 1 with a reset c ≈ b/2 (tetrational growth) or HALT, about 1/4 chance per round |
-| 70 / 86 | [70](#70), [86](#86) | 2 transitions (B1, F1) | not yet compared |
+| 70 / 86 | [70](#70), [86](#86) | 2 transitions (B1, F1; 70 renamed A→B, B→C, C→D, D→A) | **70 is exactly equivalent to 86 started in state B** (the two changed transitions are used only in one 3-step detour that gives the same configuration in both). The runs of 70 and 86 (from A) are in lockstep from step about 3.5·10⁵ on: all 44,200 left events up to 3·10⁹ steps are equal (step offset 1,082), only a short frozen part at the right end of the tape differs |
 | 84 / 101 | [84](#84), [101](#101) | 2 transitions (D0, E0) | not yet compared |
 
 ## The vampire method: when does it apply?
@@ -2217,6 +2217,11 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 - BB6 sheet: row 1074, Bell-like, notes: Simulated to 10^4600 steps, code with log reduction
 - diagram: 361,348 steps, tape width 1001 cells
+- No BusyBeaverWiki article (checked 22 Nov 2026).
+- **Equivalent to no. [86](#86) started in state B (22 Nov 2026, `m70/`).** Renamed (A→B, B→C, C→D, D→A, E→E, F→F), no. 70 is `1RB0RE_1RC1RF_1LD1RA_1LB1LD_1RA1LB_---0LE`, started in state B (`m70/rel70.py`). It differs from no. 86 (`1RB0RE_1RC0RF_1LD1RA_1LB1LD_1RA1LB_---0LD`) in B1 (70: `1RF`, 86: `0RF`) and F1 (70: `0LE`, 86: `0LD`).
+  - **Proof of the equivalence.** State F is entered only from B1. Let B read 1 at cell x. Both machines go right to x + 1 in state F. If F reads 0, both halt in the same step. If F reads 1, both write 0 and go back to x: no. 70 in state E, where cell x holds the 1 it has just written, and E1 = `1LB`; no. 86 in state D, where cell x holds the 0 it has just written, and D0 = `1LB`. So after 3 steps both have 1 at x, 0 at x + 1, and state B at x − 1. All other transitions are the same. Hence no. 70 (from A) and no. 86 started in B have the same configurations at every step and halt in the same step, if at all. Checked: the left events of both runs up to 3·10⁹ steps are identical, step numbers included (44,670 events), and `detour.c` finds the 3-step meeting at every tested use of B1.
+  - **Relation to no. 86 itself (started in A).** The runs of no. 70 and no. 86 differ at first, but from step 352,753 (70) / 351,671 (86) on they are in lockstep: all 44,200 left events up to 3·10⁹ steps agree, with a constant step offset of 1,082, except for a short frozen part at the right end of the tape (70: `… |18| 8 |28| 4 |2| 4`, 86: `… |18| 8 |10| 8`; blocks of ones, |k| = k zeros). As long as the head does not use this right part, the two machines do exactly the same; when it reaches it, they can diverge.
+  - **Structure (both).** At the left events (state A of no. 70 on a new leftmost cell) the tape is `1^x 000 1111 0^g 1^m …` with m = 11 or 23 and a stack of short blocks behind. In one level, x grows by 4,800 and the gap g shrinks by 3,200 per event; at the end of the level the new gap is about the final x, i.e. about 1.5 g: a 3/2 Bell, with a stack of small blocks that grows by one entry per level.
 
 <img src="diagrams/1RB1RF_1LC1RD_1LA1LC_1RA0RE_1RD1LA_---0LE.png" alt="space-time diagram" height="350">
 
@@ -2491,6 +2496,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 - BB6 sheet: row 1099, Bell-like
 - diagram: 366,736 steps, tape width 1001 cells
+- No BusyBeaverWiki article (checked 22 Nov 2026).
+- **Related to no. [70](#70) (22 Nov 2026).** No. 70 is exactly equivalent to no. 86 **started in state B** (two transitions differ, B1 and F1, but they are used only in a 3-step detour that gives the same configuration; proof in chapter 70). The run of no. 86 from A is in lockstep with the run of no. 70 from about step 3.5·10⁵ on (all 44,200 left events up to 3·10⁹ steps equal, step offset 1,082); only a short frozen part at the right end of the tape differs. Structure: a 3/2 Bell, see chapter 70.
 
 <img src="diagrams/1RB0RE_1RC0RF_1LD1RA_1LB1LD_1RA1LB_---0LD.png" alt="space-time diagram" height="350">
 
