@@ -50,3 +50,43 @@ halting rate per level: 5% 7.21e-15, median 1.04e-14, 95% 1.51e-14
   median rate: 50 % HALT after 6.66e+13 levels, 99 % after 4.43e+14 levels (about 10^(2.34e+13) steps)
   high   rate: 50 % HALT after 4.58e+13 levels, 99 % after 3.04e+14 levels (about 10^(1.61e+13) steps)
 stationarity: slope of log(dangerous levels per window) vs log(level) = -0.013 +- 0.008  => rate about constant -> HALT expected (in the model)
+=== round 6, 0.7 h total, level 3575800 (x has 629669 digits, stack 2005541 entries, rules 18520)
+real run: new small odd blocks near the front {1: 0, 3: 0, 5: 0, 7: 12, 9: 650}; smallest odd block seen 7
+closest approach (like D for the vampires): smallest odd block near the front 7; first/last level seen: {7: (3330786, 3330786), 9: (3132295, 3573162)}
+injections (runs, smaller odd block appeared, HALT): {1: (18533, 0, 1153), 3: (18736, 157, 0), 5: (18415, 193, 0), 7: (18185, 168, 0), 9: (18407, 183, 0)}
+halting rate per level: 5% 7.04e-14, median 9.10e-14, 95% 1.18e-13
+  direct check: blocks 1 seen near the front 0 times in 3575800 levels -> rate < 8.4e-07 (95 %) * P(HALT|1) 0.062 = 5.2e-08
+  low    rate: 50 % HALT after 9.84e+12 levels, 99 % after 6.54e+13 levels (about 10^(3.47e+12) steps)
+  median rate: 50 % HALT after 7.62e+12 levels, 99 % after 5.06e+13 levels (about 10^(2.68e+12) steps)
+  high   rate: 50 % HALT after 5.85e+12 levels, 99 % after 3.89e+13 levels (about 10^(2.06e+12) steps)
+stationarity: slope of log(dangerous levels per window) vs log(level) = -0.010 +- 0.008  => rate about constant -> HALT expected (in the model)
+=== round 7, 0.8 h total, level 3972800 (x has 699577 digits, stack 2227773 entries, rules 18989)
+real run: new small odd blocks near the front {1: 0, 3: 0, 5: 0, 7: 20, 9: 746}; smallest odd block seen 7
+closest approach (like D for the vampires): smallest odd block near the front 7; first/last level seen: {7: (3330786, 3919734), 9: (3132295, 3943102)}
+injections (runs, smaller odd block appeared, HALT): {1: (21606, 0, 1397), 3: (21921, 159, 0), 5: (21516, 199, 0), 7: (21291, 171, 0), 9: (21433, 188, 0)}
+halting rate per level: 5% 4.40e-14, median 5.76e-14, 95% 7.42e-14
+  direct check: blocks 1 seen near the front 0 times in 3972800 levels -> rate < 7.6e-07 (95 %) * P(HALT|1) 0.065 = 4.9e-08
+  low    rate: 50 % HALT after 1.57e+13 levels, 99 % after 1.05e+14 levels (about 10^(5.54e+12) steps)
+  median rate: 50 % HALT after 1.20e+13 levels, 99 % after 7.99e+13 levels (about 10^(4.24e+12) steps)
+  high   rate: 50 % HALT after 9.34e+12 levels, 99 % after 6.20e+13 levels (about 10^(3.29e+12) steps)
+stationarity: slope of log(dangerous levels per window) vs log(level) = -0.008 +- 0.007  => rate about constant -> HALT expected (in the model)
+=== round 8, 1.0 h total, level 4335800 (x has 763498 digits, stack 2432235 entries, rules 19332)
+real run: new small odd blocks near the front {1: 0, 3: 0, 5: 0, 7: 22, 9: 827}; smallest odd block seen 7
+closest approach (like D for the vampires): smallest odd block near the front 7; first/last level seen: {7: (3330786, 4166570), 9: (3132295, 4335360)}
+injections (runs, smaller odd block appeared, HALT): {1: (24213, 0, 1617), 3: (24429, 171, 0), 5: (23976, 212, 0), 7: (23716, 188, 0), 9: (23982, 214, 0)}
+halting rate per level: 5% 4.37e-14, median 5.61e-14, 95% 7.14e-14
+  direct check: blocks 1 seen near the front 0 times in 4335800 levels -> rate < 6.9e-07 (95 %) * P(HALT|1) 0.067 = 4.6e-08
+  low    rate: 50 % HALT after 1.59e+13 levels, 99 % after 1.05e+14 levels (about 10^(5.58e+12) steps)
+  median rate: 50 % HALT after 1.24e+13 levels, 99 % after 8.21e+13 levels (about 10^(4.35e+12) steps)
+  high   rate: 50 % HALT after 9.70e+12 levels, 99 % after 6.45e+13 levels (about 10^(3.42e+12) steps)
+stationarity: slope of log(dangerous levels per window) vs log(level) = -0.007 +- 0.007  => rate about constant -> HALT expected (in the model)
+=== round 9, 1.1 h total, level 4663800 (x has 821256 digits, stack 2616485 entries, rules 19542)
+real run: new small odd blocks near the front {1: 0, 3: 0, 5: 0, 7: 22, 9: 878}; smallest odd block seen 7
+closest approach (like D for the vampires): smallest odd block near the front 7; first/last level seen: {7: (3330786, 4166570), 9: (3132295, 4661072)}
+injections (runs, smaller odd block appeared, HALT): {1: (26559, 0, 1618), 3: (26852, 171, 0), 5: (26429, 212, 0), 7: (26150, 188, 0), 9: (26314, 217, 0)}
+halting rate per level: 5% 2.73e-14, median 3.47e-14, 95% 4.48e-14
+  direct check: blocks 1 seen near the front 0 times in 4663800 levels -> rate < 6.4e-07 (95 %) * P(HALT|1) 0.061 = 3.9e-08
+  low    rate: 50 % HALT after 2.54e+13 levels, 99 % after 1.69e+14 levels (about 10^(8.94e+12) steps)
+  median rate: 50 % HALT after 2.00e+13 levels, 99 % after 1.33e+14 levels (about 10^(7.02e+12) steps)
+  high   rate: 50 % HALT after 1.55e+13 levels, 99 % after 1.03e+14 levels (about 10^(5.45e+12) steps)
+stationarity: slope of log(dangerous levels per window) vs log(level) = -0.005 +- 0.007  => rate about constant -> HALT expected (in the model)

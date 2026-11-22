@@ -100,6 +100,7 @@ def real_run(seconds):
                 d=after.count(v)-before.count(v)
                 if d>0:
                     w[1]+=d; st['created'][v]+=d
+                    st.setdefault('first',{}).setdefault(v,lev); st.setdefault('last',{})[v]=lev
                 st['min_odd']=min([st['min_odd']]+after)
     st['x']=x; st['R']=R; st['level']=lev
 
@@ -155,6 +156,8 @@ def report():
         st['rounds'],st['seconds']/3600,lev,len(str(st['x'])),len(st['R']),len(RULES)))
     if st['halt']: lines.append('*** HALT in the real run at level %d ***'%st['halt'])
     lines.append('real run: new small odd blocks near the front %s; smallest odd block seen %s'%(st['created'],st['min_odd'] if st['min_odd']<10**9 else '-'))
+    fi=st.get('first',{}); la=st.get('last',{})
+    lines.append('closest approach (like D for the vampires): smallest odd block near the front %s; first/last level seen: %s'%(min(fi) if fi else '-', {v:(fi[v],la[v]) for v in sorted(fi)}))
     lines.append('injections (runs, smaller odd block appeared, HALT): %s'%({v:tuple(c) for v,c in st['inj'].items()}))
     lines.append('halting rate per level: 5%% %.2e, median %.2e, 95%% %.2e'%(lo,me,hi))
     n1=st['created'][1]; h=st['inj'][1]
