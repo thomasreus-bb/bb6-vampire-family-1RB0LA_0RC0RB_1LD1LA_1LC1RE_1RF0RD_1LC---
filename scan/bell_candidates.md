@@ -2410,6 +2410,16 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
   - The Discord version has the a ≡ 1 (mod 4) rule only as A(3(a + 1)/2 + b + 2); this is the case k = 2 and is wrong for k ≥ 3 (a ≡ 5 mod 8, e.g. a = 21, 37, 45). The real run hits this at its 7th event (step 15,257): B(37, 39) → B(52, 27), not A(98).
   - **Checks:** 1,153 synthetic starts (A(a) for a < 60, B(a, b) for a < 70, b < 12, and a = 2ᵏm − 3 for k = 2 … 9, m = 1 … 13), no mismatch. From A(7) (step 98 of the real run) the rules give exactly the real sequence A(7), B(2,4), A(12), A(20), A(32), A(50), A(77), B(37,39), B(52,27), B(41,39), A(104), A(158), A(239), B(118,120), A(360), A(542), …
   - **Run of the rules:** 200,000 events from A(7) (a then has about 21,600 digits): no HALT. The power k of 2 in a + 3 at the B events with a ≡ 1 (mod 4) is distributed like 2⁻ᵏ (k = 2: 8171, 3: 2842, 4: 1349, …, 11: 6), so HALT (m = 1) has a chance of about 1/a per such event; summed over all events about 3 %, almost all of it from the first few small events. **Probviously nonhalting**, as on Discord, but with the corrected rules.
+- **Conclusion (22 Nov 2026): simulation alone cannot prove NONHALT here.**
+  - What simulation can do:
+    - Prove HALT, if it happens; the run itself is then the proof.
+    - Show that the machine does not halt up to some point, here up to the 200,000th event, with a ≈ 10^21,600. It could still halt later.
+    - Prove NONHALT only in a special case: when the run falls into a structure that repeats exactly, such as a cycle or an attractor as for no. [52](#52). Then a finite computation plus an induction shows that it goes on forever. For no. 85 there is no sign of this: the power k of 2 in a + 3 jumps at random (distributed like 2⁻ᵏ), and nothing repeats.
+  - Why NONHALT is so hard here: with the correct rules the question has become a pure question about numbers: does the sequence of values a at the B events with a ≡ 1 (mod 4) ever hit a number of the form 2ᵏ − 3 exactly? This is a Collatz-type problem. The map mixes the divisions by 2 and the factors 3/2 so that one cannot predict which power of 2 divides the next a + 3. This is why such a machine is called a cryptid: a proof would be equivalent to an open mathematical problem, as for Antihydra.
+  - What can realistically be shown:
+    - The rules themselves can be proved exactly, also in Rocq. This would reduce the machine cleanly to the number problem, which would be progress.
+    - The probability estimate: a chance of about 1/a per event, about 3 % in total, almost all of it in the first steps, which are already past. This is not a proof.
+  - For the holdout this means: no. 85 is very probably a "probviously nonhalting cryptid", but by today's knowledge not decidable.
 
 <img src="diagrams/1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA.png" alt="space-time diagram" height="350">
 
