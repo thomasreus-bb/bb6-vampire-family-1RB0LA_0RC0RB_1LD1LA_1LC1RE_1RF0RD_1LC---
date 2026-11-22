@@ -2509,7 +2509,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 - BB6 sheet: row 1099, Bell-like
 - diagram: 366,736 steps, tape width 1001 cells
 - No BusyBeaverWiki article (checked 22 Nov 2026).
-- **Related to no. [70](#70) (22 Nov 2026).** No. 70 is exactly equivalent to no. 86 **started in state B** (two transitions differ, B1 and F1, but they are used only in a 3-step detour that gives the same configuration; proof in chapter 70). The run of no. 86 from A is in lockstep with the run of no. 70 from about step 3.5·10⁵ on (all 44,200 left events up to 3·10⁹ steps equal, step offset 1,082); only a short frozen part at the right end of the tape differs. Structure: a 3/2 Bell, see chapter 70. Bell macros and HALT analysis: chapter 70 (they apply to the common left part; the frozen right part of no. 86 has only the blocks 8 and 4 … as in no. 70, no block of length 1).
+- **Related to no. [70](#70) (22 Nov 2026).** No. 70 is exactly equivalent to no. 86 **started in state B** (two transitions differ, B1 and F1, but they are used only in a 3-step detour that gives the same configuration; proof in chapter 70). The run of no. 86 from A is in lockstep with the run of no. 70 from about step 3.5·10⁵ on (all 44,200 left events up to 3·10⁹ steps equal, step offset 1,082); only a short frozen part at the right end of the tape differs. Structure: a 3/2 Bell, see chapter 70. Bell macros and HALT analysis: chapter 70 (they apply to the common left part; the frozen right ends, 70: blocks 8, 4, 4 and 86: blocks 8, 8, contain no block of length 1).
 
 <img src="diagrams/1RB0RE_1RC0RF_1LD1RA_1LB1LD_1RA1LB_---0LD.png" alt="space-time diagram" height="350">
 
