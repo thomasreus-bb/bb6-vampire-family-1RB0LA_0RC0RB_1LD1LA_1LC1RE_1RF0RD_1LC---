@@ -1980,6 +1980,13 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 - verdict: no clear single-block Bell configuration found
 - diagram: 905,251 steps, tape width 1001 cells
 
+- **Analysis (22 Nov 2026, `m55/`), based on the wiki rules of Marco Dos Santos (found with Gemini, paper "At the Limits of Computability"; Lean-verified there).** C(a, b) = `0^inf 110 A> 11^a 0 1^b 0^inf`, b ≥ 6; start C(0, 9) after 74 steps. Simplified rules (wiki):
+  - b = 2k + 6 even: a = 0 → C(k + 1, 9); a = a₁ + 1: k ≤ a₁ + 3 → C(a₁ − k + 4, 6k + 12); k = a₁ + 4 or a₁ + 5 → **HALT**; k ≥ a₁ + 6 → C(k − a₁ − 5, 6a₁ + 39).
+  - b = 2k + 1 odd: k > a → C(k − a, 6a + 6); a = k or k + 1 → **HALT**; a ≥ k + 2 → C(a − k − 1, 6k + 9).
+  - **Check:** the simplified rules agree with the machine on all 2,160 synthetic starts a < 40, 6 ≤ b < 60 (`syn55.c`), including all HALT cases.
+  - Orbit: C(0,9), C(4,6), C(7,12), C(7,30), C(1,75), C(36,12), C(36,30), C(27,84), C(8,195), C(89,54), C(68,156), C(3,441), C(217,24), … — a subtractive (Euclid-like) map with factor 6, like no. [50](#50): HALT needs a and b/2 to come within 1 or 2 of each other.
+  - **Run** (`fast55.py`): 2,000,000 events without HALT (b then has about 184,000 digits). Heuristic chance about 2/max(a, b/2) per event; after max > 10⁵ about 10⁻⁴ in total. **Cryptid**, very probably nonhalting (the wiki: "probvious behavior not yet analyzed").
+
 <img src="diagrams/1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA.png" alt="space-time diagram" height="350">
 
 <a id="56"></a>
@@ -1990,6 +1997,12 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 - level analysis: Bell type `RB`, 11 levels; n: 5 8 14 39 110 232 357 1064 1614 4539 13610; ratios: 1.600 1.750 2.786 2.821 2.109 1.539 2.980 1.517 2.812 2.998; 1 different tails
 - verdict: needle-like: only 1 tail (all information in one number)
 - diagram: 391,938 steps, tape width 1001 cells
+
+- **Analysis (22 Nov 2026, `m56/rules56.py`), based on the wiki rules of Polygon (accelerated rules A1–A12 with step counts).** A(a, b, c, d, …) = `0^inf 1^a 0 1^b D> 1 0 1^c 0 1^d … 0^inf`; start A(0, 2, 0) after 7 steps.
+  - **Check:** the rules with their step counts reproduce the real machine exactly for the first 26 events (up to step 14,585, A(49, 2, 60)): tape, head and state agree at every predicted step.
+  - **HALT** only by rule A6: A(3, 0, c, …). The other halting rules (R11, R13) are unreachable. After the rules A3, A5, A8, A11, A9, A10, A12 the first entry is 0, 1 or 2; a = 3 with b = 0 needs rule A1 with b = 4k, v = 0 and a + k = 3, i.e. a very small b at the right moment.
+  - **Run:** 1,068,193 events in 7 minutes without HALT; the tuple never has more than 5 entries (now 3), the entries have about 31,000 digits (needle-like, as found by our scan). b = 0 with a odd occurred 111,687 times, always with a = 1 (rule A3 from a = 4) or a = 7, 9 early, never a = 3.
+  - Since b is a large "random" number, the chance of a small b with a = 3 is about 1/b per event: **cryptid**, very probably nonhalting.
 
 <img src="diagrams/1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD.png" alt="space-time diagram" height="350">
 
