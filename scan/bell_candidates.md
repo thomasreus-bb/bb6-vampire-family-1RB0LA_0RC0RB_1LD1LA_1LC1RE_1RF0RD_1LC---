@@ -2397,6 +2397,20 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
   - `scan/mgen/famgen.py`: direct simulation of the small inner events with all repeat counts changed by −3 … +10: 150 runs × 3·10⁸ steps, no HALT (`fam85.txt`).
 - **Assessment (estimate).** No halting mechanism was found. The chance per outer event is below about 3·10⁻³ (95 % bound). No restart and no repeating structure (TC) was seen. **HALT unlikely.**
 
+- **Exact event rules (22 Nov 2026; rules proposed on Discord by Big_numbersOP, checked and corrected here; `m85/ab2.c`, `m85/rules85.py`, `m85/fitB.py`).** Configurations (as in the real run, which has a final 1):
+  - A(a) = state E on a 0, then `(10)^(a−1) 1`; B(a, b) = state E on a 0, then `(10)^a 1100 (10)^(b−1) 1`; blank elsewhere.
+  - A(a): a even → A(3a/2 + 2); a odd → B((a − 3)/2, (a + 1)/2).
+  - B(a, b), a even: b even → A(3(a + b)/2 + 3); b odd → B((a + b + 3)/2, (a + b − 1)/2).
+  - B(a, b), a ≡ 3 (mod 4): → B((a + 1)/2, b + (a + 1)/2).
+  - B(a, b), a ≡ 1 (mod 4): write a + 3 = 2ᵏ·m with m odd (k ≥ 2).
+    - m = 1 (a = 2ᵏ − 3 = 1, 5, 13, 29, 61, …): **HALT** (for every b).
+    - k even: → A((4a + 9 + 2m)/3 + b).
+    - k odd, b even: → A((7a + 21 + 9b + 4m)/6).
+    - k odd, b odd: → B((5a + 3b − 4m)/6 + k + 2, (a + 3b + 4m)/6 − (k + 1)/2).
+  - The Discord version has the a ≡ 1 (mod 4) rule only as A(3(a + 1)/2 + b + 2); this is the case k = 2 and is wrong for k ≥ 3 (a ≡ 5 mod 8, e.g. a = 21, 37, 45). The real run hits this at its 7th event (step 15,257): B(37, 39) → B(52, 27), not A(98).
+  - **Checks:** 1,153 synthetic starts (A(a) for a < 60, B(a, b) for a < 70, b < 12, and a = 2ᵏm − 3 for k = 2 … 9, m = 1 … 13), no mismatch. From A(7) (step 98 of the real run) the rules give exactly the real sequence A(7), B(2,4), A(12), A(20), A(32), A(50), A(77), B(37,39), B(52,27), B(41,39), A(104), A(158), A(239), B(118,120), A(360), A(542), …
+  - **Run of the rules:** 200,000 events from A(7) (a then has about 21,600 digits): no HALT. The power k of 2 in a + 3 at the B events with a ≡ 1 (mod 4) is distributed like 2⁻ᵏ (k = 2: 8171, 3: 2842, 4: 1349, …, 11: 6), so HALT (m = 1) has a chance of about 1/a per such event; summed over all events about 3 %, almost all of it from the first few small events. **Probviously nonhalting**, as on Discord, but with the corrected rules.
+
 <img src="diagrams/1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA.png" alt="space-time diagram" height="350">
 
 <a id="86"></a>
