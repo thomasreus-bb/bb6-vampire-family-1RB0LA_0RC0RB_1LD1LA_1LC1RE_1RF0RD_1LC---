@@ -8,6 +8,7 @@ import subprocess,sys,pickle,os
 from fractions import Fraction as Fr
 sys.set_int_max_str_digits(0)
 LEV=os.path.join(os.path.dirname(os.path.abspath(__file__)),'lev70')
+if not os.path.exists(LEV): subprocess.run(['gcc','-O2','-o',LEV,LEV+'.c'],check=True)
 RULES={}; STATS={'learned':0,'sims':0}
 def sim(tape,lim,mx=400000000):
     STATS['sims']+=1
