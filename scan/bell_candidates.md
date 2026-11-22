@@ -89,21 +89,6 @@ Not included:
 
 More machines can be added here as they are found.
 
-## Families of similar machines (22 Nov 2026)
-
-Machines among the candidates whose tables differ in only one or two transitions (after renaming the states, mirroring allowed, any start state), or whose analyses show the same kind of rules. Machines with exactly the same table (same machine, other start) are in the next section. Search: `groups607/families_cand.py` (all pairs of candidates).
-
-| family | machines | how close | common behaviour |
-|---|---|---|---|
-| vampire family | [1](#1)–[7](#7) | 0–1 transitions (same table or F0/A0/B0 changed) | 3/2 Bell, see "Vampire-like TMs" |
-| 13 / 15 | [13](#13), [15](#15) | 1 transition (A0) | both cryptids |
-| 27 / 29 / 36 | [27](#27), [29](#29), [36](#36) | 27–29: 2 transitions (B0, E0); 36: same states A, B, C as 27, exit part D, E, F different | sweep rule (a, b) → (a − 2, b + 3), level `0 1^N 00 1^t`, t always a multiple of 3, HALT only for t = 0 or t not divisible by 3 |
-| 34 / 50 / 55 | [34](#34), [50](#50), [55](#55) | 34–50: 1 transition (D0); 34–55 and 50–55: 2 transitions | three counters swept (x − 2, y − 2, z + 6); map: difference of two numbers plus a factor 3 or 6, HALT when the two numbers are nearly equal |
-| 53 / 85 | [53](#53), [85](#85) | 2 transitions (A1, B0) | not yet compared |
-| 63 / 98 | [63](#63), [98](#98) | 1 transition (D0) | not yet compared |
-| 70 / 86 | [70](#70), [86](#86) | 2 transitions (B1, F1) | not yet compared |
-| 84 / 101 | [84](#84), [101](#101) | 2 transitions (D0, E0) | not yet compared |
-
 ## Same transition table (the 12 TM rules) among the 607 holdouts (13 Nov 2026)
 
 All 607 machines of the Holdout Guide (status of 3 Nov 2026) were compared, transition table against transition table, up to renaming of the states and mirroring (L ↔ R) (`scan/groups607/groups607.py`, table made with `mk_table.py`). Two machines with the same table are the same machine, started in different states, like nos. 51, 61, 71 and 93. "Table" here means the plain transition table of the Turing machine (its 12 rules, as in the machine code), not a macro table such as the Bell table of the vampire family.
@@ -270,6 +255,21 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 128 | `1RB0LF_1LC0LA_---1RD`<br>`1RF1RE_1LF1RD_1LB0RE` | #437: start A, structure<br>#501: start D, structure | Bouncer + Chaotic Edge |
 | 129 | `1RB---_0LC0RB_1RA1LD`<br>`1LE1LF_1LB0LF_0RC0LA` | #450: start A, structure<br>#555: start D, mirrored, structure | Shift-overflow counter |
 | 130 | `1RB0RC_1LC0RE_0LD0LB`<br>`1RA1LE_1LB1RF_---0RD` | #506: start A, lottery<br>#547: start D, lottery | Shift-overflow counter |
+
+## Families of similar machines (22 Nov 2026)
+
+Machines among the candidates whose tables differ in only one or two transitions (after renaming the states, mirroring allowed, any start state), or whose analyses show the same kind of rules. Machines with exactly the same table (same machine, other start) are in the next section. Search: `groups607/families_cand.py` (all pairs of candidates).
+
+| family | machines | how close | common behaviour |
+|---|---|---|---|
+| vampire family | [1](#1)–[7](#7) | 0–1 transitions (same table or F0/A0/B0 changed) | 3/2 Bell, see "Vampire-like TMs" |
+| 13 / 15 | [13](#13), [15](#15) | 1 transition (A0) | both cryptids |
+| 27 / 29 / 36 | [27](#27), [29](#29), [36](#36) | 27–29: 2 transitions (B0, E0); 36: same states A, B, C as 27, exit part D, E, F different | sweep rule (a, b) → (a − 2, b + 3), level `0 1^N 00 1^t`, t always a multiple of 3, HALT only for t = 0 or t not divisible by 3 |
+| 34 / 50 / 55 | [34](#34), [50](#50), [55](#55) | 34–50: 1 transition (D0); 34–55 and 50–55: 2 transitions | three counters swept (x − 2, y − 2, z + 6); map: difference of two numbers plus a factor 3 or 6, HALT when the two numbers are nearly equal |
+| 53 / 85 | [53](#53), [85](#85) | 2 transitions (A1, B0) | not yet compared |
+| 63 / 98 | [63](#63), [98](#98) | 1 transition (D0) | not yet compared |
+| 70 / 86 | [70](#70), [86](#86) | 2 transitions (B1, F1) | not yet compared |
+| 84 / 101 | [84](#84), [101](#101) | 2 transitions (D0, E0) | not yet compared |
 
 ## The vampire method: when does it apply?
 
