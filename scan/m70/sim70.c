@@ -1,13 +1,13 @@
 /* sim70.c - fast macro simulator for BB(6) holdout no. 70
  *   1RB1RF_1LC1RD_1LA1LC_1RA0RE_1RD1LA_---0LE   (also no. 86 started in state B)
  *
- * Level start: state A on a blank cell, tape  1 0^x 1^m 0^g1 1^b1 0^g2 1^b2 ...
+ * Bell start: state A on a blank cell, tape  1 0^x 1^m 0^g1 1^b1 0^g2 1^b2 ...
  * State: the number x and the stack S = [m, g1, b1, g2, b2, ...].
- * Every level follows a rule  x' = 3x/2 + c,  new stack prefix = constants; c and the new prefix depend only on
- * x mod 12 (more bits if needed) and on a short prefix of S.  Rules are learned on the fly: the level is simulated
+ * Every Bell follows a rule  x' = 3x/2 + c,  new stack prefix = constants; c and the new prefix depend only on
+ * x mod 12 (more bits if needed) and on a short prefix of S.  Rules are learned on the fly: the Bell is simulated
  * directly for 5 small x of the same residue class, with only the prefix on the tape (same method as macro70.py).
  *
- * Arithmetic: x grows by about 0.585 bits per level.  Levels are done in batches of L levels using only the low
+ * Arithmetic: x grows by about 0.585 bits per Bell.  Bells are done in batches of L Bells using only the low
  * bits of x; the full x is updated once per batch: x_L = (3^L x + D) / 2^L.  No external library is needed.
  *
  * Observed and logged: blocks of odd length 9, 7, 5, 3, 1 appearing among the first three stack blocks
@@ -16,9 +16,9 @@
  * Compile:  gcc -O2 -o sim70 sim70.c
  * Run:      ./sim70                 (continues from sim70.ck if it exists; Ctrl-C saves and stops)
  * Options:  -r SEC   report interval (default 60)      -s SEC   checkpoint interval (default 600)
- *           -n LEVEL stop at this level and print check values      -L N  batch length (default 2048)
+ *           -n BELL  stop at this Bell and print check values      -L N  batch length (default 2048)
  *           -f       start fresh (ignore the checkpoint)
- * Check values of the Python run (watch70.py) at level 4663800:
+ * Check values of the Python run (watch70.py) at Bell 4663800:
  *   bits 2728153, x mod 2^64 = 0x58106550ccb57c0e, stack 2616485 entries, hash 884327361506333381
  */
 #include <stdio.h>
@@ -39,8 +39,8 @@ static void tm_init(void){
     if(x[0]=='-'){tq[i][b]=-1;continue;} tw[i][b]=x[0]-'0';td[i][b]=x[1]=='R'?1:-1;tq[i][b]=x[2]-'A';}
 }
 enum {R_OK=0,R_HALT=1,R_OUT=2,R_MAX=3};
-/* one level from a level start; tok = 1, x, m, g1, b1, ... ; lim = cell index (from the tape start) the head must
-   not reach, or -1.  On R_OK: out[] = blocks of the new level start (starting with ones), off = position of its
+/* one Bell from a Bell start; tok = 1, x, m, g1, b1, ... ; lim = cell index (from the tape start) the head must
+   not reach, or -1.  On R_OK: out[] = blocks of the new Bell start (starting with ones), off = position of its
    first cell relative to the old tape start, z0 = zeros between head and that cell. */
 static int level_sim(const long *tok,int ntok,long lim,long *out,int *nout,int maxout,long *z0,long *off){
   long p=TW/4, base=p+1, x=base; int one=1;
@@ -190,7 +190,7 @@ bad: fprintf(stderr,"checkpoint damaged\n"); exit(1);
 }
 static double now(void){ struct timespec ts; clock_gettime(CLOCK_MONOTONIC,&ts); return ts.tv_sec+ts.tv_nsec*1e-9; }
 static void report(double rate){
-  printf("level %llu (about 10^%.4g steps) | x %zu bits | stack %zu | rules %zu (%ld learned) | %.0f levels/s\n",
+  printf("Bell %llu (about 10^%.4g steps) | x %zu bits | stack %zu | rules %zu (%ld learned) | %.0f Bells/s\n",
     (unsigned long long)level,0.352*level,bits(X,xn),top,nrules,nlearned,rate);
   printf("   odd blocks near the front:"); for(int k=4;k>=0;k--) printf("  %d: %lld",ODD[k],created[k]);
   printf("  | smallest seen: %s",minodd<1000000000?"":"-"); if(minodd<1000000000)printf("%ld",minodd);
@@ -204,12 +204,12 @@ int main(int argc,char**argv){
   for(int i=1;i<argc;i++){
     if(!strcmp(argv[i],"-r")&&i+1<argc)rep=atof(argv[++i]); else if(!strcmp(argv[i],"-s")&&i+1<argc)sav=atof(argv[++i]);
     else if(!strcmp(argv[i],"-n")&&i+1<argc)stopat=strtoull(argv[++i],0,10); else if(!strcmp(argv[i],"-L")&&i+1<argc)L=atoi(argv[++i]);
-    else if(!strcmp(argv[i],"-f"))fresh=1; else {fprintf(stderr,"usage: %s [-r sec] [-s sec] [-n level] [-L batch] [-f]\n",argv[0]);return 1;} }
+    else if(!strcmp(argv[i],"-f"))fresh=1; else {fprintf(stderr,"usage: %s [-r sec] [-s sec] [-n bell] [-L batch] [-f]\n",argv[0]);return 1;} }
   if(L<64)L=64; L=(L/64)*64;
   tm_init(); signal(SIGINT,onsig); signal(SIGTERM,onsig);
   if(fresh||!load()){ level=0; xreserve(4); X[0]=30; xn=1; top=0; spush(4); spush(18); spush(11);
     for(int k=0;k<5;k++){created[k]=0;firstl[k]=lastl[k]=-1;} minodd=1000000000; }
-  else printf("continuing from %s at level %llu\n",CK,(unsigned long long)level);
+  else printf("continuing from %s at Bell %llu\n",CK,(unsigned long long)level);
   evf=fopen("events70.txt","a");
   /* batch buffers */
   int NB=L/64+4;                                   /* low part: B = 64*NB bits, exact bits left after a batch >= 256 */
@@ -234,7 +234,7 @@ int main(int argc,char**argv){
       oddfront(after);
       for(int k=0;k<5;k++){ int d=after[k]-before[k]; if(d>0){ created[k]+=d; if(firstl[k]<0)firstl[k]=level; lastl[k]=level;
           if(ODD[k]<minodd)minodd=ODD[k];
-          if(ODD[k]<=7&&evf){ fprintf(evf,"level %llu: block %d appeared near the front\n",(unsigned long long)level,ODD[k]); fflush(evf);} } }
+          if(ODD[k]<=7&&evf){ fprintf(evf,"Bell %llu: block %d appeared near the front\n",(unsigned long long)level,ODD[k]); fflush(evf);} } }
       long d2=2*r->c;                               /* x' = (3x + d2)/2 */
       /* xl = (3*xl + d2) >> 1  (mod 2^(64 NB)) */
       { u64 cy=0; u64 add=(u64)d2, ext=d2<0?~0ULL:0;
@@ -259,7 +259,7 @@ int main(int argc,char**argv){
       int w=Li/64, sh=Li%64; size_t nn=yn-w; xreserve(nn+1);
       for(size_t i=0;i<nn;i++){ u64 a=Y[i+w], b=(i+w+1<yn)?Y[i+w+1]:0; X[i]=sh?((a>>sh)|(b<<(64-sh))):a; }
       xn=nn; trim(X,&xn); free(Y);
-      if(X[0]!=xl[0]){ fprintf(stderr,"internal error: low bits disagree at level %llu\n",(unsigned long long)level); return 2; }
+      if(X[0]!=xl[0]){ fprintf(stderr,"internal error: low bits disagree at Bell %llu\n",(unsigned long long)level); return 2; }
     }
     double t=now();
     if(t-tl>=rep){ report((level-l0)/(t-t0)); tl=t; }
@@ -267,10 +267,10 @@ int main(int argc,char**argv){
     if(stopat && level>=stopat) break;
   }
   double t=now(); report((level-l0)/(t-t0+1e-9));
-  if(halted){ printf("*** HALT at level %llu (the level after this one halts) ***\n",(unsigned long long)level); if(evf)fprintf(evf,"HALT at level %llu\n",(unsigned long long)level); }
+  if(halted){ printf("*** HALT at Bell %llu (the Bell after this one halts) ***\n",(unsigned long long)level); if(evf)fprintf(evf,"HALT at Bell %llu\n",(unsigned long long)level); }
   if(stopat && level>=stopat){
     u64 h=0; for(size_t i=0;i<top;i++){ h=(u64)(((u128)h*1000003+S[i])%(((u128)1)<<61)); }
-    printf("check values at level %llu: bits %zu, x mod 2^64 = 0x%016llx, stack %zu entries, hash %llu\n",
+    printf("check values at Bell %llu: bits %zu, x mod 2^64 = 0x%016llx, stack %zu entries, hash %llu\n",
       (unsigned long long)level,bits(X,xn),(unsigned long long)X[0],top,(unsigned long long)h);
   }
   save(); printf("checkpoint written (%s)\n",CK);
