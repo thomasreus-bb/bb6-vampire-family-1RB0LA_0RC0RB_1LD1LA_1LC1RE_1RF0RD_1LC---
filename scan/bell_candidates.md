@@ -313,11 +313,11 @@ The repository [google-deepmind/cryptids](https://github.com/google-deepmind/cry
 | [69](#69) | red | BB6 | formal statement `IsCryptid` (the wiki rules, chapter 69) |
 | [71](#71) | red | Accelerations | stack reduction; same table as no. 61 restarted from state C |
 | [87](#87) | red | BB6 | **complete closed map** (configurations R₁, R₂, Q, S₄, S₆ and a scan transducer Φ); with it the real orbit and its fate are computed in chapter 87 |
-| [90](#90) | – | Accelerations | odometer acceleration E(a, L, d, R) with explicit drain/bounce rules and HALT condition (d odd at the boundary); a fast simulator could be built from it |
+| [90](#90) | – | Accelerations | odometer acceleration E(a, L, d, R) with explicit drain/bounce rules and HALT condition (d odd at the boundary); fast simulator built (`scan/m90/`), probably nonhalting |
 | [93](#93) | red | Accelerations | stack reduction; same table as no. 61 restarted from state E |
 | [98](#98) | red | BB6 | closed map with equations (the wiki rules of Marco Dos Santos, chapter 98) |
 | [100](#100) | – | BB6 | Collatz reduction (closed pattern set); wiki page User:RobinCodes/Next_Steps |
-| [104](#104) | – | Accelerations | odometer acceleration E(d, R) with explicit rules Σ, Ω; HALT if R is empty and d odd |
+| [104](#104) | – | Accelerations | odometer acceleration E(d, R) with explicit rules Σ, Ω; HALT if R is empty and d odd; fast simulator built (`scan/m104/`), probably nonhalting |
 | [112](#112) | red | Accelerations | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
 
 The decided vampires 1–7 are in the folder `Accelerations` (TM1, TM1-F, TM2, TM2', TM2a, TM2b, TM2b'). No. 70 and no. 86 are not in the repository.
@@ -2668,7 +2668,14 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 ## [90](#t90). `1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD` (for later analysis)
 
 - BB6 sheet: row 1108, Bell-like
-- **DeepMind cryptids (23 Nov 2026):** odometer acceleration E(a, L, d, R) with explicit rules (drain Λ, boundary bounce η; HALT when d is odd at the boundary with empty R), kernel-verified in Lean; see the section [DeepMind cryptids repository](#deepmind-cryptids-repository-23-nov-2026). A fast simulator could be built from it.
+- **DeepMind cryptids (23 Nov 2026):** odometer acceleration E(a, L, d, R) with explicit rules (drain Λ, boundary bounce η; HALT when d is odd at the boundary with empty R), kernel-verified in Lean; see the section [DeepMind cryptids repository](#deepmind-cryptids-repository-23-nov-2026).
+- **Own analysis with the DeepMind map (23 Nov 2026), tools in `scan/m90/`:**
+  - `dm90.py` implements the map (section 2.2). `check90.py` compares it with a direct TM simulation (state E reading 0 between two well-formed stacks): all 17,924 such events in 2·10⁸ TM steps are exactly the map states, in order.
+  - **Bell rule** (4 macro steps, checked against the plain map): (0, [0ⁿ, 3, 1], 5, [0ᶜ]·R) → (0, [0ⁿ⁺⁵, 3, 1], 5, [0ᶜ⁻²]·R). One Bell eats a zero run of R two entries at a time while the zero run of L grows by 5.
+  - `fast90.py`: run-length encoded stacks, big integers, Bell jumps (checked against the plain map up to 3·10⁶ macro steps). 100,000 Bells take 30 s; 400 Bells take well under a second. `stats90.py` prints the statistics below.
+  - **Growth:** per Bell, the zero count of L grows by a factor of about 5/2 and the macro step count by a factor of about 2.5. After 100,000 Bells, |L| ≈ 2^132196, while R has only 213,611 entries (about 2.1 new entries per Bell, mostly 0 and multiples of 5).
+  - **HALT condition:** HALT needs R to be used up completely (η or T with R = ε and d odd). R is read only from the top. Between two Bells, R never shrinks by more than **7 entries** below its length at the previous Bell (100,000 Bells: depth 4: 58,002, 5: 31,278, 6: 10,538, 7: 181, never 8 or more). R was empty only 3 times, all at the very start.
+  - **Assessment:** R is a write-once record that grows linearly, and only its top few entries are ever read again. HALT would need the whole stack to be eaten, which never comes close to happening. **Probably nonhalting.** Not a proof: the top of R depends on the parity of the huge counter (Collatz-like, n → about 5n/2). A proof would need a finite abstraction of the top of R that shows the read depth stays bounded.
 - diagram: 318,582 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD.png" alt="space-time diagram" height="350">
@@ -2868,7 +2875,16 @@ Checks:
 ## [104](#t104). `1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA` (for later analysis)
 
 - BB6 sheet: row 1133, Bell-like
-- **DeepMind cryptids (23 Nov 2026):** odometer acceleration E(d, R) with explicit rules (Σ, Ω; HALT when R is empty and d is odd), kernel-verified in Lean; see the section [DeepMind cryptids repository](#deepmind-cryptids-repository-23-nov-2026). A fast simulator could be built from it.
+- **DeepMind cryptids (23 Nov 2026):** odometer acceleration E(d, R) with explicit rules (Σ, Ω; HALT when R is empty and d is odd), kernel-verified in Lean; see the section [DeepMind cryptids repository](#deepmind-cryptids-repository-23-nov-2026).
+- **Own analysis with the DeepMind map (23 Nov 2026), tools in `scan/m104/`:**
+  - `dm104.py` implements the map (section 2.5). `check104.py` compares it with a direct TM simulation: all 6,960 events in 5·10⁷ TM steps match the map states, in order.
+  - **Bell rule** (1 macro step, exact for every odd d and c ≥ 2): (d, [3, 0ᶜ]·R) → (d+6, [3, 0ᶜ⁻²]·R). A Bell eats a long zero run two entries at a time; then 3–5 ordinary macro steps rewrite the top of the stack and push the next zero run, of length about d/2.
+  - Simulators:
+    - `sim104.c`: 64-bit, run-length encoded, with Bell jumps; runs about 100 Bells, up to d ≈ 10¹⁸. The plain map version gives the same state after 10⁸ macro steps.
+    - `fast104.py` and `stats104.py`: big integers; 100,000 Bells in 7 s.
+  - **Growth:** per Bell, d grows exactly as d → (3d + k)/2 with a small odd k, so by a factor of 3/2. After 100,000 Bells, d ≈ 10^17,600, while R has only 113,486 entries (about 1.13 new entries per Bell; values ≤ 39, mostly 0 and 3).
+  - **HALT condition:** HALT needs the scan to run through the whole stack (all entries odd) with R empty and d odd. Between two Bells, the stack never shrinks by more than **13 entries** below its length at the previous Bell (100,000 Bells: depth 6: 65,218, 7: 24,561, 8: 6,313, 9: 3,522, 10: 299, 11: 82, 12: 2, 13: 2). The scan reached the bottom only 4 times, all within the first 13 macro steps. Even entries (about one per Bell) are never removed again.
+  - **Assessment:** same picture as no. [90](#90). The stack is written once and grows linearly. The read depth has a fast-decaying tail, so the chance of eating the whole stack goes to zero. **Probably nonhalting**, Collatz-like in d (factor 3/2). Not a proof.
 - diagram: 241,570 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA.png" alt="space-time diagram" height="350">
