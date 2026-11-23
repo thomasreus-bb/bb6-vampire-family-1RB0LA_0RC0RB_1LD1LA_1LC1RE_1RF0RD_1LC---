@@ -21,7 +21,7 @@ for col,c,lab,typ,st,exp,tm,steps in rows:
         col,code(c),'<div class="lab">'+lab+'</div>' if lab else '',typ,st,exp,tm,steps))
 h='''<!doctype html><html><head><meta charset="utf-8"><style>%s</style></head><body><div class="wrap">
 <h1>Vampire-like BB(6) machines</h1>
-<div class="sub">Bell map driven by the digits of one large number and a short word or tail; a HALT needs a certain sequence of residues (“lottery”). Expected values: Markov estimate with random residues (heuristic, not a proof). Green = HALT found, yellow = open. Status of 14 Nov 2026.</div>
+<div class="sub">Bell map driven by the digits of one large number and a short word or tail; a HALT needs a certain sequence of residues (“lottery”). Expected values: Markov estimate with random residues (heuristic, not a proof). Green = HALT found, yellow = open. Status of 23 Nov 2026.</div>
 <table><colgroup><col style="width:205px"><col style="width:15%%"><col style="width:20%%"><col style="width:15%%"><col style="width:17%%"><col></colgroup>
 <tr><th>machine</th><th>type</th><th>status</th><th>expected HALT (Markov)</th><th>computing time to HALT</th><th>steps of the original TM</th></tr>
 %s</table>
