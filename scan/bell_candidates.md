@@ -312,7 +312,7 @@ The repository [google-deepmind/cryptids](https://github.com/google-deepmind/cry
 | [68](#68) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
 | [69](#69) | red | BB6 | formal statement `IsCryptid` (the wiki rules, chapter 69) |
 | [71](#71) | red | Accelerations | stack reduction; same table as no. 61 restarted from state C |
-| [87](#87) | – | BB6 | **complete closed map** (configurations R₁, R₂, Q, S₄, S₆ and a scan transducer Φ); with it the real orbit and its fate are computed in chapter 87 |
+| [87](#87) | red | BB6 | **complete closed map** (configurations R₁, R₂, Q, S₄, S₆ and a scan transducer Φ); with it the real orbit and its fate are computed in chapter 87 |
 | [90](#90) | – | Accelerations | odometer acceleration E(a, L, d, R) with explicit drain/bounce rules and HALT condition (d odd at the boundary); a fast simulator could be built from it |
 | [93](#93) | red | Accelerations | stack reduction; same table as no. 61 restarted from state E |
 | [98](#98) | red | BB6 | closed map with equations (the wiki rules of Marco Dos Santos, chapter 98) |
@@ -511,7 +511,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | 🟩 <a id="t84"></a>[84](#84) | 🟩<br>– | 🟩<br>`1RB0LC_1LC0RE`<br>`1RF1LD_1LA0LB`<br>`1RD1RA_1LB---` | – | for later analysis | 1094; Bell-like | **#207 Proof in an open PR**: Open PR 47, by Dahoas, proves that it halts. Not merged yet. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t85"></a>[85](#85) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0RF_0LC1RE`<br>`---1LD_1LE0LB`<br>`0RF0LD_1RD1RA` | – | 3/2 Bell with several long segments; 92 outer events to 10³⁰⁰ and about 900 perturbed outer events without HALT (9 Nov 2026): HALT unlikely | 1095; Bell-like | **#208 Looks like a lottery**: A 3/2 Bell with several long segments. |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> <a id="t86"></a>[86](#86) | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>– | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"><br>`1RB0RE_1RC0RF`<br>`1LD1RA_1LB1LD`<br>`1RA1LB_---0LD` | – | for later analysis | 1099; Bell-like | **#241 Looks like a lottery**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
-| <a id="t87"></a>[87](#87) | – | `1RB1LC_1RC0RF`<br>`1RD0LB_1RE0LD`<br>`1LF---_0RA1LA` | – | for later analysis | 1100; Bell-like | **#245 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t87"></a>[87](#87) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LC_1RC0RF`<br>`1RD0LB_1RE0LD`<br>`1LF---_0RA1LA` | – | for later analysis | 1100; Bell-like | **#245 Cryptid**: Its halting reduces to a Collatz-like question. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t88"></a>[88](#88) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB0LE_1RC0RF`<br>`0RD0RB_1RE0RC`<br>`1LA0LA_1RA---` | – | several counters (gaps ×3/2, main gap ×2 per phase); 11,860 perturbed phases without HALT (9 Nov 2026): HALT unlikely | 1102; Bell-like | **#269 Some structure seen**: A Bell with several counters, growing by about 3/2 or by irregular doubling. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t89"></a>[89](#89) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB---_1RC1RE`<br>`1LD0LE_1RF0LC`<br>`0RD0RA_0RB1RD` | – | for later analysis | 1104; Bell-like | **#297 Rules known, no proof**: One table, four starts. Exact macro law proved in Rocq. Real runs stay small, but the residues behave like Collatz digits, so a proof has to allow every sequence. |
 | <a id="t90"></a>[90](#90) | – | `1RB1LB_1LC1LA`<br>`1RD0LB_1RA1RE`<br>`1RF0RD_---1RD` | – | for later analysis | 1108; Bell-like | **#321 Looks like a lottery**: Labelled Bell-like, but no clear Bell events up to 3e8 steps. No rule found at 1e9. |
@@ -2603,7 +2603,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 <img src="diagrams/1RB0RE_1RC0RF_1LD1RA_1LB1LD_1RA1LB_---0LD.png" alt="space-time diagram" height="350">
 
 <a id="87"></a>
-## [87](#t87). `1RB1LC_1RC0RF_1RD0LB_1RE0LD_1LF---_0RA1LA` (for later analysis)
+## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [87](#t87). `1RB1LC_1RC0RF_1RD0LB_1RE0LD_1LF---_0RA1LA` (for later analysis)
 
 - BB6 sheet: row 1100, Bell-like
 - diagram: 439,921 steps, tape width 1001 cells
