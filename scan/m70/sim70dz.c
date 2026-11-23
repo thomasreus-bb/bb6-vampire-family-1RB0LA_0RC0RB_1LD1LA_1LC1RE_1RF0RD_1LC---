@@ -21,7 +21,7 @@
  * Run:      ./sim70dz            continues from sim70dz.ck if it exists; Ctrl-C: stops after the current block,
  *                                writes the checkpoint (this can take a while for large x)
  * Options:  -t BELL   stop at this Bell (and print check values)      -f   start fresh
- *           -b B      Bells per block (default: bits of x / 8, between 2^16 and 2^26)
+ *           -b B      Bells per block (default: bits of x / 8, at least 2^16)
  *           -r SEC    report interval (default 60)    -s SEC  checkpoint interval (default 1800)
  *           -M MB     RAM for the stack front in MB (default 512; the rest goes to sim70dz.stack)
  *           -d        discard the deep stack instead of writing it (no disk use).  So far the run has never read
@@ -340,7 +340,7 @@ int main(int argc,char**argv){
   while(!stopflag && !halted){
     if(target && bell>=target) break;
     long long bits=(long long)mpz_sizeinbase(X,2);
-    long long B=B0?B0:bits/8; if(!B0){ if(B<(1LL<<16))B=1LL<<16; if(B>(1LL<<26))B=1LL<<26; }
+    long long B=B0?B0:bits/8; if(!B0){ if(B<(1LL<<16))B=1LL<<16; if(B>(1LL<<31))B=1LL<<31; }
     if(target && (u64)B>target-bell) B=(long long)(target-bell);
     adv(X,B,0);
     double t=now();
