@@ -6,6 +6,7 @@ Main tools (Python 3 and gcc needed; `lev70` is compiled automatically from `lev
 |---|---|
 | `macro70.py` | on-the-fly macro simulator: rules (x mod 12, stack prefix) -> x' = 3x/2 + c, learned by direct simulation when first needed (cache `rules70.pkl`) |
 | `sim70.c` | **fast C version** of the real macro run (no library needed): `gcc -O2 -o sim70 sim70.c`, then `./sim70`; checkpoint `sim70.ck` (Ctrl-C saves), progress every 60 s, every block 7, 5, 3, 1 near the front is logged in `events70.txt`. Same rules and results as the Python run (check values at Bell 4,663,800 identical); about 1 million Bells/s at the start, 57,000 Bells/s at 10⁸ Bells |
+| `sim70dc.c` | **fastest version**: divide and conquer with GMP as in `belldc`, deep part of the stack in the file `sim70dc.stack`; `gcc -O3 -march=native -o sim70dc sim70dc.c -lgmp`, then `./sim70dc`; checkpoint `sim70dc.ck` (keep it together with `sim70dc.stack`), events in `events70dc.txt`; same check values as `sim70`; about 2.5 million Bells/s up to 1.5·10⁹ Bells |
 | `watch70.py` | long run that improves the halting-rate estimate in rounds (default 15 minutes) and judges stationarity; report `watch70_report.txt`, checkpoint `watch70_state.pkl` (a restart continues from it) |
 | `check_macro70.py`, `check_msim70.py` | checks of the macro simulator against the direct run and against `mgen/msim.py` |
 | `coin70.py`, `inject70.py`, `rate70.py`, `odd70.py` | earlier experiments (coin model, injection tests, stationarity) |
@@ -28,3 +29,13 @@ Fast run in C (recommended):
 
 Memory: about 0.56 stack entries per Bell (4 bytes each) plus x (0.585 bits per Bell): about 260 MB at 10⁸ Bells,
 2.6 GB at 10⁹ Bells. The checkpoint file has the same size.
+
+Fastest run (GMP needed: `sudo apt install libgmp-dev`):
+
+    gcc -O3 -march=native -o sim70dc sim70dc.c -lgmp
+    ./sim70dc -t 4663800 -f     # test: same check values as above
+    ./sim70dc                   # continues; Ctrl-C stops after the current block and writes the checkpoint
+
+Memory and disk: RAM for the stack front is limited by `-M` (default 512 MB); the rest of the stack goes to
+`sim70dc.stack` (about 2.2 bytes per Bell: 3 GB at 1.5·10⁹ Bells, 22 GB at 10¹⁰). x needs 0.073 bytes per Bell
+in RAM (730 MB at 10¹⁰), the divide and conquer about three times that.
