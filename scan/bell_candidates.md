@@ -273,6 +273,55 @@ Machines among the candidates whose tables differ in only one or two transitions
 | 70 / 86 | [70](#70), [86](#86) | 2 transitions (B1, F1; 70 renamed A→B, B→C, C→D, D→A) | **70 is exactly equivalent to 86 started in state B** (the two changed transitions are used only in one 3-step detour that gives the same configuration in both). The runs of 70 and 86 (from A) are in lockstep from step about 3.5·10⁵ on: all 44,200 left events up to 3·10⁹ steps are equal (step offset 1,082), only a short frozen part at the right end of the tape differs |
 | 84 / 101 | [84](#84), [101](#101) | 2 transitions (D0, E0) | not compared, not needed: both are proved to halt in the open busycoq PR 47 (Dahoas) |
 
+## DeepMind cryptids repository (23 Nov 2026)
+
+The repository [google-deepmind/cryptids](https://github.com/google-deepmind/cryptids/tree/main/BusyBeaver/BB6) (Lean 4, kernel-verified) contains 302 BB(6) machines: closed Collatz-like maps (`HasCollatzReduction`, `IsValidAcceleration`), stack/odometer/transducer reductions (folder `Accelerations`), resolved `Halt` and `NonHalt` machines, `Hardness.lean` and `Equivalences.lean`. Matched with our chapters (also up to renaming and mirroring): **40 candidates**, all with the same table as in the list. None of them is in the folders `Halt` or `NonHalt`, so DeepMind decides none of our open candidates. Most useful are the exact high-level maps: they give fast simulators. Colour = our marking at the time of the check.
+
+| no. | colour | folder | what DeepMind has |
+|---|---|---|---|
+| [9](#9) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [13](#13) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [14](#14) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [15](#15) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [16](#16) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [24](#24) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [28](#28) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [30](#30) | red | Accelerations | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [33](#33) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [34](#34) | red | BB6 | closed map with equations; in `Hardness.lean` |
+| [35](#35) | red | Accelerations | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [40](#40) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [41](#41) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [46](#46) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [50](#50) | red | BB6 | closed map with equations; in `Hardness.lean` |
+| [51](#51) | red | Accelerations | stack reduction; confirms: same table as no. 61, restarted from state D (mirrored) |
+| [54](#54) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [55](#55) | red | BB6 | closed map with equations; in `Hardness.lean` |
+| [56](#56) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [57](#57) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [58](#58) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [59](#59) | red | BB6 | Antihydra |
+| [60](#60) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [61](#61) | red | Accelerations | stack reduction (`HasStackReduction`), the base machine of 51, 71, 93 |
+| [62](#62) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [63](#63) | red | BB6 | closed map with equations (chapter 63) |
+| [64](#64) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [65](#65) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [66](#66) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [67](#67) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [68](#68) | red | BB6 | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+| [69](#69) | red | BB6 | formal statement `IsCryptid` (the wiki rules, chapter 69) |
+| [71](#71) | red | Accelerations | stack reduction; same table as no. 61 restarted from state C |
+| [87](#87) | – | BB6 | **complete closed map** (configurations R₁, R₂, Q, S₄, S₆ and a scan transducer Φ); with it the real orbit and its fate are computed in chapter 87 |
+| [90](#90) | – | Accelerations | odometer acceleration E(a, L, d, R) with explicit drain/bounce rules and HALT condition (d odd at the boundary); a fast simulator could be built from it |
+| [93](#93) | red | Accelerations | stack reduction; same table as no. 61 restarted from state E |
+| [98](#98) | red | BB6 | closed map with equations (the wiki rules of Marco Dos Santos, chapter 98) |
+| [100](#100) | – | BB6 | Collatz reduction (closed pattern set); wiki page User:RobinCodes/Next_Steps |
+| [104](#104) | – | Accelerations | odometer acceleration E(d, R) with explicit rules Σ, Ω; HALT if R is empty and d odd |
+| [112](#112) | red | Accelerations | Collatz reduction / acceleration (closed pattern set, kernel-verified) |
+
+The decided vampires 1–7 are in the folder `Accelerations` (TM1, TM1-F, TM2, TM2', TM2a, TM2b, TM2b'). No. 70 and no. 86 are not in the repository.
+
 ## The vampire method: when does it apply?
 
 A machine is a candidate for the vampire method if its Bell map can be written as a **closed finite table**. This section collects what that means, what it proves and what it does not prove, as a basis for finding further vampire candidates in BB(6), BB(7) and other classes.
@@ -2572,6 +2621,11 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
   - **HALT** (E1 is the undefined transition) is decided at the right end of the tail, within 50–200 steps of a round start: e.g. every tail ending in `100 1^r 001111` with r ≥ 3 halts, while r = 1 and r = 2 continue (`tails87.py`: 160 HALTs among 1,500 random tails built from the pieces `100`, `1111`, `11`, `1100`). The tails of the real run so far are all of the non-halting kinds.
   - **Picture:** a vampire-like system: one large number n (factor 3.1, or 1/2, or −2 per round, depending on the tail) and a tail word that changes with n mod 10 (and more); a HALT needs a certain tail. With the tail as a growing word this is also close to a tag system, which fits the suspicion "HALT or TC".
   - **Next step:** an event definition for the sub-rounds of a U-round; then the round map can be learned on the fly as for no. 70 (affine in n for fixed tail and residue), and the run can be continued far beyond direct simulation.
+- **DeepMind's closed map and the fate of no. 87 (23 Nov 2026, `m87/dm87.py`, `m87/fate87.py`).** The [cryptids repository](https://github.com/google-deepmind/cryptids/tree/main/BusyBeaver/BB6) gives a complete, kernel-verified map for no. 87 with the configurations R₁(n) = (1100)^n 100 A>, R₂(n) = (1100)^n 100100 A>, Q(n) = (1100)^n 111100 A>, S₄(n), S₆(n) (the tape read from the left; our "round with tail T₂" is R₂, "tail U" is Q) and a scan transducer Φ for Q, S₄, S₆. In Python (`dm87.py`) it reproduces our real rounds exactly: S₆(1) → R₂(23) → R₂(73) → R₂(228) → R₂(708) → R₂(2196) → Q(6808), and then
+  - **Q(6808) → S₆(n) with n of 772 digits** (computed exactly; the real machine needs about 10^1500 steps for it). The next scan has about n/2 ≈ 10⁷⁷¹ steps of Φ: out of reach. So no. 87 is **tetrational**, like nos. 63, 69 and 98.
+  - **R₁ is a trap:** R₁(n) → R₁(n + 5) for n ≥ 2 forever, so reaching R₁ means nonhalting. R₂ goes to R₁ (2/5), R₂ (2/5) or Q (1/5). A scan ends in HALT only for S₆ (end index 3, or τ₃ with r = 3).
+  - **Fate (heuristic):** outcomes of 300 exact scans per type (n between 1,500 and 3,000) give an absorbing chain: P(HALT eventually) ≈ **6 %** from S₆ (the current state), 3 % from Q, 1 % from R₂; otherwise the machine ends in the R₁ loop. **No. 87 is therefore probably nonhalting (about 94 %)**; deciding it needs the outcome of a scan of length about 10⁷⁷¹, which no known acceleration provides.
+
 
 <a id="88"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [88](#t88). `1RB0LE_1RC0RF_0RD0RB_1RE0RC_1LA0LA_1RA---` (for later analysis)
@@ -2614,6 +2668,7 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 ## [90](#t90). `1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD` (for later analysis)
 
 - BB6 sheet: row 1108, Bell-like
+- **DeepMind cryptids (23 Nov 2026):** odometer acceleration E(a, L, d, R) with explicit rules (drain Λ, boundary bounce η; HALT when d is odd at the boundary with empty R), kernel-verified in Lean; see the section [DeepMind cryptids repository](#deepmind-cryptids-repository-23-nov-2026). A fast simulator could be built from it.
 - diagram: 318,582 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD.png" alt="space-time diagram" height="350">
@@ -2771,6 +2826,7 @@ Checks:
 ## [100](#t100). `1RB1RD_1LC0RD_1RF1RB_1LE0RA_0LB0LE_---0RC` (for later analysis)
 
 - BB6 sheet: row 1126, Bell-like
+- **DeepMind cryptids (23 Nov 2026):** closed Collatz reduction (`HasCollatzReduction`, `IsValidAcceleration`), kernel-verified in Lean; see the section [DeepMind cryptids repository](#deepmind-cryptids-repository-23-nov-2026). A fast simulator could be built from it.
 - diagram: 417,003 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RD_1LC0RD_1RF1RB_1LE0RA_0LB0LE_---0RC.png" alt="space-time diagram" height="350">
@@ -2812,6 +2868,7 @@ Checks:
 ## [104](#t104). `1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA` (for later analysis)
 
 - BB6 sheet: row 1133, Bell-like
+- **DeepMind cryptids (23 Nov 2026):** odometer acceleration E(d, R) with explicit rules (Σ, Ω; HALT when R is empty and d is odd), kernel-verified in Lean; see the section [DeepMind cryptids repository](#deepmind-cryptids-repository-23-nov-2026). A fast simulator could be built from it.
 - diagram: 241,570 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA.png" alt="space-time diagram" height="350">
