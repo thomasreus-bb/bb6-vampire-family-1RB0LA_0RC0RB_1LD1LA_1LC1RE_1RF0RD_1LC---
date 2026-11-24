@@ -84,6 +84,7 @@ Machines whose Bell map is driven by the digits of one large number n (n' ≈ q�
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [93](#93) | `1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---` | same machine as no. 51, start state B; reaches C(6, empty) of no. 51 after 18 steps | **open** (400 macro steps, about 10^320 TM steps, no HALT; closest approach 103 macro steps) | as no. 51 | out of reach | ≈ 10^10^38 (as no. 51) |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [31](#31) | `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` | vampire-like, 4/3, nested sub-process (prefix table mod 6); table with several blocks, not closed | **open** (202 Bells, 10³⁵·⁵ steps without HALT) | below 2·10⁻⁶ per Bell (measured upper bound) | unknown | – |
 | <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [32](#32) | `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` | as no. 31 (very probably equivalent) | **open** | as no. 31 | unknown | – |
+| [113](#113) | `1RB0LC_1LC0RE_1LD1LB_1LA1LD_1RF0RA_---1RE` | odometer (binary counter of fuel tanks (011)ⁿ, same table as #581 = id 172044, which halts); HALT needs the top tank to run empty with a "bad" leftover word at the left end (still to be proved that it is a vampire) | **open** (about 10¹²⁵ visits, about 10²⁵¹ steps, no HALT; the two small top tanks ran empty without HALT) | probability 1 in the model (infinitely many tank exhaustions); next exhaustion at about 10⁶⁶⁰⁰ visits | out of reach | ≥ about 10¹³⁰⁰⁰ |
 
 Not included:
 - No. 19: it has the scan signature "vampire-like", but a closer look shows a two-number system that is probably non-halting.
@@ -182,7 +183,7 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 53 | `1RB0LB_1RC0LD_0LA1RD`<br>`1LC1LE_1LF0RE_1LD---` | #127: start A, structure<br>#291: start E, mirrored, structure | Unknown |
 | 54 | `1RB1LF_1LC0RD_---1LD`<br>`1RB1RE_1LA0LB_0LA0LE` | #129 = [76](#76): start A, rules known<br>#465 = [99](#99): start E, mirrored, rules known | Bell-like |
 | 55 | `1RB1RC_1LC0RC_0RA0LD`<br>`0LE---_0LF1LD_1LC1LE` | #132: start A<br>#143: start B, mirrored | Chaotic Ack-like Bell |
-| 56 | `1RB0LC_1LC0RE_1LD1LB`<br>`1LA1LD_1RF0RA_---1RE` | #133: start A<br>#581: start C, mirrored, **halts: open PR [#76](https://github.com/ccz181078/busycoq/pull/76)** | Skelet 1-like Class 1 |
+| 56 | `1RB0LC_1LC0RE_1LD1LB`<br>`1LA1LD_1RF0RA_---1RE` | #133 = [113](#113): start A<br>#581: start C, mirrored, **halts: open PR [#76](https://github.com/ccz181078/busycoq/pull/76)** | Skelet 1-like Class 1 |
 | 57 | `1RB1RE_1RC0RF_0LD---`<br>`1LE1LD_1RA0LB_0RE1RF` | #138: start A, lottery<br>#227: start E, lottery<br>#308: start B, lottery<br>#358: start D, mirrored, lottery | Unknown |
 | 58 | `1RB0LE_0RC---_1RD0LA`<br>`1RE0RA_1LC0LF_0RC1LC` | #141: start A, rules known<br>#315: start E, mirrored, rules known | Monotone list |
 | 59 | `1RB0LC_1RC0RA_1LA0LD`<br>`1LE0RB_1RB1LF_0LA---` | #145: start A, structure<br>#310: start C, mirrored, structure<br>#313: start B, structure | Chaotic Bell Class 3 |
@@ -537,6 +538,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 | <a id="t110"></a>[110](#110) | – | `1RB1RD_1LC1RA`<br>`---1LD_1LE0RA`<br>`1LF0LE_0RB0LB` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 563; Shift-overflow bouncer counter; Possibly tetrational machine; [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178); Racheline | **#167 Some structure seen**: A wide shift-overflow bouncer counter. |
 | <a id="t111"></a>[111](#111) | – | `1RB0LE_0RC0RA`<br>`1LD0LC_1LA0LB`<br>`1RA1LF_---0LC` | – | **potential cryptid** ([Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 564; Shift-overflow bouncer counter; Possibly tetrational machine; [1](https://discord.com/channels/960643023006490684/1026577255754903572/1384906806303789178); Racheline | **#479 Some structure seen**: A wide shift-overflow bouncer counter. |
 | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> <a id="t112"></a>[112](#112) | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>– | <img src="diagrams/mark_red.png" width="14" height="14" alt="red"><br>`1RB1LD_1RC0LE`<br>`1LA1RE_0LF1LA`<br>`1RB0RB_---0LB` | – | **CRYPTID**, probviously halting ([wiki: Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids); earlier: potential cryptid, [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge)); for later analysis | 560; **CRYPTID**, Shift-overflow bouncer counter; Probviously halting cryptid; [1](https://discord.com/channels/960643023006490684/1239205785913790465/1337994337790853181), 2; Racheline | **#22 Cryptid**: Its halting reduces to a Collatz-like question. |
+| <a id="t113"></a>[113](#113) | – | `1RB0LC_1LC0RE`<br>`1LD1LB_1LA1LD`<br>`1RF0RA_---1RE` | – | binary odometer with "fuel tanks"; same table as #581 (halts, open PR [#76](https://github.com/ccz181078/busycoq/pull/76)), other start; no HALT up to about 10²⁵¹ steps; in the model HALT with probability 1, but the next chance only at about 10¹³⁰⁰⁰ steps (24 Nov 2026) | – | **#133 Reported by others**: Others have worked on it or discussed it. |
 
 <a id="1"></a>
 ## 🟩 [1](#t1). `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A)
@@ -3020,3 +3022,23 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 - diagram: 388,426 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1LD_1RC0LE_1LA1RE_0LF1LA_1RB0RB_---0LB.png" alt="space-time diagram" height="350">
+
+<a id="113"></a>
+## [113](#t113). `1RB0LC_1LC0RE_1LD1LB_1LA1LD_1RF0RA_---1RE` (odometer, same table as #581)
+
+- **Origin (24 Nov 2026).** Holdout Guide #133 ("Reported by others", class "Skelet 1-like Class 1"; bbchallenge id 35069). Taken over from the group table *Same transition table* (group 56), because its partner #581 = `1RB1RD_1RC1RB_1LD0RA_1RA0LE_1LF0LC_---1LE` (bbchallenge id 172044) halts: open busycoq PR [#76](https://github.com/ccz181078/busycoq/pull/76), after about 8.53·10¹³¹ steps.
+- **Same machine, other start.** No. 113 is #581 mirrored, with the states renamed (A B C D E F here = C D A B E F of #581), started in state C of #581 (checked: both runs side by side for 2·10⁶ steps, identical up to the mirror). So every rule of the #581 proof holds here too; only the orbit is different.
+- **Why the proof of #581 does not carry over.** The proof in PR #76 has two parts.
+  - A part for the table: the tape is a binary odometer (counters (011)ⁿ separated by 11 = bit 0 or 01 = bit 1). A visit of the right end (state A on a new cell) is a binary increment, and many visits are done at once in closed form ("jumps"); between them a run-length simulator follows the machine. All of this is proved for every configuration.
+  - A part for the start: `run_halts` evaluates the orbit from the blank tape in state A for 2²⁵ rounds and meets the halting transition F0. For no. 113 the same evaluation has to be done from the other start, and it only works if that orbit also reaches a HALT.
+- **Mechanism (from the description of #581 in busy-beaver-explorer).** The counter at the left end (the "top tank") loses one unit at about every overflow of the whole odometer. When it runs empty, a short leftover word remains at the left end. Either the next overflows turn it back into a regular left end (the next counter becomes the top tank, the run goes on), or they eat it completely and the carry falls off the tape: HALT. In #581 this happened four times (at about 10⁵, 10¹⁴, 10³⁹, 10⁶⁶ visits); the fourth time led to the HALT.
+- **Run of no. 113** (`m113/run113.py`, the exact accelerator of #581 from busy-beaver-explorer, started in state C; 20 minutes; `m113/run113_log.txt`):
+  - no HALT up to about 1.2·10¹²⁵ visits, about 10²⁵¹ steps (#581 halts at 9.6·10⁶⁵ visits, 8.5·10¹³¹ steps);
+  - the left end was `111 4112 11101111 86 11101111 323084 …` at about 10¹²¹ visits; both small counters lost about 40–45 units per factor 10 of visits;
+  - at about 10¹²² visits the counter 86 ran empty; the leftover words were eaten and merged with the next counter, **without HALT**; at 10¹²³ visits the tape starts with `326875 01 446117 01 6295933 …`.
+- **Next chances.** The new top tank 326,875 loses about 50 units per factor 10 of visits, so it runs empty only at about 10⁶⁶⁰⁰ visits (about 10¹³⁰⁰⁰ steps); after it come counters 446,117, 6.3 million and larger.
+- **Assessment.** There is no known way out to non-halting: every tank runs empty some day (overflows never stop), each exhaustion is a new chance for a bad leftover word, and #581 shows that such words exist. In the model the HALT probability is therefore 1, as for the vampires, but the next chance lies at about 10¹³⁰⁰⁰ steps, far out of reach. A nonhalting proof would have to show that all leftover words of this orbit turn back into a regular left end; a proof that it is a vampire (HALT with probability 1 in a precise model) is left for later.
+- BB6 sheet: not checked
+- diagram: 121,406 steps, tape width 1001 cells
+
+<img src="diagrams/1RB0LC_1LC0RE_1LD1LB_1LA1LD_1RF0RA_---1RE.png" alt="space-time diagram" height="350">
