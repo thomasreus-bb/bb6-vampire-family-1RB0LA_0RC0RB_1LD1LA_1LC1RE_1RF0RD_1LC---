@@ -543,6 +543,8 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 <a id="1"></a>
 ## 🟩 [1](#t1). `1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA` (class A)
 
+<details><summary>show / hide</summary>
+
 - **Same table as nos. [2](#2), [5](#5), other start state (13 Nov 2026).** No. 1 is no. 2 (mirrored) started in state F; no. 5 started in state E. Vampire family, three different orbits (see the main README). Overview: *Related machines among the candidates* at the top.
 
 - scan: 12 levels, 12 phases, mean factor 1.55 (sd 0.04); level starts: 18 31 51 81 126 193 294 445 672 1012 1521 2286
@@ -551,8 +553,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0RF_1LC---_1RD0LC_0RE0RD_1LF1LC_1LE1RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="2"></a>
 ## 🟩 [2](#t2). `1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE` (class A)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [1](#1), [5](#5), other start state (13 Nov 2026).** No. 2 is no. 1 (mirrored) started in state B; no. 5 (mirrored) started in state F. Vampire family, three different orbits (see the main README). Overview: *Related machines among the candidates* at the top.
 
@@ -562,8 +568,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB---_1LC0RB_0LD0LC_1RE1RB_1RD1LF_1LA0LE.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="3"></a>
 ## 🟩 [3](#t3). `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---` (class A)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [7](#7), other start state (13 Nov 2026).** No. 3 is no. 7 started in state D. Vampire family, orbits O2 and O4. Overview: *Related machines among the candidates* at the top.
 
@@ -573,8 +583,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LC---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="4"></a>
 ## 🟩 [4](#t4). `1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF` (class A)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [6](#6), other start state (13 Nov 2026).** No. 4 is no. 6 started in state F. Vampire family, orbits O2 and O4. Overview: *Related machines among the candidates* at the top.
 
@@ -584,8 +598,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0RE_1RC---_0RD0RC_1LE1LF_1LD1RA_1RC0LF.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="5"></a>
 ## 🟩 [5](#t5). `1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---` (class A)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [1](#1), [2](#2), other start state (13 Nov 2026).** No. 5 is no. 1 started in state C; no. 2 (mirrored) started in state B. Vampire family, three different orbits (see the main README). Overview: *Related machines among the candidates* at the top.
 
@@ -595,8 +613,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0LA_0RC0RB_1LD1LA_1LC1RE_1RF0RD_1LA---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="6"></a>
 ## 🟩 [6](#t6). `1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD` (class A)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [4](#4), other start state (13 Nov 2026).** No. 6 is no. 4 started in state B. Vampire family, orbits O2 and O4. Overview: *Related machines among the candidates* at the top.
 
@@ -606,8 +628,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB---_0RC0RB_1LD1LE_1LC1RF_1RB0LE_1RA0RD.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="7"></a>
 ## 🟩 [7](#t7). `1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA` (class A)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [3](#3), other start state (13 Nov 2026).** No. 7 is no. 3 started in state E. Vampire family, orbits O2 and O4. Overview: *Related machines among the candidates* at the top.
 
@@ -617,8 +643,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0RF_1LC---_1LF1LD_1RE0LD_0RC0RE_1LC1RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="8"></a>
 ## 🟩 [8](#t8). `1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC` (class B)
+
+<details><summary>show / hide</summary>
 
 - scan: 20 levels, 71 phases, mean factor 1.33 (sd 0.07); level starts: 78 109 152 206 278 374 502 678 909 1218 1629 2178 2909 3882
 - level analysis: Bell type `LD` with left part `01 12 01 11 01`, 26 levels; n: 284 380 508 684 915 1224 1635 2184 2915 3888 5187 6918 9227 12304 16411 21886; ratios: 1.338 1.336 1.336 1.335 1.334 1.334 1.334 1.334 1.333 1.334 1.334; 13 different tails
@@ -627,8 +657,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0RB_1LC1RF_0RD0LB_0RA1LE_1LD---_0RB0RC.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="9"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [9](#t9). `1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB` (class B)
+
+<details><summary>show / hide</summary>
 
 - scan: 15 levels, 98 phases, mean factor 1.33 (sd 0.09); level starts: 20 29 34 52 76 107 126 173 199 273 370 501 675 905
 - level analysis: Bell type `RB`, 30 levels; n: 182 207 280 378 508 682 914 1246 1666 2226 2972 3307 4414 5890 7858 10482; ratios: 1.343 1.340 1.363 1.337 1.336 1.335 1.113 1.335 1.334 1.334 1.334; 2 different tails
@@ -637,8 +671,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0RB_1LB0LC_1RD1LC_1RE0RA_0RF1RA_---1LB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="10"></a>
 ## 🟩 [10](#t10). `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Status: HALT (Yeyito, Discord, 7 Nov 2026).** `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` halts after **831265665802914901834939426973647910800304 steps** (≈ 8.3·10⁴¹, counting the halting step).
   - Proof (halts): [github.com/Yeyito777/bbchallenge-discoveries/tree/main/bb6-holdout-2](https://github.com/Yeyito777/bbchallenge-discoveries/tree/main/bb6-holdout-2), 280 core-hours.
@@ -749,17 +787,31 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="11"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [11](#t11). `1RB1LB_1RC---_1LD1LF_1LE0LD_0LA1RF_1LC0RE` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [37](#37), other start state (13 Nov 2026).** No. 11 is no. 37 (mirrored) started in state D. The two are equivalent. Overview: *Related machines among the candidates* at the top.
 - **Equivalent to [no. 37](#37)**  Removed from the BB(6) holdout list on 30 Oct 2026 because of this equivalence. All information is collected under no. 37.
 
+</details>
+
 <a id="12"></a>
 ## [12](#t12). entfernt
 
+<details><summary>show / hide</summary>
+
+
+</details>
+
 <a id="13"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [13](#t13). `1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB` (class B)
+
+<details><summary>show / hide</summary>
+
 - **BusyBeaverWiki article:** [1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB](https://wiki.bbchallenge.org/wiki/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB)
 
 - scan: 20 levels, 41 phases, mean factor 1.33 (sd 0.10); level starts: 34 43 64 77 91 119 175 231 350 441 665 1001 1505 2261
@@ -791,8 +843,13 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0RF_1RC1RF_1LD0LE_---1LC_1RA1LE_1LC1RB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="14"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [14](#t14). `1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA` (class B)
+
+<details><summary>show / hide</summary>
+
 - **BusyBeaverWiki article:** [1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA](https://wiki.bbchallenge.org/wiki/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA)
 
 - scan: 30 levels, 87 phases, mean factor 1.21 (sd 0.10); level starts: 428 466 541 604 783 850 984 1046 1180 1372 1615 1882 2136 2262
@@ -851,8 +908,13 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0LF_1LC1RA_0RE0RD_---1LE_1LF1RC_1LC1LA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="15"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [15](#t15). `1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC` (class B)
+
+<details><summary>show / hide</summary>
+
 - **BusyBeaverWiki article:** [1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC](https://wiki.bbchallenge.org/wiki/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: listed as a cryptid
 
 - scan: 19 levels, 45 phases, mean factor 1.36 (sd 0.11); level starts: 36 55 65 87 101 125 165 249 315 475 715 1075 1615 2425
@@ -862,8 +924,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0RB_1LC1RE_1LF0LD_1RA1LD_1RC1RB_---1LC.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="16"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [16](#t16). `1RB1LF_1RC1RF_0LD1RE_---1LC_0RB1RE_1LA0LE` (class B)
+
+<details><summary>show / hide</summary>
 
 - scan: 15 levels, 109 phases, mean factor 1.26 (sd 0.11); level starts: 16 18 20 26 34 38 54 60 92 138 178 200 271 370
 - level analysis: Bell type `RB` with left part `01`, 26 levels; n: 380 436 488 528 592 648 706 778 848 989 1092 1208 1308 1500 1630 1853; ratios: 1.095 1.090 1.102 1.090 1.166 1.104 1.106 1.083 1.147 1.087 1.137; 10 different tails
@@ -911,8 +977,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
     Unlike no. 10, the chance per cycle does not stay at about 1/T: the cycles that can halt (A0 events) become rarer in the same way as the hit becomes harder, and the sum converges. Even summed from the start, all 16 events together had only about a 2 % chance of a HALT.
 
+</details>
+
 <a id="17"></a>
 ## 🟩 [17](#t17). `1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB` (class B)
+
+<details><summary>show / hide</summary>
 
 - scan: 17 levels, 149 phases, mean factor 1.29 (sd 0.12); level starts: 23 33 39 55 59 75 111 137 163 183 215 279 359 459
 - level analysis: Bell type `LE` with left part `01`, 17 levels; n: 7 11 21 41 57 77 165 233 297 377 477 1137 1427 2141 4243 6365; ratios: 1.351 2.143 1.412 1.275 1.269 1.265 2.384 1.255 1.500 1.982 1.500; 3 different tails
@@ -923,8 +993,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0RC_1RC---_1LD1RE_1LE0LD_1RA0LF_0RC0RB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="18"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [18](#t18). `1RB---_1LC0LD_0RF0LD_0LE0RA_0LC1RA_1RC1RD` (class B)
+
+<details><summary>show / hide</summary>
 
 - diagram: 2,207,708 steps, tape width 1001 cells
 
@@ -944,8 +1018,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 - **HALT** (`halts.py`, `hr.py`: all tails with k ≤ 24 and n < 90, R_j with j ≤ 8 and n < 1500): only from R_j with j = 2i even and exactly **n = 24i + 21** (45, 69, 93, 117, …). So HALT needs a tail index of the same size as n.
 - **Outlook** (`run18.py`, exact map, 10⁵ events from the last real event): n grows to about 10⁸⁰⁶⁶, while the tail index stays at most 1,045. To halt, k would have to catch up with n. It can do so only through jumps by 3/2 (against 9/8 for n), each of which needs a fixed residue mod 8; this is a lottery with a vanishing chance, in agreement with the guide ("Looks like a lottery"). A proof needs a bound of k in terms of n.
 
+</details>
+
 <a id="19"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [19](#t19). `1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [20](#20), [39](#39), other start state (13 Nov 2026).** No. 19 is no. 20 (mirrored) started in state B; no. 39 (mirrored) started in state F. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -969,8 +1047,12 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <img src="diagrams/1RB0LC_1LA1RE_1LD1RE_1RE0LA_0RA1RF_0RB---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="20"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [20](#t20). `1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [19](#19), [39](#39), other start state (13 Nov 2026).** No. 20 is no. 19 (mirrored) started in state B; no. 39 started in state E. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -983,8 +1065,12 @@ This machine is the [BMO's 5th problem](https://wiki.bbchallenge.org/wiki/Beaver
 
 <img src="diagrams/1RB1LC_1LA0RD_0LB1LF_1RE1LC_1LC0RB_0LA---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="21"></a>
 ## 🟩 [21](#t21). `1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD` (class B)
+
+<details><summary>show / hide</summary>
 
 Discord, 22 Dec 2025:
 
@@ -1007,8 +1093,12 @@ Discord, 22 Dec 2025:
 
 <img src="diagrams/1RB0LE_1RC1RE_0RD1RC_1LA0LB_1LF0RB_---1LD.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="22"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [22](#t22). `1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [42](#42), [43](#43), other start state (13 Nov 2026).** No. 22 is no. 42 (mirrored) started in state E; no. 43 started in state C. No common configuration found; the runs of 22 and 42 drift apart. Overview: *Related machines among the candidates* at the top.
 
@@ -1019,8 +1109,13 @@ Discord, 22 Dec 2025:
 
 <img src="diagrams/1RB0RB_1LC0LF_1RD0LB_1RE1RC_0RA---_1LA1RE.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="23"></a>
 ## 🟩 [23](#t23). `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---` (class B)
+
+<details><summary>show / hide</summary>
+
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 - **From the Rocq proof:** `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---`. 46 of the lines are the table; it needs only `Individual62`. At left-boundary visits the tape is `(001)^k 0000 (01)^j Y`, with the head in state A on its first cell. One round takes (k, j) to (k-1, j+2) and never reads Y. At k = 0 the run (01)^J is converted rigidly to about 2J/3 blocks of (101) on the left, so 2k + j grows by a factor of about 4/3 per cycle. The left half of the tape is kept exactly, as a stack. The right half is read from the far end by a fixed DFA with 11,253 states. A finite set of 933,744 triples (control, stack symbol, control), control = (state, head symbol, DFA state), is closed under the machine's rules (pre* saturation of a pushdown system, Bouajjani, Esparza and Maler), and a configuration it does not accept cannot reach a halt. `saturate` computes the triples inside the VM and needs no proof; `check_all` tests closure, that the halting controls are accepted, and that the real configuration after 1000 steps is not accepted; `sound` proves `check_all d P rs = true -> ~halts tm c0` for any table and any triples. Before Rocq, with no shared code: a separate C checker on the same table and triples, 1,978,289 closure checks, 0 failures, and a separate Python saturation that gets the same 933,744 triples, with the same order-independent hash as the VM. The file with the start taken after 100 steps, and the file with one machine entry changed, both fail at `Qed`. `coqchk` stopped at a 20 minute cap without a verdict; as far as I can tell it reduces the `vm_cast` without the VM, so it is not expected to finish, and this file relies on the kernel's VM check at `Qed`, like other `vm_cast_no_check` proofs.
 
@@ -1075,8 +1170,13 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 **Comparison with nos. 95 and 102.** There the whole tape is described by counters, and a linear invariant suffices. Here the tape has an irregular part Y, so instead of a formula the proof uses a large finite certificate (a DFA plus triples) that the computer checks. This is a closed-tape-language / regular-invariant approach, extended by an exact stack for the left half.
 
+</details>
+
 <a id="24"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [24](#t24). `1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE` (class B)
+
+<details><summary>show / hide</summary>
+
 - **BusyBeaverWiki article:** [1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE](https://wiki.bbchallenge.org/wiki/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: listed under "chaotic machines not classified as cryptids"
 
 - scan: 23 levels, 76 phases, mean factor 1.25 (sd 0.14); level starts: 182 264 310 342 380 474 552 590 946 1104 1182 1884 2202 2360
@@ -1086,8 +1186,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB0LD_1LC0RA_1RA1LB_1LA1LE_1RF0LC_---0RE.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="25"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [25](#t25). `1RB0LE_1LC0RD_0RA1LD_0LC1RA_1LF1LA_---1LA` (class B)
+
+<details><summary>show / hide</summary>
 
 - scan: 8 levels, 32 phases, mean factor 1.55 (sd 0.14); level starts: 33 52 73 107 209 385 523 707
 - level analysis: Bell type `LD` with left part `01 11 01`, 16 levels; n: 8 13 23 45 64 85 119 221 397 535 719 5398 7197 9600 12802 17069; ratios: 1.328 1.400 1.857 1.796 1.348 1.344 7.508 1.333 1.334 1.334 1.333; 2 different tails
@@ -1116,8 +1220,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB0LE_1LC0RD_0RA1LD_0LC1RA_1LF1LA_---1LA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="26"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [26](#t26). `1RB1LC_1LA0RD_1LB1LF_1LE1RE_0LA0RB_0LB---` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [31](#31), [32](#32), other start state (13 Nov 2026).** No. 26 is no. 31 (mirrored) started in state C; no. 32 (mirrored) started in state C. 31 and 32 very probably equivalent (one-cell difference); 26 runs differently. Overview: *Related machines among the candidates* at the top.
 
@@ -1128,8 +1236,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB1LC_1LA0RD_1LB1LF_1LE1RE_0LA0RB_0LB---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="27"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [27](#t27). `1RB1LC_1LC0RD_0LE1LA_0RF1RA_1LA0LA_---0RB` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Note:** nos. [27](#27), [29](#29) and [36](#36) have very similar analyses so far (same sweep rule (a, b) → (a − 2, b + 3), level configuration `0 1^N 00 1^t`, t always a multiple of 3, HALT only for t = 0 or t not divisible by 3).
 
@@ -1152,9 +1264,13 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
     - Abstract simulation (`absim.py`: every block is either exact, if shorter than K, or "at least K, residue mod 3 or mod 6"; sound over-approximation): with K = 3…9 a halting configuration is always reachable, and with K = 12 the state count exceeds 4 million. The abstraction loses the relation between neighbouring blocks (when a long block runs out, the others can have any length of the right residue) and so builds configurations the real run never shows (e.g. a third block of length 5).
     - A working invariant would need these relations (an exact event model with the parity of the first block), which a simple residue abstraction cannot express.
 
+</details>
 
 <a id="28"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [28](#t28). `1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC` (class B)
+
+<details><summary>show / hide</summary>
+
 - **BusyBeaverWiki article:** [1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC](https://wiki.bbchallenge.org/wiki/1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC)
 
 - scan: 20 levels, 176 phases, mean factor 1.24 (sd 0.15); level starts: 45 53 59 74 91 157 184 229 253 324 355 401 464 495
@@ -1163,8 +1279,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB1LE_1LC0RA_0RF0LD_1LE1LA_1RC0LB_---1RC.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="29"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [29](#t29). `1RB1LD_1LC0RC_0RF1RA_0LE1LA_1RC0LA_---0RB` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Note:** nos. [27](#27), [29](#29) and [36](#36) have very similar analyses so far (same sweep rule (a, b) → (a − 2, b + 3), level configuration `0 1^N 00 1^t`, t always a multiple of 3, HALT only for t = 0 or t not divisible by 3).
 
@@ -1180,9 +1300,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
   - **HALT search** (`hs2.py`, N ≤ 159, t ≤ 63): HALT for N > 3 only at (15,0), (7,1), (7,2), (15,11), (49,14): again t = 0 or t not a multiple of 3.
   - **Conclusion:** as for 27: very probably never halts, because t stays a positive multiple of 3; a proof needs the mod-3 invariant through all intermediate configurations.
 
+</details>
 
 <a id="30"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [30](#t30). `1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB` (class B)
+
+<details><summary>show / hide</summary>
 
 - scan: 10 levels, 34 phases, mean factor 1.54 (sd 0.16); level starts: 13 16 35 58 97 140 211 270 412 625
 - level analysis: Bell type `RD`, 11 levels; n: 5 11 20 67 104 277 419 632 2070 5378 11434; ratios: 2.200 1.818 3.350 1.552 2.663 1.513 1.508 3.275 2.598 2.126; 1 different tails
@@ -1201,8 +1324,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB0LE_1LB1RC_0RF0RD_1RE0LA_1LA1RE_---0RB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="31"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [31](#t31). `1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [26](#26), [32](#32), other start state (13 Nov 2026).** No. 31 is no. 26 (mirrored) started in state C; no. 32 started in state E. 31 and 32 very probably equivalent (one-cell difference); 26 runs differently. Overview: *Related machines among the candidates* at the top.
 
@@ -1358,8 +1485,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB1RF_1RC0LD_1LB1RA_1RE1LE_0RC0LB_0RB---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="32"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [32](#t32). `1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [26](#26), [31](#31), other start state (13 Nov 2026).** No. 32 is no. 26 (mirrored) started in state D; no. 31 started in state D. 31 and 32 very probably equivalent (one-cell difference); 26 runs differently. Overview: *Related machines among the candidates* at the top.
 
@@ -1372,8 +1503,13 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB1LB_0RC0LD_1LD1RE_1RC0LA_1RD1RF_0RD---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="33"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [33](#t33). `1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD` (class B)
+
+<details><summary>show / hide</summary>
+
 - **BusyBeaverWiki article:** [Space Needle](https://wiki.bbchallenge.org/wiki/Space_Needle); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: cryptid "Space Needle"
 
 - scan: 9 levels, 407 phases, mean factor 1.69 (sd 0.17); level starts: 12 20 36 56 96 146 311 371 778
@@ -1383,8 +1519,13 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB1LA_1LC0RE_1LF1LD_0RB0LA_1RC1RE_---0LD.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="34"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [34](#t34). `1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD` (class B)
+
+<details><summary>show / hide</summary>
+
 - **Same event map as no. [50](#50) (22 Nov 2026, `m34/`).** Renamed (A→D, B→A, C→B, D→E, E→C, F→F) and mirrored, no. 34 is `1RB1RB_1LC0RE_---1LD_1LA1LB_1RA1LF_0LE1LE`, started in state D (`m34/rel34.py`). It differs from no. 50 (`1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE`) only in D0 (34: `1LA`, 50: `0RA`).
   - With X(a, c) as in no. 50 (state E on a new leftmost cell, then `00 1^a 0 1^c`, renamed and mirrored machine), synthetic starts give **exactly the map of no. 50** (`m50/fast50.py`): all 1,600 starts a, c < 40 agree for a ≥ 3, c ≥ 1, and all 768 starts a < 120, |c − a| ≤ 6, including all HALT cases c − a ∈ {−2, −1, 0, 1} (`m34/syn34.c`, `m34/fit34.py`). The only differences: c = 0 (34: X(a, 0) → X(a − 4, 9), 50: X(a − 2, 6)) and a ∈ {0, 2} (34 halts). c = 0 never occurs, because every rule gives c' ≥ 3, and a stays odd as in no. 50.
   - The real run (`m34/lev34.c`, 3·10⁹ steps) starts at X(1, 5) → X(3, 6) → X(1, 15) → X(13, 6) → X(5, 24) → X(17, 21) → X(3, 54) → X(49, 15) → X(31, 51) → X(19, 96) → …; the map reproduces all 35 transitions. No. 50 starts at X(1, 3) → X(1, 6) → X(3, 9) → …; the first 20,000 events of the two orbits have no common pair.
@@ -1398,8 +1539,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB1RC_1LC1LC_1RE0LD_1LB1RF_---1RA_0RD1RD.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="35"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [35](#t35). `1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA` (class B)
+
+<details><summary>show / hide</summary>
 
 - scan: 16 levels, 128 phases, mean factor 1.25 (sd 0.18); level starts: 43 47 53 61 91 114 125 137 159 187 217 229 277 592
 - level analysis: Bell type `RC`, 8 levels; n: 7 9 14 19 24 100 374 644; ratios: 1.286 1.556 1.357 1.263 4.167 3.740 1.722; 4 different tails
@@ -1422,8 +1567,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
 
 <img src="diagrams/1RB---_0RC0LD_1LB1RC_0LE0LF_1RD1LE_1RF1RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="36"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [36](#t36). `1RB1LC_1LC0RD_0LE1LA_---1RA_1RF0LA_0RF0RB` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Note:** nos. [27](#27), [29](#29) and [36](#36) have very similar analyses so far (same sweep rule (a, b) → (a − 2, b + 3), level configuration `0 1^N 00 1^t`, t always a multiple of 3, HALT only for t = 0 or t not divisible by 3).
 
@@ -1442,8 +1591,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
   - **HALT search** (`hs.py`, N ≤ 159, t ≤ 63): HALT for N > 3 only at (15,0), (4,1), (7,1), (6,2), (7,2), (15,11): always t = 0 or t not a multiple of 3. With N > 3 and t a positive multiple of 3 no HALT.
   - **Conclusion:** as for 27 and 29: very probably never halts, because t stays a positive multiple of 3. A proof needs an exact event model; the simple residue abstraction tried for no. 27 is not enough.
 
+</details>
+
 <a id="37"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [37](#t37). `1RB1RF_1RC0RB_0RD1LF_1LE1RE_1LA---_1RA0LC` (class B)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [11](#11), other start state (13 Nov 2026).** No. 37 is no. 11 (mirrored) started in state C. The two are equivalent. Overview: *Related machines among the candidates* at the top.
 - **Equivalent to no. 11** (checked 29 Oct 2026, observation by post-apocalyptic sphere on Discord; `scan/iso_11_37.py`).
@@ -1469,8 +1622,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
   - **Halting rate:** perturbed real starts gave 1 HALT in 120 runs over a growth factor of 10, right at the start, so the rate is at most about 0.1 % per Bell.
   - Because the runs coincide, all of this holds for this machine as well.
 
+</details>
+
 <a id="38"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [38](#t38). `1RB0RE_1LC0RA_0LD0LB_1RE0LB_1RF---_0RB0RC` (class C)
+
+<details><summary>show / hide</summary>
 
 - scan: 10 levels, 18 phases, mean factor 1.55 (sd 0.20); level starts: 8 14 20 28 54 60 78 154 203 404
 - level analysis: Bell type `RA`, 7 levels; n: 4 14 20 54 60 154 404; ratios: 3.500 1.429 2.700 1.111 2.567 2.623; 4 different tails
@@ -1495,9 +1652,12 @@ A move to the left adds a cell to the right half, and the DFA runs on determinis
   - **Fast simulator** (`fast38.py`): j, the bell number and the rules above reproduce the real run exactly (121, 303, 760 | 377, 943, 2360 | 1177, 2943, 7360 | 3677, 9193, 22985, 57464 | 28729, 71823, 179560) and run 20,000 levels in a second (j then has 1924 digits): no HALT; bells per level 1: 9905, 2: 5110, 3: 2498, 4: 1289, … , 15: 1 (each further bell with chance 1/2). Caveat: δ and the rule for bells beyond 4 were measured on one path of islands; that the island depends only on the bell number was checked for bells 1 … 4.
   - **Estimate of the halting chance (heuristic, 17 Nov 2026):** between J and 2J there are only two halting values (20·2ⁿ − 6 and 20·2ⁿ − 5). If a level end of size J lands "at random", it hits one of them with chance about 2/J, while j grows by about a factor 1.25 per level (20,000 levels: 1924 digits). With the fast simulator: level end 760: 2.6·10⁻³, 2360: 8.5·10⁻⁴, 7360: 2.7·10⁻⁴, 57464: 3.5·10⁻⁵, 179560 (last real one): 1.1·10⁻⁵, 561110: 3.6·10⁻⁶, … The sum over all levels from the start is about 0.4 %; after the last real level end (179560) only about 2·10⁻⁵ for the whole infinite future. So there is no number of levels after which HALT is reached with chance 1/2; as for no. 73, the run very probably never halts. This is a heuristic, not a proof (j does not behave randomly).
 
+</details>
 
 <a id="39"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [39](#t39). `1RB1LC_1LC0RF_0LF1LD_0LE---_1RF1LC_1LE0RA` (class C)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [19](#19), [20](#20), other start state (13 Nov 2026).** No. 39 is no. 19 (mirrored) started in state C; no. 20 started in state D. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -1585,8 +1745,13 @@ The first 100 Bell starts `[0] P 1^N T` are listed in [`m39/bells_100.md`](m39/b
 
 **HALT:** only through D1 (`---`). No condition for it has been derived yet. Presumably it needs a tail counter that grows to the size of the main block, or a special configuration at the boundary between them.
 
+</details>
+
 <a id="40"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [40](#t40). `1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA` (class C)
+
+<details><summary>show / hide</summary>
+
 - **BusyBeaverWiki article:** [Lucy's Moonlight](https://wiki.bbchallenge.org/wiki/Lucy%27s_Moonlight); on the [Cryptids](https://wiki.bbchallenge.org/wiki/Cryptids) page: cryptid "Lucy's Moonlight"
 
 - scan: 13 levels, 26 phases, mean factor 1.48 (sd 0.22); level starts: 8 10 17 22 34 46 50 57 114 155 324 435 884
@@ -1596,8 +1761,13 @@ The first 100 Bell starts `[0] P 1^N T` are listed in [`m39/bells_100.md`](m39/b
 
 <img src="diagrams/1RB0RD_0RC1RE_1RD0LA_1LE1LC_1RF0LD_---0RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="41"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [41](#t41). `1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD` (class C)
+
+<details><summary>show / hide</summary>
+
 - **BusyBeaverWiki article:** [1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD](https://wiki.bbchallenge.org/wiki/1RB1LD_1RC0RA_1LA1RE_0LA0LB_0RB1RF_---1RD)
 
 - scan: 17 levels, 63 phases, mean factor 1.40 (sd 0.23); level starts: 39 90 118 131 156 298 456 534 1006 1130 1209 1644 1962 2120
@@ -1733,8 +1903,12 @@ A heuristic estimate, not a proof. It treats the Bell map as a random map and us
 - **No expected halting time.** The machine halts with a chance far below 1, so an expected number of steps until HALT does not exist (it is infinite). Only the chance of ever halting can be given.
 - **A sharper estimate** would count, per cycle, the entries into P1 with even c − b (about 5 % of the entries) and the chance that the cascade then hits c − b = 2 exactly. The expected form is a chance of constant · log n / n per Bell, which gives the same conclusion with a better constant. Not done yet.
 
+</details>
+
 <a id="42"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [42](#t42). `1RB0RF_1LC0RA_1LD1LB_0LE---_1LA0LA_1RE1LD` (class C)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [22](#22), [43](#43), other start state (13 Nov 2026).** No. 42 is no. 22 (mirrored) started in state B; no. 43 (mirrored) started in state D. No common configuration found; the runs of 22 and 42 drift apart. Overview: *Related machines among the candidates* at the top.
 
@@ -1800,8 +1974,12 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 
 **Not a proof.** A proof would have to show that the run never meets a merge with c even and e in H. H is defined recursively by the same machine, so this is a lottery like the Collatz-type cryptids.
 
+</details>
+
 <a id="43"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [43](#t43). `1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB` (class C)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [22](#22), [42](#42), other start state (13 Nov 2026).** No. 43 is no. 22 started in state D; no. 42 (mirrored) started in state C. No common configuration found; the runs of 22 and 42 drift apart. Overview: *Related machines among the candidates* at the top.
 
@@ -1812,8 +1990,12 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 
 <img src="diagrams/1RB1RE_0RC---_1RD0RD_1LE0LF_1RA0LD_1LC1RB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="44"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [44](#t44). `1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---` (class C)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [81](#81), [89](#89), [96](#96), other start state (13 Nov 2026).** No. 44 is no. 81 (mirrored) started in state D; no. 89 (mirrored) started in state C; no. 96 (mirrored) started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -1871,8 +2053,12 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 
 <img src="diagrams/1RB0RE_1LC0RA_0LD1LB_1LA1LE_0LB0LF_1LD---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="45"></a>
 ## 🟩 [45](#t45). `1RB0LD_1LC0RD_1LA0LC_1RE0LB_1RB1RF_0LD---` (class C)
+
+<details><summary>show / hide</summary>
 
 - **Never halts**: open [PR 78](https://github.com/ccz181078/busycoq/pull/78) by Dahoas (17 Nov 2026), proof of nonhalting; holdout #104. Together with [52](#52) (same table, other start), both machines are covered by open PRs.
 
@@ -1884,8 +2070,12 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 
 <img src="diagrams/1RB0LD_1LC0RD_1LA0LC_1RE0LB_1RB1RF_0LD---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="46"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [46](#t46). `1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD` (class C)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [54](#54), other start state (13 Nov 2026).** No. 46 is no. 54 (mirrored) started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -1901,8 +2091,12 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 
 <img src="diagrams/1RB---_1RC1LE_0RD0RF_0RE0LA_1LF0LB_1LA1LD.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="47"></a>
 ## 🟩 [47](#t47). `1RB0LF_1LC0LD_1RD1LB_---1RE_0RA1RE_1LA0LE` (class C)
+
+<details><summary>show / hide</summary>
 
 - **Proof in an open PR (13 Nov 2026):** [Nonhalt of 1RB0LF_1LC0LD_1RD1LB_---1RE_0RA1RE_1LA0LE and 1RB0RE_1LC0RA_1RF0RD_---1LE_0LB1LE_1LE1RC by Dahoas · Pull Request #67 · ccz181078/busycoq](https://github.com/ccz181078/busycoq/pull/67). Opened 12 Nov 2026, not merged yet. File `verify/M_1RB0LF_1LC0LD_1RD1LB_HHH1RE_0RA1RE_1LA0LE.v` with `Lemma nonhalt : ~ halts tm c0`: a symbolic macro machine with binary parameters, exponential accelerators and a power-tower invariant (`SubTowerInv`), translated from Lean 4 with AI help. Checked by the author with Coq 8.20.1 and `coqchk` (closed under the global context).
 
@@ -1913,8 +2107,12 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 
 <img src="diagrams/1RB0LF_1LC0LD_1RD1LB_---1RE_0RA1RE_1LA0LE.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="48"></a>
 ## 🟩 [48](#t48). `1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---` (class C)
+
+<details><summary>show / hide</summary>
 
 - scan: 7 levels, 1751 phases, mean factor 1.52 (sd 0.27); level starts: 12 15 20 54 85 116 146
 - verdict: no clear single-block Bell configuration found
@@ -1925,11 +2123,21 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 
 <img src="diagrams/1RB1RD_1LC0LE_1LD0LB_0RB0RA_1RD1LF_0LC---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="49"></a>
 ## [49](#t49). entfernt
 
+<details><summary>show / hide</summary>
+
+
+</details>
+
 <a id="50"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [50](#t50). `1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE` (class C)
+
+<details><summary>show / hide</summary>
+
 - **Related to no. [55](#55) (22 Nov 2026).** After renaming the states of no. 55 (A→E, B→A, C→D, D→B, E→C), its table is `0RD1RB_1LC0RE_---1LD_1LE1LB_1RA1LF_0LE1LE`, started in state E. It differs from no. 50 (`1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE`) in only two transitions: A0 (50: `1RB`, 55: `0RD`) and D0 (50: `0RA`, 55: `1LE`). Both follow the same kind of map: two numbers, the difference of the two plus a factor 3 (no. 50) or 6 (no. 55, in b), HALT when the two numbers come within 1 or 2 of each other.
 - **Same event map as no. [34](#34) (22 Nov 2026).** No. 34, renamed and mirrored, differs from no. 50 only in D0, and it follows exactly the same map X(a, c); only the start differs (34: X(1, 5), 50: X(1, 3)). Details in chapter 34.
 - **BusyBeaverWiki article:** [1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE](https://wiki.bbchallenge.org/wiki/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE)
@@ -1949,8 +2157,12 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 
 <img src="diagrams/1RB1RB_1LC0RE_---1LD_0RA1LB_1RA1LF_0LE1LE.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="51"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [51](#t51). `1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---` (class C)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [61](#61), [71](#71), [93](#93), other start state (13 Nov 2026).** No. 51 is no. 61 (mirrored) started in state D; no. 71 (mirrored) started in state B; no. 93 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -1986,8 +2198,12 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <img src="diagrams/1RB0RE_1LC0RA_1LA1LD_1LC1LF_0LC0LB_1LE---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="52"></a>
 ## 🟩 [52](#t52). `1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---` (class C)
+
+<details><summary>show / hide</summary>
 
 - **Never halts**: open [PR 79](https://github.com/ccz181078/busycoq/pull/79) by Dahoas (17 Nov 2026), proof of nonhalting; holdout #58. Together with [45](#45) (same table, other start), both machines are covered by open PRs.
 
@@ -2006,8 +2222,12 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <img src="diagrams/1RB0LC_1RC1RF_1LD0RA_1LE0LD_1RC0LA_0LA---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="53"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [53](#t53). `1RB1RE_1LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` (class C)
+
+<details><summary>show / hide</summary>
 
 - **Comparison with no. [85](#85) (22 Nov 2026, `m53/vs85/`).** Nos. 53 and 85 have the same rows C–F and differ in A1 (53: `1RE`, 85: `0RF`) and B0 (53: `1LC`, 85: `0LC`).
   - Events as for no. 85: state E on a 0, blank to the left. Short configurations: P(a) = `(10)^a 1`, Q(a, b) = `(10)^a 11100 (10)^b 1`, R(a, b) = `(10)^a 11101100 (10)^b 1`. Exact rules (`rules53.py`, checked on 3,539 synthetic starts a < 60, b < 30, no mismatch):
@@ -2041,8 +2261,12 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <img src="diagrams/1RB1RE_1LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="54"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [54](#t54). `1RB1RF_1LC---_1LE1RD_1RA0RC_0LF0LA_0LD0RB` (class C)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [46](#46), other start state (13 Nov 2026).** No. 54 is no. 46 (mirrored) started in state F. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2053,8 +2277,13 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <img src="diagrams/1RB1RF_1LC---_1LE1RD_1RA0RC_0LF0LA_0LD0RB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="55"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [55](#t55). `1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA` (class C)
+
+<details><summary>show / hide</summary>
+
 - **Related to no. [50](#50) (22 Nov 2026).** Renamed (A→E, B→A, C→D, D→B, E→C), no. 55 is `0RD1RB_1LC0RE_---1LD_1LE1LB_1RA1LF_0LE1LE` started in state E; it differs from no. 50 only in A0 (`1RB` → `0RD`) and D0 (`0RA` → `1LE`). Same kind of map (difference plus factor, HALT when the two numbers are nearly equal).
 - **BusyBeaverWiki article:** [1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA](https://wiki.bbchallenge.org/wiki/1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA)
 
@@ -2072,8 +2301,13 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <img src="diagrams/1RB1LF_0RC1RD_1LA1LD_1LE0RA_---1LC_0LA1LA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="56"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [56](#t56). `1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD` (class C)
+
+<details><summary>show / hide</summary>
+
 - **BusyBeaverWiki article:** [1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD](https://wiki.bbchallenge.org/wiki/1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD)
 
 - scan: 14 levels, 28 phases, mean factor 1.43 (sd 0.32); level starts: 10 24 27 31 35 51 57 61 73 102 204 224 349 1056
@@ -2089,6 +2323,8 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <img src="diagrams/1RB1LE_1LB1LC_1RD0LE_---0RB_1RF1LA_0RA0RD.png" alt="space-time diagram" height="350">
 
+</details>
+
 ## Candidates 57–108: Bell-like holdouts from the BB6 sheet (for later analysis)
 
 Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet that are still in the holdout list (`holdouts_623.txt`) and were not among nos. 1–56. They are taken over from the sheet without own analysis; they are not in `bell_candidates.txt`. The space-time diagrams start from the blank tape (time downwards) and stop after 10 Bell levels, 2e7 steps or a tape width of 1000 cells.
@@ -2096,13 +2332,19 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 <a id="57"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [57](#t57). `1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA` (for later analysis)
 
+<details><summary>show / hide</summary>
+
 - BB6 sheet: row 1057, **CRYPTID**, Bell-like, notes: A variant of Hydra and Antihydra
 - diagram: 248,932 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RC_1LC1LE_1RA1RD_0RF0RE_1LA0LB_---1RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="58"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [58](#t58). `1RB0LD_1RC1RF_1LA0RA_0LA0LE_1LD1LA_0RB---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [68](#68), other start state (13 Nov 2026).** No. 58 is no. 68 (mirrored) started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2111,24 +2353,36 @@ Nos. 57–108 are all machines classified "Bell-like" in the community BB6 sheet
 
 <img src="diagrams/1RB0LD_1RC1RF_1LA0RA_0LA0LE_1LD1LA_0RB---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="59"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [59](#t59). `1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1059, **CRYPTID**, Bell-like, notes: Antihydra. Part of Category 1
 - diagram: 564,453 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RA_0LC1LE_1LD1LC_1LA0LB_1LF1RE_---0RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="60"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [60](#t60). `1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1061, **CRYPTID**, Bell-like, notes: One of (canonical) collection of 16 probviously halting tetrational cryptids
 - diagram: 703,225 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RA_0RC1RC_1LD0LF_0LE1LE_1RA0LB_---0LC.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="61"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [61](#t61). `1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [51](#51), [71](#71), [93](#93), other start state (13 Nov 2026).** No. 61 is no. 51 (mirrored) started in state F; no. 71 started in state F; no. 93 started in state F. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2143,8 +2397,12 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <img src="diagrams/1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="62"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [62](#t62). `1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE` (analysed 8 Nov 2026)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1064, **CRYPTID**, Bell-like, notes: Probviously halting cryptid
 - BusyBeaverWiki: [1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE](https://wiki.bbchallenge.org/wiki/1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE) (analysis by mxdys, 30 Jul 2025; rules proved in Rocq and Lean)
@@ -2160,8 +2418,12 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <img src="diagrams/1RB0LD_1RC1RA_1LD0RB_1LE1LA_1RF0RC_---1RE.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="63"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [63](#t63). `1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1065, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
 - diagram: 1,197,908 steps, tape width 1001 cells
@@ -2174,16 +2436,24 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <img src="diagrams/1RB0LC_1LC0RD_1LF1LA_1LB1RE_1RB1LE_---0LE.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="64"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [64](#t64). `1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1066, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
 - diagram: 282,270 steps, tape width 1001 cells
 
 <img src="diagrams/1RB0RE_1LC1LD_0RA0LD_1LB0LA_1RF1RA_---1LB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="65"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [65](#t65). `1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1067, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid
 - BusyBeaverWiki: [1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF](https://wiki.bbchallenge.org/wiki/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF)
@@ -2231,24 +2501,36 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <img src="diagrams/1RB1RE_1LC1LD_---1LA_1LB1LE_0RF0RA_1LD1RF.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="66"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [66](#t66). `1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1068, **CRYPTID**, Bell-like, notes: Probviously halting tetrational cryptid, Part of Category 1
 - diagram: 945,825 steps, tape width 1001 cells
 
 <img src="diagrams/1RB0LC_0LC0RF_1RD1LC_0RA1LE_---0LD_1LF1LA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="67"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [67](#t67). `1RB1LD_1RC1RE_0LA1LB_0LD1LC_1RF0RA_---0RC` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1069, **CRYPTID**, Bell-like, notes: Probviously nonhalting cryptid, similar to Antihydra
 - diagram: 511,588 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1LD_1RC1RE_0LA1LB_0LD1LC_1RF0RA_---0RC.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="68"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [68](#t68). `1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [58](#58), other start state (13 Nov 2026).** No. 68 is no. 58 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2257,8 +2539,12 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
 
 <img src="diagrams/1RB0LB_1LC0RE_1LA1LD_0LC---_0RB0RF_1RE1RB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="69"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [69](#t69). `1RB1LE_0LC0LB_1RD1LC_1RD1RA_1RF0LA_---1RE` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1071, **CRYPTID**, Bell-like, notes: Tetrational cryptid (3/5 of becoming TC, 2/5 of halting), see source 2 for more exact chances and refinements, Part of Category 1
 - diagram: 268,228 steps, tape width 1001 cells
@@ -2270,8 +2556,12 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
   - **Probabilities (fair-coin model):** with steps −3 / −2 equally likely, the round ends at m = 0, 1, 2 with probability 0.2, 0.4, 0.4 (exact for large m). With the parity of n as a coin: HALT 0.2 (m = 2, n even), translated cycler 0.3 (m ∈ {0, 1}, m + n even), new round 0.5. Over all rounds: **HALT 2/5, translated cycler 3/5**, as Racheline says. Each further round is decided with chance 1/2; four rounds have continued so far (chance 1/16).
   - **Not vampire-like in the practical sense:** a single round is already out of reach, so no estimate of the computing time to HALT can be given; it is a tetrational lottery (like nos. 63 and 98).
 
+</details>
+
 <a id="70"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [70](#t70). `1RB1RF_1LC1RD_1LA1LC_1RA0RE_1RD1LA_---0LE` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1074, Bell-like, notes: Simulated to 10^4600 steps, code with log reduction
 - diagram: 361,348 steps, tape width 1001 cells
@@ -2355,8 +2645,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB1RF_1LC1RD_1LA1LC_1RA0RE_1RD1LA_---0LE.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="71"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [71](#t71). `1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [51](#51), [61](#61), [93](#93), other start state (13 Nov 2026).** No. 71 is no. 51 (mirrored) started in state C; no. 61 started in state C; no. 93 started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2367,8 +2661,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB1RD_1LC0LE_1RA0LB_1RA1RF_0RA0RC_1RE---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="72"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [72](#t72). `1RB1LE_1LC1RC_1LA1RD_1LD0RB_0LC0LF_0LB---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [73](#73), [97](#97), other start state (13 Nov 2026).** No. 72 is no. 73 (mirrored) started in state B; no. 97 (mirrored) started in state C. The runs never meet (see no. 73). Overview: *Related machines among the candidates* at the top.
 - Repo: https://github.com/thomasreus-bb/1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC-plus-2-equivalent-TM
@@ -2384,8 +2682,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB1LE_1LC1RC_1LA1RD_1LD0RB_0LC0LF_0LB---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="73"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [73](#t73). `1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [72](#72), [97](#97), other start state (13 Nov 2026).** No. 73 is no. 72 (mirrored) started in state C; no. 97 started in state B. The runs never meet (see no. 73). Overview: *Related machines among the candidates* at the top.
 - Repo: https://github.com/thomasreus-bb/1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC-plus-2-equivalent-TM
@@ -2468,8 +2770,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB1LF_1LC1RD_1RA1LA_0RA0RE_0RC---_1RF0LC.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="74"></a>
 ## 🟩 [74](#t74). `1RB0RD_1RC0LF_1LA0LB_---1RE_1LB1RA_0LC0RA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Never halts**: open [PR 70](https://github.com/ccz181078/busycoq/pull/70) by Zohu (16 Nov 2026), proof of nonhalting with an opaque-block certificate; holdout #42. Together with [77](#77) (same table, other start), both machines are covered by open PRs.
 
@@ -2480,8 +2786,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB0RD_1RC0LF_1LA0LB_---1RE_1LB1RA_0LC0RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="75"></a>
 ## [75](#t75). `1RB1RD_1RC1LD_0LA1RA_1LE0RC_---1LF_0LA0LB` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [106](#106), other start state (13 Nov 2026).** No. 75 is no. 106 started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2490,8 +2800,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB1RD_1RC1LD_0LA1RA_1LE0RC_---1LF_0LA0LB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="76"></a>
 ## [76](#t76). `1RB1LF_1LC0RD_---1LD_1RB1RE_1LA0LB_0LA0LE` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [99](#99), other start state (13 Nov 2026).** No. 76 is no. 99 (mirrored) started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2500,8 +2814,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB1LF_1LC0RD_---1LD_1RB1RE_1LA0LB_0LA0LE.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="77"></a>
 ## 🟩 [77](#t77). `1RB0LF_1LC0LA_1RA0RD_---1RE_1LA1RC_0LB0RC` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Never halts**: open [PR 69](https://github.com/ccz181078/busycoq/pull/69) by Zohu (16 Nov 2026), proof of nonhalting with an opaque-block certificate; holdout #140. Together with [74](#74) (same table, other start), both machines are covered by open PRs.
 
@@ -2512,8 +2830,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB0LF_1LC0LA_1RA0RD_---1RE_1LA1RC_0LB0RC.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="78"></a>
 ## [78](#t78). `1RB1LF_1RC1LD_1LB1LE_1LE0LD_0LA0RE_1RD---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [79](#79), [92](#92), other start state (13 Nov 2026).** No. 78 is no. 79 started in state E; no. 92 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2522,8 +2844,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB1LF_1RC1LD_1LB1LE_1LE0LD_0LA0RE_1RD---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="79"></a>
 ## [79](#t79). `1RB1LC_1LA1LD_1LD0LC_0LE0RD_1RA1LF_1RC---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [78](#78), [92](#92), other start state (13 Nov 2026).** No. 79 is no. 78 started in state B; no. 92 (mirrored) started in state D. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2532,8 +2858,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB1LC_1LA1LD_1LD0LC_0LE0RD_1RA1LF_1RC---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="80"></a>
 ## [80](#t80). `1RB1RA_1LC0RB_1LE0LD_0LB1LD_0RA0LF_---0RE` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [91](#91), [108](#108), other start state (13 Nov 2026).** No. 80 is no. 91 (mirrored) started in state D; no. 108 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2542,8 +2872,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB1RA_1LC0RB_1LE0LD_0LB1LD_0RA0LF_---0RE.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="81"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [81](#t81). `1RB0LD_0RC1RA_1RD1RE_1LA0LE_0RA0RF_1RC---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [44](#44), [89](#89), [96](#96), other start state (13 Nov 2026).** No. 81 is no. 44 (mirrored) started in state B; no. 89 started in state D; no. 96 started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2552,32 +2886,48 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB0LD_0RC1RA_1RD1RE_1LA0LE_0RA0RF_1RC---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="82"></a>
 ## [82](#t82). `1RB0RE_0LC1LE_0RD1LD_1RA1LF_1LC0RA_0LB---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1092, Bell-like
 - diagram: 744,077 steps, tape width 1001 cells
 
 <img src="diagrams/1RB0RE_0LC1LE_0RD1LD_1RA1LF_1LC0RA_0LB---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="83"></a>
 ## [83](#t83). `1RB1RA_1LC0RB_1LD0LB_1RA0LE_---1LF_1LB0LA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1093, Bell-like
 - diagram: 562,740 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RA_1LC0RB_1LD0LB_1RA0LE_---1LF_1LB0LA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="84"></a>
 ## 🟩 [84](#t84). `1RB0LC_1LC0RE_1RF1LD_1LA0LB_1RD1RA_1LB---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1094, Bell-like
 - diagram: 1,555,978 steps, tape width 1001 cells
 
 <img src="diagrams/1RB0LC_1LC0RE_1RF1LD_1LA0LB_1RD1RA_1LB---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="85"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [85](#t85). `1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1095, Bell-like
 - diagram: 467,874 steps, tape width 1001 cells
@@ -2621,8 +2971,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB0RF_0LC1RE_---1LD_1LE0LB_0RF0LD_1RD1RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="86"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [86](#t86). `1RB0RE_1RC0RF_1LD1RA_1LB1LD_1RA1LB_---0LD` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1099, Bell-like
 - diagram: 366,736 steps, tape width 1001 cells
@@ -2631,8 +2985,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB0RE_1RC0RF_1LD1RA_1LB1LD_1RA1LB_---0LD.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="87"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [87](#t87). `1RB1LC_1RC0RF_1RD0LB_1RE0LD_1LF---_0RA1LA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1100, Bell-like
 - diagram: 439,921 steps, tape width 1001 cells
@@ -2655,9 +3013,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
   - **R₁ is a trap:** R₁(n) → R₁(n + 5) for n ≥ 2 forever, so reaching R₁ means nonhalting. R₂ goes to R₁ (2/5), R₂ (2/5) or Q (1/5). A scan ends in HALT only for S₆ (end index 3, or τ₃ with r = 3).
   - **Fate (heuristic):** outcomes of 300 exact scans per type (n between 1,500 and 3,000) give an absorbing chain: P(HALT eventually) ≈ **6 %** from S₆ (the current state), 3 % from Q, 1 % from R₂; otherwise the machine ends in the R₁ loop. **No. 87 is therefore probably nonhalting (about 94 %)**; deciding it needs the outcome of a scan of length about 10⁷⁷¹, which no known acceleration provides.
 
+</details>
 
 <a id="88"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [88](#t88). `1RB0LE_1RC0RF_0RD0RB_1RE0RC_1LA0LA_1RA---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1102, Bell-like
 - diagram: 124,792 steps, tape width 1001 cells
@@ -2683,8 +3044,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB0LE_1RC0RF_0RD0RB_1RE0RC_1LA0LA_1RA---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="89"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [89](#t89). `1RB---_1RC1RE_1LD0LE_1RF0LC_0RD0RA_0RB1RD` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [44](#44), [81](#81), [96](#96), other start state (13 Nov 2026).** No. 89 is no. 44 (mirrored) started in state F; no. 81 started in state F; no. 96 started in state F. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2693,8 +3058,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB---_1RC1RE_1LD0LE_1RF0LC_0RD0RA_0RB1RD.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="90"></a>
 ## [90](#t90). `1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1108, Bell-like
 - **DeepMind cryptids (23 Nov 2026):** odometer acceleration E(a, L, d, R) with explicit rules (drain Λ, boundary bounce η; HALT when d is odd at the boundary with empty R), kernel-verified in Lean; see the section [DeepMind cryptids repository](#deepmind-cryptids-repository-23-nov-2026).
@@ -2709,8 +3078,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="91"></a>
 ## [91](#t91). `1RB0LA_1RC0RE_0LD0RF_1LA1LD_0RA1RE_---0LC` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [80](#80), [108](#108), other start state (13 Nov 2026).** No. 91 is no. 80 (mirrored) started in state B; no. 108 started in state D. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2719,8 +3092,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB0LA_1RC0RE_0LD0RF_1LA1LD_0RA1RE_---0LC.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="92"></a>
 ## [92](#t92). `1RB0RA_0RC0LB_1LD1RF_1LE1RA_1RD1RB_1LA---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [78](#78), [79](#79), other start state (13 Nov 2026).** No. 92 is no. 78 (mirrored) started in state D; no. 79 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2729,8 +3106,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB0RA_0RC0LB_1LD1RF_1LE1RA_1RD1RB_1LA---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="93"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [93](#t93). `1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [51](#51), [61](#61), [71](#71), other start state (13 Nov 2026).** No. 93 is no. 51 (mirrored) started in state B; no. 61 started in state E; no. 71 started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2741,8 +3122,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB0LC_1RC1RE_1LA0LD_0RB0RA_1RB1RF_1RD---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="94"></a>
 ## [94](#t94). `1RB0RA_1LC0LE_1RA1LD_0LB1LF_1LD0RC_1LB---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [103](#103), other start state (13 Nov 2026).** No. 94 is no. 103 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2751,8 +3136,13 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <img src="diagrams/1RB0RA_1LC0LE_1RA1LD_0LB1LF_1LD0RC_1LB---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="95"></a>
 ## 🟩 [95](#t95). `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB` (for later analysis)
+
+<details><summary>show / hide</summary>
+
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 - **From the Rocq proof:** `1RB0LE_1RC---_1RD1RE_1LA0RF_0RC0LA_0LC0RB`. No custom checker: only `ES_v3` and `Individual62`. The machine has no chaotic tail. At its left records the tape is a few periodic blocks with counts plus a short fixed end word, so it runs as a register machine on eight tape forms. Every rule is linear in the counts, for example N1(a, b, d) -> N1(a+3, b+12, d-2); the only case splits are small d, parity of the counts, and z = 1..5 at the end of a conversion. An inductive invariant of linear inequalities keeps every rule applicable, and no rule halts. The main theorem is `progress_nonhalt` on that invariant, with 34 one-line rules (`es'`, or a local `esr` for more than three counts). Before Rocq: the register machine equals the plain machine's tapes cell by cell on all 4,534 records from step 50,497 to 5.1e9.
 
@@ -2807,8 +3197,12 @@ Checks:
 - Two runs with different thresholds for the extrapolation give the same step numbers and types for all 102 Bells.
 - The result `m95/bells_102.txt` took 100 seconds.
 
+</details>
+
 <a id="96"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [96](#t96). `1RB1RE_1LC0LE_1RD0LB_0RA1RC_0RC0RF_1RA---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [44](#44), [81](#81), [89](#89), other start state (13 Nov 2026).** No. 96 is no. 44 (mirrored) started in state D; no. 81 started in state C; no. 89 started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2817,8 +3211,12 @@ Checks:
 
 <img src="diagrams/1RB1RE_1LC0LE_1RD0LB_0RA1RC_0RC0RF_1RA---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="97"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [97](#t97). `1RB1LB_1RC1LD_1LA1RE_1RD0LA_0RB0RF_0RA---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [72](#72), [73](#73), other start state (13 Nov 2026).** No. 97 is no. 72 (mirrored) started in state B; no. 73 started in state C. The runs never meet (see no. 73). Overview: *Related machines among the candidates* at the top.
 
@@ -2833,8 +3231,12 @@ Checks:
 
 <img src="diagrams/1RB1LB_1RC1LD_1LA1RE_1RD0LA_0RB0RF_0RA---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="98"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [98](#t98). `1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1123, Bell-like
 - diagram: 1,197,278 steps, tape width 1001 cells
@@ -2848,8 +3250,12 @@ Checks:
 
 <img src="diagrams/1RB1LA_1LC0RE_1LF1LD_1RE0LC_1LB1RA_---0LA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="99"></a>
 ## [99](#t99). `1RB0RC_1LC1RF_1RE0LD_1LC1LA_---1RD_0RB0RA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [76](#76), other start state (13 Nov 2026).** No. 99 is no. 76 (mirrored) started in state E. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2858,8 +3264,12 @@ Checks:
 
 <img src="diagrams/1RB0RC_1LC1RF_1RE0LD_1LC1LA_---1RD_0RB0RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="100"></a>
 ## [100](#t100). `1RB1RD_1LC0RD_1RF1RB_1LE0RA_0LB0LE_---0RC` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1126, Bell-like
 - **DeepMind cryptids (23 Nov 2026):** closed Collatz reduction (`HasCollatzReduction`, `IsValidAcceleration`), kernel-verified in Lean; see the section [DeepMind cryptids repository](#deepmind-cryptids-repository-23-nov-2026). A fast simulator could be built from it.
@@ -2867,16 +3277,25 @@ Checks:
 
 <img src="diagrams/1RB1RD_1LC0RD_1RF1RB_1LE0RA_0LB0LE_---0RC.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="101"></a>
 ## 🟩 [101](#t101). `1RB1RC_1LC0LF_1RF0LD_0RE1LB_1RC---_1LD0RA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1128, Bell-like
 - diagram: 1,355,799 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RC_1LC0LF_1RF0LD_0RE1LB_1RC---_1LD0RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="102"></a>
 ## 🟩 [102](#t102). `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD` (for later analysis)
+
+<details><summary>show / hide</summary>
+
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 - **From the Rocq proof:** `1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD`. No custom checker: only `ES_v3` and `Individual62`. At its left records in state D the tape is one of three forms, each a few periodic blocks with counts plus a short fixed word:
   * A(a, c) = `100 (101)^a 110 (011)^c`
@@ -2890,8 +3309,12 @@ Checks:
 
 <img src="diagrams/1RB1RA_0LC0RA_1RC1LD_0LB1LE_1LF0RC_---0LD.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="103"></a>
 ## [103](#t103). `1RB0RE_1LC1RD_1LA0LC_0RA1RF_1RD0LB_1RA---` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [94](#94), other start state (13 Nov 2026).** No. 103 is no. 94 (mirrored) started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2900,8 +3323,12 @@ Checks:
 
 <img src="diagrams/1RB0RE_1LC1RD_1LA0LC_0RA1RF_1RD0LB_1RA---.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="104"></a>
 ## [104](#t104). `1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1133, Bell-like
 - **DeepMind cryptids (23 Nov 2026):** odometer acceleration E(d, R) with explicit rules (Σ, Ω; HALT when R is empty and d is odd), kernel-verified in Lean; see the section [DeepMind cryptids repository](#deepmind-cryptids-repository-23-nov-2026).
@@ -2918,8 +3345,12 @@ Checks:
 
 <img src="diagrams/1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="105"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [105](#t105). `1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1134, Bell-like
 - diagram: 70,802 steps, tape width 319 cells
@@ -2963,8 +3394,12 @@ Checks:
 
 <img src="diagrams/1RB1LF_1LC0RD_---1LA_0LA0RE_1LA1RA_1LB0LD.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="106"></a>
 ## [106](#t106). `1RB1LD_0LC1RC_1RA1RD_1LE0RB_---1LF_0LC0LA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as no. [75](#75), other start state (13 Nov 2026).** No. 106 is no. 75 started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2973,16 +3408,24 @@ Checks:
 
 <img src="diagrams/1RB1LD_0LC1RC_1RA1RD_1LE0RB_---1LF_0LC0LA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="107"></a>
 ## [107](#t107). `1RB1LD_0RC1RC_1RD0RE_0LA0LF_0RF---_1RA1LA` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - BB6 sheet: row 1136, Bell-like
 - diagram: 941,116 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1LD_0RC1RC_1RD0RE_0LA0LF_0RF---_1RA1LA.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="108"></a>
 ## [108](#t108). `1RB0RE_0LC0RF_1LD1LC_1RA0LD_0RD1RE_---0LB` (for later analysis)
+
+<details><summary>show / hide</summary>
 
 - **Same table as nos. [80](#80), [91](#91), other start state (13 Nov 2026).** No. 108 is no. 80 (mirrored) started in state C; no. 91 started in state B. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
@@ -2990,6 +3433,8 @@ Checks:
 - diagram: 311,138 steps, tape width 1001 cells
 
 <img src="diagrams/1RB0RE_0LC0RF_1LD1LC_1RA0LD_0RD1RE_---0LB.png" alt="space-time diagram" height="350">
+
+</details>
 
 ## Candidates 109–112: potential cryptids from "Machines at the Edge" (for later analysis)
 
@@ -3006,6 +3451,8 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 <a id="109"></a>
 ## 🟩 [109](#t109). `1RB1LE_0LC1RE_---1LD_0RD1LA_0RF1RF_1RA0LB` (potential cryptid, for later analysis)
 
+<details><summary>show / hide</summary>
+
 - **Halts**: open [PR 75](https://github.com/ccz181078/busycoq/pull/75) by Zohu (16 Nov 2026), proof that it halts; holdout #87.
 
 - source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), Racheline's list of possibly tetrational machines
@@ -3014,8 +3461,12 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 
 <img src="diagrams/1RB1LE_0LC1RE_---1LD_0RD1LA_0RF1RF_1RA0LB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="110"></a>
 ## [110](#t110). `1RB1RD_1LC1RA_---1LD_1LE0RA_1LF0LE_0RB0LB` (potential cryptid, for later analysis)
+
+<details><summary>show / hide</summary>
 
 - source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), Racheline's list of possibly tetrational machines
 - BB6 sheet: row 563, Shift-overflow bouncer counter, notes: Possibly tetrational machine
@@ -3023,8 +3474,12 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 
 <img src="diagrams/1RB1RD_1LC1RA_---1LD_1LE0RA_1LF0LE_0RB0LB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="111"></a>
 ## [111](#t111). `1RB0LE_0RC0RA_1LD0LC_1LA0LB_1RA1LF_---0LC` (potential cryptid, for later analysis)
+
+<details><summary>show / hide</summary>
 
 - source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), Racheline's list of possibly tetrational machines
 - BB6 sheet: row 564, Shift-overflow bouncer counter, notes: Possibly tetrational machine
@@ -3032,8 +3487,12 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 
 <img src="diagrams/1RB0LE_0RC0RA_1LD0LC_1LA0LB_1RA1LF_---0LC.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="112"></a>
 ## <img src="diagrams/mark_red.png" width="14" height="14" alt="red"> [112](#t112). `1RB1LD_1RC0LE_1LA1RE_0LF1LA_1RB0RB_---0LB` (potential cryptid, for later analysis)
+
+<details><summary>show / hide</summary>
 
 - source: [Machines at the Edge](https://wiki.bbchallenge.org/wiki/User:RobinCodes/Machines_at_the_Edge) (RobinCodes), probviously halting cryptids
 - BB6 sheet: row 560, CRYPTID, Shift-overflow bouncer counter, notes: Probviously halting cryptid
@@ -3041,8 +3500,12 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 
 <img src="diagrams/1RB1LD_1RC0LE_1LA1RE_0LF1LA_1RB0RB_---0LB.png" alt="space-time diagram" height="350">
 
+</details>
+
 <a id="113"></a>
 ## <img src="diagrams/mark_yellow.png" width="14" height="14" alt="yellow"> [113](#t113). `1RB0LC_1LC0RE_1LD1LB_1LA1LD_1RF0RA_---1RE` (odometer, same table as #581)
+
+<details><summary>show / hide</summary>
 
 - **Origin (24 Nov 2026).** Holdout Guide #133 ("Reported by others", class "Skelet 1-like Class 1"; bbchallenge id 35069). Taken over from the group table *Same transition table* (group 56), because its partner #581 = `1RB1RD_1RC1RB_1LD0RA_1RA0LE_1LF0LC_---1LE` (bbchallenge id 172044) halts: open busycoq PR [#76](https://github.com/ccz181078/busycoq/pull/76), after about 8.53·10¹³¹ steps.
 - **Same machine, other start.** No. 113 is #581 mirrored, with the states renamed (A B C D E F here = C D A B E F of #581), started in state C of #581 (checked: both runs side by side for 2·10⁶ steps, identical up to the mirror). So every rule of the #581 proof holds here too; only the orbit is different.
@@ -3060,3 +3523,5 @@ The BB(6) machines of the wiki page [User:RobinCodes/Machines at the Edge](https
 - diagram: 121,406 steps, tape width 1001 cells
 
 <img src="diagrams/1RB0LC_1LC0RE_1LD1LB_1LA1LD_1RF0RA_---1RE.png" alt="space-time diagram" height="350">
+
+</details>
