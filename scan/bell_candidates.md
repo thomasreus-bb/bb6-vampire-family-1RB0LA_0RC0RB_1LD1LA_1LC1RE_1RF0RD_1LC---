@@ -224,7 +224,7 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 95 | `1RB0LC_1LA0RE_0LD0LB`<br>`1RA1LD_0RC1RF_0RA---` | #252: start A<br>#443: start B, mirrored<br>#557: start D | Chaotic Bell Class 3 |
 | 96 | `1RB1RF_0RC0LB_1LD1RE`<br>`1LB1RF_---0RF_1RD0RA` | #255: start A, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)**<br>#278: start F, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)** | Bell eats counter |
 | 97 | `1RB1LF_1LC0RD_0LD0LC`<br>`1RE0LA_0RA0RC_0RE---` | #257: start A, lottery<br>#267: start B, mirrored, lottery<br>#427: start D, lottery | Skelet 1-like Class 1 |
-| 98 | `1RB0RA_1RC0RD_1RD0LC`<br>`1LE1RA_---1LF_1RB0LC` | #259: start A, lottery<br>#578: start C, lottery | Bell eats counter |
+| 98 | `1RB0RA_1RC0RD_1RD0LC`<br>`1LE1RA_---1LF_1RB0LC` | #259: start A, lottery, **open PR [#110](https://github.com/ccz181078/busycoq/pull/110)**<br>#578: start C, lottery, **open PR [#110](https://github.com/ccz181078/busycoq/pull/110)** | Bell eats counter |
 | 99 | `1RB0LE_1LC0RA_1RD0RC`<br>`1LA0LD_1LB0LF_1LC---` | #260: start A, structure<br>#397: start E, mirrored, structure | Unknown |
 | 100 | `1RB0RE_1LC0RA_0LD1LB`<br>`1LA1LF_0LB0RD_0LB---` | #274: start A, rules known<br>#518: start B, mirrored, rules known | Shift-overflow structural counter |
 | 101 | `1RB0LC_1RC1RA_1LD0RE`<br>`1LA1LD_0RA1RF_0LC---` | #279: start A, **halts: open PR [#82](https://github.com/ccz181078/busycoq/pull/82)**<br>#473: start C, mirrored, **halts: open PR [#84](https://github.com/ccz181078/busycoq/pull/84)** | Chaotic Bell Class 1 |
