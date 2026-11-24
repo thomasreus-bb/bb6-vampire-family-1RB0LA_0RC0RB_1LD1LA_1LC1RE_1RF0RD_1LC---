@@ -144,7 +144,7 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 15 | `1RB0LF_1LC0RB_0LD1LA`<br>`0RA1LE_0LA0RA_1LA---` | #33: start A, lottery<br>#39: start B, mirrored, lottery | Chaotic Fractal Type 1 |
 | 16 | `1RB1RD_1LC0LE_1LD0LB`<br>`0RB0RA_1RD1LF_0LC---` | #38 = [48](#48): start A, rules known, **open PR [#61](https://github.com/ccz181078/busycoq/pull/61)**<br>#59: start B, mirrored, structure, **open PR [#62](https://github.com/ccz181078/busycoq/pull/62)**<br>#124: start C, mirrored, structure, **open PR [#62](https://github.com/ccz181078/busycoq/pull/62)** | Unknown |
 | 17 | `1RB0LE_1RC1RA_1RD0RF`<br>`1RE0RA_1LA1LD_1RA---` | #40: start A, rules known<br>#250: start E, mirrored, rules known<br>#327: start C, rules known<br>#540: start D, rules known | Unknown |
-| 18 | `1RB0RD_1RC0LF_1LA0LB`<br>`---1RE_1LB1RA_0LC0RA` | #42 = [74](#74): start A, structure<br>#140 = [77](#77): start B, structure | Bell-like |
+| 18 | `1RB0RD_1RC0LF_1LA0LB`<br>`---1RE_1LB1RA_0LC0RA` | #42 = [74](#74): start A, structure, **open PR [#70](https://github.com/ccz181078/busycoq/pull/70)**<br>#140 = [77](#77): start B, structure, **open PR [#69](https://github.com/ccz181078/busycoq/pull/69)** | Bell-like |
 | 19 | `1RB0LF_1RC0RB_0RD1LE`<br>`0LE0RA_1LC1LA_0LD---` | #44: start A, **never halts: open PR [#87](https://github.com/ccz181078/busycoq/pull/87)**<br>#390: start B, **never halts: open PR [#85](https://github.com/ccz181078/busycoq/pull/85)** | Unknown |
 | 20 | `1RB0LF_1RC1RB_1LD0RA`<br>`1LA0LE_0LC1LC_1LE---` | #46: start A, structure<br>#526: start B, structure<br>#576: start F, mirrored, structure | Unknown |
 | 21 | `1RB1LD_1RC1RE_1LA0RA`<br>`1RC0LB_0LA1RF_---1RB` | #47: start A<br>#91: start C, mirrored | Skelet 1-like Class 1 |
