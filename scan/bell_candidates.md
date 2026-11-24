@@ -182,7 +182,7 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 53 | `1RB0LB_1RC0LD_0LA1RD`<br>`1LC1LE_1LF0RE_1LD---` | #127: start A, structure<br>#291: start E, mirrored, structure | Unknown |
 | 54 | `1RB1LF_1LC0RD_---1LD`<br>`1RB1RE_1LA0LB_0LA0LE` | #129 = [76](#76): start A, rules known<br>#465 = [99](#99): start E, mirrored, rules known | Bell-like |
 | 55 | `1RB1RC_1LC0RC_0RA0LD`<br>`0LE---_0LF1LD_1LC1LE` | #132: start A<br>#143: start B, mirrored | Chaotic Ack-like Bell |
-| 56 | `1RB0LC_1LC0RE_1LD1LB`<br>`1LA1LD_1RF0RA_---1RE` | #133: start A<br>#581: start C, mirrored | Skelet 1-like Class 1 |
+| 56 | `1RB0LC_1LC0RE_1LD1LB`<br>`1LA1LD_1RF0RA_---1RE` | #133: start A<br>#581: start C, mirrored, **halts: open PR [#76](https://github.com/ccz181078/busycoq/pull/76)** | Skelet 1-like Class 1 |
 | 57 | `1RB1RE_1RC0RF_0LD---`<br>`1LE1LD_1RA0LB_0RE1RF` | #138: start A, lottery<br>#227: start E, lottery<br>#308: start B, lottery<br>#358: start D, mirrored, lottery | Unknown |
 | 58 | `1RB0LE_0RC---_1RD0LA`<br>`1RE0RA_1LC0LF_0RC1LC` | #141: start A, rules known<br>#315: start E, mirrored, rules known | Monotone list |
 | 59 | `1RB0LC_1RC0RA_1LA0LD`<br>`1LE0RB_1RB1LF_0LA---` | #145: start A, structure<br>#310: start C, mirrored, structure<br>#313: start B, structure | Chaotic Bell Class 3 |
