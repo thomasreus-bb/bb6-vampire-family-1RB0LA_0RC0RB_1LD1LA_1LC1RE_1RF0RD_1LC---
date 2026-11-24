@@ -2335,6 +2335,24 @@ Wiki: [1RB---_0RC0RE_1RD1RF_1LE0LB_1RC0LD_1RC1RA - BusyBeaverWiki](https://wiki.
     - **Progress indicator (like D for the vampires):** the report also gives the smallest odd block seen near the front and when (now 7; the next steps towards HALT would be 5, 3, 1), and the counts of 9 and 7. These counts alone already show the progress; the injection tests are needed only for the probabilities of the steps that have not been seen yet (5 → 3 → 1 → HALT).
     - **State after 0.5 h (5 rounds, 3,130,000 Bells, about 10^(1.1·10⁶) steps, x with 551,167 digits):** no HALT. In the real run blocks 9 appeared 556 times near the front, blocks 7 eleven times (so 9 → 7 does happen in the real run), never 5, 3 or 1. Injections: 9 → smaller 102/15,447, 7 → smaller 79/15,308, 5 → smaller 94/15,529, 3 → smaller 76/15,764, 1 → HALT 920/15,626. **Rate about 1·10⁻¹⁴ per Bell (90 % interval 0.7–1.5·10⁻¹⁴); median about 7·10¹³ Bells until HALT, 99 % after about 4·10¹⁴ Bells.** Stationarity slope −0.013 ± 0.008: the rate looks constant, so **in the model a HALT is expected** (like TM2, but about 100 times later). The estimate dropped from 10⁻¹³ to 10⁻¹⁴ while the injection counts grew; the injection probabilities depend on the current stack (h₁ varied between about 1 % and 8 % from round to round), so the interval is too narrow rather than too wide.
 
+**Is a HALT proof possible without simulating to the halt? (24 Nov 2026)** For no. 70 there is unfortunately no realistic path to a HALT proof without simulating to the halt. What is missing is not computing power but mathematics that does not yet exist for this kind of problem. What can be proved, however, is exactly what the question comes down to, and that would already be real progress.
+
+*Why a HALT proof is so hard here.* A HALT proof must show that the concrete orbit from the blank tape reaches the halting configuration some day. So far there are only two ways to do this:
+
+1. **Compute the halt.** One finds the halt by simulation and then proves, in the proof system, that an accelerated simulator is correct and that the orbit really gets there. All HALT proofs for such machines work this way: no. 8 (PR #41), #581 (PR #76) and the vampires.
+   - For no. 70 this fails because of the median of about 10¹⁹ Bells. x alone would then have about 7·10¹⁷ bytes.
+   - There is no shortcut. The parity of x after n Bells depends on all earlier parities, because the constants c in x' = 3x/2 + c depend on the stack and the stack depends on the parities. Essentially every Bell has to be computed. The divide-and-conquer method in `sim70dc` is already the fast way.
+2. **Show by number theory that the required parity pattern occurs in the orbit.** This is a Collatz-type statement about the orbit of one particular number under x' = 3x/2 + c, roughly: "some day enough suitable parities come in the right context". There is no method for statements of this kind. Even the simplest cases are open; Antihydra, for example, asks whether the orbit of x' = 3x/2 ever has twice as many odd values as even ones. The probability estimates ("HALT with probability 1") hold only for random parities, not for the one deterministic orbit.
+
+*What could realistically be proved.* Even without deciding the HALT question there are worthwhile goals:
+
+1. **An exact, finite description of the Bell map.** At present the simulator learns more than 150,000 single rules. Probably they can be combined into a few parametric rules: the gaps and blocks would enter as variables, with affine formulas such as G' = m + 4 and case distinctions by x mod 12. The deep stack is never read back and the front behaves regularly, so this looks feasible. It is the most important first step.
+2. **A proved reduction**, e.g. in Rocq/busycoq or Lean like the DeepMind accelerations: "no. 70 halts if and only if this Bell map, from this start value, reaches the pattern 9 → 7 → 5 → 3 → 1 → hit". Then no. 70 would officially be a cryptid, and the question would be cleanly reduced to a number problem.
+3. **A formal proof of the equivalence of nos. 70 and 86.** This is small.
+4. **A theorem about the random model:** with random parities the machine halts with probability 1. This makes the heuristic precise, but remains a statement about the model, not about the machine.
+
+A real HALT proof then remains possible in only two ways: someone finds the halt anyway, e.g. because it comes surprisingly early, or there is a breakthrough on Collatz-like problems.
+
 <img src="diagrams/1RB1RF_1LC1RD_1LA1LC_1RA0RE_1RD1LA_---0LE.png" alt="space-time diagram" height="350">
 
 <a id="71"></a>
