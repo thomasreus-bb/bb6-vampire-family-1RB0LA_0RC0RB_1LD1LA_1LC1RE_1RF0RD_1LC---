@@ -138,7 +138,7 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 8 | `1RB0LD_1RC0RF_1LA1RF`<br>`0LA0RE_1LD---_0RA0RD` | #21: start A, lottery<br>#106: start C, mirrored, lottery<br>#182: start E, mirrored, lottery<br>#214: start B, lottery | Skelet 1-like Class 1 |
 | 9 | `1RB1RA_1LC0RF_1LD1LC`<br>`1LE0LB_0LF---_1RA1RB` | #23: start A<br>#215: start B, mirrored<br>#288: start D, mirrored<br>#502: start F | – |
 | 10 | `1RB1RE_0RC---_1RD0RD`<br>`1LE0LF_1RA0LD_1LC1RB` | #25 = [43](#43): start A, lottery<br>#37 = [42](#42): start D, mirrored, lottery<br>#336 = [22](#22): start C, lottery | Quadratic Mess |
-| 11 | `1RB0RE_1RC0RA_0LD0LB`<br>`0LA1LE_1LC1LF_0LA---` | #28: start A, **open PR [#49](https://github.com/ccz181078/busycoq/pull/49)**<br>#430: start E, mirrored, **open PR [#49](https://github.com/ccz181078/busycoq/pull/49)** | Chaotic Bell Class 3 |
+| 11 | `1RB0RE_1RC0RA_0LD0LB`<br>`0LA1LE_1LC1LF_0LA---` | #28: start A, **merged PR [#49](https://github.com/ccz181078/busycoq/pull/49)**<br>#430: start E, mirrored, **merged PR [#49](https://github.com/ccz181078/busycoq/pull/49)** | Chaotic Bell Class 3 |
 | 12 | `1RB1RA_1LC1LE_1RA1LD`<br>`0LB0LC_1LF0RE_1LB---` | #30: start A, rules known<br>#73: start B, mirrored, rules known<br>#169: start E, mirrored, rules known<br>#354: start F, mirrored, rules known | Shift-overflow counter |
 | 13 | `1RB1LF_1LC1RB_1LF1LD`<br>`1LE0RD_1LB---_1LA0LA` | #31: start A, rules known<br>#222: start B, mirrored, rules known | Shift-overflow structural counter |
 | 14 | `1RB0LC_0RC0RF_1RD0RE`<br>`1LE0RA_0LA0LE_0RC---` | #32: start A, lottery<br>#170: start C, lottery<br>#333: start D, mirrored, lottery | Skelet 1-like Class 1 |
@@ -199,10 +199,10 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 69 | `1RB1RA_1LC0RB_1LE0LD`<br>`0LB1LD_0RA0LF_---0RE` | #174 = [80](#80): start A, structure<br>#326 = [91](#91): start B, mirrored, structure<br>#604 = [108](#108): start C, mirrored, structure | Bell-like |
 | 70 | `1RB0LD_0RC1RA_1RD1RE`<br>`1LA0LE_0RA0RF_1RC---` | #175 = [81](#81): start A, rules known<br>#297 = [89](#89): start F, rules known<br>#410 = [96](#96): start C, rules known<br>#507 = [44](#44): start D, mirrored, rules known | Bell-like |
 | 71 | `1RB1RE_1LC0RA_1LA0LD`<br>`1LB0LF_0RB0LE_0LA---` | #176: start A, **never halts: open PR [#80](https://github.com/ccz181078/busycoq/pull/80)**<br>#600: start D, mirrored, **never halts: open PR [#80](https://github.com/ccz181078/busycoq/pull/80)** | Quadratic Mess |
-| 72 | `1RB0RA_0RC0LD_1LA1RF`<br>`1LE1LD_1LB1RE_---1RA` | #177: start A, **open PR [#50](https://github.com/ccz181078/busycoq/pull/50)**<br>#574: start D, mirrored, **open PR [#50](https://github.com/ccz181078/busycoq/pull/50)** | Counter Class 3 |
+| 72 | `1RB0RA_0RC0LD_1LA1RF`<br>`1LE1LD_1LB1RE_---1RA` | #177: start A, **merged PR [#50](https://github.com/ccz181078/busycoq/pull/50)**<br>#574: start D, mirrored, **merged PR [#50](https://github.com/ccz181078/busycoq/pull/50)** | Counter Class 3 |
 | 73 | `1RB0LE_1RC0RE_1RD0RA`<br>`1RE1LC_0LA0RF_1LE---` | #178: start A, lottery<br>#205: start F, mirrored, lottery<br>#491: start B, lottery | Chaotic 1dCA-like in bouncer |
 | 74 | `1RB0LB_1LC0RE_1LA1LD`<br>`0LC---_0RB0RF_1RE1RB` | #180 = [68](#68): start A, **cryptid**<br>#497 = [58](#58): start B, mirrored, **cryptid** | Bell-like |
-| 75 | `1RB0LD_0RC---_0RD0RF`<br>`1LE0LA_1LF1LE_1RA0RD` | #181: start A, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)**<br>#343: start F, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)**<br>#374: start D, mirrored, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)** | Unknown |
+| 75 | `1RB0LD_0RC---_0RD0RF`<br>`1LE0LA_1LF1LE_1RA0RD` | #181: start A, **merged PR [#55](https://github.com/ccz181078/busycoq/pull/55)**<br>#343: start F, **merged PR [#55](https://github.com/ccz181078/busycoq/pull/55)**<br>#374: start D, mirrored, **merged PR [#55](https://github.com/ccz181078/busycoq/pull/55)** | Unknown |
 | 76 | `1RB0RF_1LC0RC_0LD1LC`<br>`1RE1LB_1RF---_1LE1RA` | #184: start A, structure<br>#510: start F, mirrored, structure | Chaotic Ack-like Bell |
 | 77 | `1RB---_0RC1RD_1LA0LA`<br>`1LE0RB_1LF1LE_1LC0LD` | #185: start A<br>#422: start F, mirrored<br>#441: start C, mirrored<br>#490: start D, mirrored<br>#538: start E, mirrored | – |
 | 78 | `1RB0LD_1LC0RA_1RA1LB`<br>`1LA1LE_1RF0LC_---0RE` | #186 = [24](#24): start A, **cryptid**<br>#317: start D, mirrored, **cryptid**<br>#573: start C, **cryptid** | Quadratic Mess |
@@ -218,17 +218,17 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 88 | `1RB1RF_1RC0LD_1LB1RA`<br>`1RE1LE_0RC0LB_0RB---` | #234 = [31](#31): start A<br>#290 = [26](#26): start C, mirrored<br>#418 = [32](#32): start D | Bell-like |
 | 89 | `1RB1LC_1LA0RD_0LB1LF`<br>`1RE1LC_1LC0RB_0LA---` | #237 = [20](#20): start A, structure<br>#442 = [39](#39): start D, structure<br>#556 = [19](#19): start B, mirrored | Bell-like |
 | 90 | `1RB0LF_0RC0LC_1LA1LD`<br>`1RE1LC_---1RA_0LC0RD` | #240: start A<br>#592: start C, mirrored | Skelet 1-like Class 1 |
-| 91 | `1RB0LE_1RC1RA_1LD0RE`<br>`1LA1LD_1LD0RF_0RA---` | #244: start A, **halts: open PR [#82](https://github.com/ccz181078/busycoq/pull/82)**<br>#339: start C, mirrored, **halts: open PR [#84](https://github.com/ccz181078/busycoq/pull/84)**<br>#489: start B, **halts: open PR [#93](https://github.com/ccz181078/busycoq/pull/93)** | Chaotic Bell Class 1 |
-| 92 | `1RB0LE_1RC1RB_1LD0RA`<br>`1LA1LC_0LC0LF_0RB---` | #247: start A, **halts: open PR [#102](https://github.com/ccz181078/busycoq/pull/102)**<br>#448: start D, mirrored, **halts: open PR [#100](https://github.com/ccz181078/busycoq/pull/100)**<br>#539: start C, mirrored, **halts: open PR [#108](https://github.com/ccz181078/busycoq/pull/108)** | Chaotic Bell Class 1 |
+| 91 | `1RB0LE_1RC1RA_1LD0RE`<br>`1LA1LD_1LD0RF_0RA---` | #244: start A, **halts: merged PR [#82](https://github.com/ccz181078/busycoq/pull/82)**<br>#339: start C, mirrored, **halts: open PR [#84](https://github.com/ccz181078/busycoq/pull/84)**<br>#489: start B, **halts: open PR [#93](https://github.com/ccz181078/busycoq/pull/93)** | Chaotic Bell Class 1 |
+| 92 | `1RB0LE_1RC1RB_1LD0RA`<br>`1LA1LC_0LC0LF_0RB---` | #247: start A, **halts: open PR [#102](https://github.com/ccz181078/busycoq/pull/102)**<br>#448: start D, mirrored, **halts: merged PR [#100](https://github.com/ccz181078/busycoq/pull/100)**<br>#539: start C, mirrored, **halts: open PR [#108](https://github.com/ccz181078/busycoq/pull/108)** | Chaotic Bell Class 1 |
 | 93 | `1RB0LC_0RC0RB_1LD0RE`<br>`0LE1LF_1LA0LB_1LD---` | #249: start A, lottery<br>#298: start C, mirrored, lottery<br>#340: start E, mirrored, lottery | Skelet 1-like Class 1 |
 | 94 | `1RB---_0RC0RD_1LD0RF`<br>`0LE0LC_1RA0LC_1RC0RA` | #251: start A, structure<br>#353 = [38](#38): start F, structure<br>#424: start E, structure | Chaotic Bell Class 2 |
 | 95 | `1RB0LC_1LA0RE_0LD0LB`<br>`1RA1LD_0RC1RF_0RA---` | #252: start A<br>#443: start B, mirrored<br>#557: start D | Chaotic Bell Class 3 |
-| 96 | `1RB1RF_0RC0LB_1LD1RE`<br>`1LB1RF_---0RF_1RD0RA` | #255: start A, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)**<br>#278: start F, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)** | Bell eats counter |
+| 96 | `1RB1RF_0RC0LB_1LD1RE`<br>`1LB1RF_---0RF_1RD0RA` | #255: start A, **merged PR [#55](https://github.com/ccz181078/busycoq/pull/55)**<br>#278: start F, **merged PR [#55](https://github.com/ccz181078/busycoq/pull/55)** | Bell eats counter |
 | 97 | `1RB1LF_1LC0RD_0LD0LC`<br>`1RE0LA_0RA0RC_0RE---` | #257: start A, lottery<br>#267: start B, mirrored, lottery<br>#427: start D, lottery | Skelet 1-like Class 1 |
 | 98 | `1RB0RA_1RC0RD_1RD0LC`<br>`1LE1RA_---1LF_1RB0LC` | #259: start A, lottery, **merged PR [#110](https://github.com/ccz181078/busycoq/pull/110)**<br>#578: start C, lottery, **merged PR [#110](https://github.com/ccz181078/busycoq/pull/110)** | Bell eats counter |
 | 99 | `1RB0LE_1LC0RA_1RD0RC`<br>`1LA0LD_1LB0LF_1LC---` | #260: start A, structure<br>#397: start E, mirrored, structure | Unknown |
 | 100 | `1RB0RE_1LC0RA_0LD1LB`<br>`1LA1LF_0LB0RD_0LB---` | #274: start A, rules known<br>#518: start B, mirrored, rules known<br>same 5-state machine as group 111, see [Families of similar machines](#families-of-similar-machines-22-nov-2026) | Shift-overflow structural counter |
-| 101 | `1RB0LC_1RC1RA_1LD0RE`<br>`1LA1LD_0RA1RF_0LC---` | #279: start A, **halts: open PR [#82](https://github.com/ccz181078/busycoq/pull/82)**<br>#473: start C, mirrored, **halts: open PR [#84](https://github.com/ccz181078/busycoq/pull/84)** | Chaotic Bell Class 1 |
+| 101 | `1RB0LC_1RC1RA_1LD0RE`<br>`1LA1LD_0RA1RF_0LC---` | #279: start A, **halts: merged PR [#82](https://github.com/ccz181078/busycoq/pull/82)**<br>#473: start C, mirrored, **halts: open PR [#84](https://github.com/ccz181078/busycoq/pull/84)** | Chaotic Bell Class 1 |
 | 102 | `1RB0RB_1LC1RA_1LF0LD`<br>`0LE1LD_1RA1LC_---1LA` | #280: start A, structure<br>#413: start E, structure | Shift-overflow bouncer counter |
 | 103 | `1RB0RF_1LC1RD_1LA1LC`<br>`1RA1RE_0RB0LD_---0LC` | #281: start A, structure<br>#454: start C, mirrored, structure | Spaghetti |
 | 104 | `1RB0RD_1LC0RA_1LF1LD`<br>`0RE0LC_---1LB_1RB1RC` | #283: start A, structure<br>#467: start C, mirrored, structure | Shift-overflow bouncer counter |
@@ -245,8 +245,8 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 115 | `1RB1RF_1LC1RE_0LD0LC`<br>`1RD0RB_1RA0RB_1RE---` | #352: start A, rules known<br>#493: start F, rules known | Shift-overflow counter |
 | 116 | `1RB0RC_1LC0RD_0LD0LC`<br>`1RE0LA_0RA0RF_0LB---` | #359: start A, lottery<br>#580: start B, mirrored, lottery<br>#586: start D, lottery | Skelet 1-like Class 1 |
 | 117 | `1RB0LE_1RC---_0RD0RE`<br>`1LE0RB_0LA0LF_0RC0LD` | #363: start A, lottery<br>#560: start D, mirrored, lottery | Quadratic Mess |
-| 118 | `1RB0LE_1LC1RD_1LA0RB`<br>`1RC1RB_1LF0LC_---0RC` | #364: start A, structure<br>#380: start B, mirrored, structure<br>#521: start C, mirrored, structure | Bouncer + Chaotic Edge |
-| 119 | `1RB1LA_1LA1RC_1RD0RB`<br>`1LE1LD_---1LF_1RA0LF` | #375: start A, **open PR [#43](https://github.com/ccz181078/busycoq/pull/43)**<br>#433: start B, mirrored, **open PR [#43](https://github.com/ccz181078/busycoq/pull/43)** | Shift-overflow counter |
+| 118 | `1RB0LE_1LC1RD_1LA0RB`<br>`1RC1RB_1LF0LC_---0RC` | #364: start A, structure, **open PR [#119](https://github.com/ccz181078/busycoq/pull/119)**<br>#380: start B, mirrored, structure, **open PR [#116](https://github.com/ccz181078/busycoq/pull/116)**<br>#521: start C, mirrored, structure, **open PR [#117](https://github.com/ccz181078/busycoq/pull/117)** | Bouncer + Chaotic Edge |
+| 119 | `1RB1LA_1LA1RC_1RD0RB`<br>`1LE1LD_---1LF_1RA0LF` | #375: start A, **merged PR [#43](https://github.com/ccz181078/busycoq/pull/43)**<br>#433: start B, mirrored, **merged PR [#43](https://github.com/ccz181078/busycoq/pull/43)** | Shift-overflow counter |
 | 120 | `1RB0LC_0RC0RF_1RD0LE`<br>`1LA1RA_1LC1RB_0RB---` | #376: start A, rules known<br>#519: start D, mirrored, rules known | Unknown |
 | 121 | `1RB1LC_1LA0RE_0LD---`<br>`1LB1LD_1RB1RF_0LA0RB` | #384: start A, structure<br>#431: start B, mirrored, structure | Unknown |
 | 122 | `1RB0LF_1RC0LB_1RD1RB`<br>`1RE1RF_1LA---_0RC1LA` | #386: start A, rules known<br>#487: start D, rules known | Counter Class 2 |
@@ -255,7 +255,7 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 125 | `1RB0LC_0RC1RF_1RD0RE`<br>`1LE0RA_0LA0LE_0LA---` | #406: start A, lottery<br>#575: start C, lottery | Skelet 1-like Class 1 |
 | 126 | `1RB0LA_0RC0RB_1LD1LA`<br>`1LC1RE_1RF0RD_1LC---` | #421 = [3](#3): start A, HALT found (TM2, O2)<br>#476 = [7](#7): start E, HALT found (TM2b', O4) | Bell-like, vampire family |
 | 127 | `1RB0LD_0LC0RE_1LA0RD`<br>`0RB0LD_1RC1RF_1RA---` | #425: start A, rules known<br>#488: start F, rules known | Shift-overflow counter |
-| 128 | `1RB0LF_1LC0LA_---1RD`<br>`1RF1RE_1LF1RD_1LB0RE` | #437: start A, structure<br>#501: start D, structure | Bouncer + Chaotic Edge |
+| 128 | `1RB0LF_1LC0LA_---1RD`<br>`1RF1RE_1LF1RD_1LB0RE` | #437: start A, structure, **open PR [#115](https://github.com/ccz181078/busycoq/pull/115)**<br>#501: start D, structure, **open PR [#118](https://github.com/ccz181078/busycoq/pull/118)** | Bouncer + Chaotic Edge |
 | 129 | `1RB---_0LC0RB_1RA1LD`<br>`1LE1LF_1LB0LF_0RC0LA` | #450: start A, structure<br>#555: start D, mirrored, structure | Shift-overflow counter |
 | 130 | `1RB0RC_1LC0RE_0LD0LB`<br>`1RA1LE_1LB1RF_---0RD` | #506: start A, lottery<br>#547: start D, lottery | Shift-overflow counter |
 
