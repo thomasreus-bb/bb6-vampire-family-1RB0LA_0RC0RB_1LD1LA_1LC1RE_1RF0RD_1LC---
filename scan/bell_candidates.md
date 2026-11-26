@@ -225,7 +225,7 @@ Guide statuses used in the table (Holdout Guide, 3 Nov 2026):
 | 95 | `1RB0LC_1LA0RE_0LD0LB`<br>`1RA1LD_0RC1RF_0RA---` | #252: start A<br>#443: start B, mirrored<br>#557: start D | Chaotic Bell Class 3 |
 | 96 | `1RB1RF_0RC0LB_1LD1RE`<br>`1LB1RF_---0RF_1RD0RA` | #255: start A, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)**<br>#278: start F, **open PR [#55](https://github.com/ccz181078/busycoq/pull/55)** | Bell eats counter |
 | 97 | `1RB1LF_1LC0RD_0LD0LC`<br>`1RE0LA_0RA0RC_0RE---` | #257: start A, lottery<br>#267: start B, mirrored, lottery<br>#427: start D, lottery | Skelet 1-like Class 1 |
-| 98 | `1RB0RA_1RC0RD_1RD0LC`<br>`1LE1RA_---1LF_1RB0LC` | #259: start A, lottery, **open PR [#110](https://github.com/ccz181078/busycoq/pull/110)**<br>#578: start C, lottery, **open PR [#110](https://github.com/ccz181078/busycoq/pull/110)** | Bell eats counter |
+| 98 | `1RB0RA_1RC0RD_1RD0LC`<br>`1LE1RA_---1LF_1RB0LC` | #259: start A, lottery, **merged PR [#110](https://github.com/ccz181078/busycoq/pull/110)**<br>#578: start C, lottery, **merged PR [#110](https://github.com/ccz181078/busycoq/pull/110)** | Bell eats counter |
 | 99 | `1RB0LE_1LC0RA_1RD0RC`<br>`1LA0LD_1LB0LF_1LC---` | #260: start A, structure<br>#397: start E, mirrored, structure | Unknown |
 | 100 | `1RB0RE_1LC0RA_0LD1LB`<br>`1LA1LF_0LB0RD_0LB---` | #274: start A, rules known<br>#518: start B, mirrored, rules known<br>same 5-state machine as group 111, see [Families of similar machines](#families-of-similar-machines-22-nov-2026) | Shift-overflow structural counter |
 | 101 | `1RB0LC_1RC1RA_1LD0RE`<br>`1LA1LD_0RA1RF_0LC---` | #279: start A, **halts: open PR [#82](https://github.com/ccz181078/busycoq/pull/82)**<br>#473: start C, mirrored, **halts: open PR [#84](https://github.com/ccz181078/busycoq/pull/84)** | Chaotic Bell Class 1 |
@@ -679,6 +679,7 @@ Column **Holdout Guide**: status and note from the [BB(6) Holdout Guide](https:/
 
 <details><summary>show / hide</summary>
 
+- **busycoq (26 Nov 2026):** HALT proved in the open PR [#60](https://github.com/ccz181078/busycoq/pull/60) ("Lopsided Camper", `c273_halts : halts tm c0`, 523 `native_compute` jobs).
 - **Status: HALT (Yeyito, Discord, 7 Nov 2026).** `1RB---_0RC0RD_1LD1RB_0LE0LC_1RA0LF_1LD1LE` halts after **831265665802914901834939426973647910800304 steps** (≈ 8.3·10⁴¹, counting the halting step).
   - Proof (halts): [github.com/Yeyito777/bbchallenge-discoveries/tree/main/bb6-holdout-2](https://github.com/Yeyito777/bbchallenge-discoveries/tree/main/bb6-holdout-2), 280 core-hours.
   - With Shawn's A(a, b, c) rules the machine halts from A(0, 1, 0) after 71,755,048,174,256 rule steps, at A(80724428909535, 1, 242173286728609) (c = 3a + 4).
@@ -1117,6 +1118,7 @@ Discord, 22 Dec 2025:
 
 <details><summary>show / hide</summary>
 
+- **busycoq (26 Nov 2026):** the Rocq proof of this machine was part of PR [#44](https://github.com/ccz181078/busycoq/pull/44), but was removed again before the merge (commit "Remove the proof of …", 5 Nov 2026: "Its file was mostly data (an automaton with 11,253 states)"). PR #44 was merged with the other three proofs only, so there is **no proof of no. 23 in busycoq** at present; the decision rests on the proof announced on Discord.
 - **Status:** **decided (never halts), 3 Nov 2026** ([Discord](https://discord.com/channels/960643023006490684/1239205785913790465/1567184717650862173))
 - **From the Rocq proof:** `1RB0LD_0RC1RD_1LA1RA_1LE0LE_1RF0LA_0RA---`. 46 of the lines are the table; it needs only `Individual62`. At left-boundary visits the tape is `(001)^k 0000 (01)^j Y`, with the head in state A on its first cell. One round takes (k, j) to (k-1, j+2) and never reads Y. At k = 0 the run (01)^J is converted rigidly to about 2J/3 blocks of (101) on the left, so 2k + j grows by a factor of about 4/3 per cycle. The left half of the tape is kept exactly, as a stack. The right half is read from the far end by a fixed DFA with 11,253 states. A finite set of 933,744 triples (control, stack symbol, control), control = (state, head symbol, DFA state), is closed under the machine's rules (pre* saturation of a pushdown system, Bouajjani, Esparza and Maler), and a configuration it does not accept cannot reach a halt. `saturate` computes the triples inside the VM and needs no proof; `check_all` tests closure, that the halting controls are accepted, and that the real configuration after 1000 steps is not accepted; `sound` proves `check_all d P rs = true -> ~halts tm c0` for any table and any triples. Before Rocq, with no shared code: a separate C checker on the same table and triples, 1,978,289 closure checks, 0 failures, and a separate Python saturation that gets the same 933,744 triples, with the same order-independent hash as the VM. The file with the start taken after 100 steps, and the file with one machine entry changed, both fail at `Qed`. `coqchk` stopped at a 20 minute cap without a verdict; as far as I can tell it reduces the `vm_cast` without the VM, so it is not expected to finish, and this file relies on the kernel's VM check at `Qed`, like other `vm_cast_no_check` proofs.
 
@@ -2115,6 +2117,7 @@ None of them halts. The run was followed through 91 macro events, up to tape wid
 
 <details><summary>show / hide</summary>
 
+- **busycoq (26 Nov 2026):** nonhalting proved in the open PR [#61](https://github.com/ccz181078/busycoq/pull/61) (this machine, translated cycler); the other two starts of the same table (#59, #124) in the open PR [#62](https://github.com/ccz181078/busycoq/pull/62).
 - scan: 7 levels, 1751 phases, mean factor 1.52 (sd 0.27); level starts: 12 15 20 54 85 116 146
 - verdict: no clear single-block Bell configuration found
 - diagram: 886,334 steps, tape width 1001 cells
@@ -2918,6 +2921,7 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 
 <details><summary>show / hide</summary>
 
+- **busycoq (26 Nov 2026):** HALT proved in the open PR [#47](https://github.com/ccz181078/busycoq/pull/47) (Dahoas, "symbolic-token sibling holdouts #230 and #563", together with no. 101).
 - BB6 sheet: row 1094, Bell-like
 - diagram: 1,555,978 steps, tape width 1001 cells
 
@@ -3293,6 +3297,7 @@ Checks:
 
 <details><summary>show / hide</summary>
 
+- **busycoq (26 Nov 2026):** HALT proved in the open PR [#47](https://github.com/ccz181078/busycoq/pull/47) (Dahoas, "symbolic-token sibling holdouts #230 and #563", together with no. 84).
 - BB6 sheet: row 1128, Bell-like
 - diagram: 1,355,799 steps, tape width 1001 cells
 
