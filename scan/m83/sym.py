@@ -164,5 +164,6 @@ class Sim:
             else:
                 push(front, w)
                 d = m
-            Ls[:] = norm(Ls); Rs[:] = norm(Rs)
+            Ls[:4] = norm(Ls[:4]) if len(Ls) > 4 else norm(Ls)
+            Rs[:4] = norm(Rs[:4]) if len(Rs) > 4 else norm(Rs)
         raise RuntimeError('maxsteps')

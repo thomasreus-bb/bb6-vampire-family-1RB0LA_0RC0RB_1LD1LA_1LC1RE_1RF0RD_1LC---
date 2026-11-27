@@ -179,3 +179,31 @@ No HALT and no failing step was found, but **the exploration does not close yet*
 **What is still needed:** a tail language with unbounded clusters, given as a finite automaton (as in CTL/FAR
 deciders), and an exploration over (r, N mod 2, front runs, automaton state of the tail). The rules above are the
 building blocks: every step of such an exploration is one exact symbolic Bell step.
+
+## Closure attempts, part 2 (27 Nov 2026, late evening)
+
+**1. Simple invariant L\* is not invariant.** `inv83.py` checks one Bell step for every front prefix (tree search,
+prefix extended only where the step reads the rest) for L\* = {front block ≥ 5, all other blocks ≥ 6, gaps ≥ 1,
+r ∈ {1, 2, 3}, N ≥ 100 of either parity}. Counterexamples (exact):
+- r = 1, N even, front 5 → front 4;
+- front a odd (5, 7, …), gap 1, block 6, r = 1, N odd → 1^(a+5) 0^1 1^5 (the second block becomes 5);
+- front a, gap 1, block 6, r = 2 or 3 → new front 1^5.
+
+**2. New exact rules for small fronts** (front a ≤ 6 with several tails, all N residues):
+- **N even:** then r = 1 and the front block shrinks by one (a → a − 1); afterwards N is odd and r' = 1.
+- N becomes even only after an r = 2 Bell (gap 1 behind the front, or front 5 with gap 5).
+- **HALT:** front 3 with r = 2 halts for every N and every tail tested. Front 3 or 4 with r = 1 or 3 does not
+  halt (front grows or a fresh 1^6 is written).
+- So a path to HALT would need several decrements of the front without regrowth: (even N) steps and gap-1 rules.
+
+**3. Exact branching search** (`halt83.py`): from fronts with gap 1 or gap 2, all r branches (both residues of N in
+every Bell) for 9 Bells: **no HALT**.
+
+**4. Reachability closure with a learned window language** (`absym4.py`): the tail is any word whose windows of
+K runs lie in a set F (seeded from the real orbit and from exact coin chains `coinsym2.py`; extended when the
+exploration needs it); start = the real configuration at Bell 1,079. No HALT so far, but it does not converge in
+reasonable time: the abstract map with r free produces many front patterns (states up to 15 runs), and about 20 %
+of the transitions exceed the split budget (classes mod 4 must be split many times).
+
+**Next steps:** a C port of the symbolic Bell step (about 50× faster), and a hand-built invariant that tracks only
+what can make the front shrink: the parity of N, gap-1 patterns and blocks of length 5.
