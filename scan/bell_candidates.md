@@ -2845,6 +2845,11 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 - **Same table as nos. [79](#79), [92](#92), other start state (13 Nov 2026).** No. 78 is no. 79 started in state E; no. 92 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1088, Bell-like
+- **Structure and perturbation tests (27 Nov 2026), tools in `scan/m78/` (shared with nos. [79](#79), [92](#92)):**
+  - Mirrored TM, rare records on the left. The tape is a sea of `10 100` blocks with sparse defects. Every left record leaves a marker (`1000`) at the old right end, so the marker positions are the earlier tape lengths. The first ~25 tokens alternate between two fixed forms.
+  - **Two-sided Bell:** the head bounces between the right end (+5 cells per bounce) and a turning point (−5 cells, −9 at a marker). When the turning point reaches the left end, the pass ends with a left record or a reset to the right end; each pass doubles the tape (lengths 1,020 → 3,860 → 7,668 → 30,408 → 60,756). The outcome depends on the arrival phase (tape length mod 5, number of markers): "chaotic digits".
+  - **Perturbation tests:** 60 variants with extra markers and 40 chains (116 left-record cycles, about 430 pass ends) with random marker changes before every cycle: **0 HALT**.
+  - **Assessment:** a lottery structure without an observed halting outcome, so no Markov rate can be given. **No basis for HALT > 90 %; probably nonhalting.**
 - diagram: 623,823 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1LF_1RC1LD_1LB1LE_1LE0LD_0LA0RE_1RD---.png" alt="space-time diagram" height="350">
@@ -2859,6 +2864,7 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 - **Same table as nos. [78](#78), [92](#92), other start state (13 Nov 2026).** No. 79 is no. 78 started in state B; no. 92 (mirrored) started in state D. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1089, Bell-like
+- **27 Nov 2026:** same macro dynamics as no. [78](#78) (same prefix forms and marker sea, other marker positions; the rare records are on the right). See chapter [78](#78) and `scan/m78/`. **Probably nonhalting**, no basis for HALT > 90 %.
 - diagram: 571,776 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1LC_1LA1LD_1LD0LC_0LE0RD_1RA1LF_1RC---.png" alt="space-time diagram" height="350">
@@ -2899,6 +2905,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 <details><summary>show / hide</summary>
 
 - BB6 sheet: row 1092, Bell-like
+- **Exact event orbit (27 Nov 2026), tools in `scan/m82/` and `scan/orbit_tools/`:**
+  - Mirrored TM `1LB0LE_0RC1RE_0LD1RD_1LA1RF_1RC0LA_0RB---`, events = left records in state E. At an event the tape is `W 0^n S` with S = (100)^k 1101 11 0^z 1101.
+  - **Two-counter cycle:** k counts up while z counts down; at z = 0 the blocks merge, k is reset and a new zero run z' = 3·z + 4 is written (34 → 106 → 322). The cycles grow geometrically.
+  - Exact orbit with learned affine rules n' = a·n + b per residue class and big integers: 1,500 events, n ≈ 10^137 (the Holdout Guide: 2.7·10^79 steps). No HALT. The 710 learned rules contain no HALT entry in any residue class.
+  - The coin model (random residues of n) is not valid here: the residues are structurally fixed along the orbit; random residues give unreachable states and spurious halts.
+  - **Assessment:** a deterministic counter, not a lottery. **Probably nonhalting.** Proof path: the cycle rule (k, z) → (0, 3z + 4) as an inductive statement plus the residue invariant of n.
 - diagram: 744,077 steps, tape width 1001 cells
 
 <img src="diagrams/1RB0RE_0LC1LE_0RD1LD_1RA1LF_1LC0RA_0LB---.png" alt="space-time diagram" height="350">
@@ -2911,6 +2923,12 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 <details><summary>show / hide</summary>
 
 - BB6 sheet: row 1093, Bell-like
+- **Bell map, exact orbit and coin model (27 Nov 2026), tools in `scan/m83/`:**
+  - Mirrored TM `1LB1LA_1RC0LB_1RD0RB_1LA0RE_---1RF_1RB0RA`. A Bell starts at a left record in state B with the tape `0 1^N 0^r S` (r ∈ {1, 3}). The sweep turns 1^N into 0^(N−1) and rewrites the front of S; the slow phase (about N² steps) builds the next 1-run: N' = 6·⌊(N−1)/4⌋ + 3, r' given by N mod 4. N grows by 3/2 per Bell (Collatz-like), r is a pseudo-random bit. S is a list of 1-blocks and zero gaps; only its first 10–100 cells change per Bell. Checked against the direct run: the first 22 Bells (4·10⁹ steps) agree exactly.
+  - **Exact orbit:** 1,079 Bells, N ≈ 10^190 (steps of the order N² per Bell). No HALT. All blocks of S have even length ≥ 6.
+  - **HALT condition:** the next Bell halts exactly when the front block of S has length h(r), h(1) = 2, h(2) = 3, h(3) = 1. Every non-halting Bell writes a front block of length ≥ 5 (grid test).
+  - **Coin model** (r random, N random small representative): 144,000 Bells, **0 HALT**; the halting front length never appears.
+  - **Assessment:** HALT needs a front block of length ≤ 3 that the Bell map never writes. Not a lottery. **Probably nonhalting.** Proof path: the reachable S language (blocks ≥ 6) is kept by the Bell map.
 - diagram: 562,740 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RA_1LC0RB_1LD0LB_1RA0LE_---1LF_1LB0LA.png" alt="space-time diagram" height="350">
@@ -3088,6 +3106,7 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
   - **Growth:** per Bell, the zero count of L grows by a factor of about 5/2 and the macro step count by a factor of about 2.5. After 100,000 Bells, |L| ≈ 2^132196, while R has only 213,611 entries (about 2.1 new entries per Bell, mostly 0 and multiples of 5).
   - **HALT condition:** HALT needs R to be used up completely (η or T with R = ε and d odd). R is read only from the top. Between two Bells, R never shrinks by more than **7 entries** below its length at the previous Bell (100,000 Bells: depth 4: 58,002, 5: 31,278, 6: 10,538, 7: 181, never 8 or more). R was empty only 3 times, all at the very start.
   - **Assessment:** R is a write-once record that grows linearly, and only its top few entries are ever read again. HALT would need the whole stack to be eaten, which never comes close to happening. **Probably nonhalting.** Not a proof: the top of R depends on the parity of the huge counter (Collatz-like, n → about 5n/2). A proof would need a finite abstraction of the top of R that shows the read depth stays bounded.
+- **Random-walk estimate (27 Nov 2026):** R grows by about 2.1 entries per Bell, and the largest drop below the previous Bell in 100,000 Bells is 7 entries. HALT needs a drop of the whole stack (≥ 213,611 entries). A walk with this drift and these short excursions gives no measurable HALT rate: P(HALT) from the current state is effectively 0. **Probably nonhalting**; no basis for HALT > 90 %.
 - diagram: 318,582 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1LB_1LC1LA_1RD0LB_1RA1RE_1RF0RD_---1RD.png" alt="space-time diagram" height="350">
@@ -3116,6 +3135,7 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
 - **Same table as nos. [78](#78), [79](#79), other start state (13 Nov 2026).** No. 92 is no. 78 (mirrored) started in state D; no. 79 (mirrored) started in state C. No common configuration found (2·10⁸ steps, in both directions). Overview: *Related machines among the candidates* at the top.
 
 - BB6 sheet: row 1113, Bell-like
+- **27 Nov 2026:** same macro dynamics as no. [78](#78) (same prefix forms and marker sea, other marker positions, one extra `1010` defect). See chapter [78](#78) and `scan/m78/`. **Probably nonhalting**, no basis for HALT > 90 %.
 - diagram: 615,561 steps, tape width 1001 cells
 
 <img src="diagrams/1RB0RA_0RC0LB_1LD1RF_1LE1RA_1RD1RB_1LA---.png" alt="space-time diagram" height="350">
@@ -3356,6 +3376,7 @@ Checks:
   - **Growth:** per Bell, d grows exactly as d → (3d + k)/2 with a small odd k, so by a factor of 3/2. After 100,000 Bells, d ≈ 10^17,600, while R has only 113,486 entries (about 1.13 new entries per Bell; values ≤ 39, mostly 0 and 3).
   - **HALT condition:** HALT needs the scan to run through the whole stack (all entries odd) with R empty and d odd. Between two Bells, the stack never shrinks by more than **13 entries** below its length at the previous Bell (100,000 Bells: depth 6: 65,218, 7: 24,561, 8: 6,313, 9: 3,522, 10: 299, 11: 82, 12: 2, 13: 2). The scan reached the bottom only 4 times, all within the first 13 macro steps. Even entries (about one per Bell) are never removed again.
   - **Assessment:** same picture as no. [90](#90). The stack is written once and grows linearly. The read depth has a fast-decaying tail, so the chance of eating the whole stack goes to zero. **Probably nonhalting**, Collatz-like in d (factor 3/2). Not a proof.
+- **Random-walk estimate (27 Nov 2026):** the stack grows by about 1.13 entries per Bell, the largest drop in 100,000 Bells is 13 entries, and HALT needs the whole stack (≥ 113,486 entries) to be eaten. P(HALT) from the current state is effectively 0. **Probably nonhalting**; no basis for HALT > 90 %.
 - diagram: 241,570 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RE_1LC1LB_1LE0LD_1LE1LC_0RF1RA_---1RA.png" alt="space-time diagram" height="350">
@@ -3431,6 +3452,12 @@ Checks:
 <details><summary>show / hide</summary>
 
 - BB6 sheet: row 1136, Bell-like
+- **Exact event orbit and halting horizon (27 Nov 2026), tools in `scan/m107/` and `scan/orbit_tools/`:**
+  - Events = left records in states A, D, F; tape `W u^n S` with u ∈ {`101`, `011`} ("3/2 Bell": n' = (3n + c)/2 in some residue classes).
+  - Exact orbit: 3,000 events, n ≈ 10^268. No HALT. 2,897 learned rules, none with a HALT entry.
+  - **Markov chain over the learned rules** (uniform residues): over 300 sampled orbit configurations, P(HALT within 2 events) = 0 and P(HALT within 4 events) = 0. Coin model: 0 halts in 20,000 macro steps.
+  - HALT needs W to end in `...0100` directly before the 011-run; this tail never occurs along the orbit.
+  - **Assessment:** no halting branch near the orbit. **Probably nonhalting**; no basis for a HALT probability above 90 %.
 - diagram: 941,116 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1LD_0RC1RC_1RD0RE_0LA0LF_0RF---_1RA1LA.png" alt="space-time diagram" height="350">
