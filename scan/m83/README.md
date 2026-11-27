@@ -207,3 +207,32 @@ of the transitions exceed the split budget (classes mod 4 must be split many tim
 
 **Next steps:** a C port of the symbolic Bell step (about 50× faster), and a hand-built invariant that tracks only
 what can make the front shrink: the parity of N, gap-1 patterns and blocks of length 5.
+
+## Part 3 (27 Nov 2026, night): where HALT could come from
+
+**Small blocks are dangerous.** Exact search over all r branches (`halt83b.py`) from synthetic fronts
+`1^a 0^1 1^b` with a = 5…9:
+- b = 4 (a 4-block behind a gap 1) leads to HALT with probability 1/4 to 1 within 6 Bells;
+- b = 5 with r = 2 and N even also leads to HALT (probability 1/4).
+The halting chains end with front 2 and r = 1 (N odd) or front 3 and r = 2, after several decrements
+(even-N steps and gap-1 rules).
+
+**But these patterns are not reached from the real orbit** (so far):
+- `halt83c.py`, exact halting horizon from the real configurations at Bells 1,070, 1,074 and 1,078, over all
+  2^D residue branches: P(HALT within 16 Bells) = **0** (95,002 distinct configurations at depth 16).
+- `beam83.py`, best-first search that steers towards gap-1 and small-block patterns (20,000 configurations
+  from each of three real starts): **no HALT**. The most dangerous configurations found are front 5 with N even,
+  then front 4 with N odd and a large gap behind it, which regrow to 12, 20, ….
+- Example of a forced chain: `1^11 0^5 1^6` (an odd pair reaching the front) → r = 2, `1^6 0^1 1^6` → N even,
+  front 5 → front 4 (N odd) → 12 → 20 → …: the front shrinks to 4 only once, with a large gap behind it.
+
+**Invariance check with a window language** (`inv2.py`, CTL-style: all windows of 3 runs, tagged by position and
+by (r, N mod 2) at the front, must lie in a set F learned from 40,000 exact coin-model Bells and the real orbit):
+the prefix tree does not close (levels with 1,500 → 10,000 → 40,000 → 67,000 → 200,000 prefixes); about a quarter
+of the prefixes need a longer context, because merges (gaps 2 and 4) eat into the tail.
+
+**Conclusion so far.** HALT is not impossible in the abstract system: 4-blocks behind a gap 1 lead to HALT. A proof
+of nonhalting therefore has to show that such patterns never arise, i.e. an invariant about the odd structures
+(odd gaps 1, 3, 5 appear only in specific contexts created by the gap-2 excursion). The automatic closure attempts
+over-approximate too much (r free, generic tails) and explode. Next: describe the odd structures exactly (which
+contexts produce gap 1 and gap 5) and check by hand-built cases that a gap 1 is never followed by a block ≤ 5.
