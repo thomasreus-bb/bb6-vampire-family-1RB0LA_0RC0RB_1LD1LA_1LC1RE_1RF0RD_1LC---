@@ -2930,6 +2930,7 @@ A real HALT proof then remains possible in only two ways: someone finds the halt
   - **Coin model** (r random, N random small representative): 144,000 Bells, **0 HALT**; the halting front length never appears.
   - **Assessment:** HALT needs a front block of length ≤ 3 that the Bell map never writes. Not a lottery. **Probably nonhalting.** Proof path: the reachable S language (blocks ≥ 6) is kept by the Bell map.
   - **Proof attempt (afternoon):** with N abstracted and r ∈ {1, 3} arbitrary, the language L2 (blocks even ≥ 6, gaps even ≥ 2) is kept by the Bell map in 5,943 of 6,000 random tests; all escapes start with a gap of 2. Of 600 such escapes, 588 return to L2 within 13 Bells and 12 leave a buried odd pair deeper in S; none halts. A proof needs L2 extended by these excursion states and a finite list of parametric front rules. Details in `scan/m83/README.md`.
+  - **Rule catalogue (evening):** the Bell map on the front of S is given by a few linear rules (independent of N except for r'). With gaps ≥ 4: r = 1 gives 1^(a+8) 0^(g−4) (g ≥ 6) or 1^(a+b+8) (g = 4); r = 3 gives 1^6 0^(a−2) 1^6 0^(g−4) (g ≥ 6) or 1^6 0^(a−2) 1^(b+6) (g = 4). Gap 2 is the only exit from the even world; its rules and those of the odd excursion (r = 2, gaps 1, 3, 5) are tabulated in `scan/m83/README.md`. Still open: closing the odd excursion; then each table row is one inductive lemma.
 - diagram: 562,740 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RA_1LC0RB_1LD0LB_1RA0LE_---1LF_1LB0LA.png" alt="space-time diagram" height="350">

@@ -74,3 +74,55 @@ gap 2 and r ∈ {1, 3}:
 needs a language L ⊇ L2 that also contains the excursion states and the buried odd pairs, and the finite list of
 parametric Bell rules on the front of S (front block a, gap g, next blocks, each as linear rules with residues),
 proved by induction like shift rules. This is a sizeable but finite case analysis; it has not been done yet.
+
+## Rule catalogue for the front of S (27 Nov 2026, evening)
+
+Measured with `cyc83` on parameter grids (`rules83.py`, `rules83g2.py`, `rules83odd.py`; raw output in `r1.txt`,
+`r3.txt`, `g2.txt`, `odd.txt`). Notation: S = 1^a 0^g 1^b 0^h T, T = untouched rest; r = gap before S.
+All results were the same for several N (903, 905, 1203) unless "r' from N" is noted; every output is linear
+in the parameters. These are the candidate lemmas for induction proofs (each is a shift-rule statement).
+
+**Main rules (g ≥ 4; tested a = 6…30, g = 4…20, b = 12):**
+
+| r | condition | S' | r' |
+|---|---|---|---|
+| 1 | g = 4 | 1^(a+b+8) 0^h T | from N |
+| 1 | g ≥ 6 | 1^(a+8) 0^(g−4) 1^b … | from N |
+| 3 | g = 4 | 1^6 0^(a−2) 1^(b+6) 0^h T | from N |
+| 3 | g ≥ 6 | 1^6 0^(a−2) 1^6 0^(g−4) 1^b … | from N |
+
+**Gap 2 (tested a = 6…14, b = 6, 8, 12, h = 4…20):**
+
+| r | condition | S' | r' |
+|---|---|---|---|
+| 1 | a ≡ 2 (mod 4) | 1^6 0^(h−4) T | fixed: 3 if b ≡ 2, 1 if b ≡ 0 (mod 4) |
+| 1 | a ≡ 0 (mod 4) | 1^6 0^(b−3) 1^6 0^(h−4) T | 2 |
+| 1 | a odd | 1^(a+5) 0^(b−1) 1^6 0^(h−4) T | from N |
+| 3 | a even | 1^6 0^(h−4) T | fixed: 1 if b ≡ 2, 3 if b ≡ 0 (mod 4) |
+| 3 | a odd | 1^6 0^(a−3) 1^6 0^(b−3) 1^6 0^(h−4) T | from N |
+
+(h = 4 means that 0^(h−4) is empty and the new 1^6 merges with the next block of T.)
+
+**r = 2 and odd gaps (tested a = 6, 8, 12, g = 1…13 odd, b = 6, 12):**
+
+| r | condition | S' |
+|---|---|---|
+| 2 | g = 1 | 1^(b−1) … (a 5-block if b = 6) |
+| 2 | g = 3 | 1^6 0^(b−4) 1^6 0^(h−4) … (merges into T) |
+| 2 | g ≥ 5 | 1^6 0^(a−3) 1^6 0^(g−4) 1^b … |
+| 1 | g = 5 | 1^(a+8) 0^1 1^b … |
+| 1 | g ∈ {1, 3} | merges into T, r' = 2 |
+| 3 | g = 1 | 1^(b−1) … |
+| 3 | g = 5 | 1^6 0^(a−2) 1^6 0^1 1^b … |
+
+**What this shows.**
+1. In the even world L2 (r ∈ {1, 3}, blocks even ≥ 6, gaps even ≥ 4) the four main rules stay in L2 except that
+   g = 6 produces a gap of 2. HALT is impossible there: the new front block is a + 8, a + b + 8 or 6.
+2. Gap 2 is the only exit. With a ≡ 0 (mod 4) and r = 1 it starts the odd excursion (gap b − 3, r' = 2).
+3. In the odd excursion the rules produce gaps 1, 3, 5 and, via gap 1, blocks b − 1 (e.g. 5). This is where the
+   case list grows; the halting fronts (1, 2, 3) did not appear in any of these cases.
+
+**Next steps for a proof.** Close the excursion: follow the r = 2 / odd-gap rules (including blocks of length 5
+and b − 1, and the merges with T) until the word is back in L2, and check that every branch avoids the halting
+fronts h(1) = 2, h(2) = 3, h(3) = 1. Then each table row becomes one inductive lemma (run lengths as parameters),
+plus the two shift rules for the sweep and the slow phase.
