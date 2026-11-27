@@ -126,3 +126,56 @@ in the parameters. These are the candidate lemmas for induction proofs (each is 
 and b − 1, and the merges with T) until the word is back in L2, and check that every branch avoids the halting
 fronts h(1) = 2, h(2) = 3, h(3) = 1. Then each table row becomes one inductive lemma (run lengths as parameters),
 plus the two shift rules for the sweep and the slow phase.
+
+## Symbolic proofs of the Bell rules (27 Nov 2026, night)
+
+New tools (all exact, no sampling):
+
+| file | purpose |
+|---|---|
+| `sym.py` | symbolic TM simulator: tape segments `word^e` with linear exponents e = c + Σ k·x (x ≥ 0), shift rules found and checked on the fly (a plain one over `word`, and one with look-ahead: `c u^K → v c u^(K−1)` with the head inside the window); an unknown tape part `REST` that may never be read |
+| `sp83.py` | proves the slow-phase lemma |
+| `symbell.py` | exact symbolic Bell step: from `0^∞ B> 1^N 0^r S REST` to the next Bell, N = 4n + c0 symbolic, with SP applied k times (k symbolic) |
+| `rows83.py`, `rows83_out.txt` | the rule catalogue, proved symbolically for all parameter values |
+| `valsym83.py` | cross-check: symbolic results instantiated at random values against `cyc83`: 193 of 194 agree; the one difference is a gap of length 0 (two runs merge), an artefact of the comparison |
+
+A shift rule is proved by simulating one period on a finite window (the head never leaves the window), so applying
+it e times is an induction on e. A symbolic run therefore proves its result for **all** values of the variables.
+
+**Slow-phase lemma (SP).** For every even m ≥ 14 and every z ≥ 0, with an arbitrary unread rest R:
+
+    0^∞ A> 1^m 0^(z+4) R   →   0^∞ A> 1^(m+6) 0^z R        (63 steps plus two shift-rule applications)
+
+**Proved rules** (N = 4n + 101 or 4n + 103; a, b, g, h ≥ 0 are free variables; T is never read):
+
+| r | S (front) | N' | r' | S' (front) |
+|---|---|---|---|---|
+| 1 | 1^(2a+30) 0^4 1^(2b+30) | 6n+153 | N mod 4 | 1^(2a+2b+68) |
+| 1 | 1^(2a+30) 0^(2g+30) 1^(2b+30) | 6n+153 | N mod 4 | 1^(2a+38) 0^(2g+26) 1^(2b+30) |
+| 3 | 1^(2a+30) 0^4 1^(2b+30) | 6n+153 | N mod 4 | 1^6 0^(2a+28) 1^(2b+36) |
+| 3 | 1^(2a+30) 0^(2g+30) 1^(2b+30) | 6n+153 | N mod 4 | 1^6 0^(2a+28) 1^6 0^(2g+26) 1^(2b+30) |
+| 1 | 1^(4a+30) 0^2 1^(4b+30) 0^(2h+30) 1^6 | 6a+6b+4n+187(+2) | 3 | 1^6 0^(2h+26) 1^6 |
+| 1 | 1^(4a+30) 0^2 1^(4b+32) 0^(2h+30) 1^6 | 6a+6b+4n+193(+2) | 1 | 1^6 0^(2h+26) 1^6 |
+| 1 | 1^(4a+32) 0^2 1^(2b+30) 0^(2h+30) 1^6 | 6a+4n+145(+2) | 2 | 1^6 0^(2b+27) 1^6 0^(2h+26) 1^6 |
+| 3 | 1^(2a+30) 0^2 1^(4b+30) 0^(2h+30) 1^6 | 2a+6b+4n+179(+2) | 1 | 1^6 0^(2h+26) 1^6 |
+| 3 | 1^(2a+30) 0^2 1^(4b+32) 0^(2h+30) 1^6 | 2a+6b+4n+179(+2) | 3 | 1^6 0^(2h+26) 1^6 |
+| 2 | 1^(2a+30) 0^(2g+31) 1^(2b+30) | 6n+153 | N mod 4 | 1^6 0^(2a+27) 1^6 0^(2g+27) 1^(2b+30) |
+| 2 | 1^(2a+30) 0^1 1^(2b+30) | 2a+4n+136(+2) | 1 | 1^(2b+29) |
+
+("(+2)" = for N = 4n + 103.) These are the rows of the measured catalogue, now proved for all large parameters;
+small parameter values are finitely many cases and are computed exactly by the same program. Note the last row:
+N' can be **even**, so the parity of N has to be part of the state.
+
+## Closing the excursion: status
+
+The exact symbolic step was put into an exploration of abstract states (r, N mod 2, explicit front runs with
+exact small values or residue classes mod 4, unknown tail T) (`absym83.py`, `absym2.py`, `absym3.py`).
+No HALT and no failing step was found, but **the exploration does not close yet**:
+- With the tail language of the real orbit (deep blocks only 6 and 12, deep gaps ≥ 4, plus the unit
+  `1^6 0^2 1^6`) the abstract map (with r free) pushes new clusters into the tail: chains `6 2 6 2 6 …` of any
+  length and odd clusters (`11`, gaps 1, 3, 5).
+- With a free tail (any gaps, blocks ≥ 5) the number of abstract states explodes (> 180,000 after 8,000 steps).
+
+**What is still needed:** a tail language with unbounded clusters, given as a finite automaton (as in CTL/FAR
+deciders), and an exploration over (r, N mod 2, front runs, automaton state of the tail). The rules above are the
+building blocks: every step of such an exploration is one exact symbolic Bell step.
