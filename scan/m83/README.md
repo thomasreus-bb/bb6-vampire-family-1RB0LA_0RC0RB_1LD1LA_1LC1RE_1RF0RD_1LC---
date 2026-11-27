@@ -50,3 +50,27 @@ HALT needs a front block of length 1, 2 or 3 matched to r. The sweep always writ
 and S keeps blocks of length ≥ 6. So HALT is not a lottery here: the per-Bell chance is 0 in all observed and
 sampled Bells. **Probably nonhalting.** A proof path: describe the reachable S language (blocks ≥ 6, even, gaps
 ≥ 2, with the rare odd cases) and show that the Bell map keeps it and never writes a front block ≤ 3.
+
+## Towards a nonhalting proof: invariant language (27 Nov 2026, afternoon)
+
+Idea: the coin model shows that the Collatz part (N, r) does not matter. So replace N by "N ≡ 3 (mod 6), large"
+and let r ∈ {1, 3} be arbitrary. Then it is enough to find a language L of S words that the Bell map keeps and that
+contains no halting front. Tests with `cyc83` on random words (`lang83*.py`, `exc83.py`):
+
+| language tested | result |
+|---|---|
+| L2: blocks even ≥ 6, gaps even ≥ 2, r ∈ {1, 3} | 5,943 of 6,000 random words stay in L2. **All 57 escapes have first gap = 2** (r = 1: 49, r = 3: 8). No HALT. |
+| L2 with r = 2 allowed | many escapes (r = 2 breaks the parity), as expected |
+| blocks ≥ 6 of any parity, gaps ≥ 1 | 2,868 of 3,000 stay; 2 escapes (gap 1 before a 6-block → 5-block); 130 runs end in another mode (odd front block: the 1-run and S merge into one block that grows forever, nonhalting) |
+
+**Excursions** (`exc83.py`, exact Bell steps with random 60-digit N ≡ 3 mod 6): from 600 random L2 words with first
+gap 2 and r ∈ {1, 3}:
+- 588 return to L2 within 1 to 13 Bells (via odd gaps and r = 2);
+- 12 leave a buried odd pair (odd block followed by an odd gap, e.g. `1^25 0^9`, `1^37 0^5`) deeper in S, while
+  the front goes on in the even mode for 30 Bells;
+- **0 HALT, 0 other failures.**
+
+**Status.** L2 is almost closed; the only leak is the gap-2 front, and its excursions end without HALT. A proof
+needs a language L ⊇ L2 that also contains the excursion states and the buried odd pairs, and the finite list of
+parametric Bell rules on the front of S (front block a, gap g, next blocks, each as linear rules with residues),
+proved by induction like shift rules. This is a sizeable but finite case analysis; it has not been done yet.
