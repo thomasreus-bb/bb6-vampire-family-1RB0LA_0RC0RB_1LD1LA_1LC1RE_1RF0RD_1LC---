@@ -3308,6 +3308,7 @@ Checks:
 
 - BB6 sheet: row 1126, Bell-like
 - **DeepMind cryptids (23 Nov 2026):** closed Collatz reduction (`HasCollatzReduction`, `IsValidAcceleration`), kernel-verified in Lean; see the section [DeepMind cryptids repository](#deepmind-cryptids-repository-23-nov-2026). A fast simulator could be built from it.
+- **Collatz map and HALT estimate (27 Nov 2026), tools in `scan/m100/`:** the map C(k, a, b) of the DeepMind reduction, transcribed and checked against the direct run (first 40 configurations identical). Accelerated run: 768,927 macro steps, numbers with about 73,700 digits, no HALT. Every HALT channel needs a small exact value (a = 0; a = 1 with b ∈ {0, 1, 7}; a = 7 with b = 0) or a drainB chain ending exactly at 5 (probability about 1/b). After 2,000 macro steps all values entering these channels have ≥ 195 digits. Estimated P(HALT) < 10^-190: **probably nonhalting**.
 - diagram: 417,003 steps, tape width 1001 cells
 
 <img src="diagrams/1RB1RD_1LC0RD_1RF1RB_1LE0RA_0LB0LE_---0RC.png" alt="space-time diagram" height="350">
