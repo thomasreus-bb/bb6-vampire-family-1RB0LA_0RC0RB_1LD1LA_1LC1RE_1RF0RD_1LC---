@@ -236,3 +236,50 @@ of nonhalting therefore has to show that such patterns never arise, i.e. an inva
 (odd gaps 1, 3, 5 appear only in specific contexts created by the gap-2 excursion). The automatic closure attempts
 over-approximate too much (r free, generic tails) and explode. Next: describe the odd structures exactly (which
 contexts produce gap 1 and gap 5) and check by hand-built cases that a gap 1 is never followed by a block ≤ 5.
+
+## Part 4 (28 Nov 2026): the odd structures, case analysis of gap 1
+
+**Chains of gap 2 are handled by one Bell, for any length (proved symbolically).** `sym.py` got a shift rule with
+look-ahead for words of several cells; `chain83.py` runs the Bell step on `1^a 0^2 (1^6 0^2)^(2k+c) 1^6 …` with k
+symbolic. Result (a = 34…40, r = 1 or 3, both N residues): the chain `6 2 6 2 … 6` becomes a chain
+`11 5 11 5 … 6` of the same length (the word `0^5 1^11` repeated k + 2 times). This explains the odd blocks 11
+and gaps 5 in the tail.
+
+**Coin model with exact N parity** (`coinpar.py`, C simulator `cyc83`, next N representative ≡ M (mod 8), so
+forced residues and parities are kept): 8 runs × 150,000 = **1,200,000 Bells, 0 HALT**. N even in 119 Bells,
+front ≤ 4 in 101 Bells (always front 4 with r = 1 and N odd), a gap 1 in 345 Bells (counted once per Bell), and
+**never a block ≤ 5 behind a gap 1** (one reported case was an artefact of cutting the tape at 300 cells).
+
+**Where a gap 1 comes from** (`coinpar3.py`, every Bell that creates a new gap 1, `gap1_producers.txt`), 120 events:
+
+| count | input (r, front, gap, block) | output |
+|---|---|---|
+| 51 + 5 + 2 | r = 1, odd front A, gap 5, block 6 | r' = 2 (forced), `6 0^1 6` |
+| 8 + 1 + 1 | r = 1, odd front A, gap 5, block 12 / 18 | r' = 2, `6 0^1 12` / `6 0^1 18` |
+| 31 + 5 | r = 3, front 6, gap 3, block 6 / 12 | r' = 2, `6 0^1 6` / `6 0^1 12` |
+| 12 + 3 | r = 1, front 6, gap 3, block 12 | r' = 2, `6 0^1 6` / `6 0^1 12` |
+| 1 | r = 3, even front, gap 2, block 11 | r' = 1, deep `… 19 0^1 12 …` |
+
+So a gap 1 appears (a) at the front as `6 0^1 b` with b ∈ {6, 12, 18} and r = 2 forced, or (b) deep behind a
+block 19, followed by 12.
+
+**What happens next (exact rules, all N residues):**
+- (a) `6 0^1 b`, r = 2 → front b − 1, N even, r' = 1 → front b − 2, N odd, r' = 1 → the front grows again
+  (r = 1: + 8) or is replaced by 1^6 (r = 3). With b ≥ 6 the front never goes below 4; HALT needs front 2 with
+  r = 1 (N odd) or front 3 with r = 2.
+- (b) When the front reaches `19 0^1 12`: odd front, gap 1, 12 → r = 1: `A+5 0^1 11` (the block behind the gap
+  shrinks once, then the gap is consumed in the next Bell); r = 3: `6 0^(A−3) 20`.
+- Rule (A odd, 0^1, b) → (A+5, 0^1, b−1) under r = 1 can shrink a block behind a gap 1 by one, but only once:
+  afterwards the front is even and the next Bell consumes the gap.
+
+**Exhaustive check from the observed contexts** (`g1case.py`): from all 174 gap-1 contexts of the coin model,
+all branches (both N residues in every Bell) while a gap 1 is among the first 9 runs (up to 14 Bells): **no HALT,
+the block behind a gap 1 is always ≥ 6**, fronts 4 and 5 occur only with r = 1.
+
+**Status of the proof.** The danger (a block ≤ 4 behind a gap 1, or 5 behind a gap 1 with r = 2 and N even) needs
+a gap 1 in front of a block ≤ 5. By the case analysis, gaps 1 arise only in the two ways above, always in front
+of a block ≥ 6 (6, 12, 18 or 12), and the block can shrink by at most one before the gap disappears.
+Still missing for a complete proof: (1) a symbolic proof that the producer list is complete, i.e. that every
+input of the tail language that creates a gap 1 is of type (a) or (b) (so far observed in 1.2 M Bells, not proved);
+(2) that tail blocks stay ≥ 6 (multiples of 6, or 11, 17, 19, … from chains). Both are finite symbolic checks over
+the front windows; the C port would make them fast.

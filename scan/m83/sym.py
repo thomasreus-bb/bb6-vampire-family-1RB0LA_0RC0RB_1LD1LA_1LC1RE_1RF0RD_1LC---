@@ -108,6 +108,18 @@ class Sim:
                 if st != q: return None
                 return tape             # cells now behind the head, in spatial order away from... see apply
         return None
+    def shift_la(self, q, u, d, K=4):
+        """u^K -> v u^(K-1) with look-ahead into the following copies (they must be restored)."""
+        n = len(u); win = list(u) * K; tape = win[:]; i = 0; st = q
+        for _ in range(400 * n + 100):
+            t = self.T[(st, tape[i])]
+            if t is None: return None
+            w, m, st = t; tape[i] = w
+            i = i + 1 if m == d else i - 1
+            if i < 0 or i >= len(win) - 1: return None
+            if i == n and st == q and tape[n:] == win[n:]:
+                return tape[:n]
+        return None
     def shift2(self, q, c, u, d, K=6):
         """head (state q) on a cell c followed by u^e (direction d). Try: c u^K -> v c u^(K-1) with the rest
         untouched and the head never leaving the window. returns v (spatial order away from the old head side)."""
@@ -138,6 +150,21 @@ class Sim:
                     back.insert(0, (''.join(reversed(wr)), e0))
                     nb = norm(back); back[:] = nb
                     continue
+                applied = False
+                for p in (1, 2, 3):
+                    if any(x % p for x in e0.v.values()): continue
+                    ep = Lin(e0.c // p, {k: x // p for k, x in e0.v.items()}); rem = e0.c % p
+                    for KK in (2, 3, 4):
+                        if ep.c < KK - 1: continue
+                        v = self.shift_la(q, w0 * p, d, KK)
+                        if v is None: continue
+                        t_ = ep - (KK - 1)
+                        front[0:1] = [(w0 * p, Lin(KK - 1))] + ([(w0, Lin(rem))] if rem else [])
+                        back.insert(0, (''.join(reversed(v)), t_))
+                        nb = norm(back); back[:] = nb; nf = norm(front); front[:] = nf
+                        applied = True; break
+                    if applied: break
+                if applied: continue
             done = False
             if (len(front) > 1 and isinstance(e0, Lin) and e0 == 1 and len(w0) == 1
                     and isinstance(front[1][1], Lin) and front[1][1].sym()):
