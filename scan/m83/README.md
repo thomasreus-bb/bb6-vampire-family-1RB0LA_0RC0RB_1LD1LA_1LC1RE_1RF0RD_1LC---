@@ -283,3 +283,31 @@ Still missing for a complete proof: (1) a symbolic proof that the producer list 
 input of the tail language that creates a gap 1 is of type (a) or (b) (so far observed in 1.2 M Bells, not proved);
 (2) that tail blocks stay ≥ 6 (multiples of 6, or 11, 17, 19, … from chains). Both are finite symbolic checks over
 the front windows; the C port would make them fast.
+
+## Part 5 (28 Nov 2026, afternoon): towards the finite check
+
+**Tools.** `cycb.c`: batch version of `cyc83` (many Bell steps per process, about 25× faster than the symbolic
+step). `inv4h.py`–`inv7h.py`: fast heuristic invariance checks (transitions from several concretizations of each
+abstract prefix, 4 representatives of N, a second tail to detect reads beyond the prefix); a closed language from
+them would afterwards be verified with the exact symbolic step.
+
+**New behaviour found: "eat-all" fronts.** With front `1^6 0^3 1^b` and a large even gap behind b, the Bell with
+r = 3 (b = 12) or r = 1 (b = 6) does not stop after a few runs: the 1-run of N absorbs S run after run (only N
+bounds it). Real configurations avoid this: in 240,000 coin-model Bells, the front `6 0^3 b g` occurs with r = 2
+(forced) for many g, but with r = 1 or 3 **only with g = 5** (23 cases). An invariant must therefore keep the
+context "gap 3 at the front with r ∈ {1, 3} ⇒ the next gap is 5" exactly; coarser languages let the eat-all mode in.
+
+**Attempts and why they did not close yet:**
+
+| language | result |
+|---|---|
+| windows of 3 runs, tags for the first positions | prefix tree explodes (contexts too long) |
+| windows of 3 runs, only front/deep tags | `6 0^3 …` fronts read deep (eat-all mode admitted by the coarse windows) |
+| windows of 5 runs | chains `6 2 6 2 …` too deep (585 cases), window set grows by about 2,000 per round |
+| local constraints of radius 2 around special runs (gaps ≠ even ≥ 4, blocks ≠ even ≥ 6) | chains still too deep |
+| + chain tokens `6 (2 6)^k`, `11 (5 11)^k` (k = 2, 3, large even, large odd) | no deep cases any more, no HALT; but the window set grows (1,668 → 4,461 missing windows per round), because the normal neighbours of special runs are recorded exactly |
+| + normal neighbours as wildcards | language too large (600,000 prefixes in one level) |
+
+**Next step.** Middle ground between exact neighbours and wildcards: special windows with coarse classes for
+normal neighbours (gaps 4 / 6 / ≥ 8 even, blocks 6 / 12 / other even), plus chain tokens; then verify the closed set
+with the exact symbolic step.
